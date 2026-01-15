@@ -895,6 +895,19 @@ class PersonalizedAgent(BasicAgent):
 - Direct API for web applications
 - Shared Azure Function backend
 
+## Microsoft 365 Terminology Reference
+
+When working with Power Platform integration, note that Microsoft 365 Agents Toolkit was formerly called Teams Toolkit:
+
+| New Name | Former Name |
+|----------|-------------|
+| Microsoft 365 Agents Toolkit | Teams Toolkit |
+| App Manifest | Teams app manifest |
+| Microsoft 365 Agents Playground | Test Tool |
+| `m365agents.yml` | `teamsapp.yml` |
+
+Use the new names by default when writing documentation or code.
+
 ## Important Notes
 
 - **Never commit `local.settings.json`** - contains secrets
@@ -909,14 +922,25 @@ class PersonalizedAgent(BasicAgent):
 
 ## Utilities
 
-**AzureFileStorageManager** (`utils/azure_file_storage.py`):
-- Core utility for reading/writing files to Azure File Storage
-- Methods: `read_file(share_name, file_path)`, `write_file(share_name, file_path, content)`, `list_files(share_name)`
-- Handles connection strings, retries, and error handling
+**Storage System** (`utils/`):
+- `storage_factory.py`: Factory function `get_storage_manager()` that auto-detects environment and returns appropriate storage manager (Azure or Local). Uses singleton pattern with 30-minute TTL for credential refresh.
+- `azure_file_storage.py`: `AzureFileStorageManager` for Azure File Storage operations with Entra ID authentication
+- `local_file_storage.py`: `LocalFileStorageManager` for local development (uses `.local_storage/` folder)
+- `environment.py`: Environment detection utilities (`should_use_azure_storage()`, `is_running_in_azure()`)
+
+**Result Types** (`utils/result.py`):
+- `Result`, `Success`, `Failure` types for functional error handling
+- `AgentLoadError`, `APIError` for typed errors
+- `partition_results()` helper for separating successes and failures
 
 **AgentManager** (`utils/agent_manager.py`):
 - Helper utilities for agent management and coordination
 - Used for multi-agent orchestration scenarios
+
+**Auto-Dependency Installation:**
+- When an agent fails to load due to a missing package, the system automatically attempts to install it via pip and retry
+- Common package mappings handled (e.g., `cv2` → `opencv-python`, `PIL` → `Pillow`)
+- Prevents infinite loops by tracking attempted installs per session
 
 ## Common Development Patterns
 

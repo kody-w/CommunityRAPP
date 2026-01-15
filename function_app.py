@@ -425,33 +425,45 @@ class Assistant:
             'characteristic_description': str(os.environ.get('CHARACTERISTIC_DESCRIPTION', 'helpful business assistant'))
         }
 
-        # Initialize Azure OpenAI client with Entra ID authentication
-        # Use optimized credential chain for faster cold starts:
-        # - ManagedIdentityCredential: Used in Azure (Function App, VM, etc.) - fastest
-        # - AzureCliCredential: Used locally after 'az login' - for development
-        # This is much faster than DefaultAzureCredential which probes many sources
-        if os.environ.get('WEBSITE_INSTANCE_ID'):
-            # Running in Azure - use ManagedIdentity directly (fastest)
-            credential = ManagedIdentityCredential()
-            logging.info("Using ManagedIdentityCredential for Azure deployment")
-        else:
-            # Local development - use chained credential
-            credential = ChainedTokenCredential(
-                ManagedIdentityCredential(),
-                AzureCliCredential()
+        # Initialize Azure OpenAI client
+        # Priority: API Key > Entra ID (token auth)
+        api_key = os.environ.get('AZURE_OPENAI_API_KEY')
+
+        if api_key:
+            # Use API key authentication (simplest, works everywhere)
+            logging.info("Using API key authentication for Azure OpenAI")
+            self.client = AzureOpenAI(
+                azure_endpoint=os.environ['AZURE_OPENAI_ENDPOINT'],
+                api_key=api_key,
+                api_version=os.environ.get('AZURE_OPENAI_API_VERSION', '2025-01-01-preview')
             )
-            logging.info("Using ChainedTokenCredential for local development")
+        else:
+            # Use Entra ID authentication (token-based)
+            # Use optimized credential chain for faster cold starts:
+            # - ManagedIdentityCredential: Used in Azure (Function App, VM, etc.) - fastest
+            # - AzureCliCredential: Used locally after 'az login' - for development
+            if os.environ.get('WEBSITE_INSTANCE_ID'):
+                # Running in Azure - use ManagedIdentity directly (fastest)
+                credential = ManagedIdentityCredential()
+                logging.info("Using ManagedIdentityCredential for Azure deployment")
+            else:
+                # Local development - use chained credential
+                credential = ChainedTokenCredential(
+                    ManagedIdentityCredential(),
+                    AzureCliCredential()
+                )
+                logging.info("Using ChainedTokenCredential for local development")
 
-        token_provider = get_bearer_token_provider(
-            credential,
-            "https://cognitiveservices.azure.com/.default"
-        )
+            token_provider = get_bearer_token_provider(
+                credential,
+                "https://cognitiveservices.azure.com/.default"
+            )
 
-        self.client = AzureOpenAI(
-            azure_endpoint=os.environ['AZURE_OPENAI_ENDPOINT'],
-            azure_ad_token_provider=token_provider,
-            api_version=os.environ.get('AZURE_OPENAI_API_VERSION', '2025-01-01-preview')
-        )
+            self.client = AzureOpenAI(
+                azure_endpoint=os.environ['AZURE_OPENAI_ENDPOINT'],
+                azure_ad_token_provider=token_provider,
+                api_version=os.environ.get('AZURE_OPENAI_API_VERSION', '2025-01-01-preview')
+            )
 
         self.known_agents = self.reload_agents(declared_agents)
         
