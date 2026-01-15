@@ -159,6 +159,29 @@ python sync_cloud_storage.py --status     # Show sync status
 python sync_cloud_storage.py --dry-run    # Preview without changes
 ```
 
+### Running Tests
+
+```bash
+# Run all unit tests (mocked, no API keys needed)
+python tests/run_tests.py
+
+# Run with verbose output
+python tests/run_tests.py -v
+
+# Run live API tests (requires environment variables)
+python tests/run_tests.py --live
+
+# Run specific scenario
+python tests/run_tests.py --scenario capital-markets
+python tests/run_tests.py --scenario call-center
+
+# Run only unit tests (skip live)
+python tests/run_tests.py --unit-only
+
+# Save results to JSON
+python tests/run_tests.py --save-results results.json
+```
+
 ### Development Tools
 
 **Checking logs:**
