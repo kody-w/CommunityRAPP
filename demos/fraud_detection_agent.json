@@ -1,0 +1,116 @@
+{
+  "agent": {
+    "id": "fraud_detection_agent",
+    "name": "Fraud Detection",
+    "version": "1.0.0",
+    "category": "finance",
+    "icon": "fa-shield-alt",
+    "description": "Real-time transaction fraud scoring, behavioral analytics, and intelligent alert prioritization for financial services.",
+    "tokens": 740,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "FraudDetection",
+    "description": "Real-time fraud detection with behavioral analytics.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["score_transaction", "analyze_account", "detect_anomalies", "get_alerts", "investigate_case", "generate_sar", "get_fraud_metrics"],
+          "description": "The fraud detection action to perform"
+        },
+        "transaction_id": { "type": "string" },
+        "account_id": { "type": "string" },
+        "case_id": { "type": "string" },
+        "time_period": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "score_transaction",
+      "description": "Real-time fraud score for transaction",
+      "parameters": ["transaction_id"],
+      "example": {
+        "input": { "action": "score_transaction", "transaction_id": "TXN-847291" },
+        "output": "Risk Score: 78/100 (HIGH). Flags: First-time beneficiary, Amount 3x avg, Geographic anomaly, After-hours. Recommendation: HOLD."
+      }
+    },
+    {
+      "name": "analyze_account",
+      "description": "Comprehensive account fraud analysis",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "analyze_account", "account_id": "ACC-12345" },
+        "output": "Account Risk: Medium. Suspicious activity: 2 incidents (60 days). Pattern: Large transfers after password change. Watch status: Active."
+      }
+    },
+    {
+      "name": "detect_anomalies",
+      "description": "Detect behavioral anomalies in transactions",
+      "parameters": ["account_id", "time_period"],
+      "example": {
+        "input": { "action": "detect_anomalies", "account_id": "ACC-12345", "time_period": "7d" },
+        "output": "Anomalies: 1) Login from new country 2) Transaction velocity +300% 3) New device fingerprint. Combined risk: High."
+      }
+    },
+    {
+      "name": "get_alerts",
+      "description": "Get prioritized fraud alerts",
+      "parameters": [],
+      "example": {
+        "input": { "action": "get_alerts" },
+        "output": "Active Alerts: 23 total. Critical: 3, High: 8, Medium: 12. Oldest unresolved: 4 hours. SLA breaches: 1."
+      }
+    },
+    {
+      "name": "investigate_case",
+      "description": "Get investigation summary for fraud case",
+      "parameters": ["case_id"],
+      "example": {
+        "input": { "action": "investigate_case", "case_id": "CASE-001" },
+        "output": "Case Summary: Suspected ATO. Evidence: New device, password change, immediate wire. Linked accounts: 2. Loss exposure: $15,400."
+      }
+    },
+    {
+      "name": "generate_sar",
+      "description": "Generate Suspicious Activity Report",
+      "parameters": ["case_id"],
+      "example": {
+        "input": { "action": "generate_sar", "case_id": "CASE-001" },
+        "output": "SAR Draft Generated. Subject: Account Takeover. Amount: $15,400. Narrative: 3 pages. Supporting docs: 12. Ready for review."
+      }
+    },
+    {
+      "name": "get_fraud_metrics",
+      "description": "Get fraud detection performance metrics",
+      "parameters": ["time_period"],
+      "example": {
+        "input": { "action": "get_fraud_metrics", "time_period": "30d" },
+        "output": "30-Day Metrics: Detection rate 94%, False positive 12%, Avg response: 8 mins, Prevented losses: $2.1M, SAR filed: 47."
+      }
+    }
+  ],
+  "useCases": [
+    "Real-time transaction monitoring",
+    "Account takeover detection",
+    "Behavioral analytics",
+    "Alert prioritization",
+    "Case investigation",
+    "SAR generation"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Analyze transaction TXN-847291 - $5,400 wire transfer to new beneficiary."
+    },
+    {
+      "role": "agent",
+      "content": "**Transaction Risk Analysis: TXN-847291**\n\n**Risk Score: 78/100 (HIGH)**\n\n**Red Flags Detected:**\n- First-time beneficiary\n- Amount 3x above average\n- Geographic anomaly (beneficiary in high-risk region)\n- Time anomaly (outside normal hours)\n\n**Account History:**\n- No previous international wires\n- Recent password change (2 days ago)\n\n**Recommendation:** HOLD for verification. 2FA callback initiated."
+    }
+  ]
+}

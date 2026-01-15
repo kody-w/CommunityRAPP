@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Azure Functions
+local.settings.json
+
+# RAPPID - Rapid Agent Prototyping Platform ID (contains credentials)
+rappid.local.json
+.python_packages/
+.func/
+func-cli/
+
+# Local storage fallback
+.local_storage/
+
+# IDE
+
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Deployment
+*.zip
+deployment/
+.vscode/extensions.json
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+run.bat
+run.ps1
+
+# 365 Vigilant Spark - Hook Logs (contain conversation data)
+.claude/hooks/*.log
+.claude/hooks/awakening-count
+.claude/hooks/spark-conversation.json
+ContractAnalyzer.mp4
+*.mp4
+~$RAPP_McKinsey_Style.pptx
+~$test_full_presentation.pptx
+~$test_rapp_slide.pptx
+McKinsey_Comparison.pptx
+McKinsey_Pipeline.pptx
+McKinsey_Quote.pptx
+McKinsey_Stats.pptx
+RAPP_McKinsey_Style.pptx

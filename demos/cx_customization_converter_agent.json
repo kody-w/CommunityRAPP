@@ -1,0 +1,165 @@
+{
+  "agent": {
+    "id": "cx_customization_converter_agent",
+    "name": "Customization Converter",
+    "version": "1.0.0",
+    "category": "operations",
+    "icon": "fa-code",
+    "description": "AI converts Salesforce customizations to D365 equivalents. Schema, UI, Apex, workflows, security, reports, integrations. 75% auto-converted, 17% partial, 8% needs review.",
+    "tokens": 3200,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-12",
+    "updated": "2025-12-12"
+  },
+  "metadata": {
+    "name": "CustomizationConverter",
+    "description": "Convert Salesforce customizations to Dynamics 365 equivalents. Handles schema, UI, logic, security, reporting, and integrations. AI analyzes each customization and generates the D365 equivalent.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "inventory_all",
+            "convert_schema",
+            "convert_ui",
+            "convert_logic",
+            "convert_security",
+            "convert_reporting",
+            "convert_integrations",
+            "convert_all",
+            "review_queue",
+            "deploy_converted"
+          ]
+        }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "inventory_all",
+      "description": "Inventory all SF customizations and assess conversion complexity",
+      "example": {
+        "input": { "action": "inventory_all" },
+        "output": "2,847 customizations: 23 objects, 487 fields, 67 Apex triggers, 445 classes, 234 workflows, 312 validation rules, 456 reports. 75% auto-convertible."
+      }
+    },
+    {
+      "name": "convert_schema",
+      "description": "Convert custom objects, fields, relationships to D365 entities",
+      "example": {
+        "input": { "action": "convert_schema" },
+        "output": "23 objects → entities, 487 fields → columns, 89 relationships mapped. 28 minutes. Picklist values preserved."
+      }
+    },
+    {
+      "name": "convert_ui",
+      "description": "Convert page layouts, Lightning components, Visualforce to D365 forms/PCF/Canvas",
+      "example": {
+        "input": { "action": "convert_ui" },
+        "output": "67 layouts → forms, 45 Lightning → 12 auto PCF + 33 review, 28 VF → 8 auto + 20 Canvas scaffolded. 2h 15m."
+      }
+    },
+    {
+      "name": "convert_logic",
+      "description": "Convert Apex, workflows, process builders, flows to Plugins/Power Automate",
+      "example": {
+        "input": { "action": "convert_logic" },
+        "output": "67 triggers → 23 auto plugins + 44 review, 234 workflows → Power Automate, 312 validation → Business Rules. 3h 45m."
+      }
+    },
+    {
+      "name": "convert_all",
+      "description": "Run all conversions in parallel with 50 agents",
+      "example": {
+        "input": { "action": "convert_all" },
+        "output": "2,847 customizations converted in 3h 45m (parallel). 2,134 auto, 478 partial, 235 need review. Solution ready to deploy."
+      }
+    },
+    {
+      "name": "deploy_converted",
+      "description": "Deploy all converted artifacts to D365",
+      "example": {
+        "input": { "action": "deploy_converted" },
+        "output": "Deployed in 56 minutes. 23 entities, 487 fields, 89 plugins, 312 flows, 289 business rules. Validation: 47/50 tests passed."
+      }
+    }
+  ],
+  "useCases": [
+    "Convert SF custom objects to D365 entities",
+    "Convert Apex triggers/classes to C# plugins",
+    "Convert workflows/process builders to Power Automate",
+    "Convert Lightning components to PCF controls",
+    "Convert Visualforce to Canvas Apps",
+    "Convert reports to Power BI",
+    "Convert profiles/sharing rules to D365 security"
+  ],
+  "demo_name": "Customization Converter - SF to D365",
+  "description": "AI converts Salesforce customizations to Dynamics 365 equivalents - schema, UI, logic, security, reporting",
+  "trigger_phrases": [
+    "We have years of Salesforce customizations - custom objects, Apex code, Lightning components, workflows. How do we bring all that to D365?",
+    "we have years of salesforce customizations",
+    "salesforce customizations - custom objects, apex code"
+  ],
+  "conversation_flow": [
+    {
+      "step_number": 1,
+      "description": "User asks about converting SF customizations",
+      "user_message": "We have years of Salesforce customizations - custom objects, Apex code, Lightning components, workflows. How do we bring all that to D365?",
+      "agent_response": "**Let me inventory everything in your Salesforce org:**\n\n---\n\n**Customization Inventory**\n\n| Category | Count | Auto-Convert | Review |\n|----------|-------|--------------|--------|\n| **Schema** | | | |\n| Custom Objects | 23 | 23 | 0 |\n| Custom Fields | 487 | 456 | 31 |\n| Relationships | 89 | 89 | 0 |\n| Record Types | 34 | 28 | 6 |\n| **UI** | | | |\n| Page Layouts | 67 | 67 | 0 |\n| Lightning Components | 45 | 12 | 33 |\n| Visualforce Pages | 28 | 8 | 20 |\n| **Logic** | | | |\n| Apex Triggers | 67 | 23 | 44 |\n| Apex Classes | 445 | 178 | 267 |\n| Workflow Rules | 234 | 198 | 36 |\n| Process Builders | 89 | 67 | 22 |\n| Flows | 156 | 112 | 44 |\n| Validation Rules | 312 | 289 | 23 |\n| Formula Fields | 156 | 123 | 33 |\n| **Security** | | | |\n| Profiles | 12 | 12 | 0 |\n| Permission Sets | 34 | 34 | 0 |\n| Sharing Rules | 45 | 28 | 17 |\n| **Reporting** | | | |\n| Reports | 456 | 289 | 167 |\n| Dashboards | 34 | 34 | 0 |\n| **Integrations** | | | |\n| Connected Apps | 12 | 8 | 4 |\n| External Services | 6 | 4 | 2 |\n\n---\n\n**Summary:**\n- **Total:** 2,847 customizations\n- **Auto-convertible:** 2,134 (75%)\n- **Partial/scaffolded:** 478 (17%)\n- **Needs manual review:** 235 (8%)\n\n---\n\n**Conversion Strategy:**\n\n| SF Component | D365 Equivalent |\n|--------------|----------------|\n| Custom Object | Entity |\n| Custom Field | Column |\n| Page Layout | Form |\n| Lightning Component | PCF Control |\n| Visualforce | Canvas App |\n| Apex Trigger | Plugin (C#) |\n| Workflow Rule | Power Automate |\n| Validation Rule | Business Rule |\n| Report | Power BI |\n| Profile | Security Role |\n\n**Estimated conversion time: 4 hours (with 50 parallel agents)**\n\nWant me to start the conversion?\n\n🔧 Agent: CustomizationConverter.inventory_all"
+    },
+    {
+      "step_number": 2,
+      "description": "User requests to convert everything",
+      "user_message": "Yes, convert everything",
+      "agent_response": "**Running Parallel Conversion - 50 Agents Deployed**\n\n---\n\n**Conversion Streams (Running Simultaneously):**\n\n| Stream | Status | Duration | Result |\n|--------|--------|----------|--------|\n| Schema | COMPLETE | 28 min | 23 entities, 487 columns, 89 relationships |\n| UI | COMPLETE | 2h 15m | 67 forms, 30 PCF controls, 12 Canvas apps |\n| Logic | COMPLETE | 3h 45m | 89 plugins, 312 flows, 289 business rules |\n| Security | COMPLETE | 45 min | 17 roles, 8 column security profiles |\n| Reporting | COMPLETE | 1h 30m | 5 datasets, 34 Power BI reports |\n| Integrations | COMPLETE | 1h 15m | 4 connectors, Dual-Write configured |\n\n**Total Duration: 3 hours 45 minutes** (parallel execution)\n*Sequential would be 10+ hours*\n\n---\n\n**Conversion Results:**\n\n```\nTotal Customizations:     2,847\nAuto-Converted:           2,134 (75%) ✓ Ready to deploy\nPartially Converted:        478 (17%) ✓ AI generated 70%+, needs review\nNeeds Manual Work:          235 (8%)  → Review queue\n```\n\n---\n\n**Artifacts Generated:**\n\n| Artifact | Contents |\n|----------|----------|\n| D365 Solution | 23 entities, 487 columns, 67 forms, 178 views |\n| Plugins DLL | 89 C# plugins (34,000 lines) |\n| PCF Controls | 30 TypeScript components |\n| Power Automate | 312 cloud flows |\n| Business Rules | 289 rules |\n| Canvas Apps | 12 apps |\n| Power BI | 5 datasets, 34 reports, 8 dashboards |\n\n---\n\n**What about the 235 items needing review?**\n\n| Priority | Count | Examples |\n|----------|-------|----------|\n| HIGH | 44 | Complex Apex triggers, custom pricing logic |\n| MEDIUM | 156 | Multi-object processes, complex reports |\n| LOW | 35 | Minor refinements |\n\n**Recommendation:** Deploy now. Review items post-go-live. Core functionality works.\n\nReady to deploy to D365?\n\n🔧 Agent: CustomizationConverter.convert_all"
+    },
+    {
+      "step_number": 3,
+      "description": "User asks about complex Apex code",
+      "user_message": "What about our complex Apex code? We have pricing logic, territory assignment, custom integrations...",
+      "agent_response": "**Apex Code Conversion Analysis**\n\n---\n\n**Your Apex Inventory:**\n- **67 Triggers** (12,400 lines)\n- **445 Classes** (89,000 lines)\n- **Total:** 101,400 lines of Apex\n\n---\n\n**Conversion Breakdown:**\n\n### Apex Triggers (67)\n\n| Type | Count | D365 Target | Status |\n|------|-------|-------------|--------|\n| Simple field updates | 12 | Business Rules | AUTO ✓ |\n| Workflow-like logic | 11 | Power Automate | AUTO ✓ |\n| Validation + error | 18 | Plugin (PreValidation) | PARTIAL |\n| Complex business logic | 26 | Plugin (Pre/PostOp) | PARTIAL |\n\n**Sample Complex Trigger Conversion:**\n\n```\nSF: OpportunityTrigger.cls (450 lines)\n ↓ AI Analysis\nD365: OpportunityPlugin.cs (380 lines)\n - Stage: PreValidation + PostOperation\n - Messages: Create, Update\n - Confidence: 78%\n - Review needed: Lines 145 (discount calc), 280 (external callout)\n```\n\n---\n\n### Your Specific Concerns:\n\n**1. Pricing Logic (QuotePricingTrigger)**\n```\nSF: 450 lines of custom tier-based pricing\n ↓\nD365 Options:\n  Option A: Plugin with same logic (AI generated 72%)\n  Option B: D365 Price Lists + Product Bundles (native)\n  \nAI Recommendation: Evaluate D365 native pricing first.\nMay not need custom code at all.\n```\n\n**2. Territory Assignment (OpportunityTerritory)**\n```\nSF: Custom territory logic in Apex\n ↓\nD365: Built-in Territory Management module\n\nAI Recommendation: D365 has native territory hierarchy.\nMap your logic to OOTB features - less code to maintain.\n```\n\n**3. Custom Integrations**\n```\nSF: Apex callouts to external APIs\n ↓\nD365 Options:\n  - Power Automate HTTP actions (simple)\n  - Azure Functions (complex)\n  - Custom Connectors (reusable)\n  \nConverted: 4 auto, 2 need SOAP wrapper\n```\n\n---\n\n### Apex Classes (445)\n\n| Type | Count | Target | Status |\n|------|-------|--------|--------|\n| Test Classes | 178 | Skip (new tests) | N/A |\n| Controllers | 89 | Custom API + Plugin | 34 auto |\n| Service Classes | 67 | Azure Function | 23 auto |\n| Batch Classes | 34 | Power Automate scheduled | AUTO ✓ |\n| Schedulable | 23 | Power Automate scheduled | AUTO ✓ |\n| Invocable | 9 | Custom API | AUTO ✓ |\n\n---\n\n**The Truth About Complex Apex:**\n\n> 60% of complex Apex can be replaced with D365 native features or Power Platform.\n> The other 40% converts to plugins - AI generates the structure, humans review the business logic.\n\n**Review Queue for Logic:** 77 items (12-16 hours of human time)\n\nBut here's the key: **You can deploy the 75% that's auto-converted NOW**. Review the complex stuff post-go-live while users are productive.\n\n🔧 Agent: CustomizationConverter.convert_logic"
+    },
+    {
+      "step_number": 4,
+      "description": "User requests deployment",
+      "user_message": "Deploy it",
+      "agent_response": "**Deploying to Dynamics 365...**\n\n---\n\n**Deployment Progress:**\n\n| Step | Action | Status | Duration |\n|------|--------|--------|----------|\n| 1 | Import D365 solution | COMPLETE | 8 min |\n| 2 | Register plugins | COMPLETE | 3 min |\n| 3 | Deploy PCF controls | COMPLETE | 5 min |\n| 4 | Import Power Automate flows | COMPLETE | 12 min |\n| 5 | Deploy Canvas Apps | COMPLETE | 4 min |\n| 6 | Configure integrations | COMPLETE | 6 min |\n| 7 | Deploy Power BI | COMPLETE | 3 min |\n| 8 | Run validation tests | COMPLETE | 15 min |\n\n**Total Deployment Time: 56 minutes**\n\n---\n\n**Deployed:**\n\n| Component | Count |\n|-----------|-------|\n| Entities | 23 |\n| Columns | 487 |\n| Forms | 67 |\n| Views | 178 |\n| Plugins | 89 |\n| Power Automate Flows | 312 |\n| Business Rules | 289 |\n| PCF Controls | 30 |\n| Canvas Apps | 12 |\n| Security Roles | 17 |\n| Power BI Reports | 34 |\n\n---\n\n**Validation Results:**\n\n```\nSmoke Tests: 47/50 PASSED\n\nPartial:\n- Quote pricing calculation (review item)\n- Territory assignment (review item)  \n- Product configurator (custom UI pending)\n```\n\n**Core functionality: WORKING**\n\n---\n\n**Customizations Deployed. Your D365 org now has:**\n\n- All your custom entities and fields\n- All your page layouts as D365 forms\n- 85% of your business logic automated\n- All your validation rules enforced\n- Your reports in Power BI\n- Your integrations connected\n\n**Next:** Run MigrationEngine to load your data.\n\n**Total customization conversion: 4 hours**\n*(Traditional approach: 6-12 months)*\n\n🔧 Agent: CustomizationConverter.deploy_converted"
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "We have years of Salesforce customizations - custom objects, Apex code, Lightning components, workflows. How do we bring all that to D365?"
+    },
+    {
+      "role": "agent",
+      "content": "**Let me inventory everything in your Salesforce org:**\n\n---\n\n**Customization Inventory**\n\n| Category | Count | Auto-Convert | Review |\n|----------|-------|--------------|--------|\n| **Schema** | | | |\n| Custom Objects | 23 | 23 | 0 |\n| Custom Fields | 487 | 456 | 31 |\n| Relationships | 89 | 89 | 0 |\n| Record Types | 34 | 28 | 6 |\n| **UI** | | | |\n| Page Layouts | 67 | 67 | 0 |\n| Lightning Components | 45 | 12 | 33 |\n| Visualforce Pages | 28 | 8 | 20 |\n| **Logic** | | | |\n| Apex Triggers | 67 | 23 | 44 |\n| Apex Classes | 445 | 178 | 267 |\n| Workflow Rules | 234 | 198 | 36 |\n| Process Builders | 89 | 67 | 22 |\n| Flows | 156 | 112 | 44 |\n| Validation Rules | 312 | 289 | 23 |\n| Formula Fields | 156 | 123 | 33 |\n| **Security** | | | |\n| Profiles | 12 | 12 | 0 |\n| Permission Sets | 34 | 34 | 0 |\n| Sharing Rules | 45 | 28 | 17 |\n| **Reporting** | | | |\n| Reports | 456 | 289 | 167 |\n| Dashboards | 34 | 34 | 0 |\n| **Integrations** | | | |\n| Connected Apps | 12 | 8 | 4 |\n| External Services | 6 | 4 | 2 |\n\n---\n\n**Summary:**\n- **Total:** 2,847 customizations\n- **Auto-convertible:** 2,134 (75%)\n- **Partial/scaffolded:** 478 (17%)\n- **Needs manual review:** 235 (8%)\n\n---\n\n**Conversion Strategy:**\n\n| SF Component | D365 Equivalent |\n|--------------|----------------|\n| Custom Object | Entity |\n| Custom Field | Column |\n| Page Layout | Form |\n| Lightning Component | PCF Control |\n| Visualforce | Canvas App |\n| Apex Trigger | Plugin (C#) |\n| Workflow Rule | Power Automate |\n| Validation Rule | Business Rule |\n| Report | Power BI |\n| Profile | Security Role |\n\n**Estimated conversion time: 4 hours (with 50 parallel agents)**\n\nWant me to start the conversion?"
+    },
+    {
+      "role": "user",
+      "content": "Yes, convert everything"
+    },
+    {
+      "role": "agent",
+      "content": "**Running Parallel Conversion - 50 Agents Deployed**\n\n---\n\n**Conversion Streams (Running Simultaneously):**\n\n| Stream | Status | Duration | Result |\n|--------|--------|----------|--------|\n| Schema | COMPLETE | 28 min | 23 entities, 487 columns, 89 relationships |\n| UI | COMPLETE | 2h 15m | 67 forms, 30 PCF controls, 12 Canvas apps |\n| Logic | COMPLETE | 3h 45m | 89 plugins, 312 flows, 289 business rules |\n| Security | COMPLETE | 45 min | 17 roles, 8 column security profiles |\n| Reporting | COMPLETE | 1h 30m | 5 datasets, 34 Power BI reports |\n| Integrations | COMPLETE | 1h 15m | 4 connectors, Dual-Write configured |\n\n**Total Duration: 3 hours 45 minutes** (parallel execution)\n*Sequential would be 10+ hours*\n\n---\n\n**Conversion Results:**\n\n```\nTotal Customizations:     2,847\nAuto-Converted:           2,134 (75%) ✓ Ready to deploy\nPartially Converted:        478 (17%) ✓ AI generated 70%+, needs review\nNeeds Manual Work:          235 (8%)  → Review queue\n```\n\n---\n\n**Artifacts Generated:**\n\n| Artifact | Contents |\n|----------|----------|\n| D365 Solution | 23 entities, 487 columns, 67 forms, 178 views |\n| Plugins DLL | 89 C# plugins (34,000 lines) |\n| PCF Controls | 30 TypeScript components |\n| Power Automate | 312 cloud flows |\n| Business Rules | 289 rules |\n| Canvas Apps | 12 apps |\n| Power BI | 5 datasets, 34 reports, 8 dashboards |\n\n---\n\n**What about the 235 items needing review?**\n\n| Priority | Count | Examples |\n|----------|-------|----------|\n| HIGH | 44 | Complex Apex triggers, custom pricing logic |\n| MEDIUM | 156 | Multi-object processes, complex reports |\n| LOW | 35 | Minor refinements |\n\n**Recommendation:** Deploy now. Review items post-go-live. Core functionality works.\n\nReady to deploy to D365?"
+    },
+    {
+      "role": "user",
+      "content": "What about our complex Apex code? We have pricing logic, territory assignment, custom integrations..."
+    },
+    {
+      "role": "agent",
+      "content": "**Apex Code Conversion Analysis**\n\n---\n\n**Your Apex Inventory:**\n- **67 Triggers** (12,400 lines)\n- **445 Classes** (89,000 lines)\n- **Total:** 101,400 lines of Apex\n\n---\n\n**Conversion Breakdown:**\n\n### Apex Triggers (67)\n\n| Type | Count | D365 Target | Status |\n|------|-------|-------------|--------|\n| Simple field updates | 12 | Business Rules | AUTO ✓ |\n| Workflow-like logic | 11 | Power Automate | AUTO ✓ |\n| Validation + error | 18 | Plugin (PreValidation) | PARTIAL |\n| Complex business logic | 26 | Plugin (Pre/PostOp) | PARTIAL |\n\n**Sample Complex Trigger Conversion:**\n\n```\nSF: OpportunityTrigger.cls (450 lines)\n ↓ AI Analysis\nD365: OpportunityPlugin.cs (380 lines)\n - Stage: PreValidation + PostOperation\n - Messages: Create, Update\n - Confidence: 78%\n - Review needed: Lines 145 (discount calc), 280 (external callout)\n```\n\n---\n\n### Your Specific Concerns:\n\n**1. Pricing Logic (QuotePricingTrigger)**\n```\nSF: 450 lines of custom tier-based pricing\n ↓\nD365 Options:\n  Option A: Plugin with same logic (AI generated 72%)\n  Option B: D365 Price Lists + Product Bundles (native)\n  \nAI Recommendation: Evaluate D365 native pricing first.\nMay not need custom code at all.\n```\n\n**2. Territory Assignment (OpportunityTerritory)**\n```\nSF: Custom territory logic in Apex\n ↓\nD365: Built-in Territory Management module\n\nAI Recommendation: D365 has native territory hierarchy.\nMap your logic to OOTB features - less code to maintain.\n```\n\n**3. Custom Integrations**\n```\nSF: Apex callouts to external APIs\n ↓\nD365 Options:\n  - Power Automate HTTP actions (simple)\n  - Azure Functions (complex)\n  - Custom Connectors (reusable)\n  \nConverted: 4 auto, 2 need SOAP wrapper\n```\n\n---\n\n### Apex Classes (445)\n\n| Type | Count | Target | Status |\n|------|-------|--------|--------|\n| Test Classes | 178 | Skip (new tests) | N/A |\n| Controllers | 89 | Custom API + Plugin | 34 auto |\n| Service Classes | 67 | Azure Function | 23 auto |\n| Batch Classes | 34 | Power Automate scheduled | AUTO ✓ |\n| Schedulable | 23 | Power Automate scheduled | AUTO ✓ |\n| Invocable | 9 | Custom API | AUTO ✓ |\n\n---\n\n**The Truth About Complex Apex:**\n\n> 60% of complex Apex can be replaced with D365 native features or Power Platform.\n> The other 40% converts to plugins - AI generates the structure, humans review the business logic.\n\n**Review Queue for Logic:** 77 items (12-16 hours of human time)\n\nBut here's the key: **You can deploy the 75% that's auto-converted NOW**. Review the complex stuff post-go-live while users are productive."
+    },
+    {
+      "role": "user",
+      "content": "Deploy it"
+    },
+    {
+      "role": "agent",
+      "content": "**Deploying to Dynamics 365...**\n\n---\n\n**Deployment Progress:**\n\n| Step | Action | Status | Duration |\n|------|--------|--------|----------|\n| 1 | Import D365 solution | COMPLETE | 8 min |\n| 2 | Register plugins | COMPLETE | 3 min |\n| 3 | Deploy PCF controls | COMPLETE | 5 min |\n| 4 | Import Power Automate flows | COMPLETE | 12 min |\n| 5 | Deploy Canvas Apps | COMPLETE | 4 min |\n| 6 | Configure integrations | COMPLETE | 6 min |\n| 7 | Deploy Power BI | COMPLETE | 3 min |\n| 8 | Run validation tests | COMPLETE | 15 min |\n\n**Total Deployment Time: 56 minutes**\n\n---\n\n**Deployed:**\n\n| Component | Count |\n|-----------|-------|\n| Entities | 23 |\n| Columns | 487 |\n| Forms | 67 |\n| Views | 178 |\n| Plugins | 89 |\n| Power Automate Flows | 312 |\n| Business Rules | 289 |\n| PCF Controls | 30 |\n| Canvas Apps | 12 |\n| Security Roles | 17 |\n| Power BI Reports | 34 |\n\n---\n\n**Validation Results:**\n\n```\nSmoke Tests: 47/50 PASSED\n\nPartial:\n- Quote pricing calculation (review item)\n- Territory assignment (review item)  \n- Product configurator (custom UI pending)\n```\n\n**Core functionality: WORKING**\n\n---\n\n**Customizations Deployed. Your D365 org now has:**\n\n- All your custom entities and fields\n- All your page layouts as D365 forms\n- 85% of your business logic automated\n- All your validation rules enforced\n- Your reports in Power BI\n- Your integrations connected\n\n**Next:** Run MigrationEngine to load your data.\n\n**Total customization conversion: 4 hours**\n*(Traditional approach: 6-12 months)*"
+    }
+  ]
+}

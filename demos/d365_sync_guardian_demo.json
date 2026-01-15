@@ -1,0 +1,255 @@
+{
+  "demo_name": "Dynamics 365 Sync Guardian Agent",
+  "description": "Autonomous agent that maintains continuous synchronization between the Digital Twin and Dynamics 365. Monitors changes, detects drift, resolves conflicts, and ensures both systems remain in sync.",
+
+  "architecture": {
+    "components": [
+      {
+        "name": "ChangeTracker",
+        "description": "Monitors and tracks changes in both D365 and Digital Twin",
+        "features": ["Checksum-based change detection", "Create/Update/Delete tracking", "Baseline state management"]
+      },
+      {
+        "name": "ConflictResolver",
+        "description": "Handles merge conflicts with configurable strategies",
+        "features": ["6 resolution strategies", "Automatic or manual resolution", "Field-level merge support"]
+      },
+      {
+        "name": "DriftDetector",
+        "description": "Identifies synchronization drift between systems",
+        "features": ["Drift percentage calculation", "Entity-level analysis", "Record-level comparison"]
+      },
+      {
+        "name": "HealthMonitor",
+        "description": "Tracks overall sync health and alerts on issues",
+        "features": ["Status tracking (IN_SYNC, DRIFTED, ERROR)", "Warning aggregation", "Connection monitoring"]
+      },
+      {
+        "name": "AuditLogger",
+        "description": "Records all sync activities for troubleshooting",
+        "features": ["Complete event history", "24-hour summaries", "Error tracking"]
+      },
+      {
+        "name": "RecoveryManager",
+        "description": "Handles failures with retry logic and self-healing",
+        "features": ["Automatic retry with exponential backoff", "Failed operation tracking", "Rollback capability"]
+      }
+    ]
+  },
+
+  "conflict_resolution_strategies": [
+    {
+      "name": "d365_wins",
+      "description": "Real D365 always takes precedence",
+      "use_case": "When D365 is the system of record"
+    },
+    {
+      "name": "twin_wins",
+      "description": "Digital Twin always takes precedence",
+      "use_case": "When Twin has authoritative changes"
+    },
+    {
+      "name": "newest_wins",
+      "description": "Most recently modified record wins",
+      "use_case": "General-purpose sync (DEFAULT)"
+    },
+    {
+      "name": "merge",
+      "description": "Attempt to merge non-conflicting field changes",
+      "use_case": "When different fields changed in each system"
+    },
+    {
+      "name": "manual",
+      "description": "Queue for manual review",
+      "use_case": "Critical data requiring human oversight"
+    },
+    {
+      "name": "skip",
+      "description": "Skip conflicting records without action",
+      "use_case": "When conflicts should be ignored temporarily"
+    }
+  ],
+
+  "supported_actions": [
+    {
+      "action": "start_monitoring",
+      "description": "Start autonomous background synchronization",
+      "example": {
+        "action": "start_monitoring",
+        "entity_sets": ["accounts", "contacts"],
+        "sync_interval_seconds": 60
+      }
+    },
+    {
+      "action": "stop_monitoring",
+      "description": "Stop autonomous synchronization",
+      "example": {
+        "action": "stop_monitoring"
+      }
+    },
+    {
+      "action": "sync_now",
+      "description": "Perform immediate sync cycle",
+      "example": {
+        "action": "sync_now",
+        "entity_sets": ["accounts"],
+        "sync_direction": "bidirectional"
+      }
+    },
+    {
+      "action": "check_health",
+      "description": "Get overall sync health status",
+      "example": {
+        "action": "check_health"
+      }
+    },
+    {
+      "action": "get_drift_report",
+      "description": "Get detailed drift analysis",
+      "example": {
+        "action": "get_drift_report",
+        "entity_sets": ["accounts", "contacts"]
+      }
+    },
+    {
+      "action": "get_conflicts",
+      "description": "Get unresolved conflicts",
+      "example": {
+        "action": "get_conflicts"
+      }
+    },
+    {
+      "action": "resolve_conflict",
+      "description": "Resolve a specific conflict",
+      "example": {
+        "action": "resolve_conflict",
+        "conflict_id": "uuid-here",
+        "conflict_strategy": "newest_wins"
+      }
+    },
+    {
+      "action": "get_audit_log",
+      "description": "Get sync audit history",
+      "example": {
+        "action": "get_audit_log",
+        "audit_limit": 50
+      }
+    },
+    {
+      "action": "configure",
+      "description": "Change sync settings",
+      "example": {
+        "action": "configure",
+        "conflict_strategy": "merge",
+        "sync_interval_seconds": 120
+      }
+    },
+    {
+      "action": "get_pending_changes",
+      "description": "Get detected but unprocessed changes",
+      "example": {
+        "action": "get_pending_changes"
+      }
+    },
+    {
+      "action": "force_full_sync",
+      "description": "Force complete data synchronization",
+      "example": {
+        "action": "force_full_sync",
+        "entity_sets": ["accounts"],
+        "sync_direction": "d365_to_twin"
+      }
+    },
+    {
+      "action": "status",
+      "description": "Get guardian status",
+      "example": {
+        "action": "status"
+      }
+    }
+  ],
+
+  "sync_directions": [
+    {
+      "direction": "bidirectional",
+      "description": "Sync changes both ways (DEFAULT)"
+    },
+    {
+      "direction": "d365_to_twin",
+      "description": "Pull from D365 to Twin only"
+    },
+    {
+      "direction": "twin_to_d365",
+      "description": "Push from Twin to D365 only"
+    }
+  ],
+
+  "health_statuses": [
+    {
+      "status": "IN_SYNC",
+      "description": "Systems are perfectly synchronized"
+    },
+    {
+      "status": "DRIFTED",
+      "description": "Systems have diverged - sync needed"
+    },
+    {
+      "status": "SYNCING",
+      "description": "Active sync in progress"
+    },
+    {
+      "status": "ERROR",
+      "description": "Sync errors detected"
+    }
+  ],
+
+  "sample_workflows": [
+    {
+      "name": "Start Autonomous Monitoring",
+      "steps": [
+        {"action": "status"},
+        {"action": "start_monitoring", "entity_sets": ["accounts", "contacts", "opportunities"], "sync_interval_seconds": 60},
+        {"action": "check_health"}
+      ]
+    },
+    {
+      "name": "Manual Sync with Drift Check",
+      "steps": [
+        {"action": "get_drift_report", "entity_sets": ["accounts"]},
+        {"action": "sync_now", "sync_direction": "bidirectional"},
+        {"action": "get_drift_report", "entity_sets": ["accounts"]}
+      ]
+    },
+    {
+      "name": "Conflict Investigation",
+      "steps": [
+        {"action": "get_conflicts"},
+        {"action": "resolve_conflict", "conflict_id": "...", "conflict_strategy": "manual"},
+        {"action": "get_audit_log", "audit_limit": 20}
+      ]
+    },
+    {
+      "name": "Full Recovery Sync",
+      "steps": [
+        {"action": "stop_monitoring"},
+        {"action": "force_full_sync", "sync_direction": "d365_to_twin"},
+        {"action": "check_health"},
+        {"action": "start_monitoring"}
+      ]
+    }
+  ],
+
+  "integration_with_digital_twin": {
+    "description": "The Sync Guardian works with the D365 Digital Twin Agent",
+    "twin_agent": "d365_digital_twin_agent.py",
+    "guardian_agent": "d365_sync_guardian_agent.py",
+    "shared_components": ["D365Client", "DigitalTwinStore", "SyncEngine"],
+    "usage_pattern": "Create records with Digital Twin Agent, maintain sync with Guardian Agent"
+  },
+
+  "run_demo": {
+    "command": "python demos/d365_sync_guardian_demo.py",
+    "duration": "~30 seconds",
+    "mock_mode": "Runs automatically if D365 environment variables not set"
+  }
+}

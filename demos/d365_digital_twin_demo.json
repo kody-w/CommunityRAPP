@@ -1,0 +1,256 @@
+{
+  "demo_name": "Dynamics 365 Digital Twin Agent",
+  "description": "A 1:1 Digital Twin of Dynamics 365 CRM that mirrors all operations between a local representation and the real D365 instance. Every operation executes on BOTH systems with comparative output.",
+
+  "architecture": {
+    "components": [
+      {
+        "name": "D365Client",
+        "description": "OAuth2 authenticated client for real D365 Web API",
+        "features": ["MSAL authentication", "Token caching", "Full CRUD", "OData queries", "Mock mode fallback"]
+      },
+      {
+        "name": "DigitalTwinStore",
+        "description": "Local JSON-based mirror of D365 entity structure",
+        "features": ["Azure File Storage persistence", "Local file fallback", "OData query simulation", "Checksum verification"]
+      },
+      {
+        "name": "SyncEngine",
+        "description": "Synchronization manager between twin and D365",
+        "features": ["Initial sync", "Delta sync", "Conflict detection", "Field-level comparison"]
+      },
+      {
+        "name": "D365DigitalTwinAgent",
+        "description": "Agent interface for unified operations",
+        "features": ["Mirrored operations", "Side-by-side output", "Twin-only mode", "Status reporting"]
+      }
+    ]
+  },
+
+  "environment_variables": {
+    "required_for_live_d365": {
+      "D365_TENANT_ID": "Azure AD tenant GUID",
+      "D365_CLIENT_ID": "App registration client ID",
+      "D365_CLIENT_SECRET": "App registration client secret",
+      "D365_URL": "https://yourorg.crm.dynamics.com"
+    },
+    "optional": {
+      "AZURE_STORAGE_ACCOUNT_NAME": "For persistent twin storage",
+      "AZURE_FILES_SHARE_NAME": "File share for twin data"
+    }
+  },
+
+  "supported_operations": [
+    {
+      "operation": "create",
+      "description": "Create records in both twin and D365",
+      "example": {
+        "operation": "create",
+        "entity_set": "accounts",
+        "data": {
+          "name": "Contoso Ltd",
+          "telephone1": "+1-555-0100",
+          "emailaddress1": "info@contoso.com"
+        }
+      }
+    },
+    {
+      "operation": "read",
+      "description": "Read records from both systems",
+      "example": {
+        "operation": "read",
+        "entity_set": "accounts",
+        "record_id": "00000000-0000-0000-0000-000000000001"
+      }
+    },
+    {
+      "operation": "update",
+      "description": "Update records in both systems",
+      "example": {
+        "operation": "update",
+        "entity_set": "accounts",
+        "record_id": "00000000-0000-0000-0000-000000000001",
+        "data": {
+          "revenue": 5000000,
+          "numberofemployees": 250
+        }
+      }
+    },
+    {
+      "operation": "delete",
+      "description": "Delete records from both systems",
+      "example": {
+        "operation": "delete",
+        "entity_set": "accounts",
+        "record_id": "00000000-0000-0000-0000-000000000001"
+      }
+    },
+    {
+      "operation": "query",
+      "description": "OData query with comparison",
+      "example": {
+        "operation": "query",
+        "entity_set": "accounts",
+        "filter": "contains(name,'Contoso')",
+        "select": ["name", "revenue", "telephone1"],
+        "orderby": "revenue desc",
+        "top": 10
+      }
+    },
+    {
+      "operation": "sync",
+      "description": "Synchronize D365 data to twin",
+      "example": {
+        "operation": "sync",
+        "entity_set": "accounts"
+      }
+    },
+    {
+      "operation": "compare",
+      "description": "Field-level comparison between systems",
+      "example": {
+        "operation": "compare",
+        "entity_set": "accounts",
+        "record_id": "00000000-0000-0000-0000-000000000001"
+      }
+    },
+    {
+      "operation": "status",
+      "description": "Get Digital Twin status",
+      "example": {
+        "operation": "status"
+      }
+    },
+    {
+      "operation": "list_entities",
+      "description": "List all entities in the twin",
+      "example": {
+        "operation": "list_entities"
+      }
+    }
+  ],
+
+  "supported_entities": [
+    "accounts",
+    "contacts",
+    "leads",
+    "opportunities",
+    "tasks",
+    "phonecalls",
+    "emails",
+    "appointments",
+    "cases",
+    "products",
+    "quotes",
+    "orders",
+    "invoices"
+  ],
+
+  "odata_features": {
+    "$select": "Choose specific fields to return",
+    "$filter": "Filter records (eq, ne, contains, startswith, endswith)",
+    "$orderby": "Sort results (asc/desc)",
+    "$top": "Limit number of records",
+    "$expand": "Include related entities (D365 only, not simulated in twin)"
+  },
+
+  "sample_scenarios": [
+    {
+      "name": "Sales Pipeline Analysis",
+      "steps": [
+        {"operation": "sync", "entity_set": "opportunities"},
+        {"operation": "query", "entity_set": "opportunities", "filter": "estimatedvalue gt 100000", "orderby": "estimatedvalue desc", "top": 20},
+        {"operation": "query", "entity_set": "opportunities", "filter": "stepname eq 'Negotiate'"}
+      ]
+    },
+    {
+      "name": "Account Management",
+      "steps": [
+        {"operation": "create", "entity_set": "accounts", "data": {"name": "New Customer Inc"}},
+        {"operation": "create", "entity_set": "contacts", "data": {"firstname": "John", "lastname": "Doe"}},
+        {"operation": "query", "entity_set": "accounts", "filter": "contains(name,'Customer')"}
+      ]
+    },
+    {
+      "name": "Data Verification",
+      "steps": [
+        {"operation": "sync", "entity_set": "accounts"},
+        {"operation": "compare", "entity_set": "accounts", "record_id": "TARGET_RECORD_ID"},
+        {"operation": "status"}
+      ]
+    }
+  ],
+
+  "output_format": {
+    "description": "Every operation returns comparative output showing both systems",
+    "sample_response": {
+      "operation": "CREATE",
+      "entity_set": "accounts",
+      "mirrored": true,
+      "twin_result": {
+        "status": 201,
+        "data": {
+          "accountid": "uuid",
+          "name": "Contoso Ltd",
+          "createdon": "2025-01-15T10:30:00Z"
+        }
+      },
+      "d365_result": {
+        "status": 201,
+        "data": {
+          "accountid": "uuid",
+          "name": "Contoso Ltd",
+          "createdon": "2025-01-15T10:30:00Z"
+        }
+      },
+      "in_sync": true,
+      "status": "success"
+    }
+  },
+
+  "use_cases": [
+    {
+      "title": "Development & Testing",
+      "description": "Work with realistic D365 data structure locally without impacting production"
+    },
+    {
+      "title": "Offline Capabilities",
+      "description": "Continue working when D365 is unavailable, sync changes when reconnected"
+    },
+    {
+      "title": "Data Migration",
+      "description": "Validate data transformations by comparing twin and source"
+    },
+    {
+      "title": "Performance Testing",
+      "description": "Run queries against local twin for rapid iteration"
+    },
+    {
+      "title": "Audit & Compliance",
+      "description": "Maintain a verified copy of CRM data with sync verification"
+    },
+    {
+      "title": "AI/ML Training",
+      "description": "Use twin data for training models without production access"
+    }
+  ],
+
+  "d365_app_registration_requirements": {
+    "api_permissions": [
+      "Dynamics CRM > user_impersonation (Delegated) - or -",
+      "Dynamics CRM > .default (Application)"
+    ],
+    "notes": [
+      "Create App Registration in Azure AD",
+      "Grant admin consent for Dynamics CRM permissions",
+      "Create client secret and store securely",
+      "Add application user in D365 with appropriate security role"
+    ]
+  },
+
+  "run_demo": {
+    "command": "python demos/d365_digital_twin_demo.py",
+    "mock_mode": "Runs automatically if D365 environment variables not set",
+    "live_mode": "Set D365_TENANT_ID, D365_CLIENT_ID, D365_CLIENT_SECRET, D365_URL"
+  }
+}

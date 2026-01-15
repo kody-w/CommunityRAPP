@@ -1,0 +1,170 @@
+{
+  "agent": {
+    "id": "call_center_agent",
+    "name": "Call Center",
+    "version": "1.0.0",
+    "category": "customer-service",
+    "icon": "fa-headset",
+    "description": "Provides unified customer context and intelligent response suggestions for call center agents in real-time.",
+    "tokens": 720,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "CallCenter",
+    "description": "Unified customer context and intelligent response suggestions for call center agents.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["get_customer_context", "suggest_response", "lookup_policy", "check_billing", "create_case", "get_call_summary", "escalate_to_supervisor"],
+          "description": "The call center action to perform"
+        },
+        "customer_id": {
+          "type": "string",
+          "description": "Customer identifier"
+        },
+        "issue_type": {
+          "type": "string",
+          "description": "Type of customer issue"
+        },
+        "case_notes": {
+          "type": "string",
+          "description": "Notes for case creation"
+        }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "get_customer_context",
+      "description": "Retrieve comprehensive customer context including history, preferences, and recent interactions",
+      "parameters": ["customer_id"],
+      "example": {
+        "input": { "action": "get_customer_context", "customer_id": "CUST-12345" },
+        "output": "Customer: John Smith (VIP - 8 years). Last contact: Billing inquiry 3 days ago. Pending: $47.99 credit. Sentiment: Positive."
+      }
+    },
+    {
+      "name": "suggest_response",
+      "description": "Get AI-powered response suggestions based on customer context and issue",
+      "parameters": ["customer_id", "issue_type"],
+      "example": {
+        "input": { "action": "suggest_response", "customer_id": "CUST-12345", "issue_type": "billing" },
+        "output": "Suggested: 'Hi John, I see you're following up on your billing dispute. Good news - the $47.99 credit has been approved and will appear on your next statement.'"
+      }
+    },
+    {
+      "name": "lookup_policy",
+      "description": "Search knowledge base for relevant policies and procedures",
+      "parameters": ["issue_type"],
+      "example": {
+        "input": { "action": "lookup_policy", "issue_type": "refund" },
+        "output": "Policy REF-101: Refunds within 30 days require manager approval for amounts over $100. Full refund available for defective products within 90 days."
+      }
+    },
+    {
+      "name": "check_billing",
+      "description": "Check customer billing status and history",
+      "parameters": ["customer_id"],
+      "example": {
+        "input": { "action": "check_billing", "customer_id": "CUST-12345" },
+        "output": "Current balance: $127.45. Last payment: $89.99 on Dec 1. Autopay: Enabled. No overdue amounts."
+      }
+    },
+    {
+      "name": "create_case",
+      "description": "Create a new support case with notes",
+      "parameters": ["customer_id", "issue_type", "case_notes"],
+      "example": {
+        "input": { "action": "create_case", "customer_id": "CUST-12345", "issue_type": "technical", "case_notes": "Internet connectivity issues in home office" },
+        "output": "Case CASE-2024-8721 created. Priority: Medium. Assigned to: Technical Support Team. SLA: 4 hours."
+      }
+    },
+    {
+      "name": "get_call_summary",
+      "description": "Generate AI summary of current call for wrap-up",
+      "parameters": ["customer_id"],
+      "example": {
+        "input": { "action": "get_call_summary", "customer_id": "CUST-12345" },
+        "output": "Call Summary: Resolved billing inquiry. Applied $47.99 credit. Customer satisfied. Follow-up: None required. Duration: 4:32."
+      }
+    },
+    {
+      "name": "escalate_to_supervisor",
+      "description": "Escalate call to supervisor with context",
+      "parameters": ["customer_id", "case_notes"],
+      "example": {
+        "input": { "action": "escalate_to_supervisor", "customer_id": "CUST-12345", "case_notes": "Customer requesting exception to policy" },
+        "output": "Escalation initiated. Supervisor: Sarah Chen (available). Context packet sent. Estimated wait: 2 minutes."
+      }
+    }
+  ],
+  "useCases": [
+    "Real-time customer context retrieval",
+    "AI-powered response suggestions",
+    "Policy and procedure lookup",
+    "Billing inquiry resolution",
+    "Case management and creation",
+    "Call summarization and wrap-up",
+    "Supervisor escalation handling"
+  ],
+  "integrations": [
+    "Dynamics 365 Customer Service",
+    "Salesforce Service Cloud",
+    "Zendesk",
+    "CRM systems",
+    "Knowledge base platforms",
+    "Telephony systems (CTI)"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Customer John Smith is calling about a billing issue. Pull up his context."
+    },
+    {
+      "role": "agent",
+      "content": "**Customer: John Smith** (VIP - 8 years)\n\n**Recent Activity:**\n- Opened billing dispute 3 days ago\n- Last call: Spoke with Sarah about upgrade\n- Pending: $47.99 credit awaiting approval\n\n**Suggested Response:** \"Hi John, I see you're following up on your billing dispute. Good news - the $47.99 credit has been approved...\""
+    },
+    {
+      "role": "user",
+      "content": "He's happy with that. Create a case summary for this call."
+    },
+    {
+      "role": "agent",
+      "content": "**Call Summary Created**\n\n**Case:** CASE-2024-8722\n**Customer:** John Smith (CUST-12345)\n**Issue:** Billing dispute follow-up\n**Resolution:** Confirmed $47.99 credit applied\n**Outcome:** Resolved - Customer satisfied\n**Duration:** 3:45\n**Next Steps:** None required\n\nCase closed and saved to customer record."
+    }
+  ],
+  "sampleScenarios": [
+    {
+      "name": "Billing Inquiry",
+      "description": "Handle customer billing questions",
+      "prompts": [
+        "Pull up customer context for account 12345",
+        "Check their billing history",
+        "What's our refund policy for this situation?"
+      ]
+    },
+    {
+      "name": "Technical Support",
+      "description": "Assist with technical issues",
+      "prompts": [
+        "Customer reporting service outage",
+        "Create a technical support case",
+        "Escalate to tier 2 support"
+      ]
+    },
+    {
+      "name": "VIP Customer Handling",
+      "description": "Special handling for high-value customers",
+      "prompts": [
+        "Is this customer flagged as VIP?",
+        "What special accommodations can we offer?",
+        "Connect with dedicated account manager"
+      ]
+    }
+  ]
+}

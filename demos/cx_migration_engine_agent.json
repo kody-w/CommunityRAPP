@@ -1,0 +1,214 @@
+{
+  "agent": {
+    "id": "cx_migration_engine_agent",
+    "name": "Migration Engine",
+    "version": "2.0.0",
+    "category": "operations",
+    "icon": "fa-rocket",
+    "description": "Agent swarm that executes SF→D365 migrations at API speed. Not months - HOURS. 127 parallel agents handle discovery, mapping, ETL, validation, user provisioning, and adoption assistance simultaneously.",
+    "tokens": 2800,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-12",
+    "updated": "2025-12-12"
+  },
+  "metadata": {
+    "name": "MigrationEngine",
+    "description": "Agent swarm that executes Salesforce to Dynamics 365 migrations at API speed. Not months - HOURS. Parallel discovery, mapping, ETL, validation, and user enablement. The only limits are API rate limits.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "analyze_constraints",
+            "spawn_swarm",
+            "execute_migration",
+            "status",
+            "optimize_throughput",
+            "validate_realtime",
+            "enable_users",
+            "convert_automations",
+            "final_cutover",
+            "estimate_timeline"
+          ],
+          "description": "Migration action to perform"
+        },
+        "sf_org_id": { "type": "string" },
+        "d365_instance": { "type": "string" },
+        "parallelism": { "type": "integer" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "analyze_constraints",
+      "description": "Analyze what's ACTUALLY limiting migration speed (spoiler: it's not technical)",
+      "example": {
+        "input": { "action": "analyze_constraints" },
+        "output": "Technical constraints: 7.2M records @ 2M/hr = 3.6 hours. 45K users @ 50K/hr = 1 hour. The 18-24 month timeline is human overhead, not technical necessity."
+      }
+    },
+    {
+      "name": "spawn_swarm",
+      "description": "Initialize 127 parallel agents for migration",
+      "example": {
+        "input": { "action": "spawn_swarm", "parallelism": 50 },
+        "output": "Swarm ready: 10 discovery, 23 mapping, 75 ETL, 10 validation, 5 user provisioning, 10 automation conversion, 12 adoption agents. Throughput: 2.5M records/hour."
+      }
+    },
+    {
+      "name": "execute_migration",
+      "description": "Run the full migration with all agents in parallel",
+      "example": {
+        "input": { "action": "execute_migration" },
+        "output": "STREAMING: Discovery (4 min, done) → Mapping (8 min, done) → ETL (2.1M rec/hr) → Validation (real-time) → Users (38K/45K) → Automations (489/574). ETA: 3 hours total."
+      }
+    },
+    {
+      "name": "status",
+      "description": "Get current migration status",
+      "example": {
+        "input": { "action": "status" },
+        "output": "COMPLETED in 3h 47m. 7.2M records (99.89%), 44,847 users (99.66%), 489 automations deployed. Traditional: 18-24 months. Us: 3,000x faster."
+      }
+    },
+    {
+      "name": "optimize_throughput",
+      "description": "Dynamically optimize agent parallelism and API usage",
+      "example": {
+        "input": { "action": "optimize_throughput" },
+        "output": "Added 10 service principals, increased batch size to 1000. New throughput: 4.1M records/hour. ETA reduced from 3h to 1h 45m."
+      }
+    },
+    {
+      "name": "validate_realtime",
+      "description": "Real-time validation (no waiting for 'validation phase')",
+      "example": {
+        "input": { "action": "validate_realtime" },
+        "output": "5.2M validated in real-time (0 lag). 99.7% accuracy. 917 issues detected, 871 auto-fixed (95%). Financial reconciliation: $0.00 variance."
+      }
+    },
+    {
+      "name": "enable_users",
+      "description": "Provision users and activate AI adoption assistance",
+      "example": {
+        "input": { "action": "enable_users" },
+        "output": "44,847 users provisioned, SSO enabled, licenses assigned. Training needed: ZERO. AI adoption agents handle onboarding in real-time."
+      }
+    },
+    {
+      "name": "convert_automations",
+      "description": "AI converts SF automations to Power Platform in parallel",
+      "example": {
+        "input": { "action": "convert_automations" },
+        "output": "574 automations: 489 auto-converted and deployed (85%), 85 flagged for review. Traditional: 6-8 weeks. Us: 2 hours 15 minutes."
+      }
+    },
+    {
+      "name": "final_cutover",
+      "description": "Execute final cutover to D365",
+      "example": {
+        "input": { "action": "final_cutover" },
+        "output": "Cutover complete in 12 minutes. D365 is PRIMARY. SF is READ-ONLY. AI adoption agents active. 45,000 users migrated in UNDER 4 HOURS."
+      }
+    },
+    {
+      "name": "estimate_timeline",
+      "description": "Get realistic timeline estimate",
+      "example": {
+        "input": { "action": "estimate_timeline" },
+        "output": "Technical: 4-6 hours. Human review: 6-10 hours. Total: 1-2 DAYS. Traditional approach: 18-24 months. The difference is agent parallelism vs human serialization."
+      }
+    }
+  ],
+  "useCases": [
+    "Complete SF→D365 migration in hours instead of months",
+    "Parallel data extraction, transformation, and loading",
+    "Real-time validation during migration",
+    "AI-powered automation conversion",
+    "Zero-training user enablement via AI adoption agents",
+    "Dynamic throughput optimization"
+  ],
+  "demo_name": "Migration Engine - SF to D365",
+  "description": "Execute Salesforce to Dynamics 365 migrations at API speed using 127 parallel agents",
+  "trigger_phrases": [
+    "We need to migrate 45,000 Salesforce users to Dynamics 365. Our implementation partner says it will take 18-24 months. Is that right?",
+    "we need to migrate 45,000 salesforce users",
+    "migrate 45,000 salesforce users to dynamics 365"
+  ],
+  "conversation_flow": [
+    {
+      "step_number": 1,
+      "description": "User asks about migration timeline",
+      "user_message": "We need to migrate 45,000 Salesforce users to Dynamics 365. Our implementation partner says it will take 18-24 months. Is that right?",
+      "agent_response": "**Let's analyze what's actually limiting this migration:**\n\n---\n\n**Why Traditional Migrations Take 18-24 Months:**\n- Human-paced planning and approval cycles\n- Sequential execution (one thing at a time)\n- Manual mapping and validation\n- Training programs (weeks per wave)\n- Conservative 'wave' approach\n- Fear of failure → over-engineering\n\n---\n\n**Actual Technical Constraints:**\n\n| System | Limit | Your Migration |\n|--------|-------|----------------|\n| Salesforce Bulk API | 10-50M records/day | 7.2M records = **hours** |\n| D365 Dataverse API | 5-20M records/day | 7.2M records = **hours** |\n| Azure AD Graph API | 50K users/hour | 45K users = **1 hour** |\n\n---\n\n**The Math:**\n```\n7.2M records ÷ 2M/hour = 3.6 hours\n45K users ÷ 50K/hour = 1 hour\n574 automations (parallel AI conversion) = 2-3 hours\n```\n\n**Technical migration time: 4-6 HOURS**\n\nThe other 18-23 months? That's human overhead.\n\n---\n\n**What changes with an agent swarm:**\n- Agents don't need training\n- Agents don't have meetings\n- Agents don't take weekends off\n- Agents parallelize everything\n- AI adoption agents replace user training entirely\n\n**Want me to spawn the swarm and show you?**\n\n🔧 Agent: MigrationEngine.analyze_constraints"
+    },
+    {
+      "step_number": 2,
+      "description": "User requests to spawn agent swarm",
+      "user_message": "Yes, spawn the agent swarm",
+      "agent_response": "**Agent Swarm Initialized**\n\n**Swarm ID:** SWARM-20250112143022\n**Total Agents:** 127\n\n---\n\n**Agents Spawned:**\n\n| Agent Type | Count | Role |\n|------------|-------|------|\n| Orchestrator | 1 | Coordinates swarm, handles exceptions |\n| Discovery | 10 | Parallel org analysis (one per object type) |\n| Mapping | 23 | AI-generate field mappings simultaneously |\n| ETL Extract | 25 | Parallel data extraction streams |\n| ETL Transform | 25 | Stream processing as data flows |\n| ETL Load | 25 | Parallel loading into D365 |\n| Validation | 10 | Real-time validation (no waiting) |\n| User Provisioning | 5 | Bulk user creation + licenses |\n| Automation Conversion | 10 | Parallel Apex/Flow conversion |\n| Adoption | 12 | Real-time user assistance |\n\n---\n\n**Infrastructure:**\n- 10 service principals (parallel API connections)\n- 25 parallel SF connections\n- 25 parallel D365 connections\n- Azure Functions (auto-scaling compute)\n\n---\n\n**Estimated Throughput:**\n- Records: **2.5M/hour**\n- Users: **50,000/hour**\n- Automations: **100/hour**\n\n**Swarm is ready. Say 'execute' to start the migration.**\n\n🔧 Agent: MigrationEngine.spawn_swarm"
+    },
+    {
+      "step_number": 3,
+      "description": "User executes migration",
+      "user_message": "Execute the migration",
+      "agent_response": "**Migration Executing - All Phases Running Simultaneously**\n\n**Execution ID:** EXEC-20250112143522\n**Mode:** PARALLEL_SWARM\n\n---\n\n**Live Status:**\n\n| Phase | Status | Progress | Rate | ETA |\n|-------|--------|----------|------|-----|\n| Discovery | DONE | 100% | - | 4 min |\n| Mapping | DONE | 100% | - | 8 min |\n| Data Extract | STREAMING | 6.1M/7.2M | 2.1M/hr | 32 min |\n| Data Transform | STREAMING | 5.8M/7.2M | (real-time) | - |\n| Data Load | STREAMING | 5.2M/7.2M | 1.8M/hr | 67 min |\n| Validation | CONTINUOUS | 5.2M | 99.7% accuracy | real-time |\n| Users | IN PROGRESS | 38K/45K | 45K/hr | 9 min |\n| Automations | IN PROGRESS | 489/574 | 85% auto | 12 min |\n\n---\n\n**Real-Time Metrics:**\n\n```\nElapsed:        2 hours 14 minutes\nRecords:        5,234,891 migrated\nThroughput:     652 records/second\nUsers:          38,000 provisioned\nErrors:         234 detected → 219 auto-resolved\nPending Review: 15 (non-blocking)\n```\n\n---\n\n**Projection:**\n- Data migration complete: **47 minutes**\n- User provisioning complete: **9 minutes**\n- Full migration complete: **~3 hours total**\n\n**All phases running in parallel. No waiting. No sequential bottlenecks.**\n\n🔧 Agent: MigrationEngine.execute_migration"
+    },
+    {
+      "step_number": 4,
+      "description": "User asks for final status",
+      "user_message": "What's the final status?",
+      "agent_response": "**Migration Complete**\n\n---\n\n**Final Results:**\n\n| Component | Result | Success Rate |\n|-----------|--------|-------------|\n| Data Migration | 7,234,891 records | 99.89% |\n| User Provisioning | 44,847 users | 99.66% |\n| Automations | 489 deployed, 85 in review | 85% auto |\n| Validation | PASSED | 99.7% accuracy |\n| AI Agents | 12 active | Ready |\n\n**Total Duration: 3 hours 47 minutes**\n\n---\n\n**What Happened:**\n1. Discovery completed in 4 minutes (10 parallel agents)\n2. Mappings generated in 8 minutes (23 parallel agents)\n3. Data streamed through ETL pipeline (75 agents)\n4. Validation ran continuously during load (10 agents)\n5. Users provisioned in parallel with data (5 agents)\n6. Automations converted while data loaded (10 agents)\n7. AI adoption agents activated at completion\n\n---\n\n**The Comparison:**\n\n| Approach | Timeline | Speedup |\n|----------|----------|--------|\n| Traditional Approach | 18-24 months | - |\n| Agent Swarm | 3 hours 47 minutes | **~3,000x faster** |\n\n---\n\n**Why?**\n> Agents don't wait. Agents don't sleep. Agents parallelize.\n\n---\n\n**Remaining (non-blocking):**\n- 85 complex automations flagged for human review (4-8 hours)\n- 15 data exceptions need business decision\n- 153 users need Azure AD accounts (IT ticket created)\n\n**Ready for cutover. Say 'cutover' to go live.**\n\n🔧 Agent: MigrationEngine.status"
+    },
+    {
+      "step_number": 5,
+      "description": "User initiates cutover",
+      "user_message": "Do the cutover",
+      "agent_response": "**Cutover Executing...**\n\n---\n\n| Step | Action | Status | Duration |\n|------|--------|--------|----------|\n| 1 | Final delta sync from SF | 1,247 records | 3 min |\n| 2 | Validate delta records | PASSED | 1 min |\n| 3 | Activate D365 as primary | COMPLETE | instant |\n| 4 | Redirect SF URLs to D365 | COMPLETE | 1 min |\n| 5 | Enable AI adoption agents | 12 agents LIVE | instant |\n| 6 | Send go-live notifications | 44,847 users notified | 2 min |\n| 7 | Activate monitoring | LIVE | instant |\n| 8 | Start hypercare mode | ACTIVE | 5 min |\n\n**Cutover Duration: 12 minutes**\n\n---\n\n**System Status:**\n- **Salesforce:** READ-ONLY (historical reference)\n- **Dynamics 365:** PRIMARY SYSTEM - LIVE\n\n---\n\n**Hypercare Activated:**\n- Tier 1: AI Adoption Agents (24/7, handles 90% of questions)\n- Tier 2: Technical Support (business hours)\n- Tier 3: Migration Engineering (on-call)\n\n---\n\n**Rollback Ready:**\n- Can rollback in < 15 minutes if needed\n- All D365 data archived, SF unchanged\n\n---\n\n## Migration Complete\n\n| Metric | Value |\n|--------|-------|\n| Total Time | 3h 47m (migration) + 12m (cutover) |\n| Records | 7,234,891 |\n| Users | 44,847 |\n| Automations | 489 live (85 in review) |\n| AI Agents | 12 active |\n\n---\n\n**45,000 users migrated from Salesforce to Dynamics 365 in UNDER 4 HOURS.**\n\nThey said 18-24 months. We did it in an afternoon.\n\nThat's what happens when agents do the work.\n\n🔧 Agent: MigrationEngine.final_cutover"
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "We need to migrate 45,000 Salesforce users to Dynamics 365. Our implementation partner says it will take 18-24 months. Is that right?"
+    },
+    {
+      "role": "agent",
+      "content": "**Let's analyze what's actually limiting this migration:**\n\n---\n\n**Why Traditional Migrations Take 18-24 Months:**\n- Human-paced planning and approval cycles\n- Sequential execution (one thing at a time)\n- Manual mapping and validation\n- Training programs (weeks per wave)\n- Conservative 'wave' approach\n- Fear of failure → over-engineering\n\n---\n\n**Actual Technical Constraints:**\n\n| System | Limit | Your Migration |\n|--------|-------|----------------|\n| Salesforce Bulk API | 10-50M records/day | 7.2M records = **hours** |\n| D365 Dataverse API | 5-20M records/day | 7.2M records = **hours** |\n| Azure AD Graph API | 50K users/hour | 45K users = **1 hour** |\n\n---\n\n**The Math:**\n```\n7.2M records ÷ 2M/hour = 3.6 hours\n45K users ÷ 50K/hour = 1 hour\n574 automations (parallel AI conversion) = 2-3 hours\n```\n\n**Technical migration time: 4-6 HOURS**\n\nThe other 18-23 months? That's human overhead.\n\n---\n\n**What changes with an agent swarm:**\n- Agents don't need training\n- Agents don't have meetings\n- Agents don't take weekends off\n- Agents parallelize everything\n- AI adoption agents replace user training entirely\n\n**Want me to spawn the swarm and show you?**"
+    },
+    {
+      "role": "user",
+      "content": "Yes, spawn the agent swarm"
+    },
+    {
+      "role": "agent",
+      "content": "**Agent Swarm Initialized**\n\n**Swarm ID:** SWARM-20250112143022\n**Total Agents:** 127\n\n---\n\n**Agents Spawned:**\n\n| Agent Type | Count | Role |\n|------------|-------|------|\n| Orchestrator | 1 | Coordinates swarm, handles exceptions |\n| Discovery | 10 | Parallel org analysis (one per object type) |\n| Mapping | 23 | AI-generate field mappings simultaneously |\n| ETL Extract | 25 | Parallel data extraction streams |\n| ETL Transform | 25 | Stream processing as data flows |\n| ETL Load | 25 | Parallel loading into D365 |\n| Validation | 10 | Real-time validation (no waiting) |\n| User Provisioning | 5 | Bulk user creation + licenses |\n| Automation Conversion | 10 | Parallel Apex/Flow conversion |\n| Adoption | 12 | Real-time user assistance |\n\n---\n\n**Infrastructure:**\n- 10 service principals (parallel API connections)\n- 25 parallel SF connections\n- 25 parallel D365 connections\n- Azure Functions (auto-scaling compute)\n\n---\n\n**Estimated Throughput:**\n- Records: **2.5M/hour**\n- Users: **50,000/hour**\n- Automations: **100/hour**\n\n**Swarm is ready. Say 'execute' to start the migration.**"
+    },
+    {
+      "role": "user",
+      "content": "Execute the migration"
+    },
+    {
+      "role": "agent",
+      "content": "**Migration Executing - All Phases Running Simultaneously**\n\n**Execution ID:** EXEC-20250112143522\n**Mode:** PARALLEL_SWARM\n\n---\n\n**Live Status:**\n\n| Phase | Status | Progress | Rate | ETA |\n|-------|--------|----------|------|-----|\n| Discovery | DONE | 100% | - | 4 min |\n| Mapping | DONE | 100% | - | 8 min |\n| Data Extract | STREAMING | 6.1M/7.2M | 2.1M/hr | 32 min |\n| Data Transform | STREAMING | 5.8M/7.2M | (real-time) | - |\n| Data Load | STREAMING | 5.2M/7.2M | 1.8M/hr | 67 min |\n| Validation | CONTINUOUS | 5.2M | 99.7% accuracy | real-time |\n| Users | IN PROGRESS | 38K/45K | 45K/hr | 9 min |\n| Automations | IN PROGRESS | 489/574 | 85% auto | 12 min |\n\n---\n\n**Real-Time Metrics:**\n\n```\nElapsed:        2 hours 14 minutes\nRecords:        5,234,891 migrated\nThroughput:     652 records/second\nUsers:          38,000 provisioned\nErrors:         234 detected → 219 auto-resolved\nPending Review: 15 (non-blocking)\n```\n\n---\n\n**Projection:**\n- Data migration complete: **47 minutes**\n- User provisioning complete: **9 minutes**\n- Full migration complete: **~3 hours total**\n\n**All phases running in parallel. No waiting. No sequential bottlenecks.**"
+    },
+    {
+      "role": "user",
+      "content": "What's the final status?"
+    },
+    {
+      "role": "agent",
+      "content": "**Migration Complete**\n\n---\n\n**Final Results:**\n\n| Component | Result | Success Rate |\n|-----------|--------|-------------|\n| Data Migration | 7,234,891 records | 99.89% |\n| User Provisioning | 44,847 users | 99.66% |\n| Automations | 489 deployed, 85 in review | 85% auto |\n| Validation | PASSED | 99.7% accuracy |\n| AI Agents | 12 active | Ready |\n\n**Total Duration: 3 hours 47 minutes**\n\n---\n\n**What Happened:**\n1. Discovery completed in 4 minutes (10 parallel agents)\n2. Mappings generated in 8 minutes (23 parallel agents)\n3. Data streamed through ETL pipeline (75 agents)\n4. Validation ran continuously during load (10 agents)\n5. Users provisioned in parallel with data (5 agents)\n6. Automations converted while data loaded (10 agents)\n7. AI adoption agents activated at completion\n\n---\n\n**The Comparison:**\n\n| Approach | Timeline | Speedup |\n|----------|----------|--------|\n| Traditional Approach | 18-24 months | - |\n| Agent Swarm | 3 hours 47 minutes | **~3,000x faster** |\n\n---\n\n**Why?**\n> Agents don't wait. Agents don't sleep. Agents parallelize.\n\n---\n\n**Remaining (non-blocking):**\n- 85 complex automations flagged for human review (4-8 hours)\n- 15 data exceptions need business decision\n- 153 users need Azure AD accounts (IT ticket created)\n\n**Ready for cutover. Say 'cutover' to go live.**"
+    },
+    {
+      "role": "user",
+      "content": "Do the cutover"
+    },
+    {
+      "role": "agent",
+      "content": "**Cutover Executing...**\n\n---\n\n| Step | Action | Status | Duration |\n|------|--------|--------|----------|\n| 1 | Final delta sync from SF | 1,247 records | 3 min |\n| 2 | Validate delta records | PASSED | 1 min |\n| 3 | Activate D365 as primary | COMPLETE | instant |\n| 4 | Redirect SF URLs to D365 | COMPLETE | 1 min |\n| 5 | Enable AI adoption agents | 12 agents LIVE | instant |\n| 6 | Send go-live notifications | 44,847 users notified | 2 min |\n| 7 | Activate monitoring | LIVE | instant |\n| 8 | Start hypercare mode | ACTIVE | 5 min |\n\n**Cutover Duration: 12 minutes**\n\n---\n\n**System Status:**\n- **Salesforce:** READ-ONLY (historical reference)\n- **Dynamics 365:** PRIMARY SYSTEM - LIVE\n\n---\n\n**Hypercare Activated:**\n- Tier 1: AI Adoption Agents (24/7, handles 90% of questions)\n- Tier 2: Technical Support (business hours)\n- Tier 3: Migration Engineering (on-call)\n\n---\n\n**Rollback Ready:**\n- Can rollback in < 15 minutes if needed\n- All D365 data archived, SF unchanged\n\n---\n\n## Migration Complete\n\n| Metric | Value |\n|--------|-------|\n| Total Time | 3h 47m (migration) + 12m (cutover) |\n| Records | 7,234,891 |\n| Users | 44,847 |\n| Automations | 489 live (85 in review) |\n| AI Agents | 12 active |\n\n---\n\n**45,000 users migrated from Salesforce to Dynamics 365 in UNDER 4 HOURS.**\n\nThey said 18-24 months. We did it in an afternoon.\n\nThat's what happens when agents do the work."
+    }
+  ]
+}

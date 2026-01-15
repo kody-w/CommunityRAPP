@@ -1,0 +1,67 @@
+{
+  "agent": {
+    "id": "scripted_demo_agent",
+    "name": "Scripted Demo",
+    "version": "1.0.0",
+    "category": "operations",
+    "icon": "fa-play-circle",
+    "description": "Provides interactive demos and walkthroughs of agent capabilities for training and onboarding.",
+    "tokens": 350,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "ScriptedDemo",
+    "description": "Interactive demos and walkthroughs.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["start_demo", "next_step"],
+          "description": "The demo action"
+        },
+        "demo_id": { "type": "string" },
+        "step_number": { "type": "integer" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "start_demo",
+      "description": "Start an interactive demo",
+      "parameters": ["demo_id"],
+      "example": {
+        "input": { "action": "start_demo", "demo_id": "sales_pipeline" },
+        "output": "Demo started: Sales Pipeline Review. Steps: 5. Duration: ~5 mins. Say 'next' to continue or ask questions anytime."
+      }
+    },
+    {
+      "name": "next_step",
+      "description": "Advance to next demo step",
+      "parameters": ["demo_id", "step_number"],
+      "example": {
+        "input": { "action": "next_step", "demo_id": "sales_pipeline", "step_number": 2 },
+        "output": "Step 2: Pipeline Analysis. Let me show you how to identify stalled deals... [demo content follows]"
+      }
+    }
+  ],
+  "availableDemos": [
+    { "id": "sales_pipeline", "name": "Sales Pipeline Review", "duration": "5 min", "agents": ["Account Intelligence", "Customer 360"] },
+    { "id": "it_support", "name": "IT Support Ticket", "duration": "3 min", "agents": ["IT Ticket Management"] },
+    { "id": "financial_recon", "name": "Financial Reconciliation", "duration": "4 min", "agents": ["Trade Reconciliation", "Fraud Detection"] },
+    { "id": "full_tour", "name": "Full Platform Tour", "duration": "10 min", "agents": ["All agents"] }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Show me a demo of the agent capabilities."
+    },
+    {
+      "role": "agent",
+      "content": "**Welcome to Copilot Entra Agent Demo!**\n\n**Available Demo Scenarios:**\n\n1. **Sales Pipeline Review** (5 min)\n   Experience Account Intelligence & Customer 360\n\n2. **IT Support Ticket** (3 min)\n   See automated triage and resolution\n\n3. **Financial Reconciliation** (4 min)\n   Watch trade break detection in action\n\n4. **Full Platform Tour** (10 min)\n   Comprehensive walkthrough\n\nWhich demo would you like to try?"
+    }
+  ]
+}

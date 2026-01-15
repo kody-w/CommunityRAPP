@@ -1,0 +1,89 @@
+{
+  "agent": {
+    "id": "project_tracker_agent",
+    "name": "Project Tracker",
+    "version": "1.0.0",
+    "category": "operations",
+    "icon": "fa-tasks",
+    "description": "RAPP pipeline project management with milestone tracking, status reporting, and team coordination.",
+    "tokens": 580,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "ProjectTracker",
+    "description": "Project management and milestone tracking for RAPP pipeline projects.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["get_project_status", "update_milestone", "generate_report", "notify_stakeholders", "calculate_velocity"],
+          "description": "The project tracking action"
+        },
+        "project_id": { "type": "string" },
+        "milestone_id": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "get_project_status",
+      "description": "Get comprehensive project status",
+      "parameters": ["project_id"],
+      "example": {
+        "input": { "action": "get_project_status", "project_id": "PROJ-001" },
+        "output": "Project: CRM Integration. Status: On Track (78%). Sprint 4/6. Due: March 15. Blockers: None. Velocity: 42 pts/sprint."
+      }
+    },
+    {
+      "name": "update_milestone",
+      "description": "Update milestone status",
+      "parameters": ["milestone_id", "status"],
+      "example": {
+        "input": { "action": "update_milestone", "milestone_id": "MS-003", "status": "completed" },
+        "output": "Milestone 'Data Migration' marked complete. Next: Testing phase. Stakeholders notified."
+      }
+    },
+    {
+      "name": "generate_report",
+      "description": "Generate project status report",
+      "parameters": ["project_id"],
+      "example": {
+        "input": { "action": "generate_report", "project_id": "PROJ-001" },
+        "output": "Report generated: Executive summary, timeline, risks, budget status. Format: PDF. Sent to 5 stakeholders."
+      }
+    },
+    {
+      "name": "notify_stakeholders",
+      "description": "Send notifications to stakeholders",
+      "parameters": ["project_id"],
+      "example": {
+        "input": { "action": "notify_stakeholders", "project_id": "PROJ-001" },
+        "output": "Notifications sent: 3 stakeholders (email), 2 stakeholders (Teams). Content: Weekly status update."
+      }
+    },
+    {
+      "name": "calculate_velocity",
+      "description": "Calculate team velocity metrics",
+      "parameters": ["project_id"],
+      "example": {
+        "input": { "action": "calculate_velocity", "project_id": "PROJ-001" },
+        "output": "Velocity: 42 pts/sprint (target: 40). Trend: +5% over 4 sprints. Burndown: On track for deadline."
+      }
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Give me status on the CRM Integration project."
+    },
+    {
+      "role": "agent",
+      "content": "**Project: CRM Integration**\n\n**Status:** On Track (78% complete)\n**Sprint:** 4 of 6\n**Due:** March 15, 2025\n\n**Milestones:**\n- [x] Discovery & Planning\n- [x] API Development\n- [x] Data Migration\n- [ ] Testing (In Progress - 60%)\n- [ ] UAT\n- [ ] Go-Live\n\n**Blockers:** None\n**Team Velocity:** 42 pts/sprint (target: 40)"
+    }
+  ]
+}

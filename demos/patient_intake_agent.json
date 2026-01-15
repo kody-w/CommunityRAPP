@@ -1,0 +1,117 @@
+{
+  "agent": {
+    "id": "patient_intake_agent",
+    "name": "Patient Intake",
+    "version": "1.0.0",
+    "category": "healthcare",
+    "icon": "fa-hospital-user",
+    "description": "Automates patient intake workflows including insurance verification, medical history capture, and appointment scheduling.",
+    "tokens": 720,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "PatientIntake",
+    "description": "Healthcare patient intake automation with insurance verification.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["initiate_intake", "verify_insurance", "capture_history", "schedule_appointment", "send_reminders", "check_in_patient", "get_pre_visit_summary"],
+          "description": "The patient intake action to perform"
+        },
+        "patient_id": { "type": "string" },
+        "patient_name": { "type": "string" },
+        "dob": { "type": "string" },
+        "insurance_id": { "type": "string" },
+        "appointment_type": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "initiate_intake",
+      "description": "Start new patient intake process",
+      "parameters": ["patient_name", "dob"],
+      "example": {
+        "input": { "action": "initiate_intake", "patient_name": "Maria Garcia", "dob": "1985-03-15" },
+        "output": "Intake initiated for Maria Garcia. Forms sent via SMS. Insurance verification pending. Estimated completion: 15 mins."
+      }
+    },
+    {
+      "name": "verify_insurance",
+      "description": "Verify patient insurance coverage",
+      "parameters": ["patient_id", "insurance_id"],
+      "example": {
+        "input": { "action": "verify_insurance", "patient_id": "PAT-001", "insurance_id": "BCBS-12345" },
+        "output": "Insurance Verified: BCBS Active. Copay: $25. Deductible: $1,500 ($890 remaining). Pre-auth: Not required for this visit."
+      }
+    },
+    {
+      "name": "capture_history",
+      "description": "Capture and process medical history",
+      "parameters": ["patient_id"],
+      "example": {
+        "input": { "action": "capture_history", "patient_id": "PAT-001" },
+        "output": "History captured: Allergies: Penicillin. Conditions: Hypertension (managed). Medications: Lisinopril 10mg. Last visit: 6 months ago."
+      }
+    },
+    {
+      "name": "schedule_appointment",
+      "description": "Schedule patient appointment",
+      "parameters": ["patient_id", "appointment_type"],
+      "example": {
+        "input": { "action": "schedule_appointment", "patient_id": "PAT-001", "appointment_type": "follow-up" },
+        "output": "Available slots: Mon 2pm (Dr. Smith), Tue 10am (Dr. Johnson), Wed 3pm (Dr. Smith). Duration: 30 mins."
+      }
+    },
+    {
+      "name": "send_reminders",
+      "description": "Send appointment reminders",
+      "parameters": ["patient_id"],
+      "example": {
+        "input": { "action": "send_reminders", "patient_id": "PAT-001" },
+        "output": "Reminders scheduled: SMS 48hrs before, SMS 2hrs before, Email with pre-visit instructions. Patient preference: SMS only."
+      }
+    },
+    {
+      "name": "check_in_patient",
+      "description": "Process patient check-in on arrival",
+      "parameters": ["patient_id"],
+      "example": {
+        "input": { "action": "check_in_patient", "patient_id": "PAT-001" },
+        "output": "Checked in: Maria Garcia. Wait time: ~10 mins. Room: Exam 3. Forms complete. Insurance verified. Vitals needed."
+      }
+    },
+    {
+      "name": "get_pre_visit_summary",
+      "description": "Generate pre-visit summary for provider",
+      "parameters": ["patient_id"],
+      "example": {
+        "input": { "action": "get_pre_visit_summary", "patient_id": "PAT-001" },
+        "output": "Summary: Maria Garcia, 39F. Visit: Follow-up hypertension. Last BP: 138/88. Current meds: Lisinopril. Chief complaint: Headaches."
+      }
+    }
+  ],
+  "useCases": [
+    "New patient registration",
+    "Insurance verification",
+    "Medical history capture",
+    "Appointment scheduling",
+    "Automated reminders",
+    "Pre-visit preparation"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Start intake for new patient Maria Garcia, DOB 03/15/1985."
+    },
+    {
+      "role": "agent",
+      "content": "**New Patient Intake: Maria Garcia**\n\n**Insurance Verification:**\n- Provider: Blue Cross Blue Shield\n- Policy: Active (verified)\n- Copay: $25\n- Deductible: $1,500 ($890 remaining)\n\n**Next Steps:**\n1. Medical history form sent via SMS\n2. Photo ID upload requested\n3. Available slots: Mon 2pm, Tue 10am, Wed 3pm\n\nShall I schedule an appointment?"
+    }
+  ]
+}

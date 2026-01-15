@@ -1,0 +1,135 @@
+{
+  "agent": {
+    "id": "account_intelligence_agent",
+    "name": "Account Intelligence",
+    "version": "1.0.0",
+    "category": "sales",
+    "icon": "fa-building",
+    "description": "Pipeline analytics, stalled deal detection, competitive intelligence, and organizational chart mapping for B2B sales.",
+    "tokens": 780,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "AccountIntelligence",
+    "description": "B2B sales intelligence with pipeline analytics and competitive insights.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["analyze_pipeline", "identify_stalled_deals", "get_account_health", "get_competitive_intel", "recommend_actions", "quantify_risk", "get_org_chart", "forecast_revenue"],
+          "description": "The sales intelligence action to perform"
+        },
+        "account_id": { "type": "string" },
+        "deal_id": { "type": "string" },
+        "threshold_days": { "type": "integer" },
+        "min_value": { "type": "number" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "analyze_pipeline",
+      "description": "Analyze sales pipeline with velocity and conversion metrics",
+      "parameters": [],
+      "example": {
+        "input": { "action": "analyze_pipeline" },
+        "output": "Pipeline: $2.4M total, 47 deals. Velocity: 32 days avg. Conversion: 28%. Stage bottleneck: Negotiation (18 deals stuck)."
+      }
+    },
+    {
+      "name": "identify_stalled_deals",
+      "description": "Find deals with no activity beyond threshold",
+      "parameters": ["threshold_days", "min_value"],
+      "example": {
+        "input": { "action": "identify_stalled_deals", "threshold_days": 14, "min_value": 50000 },
+        "output": "3 stalled deals >$50K: TechStart ($85K, 18 days), GlobalRetail ($62K, 21 days), MedHealth ($54K, 16 days)."
+      }
+    },
+    {
+      "name": "get_account_health",
+      "description": "Get comprehensive account health assessment",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "get_account_health", "account_id": "ACC-001" },
+        "output": "Account Health: 72/100. Engagement: Medium. Last touch: 8 days. Risk: Champion leaving. Opportunity: Budget cycle Q1."
+      }
+    },
+    {
+      "name": "get_competitive_intel",
+      "description": "Get competitive intelligence for an account",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "get_competitive_intel", "account_id": "ACC-001" },
+        "output": "Competitors: Vendor X (incumbent, contract ends Q2), Vendor Y (in evaluation). Our strengths: Integration, price. Weakness: Brand recognition."
+      }
+    },
+    {
+      "name": "recommend_actions",
+      "description": "Get AI-recommended next best actions",
+      "parameters": ["deal_id"],
+      "example": {
+        "input": { "action": "recommend_actions", "deal_id": "DEAL-001" },
+        "output": "Recommendations: 1) Schedule executive sponsor call 2) Send ROI calculator 3) Offer pilot program. Win probability boost: +15%."
+      }
+    },
+    {
+      "name": "quantify_risk",
+      "description": "Quantify pipeline risk by category",
+      "parameters": [],
+      "example": {
+        "input": { "action": "quantify_risk" },
+        "output": "At-Risk Pipeline: $890K (37%). Categories: Stalled deals $420K, Competitor threat $280K, Budget uncertainty $190K."
+      }
+    },
+    {
+      "name": "get_org_chart",
+      "description": "Map organizational structure and influence",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "get_org_chart", "account_id": "ACC-001" },
+        "output": "Org Chart: CEO (neutral), CFO (blocker - cost concerns), VP Ops (champion), IT Director (technical buyer, supportive)."
+      }
+    },
+    {
+      "name": "forecast_revenue",
+      "description": "Generate revenue forecast with confidence levels",
+      "parameters": [],
+      "example": {
+        "input": { "action": "forecast_revenue" },
+        "output": "Q1 Forecast: Best $1.8M, Likely $1.4M, Worst $980K. Commit deals: 12 ($1.1M). Upside: 8 ($700K)."
+      }
+    }
+  ],
+  "useCases": [
+    "Pipeline health analysis",
+    "Stalled deal identification",
+    "Competitive intelligence gathering",
+    "Org chart mapping",
+    "Risk quantification",
+    "Revenue forecasting"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Show me stalled deals in my pipeline over $50K."
+    },
+    {
+      "role": "agent",
+      "content": "**3 Stalled Deals Detected (>14 days no activity):**\n\n1. **TechStart Inc** - $85K - Stage: Negotiation\n   Last contact: 18 days ago. Blocker: Legal review pending.\n\n2. **GlobalRetail** - $62K - Stage: Demo\n   Last contact: 21 days ago. Blocker: Budget approval.\n\n3. **MedHealth** - $54K - Stage: Proposal\n   Last contact: 16 days ago. Blocker: Competitor evaluation.\n\n**Recommended Actions:** I can draft follow-up emails for each."
+    }
+  ],
+  "sampleScenarios": [
+    {
+      "name": "Weekly Pipeline Review",
+      "prompts": ["Analyze my current pipeline", "What deals are at risk?", "Show revenue forecast for Q1"]
+    },
+    {
+      "name": "Deal Strategy",
+      "prompts": ["What's the org chart for Acme Corp?", "Who are we competing against?", "What should my next action be?"]
+    }
+  ]
+}
