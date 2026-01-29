@@ -1,27 +1,63 @@
 # Quick Start Guide - Local Development
 
+## Prerequisites
+
+**Private Beta Access Required:** CommunityRAPP is currently in private beta. You must be invited to access the main repository. To request access, visit the public installer repo and follow the instructions.
+
 ## TL;DR - Start Developing Now
 
-```bash
-# 1. Clone the repo
-git clone https://github.com/kody-w/EntraCopilotAgent365.git
-cd EntraCopilotAgent365
+### Step 1: Use the Public Installer
 
-# 2. Install dependencies
+```bash
+# Clone the public installer repo
+git clone https://github.com/kody-w/rapp-installer.git
+cd rapp-installer
+
+# Run the installer (guides you through setup)
+./install.sh  # Mac/Linux
+# or
+.\install.ps1  # Windows
+```
+
+The installer will:
+- Check if you have access to the private CommunityRAPP repo
+- Guide you through requesting access if needed
+- Set up your development environment
+- Configure dependencies automatically
+
+### Step 2: Once You Have Access
+
+After being invited to the private beta:
+
+```bash
+# Clone the private CommunityRAPP repo
+git clone https://github.com/kody-w/CommunityRAPP.git
+cd CommunityRAPP
+
+# Install dependencies
 pip install -r requirements.txt
 
-# 3. Run it
+# Run it
 ./run.sh  # Mac/Linux
 # or
 .\run.ps1  # Windows
 
-# 4. Test it
+# Test it
 curl -X POST http://localhost:7071/api/businessinsightbot_function \
   -H "Content-Type: application/json" \
   -d '{"user_input": "Hello", "conversation_history": []}'
 ```
 
 **That's it!** No Azure credentials needed. Storage automatically uses `.local_storage/` directory.
+
+---
+
+## Repository Structure
+
+| Repository | Access | Purpose |
+|------------|--------|---------|
+| [rapp-installer](https://github.com/kody-w/rapp-installer) | Public | Installer, setup scripts, access request |
+| CommunityRAPP | Private Beta | Core RAPP platform and agents |
 
 ---
 
@@ -148,7 +184,7 @@ If you want to test Azure File Storage integration locally:
 
 ```bash
 # Make sure you're in the project directory
-cd /path/to/EntraCopilotAgent365
+cd /path/to/CommunityRAPP
 
 # Activate virtual environment if you have one
 source .venv/bin/activate  # Mac/Linux
@@ -325,6 +361,12 @@ rm -rf .local_storage/
 
 ## Getting Help
 
+### Need Access or Support?
+
+- **Access issues:** Visit [rapp-installer](https://github.com/kody-w/rapp-installer) to request private beta access
+- **Bug reports:** Open an issue in the installer repo (for public issues) or CommunityRAPP (for beta members)
+- **Feature requests:** Submit via GitHub issues
+
 ### Run the Test Suite
 
 ```bash
@@ -390,4 +432,22 @@ A: No, it's for development only. Azure deployments automatically use Azure File
 
 ---
 
-**Ready to build AI agents? Start coding! 🚀**
+## Requesting Private Beta Access
+
+CommunityRAPP is in private beta. To request access:
+
+1. **Visit the public installer repo:** [github.com/kody-w/rapp-installer](https://github.com/kody-w/rapp-installer)
+2. **Run the installer** - it will check your access and provide instructions
+3. **Submit an access request** via the installer or GitHub issue
+4. **Wait for invitation** - you'll receive a GitHub invitation once approved
+
+**What's included in the private beta:**
+- Full RAPP (Rapid AI Agent Production Pipeline) platform
+- 14-step agent building methodology
+- Transcript-to-agent automation
+- Quality gates and deployment tools
+- Microsoft 365 and Power Platform integration
+
+---
+
+**Ready to build AI agents? Start with the [installer](https://github.com/kody-w/rapp-installer)!**
