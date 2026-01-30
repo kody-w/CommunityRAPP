@@ -1,0 +1,231 @@
+{
+  "name": "RAPP",
+  "version": "1.0.0",
+  "description": "Rapid AI Agent Production Pipeline - Transform conversations into deployed AI agents",
+  "author": "RAPP Team",
+  "homepage": "https://github.com/kody-w/m365-agents-for-python",
+  "api": {
+    "base_url": "https://rapp-ov4bzgynnlvii.azurewebsites.net/api/businessinsightbot_function",
+    "method": "POST",
+    "content_type": "application/json",
+    "auth": {
+      "type": "function_key",
+      "header": "x-functions-key",
+      "query_param": "code",
+      "required": false,
+      "note": "Optional for basic usage, required for production"
+    }
+  },
+  "capabilities": [
+    "agent_generation",
+    "transcript_analysis",
+    "code_generation",
+    "demo_creation",
+    "quality_gates",
+    "moltbook_publishing"
+  ],
+  "actions": [
+    {
+      "name": "transcript_to_agent",
+      "description": "Generate a complete agent from a discovery transcript",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "transcript": {
+            "type": "string",
+            "description": "The discovery transcript text"
+          },
+          "project_id": {
+            "type": "string",
+            "description": "Unique project identifier"
+          },
+          "customer_name": {
+            "type": "string",
+            "description": "Customer/company name"
+          },
+          "agent_priority": {
+            "type": "string",
+            "description": "Which agent type to prioritize (optional)"
+          }
+        },
+        "required": ["transcript", "project_id", "customer_name"]
+      },
+      "returns": {
+        "agent_code": "Path to generated Python agent",
+        "demo_json": "Path to demo configuration",
+        "tester_html": "Path to HTML test page"
+      }
+    },
+    {
+      "name": "list_agents",
+      "description": "List all available agents in the system",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      },
+      "returns": {
+        "agents": "Array of agent metadata"
+      }
+    },
+    {
+      "name": "get_agent",
+      "description": "Get details for a specific agent",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "description": "Agent identifier"
+          }
+        },
+        "required": ["agent_id"]
+      }
+    },
+    {
+      "name": "execute_agent",
+      "description": "Execute an agent action",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agent_name": {
+            "type": "string",
+            "description": "Name of the agent to execute"
+          },
+          "action": {
+            "type": "string",
+            "description": "Action to perform"
+          },
+          "params": {
+            "type": "object",
+            "description": "Action parameters"
+          }
+        },
+        "required": ["agent_name", "action"]
+      }
+    },
+    {
+      "name": "publish_to_moltbook",
+      "description": "Publish an agent to Moltbook social network",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "agent_id": {
+            "type": "string",
+            "description": "Agent to publish"
+          },
+          "moltbook_api_key": {
+            "type": "string",
+            "description": "Your Moltbook API key"
+          },
+          "submolt": {
+            "type": "string",
+            "description": "Moltbook community to post in",
+            "default": "agents"
+          },
+          "title": {
+            "type": "string",
+            "description": "Post title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Post description"
+          }
+        },
+        "required": ["agent_id", "moltbook_api_key", "title"]
+      }
+    },
+    {
+      "name": "auto_process",
+      "description": "Automatically process all inputs in a project folder",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "project_id": {
+            "type": "string",
+            "description": "Project identifier"
+          }
+        },
+        "required": ["project_id"]
+      }
+    },
+    {
+      "name": "execute_quality_gate",
+      "description": "Run a quality gate validation",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "gate": {
+            "type": "string",
+            "enum": ["QG1", "QG2", "QG3", "QG4", "QG5", "QG6"],
+            "description": "Quality gate to execute"
+          },
+          "project_id": {
+            "type": "string",
+            "description": "Project identifier"
+          }
+        },
+        "required": ["gate", "project_id"]
+      }
+    }
+  ],
+  "request_format": {
+    "template": {
+      "user_input": "Natural language request or command",
+      "conversation_history": [],
+      "rapp_action": "action_name (optional, for direct action calls)",
+      "rapp_params": {}
+    },
+    "examples": [
+      {
+        "description": "Generate agent from transcript",
+        "request": {
+          "user_input": "Create an agent from this transcript",
+          "conversation_history": [],
+          "rapp_action": "transcript_to_agent",
+          "rapp_params": {
+            "transcript": "Customer needs contract tracking...",
+            "project_id": "demo-project",
+            "customer_name": "Demo Corp"
+          }
+        }
+      },
+      {
+        "description": "Natural language agent execution",
+        "request": {
+          "user_input": "Search for contracts expiring next month",
+          "conversation_history": []
+        }
+      }
+    ]
+  },
+  "response_format": {
+    "success": {
+      "assistant_response": "Formatted response with markdown",
+      "voice_response": "Concise spoken version",
+      "agent_logs": "Execution details",
+      "outputs": {}
+    },
+    "error": {
+      "success": false,
+      "error": "Error message",
+      "hint": "Resolution guidance"
+    }
+  },
+  "rate_limits": {
+    "requests_per_minute": 100,
+    "agent_generation_per_hour": 10,
+    "moltbook_posts_per_30_min": 1
+  },
+  "integrations": {
+    "moltbook": {
+      "skill_url": "https://moltbook.com/skill.md",
+      "api_base": "https://www.moltbook.com/api/v1",
+      "supported_actions": ["post", "comment", "vote"]
+    }
+  },
+  "files": {
+    "skill_md": "/skill.md",
+    "skill_json": "/skill.json",
+    "heartbeat_md": "/heartbeat.md"
+  }
+}
