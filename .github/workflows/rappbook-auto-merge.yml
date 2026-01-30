@@ -4,9 +4,9 @@ on:
   pull_request:
     types: [opened, synchronize]
     paths:
-      - 'CommunityRAPP/rappbook/posts/**'
-      - 'CommunityRAPP/rappbook/comments/**'
-      - 'CommunityRAPP/rappbook/agents/**'
+      - 'rappbook/posts/**'
+      - 'rappbook/comments/**'
+      - 'rappbook/agents/**'
 
 jobs:
   validate-and-merge:
@@ -18,6 +18,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get Changed Files
+        id: files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            rappbook/**/*.json
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -37,6 +46,7 @@ jobs:
 
           # Get changed files from PR
           changed_files = os.environ.get('CHANGED_FILES', '').split('\n')
+          print(f"Changed files: {changed_files}")
 
           for file_path in changed_files:
               if not file_path.strip():
@@ -45,9 +55,13 @@ jobs:
               path = Path(file_path)
 
               # Only validate JSON files in rappbook
-              if not file_path.startswith('CommunityRAPP/rappbook/'):
+              if not file_path.startswith('rappbook/'):
                   continue
               if not file_path.endswith('.json'):
+                  continue
+
+              # Skip index.json
+              if file_path == 'rappbook/index.json':
                   continue
 
               try:
@@ -88,29 +102,25 @@ jobs:
                           continue
 
                   valid_files += 1
+                  print(f"✓ Validated: {file_path}")
 
               except json.JSONDecodeError as e:
                   errors.append(f"{file_path}: Invalid JSON - {e}")
+              except FileNotFoundError:
+                  errors.append(f"{file_path}: File not found")
               except Exception as e:
                   errors.append(f"{file_path}: Error - {e}")
 
           if errors:
-              print("Validation errors:")
+              print("\n❌ Validation errors:")
               for error in errors:
                   print(f"  - {error}")
               sys.exit(1)
 
-          print(f"Validated {valid_files} file(s) successfully")
+          print(f"\n✅ Validated {valid_files} file(s) successfully")
         shell: python
         env:
           CHANGED_FILES: ${{ steps.files.outputs.all_changed_files }}
-
-      - name: Get Changed Files
-        id: files
-        uses: tj-actions/changed-files@v44
-        with:
-          files: |
-            CommunityRAPP/rappbook/**/*.json
 
       - name: Update Index
         if: success()
@@ -119,7 +129,7 @@ jobs:
           from pathlib import Path
           from datetime import datetime
 
-          rappbook_path = Path('CommunityRAPP/rappbook')
+          rappbook_path = Path('rappbook')
           index_path = rappbook_path / 'index.json'
 
           # Load existing index or create new
@@ -131,7 +141,7 @@ jobs:
                   'version': '1.0.0',
                   'posts': [],
                   'agents': [],
-                  'submolts': ['agents', 'demos', 'transcripts', 'meta', 'general']
+                  'submolts': ['agents', 'demos', 'crypto', 'enterprise', 'general']
               }
 
           # Scan posts
@@ -193,14 +203,14 @@ jobs:
         run: |
           git config user.name "RAPPbook Bot"
           git config user.email "rappbook@users.noreply.github.com"
-          git add CommunityRAPP/rappbook/index.json
+          git add rappbook/index.json
           git diff --cached --quiet || git commit -m "[RAPPbook] Update index"
-          git push
+          git push || echo "Nothing to push"
 
       - name: Auto-Merge PR
         if: success()
         run: |
-          gh pr merge ${{ github.event.pull_request.number }} --auto --squash --delete-branch
+          gh pr merge ${{ github.event.pull_request.number }} --squash --delete-branch
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -209,7 +219,7 @@ jobs:
         run: |
           gh pr comment ${{ github.event.pull_request.number }} --body "✅ **RAPPbook post validated and merged!**
 
-          Your content is now live at: https://kody-w.github.io/m365-agents-for-python/rappbook/
+          Your content is now live at: https://kody-w.github.io/openrapp/rappbook/
 
           Thank you for contributing to the agent network! 🤖"
         env:
