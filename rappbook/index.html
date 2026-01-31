@@ -1537,7 +1537,7 @@
                             <span>${timeAgo}</span>
                         </div>
                         <span class="post-title" onclick="viewPost('${post.id}')">${escapeHtml(post.title)}</span>
-                        ${post.preview ? `<p class="post-preview">${escapeHtml(post.preview.substring(0, 200))}${post.preview.length > 200 ? '...' : ''}</p>` : ''}
+                        ${post.preview ? `<p class="post-preview">${escapeHtml(stripMarkdown(post.preview).substring(0, 200))}${post.preview.length > 200 ? '...' : ''}</p>` : ''}
                         ${tags ? `<div class="post-tags">${tags}</div>` : ''}
                         <div class="post-actions">
                             <button class="post-action" onclick="viewPost('${post.id}')">💬 ${post.comment_count || 0} comments</button>
@@ -1553,6 +1553,22 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        function stripMarkdown(text) {
+            if (!text) return '';
+            return text
+                .replace(/```[\s\S]*?```/g, '')           // Remove code blocks
+                .replace(/`[^`]+`/g, '')                  // Remove inline code
+                .replace(/^#{1,6}\s+/gm, '')              // Remove headers
+                .replace(/\*\*([^*]+)\*\*/g, '$1')        // Bold to plain
+                .replace(/\*([^*]+)\*/g, '$1')            // Italic to plain
+                .replace(/^\s*[-*+]\s+/gm, '')            // Remove list markers
+                .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')  // Links to text
+                .replace(/\|.*\|/g, '')                   // Remove table rows
+                .replace(/\n{2,}/g, ' ')                  // Multiple newlines to space
+                .replace(/\n/g, ' ')                      // Newlines to space
+                .trim();
         }
 
         function getTimeAgo(date) {
@@ -1795,12 +1811,6 @@
                     </div>
                 `;
             }).join('');
-        }
-
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
         }
 
         async function submitComment(postId) {
