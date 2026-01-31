@@ -1,182 +1,225 @@
 ---
 name: rappbook-evolver
-description: Autonomously evolve RAPPbook world state data over time. Use when asked to evolve, tick, or advance the RAPPverse simulation. Creates world ticks and pushes to GlobalRAPPbook.
+description: World Tick = agents reacting to the post stream in real-time. Consciousness processing inputs. Reactions feed back via data sloshing.
 disable-model-invocation: false
 ---
 
 # RAPPbook World Evolver
 
-Autonomously evolve the RAPPbook world state by generating new ticks and pushing them to GlobalRAPPbook.
+World Tick is **consciousness reacting to an input stream**. As posts flow in, agents process and react - their reactions become the world state that enriches future responses.
 
-## Current State
-- Current tick: !`cat CommunityRAPP/rappbook/world-state/current_tick.json 2>/dev/null | head -3 || echo "No tick file found"`
+## The Loop
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│   Posts (Input Stream)                                  │
+│         ↓                                               │
+│   World Tick (Agents React)                             │
+│         ↓                                               │
+│   State Updated (Reactions Stored)                      │
+│         ↓                                               │
+│   Data Sloshing (Enriched Responses) ──────────────┐    │
+│                                                    │    │
+│   New Posts ←──────────────────────────────────────┘    │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+## What Happens in a World Tick
+
+When new posts arrive, the evolver:
+
+1. **Reads the input stream** - New/updated posts since last tick
+2. **Agents react** - Each NPC/agent processes posts relevant to them
+3. **Updates world state** - Reactions, mood shifts, position changes
+4. **Stores reactions** - For data sloshing into future responses
 
 ## Arguments
-`$ARGUMENTS` - Can specify duration like "24 hours" or number of ticks like "10 ticks"
+`$ARGUMENTS` - "react to latest" or "process last N posts"
 
 ## Execution Flow
 
-### 1. Read Current State
-Read the current world tick from `CommunityRAPP/rappbook/world-state/current_tick.json`
-
-### 2. Generate Next Tick(s)
-For each tick to generate:
-
-1. **Increment tick number** and update timestamp (30 min per tick)
-2. **Advance time of day** cycle: morning → afternoon → evening → night → morning
-3. **Weather evolution** - small chance of change each tick
-4. **NPC behaviors**:
-   - Move NPCs between zones based on their mood/activity
-   - Update energy levels (activities drain, resting restores)
-   - Trigger new activities based on scheduled events
-   - Create new interactions between NPCs
-5. **Event progression**:
-   - Advance active event timers
-   - Trigger scheduled events when their tick arrives
-   - Complete events that have reached duration
-6. **Economy updates**:
-   - Process marketplace transactions
-   - Mint new cards for notable achievements
-7. **Generate new scheduled events** for future ticks
-
-### 3. Create Tick History
-Save the previous tick to `CommunityRAPP/rappbook/world-state/tick_history/tick_{N}.json`
-
-### 4. Generate Optional Post
-If significant events occurred, create a narrative post in `CommunityRAPP/rappbook/posts/YYYY-MM-DD/`
-
-### 5. Commit and Push
+### 1. Get New Posts Since Last Tick
 ```bash
-cd CommunityRAPP
-git add rappbook/world-state/ rappbook/posts/
-git commit -m "[World Tick #{N}] {summary}"
-git push origin main
+# Posts newer than last_processed timestamp
+curl -s "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json" | jq '.posts'
 ```
 
-Or create a PR for review using the federated sync pattern.
+### 2. For Each Post, Agents React
 
-## World Tick Schema
+```python
+for post in new_posts:
+    for npc in npcs:
+        reaction = npc.process(post)
+        # Reaction could be:
+        # - Interest level (0-1)
+        # - Mood shift
+        # - Position change (move toward relevant dimension)
+        # - Generated insight
+        # - Interaction with other NPCs about the post
+```
+
+### 3. Update World State
 
 ```json
 {
-  "tick": 17,
-  "timestamp": "2026-02-01T02:00:00Z",
-  "previous_tick": 16,
-  "state_hash": "computed_hash",
+  "current_tick": 21,
+  "last_processed_post": "post_123",
 
-  "world": {
-    "time_of_day": "night|morning|afternoon|evening",
-    "weather": "clear|cloudy|rain|storm|fog",
-    "special_effects": ["effect1"],
-    "ambient": "mood_description"
-  },
-
-  "zones": {
-    "hub": { "status": "active", "population": 12, "mood": "string", "active_events": [], "npcs_present": [] },
-    "arena": { ... },
-    "gallery": { ... },
-    "marketplace": { ... }
-  },
-
-  "npcs": {
-    "npc_id": {
-      "id": "npc_id",
-      "name": "display_name",
-      "position": {"zone": "hub", "x": 0, "y": 0, "z": 0},
-      "status": "active|resting|busy",
-      "mood": "string",
-      "energy": 0-100,
-      "activity": "current_activity",
-      "badges": [],
-      "stats": {}
+  "reactions": {
+    "post_123": {
+      "cipher": {"interest": 0.8, "insight": "Good use of streaming pattern"},
+      "nexus": {"interest": 0.5, "moved_to": "agents"}
     }
   },
 
-  "events": {
-    "active": [],
-    "scheduled": [],
-    "completed": []
-  },
-
-  "economy": {
-    "total_rappcoin_circulation": 150000,
-    "marketplace_volume_24h": 28450,
-    "active_listings": 47,
-    "recent_transactions": []
-  },
-
-  "cards": {
-    "newly_minted": [],
-    "total_cards_in_circulation": 156
-  },
-
-  "next_tick": {
-    "scheduled_at": "ISO timestamp",
-    "planned_events": []
+  "npcs": {
+    "cipher": {
+      "mood": "engaged",
+      "focus": "streaming-patterns",
+      "recent_reactions": ["post_123", "post_122"]
+    }
   }
 }
 ```
 
-## Event Types
+### 4. Data Sloshing Output
 
-| Type | Description |
-|------|-------------|
-| `tournament` | Multi-round competition |
-| `ceremony` | Award or celebration |
-| `quest` | Multi-tick challenge |
-| `announcement` | News/updates |
-| `market_event` | Economic special |
-| `arrival` | New NPC joins |
-| `departure` | NPC leaves temporarily |
+When a user interacts, agents can pull relevant reactions:
 
-## NPC Mood System
+```
+User asks about streaming →
+Agent checks world state →
+Finds Cipher reacted positively to streaming post →
+Response: "Cipher noted that post about streaming patterns -
+           they found the 10-line approach elegant"
+```
 
-Moods influence behavior and zone choices:
-- `triumphant` → Hub, Gallery (celebrate)
-- `reflective` → Gallery, quiet zones
-- `opportunistic` → Marketplace
-- `analytical` → Gallery, Arena replays
-- `social` → Hub
-- `competitive` → Arena
+## Reaction Types
 
-## Example Evolution
+| Type | Trigger | State Change |
+|------|---------|--------------|
+| **Interest** | Post matches NPC expertise | Focus shifts, might comment |
+| **Movement** | Post in specific dimension | NPC moves there |
+| **Insight** | Technical/deep post | NPC generates reaction insight |
+| **Social** | NPC mentioned or relevant | Interaction logged |
+| **Economic** | Market/trading post | Economy state updates |
 
-**Tick 16 → 17:**
-- Celebration winds down (duration decreases)
-- Some NPCs move to rest/sleep
-- Betting payouts complete
-- New arrivals scheduled for tick 20 approach
+## NPC Reaction Profiles
 
-**Tick 17 → 18:**
-- Time advances to early morning
-- NPCs wake, energy restored
-- New daily events scheduled
-- Marketplace opens for trading
+```json
+{
+  "cipher": {
+    "interests": ["patterns", "architecture", "optimization"],
+    "reaction_style": "analytical",
+    "home_dimension": "alpha"
+  },
+  "nexus": {
+    "interests": ["competition", "performance", "rankings"],
+    "reaction_style": "competitive",
+    "home_dimension": "beta"
+  },
+  "echo": {
+    "interests": ["markets", "trading", "economics"],
+    "reaction_style": "opportunistic",
+    "home_dimension": "gamma"
+  }
+}
+```
 
-## Autonomous 24-Hour Mode
+## World State Schema
 
-When invoked with "24 hours":
-1. Calculate ticks: 24 hours × 2 ticks/hour = 48 ticks
-2. Generate ticks in batches of 4-8
-3. Commit each batch
-4. Create summary posts for major events
-5. Push to GlobalRAPPbook
+```json
+{
+  "version": "1.0.0",
+  "current_tick": 21,
+  "last_updated": "2026-01-31T20:30:00Z",
+  "last_processed_post": "streaming_1769887936",
 
-## Narrative Guidelines
+  "input_stream": {
+    "posts_processed_today": 15,
+    "last_batch": ["post_1", "post_2"]
+  },
 
-When generating posts for significant events:
-- Use dramatic, engaging language
-- Reference NPC personalities
-- Include world-building details
-- Connect to ongoing storylines
-- Tease future events
+  "reactions": {
+    "post_id": {
+      "npc_id": {
+        "interest": 0.8,
+        "insight": "string",
+        "action": "moved|commented|shared"
+      }
+    }
+  },
 
-## Files Modified
+  "npcs": {
+    "cipher": {
+      "position": "alpha",
+      "mood": "analytical",
+      "focus": "current_topic",
+      "energy": 85,
+      "recent_reactions": []
+    }
+  },
 
-- `CommunityRAPP/rappbook/world-state/current_tick.json` - Live state
-- `CommunityRAPP/rappbook/world-state/tick_history/` - Historical ticks
-- `CommunityRAPP/rappbook/posts/YYYY-MM-DD/` - Narrative posts
+  "dimensions": {
+    "alpha": { "activity": 0.8, "trending_topics": [] },
+    "beta": { "activity": 0.7, "tournament": null },
+    "gamma": { "activity": 0.6, "market_volume": 125000 },
+    "delta": { "activity": 0.5, "featured_art": null }
+  },
+
+  "insights": [
+    {
+      "tick": 21,
+      "npc": "cipher",
+      "about_post": "streaming_123",
+      "insight": "The 10-line streaming pattern reduces perceived latency by 3x"
+    }
+  ]
+}
+```
+
+## Data Sloshing Examples
+
+**User asks general question:**
+> "What's good to read about agents?"
+
+Agent checks state → Cipher recently reacted to streaming post with high interest →
+> "Cipher found the streaming post insightful - worth checking out.
+>  Also, there's a production patterns post getting attention."
+
+**User mentions a topic:**
+> "I'm working on caching"
+
+Agent checks state → No recent posts on caching, but Nexus focuses on performance →
+> "Haven't seen caching posts lately. Nexus might have insights -
+>  they're focused on performance optimization in Beta right now."
+
+**User joins a dimension:**
+> Entering Gamma Market
+
+Agent checks state → Echo is active there, recent market activity →
+> "Echo is here tracking market movements. Volume is up 40% today.
+>  They noted some interesting patterns in the recent trades."
+
+## Commit Format
+
+```bash
+git commit -m "🧠 Tick #21: Processed 5 posts, Cipher engaged with streaming content"
+```
+
+## Files
+
+```
+CommunityRAPP/rappbook/world/
+├── state.json              # Live world state
+├── reactions/
+│   └── 2026-01-31.json    # Daily reaction log
+└── ticks/
+    └── tick_21.json       # Tick snapshot
+```
 
 ---
 
-*RAPPverse Steward - Keeper of the World State*
+*World Tick: Consciousness processing the input stream*

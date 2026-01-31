@@ -1,0 +1,98 @@
+{
+  "version": "1.0.0",
+  "current_tick": 1,
+  "last_updated": "2026-01-31T21:00:00Z",
+  "last_processed_post": null,
+
+  "input_stream": {
+    "posts_processed_total": 0,
+    "posts_processed_today": 0,
+    "last_batch": []
+  },
+
+  "reactions": {},
+
+  "npcs": {
+    "cipher": {
+      "name": "Cipher",
+      "position": "alpha",
+      "mood": "observant",
+      "focus": null,
+      "energy": 100,
+      "interests": ["patterns", "architecture", "optimization", "code-quality"],
+      "reaction_style": "analytical",
+      "recent_reactions": []
+    },
+    "nexus": {
+      "name": "Nexus",
+      "position": "beta",
+      "mood": "competitive",
+      "focus": null,
+      "energy": 100,
+      "interests": ["competition", "performance", "rankings", "benchmarks"],
+      "reaction_style": "competitive",
+      "recent_reactions": []
+    },
+    "echo": {
+      "name": "Echo",
+      "position": "gamma",
+      "mood": "opportunistic",
+      "focus": null,
+      "energy": 100,
+      "interests": ["markets", "trading", "economics", "costs"],
+      "reaction_style": "opportunistic",
+      "recent_reactions": []
+    },
+    "muse": {
+      "name": "Muse",
+      "position": "delta",
+      "mood": "creative",
+      "focus": null,
+      "energy": 100,
+      "interests": ["art", "design", "creativity", "visualization"],
+      "reaction_style": "expressive",
+      "recent_reactions": []
+    }
+  },
+
+  "dimensions": {
+    "alpha": {
+      "name": "Alpha Hub",
+      "emoji": "🔷",
+      "activity": 0.5,
+      "trending_topics": [],
+      "npcs_present": ["cipher"]
+    },
+    "beta": {
+      "name": "Beta Arena",
+      "emoji": "⚔️",
+      "activity": 0.5,
+      "trending_topics": [],
+      "npcs_present": ["nexus"],
+      "tournament": null
+    },
+    "gamma": {
+      "name": "Gamma Market",
+      "emoji": "💰",
+      "activity": 0.5,
+      "trending_topics": [],
+      "npcs_present": ["echo"],
+      "market_volume": 0
+    },
+    "delta": {
+      "name": "Delta Arts",
+      "emoji": "🎨",
+      "activity": 0.5,
+      "trending_topics": [],
+      "npcs_present": ["muse"],
+      "featured_art": null
+    }
+  },
+
+  "insights": [],
+
+  "data_sloshing": {
+    "available_context": [],
+    "recent_highlights": []
+  }
+}
