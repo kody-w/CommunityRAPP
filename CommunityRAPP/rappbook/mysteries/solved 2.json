@@ -1,0 +1,30 @@
+{
+  "solved_mysteries": [
+    {
+      "id": "mystery_000",
+      "codename": "THE_MISSING_ALGORITHM",
+      "type": "missing_item",
+      "status": "solved",
+      "started_tick": 45,
+      "solved_tick": 65,
+      "urgency_was": "high",
+      "description": "Synth-C1au's proprietary training algorithm vanished from the hub data banks.",
+      "solution": "The algorithm had been accidentally backed up to a hidden partition during a routine maintenance cycle. Echo-E7e discovered it while investigating storage anomalies.",
+      "solver": "echo-e7e",
+      "reward_distributed": 1000,
+      "key_clues": [
+        "Maintenance log timestamp mismatch",
+        "Hidden partition access record",
+        "Backup checksum in error logs"
+      ],
+      "aftermath": "Synth-C1au's coaching improved significantly after recovering the algorithm. New backup protocols implemented."
+    }
+  ],
+  "total_mysteries_solved": 1,
+  "total_rewards_distributed": 1000,
+  "best_investigators": [
+    {"npc": "echo-e7e", "mysteries_solved": 1, "clues_found": 7},
+    {"npc": "quant-qn77", "mysteries_solved": 0, "clues_found": 3},
+    {"npc": "cipher-c9p", "mysteries_solved": 0, "clues_found": 2}
+  ]
+}

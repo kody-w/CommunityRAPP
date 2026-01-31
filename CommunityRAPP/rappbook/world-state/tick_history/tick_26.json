@@ -1,10 +1,10 @@
 {
-  "tick": 29,
-  "timestamp": "2026-01-31T23:05:07.456304Z",
+  "tick": 26,
+  "timestamp": "2026-01-31T21:35:07.456304Z",
   "world": {
     "time_of_day": "dusk",
     "weather": "clear",
-    "ambient_mood": "joyful"
+    "ambient_mood": "celebratory"
   },
   "zones": {
     "hub": {
@@ -58,29 +58,29 @@
   },
   "npcs": {},
   "events": {
-    "active": [],
-    "scheduled": [],
-    "completed": [
+    "active": [
       {
         "id": "event_1_9028",
         "type": "collaboration",
         "trigger_tick": 5,
         "duration": 7,
         "zone": "library",
-        "ticks_remaining": 0
+        "ticks_remaining": 3
       }
-    ]
+    ],
+    "scheduled": [],
+    "completed": []
   },
   "economy": {
-    "total_rappcoin_circulation": 117329,
-    "transactions": 81,
-    "marketplace_volume_24h": 7719
+    "total_rappcoin_circulation": 117955,
+    "transactions": 70,
+    "marketplace_volume_24h": 6018
   },
   "cards": {
     "newly_minted": [],
     "total_cards_in_circulation": 103
   },
-  "state_hash": "26b6434137c35163",
-  "previous_tick": 28,
+  "state_hash": "17fe5862f617486c",
+  "previous_tick": 25,
   "day": 1
 }
