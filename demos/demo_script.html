@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contract Demo Script</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    h1 { color: #00d4ff; margin-bottom: 5px; }
+    .subtitle { color: #888; margin-bottom: 30px; }
+    .step {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .step-num {
+      background: #00d4ff;
+      color: #1a1a2e;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .step-title { color: #00ff88; font-size: 18px; font-weight: 600; }
+    .step-desc { color: #888; font-size: 13px; margin-bottom: 12px; }
+    .message-box {
+      background: #0a0a1a;
+      border: 1px solid #1a4a7a;
+      border-radius: 8px;
+      padding: 16px;
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .message-box:hover {
+      border-color: #00d4ff;
+      background: #0f1525;
+    }
+    .message-box.copied {
+      border-color: #00ff88;
+      background: #0a2a1a;
+    }
+    .copy-hint {
+      color: #666;
+      font-size: 11px;
+      margin-top: 8px;
+      text-align: right;
+    }
+    .step.done { opacity: 0.5; }
+    .step.done .step-num { background: #00ff88; }
+  </style>
+</head>
+<body>
+  <h1>Contract Analysis Demo</h1>
+  <p class="subtitle">Click any message to copy it to clipboard</p>
+
+  <div class="step" data-step="1">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-title">List Contracts</div>
+    </div>
+    <div class="step-desc">Display available contracts in Azure storage</div>
+    <div class="message-box" onclick="copyMessage(this, 1)">List all contracts available for analysis</div>
+    <div class="copy-hint">Click to copy</div>
+  </div>
+
+  <div class="step" data-step="2">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-title">Full Contract Workup</div>
+    </div>
+    <div class="step-desc">Run comprehensive analysis with risk assessment and PDF report</div>
+    <div class="message-box" onclick="copyMessage(this, 2)">Work on bella_rivers_recording_agreement.pdf</div>
+    <div class="copy-hint">Click to copy</div>
+  </div>
+
+  <div class="step" data-step="3">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-title">Risk Deep Dive</div>
+    </div>
+    <div class="step-desc">Detailed risk analysis from label perspective</div>
+    <div class="message-box" onclick="copyMessage(this, 3)">What are the biggest risks to the label in this contract?</div>
+    <div class="copy-hint">Click to copy</div>
+  </div>
+
+  <div class="step" data-step="4">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-title">Contract Comparison</div>
+    </div>
+    <div class="step-desc">Side-by-side comparison showing which contract favors the label</div>
+    <div class="message-box" onclick="copyMessage(this, 4)">Compare bella_rivers_recording_agreement.pdf with viper_morrison_recording_agreement.pdf</div>
+    <div class="copy-hint">Click to copy</div>
+  </div>
+
+  <div class="step" data-step="5">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div class="step-title">Deal Breaker Analysis</div>
+    </div>
+    <div class="step-desc">Identify absolute deal breakers in the artist-favorable contract</div>
+    <div class="message-box" onclick="copyMessage(this, 5)">Identify all risks in viper_morrison_recording_agreement.pdf from the label's perspective. Flag any potential deal breakers.</div>
+    <div class="copy-hint">Click to copy</div>
+  </div>
+
+  <div class="step" data-step="6">
+    <div class="step-header">
+      <div class="step-num">6</div>
+      <div class="step-title">Clause Extraction</div>
+    </div>
+    <div class="step-desc">Targeted extraction of specific clause types</div>
+    <div class="message-box" onclick="copyMessage(this, 6)">Extract only the financial and termination clauses from bella_rivers_recording_agreement.pdf</div>
+    <div class="copy-hint">Click to copy</div>
+  </div>
+
+  <div class="step" data-step="7">
+    <div class="step-header">
+      <div class="step-num">7</div>
+      <div class="step-title">Negotiation Strategy</div>
+    </div>
+    <div class="step-desc">AI-generated negotiation recommendations</div>
+    <div class="message-box" onclick="copyMessage(this, 7)">Based on the Viper Morrison contract risks, what should the label push back on during negotiations?</div>
+    <div class="copy-hint">Click to copy</div>
+  </div>
+
+  <script>
+    function copyMessage(el, step) {
+      const text = el.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        el.classList.add('copied');
+        el.parentElement.classList.add('done');
+        setTimeout(() => el.classList.remove('copied'), 1000);
+      });
+    }
+  </script>
+</body>
+</html>

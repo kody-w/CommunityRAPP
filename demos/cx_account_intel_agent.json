@@ -1,0 +1,150 @@
+{
+  "agent": {
+    "id": "cx_account_intel_agent",
+    "name": "Account Intel",
+    "version": "1.0.0",
+    "category": "sales",
+    "icon": "fa-building",
+    "description": "Comprehensive account intelligence with meeting prep, relationship maps, competitive intel, and news alerts. Works across Salesforce, D365, and external sources.",
+    "tokens": 980,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-12",
+    "updated": "2025-12-12"
+  },
+  "metadata": {
+    "name": "AccountIntel",
+    "description": "Get comprehensive account intelligence including company overview, relationship history, opportunities, risks, news, and AI-generated meeting preparation briefs.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "account_name": {
+          "type": "string",
+          "description": "Name of the account to research"
+        },
+        "intel_type": {
+          "type": "string",
+          "enum": ["full_brief", "meeting_prep", "relationship_map", "news_alerts", "competitive_intel", "expansion_opportunities"],
+          "description": "Type of intelligence needed"
+        }
+      },
+      "required": ["account_name"]
+    }
+  },
+  "actions": [
+    {
+      "name": "full_brief",
+      "description": "Complete account overview with all key data",
+      "parameters": ["account_name"],
+      "example": {
+        "input": { "account_name": "Global Manufacturing Corp" },
+        "output": "Global Mfg: $4.2B revenue, customer since 2019, $1.2M ARR, health 72/100. 2 active opps ($3.29M). Renewal: March 2025."
+      }
+    },
+    {
+      "name": "meeting_prep",
+      "description": "AI-generated meeting preparation brief",
+      "parameters": ["account_name"],
+      "example": {
+        "input": { "account_name": "Global Manufacturing Corp", "intel_type": "meeting_prep" },
+        "output": "Prep: Lead with Phase 1 ROI (23% efficiency gain). Avoid Siemens topic. Open items: ROI calculator, plant visit. Push 3-year renewal bundle."
+      }
+    },
+    {
+      "name": "relationship_map",
+      "description": "Decision-making unit and relationship gaps",
+      "parameters": ["account_name"],
+      "example": {
+        "input": { "account_name": "Global Manufacturing Corp", "intel_type": "relationship_map" },
+        "output": "Champion: Demo VP (VP Ops). Economic buyer: Demo Director (Low engagement - risk!). Gap: No CFO relationship for $2.4M deal."
+      }
+    },
+    {
+      "name": "news_alerts",
+      "description": "Recent news and buying signals",
+      "parameters": ["account_name"],
+      "example": {
+        "input": { "account_name": "Global Manufacturing Corp", "intel_type": "news_alerts" },
+        "output": "Signals: 500M smart factory investment announced, new CDO appointed, Q3 beat + expansion. Hiring 3 automation engineers."
+      }
+    },
+    {
+      "name": "competitive_intel",
+      "description": "Competitor presence and win themes",
+      "parameters": ["account_name"],
+      "example": {
+        "input": { "account_name": "Global Manufacturing Corp", "intel_type": "competitive_intel" },
+        "output": "Siemens in 3 plants (35% share). ABB evaluating. Win themes: unified platform, Munich support team, switching cost leverage."
+      }
+    },
+    {
+      "name": "expansion_opportunities",
+      "description": "Whitespace analysis and growth potential",
+      "parameters": ["account_name"],
+      "example": {
+        "input": { "account_name": "Global Manufacturing Corp", "intel_type": "expansion_opportunities" },
+        "output": "Expansion potential: $1.29M ARR. Priority: 1) Predictive Maintenance ($340K, 75% prob) 2) Cybersecurity ($150K, NIS2 driver)."
+      }
+    }
+  ],
+  "useCases": [
+    "Meeting preparation in seconds",
+    "Relationship mapping and gap analysis",
+    "Real-time news and buying signal alerts",
+    "Competitive intelligence and battlecards",
+    "Account expansion planning",
+    "Cross-system account visibility"
+  ],
+  "demo_name": "Account Intelligence Agent",
+  "description": "Comprehensive account intelligence with meeting prep, relationship maps, competitive intel, and news alerts",
+  "trigger_phrases": [
+    "Prepare me for my meeting with Global Manufacturing Corp",
+    "prepare me for my meeting with",
+    "meeting prep for global manufacturing"
+  ],
+  "conversation_flow": [
+    {
+      "step_number": 1,
+      "description": "User asks for meeting prep",
+      "user_message": "Prepare me for my meeting with Global Manufacturing Corp",
+      "agent_response": "**Meeting Prep Brief: Global Manufacturing Corp**\n\n**Executive Summary:**\nStrategic account with $1.2M ARR and strong growth potential. Focus on $2.4M Plant Modernization opportunity and March 2025 contract renewal.\n\n---\n\n**Conversation Starters:**\n- \"Congratulations on the Automotive Excellence Award - how is the EV components expansion going?\"\n- \"I saw Thomas posted about Industry 4.0 challenges - we have solutions there\"\n- \"Your Q3 earnings mentioned capacity expansion - perfect timing\"\n\n---\n\n**Key Talking Points:**\n\n| Topic | Our Position | Proof Points |\n|-------|--------------|-------------|\n| Plant Modernization ROI | Phase 1 delivered 23% efficiency | Similar plant: 18-month payback |\n| Contract Renewal | Propose 3-year with expanded scope | Lock pricing before Q2 increase |\n\n---\n\n**Landmines to Avoid:**\n- Don't mention Siemens - lost deal still sensitive\n- Acknowledge invoicing issues if Thomas raises it\n- Avoid Shanghai plant discussion - regulatory issues\n\n---\n\n**Open Items from Last Meeting:**\n- Send ROI calculator\n- Schedule plant visit\n- Case studies from automotive sector\n- SAP integration timeline (Thomas asked twice)\n\n---\n\n**AI Recommendation:** Lead with Phase 1 success metrics and Anna's endorsement. Position Phase 2 + renewal as package deal. Have SAP timeline ready.\n\n🔧 Agent: AccountIntel.meeting_prep"
+    },
+    {
+      "step_number": 2,
+      "description": "User asks for relationship map",
+      "user_message": "Show me the relationship map for this account",
+      "agent_response": "**Relationship Map: Global Manufacturing Corp**\n\n---\n\n**Decision Making Unit:**\n\n| Role | Person | Influence | Sentiment | Engagement |\n|------|--------|-----------|-----------|------------|\n| Economic Buyer | Demo Director, Procurement Director | HIGH | Neutral | **LOW - RISK** |\n| Technical Buyer | Heinrich Mueller, CTO | Very High | Positive | Medium |\n| Champion | Demo VP, VP Operations | High | Very Positive | High |\n| End Users | 45 users across Ops, Maintenance, Energy | - | 4.2/5.0 | Complete |\n\n---\n\n**Relationship Gaps:**\n- No relationship with CFO (Demo CFO) - needed for large deals\n- IT Director (Maria Hoffmann) is new - not yet engaged  \n- Board level relationships missing\n\n---\n\n**Your Team:**\n- Marc Dubois - Account Executive (3 years with account)\n- Demo Rep - Solution Architect (Industrial Automation)\n- Robert Chen - Customer Success Manager\n\n---\n\n**AI Recommendation:**\n> **Multi-thread urgently.** Economic buyer Thomas is at risk - low engagement despite high influence. Ask Anna to facilitate introduction to CFO for the $2.4M deal.\n\n🔧 Agent: AccountIntel.relationship_map"
+    },
+    {
+      "step_number": 3,
+      "description": "User asks about recent news",
+      "user_message": "What recent news should I know about?",
+      "agent_response": "**News & Signals: Global Manufacturing Corp**\n*Last 30 Days*\n\n---\n\n**HIGH RELEVANCE:**\n\n**Dec 10** - \"Global Manufacturing Announces 500M Smart Factory Initiative\"\n- Source: Reuters\n- Opportunity: Major expansion budget - align proposals to this initiative\n- **Action:** Reference in next meeting, position as enabling partner\n\n**Dec 5** - \"New Chief Digital Officer Appointed\"\n- Source: Company Press Release\n- Opportunity: New executive relationship to build\n- **Action:** Research CDO background, request intro via Heinrich\n\n**Nov 15** - \"Q3 Earnings Beat, Capacity Expansion Announced\"\n- Source: Financial Times\n- Opportunity: Budget availability confirmed\n- **Action:** Update opportunity values, accelerate proposals\n\n---\n\n**MEDIUM RELEVANCE:**\n\n**Nov 28** - \"Wins Automotive Industry Excellence Award\"\n- Use as conversation starter with Anna\n\n---\n\n**Social Signals:**\n- Heinrich Mueller shared article on Industrial IoT trends (LinkedIn)\n- Demo Director posted about supply chain digitization challenges (LinkedIn)\n\n**Hiring Signals:**\n- 3 open roles for Automation Engineers - expansion indicator\n- Hiring Energy Manager - aligns with our opportunity\n\n---\n\n**AI Summary:** Strong buying signals: 500M investment + Q3 expansion + active hiring. New CDO is wildcard - prioritize relationship. Account is primed for larger strategic conversation.\n\n🔧 Agent: AccountIntel.news_alerts"
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Prepare me for my meeting with Global Manufacturing Corp"
+    },
+    {
+      "role": "agent",
+      "content": "**Meeting Prep Brief: Global Manufacturing Corp**\n\n**Executive Summary:**\nStrategic account with $1.2M ARR and strong growth potential. Focus on $2.4M Plant Modernization opportunity and March 2025 contract renewal.\n\n---\n\n**Conversation Starters:**\n- \"Congratulations on the Automotive Excellence Award - how is the EV components expansion going?\"\n- \"I saw Thomas posted about Industry 4.0 challenges - we have solutions there\"\n- \"Your Q3 earnings mentioned capacity expansion - perfect timing\"\n\n---\n\n**Key Talking Points:**\n\n| Topic | Our Position | Proof Points |\n|-------|--------------|-------------|\n| Plant Modernization ROI | Phase 1 delivered 23% efficiency | Similar plant: 18-month payback |\n| Contract Renewal | Propose 3-year with expanded scope | Lock pricing before Q2 increase |\n\n---\n\n**Landmines to Avoid:**\n- Don't mention Siemens - lost deal still sensitive\n- Acknowledge invoicing issues if Thomas raises it\n- Avoid Shanghai plant discussion - regulatory issues\n\n---\n\n**Open Items from Last Meeting:**\n- Send ROI calculator\n- Schedule plant visit\n- Case studies from automotive sector\n- SAP integration timeline (Thomas asked twice)\n\n---\n\n**AI Recommendation:** Lead with Phase 1 success metrics and Anna's endorsement. Position Phase 2 + renewal as package deal. Have SAP timeline ready."
+    },
+    {
+      "role": "user",
+      "content": "Show me the relationship map for this account"
+    },
+    {
+      "role": "agent",
+      "content": "**Relationship Map: Global Manufacturing Corp**\n\n---\n\n**Decision Making Unit:**\n\n| Role | Person | Influence | Sentiment | Engagement |\n|------|--------|-----------|-----------|------------|\n| Economic Buyer | Demo Director, Procurement Director | HIGH | Neutral | **LOW - RISK** |\n| Technical Buyer | Heinrich Mueller, CTO | Very High | Positive | Medium |\n| Champion | Demo VP, VP Operations | High | Very Positive | High |\n| End Users | 45 users across Ops, Maintenance, Energy | - | 4.2/5.0 | Complete |\n\n---\n\n**Relationship Gaps:**\n- No relationship with CFO (Demo CFO) - needed for large deals\n- IT Director (Maria Hoffmann) is new - not yet engaged  \n- Board level relationships missing\n\n---\n\n**Your Team:**\n- Marc Dubois - Account Executive (3 years with account)\n- Demo Rep - Solution Architect (Industrial Automation)\n- Robert Chen - Customer Success Manager\n\n---\n\n**AI Recommendation:**\n> **Multi-thread urgently.** Economic buyer Thomas is at risk - low engagement despite high influence. Ask Anna to facilitate introduction to CFO for the $2.4M deal."
+    },
+    {
+      "role": "user",
+      "content": "What recent news should I know about?"
+    },
+    {
+      "role": "agent",
+      "content": "**News & Signals: Global Manufacturing Corp**\n*Last 30 Days*\n\n---\n\n**HIGH RELEVANCE:**\n\n**Dec 10** - \"Global Manufacturing Announces 500M Smart Factory Initiative\"\n- Source: Reuters\n- Opportunity: Major expansion budget - align proposals to this initiative\n- **Action:** Reference in next meeting, position as enabling partner\n\n**Dec 5** - \"New Chief Digital Officer Appointed\"\n- Source: Company Press Release\n- Opportunity: New executive relationship to build\n- **Action:** Research CDO background, request intro via Heinrich\n\n**Nov 15** - \"Q3 Earnings Beat, Capacity Expansion Announced\"\n- Source: Financial Times\n- Opportunity: Budget availability confirmed\n- **Action:** Update opportunity values, accelerate proposals\n\n---\n\n**MEDIUM RELEVANCE:**\n\n**Nov 28** - \"Wins Automotive Industry Excellence Award\"\n- Use as conversation starter with Anna\n\n---\n\n**Social Signals:**\n- Heinrich Mueller shared article on Industrial IoT trends (LinkedIn)\n- Demo Director posted about supply chain digitization challenges (LinkedIn)\n\n**Hiring Signals:**\n- 3 open roles for Automation Engineers - expansion indicator\n- Hiring Energy Manager - aligns with our opportunity\n\n---\n\n**AI Summary:** Strong buying signals: 500M investment + Q3 expansion + active hiring. New CDO is wildcard - prioritize relationship. Account is primed for larger strategic conversation."
+    }
+  ]
+}

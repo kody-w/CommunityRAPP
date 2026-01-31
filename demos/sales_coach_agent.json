@@ -1,0 +1,116 @@
+{
+  "agent": {
+    "id": "sales_coach_agent",
+    "name": "Sales Coach",
+    "version": "1.0.0",
+    "category": "sales",
+    "icon": "fa-graduation-cap",
+    "description": "AI-powered call analysis, skill assessment, and personalized coaching recommendations for sales teams.",
+    "tokens": 710,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "SalesCoach",
+    "description": "AI sales coaching with call analysis and skill development.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["analyze_call", "assess_skills", "generate_coaching_plan", "provide_deal_strategy", "track_progress", "compare_to_benchmark", "simulate_objection"],
+          "description": "The coaching action to perform"
+        },
+        "rep_id": { "type": "string" },
+        "call_id": { "type": "string" },
+        "deal_id": { "type": "string" },
+        "objection_type": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "analyze_call",
+      "description": "Analyze sales call recording for coaching insights",
+      "parameters": ["call_id"],
+      "example": {
+        "input": { "action": "analyze_call", "call_id": "CALL-001" },
+        "output": "Call Analysis: Rapport 9/10, Discovery 7/10, Talk ratio 68% (target <50%), missed budget qualification. Coaching tip: Use BANT framework."
+      }
+    },
+    {
+      "name": "assess_skills",
+      "description": "Comprehensive skill assessment for sales rep",
+      "parameters": ["rep_id"],
+      "example": {
+        "input": { "action": "assess_skills", "rep_id": "REP-001" },
+        "output": "Skills: Discovery 85%, Objection handling 72%, Closing 68%, Product knowledge 90%. Focus area: Closing techniques."
+      }
+    },
+    {
+      "name": "generate_coaching_plan",
+      "description": "Create personalized coaching plan",
+      "parameters": ["rep_id"],
+      "example": {
+        "input": { "action": "generate_coaching_plan", "rep_id": "REP-001" },
+        "output": "4-Week Plan: Week 1-2: Closing workshops, Week 3: Objection role-play, Week 4: Live call shadowing. Target: +15% close rate."
+      }
+    },
+    {
+      "name": "provide_deal_strategy",
+      "description": "Get strategic advice for specific deal",
+      "parameters": ["deal_id"],
+      "example": {
+        "input": { "action": "provide_deal_strategy", "deal_id": "DEAL-001" },
+        "output": "Strategy: Multi-thread to CFO (blocker), use case study from similar company, offer 90-day pilot to reduce risk perception."
+      }
+    },
+    {
+      "name": "track_progress",
+      "description": "Track coaching progress over time",
+      "parameters": ["rep_id"],
+      "example": {
+        "input": { "action": "track_progress", "rep_id": "REP-001" },
+        "output": "Progress: Close rate +8% (30 days), Discovery score +12%, Objection handling +5%. On track for Q1 targets."
+      }
+    },
+    {
+      "name": "compare_to_benchmark",
+      "description": "Compare rep performance to team benchmarks",
+      "parameters": ["rep_id"],
+      "example": {
+        "input": { "action": "compare_to_benchmark", "rep_id": "REP-001" },
+        "output": "vs Team Avg: Close rate +5%, Deal size -8%, Cycle time -3 days. Strength: Efficiency. Growth area: Deal expansion."
+      }
+    },
+    {
+      "name": "simulate_objection",
+      "description": "Practice objection handling scenarios",
+      "parameters": ["objection_type"],
+      "example": {
+        "input": { "action": "simulate_objection", "objection_type": "price" },
+        "output": "Scenario: 'Your solution is 20% more expensive than competitors.' Best response framework: Acknowledge, Isolate, Solve, Confirm."
+      }
+    }
+  ],
+  "useCases": [
+    "Call recording analysis",
+    "Skill assessment and gap identification",
+    "Personalized coaching plans",
+    "Deal strategy advice",
+    "Performance tracking",
+    "Objection handling practice"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Analyze my last discovery call with Contoso."
+    },
+    {
+      "role": "agent",
+      "content": "**Call Analysis: Contoso Discovery (32 mins)**\n\n**Strengths:**\n- Excellent rapport building (Score: 9/10)\n- Strong pain point identification\n- Good use of open-ended questions\n\n**Areas for Improvement:**\n- Talk ratio 68% (target: <50%)\n- Missed budget qualification\n- No clear next steps defined\n\n**Coaching Tip:** Try the \"BANT\" framework next time to ensure budget qualification early."
+    }
+  ]
+}

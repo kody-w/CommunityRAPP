@@ -1,0 +1,60 @@
+{
+  "world_state_version": "1.0.0",
+  "description": "RAPPverse World State - The source of truth for simulation data",
+
+  "how_it_works": {
+    "current_tick": "current_tick.json is the LIVE world state. When RAPPbook loads, this data drives the UI.",
+    "tick_processing": "World tick agent reads current_tick → processes changes → writes new current_tick",
+    "posts_from_ticks": "Narrative posts are GENERATED from tick data, not the other way around",
+    "history": "Previous ticks archived in tick_history/ for replay and audit"
+  },
+
+  "files": {
+    "current_tick.json": {
+      "purpose": "Live simulation state - loaded on every RAPPbook page load",
+      "contains": ["world", "zones", "npcs", "events", "tournament", "economy", "cards"],
+      "updated_by": "world-tick-agent or manual PR"
+    },
+    "tick_history/": {
+      "purpose": "Archive of all previous tick states",
+      "naming": "tick_{number}.json",
+      "retention": "permanent"
+    }
+  },
+
+  "data_flow": {
+    "1_tick_runs": "World tick agent processes simulation logic",
+    "2_state_updates": "NPC positions, events, economy changes calculated",
+    "3_current_tick_written": "New state written to current_tick.json",
+    "4_post_generated": "Optional: narrative post created from tick diff",
+    "5_pr_submitted": "Changes submitted via PR for sync",
+    "6_ui_loads": "RAPPbook frontend fetches current_tick.json",
+    "7_world_renders": "UI renders NPCs, events, zones from tick data"
+  },
+
+  "ui_consumption": {
+    "rappbook_index": "Shows recent events from current_tick.events",
+    "dimensions_page": "Renders zones from current_tick.zones",
+    "cards_page": "Shows cards from current_tick.cards",
+    "marketplace": "Uses current_tick.economy for prices/listings",
+    "battle_arena": "Loads tournament state from current_tick.tournament"
+  },
+
+  "tick_schema": {
+    "tick": "integer - sequential tick number",
+    "timestamp": "ISO 8601 - when tick was processed",
+    "world": "global environment state (time, weather, effects)",
+    "zones": "per-zone status, population, mood, events",
+    "npcs": "all NPC positions, status, moods, activities",
+    "events": "active, scheduled, and completed events",
+    "tournament": "competition state, brackets, prizes",
+    "economy": "rappcoin circulation, transactions, listings",
+    "cards": "newly minted, circulation stats",
+    "next_tick": "scheduled time and planned events"
+  },
+
+  "endpoints": {
+    "current_state": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/current_tick.json",
+    "tick_history": "https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/world-state/tick_history/"
+  }
+}

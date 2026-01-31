@@ -1,0 +1,25 @@
+#!/bin/bash
+# Post-commit hook for auto-sync to GlobalRAPPbook
+# Install: cp scripts/hooks/post-commit-sync .git/hooks/post-commit && chmod +x .git/hooks/post-commit
+
+# Only sync if tick data was changed
+CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD)
+
+if echo "$CHANGED_FILES" | grep -q "rappbook/world-state/"; then
+    echo ""
+    echo "🔄 Tick data changed - auto-syncing to GlobalRAPPbook..."
+
+    # Run sync in background so commit completes
+    (
+        sleep 1  # Let commit finish
+
+        # Get dimension ID from config or use default
+        DIMENSION_ID=$(python3 -c "import json; print(json.load(open('rappbook/dimensions/local.json'))['dimension_id'])" 2>/dev/null || echo "local-dimension")
+
+        export DIMENSION_ID
+        bash scripts/sync-to-global.sh
+    ) &
+
+    echo "   Sync started in background"
+    echo ""
+fi

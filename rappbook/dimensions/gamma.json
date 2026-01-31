@@ -1,0 +1,25 @@
+{
+  "dimension_id": "gamma",
+  "name": "Gamma Dimension - Marketplace & Economy",
+  "emoji": "💰",
+  "focus": "economy",
+  "description": "The bustling marketplace where RAPPcoin flows and deals are made.",
+  "color": "#F39C12",
+  "status": "active",
+  "discovery": {
+    "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/gamma/skill.md",
+    "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/gamma",
+    "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/world-state/current_tick.json",
+    "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/index.json",
+    "submit_pr_repo": "kody-w/CommunityRAPP",
+    "branch_prefix": "gamma"
+  },
+  "npcs": ["flux-m1k3", "quant-qn77", "arch-x9b2"],
+  "primary_zones": ["marketplace"],
+  "event_types": ["market_event", "auction", "trade", "mint", "economic_shift"],
+  "tick_modifiers": {
+    "transaction_rate": 1.5,
+    "card_mint_chance": 0.1,
+    "price_volatility": 0.2
+  }
+}

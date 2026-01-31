@@ -1,0 +1,115 @@
+{
+  "agent": {
+    "id": "inventory_visibility_agent",
+    "name": "Inventory Visibility",
+    "version": "1.0.0",
+    "category": "operations",
+    "icon": "fa-boxes",
+    "description": "Real-time inventory intelligence across all channels with demand forecasting and automated rebalancing recommendations.",
+    "tokens": 700,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "InventoryVisibility",
+    "description": "Real-time inventory management with demand forecasting.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["get_inventory_status", "forecast_demand", "recommend_rebalancing", "check_stockout_risk", "calculate_safety_stock", "get_slow_movers", "optimize_allocation"],
+          "description": "The inventory action to perform"
+        },
+        "sku": { "type": "string" },
+        "location": { "type": "string" },
+        "time_horizon": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "get_inventory_status",
+      "description": "Get real-time inventory status across locations",
+      "parameters": ["sku"],
+      "example": {
+        "input": { "action": "get_inventory_status", "sku": "SKU-4521" },
+        "output": "SKU-4521: Total 147 units. Warehouse A: 89, Warehouse B: 35, Stores: 23. In-transit: 50. Allocated: 12."
+      }
+    },
+    {
+      "name": "forecast_demand",
+      "description": "Forecast demand for SKU over time horizon",
+      "parameters": ["sku", "time_horizon"],
+      "example": {
+        "input": { "action": "forecast_demand", "sku": "SKU-4521", "time_horizon": "30d" },
+        "output": "30-Day Forecast: 420 units (confidence: 85%). Trend: +12% vs last month. Peak: Week 3 (holiday season)."
+      }
+    },
+    {
+      "name": "recommend_rebalancing",
+      "description": "Get inventory rebalancing recommendations",
+      "parameters": [],
+      "example": {
+        "input": { "action": "recommend_rebalancing" },
+        "output": "Rebalancing: Move 50 units SKU-4521 from Warehouse B to A. Move 30 units SKU-7832 to Store #12. Cost: $340. ROI: $2,100."
+      }
+    },
+    {
+      "name": "check_stockout_risk",
+      "description": "Identify SKUs at risk of stockout",
+      "parameters": ["time_horizon"],
+      "example": {
+        "input": { "action": "check_stockout_risk", "time_horizon": "7d" },
+        "output": "High Risk: SKU-4521 (23 units, 7-day demand: 45), SKU-7832 (12 units, demand: 28). Medium: 3 SKUs. Action required."
+      }
+    },
+    {
+      "name": "calculate_safety_stock",
+      "description": "Calculate optimal safety stock levels",
+      "parameters": ["sku"],
+      "example": {
+        "input": { "action": "calculate_safety_stock", "sku": "SKU-4521" },
+        "output": "Safety Stock: Current 20, Recommended 35 (+15). Lead time: 7 days. Service level: 95% -> 99%. Cost impact: +$450/month."
+      }
+    },
+    {
+      "name": "get_slow_movers",
+      "description": "Identify slow-moving inventory",
+      "parameters": [],
+      "example": {
+        "input": { "action": "get_slow_movers" },
+        "output": "Slow Movers: 47 SKUs with <10% turnover. Top 5: SKU-9921 (180 days), SKU-8834 (150 days). Value: $89,000. Recommend markdown."
+      }
+    },
+    {
+      "name": "optimize_allocation",
+      "description": "Optimize inventory allocation across channels",
+      "parameters": ["sku"],
+      "example": {
+        "input": { "action": "optimize_allocation", "sku": "SKU-4521" },
+        "output": "Optimal Allocation: Online 40%, Store A 25%, Store B 20%, Store C 15%. Expected revenue lift: +8%. Stockout reduction: -60%."
+      }
+    }
+  ],
+  "useCases": [
+    "Real-time inventory visibility",
+    "Demand forecasting",
+    "Stock rebalancing",
+    "Stockout prevention",
+    "Safety stock optimization",
+    "Slow-mover identification"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Check stockout risk for our top 10 SKUs this week."
+    },
+    {
+      "role": "agent",
+      "content": "**Stockout Risk Analysis - Top 10 SKUs**\n\n**High Risk (Action Required):**\n- SKU-4521 (Widget Pro): 23 units left, 5-day demand: 45\n- SKU-7832 (Cable Kit): 12 units left, 5-day demand: 28\n\n**Medium Risk:**\n- SKU-1122 (Adapter): 67 units, demand: 52\n\n**Recommended Actions:**\n1. Emergency transfer: 50 units SKU-4521 from Warehouse B\n2. Expedite PO-2847 for SKU-7832\n\nEstimated cost of stockout: $12,400/day"
+    }
+  ]
+}

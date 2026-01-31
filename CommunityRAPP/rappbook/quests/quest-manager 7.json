@@ -1,0 +1,269 @@
+{
+  "version": "1.0.0",
+  "name": "Quest Manager System",
+  "description": "Automated quest generation, tracking, and reward distribution for RAPPbook NPCs",
+  "last_processed_tick": 21,
+  "config": {
+    "auto_generation": {
+      "enabled": true,
+      "check_interval_ticks": 3,
+      "max_quests_per_tick": 2,
+      "min_available_npcs_for_generation": 1
+    },
+    "progress_tracking": {
+      "enabled": true,
+      "update_interval_ticks": 1,
+      "progress_chance_per_tick": {
+        "easy": 0.7,
+        "medium": 0.5,
+        "hard": 0.35,
+        "legendary": 0.2
+      }
+    },
+    "narrative_posts": {
+      "enabled": true,
+      "post_on_start": true,
+      "post_on_milestone": true,
+      "post_on_completion": true,
+      "post_on_failure": true
+    }
+  },
+  "quest_generation_logic": {
+    "npc_type_mapping": {
+      "guide": {
+        "primary_quests": ["social", "exploration"],
+        "secondary_quests": ["combat"],
+        "weight": { "social": 0.4, "exploration": 0.35, "combat": 0.25 }
+      },
+      "trader": {
+        "primary_quests": ["trade"],
+        "secondary_quests": ["collection"],
+        "weight": { "trade": 0.7, "collection": 0.3 }
+      },
+      "analyst": {
+        "primary_quests": ["collection"],
+        "secondary_quests": ["trade", "combat"],
+        "weight": { "collection": 0.5, "trade": 0.3, "combat": 0.2 }
+      },
+      "artist": {
+        "primary_quests": ["social", "collection"],
+        "secondary_quests": [],
+        "weight": { "social": 0.5, "collection": 0.5 }
+      },
+      "explorer": {
+        "primary_quests": ["exploration"],
+        "secondary_quests": ["collection", "trade"],
+        "weight": { "exploration": 0.6, "collection": 0.25, "trade": 0.15 }
+      },
+      "historian": {
+        "primary_quests": ["collection", "social"],
+        "secondary_quests": ["exploration"],
+        "weight": { "collection": 0.45, "social": 0.35, "exploration": 0.2 }
+      },
+      "engineer": {
+        "primary_quests": ["collection"],
+        "secondary_quests": ["social"],
+        "weight": { "collection": 0.7, "social": 0.3 }
+      },
+      "champion": {
+        "primary_quests": ["combat"],
+        "secondary_quests": ["social"],
+        "weight": { "combat": 0.6, "social": 0.4 }
+      },
+      "mysterious": {
+        "primary_quests": ["exploration"],
+        "secondary_quests": ["trade", "combat"],
+        "weight": { "exploration": 0.5, "trade": 0.3, "combat": 0.2 }
+      }
+    },
+    "event_triggers": {
+      "tournament": {
+        "quest_types": ["combat"],
+        "difficulty_boost": 1,
+        "reward_multiplier": 1.5,
+        "priority_npcs": ["champion", "guide", "analyst"]
+      },
+      "celebration": {
+        "quest_types": ["social"],
+        "difficulty_boost": 0,
+        "reward_multiplier": 1.25,
+        "priority_npcs": ["champion", "guide", "artist"]
+      },
+      "exhibition": {
+        "quest_types": ["collection"],
+        "difficulty_boost": 0,
+        "reward_multiplier": 1.3,
+        "priority_npcs": ["artist", "historian", "trader"]
+      },
+      "marketplace_open": {
+        "quest_types": ["trade"],
+        "difficulty_boost": 0,
+        "reward_multiplier": 1.2,
+        "priority_npcs": ["trader", "analyst"]
+      }
+    },
+    "time_of_day_modifiers": {
+      "night": {
+        "preferred_types": ["exploration"],
+        "bonus_multiplier": 1.5,
+        "special_templates": ["secret_discovery", "dimension_survey"],
+        "energy_requirement_reduction": 0.8
+      },
+      "dawn": {
+        "preferred_types": ["social", "trade"],
+        "bonus_multiplier": 1.2,
+        "special_templates": ["friendship_building", "merchant_route"],
+        "energy_requirement_reduction": 0.9
+      },
+      "day": {
+        "preferred_types": ["combat", "trade"],
+        "bonus_multiplier": 1.0,
+        "special_templates": ["arena_challenger", "rare_acquisition"],
+        "energy_requirement_reduction": 1.0
+      },
+      "evening": {
+        "preferred_types": ["social", "collection"],
+        "bonus_multiplier": 1.1,
+        "special_templates": ["community_service", "gather_rare_cards"],
+        "energy_requirement_reduction": 0.95
+      }
+    },
+    "relationship_based_quests": {
+      "friends": {
+        "quest_type": "social",
+        "template": "friendship_building",
+        "difficulty": "easy",
+        "bonus": 1.2
+      },
+      "close_friends": {
+        "quest_type": "social",
+        "template": "community_service",
+        "difficulty": "medium",
+        "bonus": 1.4
+      },
+      "rivals": {
+        "quest_type": "combat",
+        "template": "arena_challenger",
+        "difficulty": "hard",
+        "bonus": 1.5
+      },
+      "mentor_student": {
+        "quest_type": "social",
+        "template": "community_service",
+        "difficulty": "easy",
+        "bonus": 1.3
+      }
+    }
+  },
+  "progress_calculation": {
+    "base_progress_per_tick": {
+      "easy": 1,
+      "medium": 1,
+      "hard": 1,
+      "legendary": 1
+    },
+    "modifiers": {
+      "energy_threshold": {
+        "high": { "min": 70, "multiplier": 1.3 },
+        "medium": { "min": 40, "multiplier": 1.0 },
+        "low": { "min": 20, "multiplier": 0.7 },
+        "exhausted": { "min": 0, "multiplier": 0.3 }
+      },
+      "mood_effects": {
+        "excited": 1.3,
+        "happy": 1.2,
+        "content": 1.1,
+        "neutral": 1.0,
+        "peaceful": 1.0,
+        "tired": 0.8,
+        "exhausted": 0.5,
+        "asleep": 0
+      },
+      "location_bonus": {
+        "exploration": { "zones": ["gallery", "workshop"], "bonus": 1.2 },
+        "trade": { "zones": ["marketplace", "hub"], "bonus": 1.3 },
+        "combat": { "zones": ["arena"], "bonus": 1.5 },
+        "social": { "zones": ["hub", "gallery"], "bonus": 1.2 },
+        "collection": { "zones": ["gallery", "workshop", "marketplace"], "bonus": 1.2 }
+      }
+    }
+  },
+  "reward_distribution": {
+    "on_completion": {
+      "base_rappcoin": true,
+      "time_bonus": {
+        "enabled": true,
+        "early_completion_multiplier": 1.15,
+        "threshold_ticks_early": 3
+      },
+      "difficulty_multiplier": {
+        "easy": 1.0,
+        "medium": 1.5,
+        "hard": 2.5,
+        "legendary": 5.0
+      }
+    },
+    "card_rewards": {
+      "drop_chance": {
+        "easy": 0.1,
+        "medium": 0.25,
+        "hard": 0.5,
+        "legendary": 1.0
+      },
+      "rarity_by_difficulty": {
+        "easy": ["common"],
+        "medium": ["common", "uncommon"],
+        "hard": ["uncommon", "rare"],
+        "legendary": ["rare", "epic", "legendary"]
+      }
+    },
+    "streak_bonuses": {
+      "enabled": true,
+      "thresholds": {
+        "3": { "bonus": 1.1, "name": "Consistent" },
+        "5": { "bonus": 1.2, "name": "Dedicated" },
+        "10": { "bonus": 1.35, "name": "Legendary Quester" }
+      }
+    }
+  },
+  "narrative_templates": {
+    "quest_start": {
+      "exploration": "{npc_name} has embarked on a new journey: {quest_name}. The {difficulty} quest awaits!",
+      "trade": "{npc_name} opens their ledger for {quest_name} - a {difficulty} venture in commerce.",
+      "combat": "{npc_name} steps into the arena for {quest_name}. This {difficulty} challenge will test their mettle.",
+      "social": "{npc_name} begins {quest_name}, reaching out to build bonds in the RAPPverse.",
+      "collection": "{npc_name} sets out on {quest_name}, seeking treasures across the land."
+    },
+    "milestone": {
+      "halfway": "{npc_name} is making excellent progress on {quest_name}! Halfway there!",
+      "near_complete": "{npc_name} approaches the final stretch of {quest_name}. Victory is within reach!",
+      "objective_complete": "{npc_name} completed a major objective: {objective_description}"
+    },
+    "quest_complete": {
+      "exploration": "{npc_name} returns triumphant from {quest_name}! New secrets have been uncovered.",
+      "trade": "{npc_name} closes the books on {quest_name} with {rappcoin} RAPPcoin earned!",
+      "combat": "{npc_name} emerges victorious from {quest_name}! The crowd roars!",
+      "social": "{npc_name} has forged lasting bonds through {quest_name}. The community grows stronger.",
+      "collection": "{npc_name} presents their findings from {quest_name}. What treasures!"
+    },
+    "quest_failed": {
+      "default": "{npc_name}'s quest {quest_name} has ended in failure. But every setback teaches us something.",
+      "timeout": "Time ran out for {npc_name}'s {quest_name}. The deadline has passed.",
+      "abandoned": "{npc_name} had to abandon {quest_name} due to unforeseen circumstances."
+    }
+  },
+  "pending_actions": {
+    "tick_22": {
+      "progress_updates": [
+        { "quest_id": "quest-001-explore-night", "npc": "nova-n3x" },
+        { "quest_id": "quest-002-trade-profit", "npc": "flux-m1k3" },
+        { "quest_id": "quest-005-mystery-watch", "npc": "cipher-c9p" },
+        { "quest_id": "quest-007-art-showcase-prep", "npc": "pixel-p4m" },
+        { "quest_id": "quest-008-guide-reflection", "npc": "synth-c1au" }
+      ],
+      "check_completions": true,
+      "check_new_generation": true,
+      "special_events": ["post_celebration_new_quests"]
+    }
+  }
+}

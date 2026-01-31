@@ -1,0 +1,71 @@
+{
+  "agent": {
+    "id": "manage_memory_agent",
+    "name": "Manage Memory",
+    "version": "1.0.0",
+    "category": "core",
+    "icon": "fa-database",
+    "description": "Core agent for storing facts, preferences, insights, and tasks to persistent memory for future recall.",
+    "tokens": 380,
+    "core": true,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "ManageMemory",
+    "description": "Stores facts, preferences, and insights to memory.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["store_fact", "store_preference", "store_insight"],
+          "description": "The memory management action"
+        },
+        "content": { "type": "string" },
+        "category": { "type": "string" }
+      },
+      "required": ["action", "content"]
+    }
+  },
+  "actions": [
+    {
+      "name": "store_fact",
+      "description": "Store a fact to memory",
+      "parameters": ["content", "category"],
+      "example": {
+        "input": { "action": "store_fact", "content": "Assistant name is Alex", "category": "team" },
+        "output": "Fact stored: 'Assistant name is Alex' in category 'team'. Will be recalled in future conversations."
+      }
+    },
+    {
+      "name": "store_preference",
+      "description": "Store a user preference",
+      "parameters": ["content", "category"],
+      "example": {
+        "input": { "action": "store_preference", "content": "Prefers morning meetings", "category": "scheduling" },
+        "output": "Preference stored: 'Morning meetings preferred' in category 'scheduling'. High confidence."
+      }
+    },
+    {
+      "name": "store_insight",
+      "description": "Store an insight or observation",
+      "parameters": ["content", "category"],
+      "example": {
+        "input": { "action": "store_insight", "content": "User focuses on pipeline velocity metrics", "category": "analytics" },
+        "output": "Insight stored: Will prioritize pipeline velocity in future reports and analyses."
+      }
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Remember that I prefer morning meetings and my assistant is named Alex."
+    },
+    {
+      "role": "agent",
+      "content": "**Stored to Memory:**\n\n1. **Preference:** Morning meetings preferred\n   - Category: Scheduling\n   - Confidence: High\n\n2. **Fact:** Assistant name is Alex\n   - Category: Team/Contacts\n   - Confidence: High\n\nThese will be recalled in future conversations. Would you like me to remember anything else?"
+    }
+  ]
+}

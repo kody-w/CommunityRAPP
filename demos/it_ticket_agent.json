@@ -1,0 +1,116 @@
+{
+  "agent": {
+    "id": "it_ticket_agent",
+    "name": "IT Ticket Management",
+    "version": "1.0.0",
+    "category": "it",
+    "icon": "fa-ticket-alt",
+    "description": "Automated ticket triage, intelligent routing, and L1/L2 resolution with integrated knowledge base.",
+    "tokens": 690,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "ITTicket",
+    "description": "IT support automation with intelligent triage and resolution.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["triage_ticket", "auto_resolve", "suggest_solution", "route_ticket", "get_queue_status", "escalate_ticket", "get_knowledge_article"],
+          "description": "The IT support action to perform"
+        },
+        "ticket_id": { "type": "string" },
+        "issue_description": { "type": "string" },
+        "category": { "type": "string" },
+        "priority": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "triage_ticket",
+      "description": "Automatically categorize and prioritize incoming ticket",
+      "parameters": ["issue_description"],
+      "example": {
+        "input": { "action": "triage_ticket", "issue_description": "Can't access email after password reset" },
+        "output": "Triaged: Category: Access Management, Priority: Medium, SLA: 4 hours. Auto-resolution available."
+      }
+    },
+    {
+      "name": "auto_resolve",
+      "description": "Attempt automatic resolution for common issues",
+      "parameters": ["ticket_id"],
+      "example": {
+        "input": { "action": "auto_resolve", "ticket_id": "IT-2024-1847" },
+        "output": "Auto-resolve initiated. Steps sent to user: 1) Lock workstation 2) Sign out completely 3) Sign in with new password. Success rate: 94%."
+      }
+    },
+    {
+      "name": "suggest_solution",
+      "description": "Get AI-suggested solutions from knowledge base",
+      "parameters": ["ticket_id"],
+      "example": {
+        "input": { "action": "suggest_solution", "ticket_id": "IT-2024-1847" },
+        "output": "Top solutions: 1) Kerberos token refresh (94% success), 2) Clear credential cache (87%), 3) Domain rejoin (72%)."
+      }
+    },
+    {
+      "name": "route_ticket",
+      "description": "Route ticket to appropriate support team",
+      "parameters": ["ticket_id", "category"],
+      "example": {
+        "input": { "action": "route_ticket", "ticket_id": "IT-2024-1847", "category": "network" },
+        "output": "Routed to Network Team. Queue position: 3. Estimated pickup: 15 minutes. On-call: Mike Chen."
+      }
+    },
+    {
+      "name": "get_queue_status",
+      "description": "Get current support queue status",
+      "parameters": [],
+      "example": {
+        "input": { "action": "get_queue_status" },
+        "output": "Queue: 23 open tickets. Critical: 2, High: 5, Medium: 12, Low: 4. Avg resolution: 2.3 hours. SLA at risk: 3."
+      }
+    },
+    {
+      "name": "escalate_ticket",
+      "description": "Escalate ticket to higher tier",
+      "parameters": ["ticket_id"],
+      "example": {
+        "input": { "action": "escalate_ticket", "ticket_id": "IT-2024-1847" },
+        "output": "Escalated to Tier 2. Reason: Auto-resolve failed. Assigned: Senior Engineer Demo Rep. ETA: 30 minutes."
+      }
+    },
+    {
+      "name": "get_knowledge_article",
+      "description": "Retrieve relevant knowledge base articles",
+      "parameters": ["issue_description"],
+      "example": {
+        "input": { "action": "get_knowledge_article", "issue_description": "VPN connection drops" },
+        "output": "Articles: KB-1247 'VPN Troubleshooting Guide', KB-892 'Network Connectivity Issues', KB-1103 'Firewall Configuration'."
+      }
+    }
+  ],
+  "useCases": [
+    "Automatic ticket triage",
+    "Self-service resolution",
+    "Intelligent routing",
+    "Queue management",
+    "Knowledge base integration",
+    "Escalation handling"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "New ticket: User can't access shared drive after password reset."
+    },
+    {
+      "role": "agent",
+      "content": "**Ticket Triaged: IT-2024-1847**\n\n**Category:** Access Management\n**Priority:** Medium (SLA: 4 hours)\n**Auto-Resolution Available:** Yes\n\n**Suggested Solution:**\nThis is a common Kerberos token issue after password reset.\n\n**Steps:**\n1. Have user lock workstation (Win+L)\n2. Sign out completely\n3. Sign in with new password\n4. Wait 2 mins for token refresh\n\n**Success Rate:** 94% for similar tickets"
+    }
+  ]
+}

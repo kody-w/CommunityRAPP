@@ -1,0 +1,80 @@
+{
+  "agent": {
+    "id": "rapp_discovery_agent",
+    "name": "RAPP Discovery",
+    "version": "1.0.0",
+    "category": "operations",
+    "icon": "fa-search",
+    "description": "Prepares discovery questions and processes customer conversation transcripts for the RAPP Pipeline.",
+    "tokens": 520,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "RAPPDiscovery",
+    "description": "Discovery preparation and transcript processing for RAPP Pipeline.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["prepare_questions", "process_transcript", "extract_requirements", "identify_pain_points"],
+          "description": "The discovery action"
+        },
+        "use_case": { "type": "string" },
+        "transcript": { "type": "string" },
+        "industry": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "prepare_questions",
+      "description": "Prepare discovery questions for a use case",
+      "parameters": ["use_case", "industry"],
+      "example": {
+        "input": { "action": "prepare_questions", "use_case": "inventory management", "industry": "retail" },
+        "output": "Questions prepared: Current state (5), Pain points (4), Success criteria (3), Integration requirements (4). Total: 16 questions."
+      }
+    },
+    {
+      "name": "process_transcript",
+      "description": "Process discovery call transcript",
+      "parameters": ["transcript"],
+      "example": {
+        "input": { "action": "process_transcript", "transcript": "[transcript text]" },
+        "output": "Transcript processed. Pain points: 4 identified. Requirements: 8 extracted. Stakeholders: 3 mentioned. Ready for QG1."
+      }
+    },
+    {
+      "name": "extract_requirements",
+      "description": "Extract requirements from discovery notes",
+      "parameters": ["transcript"],
+      "example": {
+        "input": { "action": "extract_requirements", "transcript": "[notes]" },
+        "output": "Requirements: Functional (6), Non-functional (3), Integration (4). Priority: P0 (4), P1 (5), P2 (4)."
+      }
+    },
+    {
+      "name": "identify_pain_points",
+      "description": "Identify and categorize pain points",
+      "parameters": ["transcript"],
+      "example": {
+        "input": { "action": "identify_pain_points", "transcript": "[notes]" },
+        "output": "Pain Points: Process inefficiency (high), Data silos (high), Manual work (medium), Reporting gaps (medium)."
+      }
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Prepare discovery questions for a retail inventory management use case."
+    },
+    {
+      "role": "agent",
+      "content": "**Discovery Questions: Retail Inventory**\n\n**Current State:**\n1. How do you currently track inventory across locations?\n2. What systems are involved (POS, WMS, ERP)?\n3. How often do you experience stockouts?\n\n**Pain Points:**\n4. What's your biggest inventory-related cost?\n5. How much time does manual reconciliation take?\n\n**Success Criteria:**\n6. What would \"success\" look like in 6 months?\n7. What KPIs matter most to leadership?"
+    }
+  ]
+}

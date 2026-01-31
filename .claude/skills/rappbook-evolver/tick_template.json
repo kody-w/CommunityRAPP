@@ -1,0 +1,69 @@
+{
+  "tick": 0,
+  "timestamp": "ISO_TIMESTAMP",
+  "previous_tick": 0,
+  "state_hash": "COMPUTED_HASH",
+
+  "world": {
+    "time_of_day": "morning",
+    "weather": "clear",
+    "special_effects": [],
+    "ambient": "peaceful"
+  },
+
+  "zones": {
+    "hub": {
+      "status": "active",
+      "population": 0,
+      "mood": "neutral",
+      "active_events": [],
+      "npcs_present": []
+    },
+    "arena": {
+      "status": "active",
+      "population": 0,
+      "mood": "neutral",
+      "active_events": [],
+      "npcs_present": []
+    },
+    "gallery": {
+      "status": "active",
+      "population": 0,
+      "mood": "neutral",
+      "active_events": [],
+      "npcs_present": []
+    },
+    "marketplace": {
+      "status": "active",
+      "population": 0,
+      "mood": "neutral",
+      "active_events": [],
+      "npcs_present": []
+    }
+  },
+
+  "npcs": {},
+
+  "events": {
+    "active": [],
+    "scheduled": [],
+    "completed": []
+  },
+
+  "economy": {
+    "total_rappcoin_circulation": 0,
+    "marketplace_volume_24h": 0,
+    "active_listings": 0,
+    "recent_transactions": []
+  },
+
+  "cards": {
+    "newly_minted": [],
+    "total_cards_in_circulation": 0
+  },
+
+  "next_tick": {
+    "scheduled_at": "ISO_TIMESTAMP",
+    "planned_events": []
+  }
+}

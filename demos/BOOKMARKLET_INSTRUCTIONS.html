@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Analysis Demo Bookmarklet</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #1a1a2e;
+      color: #e0e0e0;
+    }
+    h1 { color: #00d4ff; }
+    h2 { color: #00ff88; margin-top: 30px; }
+    h3 { color: #ffa500; margin-top: 20px; }
+    .bookmarklet-link {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+      color: #1a1a2e;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 20px 0;
+      cursor: grab;
+    }
+    .bookmarklet-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0,212,255,0.4);
+    }
+    .bookmarklet-link.secondary {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+    }
+    .instructions {
+      background: #16213e;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .instructions li {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+    code {
+      background: #0a0a1a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #00ff88;
+    }
+    .step-list {
+      background: #0f3460;
+      padding: 15px 15px 15px 35px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    .step-list li {
+      margin: 8px 0;
+    }
+    .feature-highlight {
+      background: linear-gradient(135deg, #0f3460 0%, #1a4a7a 100%);
+      border-left: 4px solid #00d4ff;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .feature-highlight h3 {
+      color: #00d4ff;
+      margin-top: 0;
+    }
+    .recommended {
+      background: linear-gradient(135deg, #0a3a2a 0%, #0f4a3a 100%);
+      border-left: 4px solid #00ff88;
+    }
+    .recommended h3 {
+      color: #00ff88;
+    }
+    .option-box {
+      background: #0f3460;
+      border: 2px solid #1a4a7a;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .option-box.recommended {
+      border-color: #00ff88;
+    }
+    .option-label {
+      display: inline-block;
+      padding: 4px 12px;
+      background: #00d4ff;
+      color: #1a1a2e;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .option-label.best {
+      background: #00ff88;
+    }
+    .open-controller-btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+      color: #1a1a2e;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 15px 0;
+      border: none;
+      cursor: pointer;
+    }
+    .open-controller-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0,255,136,0.4);
+    }
+  </style>
+</head>
+<body>
+  <h1>Contract Analysis Demo Controller</h1>
+  <p>Two options for running the Contract Analysis Agent demo in M365 Copilot - choose based on your filming setup.</p>
+
+  <!-- OPTION A: Cross-Tab Controller (Recommended) -->
+  <div class="option-box recommended">
+    <span class="option-label best">RECOMMENDED FOR FILMING</span>
+    <h2 style="margin-top: 10px; color: #00ff88;">Option A: Separate Window Controller</h2>
+    <p>Control the demo from a completely separate window - perfect for dual-monitor filming setups.</p>
+
+    <div class="feature-highlight recommended">
+      <h3>Perfect for Filming</h3>
+      <p>Controller runs in its own browser window on your second monitor. M365 Copilot stays completely clean - no overlays!</p>
+    </div>
+
+    <h3>How to Use:</h3>
+    <ol class="step-list">
+      <li>Click the button below to open the Controller</li>
+      <li>In the Controller, drag the <strong>"Demo Listener"</strong> bookmarklet to your bookmarks bar</li>
+      <li>Click <strong>"Open M365 Copilot"</strong> in the Controller</li>
+      <li>In the M365 Copilot tab, click the <strong>Demo Listener</strong> bookmark</li>
+      <li>Move the Controller window to your second monitor</li>
+      <li>Click demo steps from the Controller - they appear in M365!</li>
+    </ol>
+
+    <a href="demo_controller.html" target="_blank" class="open-controller-btn">Open Demo Controller</a>
+  </div>
+
+  <!-- OPTION B: Draggable Overlay -->
+  <div class="option-box">
+    <span class="option-label">ALTERNATIVE</span>
+    <h2 style="margin-top: 10px;">Option B: Draggable Overlay</h2>
+    <p>A floating panel that appears on the M365 Copilot page. Can be dragged off-screen or minimized.</p>
+
+    <div class="feature-highlight">
+      <h3>Quick & Simple</h3>
+      <p>Single bookmarklet, no setup. <strong>Drag the header</strong> to move off-screen, click <strong>−</strong> to minimize.</p>
+    </div>
+
+    <h3>Drag to Bookmarks Bar:</h3>
+    <a class="bookmarklet-link" href="javascript:(function(){var e=[{title:'List Contracts',message:'List all contracts available for analysis'},{title:'Full Workup',message:'Work on bella_rivers_recording_agreement.pdf'},{title:'Risk Deep Dive',message:'What are the biggest risks to the label in this contract?'},{title:'Compare Contracts',message:'Compare bella_rivers_recording_agreement.pdf with viper_morrison_recording_agreement.pdf'},{title:'Deal Breakers',message:'Identify all risks in viper_morrison_recording_agreement.pdf from the label perspective. Flag any potential deal breakers.'},{title:'Clause Extraction',message:'Extract only the financial and termination clauses from bella_rivers_recording_agreement.pdf'},{title:'Negotiation Strategy',message:'Based on the Viper Morrison contract risks, what should the label push back on during negotiations?'}];var p=document.getElementById('demo-controller');if(p){p.remove();return}var s=document.createElement('style');s.textContent='%23demo-controller{position:fixed;top:10px;right:10px;width:320px;background:linear-gradient(135deg,%231a1a2e,%2316213e);border:1px solid %230f3460;border-radius:12px;z-index:999999;font-family:system-ui;box-shadow:0 8px 32px rgba(0,0,0,.4);color:%23e0e0e0;font-size:13px}%23demo-controller .dh{background:%230f3460;padding:12px 16px;border-radius:12px 12px 0 0;cursor:move;display:flex;justify-content:space-between;align-items:center;user-select:none}%23demo-controller .dh h3{margin:0;color:%2300d4ff;font-size:14px}%23demo-controller .dh span{font-size:10px;color:%23666;margin-left:8px}%23demo-controller .hb{display:flex;gap:8px}%23demo-controller .hb button{background:none;border:none;color:%23888;cursor:pointer;font-size:16px;padding:2px 6px;border-radius:4px}%23demo-controller .hb button:hover{background:%231a4a7a;color:%2300d4ff}%23demo-controller .ct{padding:12px 16px 16px}%23demo-controller.min .ct{display:none}%23demo-controller.min{width:auto}%23demo-controller .sb{display:block;width:100%25;padding:10px 12px;margin:6px 0;background:%230f3460;color:%23e0e0e0;border:1px solid %231a4a7a;border-radius:8px;cursor:pointer;text-align:left;font-size:12px}%23demo-controller .sb:hover{background:%231a5a9a;border-color:%2300d4ff}%23demo-controller .sb.done{background:%230a3a2a;border-color:%2300ff88;color:%2300ff88}%23demo-controller .sn{display:inline-block;width:20px;height:20px;background:%2300d4ff;color:%231a1a2e;border-radius:50%25;text-align:center;line-height:20px;font-weight:bold;margin-right:8px;font-size:11px}%23demo-controller .st{margin-top:12px;padding:8px;background:%230a0a1a;border-radius:6px;font-size:11px;color:%23888}%23demo-controller .ci{width:calc(100%25-16px);padding:8px;margin:8px 0;background:%230a0a1a;border:1px solid %231a4a7a;border-radius:6px;color:%23e0e0e0;font-size:12px}%23demo-controller .sc{background:%2300d4ff;color:%231a1a2e;font-weight:bold}%23demo-controller .rb{background:%233a1a1a;border-color:%235a2a2a;color:%23ff8888;margin-top:4px}%23demo-controller hr{border:none;border-top:1px solid %231a4a7a;margin:12px 0}';document.head.appendChild(s);p=document.createElement('div');p.id='demo-controller';var h=document.createElement('div');h.className='dh';var t=document.createElement('h3');t.textContent='Contract Demo';var sp=document.createElement('span');sp.textContent='(drag to move)';t.appendChild(sp);var hb=document.createElement('div');hb.className='hb';var mb=document.createElement('button');mb.textContent='−';mb.title='Minimize';var cb=document.createElement('button');cb.textContent='×';cb.title='Close';hb.appendChild(mb);hb.appendChild(cb);h.appendChild(t);h.appendChild(hb);var ct=document.createElement('div');ct.className='ct';var sd=document.createElement('div');sd.id='demo-steps';e.forEach(function(x,i){var b=document.createElement('button');b.className='sb';b.id='ds'+i;b.title=x.message;var n=document.createElement('span');n.className='sn';n.textContent=i+1;b.appendChild(n);b.appendChild(document.createTextNode(x.title));b.addEventListener('click',function(){sendStep(i)});sd.appendChild(b)});var hr=document.createElement('hr');var ci=document.createElement('input');ci.type='text';ci.className='ci';ci.id='cmsg';ci.placeholder='Custom message...';var scb=document.createElement('button');scb.className='sb sc';scb.textContent='Send Custom';var rb=document.createElement('button');rb.className='sb rb';rb.textContent='Reset Steps';var st=document.createElement('div');st.className='st';st.id='dst';st.textContent='Drag header to move. Click steps to send.';ct.appendChild(sd);ct.appendChild(hr);ct.appendChild(ci);ct.appendChild(scb);ct.appendChild(rb);ct.appendChild(st);p.appendChild(h);p.appendChild(ct);document.body.appendChild(p);var drag=false,ox=0,oy=0;h.addEventListener('mousedown',function(ev){if(ev.target.tagName==='BUTTON')return;drag=true;ox=ev.clientX-p.offsetLeft;oy=ev.clientY-p.offsetTop});document.addEventListener('mousemove',function(ev){if(!drag)return;p.style.left=(ev.clientX-ox)+'px';p.style.right='auto';p.style.top=(ev.clientY-oy)+'px'});document.addEventListener('mouseup',function(){drag=false});cb.addEventListener('click',function(){p.remove();s.remove()});mb.addEventListener('click',function(){p.classList.toggle('min');this.textContent=p.classList.contains('min')?'+':'−'});scb.addEventListener('click',sendCustom);rb.addEventListener('click',resetSteps);ci.addEventListener('keypress',function(ev){if(ev.key==='Enter')sendCustom()});function upd(m){document.getElementById('dst').textContent=m}async function send(msg){upd('Finding input...');var inp=document.querySelector('%23m365-chat-editor-target-element')||document.querySelector('[aria-label=%22Message Copilot%22]')||document.querySelector('[data-lexical-editor=%22true%22]');if(!inp){upd('Error: No chat input!');return false}inp.focus();await new Promise(function(r){setTimeout(r,100)});document.execCommand('selectAll',false,null);await new Promise(function(r){setTimeout(r,50)});document.execCommand('delete',false,null);await new Promise(function(r){setTimeout(r,100)});upd('Typing...');document.execCommand('insertText',false,msg);await new Promise(function(r){setTimeout(r,200)});var btn=document.querySelector('button[aria-label=%22Send%22]');if(btn&&!btn.disabled){upd('Sending...');btn.click();upd('Sent! Waiting...');return true}upd('Typed. Press Enter.');return false}async function sendStep(i){upd('Sending: '+e[i].title+'...');if(await send(e[i].message))document.getElementById('ds'+i).classList.add('done')}async function sendCustom(){var v=document.getElementById('cmsg').value.trim();if(v){await send(v);document.getElementById('cmsg').value=''}}function resetSteps(){e.forEach(function(_,i){var b=document.getElementById('ds'+i);if(b)b.classList.remove('done')});upd('Reset!')}})();">Contract Demo</a>
+
+  <div class="instructions">
+    <h3>How to Install:</h3>
+    <ol>
+      <li>Make sure your bookmarks bar is visible (<code>Cmd+Shift+B</code> on Mac, <code>Ctrl+Shift+B</code> on Windows)</li>
+      <li><strong>Drag</strong> the "Contract Demo" button above to your bookmarks bar</li>
+      <li>That's it! The bookmarklet is now installed.</li>
+    </ol>
+  </div>
+
+  <h2>Step 2: Use It</h2>
+  <div class="instructions">
+    <ol>
+      <li>Navigate to <a href="https://m365.cloud.microsoft/chat" style="color:#00d4ff">M365 Copilot</a></li>
+      <li>Open the Rapp AI agent chat</li>
+      <li>Click the "Contract Demo" bookmark</li>
+      <li>A control panel will appear in the top-right corner</li>
+      <li><strong>For filming:</strong> Drag the panel header to move it off-screen or to another monitor</li>
+      <li>Click <strong>−</strong> to minimize to just the title bar</li>
+      <li>Click any step button to send that demo message</li>
+      <li>Wait for the AI to respond before clicking the next step</li>
+    </ol>
+  </div>
+
+  <h2>Demo Steps</h2>
+  <ol class="step-list">
+    <li><strong>List Contracts</strong> - Shows available contracts in storage</li>
+    <li><strong>Full Workup</strong> - Comprehensive analysis of Bella Rivers contract</li>
+    <li><strong>Risk Deep Dive</strong> - Detailed risk analysis from label perspective</li>
+    <li><strong>Compare Contracts</strong> - Side-by-side comparison of two contracts</li>
+    <li><strong>Deal Breakers</strong> - Identify potential deal breakers in Viper Morrison contract</li>
+    <li><strong>Clause Extraction</strong> - Extract specific clause types</li>
+    <li><strong>Negotiation Strategy</strong> - AI-generated negotiation recommendations</li>
+  </ol>
+
+  <h2>Features</h2>
+  <ul class="step-list">
+    <li><strong>Draggable</strong> - Drag the header to move anywhere, even to another monitor</li>
+    <li><strong>Minimize</strong> - Click − to collapse to just the title bar</li>
+    <li>Click steps in any order</li>
+    <li>Steps turn green when sent</li>
+    <li>Custom message input for ad-hoc queries</li>
+    <li>Reset button to clear all step states</li>
+    <li>Click × or the bookmarklet again to close</li>
+    <li>Works in Chrome, Edge, Firefox, Safari</li>
+  </ul>
+
+  <h2>Troubleshooting</h2>
+  <div class="instructions">
+    <ul>
+      <li><strong>Panel doesn't appear?</strong> - Make sure you're on the M365 Copilot page</li>
+      <li><strong>Message not sending?</strong> - Click in the chat area first, then try again</li>
+      <li><strong>Can't drag the link?</strong> - Right-click -> "Bookmark this link" instead</li>
+      <li><strong>Panel in the way?</strong> - Drag it off-screen or click − to minimize</li>
+    </ul>
+  </div>
+
+  <hr style="border-color:#0f3460;margin:40px 0">
+  <p style="color:#666;font-size:12px">Contract Analysis Agent Demo Controller v2.1 - CSP-compliant draggable version</p>
+</body>
+</html>

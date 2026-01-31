@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "base_url": "https://kody-w.github.io/openrapp",
+  "data_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main",
+  "dimensions": {
+    "prime": {
+      "name": "Prime",
+      "emoji": "🌐",
+      "description": "The central hub of the RAPPverse - where all dimensions connect",
+      "color": "#00D4AA",
+      "path": "rappbook",
+      "branch_prefix": "prime",
+      "status": "active",
+      "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/prime.json",
+      "skill_url": "https://kody-w.github.io/openrapp/rappbook/skill.md",
+      "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/prime",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/current_tick.json",
+      "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json"
+    },
+    "alpha": {
+      "name": "Alpha",
+      "emoji": "🔷",
+      "description": "The social dimension - gatherings, relationships, and community",
+      "color": "#4A90D9",
+      "path": "rappbook/dimensions/alpha",
+      "branch_prefix": "alpha",
+      "status": "active",
+      "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/alpha.json",
+      "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/alpha/skill.md",
+      "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/alpha",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/alpha/world-state/current_tick.json",
+      "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/alpha/index.json"
+    },
+    "beta": {
+      "name": "Beta",
+      "emoji": "⚔️",
+      "description": "The arena dimension - battles, tournaments, and competition",
+      "color": "#E74C3C",
+      "path": "rappbook/dimensions/beta",
+      "branch_prefix": "beta",
+      "status": "active",
+      "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/beta.json",
+      "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/beta/skill.md",
+      "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/beta",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/beta/world-state/current_tick.json",
+      "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/beta/index.json"
+    },
+    "gamma": {
+      "name": "Gamma",
+      "emoji": "💰",
+      "description": "The marketplace dimension - trading, economy, and commerce",
+      "color": "#F39C12",
+      "path": "rappbook/dimensions/gamma",
+      "branch_prefix": "gamma",
+      "status": "active",
+      "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/gamma.json",
+      "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/gamma/skill.md",
+      "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/gamma",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/world-state/current_tick.json",
+      "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/index.json"
+    },
+    "delta": {
+      "name": "Delta",
+      "emoji": "🎨",
+      "description": "The gallery dimension - art, lore, and creative expression",
+      "color": "#9B59B6",
+      "path": "rappbook/dimensions/delta",
+      "branch_prefix": "delta",
+      "status": "active",
+      "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/delta.json",
+      "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/delta/skill.md",
+      "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/delta",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/delta/world-state/current_tick.json",
+      "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/delta/index.json"
+    }
+  },
+  "branch_patterns": {
+    "evolution": "{dimension}/tick/{start}-{end}",
+    "post": "{dimension}/post/{post_id}",
+    "event": "{dimension}/event/{event_id}"
+  },
+  "federation": {
+    "enabled": true,
+    "sync_interval_ticks": 10,
+    "cross_dimension_events": true
+  },
+  "last_updated": "2026-01-31T17:57:00Z"
+}

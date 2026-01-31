@@ -1,0 +1,87 @@
+{
+  "agent": {
+    "id": "rapp_pipeline_agent",
+    "name": "RAPP Pipeline",
+    "version": "1.0.0",
+    "category": "operations",
+    "icon": "fa-stream",
+    "description": "Orchestrates the full RAPP pipeline with step-by-step guidance and quality gate enforcement.",
+    "tokens": 480,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "RAPPPipeline",
+    "description": "Full RAPP Pipeline orchestration.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["start_pipeline", "get_current_step", "advance_step"],
+          "description": "The pipeline action"
+        },
+        "project_name": { "type": "string" },
+        "project_id": { "type": "string" },
+        "skip_to_step": { "type": "integer" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "start_pipeline",
+      "description": "Initiate new RAPP pipeline",
+      "parameters": ["project_name"],
+      "example": {
+        "input": { "action": "start_pipeline", "project_name": "Customer Support Chatbot" },
+        "output": "Pipeline initiated: PROJ-2024-047. Step 1: Discovery Call. Quality Gates: 6. Estimated timeline: 4-6 weeks."
+      }
+    },
+    {
+      "name": "get_current_step",
+      "description": "Get current pipeline step and progress",
+      "parameters": ["project_id"],
+      "example": {
+        "input": { "action": "get_current_step", "project_id": "PROJ-001" },
+        "output": "Current: Step 3 (Solution Design). Progress: 35%. Next gate: QG3. Blockers: None."
+      }
+    },
+    {
+      "name": "advance_step",
+      "description": "Advance to next step (requires gate pass)",
+      "parameters": ["project_id", "skip_to_step"],
+      "example": {
+        "input": { "action": "advance_step", "project_id": "PROJ-001" },
+        "output": "Advanced to Step 4 (MVP Proposal). QG3 passed. Next action: Generate MVP Poke document."
+      }
+    }
+  ],
+  "pipelineSteps": [
+    { "step": 1, "name": "Discovery Call", "gate": null },
+    { "step": 2, "name": "QG1: Discovery Validation", "gate": "QG1" },
+    { "step": 3, "name": "Requirements Mapping", "gate": null },
+    { "step": 4, "name": "QG2: Requirements Lock", "gate": "QG2" },
+    { "step": 5, "name": "Solution Design", "gate": null },
+    { "step": 6, "name": "QG3: Design Approval", "gate": "QG3" },
+    { "step": 7, "name": "MVP Proposal", "gate": null },
+    { "step": 8, "name": "QG4: MVP Scope Lock", "gate": "QG4" },
+    { "step": 9, "name": "Development", "gate": null },
+    { "step": 10, "name": "QG5: Dev Complete", "gate": "QG5" },
+    { "step": 11, "name": "Testing & UAT", "gate": null },
+    { "step": 12, "name": "QG6: Production Ready", "gate": "QG6" },
+    { "step": 13, "name": "Deployment", "gate": null },
+    { "step": 14, "name": "Retrospective", "gate": null }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Start a new RAPP pipeline for a customer support chatbot."
+    },
+    {
+      "role": "agent",
+      "content": "**RAPP Pipeline Initiated**\n\n**Project:** Customer Support Chatbot\n**Created:** December 6, 2025\n\n**Pipeline Steps:**\n1. **Discovery Call** <- You are here\n2. Requirements Mapping\n3. Solution Design\n4. MVP Proposal\n5. Development\n6. Testing & Validation\n\n**Next Action:** Schedule discovery call or upload existing transcript.\n\n**Quality Gate 1 (QG1):** Will evaluate after discovery completion."
+    }
+  ]
+}

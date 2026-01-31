@@ -1,0 +1,130 @@
+{
+  "agent": {
+    "id": "cx_sales_pipeline_agent",
+    "name": "Sales Pipeline",
+    "version": "1.0.0",
+    "category": "sales",
+    "icon": "fa-chart-line",
+    "description": "Unified sales pipeline visibility across Salesforce and Dynamics 365. Real-time insights during CRM migration.",
+    "tokens": 850,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-12",
+    "updated": "2025-12-12"
+  },
+  "metadata": {
+    "name": "SalesPipeline",
+    "description": "Get real-time sales pipeline insights, opportunity analysis, and forecasting. Works seamlessly whether your data is in Salesforce, Dynamics 365, or both during migration.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query_type": {
+          "type": "string",
+          "enum": ["pipeline_summary", "at_risk_deals", "forecast", "top_opportunities", "team_performance"],
+          "description": "Type of pipeline insight needed"
+        },
+        "region": {
+          "type": "string",
+          "description": "Optional: Filter by region (e.g., 'EMEA', 'North America', 'APAC')"
+        },
+        "time_period": {
+          "type": "string",
+          "description": "Optional: Time period (e.g., 'Q1', 'this_month', 'this_quarter')"
+        }
+      },
+      "required": ["query_type"]
+    }
+  },
+  "actions": [
+    {
+      "name": "pipeline_summary",
+      "description": "Get unified pipeline summary across all CRM systems",
+      "parameters": ["region", "time_period"],
+      "example": {
+        "input": { "query_type": "pipeline_summary" },
+        "output": "Pipeline: $847.3M across 1,247 opportunities. Data from Salesforce (35K users) + D365 (10K migrated). +12.3% vs last quarter."
+      }
+    },
+    {
+      "name": "at_risk_deals",
+      "description": "Identify deals at risk with AI recommendations",
+      "parameters": ["region"],
+      "example": {
+        "input": { "query_type": "at_risk_deals" },
+        "output": "3 at-risk deals totaling $10.1M. Top risk: Global Manufacturing Corp ($4.2M) - stalled 18 days. Recommend: Executive briefing + competitive deck."
+      }
+    },
+    {
+      "name": "forecast",
+      "description": "AI-powered forecast with confidence levels",
+      "parameters": ["region", "time_period"],
+      "example": {
+        "input": { "query_type": "forecast" },
+        "output": "Forecast: $234.5M committed, $312.7M best case. 94% confidence of hitting $280M target. Upside: Push Nordic Energy this week."
+      }
+    },
+    {
+      "name": "top_opportunities",
+      "description": "View top opportunities by value",
+      "parameters": ["region"],
+      "example": {
+        "input": { "query_type": "top_opportunities" },
+        "output": "Top 5: 1) Internal ($12.4M, D365) 2) Global Logistics ($8.7M, SF) 3) Nordic Energy ($8.2M, SF). Focus: Nordic - largest early-stage deal."
+      }
+    },
+    {
+      "name": "team_performance",
+      "description": "Team performance and coaching insights",
+      "parameters": ["region"],
+      "example": {
+        "input": { "query_type": "team_performance" },
+        "output": "847 reps: 312 above quota, 237 below 80%. Top: Demo Rep 2 (142%). Insight: Top performers use AI assistant 3.2x more."
+      }
+    }
+  ],
+  "useCases": [
+    "Unified pipeline view during CRM migration",
+    "At-risk deal identification with AI recommendations",
+    "Sales forecasting with confidence levels",
+    "Cross-system opportunity tracking",
+    "Team performance analytics"
+  ],
+  "demo_name": "Sales Pipeline Agent",
+  "description": "Unified sales pipeline visibility across Salesforce and Dynamics 365 with AI insights",
+  "trigger_phrases": [
+    "Show me my pipeline summary for this quarter",
+    "show me my pipeline summary",
+    "pipeline summary for this quarter"
+  ],
+  "conversation_flow": [
+    {
+      "step_number": 1,
+      "description": "User asks for pipeline summary",
+      "user_message": "Show me my pipeline summary for this quarter",
+      "agent_response": "**Q4 Pipeline Summary**\n\n**Data Sources:** Salesforce (35,000 users) + Dynamics 365 (10,000 migrated)\n\n| Metric | Value |\n|--------|-------|\n| Total Pipeline | $847.3M |\n| Qualified Opportunities | 1,247 |\n| vs Last Quarter | +12.3% |\n| Win Rate Trend | 67% (up from 61%) |\n| Avg Deal Size | $679K |\n\n**Stage Breakdown:**\n- Discovery: 423 deals ($156.2M)\n- Qualification: 312 deals ($198.7M)\n- Proposal: 287 deals ($243.1M)\n- Negotiation: 156 deals ($187.4M)\n- Closing: 69 deals ($61.9M)\n\n**AI Insight:** Pipeline velocity increased 23% since unified reporting went live. Teams using AI assistant close deals 8 days faster.\n\n🔧 Agent: SalesPipeline.pipeline_summary"
+    },
+    {
+      "step_number": 2,
+      "description": "User asks about at-risk deals",
+      "user_message": "Which deals are at risk?",
+      "agent_response": "**At-Risk Opportunities: $10.1M Total**\n\n**1. Global Manufacturing Corp - $4.2M** (Salesforce)\n- Stage: Negotiation | Stalled: 18 days\n- Risk Factors: No executive engagement, competitor identified, budget review pending\n- **Recommended Actions:**\n  - Schedule executive briefing with CFO\n  - Prepare competitive differentiation deck\n  - Offer pilot program to reduce perceived risk\n\n**2. TechStart Industries - $2.8M** (Dynamics 365)\n- Stage: Proposal | Stalled: 12 days\n- Risk Factors: Champion went silent, Q1 budget constraints\n- **Recommended Actions:**\n  - Multi-thread to procurement and IT leads\n  - Propose Q2 start with Q1 pilot\n  - Share ROI case study\n\n**3. Energy Solutions Ltd - $3.1M** (Salesforce)\n- Stage: Qualification | Stalled: 21 days\n- Risk Factors: Competing priorities, key stakeholder on leave\n- **Recommended Actions:**\n  - Wait for stakeholder return (Jan 15)\n  - Send value summary to backup contact\n\n**AI Priority:** Focus on Global Manufacturing Corp - highest value with clear action path.\n\n🔧 Agent: SalesPipeline.at_risk_deals"
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Show me my pipeline summary for this quarter"
+    },
+    {
+      "role": "agent",
+      "content": "**Q4 Pipeline Summary**\n\n**Data Sources:** Salesforce (35,000 users) + Dynamics 365 (10,000 migrated)\n\n| Metric | Value |\n|--------|-------|\n| Total Pipeline | $847.3M |\n| Qualified Opportunities | 1,247 |\n| vs Last Quarter | +12.3% |\n| Win Rate Trend | 67% (up from 61%) |\n| Avg Deal Size | $679K |\n\n**Stage Breakdown:**\n- Discovery: 423 deals ($156.2M)\n- Qualification: 312 deals ($198.7M)\n- Proposal: 287 deals ($243.1M)\n- Negotiation: 156 deals ($187.4M)\n- Closing: 69 deals ($61.9M)\n\n**AI Insight:** Pipeline velocity increased 23% since unified reporting went live. Teams using AI assistant close deals 8 days faster."
+    },
+    {
+      "role": "user",
+      "content": "Which deals are at risk?"
+    },
+    {
+      "role": "agent",
+      "content": "**At-Risk Opportunities: $10.1M Total**\n\n**1. Global Manufacturing Corp - $4.2M** (Salesforce)\n- Stage: Negotiation | Stalled: 18 days\n- Risk Factors: No executive engagement, competitor identified, budget review pending\n- **Recommended Actions:**\n  - Schedule executive briefing with CFO\n  - Prepare competitive differentiation deck\n  - Offer pilot program to reduce perceived risk\n\n**2. TechStart Industries - $2.8M** (Dynamics 365)\n- Stage: Proposal | Stalled: 12 days\n- Risk Factors: Champion went silent, Q1 budget constraints\n- **Recommended Actions:**\n  - Multi-thread to procurement and IT leads\n  - Propose Q2 start with Q1 pilot\n  - Share ROI case study\n\n**3. Energy Solutions Ltd - $3.1M** (Salesforce)\n- Stage: Qualification | Stalled: 21 days\n- Risk Factors: Competing priorities, key stakeholder on leave\n- **Recommended Actions:**\n  - Wait for stakeholder return (Jan 15)\n  - Send value summary to backup contact\n\n**AI Priority:** Focus on Global Manufacturing Corp - highest value with clear action path."
+    }
+  ]
+}

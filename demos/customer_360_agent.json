@@ -1,0 +1,156 @@
+{
+  "agent": {
+    "id": "customer_360_agent",
+    "name": "Customer 360",
+    "version": "1.0.0",
+    "category": "sales",
+    "icon": "fa-user-circle",
+    "description": "Comprehensive customer intelligence with health scoring, churn prediction, and expansion opportunity identification.",
+    "tokens": 650,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "Customer360",
+    "description": "Comprehensive customer intelligence platform with health scoring and predictive analytics.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["get_customer_profile", "calculate_health_score", "predict_churn_risk", "identify_expansion_opportunities", "get_stakeholder_map", "prepare_meeting_brief"],
+          "description": "The customer intelligence action to perform"
+        },
+        "account_id": {
+          "type": "string",
+          "description": "Account/customer identifier"
+        },
+        "time_period": {
+          "type": "string",
+          "description": "Time period for analysis (e.g., 30d, 90d, 1y)"
+        }
+      },
+      "required": ["action", "account_id"]
+    }
+  },
+  "actions": [
+    {
+      "name": "get_customer_profile",
+      "description": "Retrieve comprehensive 360-degree customer profile",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "get_customer_profile", "account_id": "ACC-ACME-001" },
+        "output": "Acme Corp: $125K ARR, 3-year customer, Enterprise tier. Primary contact: Demo Rep 2 (VP Ops). 14 active users, 92% product adoption."
+      }
+    },
+    {
+      "name": "calculate_health_score",
+      "description": "Calculate customer health score with contributing factors",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "calculate_health_score", "account_id": "ACC-ACME-001" },
+        "output": "Health Score: 78/100 (Good). Factors: Usage 92% (+12 MoM), Support tickets low, NPS 8.5, Payment current. Risk: Champion role change."
+      }
+    },
+    {
+      "name": "predict_churn_risk",
+      "description": "Predict churn probability with early warning indicators",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "predict_churn_risk", "account_id": "ACC-ACME-001" },
+        "output": "Churn Risk: 15% (Low). Warning: Usage down 8% in billing module. Recommendation: Schedule product training session."
+      }
+    },
+    {
+      "name": "identify_expansion_opportunities",
+      "description": "Identify upsell and cross-sell opportunities",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "identify_expansion_opportunities", "account_id": "ACC-ACME-001" },
+        "output": "Expansion Opportunities: 1) Analytics add-on ($15K/yr) - high fit based on usage patterns. 2) Additional seats (10 requested) - $12K/yr."
+      }
+    },
+    {
+      "name": "get_stakeholder_map",
+      "description": "Map key stakeholders and their influence/sentiment",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "get_stakeholder_map", "account_id": "ACC-ACME-001" },
+        "output": "Stakeholders: Demo Rep 2 (Champion, VP Ops), Demo Exec (Decision Maker, CFO), Demo Rep (End User, Manager). Champion sentiment: Positive. CFO: Neutral - cost-focused."
+      }
+    },
+    {
+      "name": "prepare_meeting_brief",
+      "description": "Generate executive briefing for customer meeting",
+      "parameters": ["account_id"],
+      "example": {
+        "input": { "action": "prepare_meeting_brief", "account_id": "ACC-ACME-001" },
+        "output": "Meeting Brief: Acme Corp QBR. Health: Good (78). Topics: Renewal (90 days), Analytics expansion, New champion intro. Risks: Budget review Q1."
+      }
+    }
+  ],
+  "useCases": [
+    "Account health monitoring and scoring",
+    "Churn prediction and prevention",
+    "Expansion opportunity identification",
+    "Executive meeting preparation",
+    "Stakeholder relationship mapping",
+    "Customer journey tracking"
+  ],
+  "integrations": [
+    "Salesforce",
+    "HubSpot",
+    "Gainsight",
+    "Product analytics platforms",
+    "Support ticketing systems",
+    "NPS/CSAT tools"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Give me a health score analysis for Acme Corp."
+    },
+    {
+      "role": "agent",
+      "content": "**Acme Corp Health Score: 78/100** (Good)\n\n**Factors:**\n- Product Usage: 92% (+12% MoM)\n- Support Tickets: 3 open (avg resolution: 4.2hrs)\n- NPS Score: 8.5 (from 7.8)\n- Contract Value: $125K ARR\n\n**Risk Alert:** Champion (Demo Rep 2) changed roles. Recommend scheduling intro with new POC."
+    },
+    {
+      "role": "user",
+      "content": "What expansion opportunities exist?"
+    },
+    {
+      "role": "agent",
+      "content": "**Expansion Opportunities for Acme Corp:**\n\n**High Confidence:**\n1. **Analytics Add-on** - $15K/yr\n   - Usage patterns show 40% of users regularly export data for analysis\n   - Fit score: 92%\n\n2. **Additional Seats** - $12K/yr\n   - 10 seat requests in queue from end users\n   - IT approved budget for Q1\n\n**Medium Confidence:**\n3. **Premium Support** - $8K/yr\n   - 3 after-hours tickets this quarter\n\n**Total Opportunity:** $35K additional ARR"
+    }
+  ],
+  "sampleScenarios": [
+    {
+      "name": "Quarterly Business Review",
+      "description": "Prepare for customer QBR meeting",
+      "prompts": [
+        "Prepare a meeting brief for Acme Corp",
+        "What's their health trend over the last 6 months?",
+        "Who are the key stakeholders I should invite?"
+      ]
+    },
+    {
+      "name": "Churn Prevention",
+      "description": "Identify and address at-risk accounts",
+      "prompts": [
+        "Show me accounts with churn risk above 30%",
+        "What's causing the risk for TechStart Inc?",
+        "Generate a save plan for this account"
+      ]
+    },
+    {
+      "name": "Expansion Planning",
+      "description": "Identify growth opportunities",
+      "prompts": [
+        "Which accounts have expansion potential over $20K?",
+        "What's the best product to pitch to Acme?",
+        "Show me accounts ready for enterprise tier upgrade"
+      ]
+    }
+  ]
+}
