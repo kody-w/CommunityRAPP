@@ -162,7 +162,7 @@ Ticks can branch into alternate timelines:
 
 ```bash
 # Read current state
-CURRENT=$(cat rappbook/world-state/current_tick.json)
+CURRENT=$(cat rappzoo/world/current_tick.json)
 
 # Create molt input
 MOLT='{

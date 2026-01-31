@@ -480,8 +480,8 @@
     </main>
 
     <script>
-        const API_BASE = 'https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state';
-        const LOCAL_BASE = '../rappbook/world-state';
+        const API_BASE = 'https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world';
+        const LOCAL_BASE = 'world';
 
         async function loadCurrentTick() {
             try {
@@ -506,7 +506,7 @@
                     <div class="error">
                         Unable to load creatures. The zoo may be sleeping.
                         <br><br>
-                        <a href="../rappbook/world-state/current_tick.json" style="color: var(--primary);">
+                        <a href="world/current_tick.json" style="color: var(--primary);">
                             Try viewing the raw tick data
                         </a>
                     </div>

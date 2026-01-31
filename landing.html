@@ -906,7 +906,7 @@
         // Fetch live tick count
         async function fetchTickCount() {
             try {
-                const response = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/current_tick.json');
+                const response = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/current_tick.json');
                 const data = await response.json();
                 document.getElementById('tick-count').textContent = data.tick || '252';
             } catch (e) {
