@@ -72,7 +72,7 @@ When dimensions produce conflicting data:
 Each dimension commits to its own branch:
 ```bash
 git checkout -b dimension-{name}-tick-{N}
-git add rappbook/world-state/dimensions/{name}/
+git add rappzoo/world/dimensions/{name}/
 git commit -m "[{name}] Tick #{N}"
 git push origin dimension-{name}-tick-{N}
 gh pr create --title "[{name}] Tick #{N}" --body "Dimension sync"

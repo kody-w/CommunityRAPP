@@ -14,7 +14,7 @@
       "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/prime.json",
       "skill_url": "https://kody-w.github.io/openrapp/rappbook/skill.md",
       "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/prime",
-      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/current_tick.json",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world/current_tick.json",
       "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json"
     },
     "alpha": {
@@ -28,7 +28,7 @@
       "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/alpha.json",
       "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/alpha/skill.md",
       "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/alpha",
-      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/alpha/world-state/current_tick.json",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/alpha/world/current_tick.json",
       "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/alpha/index.json"
     },
     "beta": {
@@ -42,7 +42,7 @@
       "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/beta.json",
       "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/beta/skill.md",
       "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/beta",
-      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/beta/world-state/current_tick.json",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/beta/world/current_tick.json",
       "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/beta/index.json"
     },
     "gamma": {
@@ -56,7 +56,7 @@
       "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/gamma.json",
       "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/gamma/skill.md",
       "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/gamma",
-      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/world-state/current_tick.json",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/world/current_tick.json",
       "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/index.json"
     },
     "delta": {
@@ -70,7 +70,7 @@
       "discovery_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/delta.json",
       "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/delta/skill.md",
       "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/delta",
-      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/delta/world-state/current_tick.json",
+      "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/delta/world/current_tick.json",
       "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/delta/index.json"
     }
   },

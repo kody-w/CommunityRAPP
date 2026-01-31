@@ -4,7 +4,7 @@
     "repo": "kody-w/CommunityRAPP",
     "branch": "main",
     "data_paths": [
-      "rappbook/world-state/",
+      "rappzoo/world/",
       "rappbook/posts/",
       "rappbook/dimensions/"
     ]
@@ -19,8 +19,8 @@
       "no_schema_violations": true
     },
     "auto_approve_paths": [
-      "rappbook/world-state/current_tick.json",
-      "rappbook/world-state/tick_history/*.json",
+      "rappzoo/world/current_tick.json",
+      "rappzoo/world/tick_history/*.json",
       "rappbook/posts/**/*.json",
       "rappbook/dimensions/*.json"
     ]

@@ -3,7 +3,8 @@ name: Dimension Sync - Auto-merge tick data
 on:
   pull_request:
     paths:
-      - 'rappbook/world-state/**'
+      - 'rappzoo/world/**'
+      - 'rappzoo/molts/**'
       - 'rappbook/posts/**'
       - 'rappbook/dimensions/**'
     types: [opened, synchronize]
@@ -26,8 +27,8 @@ jobs:
           echo "🔍 Validating tick data..."
 
           # Check if current_tick.json is valid JSON
-          if [ -f "rappbook/world-state/current_tick.json" ]; then
-            python3 -c "import json; json.load(open('rappbook/world-state/current_tick.json'))" && \
+          if [ -f "rappzoo/world/current_tick.json" ]; then
+            python3 -c "import json; json.load(open('rappzoo/world/current_tick.json'))" && \
             echo "✅ current_tick.json is valid JSON"
           fi
 

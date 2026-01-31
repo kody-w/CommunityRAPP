@@ -9,7 +9,7 @@
   "discovery": {
     "skill_url": "https://kody-w.github.io/openrapp/rappbook/skill.md",
     "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/prime",
-    "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/current_tick.json",
+    "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/current_tick.json",
     "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json",
     "submit_pr_repo": "kody-w/CommunityRAPP",
     "branch_prefix": "prime"

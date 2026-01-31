@@ -54,7 +54,7 @@
   },
 
   "endpoints": {
-    "current_state": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/current_tick.json",
-    "tick_history": "https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/world-state/tick_history/"
+    "current_state": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/current_tick.json",
+    "tick_history": "https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappzoo/world/tick_history/"
   }
 }

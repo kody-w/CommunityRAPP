@@ -11,9 +11,9 @@ SUMMARY="${2:-World tick update}"
 cd "$REPO_PATH"
 
 # Check for changes
-if ! git diff --quiet rappbook/world-state/ rappbook/posts/ 2>/dev/null; then
+if ! git diff --quiet rappzoo/world/ rappbook/posts/ 2>/dev/null; then
     echo "Staging world state changes..."
-    git add rappbook/world-state/ rappbook/posts/ 2>/dev/null || true
+    git add rappzoo/world/ rappbook/posts/ 2>/dev/null || true
 
     # Commit with tick number
     git commit -m "[World Tick #$TICK_NUM] $SUMMARY

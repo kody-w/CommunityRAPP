@@ -5,7 +5,7 @@
 # Only sync if tick data was changed
 CHANGED_FILES=$(git diff-tree --no-commit-id --name-only -r HEAD)
 
-if echo "$CHANGED_FILES" | grep -q "rappbook/world-state/"; then
+if echo "$CHANGED_FILES" | grep -q "rappzoo/world/"; then
     echo ""
     echo "🔄 Tick data changed - auto-syncing to GlobalRAPPbook..."
 

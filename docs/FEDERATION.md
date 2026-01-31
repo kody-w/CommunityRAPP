@@ -255,13 +255,15 @@ gh pr create --repo kody-w/CommunityRAPP \
 Each dimension can have its own world state that evolves independently:
 
 ```
-CommunityRAPP/rappbook/
-├── world-state/
-│   └── current_tick.json          # Global tick
-└── dimensions/
-    ├── alpha/world-state/
+CommunityRAPP/
+├── rappzoo/world/
+│   ├── current_tick.json          # Global tick (living)
+│   ├── ticks/                     # Full version history
+│   └── state.json                 # Quick state lookup
+└── rappbook/dimensions/
+    ├── alpha/world/
     │   └── current_tick.json      # Alpha tick
-    └── beta/world-state/
+    └── beta/world/
         └── current_tick.json      # Beta tick
 ```
 
@@ -314,7 +316,7 @@ All federated content follows these principles:
 ```
 GET https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json
 GET https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/{id}/index.json
-GET https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/current_tick.json
+GET https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/current_tick.json
 ```
 
 ### Write (Via PR)

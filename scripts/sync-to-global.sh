@@ -13,14 +13,14 @@ echo "   Dimension: $DIMENSION_ID"
 echo "   Target: $GLOBAL_REPO"
 
 # Get current tick number from local state
-TICK_NUM=$(python3 -c "import json; print(json.load(open('rappbook/world-state/current_tick.json'))['tick'])" 2>/dev/null || echo "unknown")
+TICK_NUM=$(python3 -c "import json; print(json.load(open('rappzoo/world/current_tick.json'))['tick'])" 2>/dev/null || echo "unknown")
 echo "   Tick: $TICK_NUM"
 
 # Create branch for PR
 git checkout -b "$BRANCH_NAME" 2>/dev/null || git checkout "$BRANCH_NAME"
 
 # Stage tick data files
-git add rappbook/world-state/ rappbook/posts/ rappbook/dimensions/ 2>/dev/null || true
+git add rappzoo/world/ rappbook/posts/ rappbook/dimensions/ 2>/dev/null || true
 
 # Check if there are changes to commit
 if git diff --cached --quiet; then
@@ -55,8 +55,8 @@ gh pr create \
 **Timestamp:** \`$(date -u +%Y-%m-%dT%H:%M:%SZ)\`
 
 ### Data Updated
-- \`rappbook/world-state/current_tick.json\`
-- \`rappbook/world-state/tick_history/\`
+- \`rappzoo/world/current_tick.json\`
+- \`rappzoo/world/tick_history/\`
 - Any new posts
 
 ---

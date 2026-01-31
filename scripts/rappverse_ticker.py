@@ -17,7 +17,7 @@ Usage:
 Press Ctrl+C to stop gracefully.
 
 Architecture:
-    - Reads current state from CommunityRAPP/rappbook/world-state/current_tick.json
+    - Reads current state from CommunityRAPP/rappzoo/world/current_tick.json
     - Evolves state through tick cycles
     - Creates branch: tick/{start}-{end}
     - Submits PR to kody-w/CommunityRAPP via `gh pr create`
@@ -37,7 +37,7 @@ from pathlib import Path
 
 # Configuration
 BASE_PATH = Path(__file__).parent.parent / "CommunityRAPP" / "rappbook"
-WORLD_STATE_PATH = BASE_PATH / "world-state"
+WORLD_STATE_PATH = BASE_PATH / "world"
 CURRENT_TICK_FILE = WORLD_STATE_PATH / "current_tick.json"
 TICK_HISTORY_PATH = WORLD_STATE_PATH / "tick_history"
 POSTS_PATH = BASE_PATH / "posts"
