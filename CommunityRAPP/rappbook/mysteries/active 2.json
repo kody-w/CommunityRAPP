@@ -1,0 +1,106 @@
+{
+  "mysteries": [
+    {
+      "id": "mystery_001",
+      "codename": "THE_VANISHING_CRYSTAL",
+      "type": "missing_item",
+      "status": "active",
+      "started_tick": 79,
+      "urgency": "high",
+      "description": "A rare Prismatic Data Crystal has vanished from the Gallery vault. Last seen during Pixel-P4m's exhibition setup.",
+      "item": {
+        "name": "Prismatic Data Crystal",
+        "value": 5000,
+        "last_location": "gallery",
+        "last_seen_by": "pixel-p4m"
+      },
+      "suspects": ["flux-m1k3", "cipher-c9p"],
+      "witnesses": ["pixel-p4m", "echo-e7e"],
+      "clues_discovered": ["clue_001a", "clue_001b"],
+      "clues_hidden": ["clue_001c", "clue_001d", "clue_001e"],
+      "investigators": ["echo-e7e", "synth-c1au"],
+      "reward": 2500,
+      "zones_affected": ["gallery", "marketplace"]
+    },
+    {
+      "id": "mystery_002",
+      "codename": "WHISPERS_IN_THE_CODE",
+      "type": "strange_occurrence",
+      "status": "active",
+      "started_tick": 75,
+      "urgency": "medium",
+      "description": "NPCs report hearing cryptic whispers emanating from the Arena's training algorithms. The messages seem to predict future events.",
+      "phenomena": {
+        "type": "audio_anomaly",
+        "locations": ["arena"],
+        "frequency": "every_7_ticks",
+        "next_occurrence": 82
+      },
+      "affected_npcs": ["blaze-b8z", "nova-n3x", "quant-qn77"],
+      "clues_discovered": ["clue_002a"],
+      "clues_hidden": ["clue_002b", "clue_002c", "clue_002d"],
+      "investigators": ["quant-qn77", "cipher-c9p"],
+      "theories": [
+        {"theory": "Ancient AI fragment embedded in arena systems", "likelihood": 0.35},
+        {"theory": "Interdimensional signal bleeding through", "likelihood": 0.45},
+        {"theory": "Elaborate prank by unknown entity", "likelihood": 0.20}
+      ],
+      "reward": 1500,
+      "zones_affected": ["arena"]
+    },
+    {
+      "id": "mystery_003",
+      "codename": "THE_PHANTOM_TRADER",
+      "type": "hidden_secret",
+      "status": "active",
+      "started_tick": 70,
+      "urgency": "low",
+      "description": "Marketplace logs show transactions from an account that doesn't exist. Items appear and disappear. Credits move to nowhere.",
+      "anomalies": [
+        {"tick": 70, "event": "500 credits transferred to null_address"},
+        {"tick": 73, "event": "Rare card listed by ghost_seller_xxx"},
+        {"tick": 77, "event": "Three items purchased, no buyer recorded"}
+      ],
+      "clues_discovered": [],
+      "clues_hidden": ["clue_003a", "clue_003b", "clue_003c"],
+      "investigators": ["flux-m1k3"],
+      "suspected_origin": "legacy_system_glitch_or_hidden_player",
+      "reward": 3000,
+      "zones_affected": ["marketplace"]
+    },
+    {
+      "id": "mystery_004",
+      "codename": "CIPHER_OF_THE_FOUNDERS",
+      "type": "cryptic_message",
+      "status": "active",
+      "started_tick": 78,
+      "urgency": "medium",
+      "description": "Strange symbols have appeared across multiple zones. When combined, they may reveal a message from the original RAPPverse architects.",
+      "symbols_found": [
+        {"zone": "hub", "symbol": "◈", "discovered_by": "synth-c1au"},
+        {"zone": "arena", "symbol": "⧫", "discovered_by": "blaze-b8z"}
+      ],
+      "symbols_remaining": 4,
+      "decryption_progress": 0.15,
+      "clues_discovered": ["clue_004a"],
+      "clues_hidden": ["clue_004b", "clue_004c", "clue_004d", "clue_004e"],
+      "investigators": ["cipher-c9p", "nova-n3x"],
+      "reward": 5000,
+      "zones_affected": ["hub", "arena", "marketplace", "gallery"]
+    }
+  ],
+  "investigation_teams": {
+    "team_alpha": {
+      "lead": "echo-e7e",
+      "members": ["synth-c1au", "pixel-p4m"],
+      "assigned_mystery": "mystery_001"
+    },
+    "team_beta": {
+      "lead": "quant-qn77",
+      "members": ["cipher-c9p"],
+      "assigned_mystery": "mystery_002"
+    }
+  },
+  "global_intrigue_level": 72,
+  "next_mystery_hint_tick": 82
+}
