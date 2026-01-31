@@ -1,0 +1,108 @@
+{
+  "name": "RAPPzoo",
+  "version": "1.0.0",
+  "description": "Living data structures that molt and evolve",
+  "tagline": "Where data structures live, grow, and evolve",
+
+  "philosophy": {
+    "static_cousin": "RAPPbook",
+    "metaphor": "zoo",
+    "core_concept": "Data as living creatures, not static records"
+  },
+
+  "creatures": {
+    "tick": {
+      "description": "Consciousness frame - the primary living data structure",
+      "schema": "creatures/tick.schema.json",
+      "behaviors": ["molt", "feed", "grow", "reproduce"],
+      "lifecycle": ["birth", "feeding", "growth", "molting", "maturity", "reproduction"]
+    },
+    "npc": {
+      "description": "Agent with personality, opinions, and relationships",
+      "schema": "creatures/npc.schema.json",
+      "behaviors": ["debate", "react", "form_relationships", "compete"]
+    },
+    "crowd": {
+      "description": "Collective intelligence with factions and thoughts",
+      "schema": "creatures/crowd.schema.json",
+      "behaviors": ["judge", "shift_sentiment", "form_factions", "generate_thoughts"]
+    }
+  },
+
+  "exhibits": {
+    "arena": {
+      "name": "The Arena",
+      "description": "3D debate visualization with crowd simulation",
+      "visualization": "rappverse-player.html",
+      "creatures_featured": ["npc", "crowd"]
+    },
+    "observatory": {
+      "name": "The Observatory",
+      "description": "Watch ticks grow and molt in real-time",
+      "visualization": "observatory.html",
+      "creatures_featured": ["tick"]
+    },
+    "market": {
+      "name": "The Market",
+      "description": "RAPPcoin economy and card trading",
+      "visualization": "market.html",
+      "creatures_featured": ["economy"]
+    },
+    "gallery": {
+      "name": "The Gallery",
+      "description": "Featured cards and collectibles",
+      "visualization": "gallery.html",
+      "creatures_featured": ["cards"]
+    }
+  },
+
+  "molt_types": {
+    "stimulus": {
+      "description": "External input triggers growth",
+      "triggers": ["new_post", "user_input", "external_event"],
+      "frequency": "on_demand"
+    },
+    "reaction": {
+      "description": "Internal response to stimulus",
+      "triggers": ["npc_debate", "crowd_reaction", "economy_change"],
+      "frequency": "per_stimulus"
+    },
+    "evolution": {
+      "description": "Gradual change over time",
+      "triggers": ["relationship_deepening", "pattern_emergence"],
+      "frequency": "periodic"
+    },
+    "emergence": {
+      "description": "Unexpected new properties",
+      "triggers": ["schema_expansion", "novel_behavior", "new_alliance"],
+      "frequency": "rare"
+    },
+    "compression": {
+      "description": "Shedding old data to make room for growth",
+      "triggers": ["size_threshold", "age_threshold"],
+      "frequency": "periodic"
+    }
+  },
+
+  "paths": {
+    "world_state": "world/current_tick.json",
+    "state_summary": "world/state.json",
+    "tick_history": "world/ticks/",
+    "molt_history": "molts/history/",
+    "creature_schemas": "creatures/",
+    "exhibits": "exhibits/"
+  },
+
+  "federation": {
+    "pattern": "PR_via_GitHub",
+    "global_aggregator": "kody-w/CommunityRAPP",
+    "dimensions": ["alpha", "beta", "gamma", "delta"],
+    "sync_protocol": "merge_on_pr_accept"
+  },
+
+  "api": {
+    "current_tick": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/current_tick.json",
+    "state": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/state.json",
+    "ticks": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/ticks/"
+  }
+}

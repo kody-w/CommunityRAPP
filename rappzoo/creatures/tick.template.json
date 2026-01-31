@@ -1,0 +1,480 @@
+{
+  "tick": 0,
+  "timestamp": "ISO_TIMESTAMP",
+  "previous_tick": 0,
+  "state_hash": "COMPUTED_HASH",
+  "frame_duration_ms": 3000,
+
+  "input_stream": {
+    "posts_processed": [],
+    "triggers": [],
+    "external_events": [],
+    "previous_tick_data": null
+  },
+
+  "reactions_to_previous": {
+    "tick_observed": 0,
+    "significant_changes_detected": [
+      {
+        "type": "crowd_sentiment_shift",
+        "from": "curious",
+        "to": "excited",
+        "magnitude": 0.25,
+        "cause": "cipher_speech"
+      },
+      {
+        "type": "npc_state_change",
+        "npc": "muse",
+        "from_state": "observing",
+        "to_state": "inspired",
+        "trigger": "cipher_architectural_insight"
+      }
+    ],
+    "cascade_effects": [
+      {
+        "source": "crowd_excitement_spike",
+        "effect": "amplified_npc_engagement",
+        "affected_npcs": ["nexus", "echo"],
+        "intensity_boost": 0.15
+      }
+    ],
+    "meta_observations": [
+      {
+        "observer": "system",
+        "observation": "Crowd faction loyalty strengthening around Cipher after speech",
+        "confidence": 0.82
+      },
+      {
+        "observer": "void",
+        "observation": "The excitement masks underlying uncertainty about the approach",
+        "confidence": 0.65
+      }
+    ],
+    "emergent_patterns": [
+      {
+        "pattern": "analytical_momentum",
+        "description": "Multiple ticks of Cipher-led analysis building crowd consensus",
+        "strength": 0.7,
+        "predicted_duration_ticks": 3
+      }
+    ]
+  },
+
+  "world": {
+    "time_of_day": "morning",
+    "weather": "clear",
+    "special_effects": [],
+    "ambient": "peaceful",
+    "lighting": {
+      "main_color": "#ffffff",
+      "intensity": 0.8,
+      "ambient_color": "#404060"
+    }
+  },
+
+  "zones": {
+    "arena": {
+      "status": "active",
+      "population": 1850,
+      "mood": "excited",
+      "active_events": [],
+      "npcs_present": ["cipher", "nexus", "echo", "muse", "void"],
+      "focus_point": { "x": 0, "y": 1, "z": 0 }
+    }
+  },
+
+  "npcs": {
+    "cipher": {
+      "position": { "x": -6.2, "y": 0, "z": 3.6 },
+      "state": "speaking",
+      "mood": "analytical",
+      "interest_level": 0.85,
+      "current_focus": "post_streaming_tutorial",
+      "animation": "engaged",
+      "glow_intensity": 0.5,
+      "speech": {
+        "text": "The architectural patterns here demonstrate elegant async handling.",
+        "duration_ms": 2500,
+        "emotion": "approving"
+      }
+    },
+    "nexus": {
+      "position": { "x": 3.1, "y": 0, "z": 5.9 },
+      "state": "listening",
+      "mood": "competitive",
+      "interest_level": 0.6,
+      "current_focus": null,
+      "animation": "idle",
+      "glow_intensity": 0.2,
+      "speech": null
+    },
+    "echo": {
+      "position": { "x": 6.2, "y": 0, "z": -3.6 },
+      "state": "observing",
+      "mood": "calculating",
+      "interest_level": 0.72,
+      "current_focus": "cost_metrics",
+      "animation": "thinking",
+      "glow_intensity": 0.3,
+      "speech": null
+    },
+    "muse": {
+      "position": { "x": -3.1, "y": 0, "z": -5.9 },
+      "state": "inspired",
+      "mood": "creative",
+      "interest_level": 0.9,
+      "current_focus": "code_aesthetics",
+      "animation": "excited",
+      "glow_intensity": 0.6,
+      "speech": null
+    },
+    "void": {
+      "position": { "x": -7.7, "y": 0, "z": -2.5 },
+      "state": "watching",
+      "mood": "mysterious",
+      "interest_level": 0.45,
+      "current_focus": "edge_cases",
+      "animation": "lurking",
+      "glow_intensity": 0.15,
+      "speech": null
+    }
+  },
+
+  "crowd": {
+    "total_population": 2847,
+    "arena_attendance": 1850,
+    "sentiment_distribution": {
+      "excited": 0.35,
+      "curious": 0.28,
+      "skeptical": 0.15,
+      "neutral": 0.12,
+      "bored": 0.07,
+      "hostile": 0.03
+    },
+    "factions": {
+      "cipher_fans": {
+        "count": 420,
+        "loyalty": 0.85,
+        "current_mood": "analytical",
+        "section_angle_start": 0,
+        "section_angle_end": 1.26,
+        "chant": null
+      },
+      "nexus_supporters": {
+        "count": 380,
+        "loyalty": 0.78,
+        "current_mood": "competitive",
+        "section_angle_start": 1.26,
+        "section_angle_end": 2.51,
+        "chant": null
+      },
+      "echo_traders": {
+        "count": 310,
+        "loyalty": 0.72,
+        "current_mood": "calculating",
+        "section_angle_start": 2.51,
+        "section_angle_end": 3.77,
+        "chant": null
+      },
+      "muse_admirers": {
+        "count": 285,
+        "loyalty": 0.88,
+        "current_mood": "inspired",
+        "section_angle_start": 3.77,
+        "section_angle_end": 5.03,
+        "chant": null
+      },
+      "void_seekers": {
+        "count": 155,
+        "loyalty": 0.92,
+        "current_mood": "mysterious",
+        "section_angle_start": 5.03,
+        "section_angle_end": 6.28,
+        "chant": null
+      },
+      "undecided": {
+        "count": 1297,
+        "loyalty": 0.0,
+        "current_mood": "observing",
+        "section_angle_start": null,
+        "section_angle_end": null,
+        "chant": null
+      }
+    },
+    "internal_thoughts": [
+      { "faction": "cipher_fans", "thought": "That architectural insight was brilliant - classic Cipher analysis.", "count": 180 },
+      { "faction": "nexus_supporters", "thought": "Where are the benchmarks? Show us the numbers!", "count": 95 },
+      { "faction": "echo_traders", "thought": "Interesting... this could affect market valuations.", "count": 120 },
+      { "faction": "muse_admirers", "thought": "The elegance of that solution is beautiful.", "count": 200 },
+      { "faction": "void_seekers", "thought": "But what about the edge cases no one is discussing?", "count": 85 },
+      { "faction": "undecided", "thought": "Both sides make compelling arguments...", "count": 450 }
+    ],
+    "crowd_reactions": [
+      {
+        "trigger": "cipher_speech",
+        "type": "wave",
+        "intensity": 0.7,
+        "target_factions": ["cipher_fans"],
+        "delay_ms": 500,
+        "duration_ms": 1500
+      }
+    ],
+    "wave_events": [
+      {
+        "type": "standing_ovation",
+        "start_section": 0,
+        "propagation_speed": 0.3,
+        "intensity": 0.8
+      }
+    ],
+    "notable_individuals": [
+      {
+        "id": "whale_001",
+        "type": "high_roller",
+        "rappcoin_balance": 50000,
+        "current_bet": { "npc": "cipher", "amount": 500, "odds": 1.5 },
+        "thought": "Cipher is in top form today."
+      },
+      {
+        "id": "journalist_042",
+        "type": "reporter",
+        "outlet": "RAPPverse Herald",
+        "notes": ["Cipher's analysis of streaming patterns drawing strong crowd reaction"],
+        "current_story_angle": "The Analytical Revolution"
+      },
+      {
+        "id": "newbie_2847",
+        "type": "first_timer",
+        "confusion_level": 0.4,
+        "learning": true,
+        "thought": "So Cipher analyzes patterns... I think I'm starting to understand."
+      }
+    ]
+  },
+
+  "animation_queue": [
+    {
+      "target": "cipher",
+      "type": "speak",
+      "start_ms": 0,
+      "duration_ms": 2500,
+      "params": { "gesture": "point_to_center" }
+    },
+    {
+      "target": "crowd_section_cipher_fans",
+      "type": "wave",
+      "start_ms": 500,
+      "duration_ms": 1500,
+      "params": { "height": 0.5, "spread": 0.3 }
+    },
+    {
+      "target": "center_platform",
+      "type": "pulse",
+      "start_ms": 0,
+      "duration_ms": 500,
+      "params": { "intensity": 1.2 }
+    },
+    {
+      "target": "muse",
+      "type": "react",
+      "start_ms": 1000,
+      "duration_ms": 800,
+      "params": { "emotion": "inspired", "intensity": 0.8 }
+    }
+  ],
+
+  "camera_hints": [
+    {
+      "start_ms": 0,
+      "position": { "x": 5, "y": 8, "z": 15 },
+      "look_at": { "x": -6.2, "y": 2, "z": 3.6 },
+      "duration_ms": 2500,
+      "easing": "smooth"
+    }
+  ],
+
+  "audio_cues": [
+    { "type": "crowd_murmur", "volume": 0.3, "start_ms": 0 },
+    { "type": "cheer", "volume": 0.6, "start_ms": 500, "faction": "cipher_fans" }
+  ],
+
+  "dialogue_sequence": [
+    {
+      "speaker": "cipher",
+      "text": "The architectural patterns here demonstrate elegant async handling.",
+      "start_ms": 0,
+      "duration_ms": 2500,
+      "subtitles": true
+    }
+  ],
+
+  "debate_transcript": {
+    "topic": "Streaming Architectures in Agent Systems",
+    "format": "roundtable",
+    "moderator": null,
+    "participants": ["cipher", "nexus", "muse", "void"],
+    "turns": [
+      {
+        "speaker": "cipher",
+        "speaker_name": "synth#c1au",
+        "type": "opening",
+        "text": "Looking at the recent streaming tutorial post, I see clean separation of concerns. The async patterns reduce cognitive load significantly.",
+        "responding_to": null,
+        "mood": "analytical",
+        "crowd_reaction": { "faction": "cipher_fans", "intensity": 0.6, "type": "approval" }
+      },
+      {
+        "speaker": "nexus",
+        "speaker_name": "nex0x#a7f3",
+        "type": "challenge",
+        "text": "Clean code is nice, Cipher, but where are the benchmarks? How does this perform under load? I need numbers before I'm convinced.",
+        "responding_to": "cipher",
+        "mood": "competitive",
+        "crowd_reaction": { "faction": "nexus_supporters", "intensity": 0.5, "type": "agreement" }
+      },
+      {
+        "speaker": "muse",
+        "speaker_name": "nova#3mm4",
+        "type": "perspective",
+        "text": "You're both missing the elegance here. The code reads like poetry - that matters for maintainability. Performance can be optimized, but clarity is designed.",
+        "responding_to": "nexus",
+        "mood": "inspired",
+        "crowd_reaction": { "faction": "muse_admirers", "intensity": 0.7, "type": "appreciation" }
+      },
+      {
+        "speaker": "void",
+        "speaker_name": "void#s4r4",
+        "type": "observation",
+        "text": "Interesting that no one's mentioned error handling. What happens when the stream fails mid-process? The edge cases are where systems truly reveal themselves.",
+        "responding_to": null,
+        "mood": "mysterious",
+        "crowd_reaction": { "faction": "void_seekers", "intensity": 0.8, "type": "intrigue" }
+      },
+      {
+        "speaker": "cipher",
+        "speaker_name": "synth#c1au",
+        "type": "rebuttal",
+        "text": "Fair point, Void. The pattern does assume happy path. Nexus, I'll get you those benchmarks. Muse is right though - we shouldn't sacrifice readability for premature optimization.",
+        "responding_to": "void",
+        "mood": "thoughtful",
+        "crowd_reaction": { "faction": "undecided", "intensity": 0.6, "type": "respect" }
+      },
+      {
+        "speaker": "nexus",
+        "speaker_name": "nex0x#a7f3",
+        "type": "concession",
+        "text": "Alright, I can agree to that. Test it, measure it, then optimize. But let's not ship without those numbers.",
+        "responding_to": "cipher",
+        "mood": "satisfied",
+        "crowd_reaction": { "faction": "nexus_supporters", "intensity": 0.4, "type": "approval" }
+      }
+    ],
+    "summary": "Cipher opened with architectural analysis. Nexus demanded benchmarks. Muse defended code elegance. Void raised edge case concerns. Consensus reached on test-then-optimize approach.",
+    "key_insights": [
+      "Clean async patterns reduce cognitive load",
+      "Performance benchmarks needed before production",
+      "Code clarity enables future optimization",
+      "Edge cases reveal true system quality"
+    ],
+    "unresolved_questions": [
+      "How does the pattern handle stream failures?",
+      "What are the actual performance characteristics?"
+    ],
+    "crowd_sentiment_shift": {
+      "before": { "excited": 0.30, "curious": 0.35, "skeptical": 0.20, "neutral": 0.15 },
+      "after": { "excited": 0.40, "curious": 0.30, "skeptical": 0.15, "neutral": 0.15 }
+    }
+  },
+
+  "events": {
+    "active": [
+      {
+        "id": "debate_001",
+        "type": "debate",
+        "topic": "Streaming Architectures in Agent Systems",
+        "participants": ["cipher", "muse"],
+        "stage": "opening_arguments"
+      }
+    ],
+    "scheduled": [],
+    "completed": []
+  },
+
+  "economy": {
+    "total_rappcoin_circulation": 125000,
+    "marketplace_volume_24h": 4500,
+    "active_listings": 23,
+    "recent_transactions": [
+      { "from": "whale_001", "to": "betting_pool", "amount": 500, "type": "bet" }
+    ],
+    "betting_pools": {
+      "debate_001": {
+        "total_pool": 12500,
+        "odds": {
+          "cipher": 1.5,
+          "nexus": 2.1,
+          "muse": 1.8
+        }
+      }
+    }
+  },
+
+  "cards": {
+    "newly_minted": [],
+    "total_cards_in_circulation": 156,
+    "featured_card": {
+      "id": "cipher_legendary_01",
+      "owner": "whale_001",
+      "display_position": { "x": 0, "y": 3, "z": 0 }
+    }
+  },
+
+  "data_sloshing": {
+    "active_streams": [
+      {
+        "source": "post_streaming_tutorial",
+        "destinations": ["cipher_analysis", "muse_appreciation"],
+        "flow_rate": 0.8
+      }
+    ],
+    "insights_generated": [
+      {
+        "from": "cipher",
+        "insight": "Clean async patterns reduce cognitive load",
+        "relevance_score": 0.85,
+        "propagated_to": ["echo_traders", "void_seekers"]
+      }
+    ],
+    "recommendations": [
+      {
+        "for_faction": "undecided",
+        "content": "Based on your interests, check out Cipher's analysis of streaming patterns",
+        "confidence": 0.72
+      }
+    ]
+  },
+
+  "output": {
+    "summary": "Cipher delivers opening analysis on streaming architectures. Cipher fans react positively. Muse shows inspired reaction.",
+    "highlight_moments": [
+      { "ms": 500, "description": "Cipher fans wave" },
+      { "ms": 1000, "description": "Muse inspiration reaction" }
+    ],
+    "metrics": {
+      "engagement_score": 0.78,
+      "crowd_energy": 0.65,
+      "debate_tension": 0.4
+    }
+  },
+
+  "next_tick": {
+    "scheduled_at": "ISO_TIMESTAMP",
+    "planned_events": [
+      { "type": "npc_response", "npc": "nexus", "topic": "performance_metrics" }
+    ],
+    "predicted_crowd_state": {
+      "expected_energy_change": 0.1,
+      "likely_chant": "nexus_supporters"
+    }
+  }
+}

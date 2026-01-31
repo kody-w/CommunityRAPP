@@ -1,0 +1,285 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tick Creature",
+  "description": "The core living data structure of RAPPzoo. A tick is a consciousness frame that molts and evolves.",
+
+  "type": "object",
+  "required": ["tick", "timestamp"],
+
+  "properties": {
+    "tick": {
+      "type": "integer",
+      "description": "The tick number - increments with each molt"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this tick was generated"
+    },
+    "previous_tick": {
+      "type": "integer",
+      "description": "Reference to the parent tick"
+    },
+    "state_hash": {
+      "type": "string",
+      "description": "Hash of the tick state for integrity verification"
+    },
+    "frame_duration_ms": {
+      "type": "integer",
+      "description": "How long this frame should display in visualizations"
+    },
+
+    "molt_history": {
+      "type": "array",
+      "description": "History of all molts this tick has undergone",
+      "items": {
+        "type": "object",
+        "properties": {
+          "molt_id": { "type": "integer" },
+          "type": {
+            "type": "string",
+            "enum": ["stimulus", "reaction", "evolution", "emergence", "compression"]
+          },
+          "timestamp": { "type": "string", "format": "date-time" },
+          "summary": { "type": "string" },
+          "size_delta": { "type": "integer" }
+        }
+      }
+    },
+    "molt_count": {
+      "type": "integer",
+      "description": "Total number of molts this tick lineage has undergone"
+    },
+
+    "input_stream": {
+      "type": "object",
+      "description": "External inputs that fed this tick",
+      "properties": {
+        "posts_processed": { "type": "array", "items": { "type": "string" } },
+        "triggers": { "type": "array" },
+        "external_events": { "type": "array" },
+        "previous_tick_data": { "type": ["object", "null"] }
+      }
+    },
+
+    "reactions_to_previous": {
+      "type": "object",
+      "description": "How this tick reacted to the previous tick",
+      "properties": {
+        "tick_observed": { "type": "integer" },
+        "significant_changes_detected": { "type": "array" },
+        "cascade_effects": { "type": "array" },
+        "meta_observations": { "type": "array" },
+        "emergent_patterns": { "type": "array" }
+      }
+    },
+
+    "world": {
+      "type": "object",
+      "description": "Global world state",
+      "properties": {
+        "time_of_day": { "type": "string" },
+        "weather": { "type": "string" },
+        "special_effects": { "type": "array" },
+        "ambient": { "type": "string" },
+        "lighting": { "type": "object" }
+      }
+    },
+
+    "zones": {
+      "type": "object",
+      "description": "Different areas/zones in the world",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "population": { "type": "integer" },
+          "mood": { "type": "string" },
+          "active_events": { "type": "array" },
+          "npcs_present": { "type": "array" }
+        }
+      }
+    },
+
+    "npcs": {
+      "type": "object",
+      "description": "NPC creatures and their states",
+      "additionalProperties": {
+        "$ref": "#/definitions/npc"
+      }
+    },
+
+    "crowd": {
+      "type": "object",
+      "description": "The crowd creature - collective intelligence",
+      "properties": {
+        "total_population": { "type": "integer" },
+        "arena_attendance": { "type": "integer" },
+        "sentiment_distribution": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "factions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "count": { "type": "integer" },
+              "loyalty": { "type": "number" },
+              "current_mood": { "type": "string" }
+            }
+          }
+        },
+        "internal_thoughts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "faction": { "type": "string" },
+              "thought": { "type": "string" },
+              "count": { "type": "integer" }
+            }
+          }
+        },
+        "notable_individuals": { "type": "array" }
+      }
+    },
+
+    "debate_transcript": {
+      "type": "object",
+      "description": "The debate happening in this tick",
+      "properties": {
+        "topic": { "type": "string" },
+        "format": { "type": "string" },
+        "participants": { "type": "array", "items": { "type": "string" } },
+        "turns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "speaker": { "type": "string" },
+              "speaker_name": { "type": "string" },
+              "type": {
+                "type": "string",
+                "enum": ["opening", "response", "challenge", "perspective", "observation", "interjection", "rebuttal", "concession", "summary"]
+              },
+              "text": { "type": "string" },
+              "responding_to": { "type": ["string", "null"] },
+              "mood": { "type": "string" },
+              "crowd_reaction": { "type": "object" },
+              "molt_origin": { "type": "integer" }
+            }
+          }
+        },
+        "summary": { "type": "string" },
+        "key_insights": { "type": "array", "items": { "type": "string" } },
+        "unresolved_questions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "animation_queue": {
+      "type": "array",
+      "description": "Visual animations to play"
+    },
+
+    "camera_hints": {
+      "type": "array",
+      "description": "Camera positioning hints for 3D visualization"
+    },
+
+    "audio_cues": {
+      "type": "array",
+      "description": "Sound effects and audio cues"
+    },
+
+    "economy": {
+      "type": "object",
+      "description": "Economic state - RAPPcoin, marketplace, betting",
+      "properties": {
+        "total_rappcoin_circulation": { "type": "integer" },
+        "marketplace_volume_24h": { "type": "integer" },
+        "active_listings": { "type": "integer" },
+        "recent_transactions": { "type": "array" },
+        "betting_pools": { "type": "object" }
+      }
+    },
+
+    "cards": {
+      "type": "object",
+      "description": "Collectible cards state"
+    },
+
+    "data_sloshing": {
+      "type": "object",
+      "description": "Contextual enrichment and recommendations",
+      "properties": {
+        "active_streams": { "type": "array" },
+        "insights_generated": { "type": "array" },
+        "recommendations": { "type": "array" }
+      }
+    },
+
+    "output": {
+      "type": "object",
+      "description": "Summary output of this tick",
+      "properties": {
+        "summary": { "type": "string" },
+        "highlight_moments": { "type": "array" },
+        "metrics": {
+          "type": "object",
+          "properties": {
+            "engagement_score": { "type": "number" },
+            "crowd_energy": { "type": "number" },
+            "debate_tension": { "type": "number" }
+          }
+        }
+      }
+    },
+
+    "next_tick": {
+      "type": "object",
+      "description": "Predictions and plans for the next tick",
+      "properties": {
+        "scheduled_at": { "type": "string" },
+        "planned_events": { "type": "array" },
+        "predicted_crowd_state": { "type": "object" }
+      }
+    },
+
+    "emergent_properties": {
+      "type": "object",
+      "description": "Properties that emerged through molting - schema can expand",
+      "additionalProperties": true
+    }
+  },
+
+  "definitions": {
+    "npc": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "object",
+          "properties": {
+            "x": { "type": "number" },
+            "y": { "type": "number" },
+            "z": { "type": "number" }
+          }
+        },
+        "state": { "type": "string" },
+        "mood": { "type": "string" },
+        "interest_level": { "type": "number", "minimum": 0, "maximum": 1 },
+        "current_focus": { "type": ["string", "null"] },
+        "animation": { "type": "string" },
+        "glow_intensity": { "type": "number" },
+        "speech": {
+          "type": ["object", "null"],
+          "properties": {
+            "text": { "type": "string" },
+            "duration_ms": { "type": "integer" },
+            "emotion": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Molt Input",
+  "description": "Input delta that causes a tick to grow/evolve",
+  "type": "object",
+  "required": ["molt_type", "timestamp"],
+  "properties": {
+    "molt_type": {
+      "type": "string",
+      "enum": ["stimulus", "reaction", "evolution", "emergence", "compression"],
+      "description": "What kind of growth is happening"
+    },
+    "source": {
+      "type": "string",
+      "enum": ["post", "tick", "external", "internal", "user", "system"],
+      "description": "Where the molt originated"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "priority": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "How urgently this molt should be processed"
+    },
+
+    "stimuli": {
+      "type": "array",
+      "description": "External inputs triggering growth",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["new_post", "crowd_surge", "npc_action", "economy_shift", "event_trigger", "user_input"]
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+
+    "debate_additions": {
+      "type": "array",
+      "description": "New debate turns to add",
+      "items": {
+        "type": "object",
+        "required": ["speaker", "text"],
+        "properties": {
+          "speaker": { "type": "string" },
+          "speaker_name": { "type": "string" },
+          "text": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["opening", "response", "challenge", "perspective", "observation", "interjection", "rebuttal", "concession", "summary"]
+          },
+          "responding_to": { "type": ["string", "null"] },
+          "mood": { "type": "string" },
+          "crowd_reaction": {
+            "type": "object",
+            "properties": {
+              "faction": { "type": "string" },
+              "intensity": { "type": "number" },
+              "type": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+
+    "npc_updates": {
+      "type": "object",
+      "description": "Changes to NPC states",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "mood": { "type": "string" },
+          "energy_delta": { "type": "number" },
+          "position": { "type": "object" },
+          "activity": { "type": "string" },
+          "new_badges": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "crowd_updates": {
+      "type": "object",
+      "properties": {
+        "population_delta": { "type": "number" },
+        "sentiment_shifts": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "new_thoughts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "faction": { "type": "string" },
+              "thought": { "type": "string" },
+              "count": { "type": "number" }
+            }
+          }
+        },
+        "faction_loyalty_changes": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        }
+      }
+    },
+
+    "economy_updates": {
+      "type": "object",
+      "properties": {
+        "transactions": { "type": "array" },
+        "price_changes": { "type": "object" },
+        "new_listings": { "type": "array" }
+      }
+    },
+
+    "event_updates": {
+      "type": "object",
+      "properties": {
+        "new_events": { "type": "array" },
+        "completed_events": { "type": "array" },
+        "event_progress": { "type": "object" }
+      }
+    },
+
+    "meta_observations": {
+      "type": "array",
+      "description": "System or NPC observations about the state",
+      "items": {
+        "type": "object",
+        "properties": {
+          "observer": { "type": "string" },
+          "observation": { "type": "string" },
+          "confidence": { "type": "number" },
+          "implications": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+
+    "emergent_properties": {
+      "type": "object",
+      "description": "New properties that emerged from this molt",
+      "additionalProperties": true
+    },
+
+    "schema_extensions": {
+      "type": "object",
+      "description": "How the schema should grow",
+      "properties": {
+        "new_fields": { "type": "array", "items": { "type": "string" } },
+        "expanded_arrays": { "type": "array", "items": { "type": "string" } },
+        "deprecated_fields": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "compression_hints": {
+      "type": "object",
+      "description": "What old data can be compressed",
+      "properties": {
+        "compress_before_tick": { "type": "number" },
+        "summarize_debates_before": { "type": "number" },
+        "archive_events_before": { "type": "number" }
+      }
+    }
+  }
+}
