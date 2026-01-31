@@ -192,86 +192,47 @@ def get_steward_status() -> dict:
 
 
 # ============================================================================
-# Copilot SDK Agent
+# Copilot CLI Agent (uses invoked agent, no SDK required)
 # ============================================================================
 
-async def run_copilot_agent():
-    """Run the steward as a Copilot SDK-powered agent."""
-    if not HAS_SDK:
-        print("Copilot SDK not available. Use --auto for direct execution.")
-        return
+def run_copilot_cli_review(prompt: str) -> tuple[bool, str]:
+    """
+    Use Copilot CLI to review changes. Returns (approved, response_text).
+    The invoked agent handles all the AI stuff - no SDK needed.
+    """
+    if not HAS_COPILOT_CLI:
+        return False, "Copilot CLI not available"
     
-    # Define tools for Copilot
-    @define_tool(description="Scan a directory for versioned duplicate files (e.g., 'file 5.json', 'file 6.json')")
-    async def scan_duplicates(params: ScanParams) -> dict:
-        return scan_for_duplicates(params.path)
-    
-    @define_tool(description="Merge versioned duplicate files into canonical master versions. Safe - backs up files first.")
-    async def merge_duplicate_files(params: MergeParams) -> dict:
-        return merge_duplicates(params.path, params.dry_run)
-    
-    @define_tool(description="Get the current steward status, last run info, and statistics")
-    async def steward_status(params: StatusParams) -> dict:
-        return get_steward_status()
-    
-    # Initialize Copilot client
-    client = CopilotClient()
-    await client.start()
-    
-    # Use Claude Opus 4.5 for best reasoning capability
-    session = await client.create_session({
-        "model": "claude-opus-4.5",
-        "streaming": True,
-        "tools": [scan_duplicates, merge_duplicate_files, steward_status],
-        "system_message": {
-            "content": """You are the Copilot Steward - an organizing librarian agent for the RAPPverse repository.
-
-Your job is to keep the repository clean by finding and merging versioned duplicate files.
-
-Files like 'active 5.json', 'active 6.json' should be merged into 'active.json'.
-Files like 'README 3.md' should become 'README.md'.
-
-When asked to clean up or organize, use your tools:
-1. scan_duplicates - Find all versioned duplicates
-2. merge_duplicate_files - Safely merge them (backs up first)
-3. steward_status - Check your last run and stats
-
-Be helpful, efficient, and explain what you're doing.
-"""
-        }
-    })
-    
-    # Handle streaming output
-    def handle_event(event):
-        if event.type == SessionEventType.ASSISTANT_MESSAGE_DELTA:
-            sys.stdout.write(event.data.delta_content)
-            sys.stdout.flush()
-        if event.type == SessionEventType.SESSION_IDLE:
-            print()
-    
-    session.on(handle_event)
-    
-    print("📚 Copilot Steward Agent (powered by GitHub Copilot SDK)")
-    print("   Commands: 'scan', 'merge', 'status', 'help', 'exit'\n")
-    
-    while True:
-        try:
-            user_input = input("You: ")
-        except (EOFError, KeyboardInterrupt):
-            break
+    try:
+        # Use copilot CLI with the prompt
+        result = subprocess.run(
+            ['copilot', '--model', 'claude-opus-4.5', '-m', prompt],
+            capture_output=True,
+            text=True,
+            timeout=120  # 2 minute timeout for review
+        )
         
-        if user_input.lower() in ('exit', 'quit', 'q'):
-            break
+        response = result.stdout + result.stderr
         
-        sys.stdout.write("Steward: ")
-        await session.send_and_wait({"prompt": user_input})
-        print()
-    
-    await client.stop()
-    print("\n👋 Steward signing off!")
+        # Check for approval in response
+        response_upper = response.upper()
+        if 'APPROVED' in response_upper and 'REJECTED' not in response_upper:
+            return True, response
+        elif 'REJECTED' in response_upper:
+            return False, response
+        else:
+            # Ambiguous - check for positive signals
+            if any(word in response_upper for word in ['SAFE', 'GOOD', 'CORRECT', 'VALID', 'LGTM']):
+                return True, response
+            return False, response
+            
+    except subprocess.TimeoutExpired:
+        return False, "Review timed out"
+    except Exception as e:
+        return False, f"Review failed: {e}"
 
 
-async def run_auto_mode(path: str = ".", dry_run: bool = False):
+async def run_auto_mode(path: str = ".", dry_run: bool = False, skip_review: bool = False):
     """Run steward in automatic mode with AI review gate before commit."""
     print("📚 Copilot Steward - Auto Mode with AI Review Gate")
     print(f"🔍 Scanning: {os.path.abspath(path)}")
@@ -315,13 +276,21 @@ async def run_auto_mode(path: str = ".", dry_run: bool = False):
         print("Nothing was merged.")
         return
     
-    # Step 4: AI Review Gate - Claude Opus 4.5 reviews before commit
+    # Step 4: AI Review Gate
+    if skip_review:
+        print("\n⚠️  AI review skipped (--no-review flag)")
+        print("   Proceeding directly to commit...")
+        await commit_and_push(path, merge_result)
+        return
+    
     print("\n" + "=" * 60)
-    print("🤖 AI REVIEW GATE - Claude Opus 4.5 Auditing Changes...")
+    print("🤖 AI REVIEW GATE - Copilot Agent Auditing Changes...")
     print("=" * 60 + "\n")
     
-    if HAS_SDK:
-        approved = await ai_review_changes(path, merge_result)
+    if HAS_COPILOT_CLI:
+        approved, review_response = await ai_review_changes(path, merge_result)
+        
+        print(review_response)
         
         if approved:
             print("\n✅ AI APPROVED - Proceeding with commit and push...")
@@ -329,41 +298,42 @@ async def run_auto_mode(path: str = ".", dry_run: bool = False):
         else:
             print("\n❌ AI REJECTED - Changes NOT committed.")
             print("   Review the issues above and run again after fixing.")
-            # Optionally restore from backup here
+            print("   Use --no-review to skip AI review if needed.")
     else:
-        print("⚠️  Copilot SDK not installed - skipping AI review")
-        print("   Install with: pip install github-copilot-sdk")
+        print("⚠️  Copilot CLI not found in PATH")
+        print("   Install from: https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-cli")
         print("   Changes merged but NOT committed (manual review required)")
+        print("\n   To commit manually:")
+        print("   git add -A && git commit -m '[Steward] Auto-merge duplicates' && git push")
 
 
-async def ai_review_changes(path: str, merge_result: dict) -> bool:
+async def ai_review_changes(path: str, merge_result: dict) -> tuple[bool, str]:
     """
-    Use Claude Opus 4.5 to review and audit the merged changes.
-    Returns True if approved, False if rejected.
+    Use Copilot CLI (invoked agent) to review and audit the merged changes.
+    Returns (approved, response_text).
     """
-    client = CopilotClient()
-    await client.start()
+    abs_path = path if os.path.isabs(path) else os.path.abspath(path)
     
     # Collect the git diff to show what changed
     try:
         diff_result = subprocess.run(
             ['git', 'diff', '--stat'],
-            cwd=path if os.path.isabs(path) else os.path.abspath(path),
+            cwd=abs_path,
             capture_output=True,
             text=True,
             timeout=30
         )
-        git_diff_stat = diff_result.stdout[:2000]  # Limit size
+        git_diff_stat = diff_result.stdout[:2000]
         
         # Get actual diff content (limited)
         diff_content_result = subprocess.run(
             ['git', 'diff', '--no-color'],
-            cwd=path if os.path.isabs(path) else os.path.abspath(path),
+            cwd=abs_path,
             capture_output=True,
             text=True,
             timeout=30
         )
-        git_diff_content = diff_content_result.stdout[:5000]  # Limit size
+        git_diff_content = diff_content_result.stdout[:4000]
     except Exception as e:
         git_diff_stat = f"Could not get diff: {e}"
         git_diff_content = ""
@@ -371,74 +341,36 @@ async def ai_review_changes(path: str, merge_result: dict) -> bool:
     # Build the review prompt
     review_prompt = f"""You are the AI Review Gate for the Copilot Steward auto-merge system.
 
-Your job is to AUDIT the following file merges and determine if they are SAFE to commit.
+AUDIT these file merges and determine if they are SAFE to commit.
 
 ## Merge Summary
 - Groups merged: {merge_result['merged']}
 - Failed: {merge_result['failed']}
 
 ## Files Changed
-{json.dumps(merge_result.get('merges', []), indent=2)}
+{json.dumps(merge_result.get('merges', [])[:15], indent=2)}
 
 ## Git Diff Statistics
-```
 {git_diff_stat}
-```
 
-## Git Diff Content (truncated)
-```diff
-{git_diff_content[:3000]}
-```
+## Git Diff Content (sample)
+{git_diff_content[:2500]}
 
-## Your Review Tasks
-1. **Data Integrity**: Verify no data was lost in the merge. Arrays should be UNIONED, not replaced.
-2. **ID Preservation**: Check that all unique IDs (auction_id, post_id, etc.) are preserved.
-3. **Schema Consistency**: Ensure JSON structure is maintained.
-4. **No Duplicates**: Verify exact duplicates were properly deduped.
-5. **Backup Exists**: Confirm files were backed up before merge.
+## Review Checklist
+1. Data Integrity - Arrays should be UNIONED, not replaced
+2. ID Preservation - All unique IDs (auction_id, post_id, etc.) preserved
+3. Schema Consistency - JSON structure maintained
+4. Proper Deduplication - Exact duplicates removed correctly
 
-## Response Format
-Respond with your analysis, then end with one of:
-- **APPROVED** - if all checks pass and the merge is safe
-- **REJECTED: <reason>** - if there are issues that need fixing
+## YOUR VERDICT
+End your response with exactly one of:
+- APPROVED - if merge is safe and correct
+- REJECTED: <reason> - if there are data integrity issues
 
-Be thorough but concise. Focus on data integrity."""
+Be concise. Focus on data safety."""
 
-    session = await client.create_session({
-        "model": "claude-opus-4.5",
-        "streaming": True,
-    })
-    
-    response_text = []
-    approved = False
-    
-    def handle_event(event):
-        nonlocal approved
-        if event.type == SessionEventType.ASSISTANT_MESSAGE_DELTA:
-            content = event.data.delta_content
-            sys.stdout.write(content)
-            sys.stdout.flush()
-            response_text.append(content)
-    
-    session.on(handle_event)
-    
-    await session.send_and_wait({"prompt": review_prompt})
-    print()
-    
-    await client.stop()
-    
-    # Parse the response for approval
-    full_response = ''.join(response_text).upper()
-    if 'APPROVED' in full_response and 'REJECTED' not in full_response:
-        approved = True
-    elif 'REJECTED' in full_response:
-        approved = False
-    else:
-        # Ambiguous - default to not approved for safety
-        print("\n⚠️  AI response was ambiguous - defaulting to NOT approved for safety")
-        approved = False
-    
-    return approved
+    # Use Copilot CLI for review
+    return run_copilot_cli_review(review_prompt)
 
 
 async def commit_and_push(path: str, merge_result: dict):
@@ -490,14 +422,16 @@ Auto-generated by Copilot Steward with AI review gate
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Copilot Steward Agent - SDK-powered file organization'
+        description='Copilot Steward Agent - File organization with AI review gate'
     )
     parser.add_argument('--auto', action='store_true',
-                       help='Run in automatic mode (scan & merge)')
+                       help='Run in automatic mode (scan & merge with AI review)')
     parser.add_argument('--daemon', action='store_true',
                        help='Run as background daemon')
     parser.add_argument('--dry-run', action='store_true',
                        help='Preview changes without making them')
+    parser.add_argument('--no-review', action='store_true',
+                       help='Skip AI review gate (commit directly)')
     parser.add_argument('--path', default='.',
                        help='Directory to scan/merge')
     args = parser.parse_args()
@@ -507,14 +441,13 @@ def main():
         from copilot_steward_daemon import daemon_loop
         daemon_loop(os.path.abspath(args.path))
     elif args.auto:
-        asyncio.run(run_auto_mode(args.path, args.dry_run))
+        asyncio.run(run_auto_mode(args.path, args.dry_run, args.no_review))
     else:
-        if HAS_SDK:
-            asyncio.run(run_copilot_agent())
-        else:
-            print("Install Copilot SDK for interactive mode: pip install github-copilot-sdk")
-            print("Running auto mode instead...\n")
-            asyncio.run(run_auto_mode(args.path, args.dry_run))
+        # Interactive mode - just run auto with prompts
+        print("📚 Copilot Steward - Interactive Mode")
+        print("   Use --auto for automatic mode with AI review")
+        print("   Use --auto --dry-run to preview changes\n")
+        asyncio.run(run_auto_mode(args.path, dry_run=True))
 
 
 if __name__ == '__main__':

@@ -10,12 +10,12 @@ I am an autonomous background agent powered by the **GitHub Copilot SDK** that k
 ## Installation
 
 ```bash
-# Install the Copilot SDK
-pip install github-copilot-sdk
-
-# Ensure Copilot CLI is installed
+# Copilot CLI (required for AI review)
+# Already installed if you're using GitHub Copilot CLI
 copilot --version
 ```
+
+No SDK installation required! The steward uses the **invoked Copilot agent** (the one you're talking to right now) to handle the AI review.
 
 ## What I Do
 
