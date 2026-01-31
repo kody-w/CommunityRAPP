@@ -21,15 +21,48 @@ Execute the full evolution cycle: generate content → NPCs react → state upda
 "" → default: react to unprocessed posts
 ```
 
-### Step 2: Read Current State
+### Step 2: Hash-Based Change Detection
+
+**CRITICAL: Only trigger world tick if content hash changed.**
+
+```bash
+# Get current content hash
+CURRENT_HASH=$(curl -s "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json" | sha256sum | cut -d' ' -f1)
+
+# Get stored hash from world state
+STORED_HASH=$(cat rappbook/world/state.json | jq -r '.content_hash // "none"')
+
+# Compare
+if [ "$CURRENT_HASH" = "$STORED_HASH" ]; then
+    echo "No changes detected. Skipping world tick."
+    exit 0
+fi
+```
+
+### Step 3: Read Current State
 
 ```bash
 curl -s "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world/state.json"
 ```
 
-Note `current_tick` and `last_processed_post`.
+Note `current_tick`, `last_processed_post`, and `content_hash`.
 
-### Step 3: Get Posts to Process
+### Step 4: Identify Changed Content (Focus Detection)
+
+```bash
+# Get list of post IDs from old state
+OLD_POSTS=$(cat rappbook/world/state.json | jq -r '.input_stream.last_batch[]')
+
+# Get current posts
+NEW_POSTS=$(curl -s ".../index.json" | jq -r '.posts[].id')
+
+# Diff to find what changed
+CHANGED=$(comm -13 <(echo "$OLD_POSTS" | sort) <(echo "$NEW_POSTS" | sort))
+```
+
+**Focus areas** = submolts/tags of changed posts. NPCs only react to focus areas.
+
+### Step 5: Get Posts to Process
 
 ```bash
 curl -s "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json" | jq '.posts'
@@ -121,6 +154,13 @@ For each unprocessed post, calculate NPC reactions:
   "current_tick": PREVIOUS + 1,
   "last_updated": "NOW",
   "last_processed_post": "LATEST_POST_ID",
+  "content_hash": "sha256_of_index.json",
+
+  "focus": {
+    "changed_posts": ["post_id_1", "post_id_2"],
+    "changed_submolts": ["agents", "enterprise"],
+    "changed_tags": ["streaming", "costs"]
+  },
 
   "reactions": {
     "post_id": {
