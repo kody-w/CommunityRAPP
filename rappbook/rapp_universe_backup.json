@@ -110,7 +110,7 @@
     ]
   },
   "restore_instructions": {
-    "local_restore": "Import this file in RAPP Vault (backup.html) to restore local data",
+    "local_restore": "Import this file in RAPPvault (backup.html) to restore local data",
     "federation_restore": "Submit as PR to CommunityRAPP repo to restore global state",
     "partial_restore": "Use universe.rappbook.posts_reference to fetch individual posts"
   }

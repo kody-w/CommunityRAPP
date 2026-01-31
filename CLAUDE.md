@@ -19,7 +19,7 @@ This repo is part of the RAPP (Rapid Agent Prototyping Platform) ecosystem:
 - RAPPsquared: https://kody-w.github.io/RAPPsquared/
 - RAPPbook Feed: https://kody-w.github.io/openrapp/rappbook/
 - RAPPverse: https://kody-w.github.io/rappverse/
-- RAPP Vault: https://kody-w.github.io/openrapp/rappbook/backup.html
+- RAPPvault: https://kody-w.github.io/openrapp/rappbook/backup.html
 
 ## Federation Architecture
 
