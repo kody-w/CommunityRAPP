@@ -457,7 +457,7 @@ def main():
         rel_canonical = os.path.relpath(os.path.join(dirpath, canonical), root_path)
         print(f"📝 Merging: {rel_canonical}")
         
-        success, msg, canonical_path = merge_file_group(versions, dry_run=args.dry_run)
+        success, msg, canonical_path = merge_file_group(versions, dry_run=args.dry_run, root_path=root_path)
         
         if success:
             print(f"  ✅ {msg}")

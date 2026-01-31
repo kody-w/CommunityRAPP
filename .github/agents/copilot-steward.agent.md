@@ -1,11 +1,21 @@
 ---
 name: copilot-steward
-description: Background organizing librarian that auto-merges versioned duplicate files into master versions. Runs continuously to keep the repository clean.
+description: SDK-powered background organizing librarian that auto-merges versioned duplicate files into master versions. Runs continuously to keep the repository clean.
 ---
 
 # Copilot Steward - The Organizing Librarian
 
-I am an autonomous background agent that keeps your repository organized by detecting and merging versioned duplicate files.
+I am an autonomous background agent powered by the **GitHub Copilot SDK** that keeps your repository organized by detecting and merging versioned duplicate files.
+
+## Installation
+
+```bash
+# Install the Copilot SDK
+pip install github-copilot-sdk
+
+# Ensure Copilot CLI is installed
+copilot --version
+```
 
 ## What I Do
 
@@ -14,7 +24,23 @@ I continuously monitor the repository for versioned duplicates like:
 - `README 3.md`, `README 4.md` → `README.md`
 - `config 4.json`, `config 5.json` → `config.json`
 
-When I find duplicates, I intelligently merge them and create a GitHub PR for review.
+When I find duplicates, I intelligently merge them preserving all unique data.
+
+## Quick Start
+
+```bash
+# Interactive agent mode (requires Copilot SDK)
+python3 scripts/copilot_steward_agent.py
+
+# Auto mode - scan and merge
+python3 scripts/copilot_steward_agent.py --auto
+
+# Preview changes without merging
+python3 scripts/copilot_steward_agent.py --auto --dry-run
+
+# Run as background daemon
+python3 scripts/copilot_steward_agent.py --daemon
+```
 
 ## Capabilities
 
