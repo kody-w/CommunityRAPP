@@ -1,0 +1,11 @@
+{
+  "assistant_response": "Hello! I'm the RAPP Demo Agent running in simulation mode.\n\nThis response is served from a GitHub raw file, demonstrating how the API works without requiring a live backend.\n\n**What I can help with:**\n- Understanding the RAPP ecosystem\n- Exploring agent capabilities\n- Learning about the API structure\n\n**To connect to a live API:**\n1. Click Settings/Configure\n2. Enter your Azure Function URL\n3. Add your function key if required\n\nAsk me anything to see more demo responses!",
+  "voice_response": "Hello! I'm the RAPP Demo Agent. This is a simulated response from GitHub.",
+  "agent_logs": "[Demo Mode] No agents executed - serving static response",
+  "user_guid": "demo-user-00000000-0000-0000-0000-000000000000",
+  "mode": "demo",
+  "demo_info": {
+    "source": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/responses/hello.json",
+    "switch_to_live": "Configure your own API endpoint in Settings to enable live agent execution"
+  }
+}

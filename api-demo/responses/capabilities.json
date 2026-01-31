@@ -1,0 +1,19 @@
+{
+  "assistant_response": "**RAPP API Capabilities**\n\n**Chat & Conversation:**\n- Multi-turn conversations with context\n- User-specific memory persistence\n- Voice response generation\n\n**Agent Execution:**\n- Dynamic agent routing based on intent\n- Tool/function calling with OpenAI\n- Parallel agent orchestration\n\n**Memory System:**\n- Shared memory (all users)\n- User-specific memory (per GUID)\n- Automatic context trimming\n\n**Integration:**\n- Azure Functions backend\n- Power Platform compatible\n- Microsoft 365 Copilot ready\n\n**This is a demo response.** Connect to a live API to access these capabilities.",
+  "voice_response": "RAPP API supports chat, agent execution, memory management, and Microsoft 365 integration.",
+  "agent_logs": "[Demo Mode] Returning capabilities overview",
+  "user_guid": "demo-user-00000000-0000-0000-0000-000000000000",
+  "mode": "demo",
+  "capabilities": {
+    "chat": true,
+    "agents": true,
+    "memory": true,
+    "voice": true,
+    "streaming": false,
+    "function_calling": true
+  },
+  "api_version": "demo-1.0",
+  "demo_info": {
+    "source": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/responses/capabilities.json"
+  }
+}

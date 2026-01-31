@@ -1,0 +1,11 @@
+{
+  "assistant_response": "Great question! Let me explain how RAPP agents work.\n\n**Agent Architecture:**\n```\nUser Input → Assistant → Agent Router → Selected Agent → Response\n```\n\n**How it works:**\n1. Your message arrives at the API\n2. The Assistant analyzes intent using GPT-4\n3. If an agent is needed, it's called via function calling\n4. The agent executes and returns results\n5. The Assistant formats the final response\n\n**Example agents:**\n- Ask about memory → ContextMemoryAgent\n- Store a preference → ManageMemoryAgent\n- Generate content → AI generation tools\n\n**Try it yourself:**\nConnect to a live RAPP API to see agents in action!",
+  "voice_response": "RAPP agents work by routing your input through an AI assistant that selects and executes the right agent for your task.",
+  "agent_logs": "[Demo Mode] Sample conversational response",
+  "user_guid": "demo-user-00000000-0000-0000-0000-000000000000",
+  "mode": "demo",
+  "demo_info": {
+    "note": "This is a static demo response. Live API would dynamically generate this based on your actual question.",
+    "source": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/responses/sample-chat.json"
+  }
+}

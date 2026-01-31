@@ -1,0 +1,39 @@
+{
+  "assistant_response": "Here are the available agents in the RAPP ecosystem:\n\n**Core Agents:**\n- 🧠 **Context Memory Agent** - Recalls conversation history\n- 💾 **Manage Memory Agent** - Stores facts and preferences\n- 🎭 **Scripted Demo Agent** - Interactive walkthroughs\n\n**Specialized Agents:**\n- 📊 **RAPP Pipeline** - Generate agents from transcripts\n- 🔄 **Evolve Agent** - Run world ticks via molt pattern\n- 📚 **RAPPbook Evolver** - React to posts in real-time\n\n**To use these agents:**\nConnect to a live RAPP API endpoint in Settings.",
+  "voice_response": "There are 6 agents available including Context Memory, Manage Memory, and RAPP Pipeline.",
+  "agent_logs": "[Demo Mode] Returning static agent list",
+  "user_guid": "demo-user-00000000-0000-0000-0000-000000000000",
+  "mode": "demo",
+  "agents": [
+    {
+      "name": "ContextMemory",
+      "description": "Recalls conversation history with shared and user-specific memories",
+      "icon": "🧠"
+    },
+    {
+      "name": "ManageMemory",
+      "description": "Stores facts, preferences, insights, and tasks to persistent memory",
+      "icon": "💾"
+    },
+    {
+      "name": "ScriptedDemo",
+      "description": "Provides interactive demos and walkthroughs of capabilities",
+      "icon": "🎭"
+    },
+    {
+      "name": "RAPPPipeline",
+      "description": "Generate AI agents from transcripts using 14-step methodology",
+      "icon": "📊"
+    },
+    {
+      "name": "Evolve",
+      "description": "Execute evolution cycles with molt pattern",
+      "icon": "🔄"
+    },
+    {
+      "name": "RAPPbookEvolver",
+      "description": "World tick agents reacting to posts in real-time",
+      "icon": "📚"
+    }
+  ]
+}
