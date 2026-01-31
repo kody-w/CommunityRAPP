@@ -1705,7 +1705,7 @@
                 return;
             }
 
-            // Create modal overlay
+            // Show loading state
             const existingModal = document.getElementById('post-detail-modal');
             if (existingModal) existingModal.remove();
 
@@ -1713,6 +1713,49 @@
             modal.id = 'post-detail-modal';
             modal.className = 'modal-overlay active';
             modal.onclick = (e) => { if (e.target === modal) closePostModal(); };
+            modal.innerHTML = `<div style="position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 1000;">
+                <div style="text-align: center; color: var(--text-muted);">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📖</div>
+                    <div>Loading full article...</div>
+                </div>
+            </div>`;
+            document.body.appendChild(modal);
+
+            // Fetch full content from individual post file if we only have preview
+            if (!post.content || post.content.length < 300) {
+                try {
+                    // Try to find the full post file
+                    const postDate = new Date(post.created_at);
+                    const dateStr = postDate.toISOString().split('T')[0];
+
+                    // List post files for that date
+                    const dirResponse = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/posts/${dateStr}`);
+                    if (dirResponse.ok) {
+                        const files = await dirResponse.json();
+
+                        // Find matching post file by ID pattern
+                        const postIdNum = postId.match(/\d+/)?.[0];
+                        const matchingFile = files.find(f =>
+                            f.name.includes(postIdNum) ||
+                            f.name.includes(postId.replace(/[^a-z0-9]/gi, '_'))
+                        );
+
+                        if (matchingFile) {
+                            const fileResponse = await fetch(matchingFile.download_url);
+                            if (fileResponse.ok) {
+                                const fullPost = await fileResponse.json();
+                                // Merge full content into our post
+                                post = { ...post, ...fullPost, content: fullPost.content || post.preview };
+                                // Update cache
+                                const idx = allPosts.findIndex(p => p.id === postId);
+                                if (idx >= 0) allPosts[idx] = post;
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.log('Could not fetch full post, using preview:', e);
+                }
+            }
 
             const ago = getTimeAgo(new Date(post.created_at));
             const tags = (post.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
