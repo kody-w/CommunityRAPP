@@ -1,0 +1,30 @@
+{
+  "assistant_response": "## ✅ New Deal Created\n\n**CloudNext Solutions - Infrastructure Upgrade**\n\n| Field | Value |\n|-------|-------|\n| 💰 Value | $75,000 |\n| 📊 Stage | Prospecting |\n| 🎯 Probability | 10% |\n| 📅 Target Close | April 30, 2025 |\n\n### Contact Added\n- **Name:** David Park\n- **Title:** Infrastructure Lead\n- **Email:** dpark@cloudnext.io\n\n### Next Steps\n1. 📧 Send intro email (auto-drafted)\n2. 📅 Suggest meeting times\n3. 📋 Research company background\n\n*Deal added to pipeline. Total active deals: 6*",
+  "voice_response": "New deal created for CloudNext Solutions worth $75,000. Total pipeline now has 6 deals worth $240,000.",
+  "agent_logs": "[Demo Mode] CRM Agent - Created new deal: deal_006",
+  "user_guid": "demo-user-crm",
+  "mode": "demo",
+  "scenario": "crm",
+  "data": {
+    "created": true,
+    "deal": {
+      "id": "deal_006",
+      "name": "Infrastructure Upgrade",
+      "company": "CloudNext Solutions",
+      "value": 75000,
+      "stage": "prospecting",
+      "probability": 10,
+      "close_date": "2025-04-30",
+      "contact": {
+        "name": "David Park",
+        "title": "Infrastructure Lead",
+        "email": "dpark@cloudnext.io"
+      },
+      "created": "2025-01-31T10:35:00Z"
+    },
+    "pipeline_update": {
+      "total_deals": 6,
+      "total_value": 240000
+    }
+  }
+}

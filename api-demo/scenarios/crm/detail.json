@@ -1,0 +1,40 @@
+{
+  "assistant_response": "## Deal: Enterprise License\n**Company:** Acme Corp\n\n### Overview\n| Field | Value |\n|-------|-------|\n| 💰 Value | $50,000 |\n| 📊 Stage | Negotiation |\n| 🎯 Probability | 75% |\n| 📅 Close Date | February 15, 2025 |\n| ⏱️ Days in Stage | 8 days |\n\n### Contact\n- **Name:** Jane Smith\n- **Title:** VP of Engineering\n- **Email:** jane.smith@acmecorp.com\n\n### Notes\n> Final pricing review scheduled for Monday. They're comparing us with CompetitorX.\n\n### Activity Timeline\n| Date | Activity |\n|------|----------|\n| Jan 29 | Pricing call completed |\n| Jan 25 | Sent competitive comparison |\n| Jan 20 | Demo delivered |\n| Jan 15 | Initial meeting |\n\n### Next Action\n📌 **Send revised proposal** - Due: Feb 1\n\n*Commands: \"update stage\", \"add note\", \"schedule meeting\", \"send email\"*",
+  "voice_response": "Acme Corp Enterprise License deal is worth $50,000 at 75% probability, currently in negotiation. Next action is to send revised proposal.",
+  "agent_logs": "[Demo Mode] CRM Agent - Retrieved deal detail for Acme Corp",
+  "user_guid": "demo-user-crm",
+  "mode": "demo",
+  "scenario": "crm",
+  "data": {
+    "deal": {
+      "id": "deal_001",
+      "name": "Enterprise License",
+      "company": "Acme Corp",
+      "value": 50000,
+      "stage": "negotiation",
+      "probability": 75,
+      "close_date": "2025-02-15",
+      "days_in_stage": 8,
+      "contact": {
+        "name": "Jane Smith",
+        "title": "VP of Engineering",
+        "email": "jane.smith@acmecorp.com",
+        "phone": "+1 (555) 123-4567"
+      },
+      "notes": "Final pricing review scheduled for Monday. They're comparing us with CompetitorX.",
+      "next_action": {
+        "task": "Send revised proposal",
+        "due": "2025-02-01"
+      },
+      "activity": [
+        {"date": "2025-01-29", "type": "call", "description": "Pricing call completed"},
+        {"date": "2025-01-25", "type": "email", "description": "Sent competitive comparison"},
+        {"date": "2025-01-20", "type": "meeting", "description": "Demo delivered"},
+        {"date": "2025-01-15", "type": "meeting", "description": "Initial meeting"}
+      ],
+      "competitors": ["CompetitorX"],
+      "products": ["Enterprise License", "Premium Support"],
+      "created": "2025-01-10"
+    }
+  }
+}

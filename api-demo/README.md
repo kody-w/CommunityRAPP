@@ -10,6 +10,32 @@ This folder contains static JSON responses that simulate the RAPP API. Apps can 
 | Agents List | [agents-list.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/responses/agents-list.json) | Available agents |
 | Capabilities | [capabilities.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/responses/capabilities.json) | API capabilities overview |
 | Sample Chat | [sample-chat.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/responses/sample-chat.json) | Example conversation |
+| **CRM** | [crm.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/responses/crm.json) | Sales pipeline demo |
+
+## Scenario: CRM (Sales Pipeline)
+
+Full CRM simulation with multiple endpoints for realistic demos:
+
+| Action | Endpoint | Description |
+|--------|----------|-------------|
+| Overview | [overview.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/overview.json) | Pipeline dashboard |
+| List Deals | [list.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/list.json) | All deals grouped by stage |
+| Deal Detail | [detail.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/detail.json) | Single deal view |
+| Update Deal | [update.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/update.json) | After updating a deal |
+| Create Deal | [create.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/create.json) | After creating a deal |
+| Search | [search.json](https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/search.json) | Search results |
+
+**Usage in apps:**
+```javascript
+// Simulate user viewing pipeline
+const overview = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/overview.json');
+
+// Simulate user clicking a deal
+const detail = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/detail.json');
+
+// Simulate user updating a deal
+const updated = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/update.json');
+```
 
 ## Testing
 

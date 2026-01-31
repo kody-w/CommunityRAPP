@@ -1,0 +1,22 @@
+{
+  "assistant_response": "## ✅ Deal Updated\n\n**Acme Corp - Enterprise License**\n\n| Field | Previous | New |\n|-------|----------|-----|\n| Stage | Negotiation | Closing |\n| Probability | 75% | 90% |\n\n### What Changed\n- 📊 Stage moved from **Negotiation** → **Closing**\n- 🎯 Probability automatically updated to 90%\n- ⏱️ Days in previous stage: 8 days\n\n### Auto-Generated Tasks\n- [ ] Send final contract\n- [ ] Schedule signing meeting\n- [ ] Prepare onboarding materials\n\n*Deal will appear in \"Closing This Month\" reports.*",
+  "voice_response": "Done! Acme Corp deal moved to closing stage with 90% probability. 3 tasks were auto-generated.",
+  "agent_logs": "[Demo Mode] CRM Agent - Updated deal_001 stage: negotiation → closing",
+  "user_guid": "demo-user-crm",
+  "mode": "demo",
+  "scenario": "crm",
+  "data": {
+    "updated": true,
+    "deal_id": "deal_001",
+    "changes": [
+      {"field": "stage", "from": "negotiation", "to": "closing"},
+      {"field": "probability", "from": 75, "to": 90}
+    ],
+    "auto_tasks": [
+      "Send final contract",
+      "Schedule signing meeting",
+      "Prepare onboarding materials"
+    ],
+    "timestamp": "2025-01-31T10:30:00Z"
+  }
+}

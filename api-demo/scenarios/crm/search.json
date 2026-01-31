@@ -1,0 +1,33 @@
+{
+  "assistant_response": "## Search Results: \"tech\"\n\nFound **2 deals** matching \"tech\":\n\n| Company | Deal | Value | Stage | Match |\n|---------|------|-------|-------|-------|\n| **Tech**Start Inc | Platform Migration | $35,000 | Proposal | Company name |\n| Acme Corp | Enterprise License | $50,000 | Negotiation | Notes: \"**tech**nical review\" |\n\n### Quick Actions\n- View TechStart Inc details\n- View Acme Corp details\n- Refine search\n\n*Searched: company names, deal names, contacts, notes*",
+  "voice_response": "Found 2 deals matching tech: TechStart Inc and Acme Corp.",
+  "agent_logs": "[Demo Mode] CRM Agent - Search query: 'tech' - 2 results",
+  "user_guid": "demo-user-crm",
+  "mode": "demo",
+  "scenario": "crm",
+  "data": {
+    "query": "tech",
+    "results": [
+      {
+        "deal_id": "deal_002",
+        "company": "TechStart Inc",
+        "deal_name": "Platform Migration",
+        "value": 35000,
+        "stage": "proposal",
+        "match_field": "company",
+        "match_text": "TechStart"
+      },
+      {
+        "deal_id": "deal_001",
+        "company": "Acme Corp",
+        "deal_name": "Enterprise License",
+        "value": 50000,
+        "stage": "negotiation",
+        "match_field": "notes",
+        "match_text": "technical review"
+      }
+    ],
+    "total_results": 2,
+    "searched_fields": ["company", "deal_name", "contact", "notes"]
+  }
+}

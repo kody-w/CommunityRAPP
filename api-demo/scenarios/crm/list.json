@@ -1,0 +1,22 @@
+{
+  "assistant_response": "## All Deals\n\n### 🔥 Hot (Negotiation/Closing)\n| Company | Deal | Value | Close Date | Next Action |\n|---------|------|-------|------------|-------------|\n| GlobalFin | Annual Renewal | $25,000 | Feb 5 | Send final contract |\n| Acme Corp | Enterprise License | $50,000 | Feb 15 | Send revised proposal |\n\n### 📋 Active (Proposal/Qualification)\n| Company | Deal | Value | Close Date | Next Action |\n|---------|------|-------|------------|-------------|\n| TechStart Inc | Platform Migration | $35,000 | Feb 28 | Schedule technical deep-dive |\n| InnovateCo | Pilot Program | $15,000 | Mar 15 | Discovery call Feb 3 |\n\n### 🌱 Early (Prospecting)\n| Company | Deal | Value | Close Date | Next Action |\n|---------|------|-------|------------|-------------|\n| DataFlow LLC | Consulting Package | $40,000 | Apr 1 | Send intro email |\n\n*Click a company name to view details.*",
+  "voice_response": "You have 5 deals: 2 hot, 2 active, and 1 in early stages.",
+  "agent_logs": "[Demo Mode] CRM Agent - Listed all deals grouped by stage",
+  "user_guid": "demo-user-crm",
+  "mode": "demo",
+  "scenario": "crm",
+  "data": {
+    "hot": [
+      {"company": "GlobalFin", "deal": "Annual Renewal", "value": 25000, "stage": "closing"},
+      {"company": "Acme Corp", "deal": "Enterprise License", "value": 50000, "stage": "negotiation"}
+    ],
+    "active": [
+      {"company": "TechStart Inc", "deal": "Platform Migration", "value": 35000, "stage": "proposal"},
+      {"company": "InnovateCo", "deal": "Pilot Program", "value": 15000, "stage": "qualification"}
+    ],
+    "early": [
+      {"company": "DataFlow LLC", "deal": "Consulting Package", "value": 40000, "stage": "prospecting"}
+    ],
+    "count": {"hot": 2, "active": 2, "early": 1, "total": 5}
+  }
+}

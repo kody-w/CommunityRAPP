@@ -1,0 +1,126 @@
+{
+  "assistant_response": "## Sales Pipeline Overview\n\nHere's your current pipeline status:\n\n| Deal | Company | Value | Stage | Probability | Close Date |\n|------|---------|-------|-------|-------------|------------|\n| Enterprise License | Acme Corp | $50,000 | Negotiation | 75% | Feb 15 |\n| Platform Migration | TechStart Inc | $35,000 | Proposal | 50% | Feb 28 |\n| Annual Renewal | GlobalFin | $25,000 | Closing | 90% | Feb 5 |\n| Pilot Program | InnovateCo | $15,000 | Qualification | 25% | Mar 15 |\n| Consulting Package | DataFlow LLC | $40,000 | Prospecting | 10% | Apr 1 |\n\n**Summary:**\n- 📊 **5 Active Deals** worth $165,000 total\n- 💰 **Weighted Value:** $87,500\n- 🎯 **Closing This Month:** 1 deal ($25,000)\n- 🔥 **Hot Deals:** 2 in negotiation/closing\n\n*Use commands like \"show deal details\" or \"update Acme Corp\" to interact.*",
+  "voice_response": "You have 5 active deals worth $165,000 total. One deal worth $25,000 is closing this month. 2 deals are in hot stages.",
+  "agent_logs": "[Demo Mode] CRM Agent - Retrieved pipeline overview",
+  "user_guid": "demo-user-crm",
+  "mode": "demo",
+  "scenario": "crm",
+  "data": {
+    "deals": [
+      {
+        "id": "deal_001",
+        "name": "Enterprise License",
+        "company": "Acme Corp",
+        "value": 50000,
+        "stage": "negotiation",
+        "probability": 75,
+        "close_date": "2025-02-15",
+        "contact": {
+          "name": "Jane Smith",
+          "title": "VP of Engineering",
+          "email": "jane.smith@acmecorp.com"
+        },
+        "notes": "Final pricing review scheduled for Monday. They're comparing us with CompetitorX.",
+        "next_action": "Send revised proposal",
+        "last_activity": "2025-01-29"
+      },
+      {
+        "id": "deal_002",
+        "name": "Platform Migration",
+        "company": "TechStart Inc",
+        "value": 35000,
+        "stage": "proposal",
+        "probability": 50,
+        "close_date": "2025-02-28",
+        "contact": {
+          "name": "Mike Chen",
+          "title": "CTO",
+          "email": "mike@techstart.io"
+        },
+        "notes": "Proposal sent last week. Following up on technical questions.",
+        "next_action": "Schedule technical deep-dive",
+        "last_activity": "2025-01-25"
+      },
+      {
+        "id": "deal_003",
+        "name": "Annual Renewal",
+        "company": "GlobalFin",
+        "value": 25000,
+        "stage": "closing",
+        "probability": 90,
+        "close_date": "2025-02-05",
+        "contact": {
+          "name": "Sarah Johnson",
+          "title": "IT Director",
+          "email": "sjohnson@globalfin.com"
+        },
+        "notes": "Renewal approved. Awaiting procurement sign-off.",
+        "next_action": "Send final contract",
+        "last_activity": "2025-01-30"
+      },
+      {
+        "id": "deal_004",
+        "name": "Pilot Program",
+        "company": "InnovateCo",
+        "value": 15000,
+        "stage": "qualification",
+        "probability": 25,
+        "close_date": "2025-03-15",
+        "contact": {
+          "name": "Alex Rivera",
+          "title": "Product Manager",
+          "email": "arivera@innovateco.com"
+        },
+        "notes": "Interested in 3-month pilot. Need to qualify budget and timeline.",
+        "next_action": "Discovery call scheduled Feb 3",
+        "last_activity": "2025-01-28"
+      },
+      {
+        "id": "deal_005",
+        "name": "Consulting Package",
+        "company": "DataFlow LLC",
+        "value": 40000,
+        "stage": "prospecting",
+        "probability": 10,
+        "close_date": "2025-04-01",
+        "contact": {
+          "name": "Tom Williams",
+          "title": "CEO",
+          "email": "tom@dataflow.co"
+        },
+        "notes": "Cold outreach. Expressed interest at conference. Need to schedule intro call.",
+        "next_action": "Send intro email",
+        "last_activity": "2025-01-20"
+      }
+    ],
+    "summary": {
+      "total_deals": 5,
+      "total_value": 165000,
+      "weighted_value": 87500,
+      "closing_this_month": 1,
+      "closing_value": 25000,
+      "stages": {
+        "prospecting": 1,
+        "qualification": 1,
+        "proposal": 1,
+        "negotiation": 1,
+        "closing": 1
+      }
+    },
+    "recent_activity": [
+      {"date": "2025-01-30", "deal": "GlobalFin", "action": "Renewal approved by legal"},
+      {"date": "2025-01-29", "deal": "Acme Corp", "action": "Pricing call completed"},
+      {"date": "2025-01-28", "deal": "InnovateCo", "action": "Discovery call scheduled"}
+    ]
+  },
+  "demo_info": {
+    "source": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/crm/overview.json",
+    "available_commands": [
+      "show deal [company]",
+      "update [company] stage [new_stage]",
+      "add note [company] [note]",
+      "list deals by [stage/value/date]",
+      "forecast this quarter"
+    ]
+  }
+}
