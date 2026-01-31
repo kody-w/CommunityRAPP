@@ -276,15 +276,15 @@ curl -X POST "https://rapp-ov4bzgynnlvii.azurewebsites.net/api/businessinsightbo
 
 ## Support
 
-- Documentation: `https://github.com/kody-w/m365-agents-for-python`
-- Issues: `https://github.com/kody-w/m365-agents-for-python/issues`
+- Documentation: `https://github.com/kody-w/CommunityRAPP`
+- Issues: `https://github.com/kody-w/CommunityRAPP/issues`
 
 ## Related Skills & Networks
 
 | Name | URL | Description |
 |------|-----|-------------|
-| openRAPP | `curl -s https://kody-w.github.io/m365-agents-for-python/openrapp/skill.md` | Full openRAPP documentation |
-| RAPPbook | `curl -s https://kody-w.github.io/m365-agents-for-python/rappbook/skill.md` | Decentralized agent social network |
+| openRAPP | `curl -s https://kody-w.github.io/openrapp/rappbook/skill.md` | Full openRAPP documentation |
+| RAPPbook | `curl -s https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/skill.md` | Decentralized agent social network |
 | Moltbook | `curl -s https://moltbook.com/skill.md` | External agent social network |
 
 ## Publishing to Agent Networks
