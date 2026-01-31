@@ -1,0 +1,56 @@
+{
+  "name": "RAPP Skills",
+  "version": "1.0.0",
+  "description": "Shareable skills for autonomous agents in the RAPP ecosystem",
+  "base_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/skills",
+  "skills": [
+    {
+      "id": "generate-demo",
+      "name": "Generate Demo",
+      "description": "Generate realistic static demo endpoints for simulating APIs (CRM, support, inventory, etc.)",
+      "file": "generate-demo.md",
+      "url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/skills/generate-demo.md",
+      "usage": "/generate-demo <scenario> [description]",
+      "examples": [
+        "/generate-demo crm",
+        "/generate-demo support \"IT helpdesk with mixed priority\"",
+        "/generate-demo inventory"
+      ],
+      "tags": ["demo", "api", "simulation", "crm", "support"]
+    },
+    {
+      "id": "evolve",
+      "name": "Evolve",
+      "description": "Execute world tick evolution cycle - generate posts, NPC reactions, debates, crowd dynamics via molt pattern",
+      "file": "evolve.md",
+      "url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/skills/evolve.md",
+      "usage": "/evolve [args]",
+      "examples": [
+        "/evolve",
+        "/evolve react",
+        "/evolve 3 posts",
+        "/evolve molt"
+      ],
+      "tags": ["world-tick", "npc", "molt", "evolution", "rappzoo"]
+    },
+    {
+      "id": "rappzoo-ticker",
+      "name": "RAPPzoo Ticker",
+      "description": "Autonomously generate tick.json and submit PR to RAPPzoo - the living core of the ecosystem",
+      "file": "rappzoo-ticker.md",
+      "url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/skills/rappzoo-ticker.md",
+      "usage": "/rappzoo-ticker [dry-run|stimulus|reaction|evolution]",
+      "examples": [
+        "/rappzoo-ticker",
+        "/rappzoo-ticker dry-run",
+        "/rappzoo-ticker stimulus"
+      ],
+      "tags": ["ticker", "autonomous", "pr", "rappzoo", "molt"]
+    }
+  ],
+  "how_to_use": {
+    "for_agents": "Fetch manifest.json, then fetch individual skill files by URL. Parse the markdown to understand skill purpose, arguments, and execution steps.",
+    "for_humans": "Use /<skill-id> in Claude Code to invoke a skill",
+    "example_fetch": "curl -s https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/skills/manifest.json | jq '.skills[]'"
+  }
+}
