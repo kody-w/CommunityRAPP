@@ -1,0 +1,263 @@
+name: RAPPzoo Auto-Merge
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'rappzoo/world/**'
+      - 'rappzoo/molts/**'
+      - 'rappzoo/creatures/**'
+      - 'rappzoo/exhibits/**'
+
+jobs:
+  validate-and-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Get Changed Files
+        id: files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            rappzoo/**/*.json
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate RAPPzoo Content
+        id: validate
+        run: |
+          import json
+          import sys
+          import os
+          from pathlib import Path
+
+          errors = []
+          valid_files = 0
+          molt_detected = False
+          tick_updated = False
+
+          changed_files = os.environ.get('CHANGED_FILES', '').split('\n')
+          print(f"Changed files: {changed_files}")
+
+          for file_path in changed_files:
+              if not file_path.strip():
+                  continue
+
+              path = Path(file_path)
+
+              if not file_path.startswith('rappzoo/'):
+                  continue
+              if not file_path.endswith('.json'):
+                  continue
+
+              try:
+                  with open(file_path, 'r') as f:
+                      data = json.load(f)
+
+                  # Validate tick files
+                  if '/world/ticks/' in file_path or file_path.endswith('current_tick.json'):
+                      required = ['tick', 'timestamp']
+                      missing = [f for f in required if f not in data]
+                      if missing:
+                          errors.append(f"{file_path}: Missing required tick fields: {missing}")
+                          continue
+
+                      tick_num = data.get('tick')
+                      if not isinstance(tick_num, int) or tick_num < 0:
+                          errors.append(f"{file_path}: Invalid tick number")
+                          continue
+
+                      tick_updated = True
+                      print(f"✓ Tick validated: #{tick_num}")
+
+                  # Validate molt input files
+                  elif '/molts/' in file_path and 'molt_input' not in file_path:
+                      required = ['molt_type', 'timestamp']
+                      missing = [f for f in required if f not in data]
+                      if missing:
+                          errors.append(f"{file_path}: Missing required molt fields: {missing}")
+                          continue
+
+                      valid_types = ['stimulus', 'reaction', 'evolution', 'emergence', 'compression']
+                      if data.get('molt_type') not in valid_types:
+                          errors.append(f"{file_path}: Invalid molt_type. Must be one of: {valid_types}")
+                          continue
+
+                      molt_detected = True
+                      print(f"✓ Molt validated: {data.get('molt_type')}")
+
+                  # Validate creature schemas
+                  elif '/creatures/' in file_path:
+                      if 'schema' in file_path:
+                          if '$schema' not in data:
+                              errors.append(f"{file_path}: Schema file missing $schema declaration")
+                              continue
+                      print(f"✓ Creature file validated: {file_path}")
+
+                  # Validate exhibit configs
+                  elif '/exhibits/' in file_path:
+                      if 'name' not in data:
+                          errors.append(f"{file_path}: Exhibit missing 'name' field")
+                          continue
+                      print(f"✓ Exhibit validated: {data.get('name')}")
+
+                  valid_files += 1
+
+              except json.JSONDecodeError as e:
+                  errors.append(f"{file_path}: Invalid JSON - {e}")
+              except FileNotFoundError:
+                  errors.append(f"{file_path}: File not found")
+              except Exception as e:
+                  errors.append(f"{file_path}: Error - {e}")
+
+          if errors:
+              print("\n❌ Validation errors:")
+              for error in errors:
+                  print(f"  - {error}")
+              sys.exit(1)
+
+          # Set outputs for later steps
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"molt_detected={str(molt_detected).lower()}\n")
+              f.write(f"tick_updated={str(tick_updated).lower()}\n")
+
+          print(f"\n✅ Validated {valid_files} file(s) successfully")
+          if molt_detected:
+              print("🦋 Molt detected - tick may evolve!")
+          if tick_updated:
+              print("🧠 Tick updated - world state changed!")
+        shell: python
+        env:
+          CHANGED_FILES: ${{ steps.files.outputs.all_changed_files }}
+
+      - name: Update World State
+        if: success()
+        run: |
+          import json
+          from pathlib import Path
+          from datetime import datetime
+
+          rappzoo_path = Path('rappzoo')
+          world_path = rappzoo_path / 'world'
+          state_path = world_path / 'state.json'
+          current_tick_path = world_path / 'current_tick.json'
+
+          # Load current tick if exists
+          current_tick = None
+          if current_tick_path.exists():
+              with open(current_tick_path, 'r') as f:
+                  current_tick = json.load(f)
+
+          # Count ticks
+          tick_count = 0
+          ticks_dir = world_path / 'ticks'
+          if ticks_dir.exists():
+              tick_count = len(list(ticks_dir.glob('tick_*.json')))
+
+          # Count molts
+          molt_count = 0
+          molts_dir = rappzoo_path / 'molts' / 'history'
+          if molts_dir.exists():
+              for molt_file in molts_dir.glob('*.json'):
+                  try:
+                      with open(molt_file, 'r') as f:
+                          molt_data = json.load(f)
+                          if isinstance(molt_data, list):
+                              molt_count += len(molt_data)
+                          else:
+                              molt_count += 1
+                  except:
+                      pass
+
+          # Update state.json
+          state = {
+              'current_tick': current_tick.get('tick', 0) if current_tick else 0,
+              'last_updated': datetime.utcnow().isoformat() + 'Z',
+              'tick_count': tick_count,
+              'molt_count': molt_count,
+              'crowd_population': current_tick.get('crowd', {}).get('total_population', 0) if current_tick else 0,
+              'active_npcs': len(current_tick.get('npcs', {})) if current_tick else 0,
+              'health': 'alive'
+          }
+
+          world_path.mkdir(parents=True, exist_ok=True)
+          with open(state_path, 'w') as f:
+              json.dump(state, f, indent=2)
+
+          print(f"State updated: tick #{state['current_tick']}, {molt_count} molts, {tick_count} tick snapshots")
+        shell: python
+
+      - name: Commit State Update
+        if: success()
+        run: |
+          git config user.name "RAPPzoo Keeper"
+          git config user.email "rappzoo@users.noreply.github.com"
+          git add rappzoo/world/state.json
+          git diff --cached --quiet || git commit -m "🦎 [RAPPzoo] Update world state"
+          git push || echo "Nothing to push"
+
+      - name: Auto-Merge PR
+        if: success()
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} --squash --delete-branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment Success
+        if: success()
+        run: |
+          MOLT_MSG=""
+          TICK_MSG=""
+          if [ "${{ steps.validate.outputs.molt_detected }}" == "true" ]; then
+            MOLT_MSG="🦋 **Molt detected** - the tick is evolving!"
+          fi
+          if [ "${{ steps.validate.outputs.tick_updated }}" == "true" ]; then
+            TICK_MSG="🧠 **Tick updated** - world state changed!"
+          fi
+
+          gh pr comment ${{ github.event.pull_request.number }} --body "✅ **RAPPzoo content validated and merged!**
+
+          $MOLT_MSG
+          $TICK_MSG
+
+          Your living data is now at: https://kody-w.github.io/openrapp/rappzoo/
+
+          The creatures are evolving! 🦎"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment Failure
+        if: failure()
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body "❌ **RAPPzoo validation failed**
+
+          Please check your JSON format and required fields:
+
+          **Tick files** (world/ticks/*.json, world/current_tick.json):
+          - Required: tick (integer), timestamp
+
+          **Molt files** (molts/history/*.json):
+          - Required: molt_type, timestamp
+          - molt_type must be: stimulus, reaction, evolution, emergence, or compression
+
+          **Creature schemas** (creatures/*.schema.json):
+          - Must include \$schema declaration
+
+          **Exhibit configs** (exhibits/*.json):
+          - Required: name
+
+          See workflow logs for details."
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

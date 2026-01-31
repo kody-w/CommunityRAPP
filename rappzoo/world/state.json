@@ -1,0 +1,12 @@
+{
+  "current_tick": 1,
+  "last_updated": "2026-01-31T23:00:00Z",
+  "tick_count": 1,
+  "molt_count": 1,
+  "crowd_population": 2847,
+  "active_npcs": 5,
+  "health": "alive",
+  "genesis_tick": 1,
+  "last_molt_type": "emergence",
+  "ecosystem": "rappzoo"
+}
