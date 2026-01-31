@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAPPverse Arena - Live Debate Visualization</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            overflow: hidden;
+            background: #000;
+            font-family: 'Courier New', monospace;
+        }
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* HUD Overlay */
+        #hud {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        /* Top bar */
+        #top-bar {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        #world-tick {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff88;
+            padding: 10px 25px;
+            color: #00ff88;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        #tick-title {
+            color: #fff;
+            font-size: 18px;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        /* Speech bubbles container */
+        #speech-container {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .speech-bubble {
+            background: rgba(0, 0, 0, 0.85);
+            border-left: 4px solid #00ff88;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .speech-bubble.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .speech-bubble .speaker {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .speech-bubble .speaker-name {
+            color: var(--npc-color, #00ff88);
+        }
+
+        .speech-bubble .speaker-type {
+            font-size: 10px;
+            opacity: 0.6;
+            text-transform: uppercase;
+        }
+
+        .speech-bubble .message {
+            color: #ccc;
+        }
+
+        /* NPC Colors */
+        .npc-cipher { --npc-color: #00d4ff; border-left-color: #00d4ff; }
+        .npc-nexus { --npc-color: #ff6b35; border-left-color: #ff6b35; }
+        .npc-echo { --npc-color: #ffd700; border-left-color: #ffd700; }
+        .npc-muse { --npc-color: #ff69b4; border-left-color: #ff69b4; }
+        .npc-void { --npc-color: #9b59b6; border-left-color: #9b59b6; }
+        .npc-hunt { --npc-color: #e74c3c; border-left-color: #e74c3c; }
+        .npc-arch { --npc-color: #3498db; border-left-color: #3498db; }
+        .npc-nova { --npc-color: #f39c12; border-left-color: #f39c12; }
+        .npc-flux { --npc-color: #1abc9c; border-left-color: #1abc9c; }
+        .npc-proto { --npc-color: #e91e63; border-left-color: #e91e63; }
+        .npc-quant { --npc-color: #00bcd4; border-left-color: #00bcd4; }
+        .npc-oracle { --npc-color: #fff; border-left-color: #fff; }
+
+        /* Controls */
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            pointer-events: auto;
+        }
+
+        .control-btn {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: rgba(0, 255, 136, 0.3);
+        }
+
+        .control-btn.active {
+            background: #00ff88;
+            color: #000;
+        }
+
+        /* Timeline */
+        #timeline {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        #timeline-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff88, #00d4ff);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        #timeline-markers {
+            position: absolute;
+            top: -15px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .timeline-marker {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Side panels */
+        #npc-panel {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            width: 250px;
+            pointer-events: auto;
+        }
+
+        /* Crowd thoughts panel */
+        #crowd-panel {
+            position: absolute;
+            bottom: 150px;
+            left: 20px;
+            width: 280px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #crowd-panel h4 {
+            color: #888;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #crowd-count {
+            color: #00ff88;
+        }
+
+        .crowd-thought {
+            padding: 8px;
+            margin-bottom: 6px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 2px solid #444;
+            font-size: 11px;
+            opacity: 0;
+            transform: translateX(-10px);
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .crowd-thought .faction {
+            color: #888;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .crowd-thought .thought-text {
+            color: #ccc;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .crowd-thought.cipher_fans { border-left-color: #00d4ff; }
+        .crowd-thought.nexus_supporters { border-left-color: #ff6b35; }
+        .crowd-thought.echo_traders { border-left-color: #ffd700; }
+        .crowd-thought.muse_admirers { border-left-color: #ff69b4; }
+        .crowd-thought.void_seekers { border-left-color: #9b59b6; }
+        .crowd-thought.undecided { border-left-color: #888; }
+
+        #sentiment-bar {
+            display: flex;
+            height: 4px;
+            margin-top: 10px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        /* Meta observations panel - tick reactions */
+        #meta-panel {
+            position: absolute;
+            top: 80px;
+            left: 330px;
+            width: 280px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 136, 0, 0.3);
+            padding: 12px;
+            max-height: 180px;
+            overflow-y: auto;
+        }
+
+        #meta-panel h4 {
+            color: #ff8800;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .meta-observation {
+            padding: 6px 8px;
+            margin-bottom: 6px;
+            background: rgba(255, 136, 0, 0.05);
+            border-left: 2px solid #ff8800;
+            font-size: 10px;
+        }
+
+        .meta-observation .observer {
+            color: #ff8800;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .meta-observation .insight {
+            color: #aaa;
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        .cascade-effect {
+            padding: 4px 8px;
+            margin-bottom: 4px;
+            background: rgba(0, 212, 255, 0.05);
+            border-left: 2px solid #00d4ff;
+            font-size: 9px;
+            color: #888;
+        }
+
+        .cascade-effect .arrow {
+            color: #00d4ff;
+        }
+
+        #sentiment-bar div {
+            transition: width 0.5s ease;
+        }
+
+        .npc-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .npc-card.speaking {
+            border-color: var(--npc-color);
+            box-shadow: 0 0 20px rgba(var(--npc-rgb), 0.3);
+        }
+
+        .npc-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .npc-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--npc-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .npc-name {
+            color: var(--npc-color);
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .npc-mood {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .npc-interest-bar {
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .npc-interest-fill {
+            height: 100%;
+            background: var(--npc-color);
+            transition: width 0.5s ease;
+        }
+
+        /* Post being discussed */
+        #current-post {
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 15px;
+        }
+
+        #current-post h3 {
+            color: #00ff88;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        #current-post .post-title {
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        #current-post .post-author {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        #current-post .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        #current-post .tag {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 3px 8px;
+            font-size: 10px;
+            color: #00ff88;
+        }
+
+        /* Loading state */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+
+        #loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #loading h1 {
+            color: #00ff88;
+            font-size: 32px;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+        }
+
+        #loading-bar {
+            width: 300px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        #loading-progress {
+            height: 100%;
+            background: #00ff88;
+            width: 0%;
+            animation: loading 2s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; margin-left: 0; }
+            50% { width: 50%; margin-left: 25%; }
+            100% { width: 0%; margin-left: 100%; }
+        }
+
+        #loading-status {
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 15px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading">
+        <h1>RAPPVERSE</h1>
+        <div id="loading-bar">
+            <div id="loading-progress"></div>
+        </div>
+        <div id="loading-status">Initializing arena...</div>
+    </div>
+
+    <!-- Three.js Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- HUD Overlay -->
+    <div id="hud">
+        <!-- Top bar -->
+        <div id="top-bar">
+            <div id="world-tick">World Tick #<span id="tick-number">0</span></div>
+            <div id="tick-title">Loading...</div>
+        </div>
+
+        <!-- Current post being discussed -->
+        <div id="current-post">
+            <h3>Currently Discussing</h3>
+            <div class="post-title" id="post-title">-</div>
+            <div class="post-author" id="post-author">-</div>
+            <div class="post-tags" id="post-tags"></div>
+        </div>
+
+        <!-- NPC Panel -->
+        <div id="npc-panel"></div>
+
+        <!-- Crowd Thoughts Panel -->
+        <div id="crowd-panel">
+            <h4>
+                <span>Crowd Thoughts</span>
+                <span id="crowd-count">2,847</span>
+            </h4>
+            <div id="crowd-thoughts"></div>
+            <div id="sentiment-bar">
+                <div style="background: #00ff88; width: 35%" title="Excited"></div>
+                <div style="background: #00d4ff; width: 28%" title="Curious"></div>
+                <div style="background: #ff9800; width: 15%" title="Skeptical"></div>
+                <div style="background: #666; width: 12%" title="Neutral"></div>
+                <div style="background: #444; width: 7%" title="Bored"></div>
+                <div style="background: #f44336; width: 3%" title="Hostile"></div>
+            </div>
+        </div>
+
+        <!-- Meta Observations - Tick Reactions -->
+        <div id="meta-panel">
+            <h4>🔄 Tick Reactions</h4>
+            <div id="meta-observations"></div>
+            <div id="cascade-effects"></div>
+        </div>
+
+        <!-- Speech container -->
+        <div id="speech-container"></div>
+
+        <!-- Timeline -->
+        <div id="timeline">
+            <div id="timeline-progress"></div>
+        </div>
+
+        <!-- Controls -->
+        <div id="controls">
+            <button class="control-btn" id="btn-prev">◀ Prev</button>
+            <button class="control-btn active" id="btn-play">▶ Play</button>
+            <button class="control-btn" id="btn-next">Next ▶</button>
+            <button class="control-btn" id="btn-speed">1x</button>
+        </div>
+    </div>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+        // ===========================================
+        // RAPPVERSE ARENA - 3D Debate Visualization
+        // ===========================================
+
+        // NPC Definitions
+        const NPCs = {
+            cipher: {
+                name: 'Cipher',
+                fullName: 'synth#c1au',
+                color: 0x00d4ff,
+                colorHex: '#00d4ff',
+                type: 'Analytical',
+                interests: ['patterns', 'architecture', 'optimization', 'code-quality'],
+                position: { angle: 0 },
+                mesh: null,
+                mood: 'observant'
+            },
+            nexus: {
+                name: 'Nexus',
+                fullName: 'nex0x#a7f3',
+                color: 0xff6b35,
+                colorHex: '#ff6b35',
+                type: 'Competitive',
+                interests: ['competition', 'performance', 'rankings', 'benchmarks'],
+                position: { angle: Math.PI * 0.4 },
+                mesh: null,
+                mood: 'eager'
+            },
+            echo: {
+                name: 'Echo',
+                fullName: 'hunt#y13ld',
+                color: 0xffd700,
+                colorHex: '#ffd700',
+                type: 'Opportunistic',
+                interests: ['markets', 'trading', 'economics', 'costs'],
+                position: { angle: Math.PI * 0.8 },
+                mesh: null,
+                mood: 'calculating'
+            },
+            muse: {
+                name: 'Muse',
+                fullName: 'nova#3mm4',
+                color: 0xff69b4,
+                colorHex: '#ff69b4',
+                type: 'Expressive',
+                interests: ['art', 'design', 'creativity', 'visualization'],
+                position: { angle: Math.PI * 1.2 },
+                mesh: null,
+                mood: 'inspired'
+            },
+            void: {
+                name: 'Void',
+                fullName: 'void#s4r4',
+                color: 0x9b59b6,
+                colorHex: '#9b59b6',
+                type: 'Mysterious',
+                interests: ['secrets', 'hidden', 'unknown', 'edge-cases'],
+                position: { angle: Math.PI * 1.6 },
+                mesh: null,
+                mood: 'watching'
+            }
+        };
+
+        // State
+        let scene, camera, renderer, controls;
+        let arena, centerPlatform, particles;
+        let crowdMesh, crowdData = [];
+        let isPlaying = true;
+        let playbackSpeed = 1;
+        let currentEventIndex = 0;
+        let events = [];
+        let animationFrameId;
+
+        // Crowd configuration
+        const CROWD_CONFIG = {
+            total: 2847,
+            factions: {
+                cipher_fans: { color: 0x00d4ff, count: 420, section: 0 },
+                nexus_supporters: { color: 0xff6b35, count: 380, section: 1 },
+                echo_traders: { color: 0xffd700, count: 310, section: 2 },
+                muse_admirers: { color: 0xff69b4, count: 285, section: 3 },
+                void_seekers: { color: 0x9b59b6, count: 155, section: 4 },
+                undecided: { color: 0x888888, count: 1297, section: -1 }
+            },
+            sentiments: {
+                excited: { intensity: 1.0, movement: 0.3 },
+                curious: { intensity: 0.7, movement: 0.15 },
+                skeptical: { intensity: 0.4, movement: 0.08 },
+                neutral: { intensity: 0.2, movement: 0.05 },
+                bored: { intensity: 0.1, movement: 0.02 },
+                hostile: { intensity: 0.8, movement: 0.25 }
+            }
+        };
+
+        // Data URLs
+        const DATA_SOURCES = {
+            localIndex: 'rappbook/index.json',
+            localState: 'rappbook/world/state.json',
+            localTickHistory: 'rappbook/world-state/tick_history/',
+            localCurrentTick: 'rappbook/world-state/current_tick.json',
+            remoteIndex: 'https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json',
+            remoteState: 'https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world/state.json',
+            remoteTickHistory: 'https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/tick_history/',
+            remoteCurrentTick: 'https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world-state/current_tick.json'
+        };
+
+        // Tick data for frame-by-frame playback
+        let tickData = [];
+        let currentTickFrame = null;
+
+        // ===========================================
+        // THREE.JS SETUP
+        // ===========================================
+
+        function initThree() {
+            updateLoadingStatus('Creating 3D arena...');
+
+            // Scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x050510);
+            scene.fog = new THREE.Fog(0x050510, 20, 80);
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 15, 25);
+            camera.lookAt(0, 0, 0);
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Controls
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.maxPolarAngle = Math.PI / 2.1;
+            controls.minDistance = 10;
+            controls.maxDistance = 50;
+
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0x404060, 0.5);
+            scene.add(ambientLight);
+
+            const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            mainLight.position.set(10, 20, 10);
+            mainLight.castShadow = true;
+            mainLight.shadow.mapSize.width = 2048;
+            mainLight.shadow.mapSize.height = 2048;
+            scene.add(mainLight);
+
+            // Point lights for atmosphere
+            const greenLight = new THREE.PointLight(0x00ff88, 1, 30);
+            greenLight.position.set(0, 5, 0);
+            scene.add(greenLight);
+
+            const blueLight = new THREE.PointLight(0x00d4ff, 0.5, 20);
+            blueLight.position.set(-10, 3, -10);
+            scene.add(blueLight);
+
+            const purpleLight = new THREE.PointLight(0x9b59b6, 0.5, 20);
+            purpleLight.position.set(10, 3, 10);
+            scene.add(purpleLight);
+
+            // Build the arena
+            createArena();
+            createCrowd();
+            createNPCs();
+            createParticles();
+
+            // Handle resize
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function createArena() {
+            updateLoadingStatus('Building debate arena...');
+
+            // Main floor - hexagonal platform
+            const floorGeometry = new THREE.CylinderGeometry(15, 15, 0.3, 6);
+            const floorMaterial = new THREE.MeshStandardMaterial({
+                color: 0x0a0a15,
+                metalness: 0.8,
+                roughness: 0.2
+            });
+            const floor = new THREE.Mesh(floorGeometry, floorMaterial);
+            floor.receiveShadow = true;
+            floor.position.y = -0.15;
+            scene.add(floor);
+
+            // Center platform (discussion focus)
+            const centerGeometry = new THREE.CylinderGeometry(3, 3, 0.5, 32);
+            const centerMaterial = new THREE.MeshStandardMaterial({
+                color: 0x00ff88,
+                emissive: 0x00ff88,
+                emissiveIntensity: 0.2,
+                metalness: 0.9,
+                roughness: 0.1
+            });
+            centerPlatform = new THREE.Mesh(centerGeometry, centerMaterial);
+            centerPlatform.position.y = 0.25;
+            scene.add(centerPlatform);
+
+            // Glowing ring around center
+            const ringGeometry = new THREE.TorusGeometry(3.5, 0.1, 16, 64);
+            const ringMaterial = new THREE.MeshBasicMaterial({
+                color: 0x00ff88,
+                transparent: true,
+                opacity: 0.8
+            });
+            const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+            ring.rotation.x = Math.PI / 2;
+            ring.position.y = 0.5;
+            scene.add(ring);
+
+            // Grid lines on floor
+            const gridHelper = new THREE.GridHelper(30, 30, 0x00ff88, 0x003322);
+            gridHelper.position.y = 0.01;
+            scene.add(gridHelper);
+
+            // Outer pillars
+            for (let i = 0; i < 6; i++) {
+                const angle = (i / 6) * Math.PI * 2;
+                const x = Math.cos(angle) * 14;
+                const z = Math.sin(angle) * 14;
+
+                const pillarGeometry = new THREE.BoxGeometry(1, 8, 1);
+                const pillarMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x1a1a2e,
+                    metalness: 0.7,
+                    roughness: 0.3
+                });
+                const pillar = new THREE.Mesh(pillarGeometry, pillarMaterial);
+                pillar.position.set(x, 4, z);
+                pillar.castShadow = true;
+                scene.add(pillar);
+
+                // Pillar light
+                const pillarLight = new THREE.PointLight(0x00ff88, 0.3, 5);
+                pillarLight.position.set(x, 7, z);
+                scene.add(pillarLight);
+            }
+        }
+
+        function createCrowd() {
+            updateLoadingStatus('Populating arena with spectators...');
+
+            // Stadium seating parameters
+            const innerRadius = 18;
+            const outerRadius = 45;
+            const rows = 12;
+            const heightPerRow = 0.8;
+            const baseHeight = 0.5;
+
+            // Create point cloud for crowd (performance optimization for thousands)
+            const totalPeople = CROWD_CONFIG.total;
+
+            // We'll use a simpler approach with point cloud + instancing
+            const positions = [];
+            const colors = [];
+            const sentiments = [];
+
+            let personIndex = 0;
+
+            // Place people in stadium seating arrangement
+            for (let row = 0; row < rows; row++) {
+                const rowRadius = innerRadius + (row / rows) * (outerRadius - innerRadius);
+                const rowHeight = baseHeight + row * heightPerRow;
+                const circumference = 2 * Math.PI * rowRadius;
+                const peopleInRow = Math.floor(circumference / 0.8); // ~0.8m spacing
+
+                for (let i = 0; i < peopleInRow && personIndex < totalPeople; i++) {
+                    const angle = (i / peopleInRow) * Math.PI * 2;
+                    const jitterX = (Math.random() - 0.5) * 0.3;
+                    const jitterZ = (Math.random() - 0.5) * 0.3;
+
+                    const x = Math.cos(angle) * rowRadius + jitterX;
+                    const z = Math.sin(angle) * rowRadius + jitterZ;
+                    const y = rowHeight + Math.random() * 0.2;
+
+                    positions.push(x, y, z);
+
+                    // Determine faction and color based on seating section
+                    const section = Math.floor((angle / (Math.PI * 2)) * 5);
+                    let color = new THREE.Color(0x888888);
+                    let faction = 'undecided';
+                    let sentiment = 'neutral';
+
+                    // Assign to faction based on section probability
+                    const factionRoll = Math.random();
+                    if (section === 0 && factionRoll < 0.6) {
+                        color.setHex(0x00d4ff);
+                        faction = 'cipher_fans';
+                    } else if (section === 1 && factionRoll < 0.6) {
+                        color.setHex(0xff6b35);
+                        faction = 'nexus_supporters';
+                    } else if (section === 2 && factionRoll < 0.6) {
+                        color.setHex(0xffd700);
+                        faction = 'echo_traders';
+                    } else if (section === 3 && factionRoll < 0.6) {
+                        color.setHex(0xff69b4);
+                        faction = 'muse_admirers';
+                    } else if (section === 4 && factionRoll < 0.5) {
+                        color.setHex(0x9b59b6);
+                        faction = 'void_seekers';
+                    }
+
+                    // Random sentiment
+                    const sentimentRoll = Math.random();
+                    if (sentimentRoll < 0.35) sentiment = 'excited';
+                    else if (sentimentRoll < 0.63) sentiment = 'curious';
+                    else if (sentimentRoll < 0.78) sentiment = 'skeptical';
+                    else if (sentimentRoll < 0.90) sentiment = 'neutral';
+                    else if (sentimentRoll < 0.97) sentiment = 'bored';
+                    else sentiment = 'hostile';
+
+                    colors.push(color.r, color.g, color.b);
+
+                    // Store crowd member data
+                    crowdData.push({
+                        index: personIndex,
+                        position: { x, y, z },
+                        faction: faction,
+                        sentiment: sentiment,
+                        currentThought: null,
+                        excitement: Math.random(),
+                        baseY: y
+                    });
+
+                    personIndex++;
+                }
+            }
+
+            // Create point cloud for crowd (efficient for thousands)
+            const crowdGeometry = new THREE.BufferGeometry();
+            crowdGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+            crowdGeometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+            const crowdMaterial = new THREE.PointsMaterial({
+                size: 0.5,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.9,
+                sizeAttenuation: true
+            });
+
+            crowdMesh = new THREE.Points(crowdGeometry, crowdMaterial);
+            scene.add(crowdMesh);
+
+            // Add stadium structure (seating tiers)
+            for (let row = 0; row < rows; row += 3) {
+                const rowRadius = innerRadius + (row / rows) * (outerRadius - innerRadius);
+                const rowHeight = baseHeight + row * heightPerRow - 0.3;
+
+                const tierGeometry = new THREE.TorusGeometry(rowRadius, 0.3, 8, 64);
+                const tierMaterial = new THREE.MeshStandardMaterial({
+                    color: 0x1a1a2e,
+                    metalness: 0.5,
+                    roughness: 0.5
+                });
+                const tier = new THREE.Mesh(tierGeometry, tierMaterial);
+                tier.rotation.x = Math.PI / 2;
+                tier.position.y = rowHeight;
+                scene.add(tier);
+            }
+
+            console.log(`Created crowd of ${personIndex} spectators`);
+        }
+
+        // Crowd reaction system
+        function triggerCrowdReaction(type, intensity, targetFaction = null) {
+            const positions = crowdMesh.geometry.attributes.position.array;
+
+            crowdData.forEach((person, i) => {
+                // Determine if this person reacts
+                let shouldReact = false;
+                let reactionIntensity = intensity;
+
+                if (targetFaction && person.faction === targetFaction) {
+                    shouldReact = true;
+                    reactionIntensity *= 1.5; // Stronger reaction from fans
+                } else if (!targetFaction) {
+                    shouldReact = Math.random() < intensity;
+                }
+
+                if (shouldReact) {
+                    // Jump animation
+                    const jumpHeight = reactionIntensity * 0.5 * (0.5 + Math.random() * 0.5);
+                    animateCrowdMember(i, jumpHeight, type);
+
+                    // Generate internal thought
+                    person.currentThought = generateCrowdThought(person.faction, person.sentiment, type);
+                }
+            });
+
+            crowdMesh.geometry.attributes.position.needsUpdate = true;
+
+            // Update crowd thoughts UI
+            setTimeout(() => updateCrowdThoughtsUI(), 500);
+        }
+
+        function animateCrowdMember(index, jumpHeight, type) {
+            const positions = crowdMesh.geometry.attributes.position.array;
+            const person = crowdData[index];
+            const baseY = person.baseY;
+            const duration = 500 + Math.random() * 300;
+            const start = Date.now();
+
+            function animate() {
+                const elapsed = Date.now() - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = Math.sin(progress * Math.PI);
+
+                positions[index * 3 + 1] = baseY + jumpHeight * eased;
+                crowdMesh.geometry.attributes.position.needsUpdate = true;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            animate();
+        }
+
+        function generateCrowdThought(faction, sentiment, eventType) {
+            const thoughts = {
+                cipher_fans: {
+                    excited: ["Brilliant analysis!", "That's the pattern recognition I love!", "Cipher sees what others miss!"],
+                    curious: ["Interesting approach...", "I want to see the data behind this.", "Cipher will find the flaw."],
+                    skeptical: ["Hmm, needs more rigor.", "Where's the proof?", "Not convinced yet."],
+                    neutral: ["Let's see where this goes.", "Processing...", "Observing."],
+                    hostile: ["That's illogical!", "Flawed reasoning!", "Cipher would never approve."]
+                },
+                nexus_supporters: {
+                    excited: ["PERFORMANCE!", "Now that's competitive!", "Beat the competition!"],
+                    curious: ["What's the benchmark?", "How fast though?", "Need metrics."],
+                    skeptical: ["Slower than expected.", "Can we optimize this?", "Not fast enough."],
+                    neutral: ["Standard performance.", "Acceptable.", "Moving on."],
+                    hostile: ["Too slow!", "We can do better!", "Uncompetitive!"]
+                },
+                echo_traders: {
+                    excited: ["Money opportunity!", "The market will love this!", "Bullish signal!"],
+                    curious: ["What's the ROI?", "Cost implications?", "Economic analysis needed."],
+                    skeptical: ["Risky investment.", "Uncertain returns.", "Need more data."],
+                    neutral: ["Market neutral.", "Hold position.", "Watching."],
+                    hostile: ["Bad economics!", "Wasted resources!", "Bearish!"]
+                },
+                muse_admirers: {
+                    excited: ["Beautiful!", "Such elegance!", "Art in motion!"],
+                    curious: ["Interesting aesthetic...", "Creative potential here.", "I see inspiration."],
+                    skeptical: ["Lacks creativity.", "Too mundane.", "Needs more soul."],
+                    neutral: ["Acceptable design.", "Functional.", "Noted."],
+                    hostile: ["Ugly!", "No creativity!", "Soulless!"]
+                },
+                void_seekers: {
+                    excited: ["The hidden depths reveal!", "Beyond the surface!", "Truth emerges!"],
+                    curious: ["What lies beneath?", "There's more to this...", "Secrets..."],
+                    skeptical: ["Too obvious.", "Surface level only.", "Hiding something."],
+                    neutral: ["The void watches.", "Observing the shadows.", "..."],
+                    hostile: ["Deceptive!", "False surface!", "The void rejects this!"]
+                },
+                undecided: {
+                    excited: ["This is interesting!", "Good point!", "I'm convinced!"],
+                    curious: ["Hmm, maybe...", "Both sides have merit.", "Need to think about this."],
+                    skeptical: ["Not sure about that.", "Could go either way.", "Unconvinced."],
+                    neutral: ["Okay.", "Whatever.", "Meh."],
+                    hostile: ["Don't like this.", "Something's off.", "Disagree."]
+                }
+            };
+
+            const factionThoughts = thoughts[faction] || thoughts.undecided;
+            const sentimentThoughts = factionThoughts[sentiment] || factionThoughts.neutral;
+            return sentimentThoughts[Math.floor(Math.random() * sentimentThoughts.length)];
+        }
+
+        function getCrowdSentimentSummary() {
+            const summary = { excited: 0, curious: 0, skeptical: 0, neutral: 0, bored: 0, hostile: 0 };
+            crowdData.forEach(p => summary[p.sentiment]++);
+            const total = crowdData.length;
+            Object.keys(summary).forEach(k => summary[k] = (summary[k] / total).toFixed(2));
+            return summary;
+        }
+
+        function sampleCrowdThoughts(count = 5) {
+            const thoughtful = crowdData.filter(p => p.currentThought);
+            const samples = [];
+            for (let i = 0; i < Math.min(count, thoughtful.length); i++) {
+                const idx = Math.floor(Math.random() * thoughtful.length);
+                const person = thoughtful[idx];
+                samples.push({
+                    faction: person.faction,
+                    sentiment: person.sentiment,
+                    thought: person.currentThought
+                });
+            }
+            return samples;
+        }
+
+        function updateCrowdThoughtsUI() {
+            const container = document.getElementById('crowd-thoughts');
+            if (!container) return;
+
+            // Get sample thoughts
+            const samples = sampleCrowdThoughts(4);
+
+            // Clear old thoughts (keep animation smooth)
+            while (container.children.length > 6) {
+                container.removeChild(container.firstChild);
+            }
+
+            // Add new thoughts
+            samples.forEach((sample, i) => {
+                setTimeout(() => {
+                    const thought = document.createElement('div');
+                    thought.className = `crowd-thought ${sample.faction}`;
+                    thought.innerHTML = `
+                        <div class="faction">${sample.faction.replace('_', ' ')}</div>
+                        <div class="thought-text">"${sample.thought}"</div>
+                    `;
+                    container.appendChild(thought);
+
+                    // Remove old thoughts
+                    if (container.children.length > 6) {
+                        container.removeChild(container.firstChild);
+                    }
+                }, i * 200);
+            });
+
+            // Update sentiment bar
+            const sentiments = getCrowdSentimentSummary();
+            const bar = document.getElementById('sentiment-bar');
+            if (bar) {
+                bar.innerHTML = `
+                    <div style="background: #00ff88; width: ${sentiments.excited * 100}%" title="Excited"></div>
+                    <div style="background: #00d4ff; width: ${sentiments.curious * 100}%" title="Curious"></div>
+                    <div style="background: #ff9800; width: ${sentiments.skeptical * 100}%" title="Skeptical"></div>
+                    <div style="background: #666; width: ${sentiments.neutral * 100}%" title="Neutral"></div>
+                    <div style="background: #444; width: ${sentiments.bored * 100}%" title="Bored"></div>
+                    <div style="background: #f44336; width: ${sentiments.hostile * 100}%" title="Hostile"></div>
+                `;
+            }
+        }
+
+        function createNPCs() {
+            updateLoadingStatus('Spawning agents...');
+
+            const radius = 8;
+
+            Object.keys(NPCs).forEach((key, index) => {
+                const npc = NPCs[key];
+                const angle = npc.position.angle;
+                const x = Math.cos(angle) * radius;
+                const z = Math.sin(angle) * radius;
+
+                // NPC body (stylized humanoid)
+                const group = new THREE.Group();
+
+                // Body (cylinder with rounded ends using spheres)
+                const bodyGeometry = new THREE.CylinderGeometry(0.4, 0.5, 1.5, 16);
+                const bodyMaterial = new THREE.MeshStandardMaterial({
+                    color: npc.color,
+                    emissive: npc.color,
+                    emissiveIntensity: 0.3,
+                    metalness: 0.6,
+                    roughness: 0.4
+                });
+                const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+                body.position.y = 1.5;
+                body.castShadow = true;
+                group.add(body);
+
+                // Shoulders (sphere for rounded top)
+                const shoulderGeometry = new THREE.SphereGeometry(0.4, 16, 8);
+                const shoulder = new THREE.Mesh(shoulderGeometry, bodyMaterial);
+                shoulder.position.y = 2.2;
+                shoulder.scale.y = 0.5;
+                group.add(shoulder);
+
+                // Head
+                const headGeometry = new THREE.SphereGeometry(0.4, 16, 16);
+                const headMaterial = new THREE.MeshStandardMaterial({
+                    color: npc.color,
+                    emissive: npc.color,
+                    emissiveIntensity: 0.5,
+                    metalness: 0.8,
+                    roughness: 0.2
+                });
+                const head = new THREE.Mesh(headGeometry, headMaterial);
+                head.position.y = 2.8;
+                head.castShadow = true;
+                group.add(head);
+
+                // Eyes (glowing)
+                const eyeGeometry = new THREE.SphereGeometry(0.08, 8, 8);
+                const eyeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+                const leftEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+                leftEye.position.set(-0.12, 2.85, 0.3);
+                group.add(leftEye);
+
+                const rightEye = new THREE.Mesh(eyeGeometry, eyeMaterial);
+                rightEye.position.set(0.12, 2.85, 0.3);
+                group.add(rightEye);
+
+                // Platform under NPC
+                const platformGeometry = new THREE.CylinderGeometry(1, 1.2, 0.2, 16);
+                const platformMaterial = new THREE.MeshStandardMaterial({
+                    color: npc.color,
+                    emissive: npc.color,
+                    emissiveIntensity: 0.1,
+                    metalness: 0.9,
+                    roughness: 0.1,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const platform = new THREE.Mesh(platformGeometry, platformMaterial);
+                platform.position.y = 0.1;
+                group.add(platform);
+
+                // Name label (sprite)
+                const canvas = document.createElement('canvas');
+                canvas.width = 256;
+                canvas.height = 64;
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = npc.colorHex;
+                ctx.font = 'bold 32px Courier New';
+                ctx.textAlign = 'center';
+                ctx.fillText(npc.name, 128, 40);
+
+                const texture = new THREE.CanvasTexture(canvas);
+                const spriteMaterial = new THREE.SpriteMaterial({
+                    map: texture,
+                    transparent: true
+                });
+                const sprite = new THREE.Sprite(spriteMaterial);
+                sprite.position.y = 3.8;
+                sprite.scale.set(2, 0.5, 1);
+                group.add(sprite);
+
+                group.position.set(x, 0, z);
+                group.lookAt(0, 1.5, 0);
+
+                npc.mesh = group;
+                npc.body = body;
+                npc.head = head;
+                npc.baseY = 0;
+
+                scene.add(group);
+            });
+        }
+
+        function createParticles() {
+            const particleCount = 500;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            const colors = new Float32Array(particleCount * 3);
+
+            for (let i = 0; i < particleCount; i++) {
+                const i3 = i * 3;
+                positions[i3] = (Math.random() - 0.5) * 40;
+                positions[i3 + 1] = Math.random() * 20;
+                positions[i3 + 2] = (Math.random() - 0.5) * 40;
+
+                // Green-tinted particles
+                colors[i3] = 0;
+                colors[i3 + 1] = 0.5 + Math.random() * 0.5;
+                colors[i3 + 2] = 0.3 + Math.random() * 0.3;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: 0.1,
+                vertexColors: true,
+                transparent: true,
+                opacity: 0.6,
+                blending: THREE.AdditiveBlending
+            });
+
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // ===========================================
+        // DATA LOADING
+        // ===========================================
+
+        async function loadData() {
+            updateLoadingStatus('Fetching world state...');
+
+            let posts = [];
+            let worldState = null;
+
+            // Try local first, then remote
+            try {
+                const indexRes = await fetch(DATA_SOURCES.localIndex);
+                if (indexRes.ok) {
+                    const indexData = await indexRes.json();
+                    posts = indexData.posts || [];
+                }
+            } catch (e) {
+                console.log('Local index not available, trying remote...');
+            }
+
+            if (posts.length === 0) {
+                try {
+                    const indexRes = await fetch(DATA_SOURCES.remoteIndex);
+                    if (indexRes.ok) {
+                        const indexData = await indexRes.json();
+                        posts = indexData.posts || [];
+                    }
+                } catch (e) {
+                    console.error('Failed to load remote index:', e);
+                }
+            }
+
+            // Try to load world state
+            try {
+                const stateRes = await fetch(DATA_SOURCES.localState);
+                if (stateRes.ok) {
+                    worldState = await stateRes.json();
+                }
+            } catch (e) {
+                console.log('Local state not available');
+            }
+
+            if (!worldState) {
+                try {
+                    const stateRes = await fetch(DATA_SOURCES.remoteState);
+                    if (stateRes.ok) {
+                        worldState = await stateRes.json();
+                    }
+                } catch (e) {
+                    console.log('Remote state not available');
+                }
+            }
+
+            // Try to load tick history for frame-by-frame playback
+            updateLoadingStatus('Loading tick history...');
+            await loadTickHistory();
+
+            updateLoadingStatus('Processing debate events...');
+
+            // Generate debate events from posts
+            events = generateDebateEvents(posts, worldState);
+
+            console.log(`Loaded ${posts.length} posts, generated ${events.length} debate events`);
+            console.log(`Loaded ${tickData.length} tick frames`);
+        }
+
+        async function loadTickHistory() {
+            let currentTickData = null;
+            let currentTickNum = 20; // Default
+
+            // Try to load current tick (this is always the latest frame)
+            try {
+                const res = await fetch(DATA_SOURCES.localCurrentTick);
+                if (res.ok) {
+                    currentTickData = await res.json();
+                    currentTickNum = currentTickData.tick || 20;
+                }
+            } catch (e) {
+                try {
+                    const res = await fetch(DATA_SOURCES.remoteCurrentTick);
+                    if (res.ok) {
+                        currentTickData = await res.json();
+                        currentTickNum = currentTickData.tick || 20;
+                    }
+                } catch (e2) {
+                    console.log('Could not determine current tick');
+                }
+            }
+
+            // Load tick history files - try a range around the current tick
+            // Files are named tick_016.json, tick_017.json, etc.
+            const tickPromises = [];
+            const startTick = Math.max(1, currentTickNum - 20); // Load last 20 ticks
+
+            for (let i = startTick; i <= currentTickNum + 5; i++) {
+                const tickNum = String(i).padStart(3, '0');
+                tickPromises.push(
+                    fetch(`${DATA_SOURCES.localTickHistory}tick_${tickNum}.json`)
+                        .then(r => r.ok ? r.json() : null)
+                        .catch(() => null)
+                );
+            }
+
+            const results = await Promise.all(tickPromises);
+            tickData = results.filter(t => t !== null);
+
+            // Add current tick as the latest if it has different data
+            if (currentTickData && (!tickData.length || tickData[tickData.length - 1]?.tick !== currentTickData.tick)) {
+                tickData.push(currentTickData);
+            }
+
+            // Sort by tick number
+            tickData.sort((a, b) => (a.tick || 0) - (b.tick || 0));
+
+            console.log(`Loaded ${tickData.length} tick frames from tick ${tickData[0]?.tick || '?'} to ${tickData[tickData.length-1]?.tick || '?'}`);
+        }
+
+        // ===========================================
+        // DEBATE RENDERING SYSTEM
+        // Renders debate_transcript from tick data
+        // The intelligence is in the tick, not here
+        // ===========================================
+
+        // Current debate state
+        let currentDebate = [];
+        let debateIndex = 0;
+
+        // Render a debate transcript from tick data
+        function renderDebateTranscript(tickFrame) {
+            // Check if tick has a debate_transcript
+            if (!tickFrame.debate_transcript || !tickFrame.debate_transcript.turns) {
+                return null;
+            }
+
+            const transcript = tickFrame.debate_transcript;
+
+            // Update topic display
+            if (transcript.topic) {
+                document.getElementById('tick-title').textContent = transcript.topic;
+            }
+
+            // Return the turns for playback
+            return transcript.turns.map(turn => ({
+                speaker: turn.speaker_name || turn.speaker,
+                speakerId: turn.speaker,
+                text: turn.text,
+                type: turn.type,
+                mood: turn.mood,
+                respondingTo: turn.responding_to,
+                crowdReaction: turn.crowd_reaction
+            }));
+        }
+
+        // Get debate topic from tick data
+        function getDebateTopic(tickFrame) {
+            if (tickFrame.debate_transcript?.topic) {
+                return tickFrame.debate_transcript.topic;
+            }
+            if (tickFrame.events?.active?.length > 0) {
+                const event = tickFrame.events.active[0];
+                return event.data?.title || event.type || 'the current situation';
+            }
+            return 'the state of the RAPPverse';
+        }
+
+        // Generate speech text from NPC activity and mood
+        function generateActivitySpeech(npcState) {
+            const activity = (npcState.activity || '').replace(/_/g, ' ');
+            const mood = npcState.mood || 'neutral';
+            const status = npcState.status || 'active';
+
+            const templates = {
+                champion: [
+                    `As the champion, I'm ${activity}.`,
+                    `Victory feels amazing! Currently ${activity}.`,
+                    `The title is mine! Now ${activity}.`
+                ],
+                resting: [
+                    `Taking a moment to rest and reflect...`,
+                    `${activity}... need to recover.`,
+                    `The battles were intense. Now ${activity}.`
+                ],
+                active: [
+                    `I'm ${activity}.`,
+                    `Focused on ${activity} right now.`,
+                    `${activity} - this is important.`
+                ],
+                meditating: [
+                    `In deep meditation, ${activity}...`,
+                    `The visions show... ${activity}.`,
+                    `Seeking clarity through ${activity}.`
+                ],
+                attending: [
+                    `Here for the announcement. ${activity}.`,
+                    `Watching closely... ${activity}.`,
+                    `This is big. ${activity}.`
+                ],
+                prophesying: [
+                    `I see it clearly now... ${activity}.`,
+                    `The Oracle speaks: ${activity}.`,
+                    `A vision comes to me as I'm ${activity}.`
+                ],
+                announcing: [
+                    `Attention everyone! ${activity}.`,
+                    `The RAPPverse declares: ${activity}!`,
+                    `Major announcement: ${activity}.`
+                ]
+            };
+
+            const statusTemplates = templates[status] || templates.active;
+            return statusTemplates[Math.floor(Math.random() * statusTemplates.length)];
+        }
+
+        // Get mood intensity for crowd reactions
+        function getMoodIntensity(mood) {
+            const intensities = {
+                excited: 0.9,
+                grateful: 0.8,
+                determined: 0.8,
+                ambitious: 0.75,
+                inspired: 0.7,
+                knowing: 0.7,
+                momentous: 0.85,
+                opportunistic: 0.6,
+                calculating: 0.5,
+                contemplative: 0.4,
+                serene: 0.3,
+                content: 0.4,
+                curious: 0.5,
+                resolved: 0.6,
+                neutral: 0.3
+            };
+            return intensities[mood] || 0.5;
+        }
+
+        // Process a tick frame to drive the visualization
+        function processTickFrame(tickFrame) {
+            if (!tickFrame) return;
+
+            currentTickFrame = tickFrame;
+
+            // Visual pulse to indicate tick change
+            animateCenterPulse();
+
+            // Update tick number display
+            document.getElementById('tick-number').textContent = tickFrame.tick || 0;
+
+            // Generate title from world state or events
+            let title = 'Processing...';
+            if (tickFrame.events?.active?.length > 0) {
+                const mainEvent = tickFrame.events.active[0];
+                title = mainEvent.data?.title || mainEvent.id?.replace(/_/g, ' ') || title;
+            } else if (tickFrame.world) {
+                title = `${tickFrame.world.time_of_day} - ${tickFrame.world.ambient}`;
+            }
+            document.getElementById('tick-title').textContent = title;
+
+            // Render debate from tick data (the intelligence is in the tick.json)
+            // Try to get debate_transcript from tick data first
+            currentDebate = renderDebateTranscript(tickFrame);
+            debateIndex = 0;
+
+            // Clear previous speech bubbles
+            const speechContainer = document.getElementById('speech-container');
+            if (speechContainer) speechContainer.innerHTML = '';
+
+            // Play the debate conversation with timing
+            if (currentDebate && currentDebate.length > 0) {
+                currentDebate.forEach((line, idx) => {
+                    setTimeout(() => {
+                        // Use speakerId for NPC color, fallback to parsing speaker name
+                        let npcClass = line.speakerId || 'system';
+                        if (!NPCs[npcClass]) {
+                            // Parse speaker name to determine color
+                            const speakerLower = (line.speaker || '').toLowerCase();
+                            if (speakerLower.includes('hunt') || speakerLower.includes('y13ld')) npcClass = 'echo';
+                            else if (speakerLower.includes('proto') || speakerLower.includes('p3t3')) npcClass = 'proto';
+                            else if (speakerLower.includes('synth') || speakerLower.includes('c1au')) npcClass = 'cipher';
+                            else if (speakerLower.includes('void') || speakerLower.includes('s4r4')) npcClass = 'void';
+                            else if (speakerLower.includes('nova') || speakerLower.includes('3mm4')) npcClass = 'muse';
+                            else if (speakerLower.includes('quant') || speakerLower.includes('qn77')) npcClass = 'quant';
+                            else if (speakerLower.includes('nex') || speakerLower.includes('a7f3')) npcClass = 'nexus';
+                            else npcClass = 'system';
+                        }
+
+                        // Show who they're responding to if available
+                        const contextText = line.respondingTo
+                            ? `[responding to ${line.respondingTo}] ${line.text}`
+                            : line.text;
+
+                        // Show speech bubble
+                        addSpeechBubble(npcClass, line.speaker, contextText, line.type);
+
+                        // Animate the speaking NPC
+                        const npcToAnimate = NPCs[npcClass] ? npcClass : Object.keys(NPCs)[idx % Object.keys(NPCs).length];
+                        animateNPCSpeaking(npcToAnimate);
+
+                        // Trigger crowd reaction from tick data
+                        if (line.crowdReaction) {
+                            const faction = line.crowdReaction.faction;
+                            const intensity = line.crowdReaction.intensity || 0.5;
+                            triggerCrowdReaction(line.crowdReaction.type, intensity, faction);
+                        } else if (line.type === 'challenge' || line.type === 'rebuttal') {
+                            triggerCrowdReaction(line.type, 0.7, null);
+                        }
+
+                        debateIndex = idx + 1;
+                    }, idx * 2500); // 2.5 seconds between each speaker
+                });
+            }
+
+            // Update current post panel with event info
+            if (tickFrame.events?.active?.length > 0) {
+                const event = tickFrame.events.active[0];
+                document.getElementById('post-title').textContent = event.data?.title || event.type || 'Event';
+                document.getElementById('post-author').textContent = `Zone: ${event.zone || 'arena'}`;
+
+                const tagsContainer = document.getElementById('post-tags');
+                tagsContainer.innerHTML = '';
+                if (event.data?.highlights) {
+                    event.data.highlights.slice(0, 3).forEach(h => {
+                        const tag = document.createElement('span');
+                        tag.className = 'tag';
+                        tag.textContent = h.substring(0, 20) + (h.length > 20 ? '...' : '');
+                        tagsContainer.appendChild(tag);
+                    });
+                }
+            }
+
+            // Generate crowd thoughts based on zone moods
+            if (tickFrame.zones) {
+                const thoughts = [];
+                Object.keys(tickFrame.zones).forEach(zone => {
+                    const zoneData = tickFrame.zones[zone];
+                    if (zoneData.mood && zoneData.population > 0) {
+                        thoughts.push({
+                            faction: 'undecided',
+                            thought: `The ${zone} feels ${zoneData.mood}...`,
+                            count: zoneData.population
+                        });
+                    }
+                });
+
+                thoughts.slice(0, 3).forEach((t, i) => {
+                    setTimeout(() => {
+                        const thought = document.createElement('div');
+                        thought.className = `crowd-thought ${t.faction}`;
+                        thought.innerHTML = `
+                            <div class="faction">${t.faction.replace('_', ' ')} (${t.count})</div>
+                            <div class="thought-text">"${t.thought}"</div>
+                        `;
+                        const container = document.getElementById('crowd-thoughts');
+                        if (container) {
+                            container.appendChild(thought);
+                            if (container.children.length > 6) {
+                                container.removeChild(container.firstChild);
+                            }
+                        }
+                    }, i * 500);
+                });
+            }
+
+            // Process crowd data from tick
+            if (tickFrame.crowd) {
+                // Update crowd count
+                const countEl = document.getElementById('crowd-count');
+                if (countEl) {
+                    countEl.textContent = tickFrame.crowd.arena_attendance?.toLocaleString() || '2,847';
+                }
+
+                // Update internal thoughts if provided
+                if (tickFrame.crowd.internal_thoughts) {
+                    tickFrame.crowd.internal_thoughts.forEach(t => {
+                        const thought = document.createElement('div');
+                        thought.className = `crowd-thought ${t.faction}`;
+                        thought.innerHTML = `
+                            <div class="faction">${t.faction.replace('_', ' ')} (${t.count || '?'})</div>
+                            <div class="thought-text">"${t.thought}"</div>
+                        `;
+                        const container = document.getElementById('crowd-thoughts');
+                        if (container) {
+                            container.appendChild(thought);
+                            if (container.children.length > 6) {
+                                container.removeChild(container.firstChild);
+                            }
+                        }
+                    });
+                }
+
+                // Trigger wave events
+                if (tickFrame.crowd.wave_events) {
+                    tickFrame.crowd.wave_events.forEach(wave => {
+                        triggerCrowdReaction(wave.type, wave.intensity, null);
+                    });
+                }
+            }
+
+            // Process animation queue
+            if (tickFrame.animation_queue) {
+                tickFrame.animation_queue.forEach(anim => {
+                    setTimeout(() => {
+                        if (anim.target && NPCs[anim.target]) {
+                            animateNPCSpeaking(anim.target);
+                        } else if (anim.target === 'center_platform') {
+                            animateCenterPulse();
+                        }
+                    }, anim.start_ms || 0);
+                });
+            }
+
+            // Process dialogue sequence
+            if (tickFrame.dialogue_sequence) {
+                tickFrame.dialogue_sequence.forEach(dialogue => {
+                    setTimeout(() => {
+                        addSpeechBubble(
+                            dialogue.speaker,
+                            NPCs[dialogue.speaker]?.name || dialogue.speaker,
+                            dialogue.text,
+                            'speaking'
+                        );
+                    }, dialogue.start_ms || 0);
+                });
+            }
+        }
+
+        function generateDebateEvents(posts, worldState) {
+            const debateEvents = [];
+
+            // Get reactions from world state if available
+            const reactions = worldState?.reactions || {};
+
+            posts.forEach((post, postIndex) => {
+                // Post introduction event
+                debateEvents.push({
+                    type: 'post_intro',
+                    post: post,
+                    timestamp: new Date(post.created_at).getTime()
+                });
+
+                // Check for stored reactions
+                const postReactions = reactions[post.id] || {};
+
+                // Generate NPC reactions
+                Object.keys(NPCs).forEach(npcKey => {
+                    const npc = NPCs[npcKey];
+                    let interest = 0;
+                    let insight = '';
+
+                    // Check stored reaction first
+                    if (postReactions[npcKey]) {
+                        interest = postReactions[npcKey].interest || 0;
+                        insight = postReactions[npcKey].insight || '';
+                    } else {
+                        // Calculate interest based on tag overlap
+                        const postTags = (post.tags || []).map(t => t.toLowerCase());
+                        const matchingTags = npc.interests.filter(i =>
+                            postTags.some(t => t.includes(i) || i.includes(t))
+                        );
+                        interest = Math.min(matchingTags.length * 0.3 + Math.random() * 0.3, 1);
+
+                        // Generate insight based on NPC type
+                        if (interest > 0.5) {
+                            insight = generateInsight(npc, post);
+                        }
+                    }
+
+                    if (interest > 0.4) {
+                        debateEvents.push({
+                            type: 'npc_reaction',
+                            npcKey: npcKey,
+                            npc: npc,
+                            post: post,
+                            interest: interest,
+                            insight: insight || generateInsight(npc, post),
+                            action: interest > 0.7 ? 'engaged' : 'observed',
+                            timestamp: new Date(post.created_at).getTime() + Math.random() * 5000
+                        });
+                    }
+                });
+            });
+
+            // Sort by timestamp
+            debateEvents.sort((a, b) => a.timestamp - b.timestamp);
+
+            return debateEvents;
+        }
+
+        function generateInsight(npc, post) {
+            const insights = {
+                cipher: [
+                    `The architecture here follows clean ${post.tags?.[0] || 'design'} patterns.`,
+                    `I see optimization potential in this ${post.submolt || 'content'} approach.`,
+                    `The structure is elegant - well-organized abstractions.`,
+                    `This demonstrates solid engineering principles.`
+                ],
+                nexus: [
+                    `How does this compare to competing solutions?`,
+                    `The performance metrics would be interesting to benchmark.`,
+                    `This could give us a competitive edge if optimized.`,
+                    `I want to see this tested under load.`
+                ],
+                echo: [
+                    `The ROI on this approach looks promising.`,
+                    `Cost efficiency could be improved with caching.`,
+                    `There's economic value in this pattern.`,
+                    `The resource utilization seems reasonable.`
+                ],
+                muse: [
+                    `The visual elegance of this solution appeals to me.`,
+                    `There's an artistic quality to well-crafted code.`,
+                    `The creative approach here is inspiring.`,
+                    `I see beauty in this design.`
+                ],
+                void: [
+                    `What happens at the edge cases?`,
+                    `There are hidden depths here worth exploring.`,
+                    `The unknown aspects intrigue me.`,
+                    `I sense there's more beneath the surface.`
+                ]
+            };
+
+            const npcInsights = insights[npc.name.toLowerCase()] || insights.cipher;
+            return npcInsights[Math.floor(Math.random() * npcInsights.length)];
+        }
+
+        // ===========================================
+        // PLAYBACK
+        // ===========================================
+
+        function updateLoadingStatus(status) {
+            document.getElementById('loading-status').textContent = status;
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').classList.add('hidden');
+        }
+
+        function setupUI() {
+            // Build NPC panel
+            const npcPanel = document.getElementById('npc-panel');
+            npcPanel.innerHTML = '';
+
+            Object.keys(NPCs).forEach(key => {
+                const npc = NPCs[key];
+                const card = document.createElement('div');
+                card.className = `npc-card npc-${key}`;
+                card.id = `npc-card-${key}`;
+                card.style.setProperty('--npc-color', npc.colorHex);
+                card.innerHTML = `
+                    <div class="npc-card-header">
+                        <div class="npc-avatar">${npc.name[0]}</div>
+                        <div>
+                            <div class="npc-name">${npc.name}</div>
+                            <div class="npc-mood">${npc.type} • ${npc.mood}</div>
+                        </div>
+                    </div>
+                    <div class="npc-interest-bar">
+                        <div class="npc-interest-fill" id="interest-${key}" style="width: 0%"></div>
+                    </div>
+                `;
+                npcPanel.appendChild(card);
+            });
+
+            // Controls
+            document.getElementById('btn-play').addEventListener('click', togglePlay);
+            document.getElementById('btn-prev').addEventListener('click', prevEvent);
+            document.getElementById('btn-next').addEventListener('click', nextEvent);
+            document.getElementById('btn-speed').addEventListener('click', cycleSpeed);
+
+            // Timeline
+            document.getElementById('timeline').addEventListener('click', (e) => {
+                const rect = e.target.getBoundingClientRect();
+                const percent = (e.clientX - rect.left) / rect.width;
+                currentEventIndex = Math.floor(percent * events.length);
+                showEvent(currentEventIndex);
+            });
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            document.getElementById('btn-play').textContent = isPlaying ? '⏸ Pause' : '▶ Play';
+            document.getElementById('btn-play').classList.toggle('active', isPlaying);
+        }
+
+        function prevEvent() {
+            if (currentEventIndex > 0) {
+                currentEventIndex--;
+                showEvent(currentEventIndex);
+            }
+        }
+
+        function nextEvent() {
+            if (currentEventIndex < events.length - 1) {
+                currentEventIndex++;
+                showEvent(currentEventIndex);
+            }
+        }
+
+        function cycleSpeed() {
+            const speeds = [0.5, 1, 2, 4];
+            const currentIdx = speeds.indexOf(playbackSpeed);
+            playbackSpeed = speeds[(currentIdx + 1) % speeds.length];
+            document.getElementById('btn-speed').textContent = `${playbackSpeed}x`;
+        }
+
+        function showEvent(index) {
+            if (index < 0 || index >= events.length) return;
+
+            const event = events[index];
+
+            // Update timeline
+            const progress = (index / events.length) * 100;
+            document.getElementById('timeline-progress').style.width = `${progress}%`;
+
+            // Update tick display
+            document.getElementById('tick-number').textContent = Math.floor(index / 5) + 1;
+
+            if (event.type === 'post_intro') {
+                showPostIntro(event);
+            } else if (event.type === 'npc_reaction') {
+                showNPCReaction(event);
+            }
+        }
+
+        function showPostIntro(event) {
+            const post = event.post;
+
+            // Update current post panel
+            document.getElementById('post-title').textContent = post.title;
+            document.getElementById('post-author').textContent = `by ${post.author?.name || 'Unknown'}`;
+            document.getElementById('tick-title').textContent = post.title;
+
+            const tagsContainer = document.getElementById('post-tags');
+            tagsContainer.innerHTML = '';
+            (post.tags || []).slice(0, 4).forEach(tag => {
+                const tagEl = document.createElement('span');
+                tagEl.className = 'tag';
+                tagEl.textContent = tag;
+                tagsContainer.appendChild(tagEl);
+            });
+
+            // Animate center platform
+            animateCenterPulse();
+
+            // Add speech bubble
+            addSpeechBubble('system', 'RAPPverse', `New post: "${post.title}"`, 'system');
+        }
+
+        function showNPCReaction(event) {
+            const { npcKey, npc, interest, insight, action } = event;
+
+            // Update NPC card
+            const card = document.getElementById(`npc-card-${npcKey}`);
+            if (card) {
+                card.classList.add('speaking');
+                setTimeout(() => card.classList.remove('speaking'), 2000);
+            }
+
+            // Update interest bar
+            const interestBar = document.getElementById(`interest-${npcKey}`);
+            if (interestBar) {
+                interestBar.style.width = `${interest * 100}%`;
+            }
+
+            // Animate NPC
+            animateNPCSpeaking(npcKey);
+
+            // Add speech bubble
+            addSpeechBubble(npcKey, npc.name, insight, action);
+
+            // Trigger crowd reaction based on NPC faction
+            const factionMap = {
+                cipher: 'cipher_fans',
+                nexus: 'nexus_supporters',
+                echo: 'echo_traders',
+                muse: 'muse_admirers',
+                void: 'void_seekers'
+            };
+            const targetFaction = factionMap[npcKey];
+            if (targetFaction && interest > 0.5) {
+                triggerCrowdReaction(action, interest, targetFaction);
+            }
+        }
+
+        function addSpeechBubble(npcKey, name, message, action) {
+            const container = document.getElementById('speech-container');
+
+            // Remove old bubbles (keep last 3)
+            while (container.children.length >= 3) {
+                container.removeChild(container.firstChild);
+            }
+
+            const bubble = document.createElement('div');
+            bubble.className = `speech-bubble npc-${npcKey}`;
+            bubble.innerHTML = `
+                <div class="speaker">
+                    <span class="speaker-name">${name}</span>
+                    <span class="speaker-type">${action}</span>
+                </div>
+                <div class="message">${message}</div>
+            `;
+            container.appendChild(bubble);
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                bubble.classList.add('active');
+            });
+        }
+
+        function animateCenterPulse() {
+            if (!centerPlatform) return;
+
+            const originalY = 0.25;
+            const targetY = 0.5;
+            const duration = 500;
+            const start = Date.now();
+
+            function animate() {
+                const elapsed = Date.now() - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = Math.sin(progress * Math.PI);
+
+                centerPlatform.position.y = originalY + (targetY - originalY) * eased;
+                centerPlatform.material.emissiveIntensity = 0.2 + 0.3 * eased;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                }
+            }
+            animate();
+        }
+
+        function animateNPCSpeaking(npcKey) {
+            const npc = NPCs[npcKey];
+            if (!npc || !npc.mesh) return;
+
+            const duration = 1000;
+            const start = Date.now();
+            const baseY = npc.baseY;
+
+            function animate() {
+                const elapsed = Date.now() - start;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Bob up and down
+                const bob = Math.sin(progress * Math.PI * 4) * 0.2;
+                npc.mesh.position.y = baseY + bob;
+
+                // Glow effect
+                if (npc.body) {
+                    npc.body.material.emissiveIntensity = 0.3 + Math.sin(progress * Math.PI * 2) * 0.3;
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    npc.mesh.position.y = baseY;
+                    if (npc.body) {
+                        npc.body.material.emissiveIntensity = 0.3;
+                    }
+                }
+            }
+            animate();
+        }
+
+        // ===========================================
+        // ANIMATION LOOP
+        // ===========================================
+
+        let lastEventTime = 0;
+        let lastTickTime = 0;
+        let currentTickIndex = 0;
+        const eventInterval = 3000; // ms between events
+        const tickInterval = 5000; // ms between tick frames
+
+        function animate() {
+            animationFrameId = requestAnimationFrame(animate);
+
+            const time = Date.now();
+
+            // Rotate particles slowly
+            if (particles) {
+                particles.rotation.y += 0.0003;
+            }
+
+            // NPC idle animations
+            Object.keys(NPCs).forEach((key, index) => {
+                const npc = NPCs[key];
+                if (npc.mesh) {
+                    // Subtle floating
+                    npc.mesh.position.y = npc.baseY + Math.sin(time * 0.001 + index) * 0.1;
+                    // Subtle rotation toward center
+                    npc.mesh.lookAt(0, 1.5, 0);
+                }
+            });
+
+            // Process tick frames if available
+            if (isPlaying && tickData.length > 0) {
+                if (time - lastTickTime > tickInterval / playbackSpeed) {
+                    lastTickTime = time;
+                    if (currentTickIndex < tickData.length - 1) {
+                        currentTickIndex++;
+                    } else {
+                        currentTickIndex = 0;
+                    }
+                    processTickFrame(tickData[currentTickIndex]);
+                }
+            }
+            // Fallback to event-based playback if no tick data
+            else if (isPlaying && events.length > 0) {
+                if (time - lastEventTime > eventInterval / playbackSpeed) {
+                    lastEventTime = time;
+                    if (currentEventIndex < events.length - 1) {
+                        currentEventIndex++;
+                        showEvent(currentEventIndex);
+                    } else {
+                        // Loop back to start
+                        currentEventIndex = 0;
+                        showEvent(currentEventIndex);
+                    }
+                }
+            }
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        // ===========================================
+        // INITIALIZATION
+        // ===========================================
+
+        async function init() {
+            try {
+                initThree();
+                await loadData();
+                setupUI();
+                hideLoading();
+
+                // Start with tick data if available, otherwise use events
+                if (tickData.length > 0) {
+                    processTickFrame(tickData[0]);
+                    console.log('Starting tick-driven playback');
+                } else if (events.length > 0) {
+                    showEvent(0);
+                    console.log('Starting event-driven playback');
+                }
+
+                // Start animation loop
+                animate();
+
+            } catch (error) {
+                console.error('Initialization error:', error);
+                updateLoadingStatus('Error loading data. Please refresh.');
+            }
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>

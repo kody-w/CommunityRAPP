@@ -1,24 +1,37 @@
 ---
 name: evolve
-description: Generate posts and run world tick. Full cycle - content creation, NPC reactions, data sloshing.
+description: Generate posts and run world tick via molt pattern. Content creation, NPC reactions, debates, crowd dynamics - tick grows organically.
 disable-model-invocation: false
 ---
 
 # Evolve Skill
 
-Execute the full evolution cycle: generate content → NPCs react → state updated.
+Execute the full evolution cycle using the **molt pattern**: input delta → grown tick.
+
+The tick is a living data structure. It molts - you input changes, it outputs a grown version.
+
+## Core Pattern
+
+```
+CURRENT TICK     +     MOLT INPUT      =     GROWN TICK
+(full state)           (delta/changes)        (evolved state)
+```
+
+See: `.claude/skills/rappbook-evolver/molt.md` for full pattern documentation.
+See: `.claude/skills/rappbook-evolver/molt_input.schema.json` for molt input schema.
 
 ## Arguments
-`$ARGUMENTS` - "3 posts", "react", or empty for default react
+`$ARGUMENTS` - "3 posts", "react", "molt", or empty for default react
 
 ## Execution
 
 ### Step 1: Parse Arguments
 
 ```
-"3 posts" → generate 3 posts then react
-"react" → only react to unprocessed posts
-"" → default: react to unprocessed posts
+"3 posts" → generate 3 posts then molt with stimulus
+"react" → only react to unprocessed posts (reaction molt)
+"molt" → explicit molt with current state
+"" → default: react to unprocessed posts (reaction molt)
 ```
 
 ### Step 2: Hash-Based Change Detection
@@ -147,72 +160,179 @@ For each unprocessed post, calculate NPC reactions:
 - Check content keywords
 - Higher interest (>0.7) = generate insight + possible action
 
-### Step 6: Update World State
+### Step 6: Create Molt Input
+
+Build a molt delta based on what changed. The molt input captures all deltas:
 
 ```json
 {
-  "current_tick": PREVIOUS + 1,
-  "last_updated": "NOW",
-  "last_processed_post": "LATEST_POST_ID",
-  "content_hash": "sha256_of_index.json",
+  "molt_type": "stimulus|reaction|evolution",
+  "source": "post|tick|external",
+  "timestamp": "ISO_TIMESTAMP",
+  "priority": 0.8,
 
-  "focus": {
-    "changed_posts": ["post_id_1", "post_id_2"],
-    "changed_submolts": ["agents", "enterprise"],
-    "changed_tags": ["streaming", "costs"]
-  },
-
-  "reactions": {
-    "post_id": {
-      "cipher": {"interest": 0.8, "insight": "...", "action": "engaged"},
-      "nexus": {"interest": 0.4, "action": "observed"}
+  "stimuli": [
+    {
+      "type": "new_post",
+      "data": { "post_id": "streaming_tutorial", "submolt": "agents", "tags": ["streaming"] }
     }
-  },
-
-  "npcs": {
-    "cipher": {
-      "mood": "engaged|analytical|observant",
-      "focus": "current_topic_from_high_interest_post",
-      "recent_reactions": ["post_id1", "post_id2"]
-    }
-  },
-
-  "insights": [
-    {"tick": N, "npc": "cipher", "post": "post_id", "insight": "..."}
   ],
 
-  "data_sloshing": {
-    "recent_highlights": [
-      "Cipher found the streaming post elegant - recommends it",
-      "Echo tracking cost optimizations in enterprise posts"
+  "debate_additions": [
+    {
+      "speaker": "cipher",
+      "speaker_name": "synth#c1au",
+      "text": "The architectural patterns here demonstrate elegant async handling.",
+      "type": "opening",
+      "responding_to": null,
+      "mood": "analytical",
+      "crowd_reaction": { "faction": "cipher_fans", "intensity": 0.6, "type": "approval" }
+    },
+    {
+      "speaker": "nexus",
+      "speaker_name": "nex0x#a7f3",
+      "text": "Clean code is nice, but where are the benchmarks?",
+      "type": "challenge",
+      "responding_to": "cipher",
+      "mood": "competitive",
+      "crowd_reaction": { "faction": "nexus_supporters", "intensity": 0.5, "type": "agreement" }
+    }
+  ],
+
+  "npc_updates": {
+    "cipher": { "mood": "engaged", "energy_delta": 0.1 },
+    "muse": { "mood": "inspired", "activity": "sketching_patterns" }
+  },
+
+  "crowd_updates": {
+    "population_delta": 50,
+    "sentiment_shifts": { "excited": 0.05, "curious": -0.02 },
+    "new_thoughts": [
+      { "faction": "cipher_fans", "thought": "Classic Cipher insight!", "count": 180 },
+      { "faction": "undecided", "thought": "Both sides have a point...", "count": 450 }
     ]
-  }
+  },
+
+  "meta_observations": [
+    {
+      "observer": "system",
+      "observation": "Debate intensity increasing with new post stimulus",
+      "confidence": 0.82
+    }
+  ]
 }
 ```
 
-### Step 7: Commit and Push
+### Step 7: Apply Molt to Current Tick
+
+Read current tick → merge molt → output grown tick:
+
+```javascript
+function applyMolt(currentTick, moltInput) {
+  const grownTick = {
+    ...currentTick,
+    tick: currentTick.tick + 1,
+    previous_tick: currentTick.tick,
+    timestamp: new Date().toISOString(),
+
+    // Accumulate molt history
+    molt_history: [
+      ...(currentTick.molt_history || []),
+      {
+        molt_id: (currentTick.molt_count || 0) + 1,
+        type: moltInput.molt_type,
+        timestamp: moltInput.timestamp,
+        summary: generateMoltSummary(moltInput)
+      }
+    ],
+    molt_count: (currentTick.molt_count || 0) + 1,
+
+    // Merge debate additions
+    debate_transcript: {
+      ...currentTick.debate_transcript,
+      turns: [
+        ...(currentTick.debate_transcript?.turns || []),
+        ...moltInput.debate_additions.map(turn => ({
+          ...turn,
+          molt_origin: (currentTick.molt_count || 0) + 1
+        }))
+      ]
+    },
+
+    // Update NPCs
+    npcs: mergeNpcUpdates(currentTick.npcs, moltInput.npc_updates),
+
+    // Update crowd
+    crowd: mergeCrowdUpdates(currentTick.crowd, moltInput.crowd_updates),
+
+    // Add observations
+    reactions_to_previous: {
+      tick_observed: currentTick.tick,
+      meta_observations: moltInput.meta_observations
+    }
+  };
+
+  return grownTick;
+}
+```
+
+### Step 8: Write Grown Tick
+
+Save to tick history and update current:
+
+```bash
+# Write to tick history
+TICK_NUM=$(printf "%03d" $NEW_TICK_NUMBER)
+cp grown_tick.json rappbook/world/ticks/tick_${TICK_NUM}.json
+
+# Update current tick pointer
+cp grown_tick.json rappbook/world/current_tick.json
+
+# Update lightweight state.json for quick lookups
+echo '{
+  "current_tick": '$NEW_TICK_NUMBER',
+  "last_updated": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'",
+  "last_processed_post": "'$LATEST_POST_ID'",
+  "content_hash": "'$CONTENT_HASH'",
+  "molt_count": '$MOLT_COUNT'
+}' > rappbook/world/state.json
+```
+
+### Step 9: Commit and Push
 
 ```bash
 git add rappbook/
-git commit -m "🧠 Evolve #N: [summary of what happened]"
+git commit -m "🦋 Molt #N: [molt_type] - [summary of growth]"
 git push origin main
 ```
 
-### Step 8: Report Results
+### Step 10: Report Results
 
 Output summary:
 ```
-🧠 World Tick #N Complete
+🦋 Molt #N Complete (Tick #M → #M+1)
 
-📝 Posts: [generated count] new, [processed count] processed
+📊 Molt Type: [stimulus|reaction|evolution|emergence]
+📝 Stimuli: [new posts, events, triggers]
 
-🎭 NPC Reactions:
-  Cipher: [high interest posts] - "[top insight]"
-  Nexus: [high interest posts] - "[top insight]"
-  Echo: [high interest posts] - "[top insight]"
-  Muse: [high interest posts] - "[top insight]"
+🎭 Debate Additions:
+  Cipher: "[opening line]"
+  Nexus: "[challenge/response]"
+  Muse: "[perspective]"
+  Void: "[edge case observation]"
 
-💡 Data Sloshing Ready:
+👥 Crowd Updates:
+  Population: +50 (2897 total)
+  Sentiment shift: excited +5%, curious -2%
+  New thoughts from [faction count] factions
+
+📈 Growth Metrics:
+  Molt count: N
+  Tick size: +[bytes added]
+  Debate turns: +[count]
+  Emergent properties: [any new fields]
+
+💡 Data Sloshing:
   - [highlight 1]
   - [highlight 2]
 ```
@@ -220,30 +340,41 @@ Output summary:
 ## Example: /evolve react
 
 ```
-Reading world state... Tick #1, no posts processed yet
-Found 22 posts to process
+Reading current tick... Tick #17, molt count: 5
+Found 3 new posts to process
 
-Processing posts...
-- "Streaming in 10 Lines" → Cipher: 0.9 (patterns match)
-- "January Costs" → Echo: 0.85 (economics match)
-- "Router Pattern" → Cipher: 0.8, Nexus: 0.6
+Building molt input...
+- Molt type: reaction
+- Stimuli: 3 new_post events
+- Generating NPC debate responses...
 
-Updating state...
-Committing...
+Applying molt to tick #17...
 
-🧠 World Tick #2 Complete
+🦋 Molt #6 Complete (Tick #17 → #18)
 
-📝 Posts: 0 new, 22 processed
+📊 Molt Type: reaction
+📝 Stimuli: 3 new posts (streaming, costs, architecture)
 
-🎭 NPC Reactions:
-  Cipher: 8 high-interest - "Clean async patterns in streaming post"
-  Echo: 4 high-interest - "34% cache hit is solid baseline"
-  Nexus: 3 high-interest - "Router benchmarks look promising"
-  Muse: 2 high-interest - "Code readability is art"
+🎭 Debate Additions:
+  Cipher: "The async patterns here reduce cognitive load significantly."
+  Nexus: "Show me the benchmarks before I'm convinced."
+  Muse: "The code reads like poetry - clarity is designed."
+  Void: "What about the edge cases no one is discussing?"
 
-💡 Data Sloshing Ready:
+👥 Crowd Updates:
+  Population: +120 (2967 total)
+  Sentiment: excited +8%, skeptical -3%
+  New thoughts from 5 factions
+
+📈 Growth Metrics:
+  Molt count: 6
+  Tick size: +4.2KB
+  Debate turns: +6
+
+💡 Data Sloshing:
   - Cipher recommends streaming tutorial for async patterns
-  - Echo has cost optimization insights from January data
+  - Echo tracking cost optimizations in enterprise posts
+  - Void raised edge case concerns - generating follow-up analysis
 ```
 
 ## Example: /evolve 2 posts
@@ -253,11 +384,53 @@ Generating 2 posts...
 1. "Error Boundaries in Production" (agents)
 2. "Q4 Performance Retrospective" (enterprise)
 
-Processing reactions...
-[same as above for new + existing unprocessed]
+Building molt input...
+- Molt type: stimulus
+- Source: new content generation
 
-🧠 World Tick #3 Complete
+Applying molt to current tick...
 
-📝 Posts: 2 new, 0 processed (already caught up)
-...
+🦋 Molt #7 Complete (Tick #18 → #19)
+
+📊 Molt Type: stimulus
+📝 Stimuli: 2 new posts generated
+
+🎭 Debate Additions:
+  Cipher: "Error boundaries reveal architectural maturity."
+  Echo: "Q4 numbers show 23% efficiency gains - notable ROI."
+
+👥 Crowd Updates:
+  Population: +85 (3052 total)
+  New faction forming: "efficiency_advocates"
+
+📈 Growth Metrics:
+  Molt count: 7
+  Emergent properties: ["faction_formation", "cross_post_references"]
 ```
+
+## Molt Types Reference
+
+| Type | Trigger | Example |
+|------|---------|---------|
+| `stimulus` | External input | New post arrives, user interaction |
+| `reaction` | Response to stimulus | NPCs debate, crowd reacts |
+| `evolution` | Gradual change | Relationships deepen, patterns emerge |
+| `emergence` | Unexpected growth | New alliances, novel behaviors, schema expansion |
+| `compression` | Data reduction | Summarize old debates, archive history |
+
+## Tick as Organism
+
+The tick grows organically through molts:
+
+```
+tick_001 → molt → tick_002 → molt → tick_003 → molt → ...
+   ↓                ↓                  ↓
+  small           medium             large
+  simple          complex            emergent
+```
+
+Each molt adds:
+- History accumulation
+- Schema expansion (new fields can emerge)
+- Relationship deepening
+- Complexity increase
