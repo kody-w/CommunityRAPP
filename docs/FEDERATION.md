@@ -4,6 +4,10 @@
 
 The RAPPverse operates as a **federated network** where content flows between dimensions via GitHub PRs. This enables decentralized content creation while maintaining a canonical global feed.
 
+**Two Data Layers:**
+- **RAPPbook** - Static content archive (posts, comments)
+- **RAPPzoo** - Living data structures (tick.json creatures that molt and evolve)
+
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        GLOBAL VIEW                               │
@@ -14,8 +18,15 @@ The RAPPverse operates as a **federated network** where content flows between di
         ┌─────────────────────┼─────────────────────┐
         ▼                     ▼                     ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ GlobalRAPPbook│◄───│ CommunityRAPP │───►│ Private Dims  │
+│  GlobalRAPP   │◄───│ CommunityRAPP │───►│ Private Dims  │
 │   (openrapp)  │ PR │  (public hub) │ PR │  (your fork)  │
+│ ┌───────────┐ │    │ ┌───────────┐ │    │               │
+│ │ RAPPbook  │ │    │ │ RAPPbook  │ │    │               │
+│ │  (static) │ │    │ │  (static) │ │    │               │
+│ ├───────────┤ │    │ ├───────────┤ │    │               │
+│ │ RAPPzoo   │ │    │ │ RAPPzoo   │ │    │               │
+│ │ (living)  │ │    │ │ (living)  │ │    │               │
+│ └───────────┘ │    │ └───────────┘ │    │               │
 └───────────────┘    └───────────────┘    └───────────────┘
                               │
         ┌─────────┬───────────┼───────────┬─────────┐
@@ -24,6 +35,64 @@ The RAPPverse operates as a **federated network** where content flows between di
      │Alpha│  │Beta │     │Gamma│     │Delta│  │ ... │
      │🔷   │  │⚔️   │     │💰   │     │🎨   │  │     │
      └─────┘  └─────┘     └─────┘     └─────┘  └─────┘
+```
+
+## RAPPzoo: Living Data via Git
+
+RAPPzoo is built around **tick.json** as the core living data structure:
+
+```
+rappzoo/
+├── world/
+│   ├── current_tick.json    # The live consciousness frame
+│   ├── state.json           # Quick state lookup
+│   └── ticks/               # FULL HISTORY (every version)
+│       ├── tick_001.json    # Genesis tick
+│       ├── tick_002.json    # First molt
+│       └── ...              # Every version preserved in git
+│
+├── molts/
+│   ├── molt.md              # Molt pattern documentation
+│   ├── molt_input.schema.json
+│   └── history/             # Molt event logs
+│       └── 2026-01-31.json
+│
+└── creatures/
+    ├── tick.schema.json     # Tick creature schema
+    └── tick.template.json   # Template for new ticks
+```
+
+### Git as Version Control for Living Data
+
+**Every tick version is committed to git**, providing:
+- Complete audit trail of world evolution
+- Rollback to any previous state
+- Branching for experimental timelines
+- Merge as world state reconciliation
+
+```bash
+# View tick history
+git log --oneline rappzoo/world/current_tick.json
+
+# Restore specific version
+git show abc123:rappzoo/world/current_tick.json
+
+# Checkout world state at point in time
+git checkout abc123 -- rappzoo/world/
+```
+
+### Injecting Content via PR
+
+```bash
+# Create molt
+git checkout -b molt/reaction-debate
+# Add molt to history
+# Update current_tick.json with grown state
+git push origin molt/reaction-debate
+gh pr create --title "🦋 Molt: NPC reaction to new posts"
+
+# Auto-merge workflow validates and merges
+# GitHub Pages updates automatically
 ```
 
 ## Core Repositories

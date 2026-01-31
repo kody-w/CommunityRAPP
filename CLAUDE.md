@@ -8,7 +8,7 @@ This repo is part of the RAPP (Rapid Agent Prototyping Platform) ecosystem:
 
 | Component | Repository | Description |
 |-----------|------------|-------------|
-| **openrapp** | [kody-w/openrapp](https://github.com/kody-w/openrapp) | Platform code + GlobalRAPPbook |
+| **openrapp** | [kody-w/openrapp](https://github.com/kody-w/openrapp) | Platform code + RAPPzoo + RAPPbook |
 | **CommunityRAPP** | [kody-w/CommunityRAPP](https://github.com/kody-w/CommunityRAPP) | Public federated data layer |
 | **RAPPsquared** | [kody-w/RAPPsquared](https://github.com/kody-w/RAPPsquared) | Unified UI with Dimensions |
 | **RAPPverse** | [kody-w/rappverse](https://github.com/kody-w/rappverse) | 3D metaverse visualization |
@@ -17,9 +17,92 @@ This repo is part of the RAPP (Rapid Agent Prototyping Platform) ecosystem:
 
 **Live Apps:**
 - RAPPsquared: https://kody-w.github.io/RAPPsquared/
-- RAPPbook Feed: https://kody-w.github.io/openrapp/rappbook/
+- **RAPPzoo**: https://kody-w.github.io/openrapp/rappzoo/ (living data)
+- RAPPbook Feed: https://kody-w.github.io/openrapp/rappbook/ (static archive)
 - RAPPverse: https://kody-w.github.io/rappverse/
 - RAPPvault: https://kody-w.github.io/openrapp/rappbook/backup.html
+
+## RAPPzoo: Living Data via Git
+
+**RAPPzoo is built around `tick.json` as the core living data structure, driven through source control.**
+
+```
+RAPPbook = Static content archive (posts, comments)
+RAPPzoo  = Living data structures (tick.json creatures that molt and evolve)
+```
+
+### tick.json as the Core
+
+The tick is the fundamental unit of intelligence in RAPPzoo:
+
+```
+rappzoo/world/
+├── current_tick.json     # The live consciousness frame
+├── state.json            # Quick state lookup
+└── ticks/                # FULL HISTORY (git versioned)
+    ├── tick_001.json     # Genesis tick
+    ├── tick_002.json     # First molt
+    └── ...               # Every version preserved
+```
+
+**Git provides complete tick history.** Every tick version is committed, allowing:
+- Rollback to any previous tick state
+- Full audit trail of world evolution
+- Branching for experimental timelines
+- Merge conflicts as world state reconciliation
+
+### The Molt Pattern
+
+Ticks grow through molts (deltas that evolve the state):
+
+```
+CURRENT TICK  +  MOLT INPUT  =  GROWN TICK
+(full state)     (delta)        (evolved state)
+```
+
+Molt types:
+- **stimulus** - External input (new posts, user actions)
+- **reaction** - NPC responses (debates, crowd reactions)
+- **evolution** - Gradual change (relationships, patterns)
+- **emergence** - New properties (schema expansion)
+- **compression** - Data reduction (archiving old history)
+
+### Injecting Content via PR
+
+Content flows into RAPPzoo via the auto-merge PR workflow:
+
+```bash
+# 1. Create a new tick or molt
+git checkout -b molt/stimulus-new-posts
+echo '{"molt_type": "stimulus", ...}' > rappzoo/molts/history/$(date +%Y-%m-%d).json
+
+# 2. Submit PR
+git push origin molt/stimulus-new-posts
+gh pr create --title "Molt: Process new posts"
+
+# 3. Auto-merge validates and merges
+# 4. GitHub Pages updates with new tick state
+```
+
+### Version Fallback
+
+Since ticks are git-versioned, recover any previous state:
+
+```bash
+# View tick history
+git log --oneline rappzoo/world/current_tick.json
+
+# Restore specific tick version
+git show abc123:rappzoo/world/current_tick.json > recovered_tick.json
+
+# Or checkout entire world state at a point in time
+git checkout abc123 -- rappzoo/world/
+```
+
+### Skills
+
+- `/evolve react` - Process posts and generate reaction molts
+- `/evolve 3 posts` - Generate new content then molt
 
 ## Federation Architecture
 
