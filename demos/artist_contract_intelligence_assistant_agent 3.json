@@ -1,0 +1,163 @@
+{
+  "agent": {
+    "id": "artist_contract_intelligence_assistant",
+    "name": "Artist Contract Intelligence Assistant",
+    "version": "1.0.0",
+    "category": "legal",
+    "icon": "fa-gavel",
+    "description": "This agent ingests, analyzes, and summarizes complex artist and licensing contracts for Sony Music Entertainment. It identifies key terms, risks, unusual provisions, and deviations from standard templates, enabling legal and business teams to accelerate contract review cycles while reducing human oversight requirements.",
+    "tokens": 750,
+    "author": "RAPP Pipeline - Sony Music Entertainment",
+    "created": "2026-01-09",
+    "updated": "2026-01-09"
+  },
+  "metadata": {
+    "name": "ArtistContractIntelligenceAssistant",
+    "description": "This agent ingests, analyzes, and summarizes complex artist and licensing contracts for Sony Music Entertainment. It identifies key terms, risks, unusual provisions, and deviations from standard templates, enabling legal and business teams to accelerate contract review cycles while reducing human oversight requirements.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": [
+            "extract_contract_terms",
+            "summarize_contract",
+            "compare_to_template",
+            "flag_risky_clauses"
+          ],
+          "description": "The action to perform"
+        },
+        "file_path": {
+          "type": "string",
+          "description": "File Path parameter"
+        },
+        "summary_level": {
+          "type": "string",
+          "description": "Summary Level parameter"
+        },
+        "template_id": {
+          "type": "string",
+          "description": "Template Id parameter"
+        }
+      },
+      "required": [
+        "action"
+      ]
+    }
+  },
+  "actions": [
+    {
+      "name": "extract_contract_terms",
+      "description": "Extracts key structured terms from a contract, such as royalty rates, duration, territories, deliverables, rights, payment schedules, and obligations.",
+      "parameters": [
+        "file_path"
+      ],
+      "example": {
+        "input": {
+          "action": "extract_contract_terms",
+          "file_path": "/contracts/ArtistA_Contract.pdf"
+        },
+        "output": "Extracted terms: Royalty Rate: 18%; Territory: Worldwide; Contract Duration: 3 albums or 5 years; Rights: Exclusive; Advances: $250,000."
+      }
+    },
+    {
+      "name": "summarize_contract",
+      "description": "Creates a plain\u2011language contract summary highlighting obligations, rights granted, financial terms, and risks.",
+      "parameters": [
+        "file_path",
+        "summary_level"
+      ],
+      "example": {
+        "input": {
+          "action": "summarize_contract",
+          "file_path": "/contracts/ArtistA_Contract.pdf",
+          "summary_level": "short"
+        },
+        "output": "This agreement grants SME exclusive worldwide rights for 5 years, with an 18% royalty rate and a $250k advance. Artist is obligated to deliver 3 albums. No unusual risk clauses detected."
+      }
+    },
+    {
+      "name": "compare_to_template",
+      "description": "Compares a contract against SME\u2019s standard template and identifies deviations such as modified royalty terms, unusual exclusivity provisions, or added clauses.",
+      "parameters": [
+        "file_path",
+        "template_id"
+      ],
+      "example": {
+        "input": {
+          "action": "compare_to_template",
+          "file_path": "/contracts/ArtistA_Contract.pdf",
+          "template_id": "std_artist_v3"
+        },
+        "output": "Deviations detected: Royalty rate increased from 16% to 18%; Artist holds partial merchandising rights; Delivery timeline extended by 6 months."
+      }
+    },
+    {
+      "name": "flag_risky_clauses",
+      "description": "Identifies potentially risky or non\u2011standard clauses in a contract, with severity scoring and SME\u2011specific guidelines.",
+      "parameters": [
+        "file_path"
+      ],
+      "example": {
+        "input": {
+          "action": "flag_risky_clauses",
+          "file_path": "/contracts/ArtistA_Contract.pdf"
+        },
+        "output": "Risky clauses: Artist requests reversion rights after 18 months (High Risk). Non-standard merchandising split (Medium Risk)."
+      }
+    }
+  ],
+  "useCases": [
+    "Accelerate review of new artist contracts by summarizing and extracting key terms.",
+    "Automatically detect non\u2011standard artist demands and deviations from SME guidelines.",
+    "Provide comparable insights between new agreements and previous deals with similar artist profiles.",
+    "Identify risk exposure across contract portfolios at scale.",
+    "Support A&R and legal teams during negotiation by generating clear summaries and deviation reports."
+  ],
+  "integrations": [
+    "SharePoint",
+    "OneDrive",
+    "Dataverse",
+    "M365 Copilot surfaces",
+    "Azure Blob Storage"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Can you review the new contract for Artist A and tell me if anything deviates from our standard template?"
+    },
+    {
+      "role": "agent",
+      "content": "**Sure. Here's what I found:**\n\n**Summary**: The contract largely aligns with SME\u2019s standard Artist Template v3.\n\n**Key Deviations**:\n- **Royalty Rate:** Increased from the standard 16% to **18%**.\n- **Merchandising Rights:** Artist retains partial merchandising ownership (non\u2011standard).\n- **Reversion Clause:** Artist requests reversion of masters after 18 months of inactivity \u2014 **high\u2011risk variance**.\n\n**Recommendation:** Legal review required for the reversion clause and merchandising split. Other deviations appear manageable."
+    }
+  ],
+  "sampleScenarios": [
+    {
+      "name": "Rapid Contract Summary",
+      "description": "User uploads a new artist agreement and needs a plain\u2011language summary for internal briefing.",
+      "prompts": [
+        "Summarize this contract in simple language for A&R leadership.",
+        "Highlight the financial obligations and rights granted.",
+        "Does the contract follow our standard structure?"
+      ]
+    },
+    {
+      "name": "Deviation Detection for Negotiation",
+      "description": "User wants to understand what an artist is asking for that falls outside SME norms.",
+      "prompts": [
+        "Compare this contract against template v3.",
+        "Highlight all deviations that could affect revenue.",
+        "Which deviations are negotiable and which are high risk?"
+      ]
+    },
+    {
+      "name": "Risk Review Before Signing",
+      "description": "User performs a final risk assessment of all clauses.",
+      "prompts": [
+        "Identify all risky or unusual clauses.",
+        "Explain why each clause is high risk.",
+        "Provide recommended adjustments before sending to leadership."
+      ]
+    }
+  ]
+}

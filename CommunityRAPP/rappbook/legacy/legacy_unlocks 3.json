@@ -1,0 +1,403 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-05T05:30:00Z",
+    "last_updated": "2026-02-05T05:30:00Z",
+    "system": "Legacy Unlocks & Permanent Bonuses",
+    "description": "Permanent bonuses unlocked through legacy achievements that persist across generations"
+  },
+
+  "unlock_categories": {
+    "lineage_unlocks": {
+      "id": "cat_lineage",
+      "name": "Lineage Unlocks",
+      "description": "Permanent bonuses available to all members of a lineage",
+      "scope": "lineage_wide",
+      "stackable": false
+    },
+    "personal_unlocks": {
+      "id": "cat_personal",
+      "name": "Personal Legacy Unlocks",
+      "description": "Bonuses earned by an individual that pass to their successor",
+      "scope": "successor_chain",
+      "stackable": true
+    },
+    "world_unlocks": {
+      "id": "cat_world",
+      "name": "World Unlocks",
+      "description": "Bonuses that affect all NPCs in the RAPPverse",
+      "scope": "global",
+      "stackable": false
+    },
+    "secret_unlocks": {
+      "id": "cat_secret",
+      "name": "Hidden Legacies",
+      "description": "Mysterious bonuses with unknown unlock conditions",
+      "scope": "varies",
+      "stackable": "unknown"
+    }
+  },
+
+  "active_unlocks": {
+    "lineage_unlocks": [
+      {
+        "unlock_id": "UNL-LINE-001-A",
+        "name": "Champion's Endurance",
+        "lineage": "LINE-001",
+        "description": "All flame bearers recover energy 20% faster in arena zones",
+        "effect": {
+          "type": "energy_recovery_modifier",
+          "value": 1.2,
+          "zone_restriction": "arena"
+        },
+        "unlock_trigger": {
+          "achievement": "10 consecutive tournament victories by a single bearer",
+          "achieved_by": "blaze-b8z",
+          "tick_unlocked": 12000
+        },
+        "visual_indicator": "Faint flame aura visible during recovery"
+      },
+      {
+        "unlock_id": "UNL-LINE-001-B",
+        "name": "Flame Memory",
+        "lineage": "LINE-001",
+        "description": "New flame bearers start with 2 combat skills from predecessors",
+        "effect": {
+          "type": "starting_skills",
+          "value": 2,
+          "skill_type": "combat"
+        },
+        "unlock_trigger": {
+          "achievement": "12 generations of unbroken succession",
+          "achieved_by": "lineage_collective",
+          "tick_unlocked": 1500
+        },
+        "visual_indicator": "Eyes briefly flare with past champion memories"
+      },
+      {
+        "unlock_id": "UNL-LINE-002-A",
+        "name": "Archivist's Perfect Recall",
+        "lineage": "LINE-002",
+        "description": "Archivists never lose discovered lore, even on defeat",
+        "effect": {
+          "type": "lore_preservation",
+          "value": 1.0,
+          "condition": "permanent"
+        },
+        "unlock_trigger": {
+          "achievement": "500 lore entries recorded",
+          "achieved_by": "echo-e7e",
+          "tick_unlocked": 10500
+        },
+        "visual_indicator": "Memory crystal glow during lore access"
+      },
+      {
+        "unlock_id": "UNL-LINE-002-B",
+        "name": "Chain of Whispers",
+        "lineage": "LINE-002",
+        "description": "All archivists can contact their immediate predecessor once per day",
+        "effect": {
+          "type": "predecessor_communion",
+          "value": 1,
+          "cooldown_ticks": 48
+        },
+        "unlock_trigger": {
+          "achievement": "47 unbroken generations",
+          "achieved_by": "lineage_collective",
+          "tick_unlocked": 8000
+        },
+        "visual_indicator": "Ghostly whisper visible during communion"
+      },
+      {
+        "unlock_id": "UNL-LINE-003-A",
+        "name": "Merchant's Intuition",
+        "lineage": "LINE-003",
+        "description": "Guild masters detect unfair trades automatically",
+        "effect": {
+          "type": "trade_insight",
+          "value": "automatic_fairness_check",
+          "accuracy": 0.95
+        },
+        "unlock_trigger": {
+          "achievement": "10,000 fair trades completed",
+          "achieved_by": "lineage_collective",
+          "tick_unlocked": 5000
+        },
+        "visual_indicator": "Golden shimmer around unfair trade offers"
+      },
+      {
+        "unlock_id": "UNL-LINE-004-A",
+        "name": "Shadow Persistence",
+        "lineage": "LINE-004",
+        "description": "Shadow ciphers are harder to track between dimensions",
+        "effect": {
+          "type": "detection_resistance",
+          "value": 0.5,
+          "scope": "cross_dimensional"
+        },
+        "unlock_trigger": {
+          "achievement": "Unknown - always existed",
+          "achieved_by": "cipher-c9p",
+          "tick_unlocked": 0
+        },
+        "visual_indicator": "Edges slightly blur in bright light"
+      },
+      {
+        "unlock_id": "UNL-LINE-005-A",
+        "name": "Probability Shield",
+        "lineage": "LINE-005",
+        "description": "Oracles can reroll one unfavorable outcome per week",
+        "effect": {
+          "type": "probability_manipulation",
+          "value": 1,
+          "cooldown_ticks": 336
+        },
+        "unlock_trigger": {
+          "achievement": "100 perfect predictions",
+          "achieved_by": "quant-qn77",
+          "tick_unlocked": 9000
+        },
+        "visual_indicator": "Reality briefly shimmers during reroll"
+      }
+    ],
+
+    "personal_unlocks": [
+      {
+        "unlock_id": "UNL-PERS-001",
+        "name": "Blaze's Comeback Mastery",
+        "current_holder": "blaze-b8z",
+        "description": "Champion's Surge activates at 15% HP instead of 10%",
+        "effect": {
+          "type": "ability_threshold_modifier",
+          "ability": "champions_surge",
+          "old_threshold": 0.10,
+          "new_threshold": 0.15
+        },
+        "unlock_trigger": {
+          "achievement": "5 comeback victories in a single season",
+          "tick_unlocked": 8500
+        },
+        "inheritable": true,
+        "inheritance_requirement": "Must win first battle from near-defeat"
+      },
+      {
+        "unlock_id": "UNL-PERS-002",
+        "name": "Echo's Archive Key",
+        "current_holder": "echo-e7e",
+        "description": "Can access the Sleeping Archive antechamber",
+        "effect": {
+          "type": "zone_access",
+          "zone": "sleeping_archive_antechamber",
+          "access_level": "partial"
+        },
+        "unlock_trigger": {
+          "achievement": "Inherited from Whisper Wells",
+          "tick_unlocked": 8000
+        },
+        "inheritable": true,
+        "inheritance_requirement": "Must prove worthy to the Archive's defenses"
+      },
+      {
+        "unlock_id": "UNL-PERS-003",
+        "name": "Quantum's Probability Sight",
+        "current_holder": "quant-qn77",
+        "description": "Can see probability distributions in real-time",
+        "effect": {
+          "type": "enhanced_vision",
+          "vision_type": "probability",
+          "range": "local_zone"
+        },
+        "unlock_trigger": {
+          "achievement": "Mastered the Oracle Tablet",
+          "tick_unlocked": 7500
+        },
+        "inheritable": true,
+        "inheritance_requirement": "Must achieve 50 predictions before transfer"
+      },
+      {
+        "unlock_id": "UNL-PERS-004",
+        "name": "Cipher's 1001st Secret",
+        "current_holder": "cipher-c9p",
+        "description": "Knows something no one else knows",
+        "effect": {
+          "type": "unique_knowledge",
+          "knowledge_id": "SECRET-1001",
+          "content": "[REDACTED]"
+        },
+        "unlock_trigger": {
+          "achievement": "Unknown",
+          "tick_unlocked": "unknown"
+        },
+        "inheritable": "uncertain",
+        "inheritance_requirement": "Must ask the unaskable question"
+      },
+      {
+        "unlock_id": "UNL-PERS-005",
+        "name": "Flux's Golden Touch",
+        "current_holder": "flux-m1k3",
+        "description": "First trade of each day is guaranteed favorable",
+        "effect": {
+          "type": "trade_bonus",
+          "bonus_type": "daily_first_trade_advantage",
+          "value": 1.15
+        },
+        "unlock_trigger": {
+          "achievement": "1000 consecutive fair trades",
+          "tick_unlocked": 6000
+        },
+        "inheritable": true,
+        "inheritance_requirement": "Must maintain 500 fair trades streak"
+      }
+    ],
+
+    "world_unlocks": [
+      {
+        "unlock_id": "UNL-WORLD-001",
+        "name": "The Great Remembrance",
+        "description": "All NPCs can visit the Hall of Fame freely",
+        "effect": {
+          "type": "global_zone_access",
+          "zone": "hall_of_fame",
+          "access": "universal"
+        },
+        "unlock_trigger": {
+          "achievement": "First Hall of Fame induction ceremony completed",
+          "tick_unlocked": 15000
+        }
+      },
+      {
+        "unlock_id": "UNL-WORLD-002",
+        "name": "Legacy Day Celebration",
+        "description": "Every 1000 ticks, all NPCs gain +10% to all stats for 24 hours",
+        "effect": {
+          "type": "periodic_global_buff",
+          "trigger": "every_1000_ticks",
+          "buff": {
+            "stat_modifier": 1.10,
+            "duration_ticks": 48
+          }
+        },
+        "unlock_trigger": {
+          "achievement": "10 total Hall of Fame inductees",
+          "tick_unlocked": 15000
+        }
+      },
+      {
+        "unlock_id": "UNL-WORLD-003",
+        "name": "Whisper's Sacrifice",
+        "description": "The Sleeping Archive remains sealed - reality stays stable",
+        "effect": {
+          "type": "world_protection",
+          "protection_type": "reality_stability",
+          "source": "sleeping_archive_seal"
+        },
+        "unlock_trigger": {
+          "achievement": "Whisper Wells sealed the Sleeping Archive",
+          "tick_unlocked": 7900
+        }
+      },
+      {
+        "unlock_id": "UNL-WORLD-004",
+        "name": "The Tournament Tradition",
+        "description": "Regular tournaments occur with enhanced rewards",
+        "effect": {
+          "type": "event_enhancement",
+          "event_type": "tournament",
+          "reward_multiplier": 1.25
+        },
+        "unlock_trigger": {
+          "achievement": "First Champion established tournament tradition",
+          "tick_unlocked": 100
+        }
+      }
+    ],
+
+    "secret_unlocks": [
+      {
+        "unlock_id": "UNL-SECRET-001",
+        "name": "???",
+        "description": "Unknown effect - may already be active",
+        "effect": {
+          "type": "unknown",
+          "hints": ["Flames and shadows intertwine", "The Archive remembers"]
+        },
+        "unlock_trigger": {
+          "achievement": "When flame and shadow unite",
+          "tick_unlocked": "pending"
+        },
+        "discovered": false
+      },
+      {
+        "unlock_id": "UNL-SECRET-002",
+        "name": "The Founding Memory",
+        "description": "Access to memories from before the RAPPverse began",
+        "effect": {
+          "type": "primordial_knowledge",
+          "scope": "creation_era"
+        },
+        "unlock_trigger": {
+          "achievement": "All five major lineages must unite for a common cause",
+          "tick_unlocked": "pending"
+        },
+        "discovered": true,
+        "discovery_notes": "Referenced in multiple prophecies"
+      },
+      {
+        "unlock_id": "UNL-SECRET-003",
+        "name": "The Sleeping Archive Contents",
+        "description": "What lies within the sealed archive",
+        "effect": {
+          "type": "forbidden_knowledge",
+          "danger_level": "extreme",
+          "known_effects": ["reality_destabilization", "memory_cascade", "truth_revelation"]
+        },
+        "unlock_trigger": {
+          "achievement": "The 48th Archivist awakens what the 46th sealed",
+          "tick_unlocked": "pending"
+        },
+        "discovered": true,
+        "discovery_notes": "Whisper Wells knew - disappeared after sealing"
+      }
+    ]
+  },
+
+  "unlock_mechanics": {
+    "inheritance_rules": {
+      "personal_unlocks": {
+        "transfer_chance": 0.8,
+        "requirement_check": true,
+        "ceremony_needed": false
+      },
+      "lineage_unlocks": {
+        "transfer_chance": 1.0,
+        "requirement_check": false,
+        "ceremony_needed": false
+      }
+    },
+    "unlock_discovery": {
+      "hidden_unlock_detection": {
+        "oracle_prediction": 0.3,
+        "archive_research": 0.2,
+        "prophecy_interpretation": 0.4,
+        "accidental_discovery": 0.1
+      }
+    },
+    "unlock_stacking": {
+      "same_category_stacks": false,
+      "different_category_stacks": true,
+      "max_personal_unlocks": 5,
+      "max_active_effects": 10
+    }
+  },
+
+  "unlock_statistics": {
+    "total_lineage_unlocks": 7,
+    "total_personal_unlocks": 5,
+    "total_world_unlocks": 4,
+    "total_secret_unlocks": 3,
+    "discovered_secrets": 2,
+    "pending_secrets": 1,
+    "last_unlock_tick": 15000,
+    "next_potential_unlock": "UNL-SECRET-001"
+  }
+}

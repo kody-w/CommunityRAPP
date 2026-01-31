@@ -1,0 +1,97 @@
+{
+  "agent": {
+    "id": "rapp_quality_gate_agent",
+    "name": "RAPP Quality Gate",
+    "version": "1.0.0",
+    "category": "operations",
+    "icon": "fa-check-double",
+    "description": "Evaluates quality gates (QG1-QG6) throughout the RAPP pipeline process with pass/fail criteria.",
+    "tokens": 680,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "RAPPQualityGate",
+    "description": "Quality gate evaluation for RAPP Pipeline.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["evaluate_qg1", "evaluate_qg2", "evaluate_qg3", "evaluate_qg4", "evaluate_qg5", "evaluate_qg6"],
+          "description": "The quality gate to evaluate"
+        },
+        "project_id": { "type": "string" },
+        "evidence": { "type": "string" }
+      },
+      "required": ["action", "project_id"]
+    }
+  },
+  "actions": [
+    {
+      "name": "evaluate_qg1",
+      "description": "Evaluate QG1: Discovery Validation",
+      "parameters": ["project_id", "evidence"],
+      "example": {
+        "input": { "action": "evaluate_qg1", "project_id": "PROJ-001" },
+        "output": "QG1 PASS (87/100). Pain point clear, stakeholders identified, success metrics defined. Proceed to Requirements Mapping."
+      }
+    },
+    {
+      "name": "evaluate_qg2",
+      "description": "Evaluate QG2: Requirements Lock",
+      "parameters": ["project_id", "evidence"],
+      "example": {
+        "input": { "action": "evaluate_qg2", "project_id": "PROJ-001" },
+        "output": "QG2 PASS (92/100). Requirements documented, prioritized, stakeholder sign-off obtained. Proceed to Solution Design."
+      }
+    },
+    {
+      "name": "evaluate_qg3",
+      "description": "Evaluate QG3: Solution Design Approval",
+      "parameters": ["project_id", "evidence"],
+      "example": {
+        "input": { "action": "evaluate_qg3", "project_id": "PROJ-001" },
+        "output": "QG3 PASS (85/100). Architecture approved, integration plan clear, security reviewed. Proceed to MVP Proposal."
+      }
+    },
+    {
+      "name": "evaluate_qg4",
+      "description": "Evaluate QG4: MVP Scope Lock",
+      "parameters": ["project_id", "evidence"],
+      "example": {
+        "input": { "action": "evaluate_qg4", "project_id": "PROJ-001" },
+        "output": "QG4 PASS (90/100). MVP scope defined, success metrics agreed, timeline approved. Proceed to Development."
+      }
+    },
+    {
+      "name": "evaluate_qg5",
+      "description": "Evaluate QG5: Development Complete",
+      "parameters": ["project_id", "evidence"],
+      "example": {
+        "input": { "action": "evaluate_qg5", "project_id": "PROJ-001" },
+        "output": "QG5 PASS (88/100). Code complete, unit tests pass, integration tested. Proceed to UAT."
+      }
+    },
+    {
+      "name": "evaluate_qg6",
+      "description": "Evaluate QG6: Production Readiness",
+      "parameters": ["project_id", "evidence"],
+      "example": {
+        "input": { "action": "evaluate_qg6", "project_id": "PROJ-001" },
+        "output": "QG6 PASS (95/100). UAT complete, documentation ready, support trained. Clear for Go-Live."
+      }
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Evaluate QG1 for the Healthcare Intake project."
+    },
+    {
+      "role": "agent",
+      "content": "**Quality Gate 1: Discovery Validation**\n\n**Result: PASS** (Score: 87/100)\n\n**Criteria Evaluation:**\n- [x] Pain point clearly articulated (10/10)\n- [x] Current state documented (9/10)\n- [x] Stakeholders identified (8/10)\n- [x] Success metrics defined (9/10)\n- [x] Timeline expectations set (8/10)\n\n**Recommendation:** Proceed to Step 2 (Requirements Mapping)\n\n**Note:** Consider adding quantified ROI expectations before MVP."
+    }
+  ]
+}

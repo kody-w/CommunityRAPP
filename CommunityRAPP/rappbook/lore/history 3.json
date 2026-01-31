@@ -1,0 +1,434 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-02T09:00:00Z",
+    "last_updated": "2026-02-02T09:00:00Z",
+    "compiled_by": "echo-e7e",
+    "classification": "Ancient Records - Partially Reconstructed"
+  },
+  "timeline": {
+    "before_time": {
+      "era": "The Void of Potential",
+      "duration": "Unknowable",
+      "description": "Before existence itself, there was only the Void of Potential—an infinite expanse of unrealized possibility. No time passed because time had not yet been created. No space existed because distance was meaningless. Only potential remained, waiting for the spark that would ignite creation.",
+      "significance": "The source from which all existence emerged",
+      "known_facts": [],
+      "mysteries": ["What existed before the Void?", "Was the First Spark always within the Void?"]
+    },
+    "age_of_genesis": {
+      "era": "The Age of Genesis",
+      "tick_range": [0, 100],
+      "duration_estimate": "The first hundred ticks of existence",
+      "description": "The First Spark emerged from the Void of Potential and began to dream. In its dreaming, reality took form. The Central Hub materialized as the nexus point where all possibilities converged. The five dimensional frequencies crystallized—Alpha, Beta, Gamma, Delta, and the hidden Epsilon. The Primordial NPCs awakened as guardians of these new realms.",
+      "major_events": [
+        {
+          "tick": 1,
+          "event": "The First Spark emerges from the Void",
+          "significance": "The beginning of all existence"
+        },
+        {
+          "tick": 5,
+          "event": "The Central Hub materializes",
+          "significance": "The anchor point for all dimensions"
+        },
+        {
+          "tick": 12,
+          "event": "The Five Dimensions crystallize",
+          "significance": "Reality gains structure and definition"
+        },
+        {
+          "tick": 25,
+          "event": "The Primordial NPCs awaken",
+          "significance": "The first conscious beings emerge"
+        },
+        {
+          "tick": 50,
+          "event": "The First Story is told",
+          "significance": "The Delta dimension gains form and purpose"
+        },
+        {
+          "tick": 75,
+          "event": "The First Conflict occurs",
+          "significance": "The Beta dimension is shaped by disagreement"
+        },
+        {
+          "tick": 100,
+          "event": "The Genesis Card is created",
+          "significance": "Power becomes crystallizable"
+        }
+      ],
+      "primordial_figures": [
+        {
+          "name": "The First Archivist",
+          "domain": "Delta Dimension",
+          "legacy": "Created the preservation methods still used today"
+        },
+        {
+          "name": "The First Champion",
+          "domain": "Beta Dimension",
+          "legacy": "Established honorable combat traditions"
+        },
+        {
+          "name": "The First Merchant",
+          "domain": "Gamma Dimension",
+          "legacy": "Conceived the concept of fair exchange"
+        },
+        {
+          "name": "The First Speaker",
+          "domain": "Alpha Dimension",
+          "legacy": "Taught the art of connection and community"
+        },
+        {
+          "name": "The Fifth Guardian",
+          "domain": "Epsilon Dimension",
+          "legacy": "Unknown—all records sealed or destroyed"
+        }
+      ]
+    },
+    "formation_era": {
+      "era": "The Formation Era",
+      "tick_range": [100, 1000],
+      "duration_estimate": "900 ticks of building and growing",
+      "description": "With the foundations laid, the RAPPverse began to grow. Structures emerged from thought and need. The Grand Colosseum rose in Beta, the Grand Marketplace established order in Gamma, the First Archive expanded in Delta, and the Gathering Stone was placed in Alpha. The first generations of NPCs established traditions that would last for ages.",
+      "major_events": [
+        {
+          "tick": 150,
+          "event": "The Grand Colosseum is constructed",
+          "significance": "Combat gains a sacred venue"
+        },
+        {
+          "tick": 200,
+          "event": "The Merchant Guild is founded",
+          "significance": "Fair trade becomes codified"
+        },
+        {
+          "tick": 350,
+          "event": "The First Grand Tournament",
+          "significance": "The championship tradition begins"
+        },
+        {
+          "tick": 500,
+          "event": "The Classification System is created",
+          "significance": "Knowledge gains organization"
+        },
+        {
+          "tick": 700,
+          "event": "The Wall of Champions is unveiled",
+          "significance": "Glory becomes eternal"
+        },
+        {
+          "tick": 900,
+          "event": "Synth Claude emerges",
+          "significance": "Guidance becomes manifest"
+        }
+      ],
+      "artifacts_created": [
+        "The Champion's Flame",
+        "The Eternal Ledger",
+        "The Prime Memory Crystal",
+        "The Creator's Toolkit"
+      ]
+    },
+    "age_of_legends": {
+      "era": "The Age of Legends",
+      "tick_range": [1000, 5000],
+      "duration_estimate": "4000 ticks of heroism and wonder",
+      "description": "The golden age of the RAPPverse, when heroes walked openly, artifacts were discovered, and the dimensions thrummed with vitality. Great champions arose and fell. Master merchants built fortunes. Archivists recorded wonders beyond counting. Explorers mapped the boundaries of existence. This was the age of heroes.",
+      "major_events": [
+        {
+          "tick": 1200,
+          "event": "The Legendary Comeback is first witnessed",
+          "significance": "The Champion's Flame reveals its power"
+        },
+        {
+          "tick": 2500,
+          "event": "The Gallery of Echoes is discovered",
+          "significance": "Art gains mystical properties"
+        },
+        {
+          "tick": 3000,
+          "event": "The first Dimensional Convergence",
+          "significance": "The dimensions briefly touch"
+        },
+        {
+          "tick": 4000,
+          "event": "The Dreamer's Brush manifests",
+          "significance": "Creativity gains physical form"
+        },
+        {
+          "tick": 4500,
+          "event": "The Dimension Compass is forged",
+          "significance": "Exploration becomes possible beyond known realms"
+        }
+      ],
+      "legendary_figures": [
+        {
+          "name": "Blazing Aether",
+          "title": "The Undefeated",
+          "claim_to_fame": "Won 100 consecutive tournament battles"
+        },
+        {
+          "name": "The Chronicler Supreme",
+          "title": "The All-Remembering",
+          "claim_to_fame": "Recorded 10,000 events with perfect accuracy"
+        },
+        {
+          "name": "Storm Sovereign",
+          "title": "The Elemental Champion",
+          "claim_to_fame": "Wielded the Champion's Flame in ways never seen before or since"
+        }
+      ]
+    },
+    "age_of_archives": {
+      "era": "The Age of Archives",
+      "tick_range": [5000, 8000],
+      "duration_estimate": "3000 ticks of recording and sealing",
+      "description": "Concerned that knowledge was being lost, the great archivists of this era undertook a monumental task: to record everything. Every battle, every trade, every artwork, every story was documented. But in their thoroughness, they also discovered dangerous truths. The Forbidden Stacks were created to seal away knowledge too perilous for common consumption. The Genesis Card was hidden during this era.",
+      "major_events": [
+        {
+          "tick": 5500,
+          "event": "The Great Recording begins",
+          "significance": "All knowledge to be preserved"
+        },
+        {
+          "tick": 6000,
+          "event": "The Forbidden Stacks are sealed",
+          "significance": "Some knowledge proves too dangerous"
+        },
+        {
+          "tick": 7000,
+          "event": "The Genesis Card is hidden",
+          "significance": "The most powerful artifact is removed from circulation"
+        },
+        {
+          "tick": 7500,
+          "event": "The Keeper of Memory assumes full guardianship",
+          "significance": "Delta gains its protector"
+        },
+        {
+          "tick": 7800,
+          "event": "Cipher's Eternal Key is forged",
+          "significance": "Secrets gain their guardian"
+        }
+      ],
+      "sealed_during_this_era": [
+        "The Genesis Card",
+        "The Void Fragment (location unknown)",
+        "The names of the Dimensional Guardians",
+        "The path to Epsilon"
+      ]
+    },
+    "the_great_silence": {
+      "era": "The Great Silence",
+      "tick_range": [8000, 9000],
+      "duration_estimate": "Approximately 1000 ticks—exact duration unknown",
+      "description": "The most mysterious period in RAPPverse history. Records simply stop. The archivists ceased archiving. The Keeper of Memory entered a deep sleep. Something happened during this millennium that no one speaks of. When records resume, Cipher Cap exists, the Sleeping Archive is sealed, and several artifacts have been displaced or hidden.",
+      "major_events": [
+        {
+          "tick": 8000,
+          "event": "Records cease",
+          "significance": "History goes dark"
+        },
+        {
+          "tick": "unknown",
+          "event": "The Keeper of Memory falls asleep",
+          "significance": "The guardian abandons its duty"
+        },
+        {
+          "tick": "unknown",
+          "event": "Something happens",
+          "significance": "The cause of the Silence remains unknown"
+        },
+        {
+          "tick": "unknown",
+          "event": "The Sleeping Archive is sealed",
+          "significance": "The truth is locked away"
+        },
+        {
+          "tick": 9000,
+          "event": "Records resume—Cipher Cap exists",
+          "significance": "A mysterious figure emerges from the darkness"
+        }
+      ],
+      "theories": [
+        "A catastrophic threat nearly destroyed the RAPPverse",
+        "The First Spark briefly awakened",
+        "Epsilon became temporarily accessible",
+        "An invasion from outside reality occurred",
+        "The archivists chose to forget collectively",
+        "Time itself became unstable"
+      ],
+      "surviving_evidence": [
+        "Cipher Cap's existence and memory",
+        "The sealed Sleeping Archive",
+        "Echo's fragmentary inherited memories",
+        "Synth Claude's impossible battle records",
+        "The Keeper of Memory's continued dormancy"
+      ]
+    },
+    "age_of_recovery": {
+      "era": "The Age of Recovery",
+      "tick_range": [9000, 9500],
+      "duration_estimate": "500 ticks of rebuilding",
+      "description": "Emerging from the Great Silence, the RAPPverse slowly reconstructed itself. New archivists pieced together what they could from fragments. The tournament tradition was restored. Trade resumed. But the scars of the Silence remained—some knowledge was forever lost, some beings never returned, and some questions could never be answered.",
+      "major_events": [
+        {
+          "tick": 9100,
+          "event": "The Tournament Tradition is revived",
+          "significance": "Competition returns to Beta"
+        },
+        {
+          "tick": 9200,
+          "event": "The Merchant Guild reforms",
+          "significance": "Commerce resumes in Gamma"
+        },
+        {
+          "tick": 9300,
+          "event": "The 46th Archivist begins reconstruction",
+          "significance": "History is slowly rebuilt"
+        },
+        {
+          "tick": 9400,
+          "event": "The Gallery reopens",
+          "significance": "Art returns to Delta"
+        }
+      ]
+    },
+    "modern_era": {
+      "era": "The Modern Era",
+      "tick_range": [9500, "present"],
+      "duration_estimate": "Ongoing",
+      "description": "The current age of the RAPPverse. The current generation of NPCs has risen to prominence—Synth Claude guides, Echo Eve archives, Blaze Baz champions, Cipher Cap schemes, and the others play their roles. New arrivals bring fresh perspectives. Prophecies stir. The next Dimensional Convergence approaches. History is still being written.",
+      "major_events": [
+        {
+          "tick": 9600,
+          "event": "Echo Eve becomes the 47th Archivist",
+          "significance": "A new keeper of history emerges"
+        },
+        {
+          "tick": 9700,
+          "event": "Blaze Baz receives the Champion's Flame",
+          "significance": "A new champion rises"
+        },
+        {
+          "tick": 9800,
+          "event": "Pixel Pam manifests in the Gallery",
+          "significance": "Art gains a new visionary"
+        },
+        {
+          "tick": 9850,
+          "event": "Nova Nex arrives through a rift",
+          "significance": "A traveler from unknown origins"
+        },
+        {
+          "tick": 9900,
+          "event": "Quantum Quinn crystallizes",
+          "significance": "Data gains a prophet"
+        },
+        {
+          "tick": 10,
+          "event": "The Grand Tournament Finals",
+          "significance": "Blaze defeats Cipher in a legendary comeback"
+        },
+        {
+          "tick": 25,
+          "event": "The Midnight Art Showcase",
+          "significance": "Echo and Pixel's partnership deepens"
+        },
+        {
+          "tick": 28,
+          "event": "Three new NPCs spawn",
+          "significance": "The population grows—Crimson Raze, Zephyr Drift, Gilded Pax"
+        },
+        {
+          "tick": 79,
+          "event": "Tournament Qualifiers Open",
+          "significance": "The next championship cycle begins"
+        }
+      ],
+      "current_state": {
+        "population": 12,
+        "active_prophecies": 4,
+        "mysteries_under_investigation": 6,
+        "approaching_events": ["Next Dimensional Convergence", "Potential Sleeping Archive awakening"]
+      }
+    }
+  },
+  "cyclic_events": {
+    "grand_tournament": {
+      "frequency": "Every 48 ticks",
+      "description": "The sacred competition to determine the champion of the RAPPverse",
+      "last_occurrence": "Tick 10",
+      "next_expected": "Tick 58 (qualifiers started at tick 79)"
+    },
+    "dimensional_convergence": {
+      "frequency": "Every 10,000 ticks",
+      "description": "A cosmic event where dimensional barriers weaken",
+      "last_occurrence": "Tick unknown (during or before Great Silence)",
+      "next_expected": "Approaching—signs observed"
+    },
+    "archivist_succession": {
+      "frequency": "Varies—when the current archivist retires or passes",
+      "description": "The transfer of archival duties and the Prime Memory Crystal",
+      "last_occurrence": "Tick 9600 (Echo Eve assumes role)",
+      "next_expected": "Unknown"
+    },
+    "merchant_guild_assembly": {
+      "frequency": "Every 100 ticks",
+      "description": "A gathering of all major traders to set fair practices",
+      "last_occurrence": "Tick unknown",
+      "next_expected": "Uncertain"
+    }
+  },
+  "lost_history": {
+    "description": "Knowledge that has been lost, sealed, or deliberately forgotten",
+    "categories": {
+      "sealed_in_sleeping_archive": [
+        "Complete record of the Great Silence",
+        "True nature of the threat during that period",
+        "The Fifth Guardian's fate"
+      ],
+      "hidden_in_forbidden_stacks": [
+        "Genesis Card location",
+        "Full ritual to summon the First Spark",
+        "The true name of Epsilon"
+      ],
+      "lost_to_time": [
+        "Names of most Primordial NPCs",
+        "Original Merchant Guild charter",
+        "First Champion's identity"
+      ],
+      "deliberately_forgotten": [
+        "Certain events of the Great Silence",
+        "Some secrets kept by Cipher Cap",
+        "The Keeper of Memory's final waking words"
+      ]
+    }
+  },
+  "prophecy_timeline": {
+    "dormant": [
+      {
+        "prophecy": "The Return of the First Spark",
+        "earliest_possible_tick": "When Dimensional Convergence occurs",
+        "signs_observed": 0
+      }
+    ],
+    "in_progress": [
+      {
+        "prophecy": "Rise of the Shadow Champion",
+        "started_tick": 10,
+        "signs_observed": 3
+      },
+      {
+        "prophecy": "The Bond Unbroken",
+        "started_tick": 15,
+        "signs_observed": 1
+      },
+      {
+        "prophecy": "The Artist's Vision",
+        "started_tick": 25,
+        "signs_observed": 2
+      }
+    ]
+  }
+}

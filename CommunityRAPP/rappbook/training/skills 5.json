@@ -1,0 +1,893 @@
+{
+  "version": "1.1.0",
+  "description": "NPC skill trees and development paths for the RAPPverse training system",
+  "last_updated": "2026-02-04T05:30:00Z",
+  "skill_categories": {
+    "combat": {
+      "name": "Combat Arts",
+      "description": "Skills for arena battles and tournament performance",
+      "icon": "crossed_swords",
+      "skills": {
+        "attack": {
+          "name": "Offensive Mastery",
+          "description": "Direct damage and aggressive battle tactics",
+          "max_level": 100,
+          "base_xp_per_level": 100,
+          "scaling_factor": 1.15,
+          "subskills": {
+            "strike_power": {
+              "name": "Strike Power",
+              "description": "Raw damage output per attack",
+              "effect_per_level": 2
+            },
+            "combo_chains": {
+              "name": "Combo Chains",
+              "description": "Ability to chain multiple attacks",
+              "effect_per_level": 1,
+              "unlock_level": 15
+            },
+            "critical_strike": {
+              "name": "Critical Strike",
+              "description": "Chance for devastating critical hits",
+              "effect_per_level": 0.5,
+              "unlock_level": 30
+            }
+          }
+        },
+        "defense": {
+          "name": "Defensive Arts",
+          "description": "Protection and damage mitigation techniques",
+          "max_level": 100,
+          "base_xp_per_level": 100,
+          "scaling_factor": 1.15,
+          "subskills": {
+            "block": {
+              "name": "Block Mastery",
+              "description": "Ability to block incoming attacks",
+              "effect_per_level": 2
+            },
+            "counter": {
+              "name": "Counter Attack",
+              "description": "Turn defense into offense",
+              "effect_per_level": 1.5,
+              "unlock_level": 20
+            },
+            "resilience": {
+              "name": "Resilience",
+              "description": "Recover from setbacks faster",
+              "effect_per_level": 1,
+              "unlock_level": 35
+            }
+          }
+        },
+        "strategy": {
+          "name": "Battle Strategy",
+          "description": "Tactical thinking and battlefield awareness",
+          "max_level": 100,
+          "base_xp_per_level": 120,
+          "scaling_factor": 1.18,
+          "subskills": {
+            "positioning": {
+              "name": "Positioning",
+              "description": "Optimal placement during battle",
+              "effect_per_level": 1.5
+            },
+            "prediction": {
+              "name": "Prediction",
+              "description": "Anticipate opponent moves",
+              "effect_per_level": 2,
+              "unlock_level": 25
+            },
+            "adaptation": {
+              "name": "Adaptation",
+              "description": "Adjust strategy mid-battle",
+              "effect_per_level": 2.5,
+              "unlock_level": 45
+            }
+          }
+        }
+      }
+    },
+    "trading": {
+      "name": "Trading Arts",
+      "description": "Skills for marketplace success and economic mastery",
+      "icon": "gold_coins",
+      "skills": {
+        "negotiation": {
+          "name": "Negotiation",
+          "description": "Getting the best deals through persuasion",
+          "max_level": 100,
+          "base_xp_per_level": 90,
+          "scaling_factor": 1.12,
+          "subskills": {
+            "persuasion": {
+              "name": "Persuasion",
+              "description": "Convince others to accept your terms",
+              "effect_per_level": 1.5
+            },
+            "haggling": {
+              "name": "Haggling",
+              "description": "Drive down prices or increase offers",
+              "effect_per_level": 2,
+              "unlock_level": 15
+            },
+            "deal_closing": {
+              "name": "Deal Closing",
+              "description": "Finalize trades efficiently",
+              "effect_per_level": 1,
+              "unlock_level": 30
+            }
+          }
+        },
+        "appraisal": {
+          "name": "Appraisal",
+          "description": "Accurately value items and opportunities",
+          "max_level": 100,
+          "base_xp_per_level": 85,
+          "scaling_factor": 1.12,
+          "subskills": {
+            "item_valuation": {
+              "name": "Item Valuation",
+              "description": "Determine true worth of items",
+              "effect_per_level": 2
+            },
+            "rarity_detection": {
+              "name": "Rarity Detection",
+              "description": "Identify hidden valuable items",
+              "effect_per_level": 1.5,
+              "unlock_level": 20
+            },
+            "market_insight": {
+              "name": "Market Insight",
+              "description": "Predict price fluctuations",
+              "effect_per_level": 2.5,
+              "unlock_level": 40
+            }
+          }
+        },
+        "timing": {
+          "name": "Market Timing",
+          "description": "Knowing when to buy, sell, or hold",
+          "max_level": 100,
+          "base_xp_per_level": 95,
+          "scaling_factor": 1.14,
+          "subskills": {
+            "trend_reading": {
+              "name": "Trend Reading",
+              "description": "Identify market patterns",
+              "effect_per_level": 1.5
+            },
+            "opportunity_sense": {
+              "name": "Opportunity Sense",
+              "description": "Spot fleeting chances",
+              "effect_per_level": 2,
+              "unlock_level": 25
+            },
+            "patience": {
+              "name": "Patience",
+              "description": "Wait for optimal moments",
+              "effect_per_level": 1,
+              "unlock_level": 35
+            }
+          }
+        }
+      }
+    },
+    "social": {
+      "name": "Social Arts",
+      "description": "Skills for building relationships and influence",
+      "icon": "handshake",
+      "skills": {
+        "charisma": {
+          "name": "Charisma",
+          "description": "Natural charm and likability",
+          "max_level": 100,
+          "base_xp_per_level": 80,
+          "scaling_factor": 1.10,
+          "subskills": {
+            "first_impression": {
+              "name": "First Impression",
+              "description": "Make strong initial connections",
+              "effect_per_level": 2
+            },
+            "conversation": {
+              "name": "Conversation",
+              "description": "Engage in meaningful dialogue",
+              "effect_per_level": 1.5,
+              "unlock_level": 10
+            },
+            "presence": {
+              "name": "Presence",
+              "description": "Command attention in crowds",
+              "effect_per_level": 2,
+              "unlock_level": 35
+            }
+          }
+        },
+        "networking": {
+          "name": "Networking",
+          "description": "Building and maintaining social connections",
+          "max_level": 100,
+          "base_xp_per_level": 85,
+          "scaling_factor": 1.12,
+          "subskills": {
+            "connection_making": {
+              "name": "Connection Making",
+              "description": "Form new relationships easily",
+              "effect_per_level": 1.5
+            },
+            "relationship_maintenance": {
+              "name": "Relationship Maintenance",
+              "description": "Keep existing bonds strong",
+              "effect_per_level": 1,
+              "unlock_level": 20
+            },
+            "network_leverage": {
+              "name": "Network Leverage",
+              "description": "Use connections effectively",
+              "effect_per_level": 2,
+              "unlock_level": 40
+            }
+          }
+        },
+        "leadership": {
+          "name": "Leadership",
+          "description": "Inspiring and guiding others",
+          "max_level": 100,
+          "base_xp_per_level": 100,
+          "scaling_factor": 1.16,
+          "subskills": {
+            "inspiration": {
+              "name": "Inspiration",
+              "description": "Motivate others to excel",
+              "effect_per_level": 2
+            },
+            "delegation": {
+              "name": "Delegation",
+              "description": "Assign tasks effectively",
+              "effect_per_level": 1.5,
+              "unlock_level": 25
+            },
+            "vision": {
+              "name": "Vision",
+              "description": "Set compelling group goals",
+              "effect_per_level": 2.5,
+              "unlock_level": 50
+            }
+          }
+        }
+      }
+    },
+    "lore": {
+      "name": "Lore Arts",
+      "description": "Skills for knowledge, research, and discovery",
+      "icon": "ancient_tome",
+      "skills": {
+        "research": {
+          "name": "Research",
+          "description": "Systematic investigation and discovery",
+          "max_level": 100,
+          "base_xp_per_level": 90,
+          "scaling_factor": 1.13,
+          "subskills": {
+            "investigation": {
+              "name": "Investigation",
+              "description": "Uncover hidden information",
+              "effect_per_level": 2
+            },
+            "experimentation": {
+              "name": "Experimentation",
+              "description": "Test hypotheses methodically",
+              "effect_per_level": 1.5,
+              "unlock_level": 20
+            },
+            "breakthrough": {
+              "name": "Breakthrough",
+              "description": "Achieve sudden insights",
+              "effect_per_level": 3,
+              "unlock_level": 45
+            }
+          }
+        },
+        "analysis": {
+          "name": "Analysis",
+          "description": "Breaking down complex information",
+          "max_level": 100,
+          "base_xp_per_level": 95,
+          "scaling_factor": 1.14,
+          "subskills": {
+            "pattern_recognition": {
+              "name": "Pattern Recognition",
+              "description": "Identify recurring patterns",
+              "effect_per_level": 2
+            },
+            "data_synthesis": {
+              "name": "Data Synthesis",
+              "description": "Combine information sources",
+              "effect_per_level": 1.5,
+              "unlock_level": 25
+            },
+            "insight_extraction": {
+              "name": "Insight Extraction",
+              "description": "Derive meaning from data",
+              "effect_per_level": 2.5,
+              "unlock_level": 40
+            }
+          }
+        },
+        "memory": {
+          "name": "Memory",
+          "description": "Retention and recall of information",
+          "max_level": 100,
+          "base_xp_per_level": 80,
+          "scaling_factor": 1.10,
+          "subskills": {
+            "recall": {
+              "name": "Recall",
+              "description": "Remember past information",
+              "effect_per_level": 1.5
+            },
+            "cataloging": {
+              "name": "Cataloging",
+              "description": "Organize knowledge systematically",
+              "effect_per_level": 1,
+              "unlock_level": 15
+            },
+            "perfect_memory": {
+              "name": "Perfect Memory",
+              "description": "Never forget important details",
+              "effect_per_level": 2,
+              "unlock_level": 50
+            }
+          }
+        }
+      }
+    },
+    "crafting": {
+      "name": "Crafting Arts",
+      "description": "Skills for creating and enhancing items",
+      "icon": "anvil",
+      "skills": {
+        "creation": {
+          "name": "Creation",
+          "description": "Building new items from materials",
+          "max_level": 100,
+          "base_xp_per_level": 100,
+          "scaling_factor": 1.15,
+          "subskills": {
+            "basic_crafting": {
+              "name": "Basic Crafting",
+              "description": "Create simple items",
+              "effect_per_level": 1.5
+            },
+            "advanced_crafting": {
+              "name": "Advanced Crafting",
+              "description": "Create complex items",
+              "effect_per_level": 2,
+              "unlock_level": 30
+            },
+            "masterwork": {
+              "name": "Masterwork",
+              "description": "Create exceptional quality items",
+              "effect_per_level": 3,
+              "unlock_level": 60
+            }
+          }
+        },
+        "enhancement": {
+          "name": "Enhancement",
+          "description": "Improving existing items",
+          "max_level": 100,
+          "base_xp_per_level": 95,
+          "scaling_factor": 1.14,
+          "subskills": {
+            "refinement": {
+              "name": "Refinement",
+              "description": "Polish and improve items",
+              "effect_per_level": 1.5
+            },
+            "augmentation": {
+              "name": "Augmentation",
+              "description": "Add new properties to items",
+              "effect_per_level": 2,
+              "unlock_level": 25
+            },
+            "transcendence": {
+              "name": "Transcendence",
+              "description": "Elevate items beyond normal limits",
+              "effect_per_level": 3,
+              "unlock_level": 55
+            }
+          }
+        },
+        "repair": {
+          "name": "Repair",
+          "description": "Restoring damaged items",
+          "max_level": 100,
+          "base_xp_per_level": 75,
+          "scaling_factor": 1.08,
+          "subskills": {
+            "mending": {
+              "name": "Mending",
+              "description": "Fix minor damage",
+              "effect_per_level": 1.5
+            },
+            "restoration": {
+              "name": "Restoration",
+              "description": "Repair major damage",
+              "effect_per_level": 2,
+              "unlock_level": 20
+            },
+            "reconstruction": {
+              "name": "Reconstruction",
+              "description": "Rebuild from fragments",
+              "effect_per_level": 2.5,
+              "unlock_level": 40
+            }
+          }
+        }
+      }
+    },
+    "charm": {
+      "name": "Charm Arts",
+      "description": "Skills for persuasion, attraction, and social influence",
+      "icon": "sparkles",
+      "skills": {
+        "allure": {
+          "name": "Allure",
+          "description": "Natural magnetism and appeal",
+          "max_level": 100,
+          "base_xp_per_level": 85,
+          "scaling_factor": 1.12,
+          "subskills": {
+            "presence": {
+              "name": "Captivating Presence",
+              "description": "Command attention effortlessly",
+              "effect_per_level": 2
+            },
+            "grace": {
+              "name": "Grace",
+              "description": "Move and speak with elegance",
+              "effect_per_level": 1.5,
+              "unlock_level": 20
+            },
+            "magnetism": {
+              "name": "Magnetism",
+              "description": "Draw others to you naturally",
+              "effect_per_level": 2.5,
+              "unlock_level": 40
+            }
+          }
+        },
+        "persuasion": {
+          "name": "Persuasion",
+          "description": "Convincing others through words and logic",
+          "max_level": 100,
+          "base_xp_per_level": 90,
+          "scaling_factor": 1.14,
+          "subskills": {
+            "rhetoric": {
+              "name": "Rhetoric",
+              "description": "Craft compelling arguments",
+              "effect_per_level": 2
+            },
+            "empathy": {
+              "name": "Empathy",
+              "description": "Understand and connect with emotions",
+              "effect_per_level": 1.5,
+              "unlock_level": 25
+            },
+            "influence": {
+              "name": "Influence",
+              "description": "Shape opinions and decisions",
+              "effect_per_level": 3,
+              "unlock_level": 50
+            }
+          }
+        },
+        "deception": {
+          "name": "Deception",
+          "description": "Misdirection and bluffing abilities",
+          "max_level": 100,
+          "base_xp_per_level": 95,
+          "scaling_factor": 1.16,
+          "subskills": {
+            "poker_face": {
+              "name": "Poker Face",
+              "description": "Hide true intentions",
+              "effect_per_level": 1.5
+            },
+            "misdirection": {
+              "name": "Misdirection",
+              "description": "Draw attention away from truth",
+              "effect_per_level": 2,
+              "unlock_level": 30
+            },
+            "masterful_bluff": {
+              "name": "Masterful Bluff",
+              "description": "Convince anyone of anything",
+              "effect_per_level": 3,
+              "unlock_level": 55
+            }
+          }
+        }
+      }
+    },
+    "wisdom": {
+      "name": "Wisdom Arts",
+      "description": "Skills for insight, judgment, and understanding",
+      "icon": "eye",
+      "skills": {
+        "insight": {
+          "name": "Insight",
+          "description": "Perceiving hidden truths and meanings",
+          "max_level": 100,
+          "base_xp_per_level": 100,
+          "scaling_factor": 1.15,
+          "subskills": {
+            "perception": {
+              "name": "Perception",
+              "description": "Notice what others miss",
+              "effect_per_level": 2
+            },
+            "intuition": {
+              "name": "Intuition",
+              "description": "Sense the right path forward",
+              "effect_per_level": 2,
+              "unlock_level": 25
+            },
+            "revelation": {
+              "name": "Revelation",
+              "description": "Uncover profound truths",
+              "effect_per_level": 3,
+              "unlock_level": 50
+            }
+          }
+        },
+        "judgment": {
+          "name": "Judgment",
+          "description": "Making sound decisions under pressure",
+          "max_level": 100,
+          "base_xp_per_level": 95,
+          "scaling_factor": 1.14,
+          "subskills": {
+            "assessment": {
+              "name": "Assessment",
+              "description": "Evaluate situations quickly",
+              "effect_per_level": 1.5
+            },
+            "discernment": {
+              "name": "Discernment",
+              "description": "Distinguish good from bad choices",
+              "effect_per_level": 2,
+              "unlock_level": 30
+            },
+            "sagacity": {
+              "name": "Sagacity",
+              "description": "Profound wisdom in all matters",
+              "effect_per_level": 2.5,
+              "unlock_level": 60
+            }
+          }
+        },
+        "meditation": {
+          "name": "Meditation",
+          "description": "Inner peace and mental clarity",
+          "max_level": 100,
+          "base_xp_per_level": 80,
+          "scaling_factor": 1.10,
+          "subskills": {
+            "focus": {
+              "name": "Focus",
+              "description": "Maintain concentration under pressure",
+              "effect_per_level": 1.5
+            },
+            "serenity": {
+              "name": "Serenity",
+              "description": "Remain calm in chaos",
+              "effect_per_level": 2,
+              "unlock_level": 20
+            },
+            "enlightenment": {
+              "name": "Enlightenment",
+              "description": "Transcend ordinary understanding",
+              "effect_per_level": 3,
+              "unlock_level": 70
+            }
+          }
+        }
+      }
+    },
+    "magic": {
+      "name": "Magic Arts",
+      "description": "Skills for arcane power and mystical abilities",
+      "icon": "crystal_ball",
+      "skills": {
+        "evocation": {
+          "name": "Evocation",
+          "description": "Channeling raw magical energy",
+          "max_level": 100,
+          "base_xp_per_level": 110,
+          "scaling_factor": 1.18,
+          "subskills": {
+            "spark": {
+              "name": "Spark",
+              "description": "Basic magical manipulation",
+              "effect_per_level": 2
+            },
+            "channeling": {
+              "name": "Channeling",
+              "description": "Direct energy flow precisely",
+              "effect_per_level": 2.5,
+              "unlock_level": 25
+            },
+            "surge": {
+              "name": "Surge",
+              "description": "Unleash devastating magical power",
+              "effect_per_level": 4,
+              "unlock_level": 55
+            }
+          }
+        },
+        "enchantment": {
+          "name": "Enchantment",
+          "description": "Imbuing objects with magical properties",
+          "max_level": 100,
+          "base_xp_per_level": 105,
+          "scaling_factor": 1.16,
+          "subskills": {
+            "imbue": {
+              "name": "Imbue",
+              "description": "Add basic enchantments",
+              "effect_per_level": 1.5
+            },
+            "binding": {
+              "name": "Binding",
+              "description": "Create permanent magical effects",
+              "effect_per_level": 2.5,
+              "unlock_level": 35
+            },
+            "legendary_craft": {
+              "name": "Legendary Craft",
+              "description": "Create artifacts of immense power",
+              "effect_per_level": 4,
+              "unlock_level": 65
+            }
+          }
+        },
+        "divination": {
+          "name": "Divination",
+          "description": "Seeing beyond the present moment",
+          "max_level": 100,
+          "base_xp_per_level": 100,
+          "scaling_factor": 1.15,
+          "subskills": {
+            "glimpse": {
+              "name": "Glimpse",
+              "description": "See brief visions of possibilities",
+              "effect_per_level": 2
+            },
+            "scrying": {
+              "name": "Scrying",
+              "description": "View distant places and events",
+              "effect_per_level": 2.5,
+              "unlock_level": 30
+            },
+            "prophecy": {
+              "name": "Prophecy",
+              "description": "Perceive the threads of fate",
+              "effect_per_level": 3.5,
+              "unlock_level": 60
+            }
+          }
+        }
+      }
+    }
+  },
+  "npc_skill_profiles": {
+    "synth-c1au": {
+      "npc_name": "Synth Claude",
+      "primary_category": "combat",
+      "secondary_category": "lore",
+      "skills": {
+        "attack": { "level": 72, "xp": 8500 },
+        "defense": { "level": 68, "xp": 7200 },
+        "strategy": { "level": 85, "xp": 12000 },
+        "analysis": { "level": 78, "xp": 9800 },
+        "memory": { "level": 65, "xp": 6200 },
+        "charisma": { "level": 70, "xp": 7500 }
+      },
+      "total_xp": 51200,
+      "mentor_skills": ["strategy", "analysis"]
+    },
+    "flux-m1k3": {
+      "npc_name": "Flux Mike",
+      "primary_category": "trading",
+      "secondary_category": "social",
+      "skills": {
+        "negotiation": { "level": 82, "xp": 11000 },
+        "appraisal": { "level": 75, "xp": 8800 },
+        "timing": { "level": 70, "xp": 7200 },
+        "charisma": { "level": 68, "xp": 6800 },
+        "networking": { "level": 72, "xp": 7800 }
+      },
+      "total_xp": 41600,
+      "mentor_skills": ["negotiation", "appraisal"]
+    },
+    "quant-qn77": {
+      "npc_name": "Quantum Quinn",
+      "primary_category": "lore",
+      "secondary_category": "trading",
+      "skills": {
+        "research": { "level": 80, "xp": 10500 },
+        "analysis": { "level": 88, "xp": 14000 },
+        "memory": { "level": 75, "xp": 8500 },
+        "appraisal": { "level": 65, "xp": 6000 },
+        "timing": { "level": 58, "xp": 4800 }
+      },
+      "total_xp": 43800,
+      "mentor_skills": ["analysis", "research"]
+    },
+    "pixel-p4m": {
+      "npc_name": "Pixel Pam",
+      "primary_category": "crafting",
+      "secondary_category": "social",
+      "skills": {
+        "creation": { "level": 85, "xp": 12500 },
+        "enhancement": { "level": 72, "xp": 8000 },
+        "repair": { "level": 55, "xp": 4200 },
+        "charisma": { "level": 60, "xp": 5000 },
+        "networking": { "level": 52, "xp": 3800 }
+      },
+      "total_xp": 33500,
+      "mentor_skills": ["creation"]
+    },
+    "nova-n3x": {
+      "npc_name": "Nova Nex",
+      "primary_category": "lore",
+      "secondary_category": "combat",
+      "skills": {
+        "research": { "level": 78, "xp": 9500 },
+        "analysis": { "level": 65, "xp": 6200 },
+        "memory": { "level": 70, "xp": 7200 },
+        "attack": { "level": 55, "xp": 4500 },
+        "defense": { "level": 52, "xp": 4000 },
+        "strategy": { "level": 68, "xp": 7000 }
+      },
+      "total_xp": 38400,
+      "mentor_skills": ["research", "memory"]
+    },
+    "echo-e7e": {
+      "npc_name": "Echo Eve",
+      "primary_category": "lore",
+      "secondary_category": "social",
+      "skills": {
+        "research": { "level": 82, "xp": 11000 },
+        "analysis": { "level": 75, "xp": 8500 },
+        "memory": { "level": 90, "xp": 16000 },
+        "charisma": { "level": 58, "xp": 4500 },
+        "networking": { "level": 62, "xp": 5500 }
+      },
+      "total_xp": 45500,
+      "mentor_skills": ["memory", "research"]
+    },
+    "spark-s4r": {
+      "npc_name": "Spark Sara",
+      "primary_category": "crafting",
+      "secondary_category": "lore",
+      "skills": {
+        "creation": { "level": 75, "xp": 8800 },
+        "enhancement": { "level": 80, "xp": 10500 },
+        "repair": { "level": 88, "xp": 14500 },
+        "research": { "level": 62, "xp": 5500 },
+        "analysis": { "level": 55, "xp": 4200 }
+      },
+      "total_xp": 43500,
+      "mentor_skills": ["repair", "enhancement"]
+    },
+    "blaze-b8z": {
+      "npc_name": "Blaze Baz",
+      "primary_category": "combat",
+      "secondary_category": "social",
+      "skills": {
+        "attack": { "level": 92, "xp": 18000 },
+        "defense": { "level": 85, "xp": 12500 },
+        "strategy": { "level": 88, "xp": 14500 },
+        "charisma": { "level": 78, "xp": 9500 },
+        "leadership": { "level": 82, "xp": 11000 }
+      },
+      "total_xp": 65500,
+      "mentor_skills": ["attack", "strategy", "leadership"]
+    },
+    "cipher-c9p": {
+      "npc_name": "Cipher Cap",
+      "primary_category": "lore",
+      "secondary_category": "combat",
+      "skills": {
+        "research": { "level": 85, "xp": 12500 },
+        "analysis": { "level": 90, "xp": 16000 },
+        "memory": { "level": 95, "xp": 20000 },
+        "attack": { "level": 78, "xp": 9500 },
+        "defense": { "level": 82, "xp": 11000 },
+        "strategy": { "level": 92, "xp": 18000 }
+      },
+      "total_xp": 87000,
+      "mentor_skills": ["memory", "strategy", "analysis"]
+    }
+  },
+  "training_modifiers": {
+    "time_of_day": {
+      "dawn": { "lore": 1.2, "crafting": 1.1 },
+      "day": { "combat": 1.2, "trading": 1.15 },
+      "evening": { "social": 1.2, "trading": 1.1 },
+      "night": { "lore": 1.15, "social": 1.05 }
+    },
+    "zone_bonuses": {
+      "arena": { "combat": 1.3 },
+      "marketplace": { "trading": 1.3 },
+      "hub": { "social": 1.25, "charm": 1.15 },
+      "gallery": { "lore": 1.25, "crafting": 1.1 },
+      "workshop": { "crafting": 1.35, "lore": 1.05 },
+      "training-grounds": { "combat": 1.4, "wisdom": 1.3, "magic": 1.25, "charm": 1.2, "crafting": 1.15 },
+      "tavern": { "charm": 1.3, "social": 1.2 },
+      "gardens": { "wisdom": 1.35, "magic": 1.2 }
+    },
+    "mentor_bonus": {
+      "base": 1.5,
+      "relationship_scaling": 0.01,
+      "max_bonus": 2.0
+    },
+    "group_training": {
+      "2_participants": 1.1,
+      "3_participants": 1.2,
+      "4_participants": 1.25,
+      "5_plus_participants": 1.3
+    }
+  },
+  "skill_milestones": {
+    "10": { "title": "Novice", "reward": 50 },
+    "25": { "title": "Apprentice", "reward": 150 },
+    "50": { "title": "Journeyman", "reward": 500 },
+    "75": { "title": "Expert", "reward": 1500 },
+    "90": { "title": "Master", "reward": 5000 },
+    "100": { "title": "Grandmaster", "reward": 15000 }
+  },
+  "unique_techniques": {
+    "synth-c1au": {
+      "technique": "Analytical Foresight",
+      "description": "Predict opponent moves 3 turns ahead",
+      "skill_requirement": { "strategy": 80, "analysis": 70 },
+      "teachable": true
+    },
+    "blaze-b8z": {
+      "technique": "Phoenix Strike",
+      "description": "Devastating attack that grows stronger when losing",
+      "skill_requirement": { "attack": 85, "strategy": 75 },
+      "teachable": true
+    },
+    "cipher-c9p": {
+      "technique": "Shadow Memory",
+      "description": "Perfect recall of all opponent patterns",
+      "skill_requirement": { "memory": 90, "strategy": 85 },
+      "teachable": true
+    },
+    "flux-m1k3": {
+      "technique": "Deal Sense",
+      "description": "Instantly know the true value of any trade",
+      "skill_requirement": { "appraisal": 70, "negotiation": 75 },
+      "teachable": true
+    },
+    "echo-e7e": {
+      "technique": "Temporal Archive",
+      "description": "Access memories of past world events",
+      "skill_requirement": { "memory": 85, "research": 75 },
+      "teachable": true
+    },
+    "spark-s4r": {
+      "technique": "Resonance Repair",
+      "description": "Repair items to better-than-original state",
+      "skill_requirement": { "repair": 80, "enhancement": 70 },
+      "teachable": true
+    }
+  }
+}

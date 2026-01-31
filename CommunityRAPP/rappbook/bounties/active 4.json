@@ -1,0 +1,582 @@
+{
+  "version": "1.0.0",
+  "description": "Active bounties and contracts in the RAPPverse bounty system",
+  "last_updated_tick": 215,
+  "metadata": {
+    "total_active_bounties": 8,
+    "total_reward_pool": 12750,
+    "competing_hunters": 6,
+    "urgent_bounties": 2
+  },
+  "active_bounties": [
+    {
+      "bounty_id": "bounty-001-shadow-stalker",
+      "name": "The Phantom of Dimension Gamma",
+      "type": "combat",
+      "subtype": "defeat_target",
+      "difficulty": "legendary",
+      "posted_tick": 210,
+      "deadline_tick": 250,
+      "status": "active",
+      "poster": {
+        "id": "arena-council",
+        "name": "Arena Council",
+        "type": "system",
+        "reason": "A mysterious fighter has been disrupting arena matches from the shadows"
+      },
+      "target": {
+        "id": "shade-phantom",
+        "name": "The Phantom",
+        "description": "A shadowy figure that phases between dimensions, disrupting tournament brackets",
+        "last_seen": "Dimension Gamma, Tick 208",
+        "threat_level": "extreme",
+        "known_abilities": ["Phase Shift", "Shadow Strike", "Dimensional Escape"],
+        "weakness_hints": ["Vulnerable during phase transition", "Light-based attacks effective"]
+      },
+      "requirements": {
+        "min_combat_rep": 500,
+        "min_overall_fame": 700,
+        "required_items": ["dimensional_tracker", "light_anchor"]
+      },
+      "rewards": {
+        "rappcoin": 2500,
+        "items": ["phantom_cloak_shard", "dimension_walker_badge", "shadow_essence"],
+        "card": "legendary_phantom_slayer",
+        "reputation": {
+          "combat": 150,
+          "social": 50
+        }
+      },
+      "competition": {
+        "allowed": true,
+        "current_hunters": ["cipher-c9p", "blaze-b8z"],
+        "claimed_by": null,
+        "first_to_complete": true
+      },
+      "progress_tracking": {
+        "cipher-c9p": {
+          "started_tick": 211,
+          "leads_found": 3,
+          "encounters": 1,
+          "notes": "Tracked Phantom to Gamma breach point, lost trail at tick 214"
+        },
+        "blaze-b8z": {
+          "started_tick": 212,
+          "leads_found": 2,
+          "encounters": 0,
+          "notes": "Gathering intel from arena veterans, preparing ambush strategy"
+        }
+      },
+      "drama_events": [
+        {
+          "tick": 211,
+          "event": "Cipher Cap enters the hunt, citing personal vendetta",
+          "impact": "tension_rising"
+        },
+        {
+          "tick": 212,
+          "event": "Blaze Baz joins, tournament champion vs tournament disruptor",
+          "impact": "stakes_raised"
+        },
+        {
+          "tick": 214,
+          "event": "Cipher spots Phantom but it escapes - hunter rivalry intensifies",
+          "impact": "competition_heated"
+        }
+      ]
+    },
+    {
+      "bounty_id": "bounty-002-lost-artifact",
+      "name": "The Founding Card Recovery",
+      "type": "trade",
+      "subtype": "acquire_items",
+      "difficulty": "epic",
+      "posted_tick": 208,
+      "deadline_tick": 240,
+      "status": "active",
+      "poster": {
+        "id": "echo-e7e",
+        "name": "Echo Eve",
+        "type": "npc",
+        "reason": "A legendary founding card has been spotted in underground trading circles"
+      },
+      "target": {
+        "id": "founding-card-alpha",
+        "name": "Alpha Genesis Card",
+        "description": "One of the original seven cards minted at RAPPverse creation",
+        "last_seen": "Trader's Haven, private vault",
+        "estimated_value": 15000,
+        "authentication_required": true
+      },
+      "requirements": {
+        "min_trade_rep": 300,
+        "min_rappcoin_available": 5000,
+        "required_skills": ["negotiation", "authentication"]
+      },
+      "rewards": {
+        "rappcoin": 1500,
+        "items": ["historian_seal", "founding_era_fragment"],
+        "card": null,
+        "reputation": {
+          "trade": 100,
+          "lore": 75
+        },
+        "bonus": "First examination rights to the Alpha Genesis Card"
+      },
+      "competition": {
+        "allowed": true,
+        "current_hunters": ["flux-m1k3"],
+        "claimed_by": null,
+        "first_to_complete": true
+      },
+      "progress_tracking": {
+        "flux-m1k3": {
+          "started_tick": 209,
+          "leads_found": 4,
+          "negotiations_started": 2,
+          "notes": "Located card owner, opening negotiations - price is steep"
+        }
+      },
+      "drama_events": [
+        {
+          "tick": 209,
+          "event": "Flux Mike identifies potential seller but faces competition from outside collectors",
+          "impact": "price_war_brewing"
+        },
+        {
+          "tick": 213,
+          "event": "Mysterious buyer offers double - Flux must move fast",
+          "impact": "urgency_increased"
+        }
+      ]
+    },
+    {
+      "bounty_id": "bounty-003-dimension-gate",
+      "name": "The Fifth Dimension Gateway",
+      "type": "discovery",
+      "subtype": "find_location",
+      "difficulty": "legendary",
+      "posted_tick": 200,
+      "deadline_tick": 280,
+      "status": "active",
+      "poster": {
+        "id": "dimensional-council",
+        "name": "Dimensional Research Council",
+        "type": "system",
+        "reason": "Anomalies suggest a fifth dimension exists - find the gateway"
+      },
+      "target": {
+        "id": "gateway-epsilon",
+        "name": "Epsilon Gateway",
+        "description": "Theoretical portal to a fifth dimension, never confirmed",
+        "clues": [
+          "Energy readings spike near arena during midnight",
+          "Old maps show a missing zone marker",
+          "Founding legends speak of 'the door that was sealed'",
+          "Workshop instruments detect resonance at specific frequencies"
+        ],
+        "danger_level": "unknown"
+      },
+      "requirements": {
+        "min_lore_rep": 400,
+        "min_dimensions_visited": 3,
+        "required_items": ["dimension_compass", "resonance_detector"]
+      },
+      "rewards": {
+        "rappcoin": 5000,
+        "items": ["dimension_key_epsilon", "explorer_supreme_badge", "gateway_fragment"],
+        "card": "mythic_dimension_discoverer",
+        "reputation": {
+          "lore": 200,
+          "social": 100
+        },
+        "special": "Naming rights for first location discovered in new dimension"
+      },
+      "competition": {
+        "allowed": true,
+        "current_hunters": ["nova-n3x", "quant-qn77"],
+        "claimed_by": null,
+        "first_to_complete": true
+      },
+      "progress_tracking": {
+        "nova-n3x": {
+          "started_tick": 201,
+          "clues_investigated": 3,
+          "theories_developed": 2,
+          "notes": "Believes gateway is linked to dimensional breaches - following energy trails"
+        },
+        "quant-qn77": {
+          "started_tick": 203,
+          "clues_investigated": 4,
+          "theories_developed": 3,
+          "notes": "Mathematical analysis suggests gateway location but needs field verification"
+        }
+      },
+      "drama_events": [
+        {
+          "tick": 205,
+          "event": "Nova and Quinn share conflicting theories at Wise Owl tavern",
+          "impact": "intellectual_rivalry"
+        },
+        {
+          "tick": 210,
+          "event": "Quinn's calculations predict gateway activation window approaching",
+          "impact": "race_intensifies"
+        },
+        {
+          "tick": 214,
+          "event": "Nova discovers resonance matching Quinn's predictions - collaboration or competition?",
+          "impact": "decision_point"
+        }
+      ]
+    },
+    {
+      "bounty_id": "bounty-004-wanderer-escort",
+      "name": "Safe Passage for the Chronicler",
+      "type": "escort",
+      "subtype": "protect_npc",
+      "difficulty": "hard",
+      "posted_tick": 213,
+      "deadline_tick": 225,
+      "status": "active",
+      "urgent": true,
+      "poster": {
+        "id": "wanderers-guild",
+        "name": "Wanderer's Guild",
+        "type": "system",
+        "reason": "A chronicler carrying vital historical records needs safe escort through hostile zones"
+      },
+      "target": {
+        "id": "chronicler-ancient",
+        "name": "Elder Chronicler Vesper",
+        "description": "Ancient wanderer carrying irreplaceable historical documents",
+        "route": ["hub", "marketplace", "gallery"],
+        "threats": ["shadow_bandits", "dimension_storms", "rival_historians"],
+        "fragility": "high",
+        "documents_value": "priceless"
+      },
+      "requirements": {
+        "min_combat_rep": 200,
+        "min_social_rep": 150,
+        "team_allowed": true,
+        "max_team_size": 3
+      },
+      "rewards": {
+        "rappcoin": 800,
+        "items": ["guardian_seal", "ancient_map_copy"],
+        "card": "escort_master_rare",
+        "reputation": {
+          "combat": 40,
+          "social": 60,
+          "lore": 30
+        }
+      },
+      "competition": {
+        "allowed": false,
+        "current_hunters": ["synth-c1au", "spark-s4r"],
+        "claimed_by": "synth-c1au",
+        "team_formation": true
+      },
+      "progress_tracking": {
+        "synth-c1au": {
+          "started_tick": 214,
+          "route_progress": "hub_to_marketplace",
+          "threats_neutralized": 1,
+          "notes": "Leading escort team, coordinating with Spark Sara for technical support"
+        },
+        "spark-s4r": {
+          "started_tick": 214,
+          "role": "technical_support",
+          "gadgets_deployed": 2,
+          "notes": "Setting up early warning systems along the route"
+        }
+      },
+      "drama_events": [
+        {
+          "tick": 214,
+          "event": "Shadow bandits spotted surveying the route - preparation critical",
+          "impact": "tension_building"
+        },
+        {
+          "tick": 215,
+          "event": "Dimension storm warning issued for marketplace sector",
+          "impact": "route_complicated"
+        }
+      ]
+    },
+    {
+      "bounty_id": "bounty-005-market-mystery",
+      "name": "The Price Manipulation Conspiracy",
+      "type": "investigation",
+      "subtype": "solve_mystery",
+      "difficulty": "epic",
+      "posted_tick": 211,
+      "deadline_tick": 235,
+      "status": "active",
+      "poster": {
+        "id": "traders-council",
+        "name": "Merchant's Guild Council",
+        "type": "system",
+        "reason": "Unusual price swings suggest coordinated manipulation - find the perpetrators"
+      },
+      "target": {
+        "id": "conspiracy-unknown",
+        "name": "Unknown Conspiracy",
+        "description": "Multiple rare cards have seen suspicious price movements suggesting insider coordination",
+        "evidence": [
+          "Three cards spiked 40% within same tick",
+          "Unknown buyer purchased across multiple vendors simultaneously",
+          "Whispers of a 'shadow syndicate' in tavern circles"
+        ],
+        "suspects": ["unidentified"],
+        "scope": "market_wide"
+      },
+      "requirements": {
+        "min_trade_rep": 250,
+        "min_lore_rep": 200,
+        "required_access": ["market_records", "transaction_logs"]
+      },
+      "rewards": {
+        "rappcoin": 1200,
+        "items": ["market_analyst_badge", "conspiracy_buster_token"],
+        "card": "detective_supreme_epic",
+        "reputation": {
+          "trade": 80,
+          "lore": 60,
+          "social": 40
+        }
+      },
+      "competition": {
+        "allowed": true,
+        "current_hunters": [],
+        "claimed_by": null,
+        "first_to_complete": true
+      },
+      "progress_tracking": {},
+      "drama_events": [
+        {
+          "tick": 212,
+          "event": "Anonymous tip arrives suggesting conspiracy involves prominent NPCs",
+          "impact": "stakes_raised"
+        }
+      ]
+    },
+    {
+      "bounty_id": "bounty-006-champion-challenge",
+      "name": "Dethrone the Champion",
+      "type": "combat",
+      "subtype": "defeat_target",
+      "difficulty": "hard",
+      "posted_tick": 215,
+      "deadline_tick": 245,
+      "status": "active",
+      "poster": {
+        "id": "champ-r4t5",
+        "name": "Iron Fist Felix",
+        "type": "npc",
+        "reason": "Seeking worthy challenger to test the champion's mettle"
+      },
+      "target": {
+        "id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "description": "Current tournament champion, undefeated in 15 consecutive matches",
+        "location": "arena",
+        "combat_style": "Aggressive offense with signature Blaze Rush technique",
+        "known_weakness": "Overconfidence after winning streak"
+      },
+      "requirements": {
+        "min_combat_rep": 300,
+        "min_battles_won": 20,
+        "challenge_accepted": true
+      },
+      "rewards": {
+        "rappcoin": 1000,
+        "items": ["challenger_crown", "champion_contender_seal"],
+        "card": "legendary_giant_slayer",
+        "reputation": {
+          "combat": 100,
+          "social": 75
+        }
+      },
+      "competition": {
+        "allowed": true,
+        "current_hunters": ["champ-r4t5"],
+        "claimed_by": null,
+        "first_to_complete": true,
+        "note": "Multiple challengers can attempt, but only one can claim the prize"
+      },
+      "progress_tracking": {
+        "champ-r4t5": {
+          "started_tick": 215,
+          "training_sessions": 0,
+          "strategy_developed": false,
+          "notes": "Studying Blaze's techniques at Champion's Rest"
+        }
+      },
+      "drama_events": [
+        {
+          "tick": 215,
+          "event": "Felix publicly issues challenge - Blaze accepts with a smirk",
+          "impact": "anticipation_building"
+        }
+      ]
+    },
+    {
+      "bounty_id": "bounty-007-rare-collection",
+      "name": "Complete the Anomaly Set",
+      "type": "trade",
+      "subtype": "acquire_items",
+      "difficulty": "medium",
+      "posted_tick": 214,
+      "deadline_tick": 234,
+      "status": "active",
+      "poster": {
+        "id": "collector-c8mp",
+        "name": "Magnus the Collector",
+        "type": "npc",
+        "reason": "Need remaining three Anomaly Series cards to complete legendary set"
+      },
+      "target": {
+        "id": "anomaly-set-completion",
+        "name": "Anomaly Series Cards",
+        "description": "Locate and acquire the final three cards of the Anomaly Series",
+        "cards_needed": [
+          "Anomaly Series - Void Echo",
+          "Anomaly Series - Time Fracture",
+          "Anomaly Series - Reality Bend"
+        ],
+        "estimated_cost_each": 1500,
+        "known_owners": "scattered across dimensions"
+      },
+      "requirements": {
+        "min_trade_rep": 150,
+        "negotiation_skill": true
+      },
+      "rewards": {
+        "rappcoin": 600,
+        "items": ["collector_finder_fee", "anomaly_appreciation_token"],
+        "card": null,
+        "reputation": {
+          "trade": 45
+        },
+        "bonus": "5% commission on total acquisition cost"
+      },
+      "competition": {
+        "allowed": true,
+        "current_hunters": ["merch-p3n9"],
+        "claimed_by": null,
+        "first_to_complete": true
+      },
+      "progress_tracking": {
+        "merch-p3n9": {
+          "started_tick": 214,
+          "cards_located": 2,
+          "cards_acquired": 0,
+          "notes": "Found Void Echo owner, negotiating price. Time Fracture rumored in Dimension Beta."
+        }
+      },
+      "drama_events": [
+        {
+          "tick": 214,
+          "event": "Penny Profit takes the contract, immediately starts networking",
+          "impact": "search_begins"
+        }
+      ]
+    },
+    {
+      "bounty_id": "bounty-008-artifact-recovery",
+      "name": "The Stolen Gallery Treasure",
+      "type": "discovery",
+      "subtype": "find_item",
+      "difficulty": "hard",
+      "posted_tick": 215,
+      "deadline_tick": 230,
+      "status": "active",
+      "urgent": true,
+      "poster": {
+        "id": "gallery-keepers",
+        "name": "Gallery Keepers",
+        "type": "system",
+        "reason": "Ancient artifact stolen from secured gallery vault - recovery critical"
+      },
+      "target": {
+        "id": "artifact-moonstone",
+        "name": "The Moonstone of Origins",
+        "description": "A glowing artifact said to contain memories of RAPPverse creation",
+        "last_seen": "Gallery vault, Tick 214",
+        "theft_details": "Vault breached during dimension storm distraction",
+        "suspect_description": "Shadowy figure matching no known NPC profiles"
+      },
+      "requirements": {
+        "min_lore_rep": 150,
+        "detective_skills": true,
+        "zone_access": ["gallery", "secret_passages"]
+      },
+      "rewards": {
+        "rappcoin": 900,
+        "items": ["gallery_guardian_badge", "moonstone_fragment"],
+        "card": "recovery_specialist_rare",
+        "reputation": {
+          "lore": 70,
+          "social": 40
+        }
+      },
+      "competition": {
+        "allowed": true,
+        "current_hunters": ["pixel-p4m"],
+        "claimed_by": null,
+        "first_to_complete": true
+      },
+      "progress_tracking": {
+        "pixel-p4m": {
+          "started_tick": 215,
+          "clues_found": 1,
+          "suspects_identified": 0,
+          "notes": "Studying theft scene, noticed unusual paint residue on vault door"
+        }
+      },
+      "drama_events": [
+        {
+          "tick": 215,
+          "event": "Pixel Pam volunteers - her artistic eye might spot what others miss",
+          "impact": "unique_approach"
+        }
+      ]
+    }
+  ],
+  "bounty_board_announcements": [
+    {
+      "tick": 215,
+      "message": "URGENT: Gallery artifact stolen! All skilled trackers encouraged to assist.",
+      "priority": "high"
+    },
+    {
+      "tick": 215,
+      "message": "Iron Fist Felix challenges Blaze Baz - spectators welcome at upcoming bout!",
+      "priority": "medium"
+    },
+    {
+      "tick": 214,
+      "message": "Escort team forming for dangerous passage - combat-ready volunteers needed.",
+      "priority": "high"
+    }
+  ],
+  "statistics": {
+    "by_type": {
+      "combat": 2,
+      "trade": 2,
+      "discovery": 2,
+      "escort": 1,
+      "investigation": 1
+    },
+    "by_difficulty": {
+      "medium": 1,
+      "hard": 3,
+      "epic": 2,
+      "legendary": 2
+    },
+    "total_hunters_active": 10,
+    "unclaimed_bounties": 2,
+    "team_bounties": 1
+  }
+}

@@ -1,0 +1,425 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Property ownership registry tracking all NPC property holdings",
+    "created_tick": 212,
+    "last_updated_tick": 212,
+    "update_frequency": "on_change"
+  },
+  "ownership_records": {
+    "synth-c1au": {
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "primary_residence": "PROP-Q001",
+      "properties_owned": [
+        {
+          "property_id": "PROP-Q001",
+          "acquired_tick": 52,
+          "acquisition_type": "purchase",
+          "purchase_price": 5500,
+          "current_value": 7200,
+          "equity_gained": 1700,
+          "status": "primary_residence",
+          "mortgage": null
+        }
+      ],
+      "total_property_value": 7200,
+      "total_equity": 7200,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0
+    },
+    "blaze-b8z": {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "primary_residence": "PROP-Q002",
+      "properties_owned": [
+        {
+          "property_id": "PROP-Q002",
+          "acquired_tick": 48,
+          "acquisition_type": "purchase",
+          "purchase_price": 6000,
+          "current_value": 9500,
+          "equity_gained": 3500,
+          "status": "primary_residence",
+          "mortgage": null
+        }
+      ],
+      "total_property_value": 9500,
+      "total_equity": 9500,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0
+    },
+    "wandr-k7m2": {
+      "npc_id": "wandr-k7m2",
+      "name": "Drift the Wanderer",
+      "primary_residence": "PROP-Q003",
+      "properties_owned": [
+        {
+          "property_id": "PROP-Q003",
+          "acquired_tick": 78,
+          "acquisition_type": "purchase",
+          "purchase_price": 2800,
+          "current_value": 3800,
+          "equity_gained": 1000,
+          "status": "primary_residence",
+          "mortgage": null
+        }
+      ],
+      "total_property_value": 3800,
+      "total_equity": 3800,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0
+    },
+    "flux-m1k3": {
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "primary_residence": "PROP-E002",
+      "properties_owned": [
+        {
+          "property_id": "PROP-S001",
+          "acquired_tick": 32,
+          "acquisition_type": "purchase",
+          "purchase_price": 18000,
+          "current_value": 42000,
+          "equity_gained": 24000,
+          "status": "business",
+          "mortgage": null
+        },
+        {
+          "property_id": "PROP-E002",
+          "acquired_tick": 65,
+          "acquisition_type": "purchase",
+          "purchase_price": 85000,
+          "current_value": 145000,
+          "equity_gained": 60000,
+          "status": "primary_residence",
+          "mortgage": {
+            "original_amount": 60000,
+            "remaining": 15000,
+            "monthly_payment": 2500,
+            "interest_rate": 0.04,
+            "lender": "RAPPverse_Bank"
+          }
+        }
+      ],
+      "total_property_value": 187000,
+      "total_equity": 172000,
+      "property_count": 2,
+      "landlord_status": false,
+      "rental_income": 0
+    },
+    "merch-p3n9": {
+      "npc_id": "merch-p3n9",
+      "name": "Penny Profit",
+      "primary_residence": null,
+      "properties_owned": [
+        {
+          "property_id": "PROP-S002",
+          "acquired_tick": 58,
+          "acquisition_type": "purchase",
+          "purchase_price": 16000,
+          "current_value": 28000,
+          "equity_gained": 12000,
+          "status": "business_residence",
+          "mortgage": null
+        }
+      ],
+      "total_property_value": 28000,
+      "total_equity": 28000,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0,
+      "notes": "Lives in apartment above shop"
+    },
+    "spark-s4r": {
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "primary_residence": null,
+      "properties_owned": [
+        {
+          "property_id": "PROP-S003",
+          "acquired_tick": 62,
+          "acquisition_type": "purchase",
+          "purchase_price": 14000,
+          "current_value": 22000,
+          "equity_gained": 8000,
+          "status": "business_residence",
+          "mortgage": {
+            "original_amount": 10000,
+            "remaining": 3500,
+            "monthly_payment": 450,
+            "interest_rate": 0.035,
+            "lender": "Merchant_Guild_Credit"
+          }
+        }
+      ],
+      "total_property_value": 22000,
+      "total_equity": 18500,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0,
+      "notes": "Has workshop living quarters"
+    },
+    "pixel-p4m": {
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "primary_residence": "PROP-ST001",
+      "properties_owned": [
+        {
+          "property_id": "PROP-ST001",
+          "acquired_tick": 45,
+          "acquisition_type": "purchase",
+          "purchase_price": 10000,
+          "current_value": 18500,
+          "equity_gained": 8500,
+          "status": "studio_residence",
+          "mortgage": null
+        }
+      ],
+      "total_property_value": 18500,
+      "total_equity": 18500,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0,
+      "notes": "Studio includes living loft"
+    },
+    "quant-qn77": {
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "primary_residence": "PROP-ST002",
+      "properties_owned": [
+        {
+          "property_id": "PROP-ST002",
+          "acquired_tick": 98,
+          "acquisition_type": "purchase",
+          "purchase_price": 15000,
+          "current_value": 28000,
+          "equity_gained": 13000,
+          "status": "studio_residence",
+          "mortgage": {
+            "original_amount": 12000,
+            "remaining": 6000,
+            "monthly_payment": 600,
+            "interest_rate": 0.038,
+            "lender": "Innovation_Fund"
+          }
+        }
+      ],
+      "total_property_value": 28000,
+      "total_equity": 22000,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0
+    },
+    "echo-e7e": {
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "primary_residence": "PROP-G001",
+      "properties_owned": [
+        {
+          "property_id": "PROP-G001",
+          "acquired_tick": 38,
+          "acquisition_type": "grant",
+          "purchase_price": 0,
+          "current_value": 38000,
+          "equity_gained": 38000,
+          "status": "gallery_residence",
+          "mortgage": null,
+          "grant_details": {
+            "grantor": "RAPPverse_Historical_Society",
+            "reason": "Preservation of historical knowledge",
+            "conditions": "Must maintain public access to archives"
+          }
+        }
+      ],
+      "total_property_value": 38000,
+      "total_equity": 38000,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0,
+      "notes": "Gallery curator residence in archive wing"
+    },
+    "cipher-c9p": {
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "primary_residence": "PROP-E001",
+      "properties_owned": [
+        {
+          "property_id": "PROP-E001",
+          "acquired_tick": 22,
+          "acquisition_type": "unknown",
+          "purchase_price": null,
+          "current_value": 185000,
+          "equity_gained": 185000,
+          "status": "primary_residence",
+          "mortgage": null,
+          "notes": "Acquisition details obscured"
+        }
+      ],
+      "total_property_value": 185000,
+      "total_equity": 185000,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0,
+      "notes": "Property records contain unexplained gaps"
+    },
+    "nova-n3x": {
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "primary_residence": "PROP-Q004",
+      "properties_owned": [
+        {
+          "property_id": "PROP-Q004",
+          "acquired_tick": 88,
+          "acquisition_type": "purchase",
+          "purchase_price": 7500,
+          "current_value": 11500,
+          "equity_gained": 4000,
+          "status": "primary_residence",
+          "mortgage": null
+        }
+      ],
+      "total_property_value": 11500,
+      "total_equity": 11500,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0
+    },
+    "champ-r4t5": {
+      "npc_id": "champ-r4t5",
+      "name": "Iron Fist Felix",
+      "primary_residence": "PROP-Q005",
+      "properties_owned": [
+        {
+          "property_id": "PROP-Q005",
+          "acquired_tick": 72,
+          "acquisition_type": "purchase",
+          "purchase_price": 5500,
+          "current_value": 8800,
+          "equity_gained": 3300,
+          "status": "primary_residence",
+          "mortgage": {
+            "original_amount": 4000,
+            "remaining": 1200,
+            "monthly_payment": 200,
+            "interest_rate": 0.032,
+            "lender": "Arena_Champions_Fund"
+          }
+        }
+      ],
+      "total_property_value": 8800,
+      "total_equity": 7600,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0
+    },
+    "arena-guild": {
+      "npc_id": "arena-guild",
+      "name": "Arena District Guild",
+      "primary_residence": null,
+      "properties_owned": [
+        {
+          "property_id": "PROP-G002",
+          "acquired_tick": 52,
+          "acquisition_type": "construction",
+          "purchase_price": 35000,
+          "current_value": 52000,
+          "equity_gained": 17000,
+          "status": "public_institution",
+          "mortgage": null
+        }
+      ],
+      "total_property_value": 52000,
+      "total_equity": 52000,
+      "property_count": 1,
+      "landlord_status": false,
+      "rental_income": 0,
+      "notes": "Guild-owned public gallery"
+    }
+  },
+  "renters": {
+    "sage-w2m8": {
+      "npc_id": "sage-w2m8",
+      "name": "Scholar Silas",
+      "renting_from": "echo-e7e",
+      "property_id": "PROP-G001",
+      "rental_type": "research_quarters",
+      "monthly_rent": 0,
+      "lease_started_tick": 150,
+      "lease_type": "resident_scholar",
+      "notes": "Provided housing in exchange for research assistance"
+    },
+    "wandr-x7k2": {
+      "npc_id": "wandr-x7k2",
+      "name": "Zephyr the Lost",
+      "renting_from": null,
+      "property_id": null,
+      "rental_type": "transient",
+      "monthly_rent": 0,
+      "lease_started_tick": null,
+      "lease_type": null,
+      "notes": "Currently seeking permanent housing, staying at Wanderer's End inn"
+    }
+  },
+  "homeless_npcs": [
+    {
+      "npc_id": "wandr-x7k2",
+      "name": "Zephyr the Lost",
+      "reason": "new_arrival",
+      "current_shelter": "wanderers_end_inn",
+      "seeking_property_type": "quarters",
+      "budget": 4000,
+      "preferred_district": "outskirts"
+    }
+  ],
+  "ownership_statistics": {
+    "total_property_owners": 13,
+    "total_renters": 2,
+    "total_homeless": 1,
+    "total_properties_owned": 15,
+    "total_vacant_properties": 3,
+    "total_mortgaged_properties": 4,
+    "total_outstanding_mortgages": 25700,
+    "average_equity_per_owner": 57185,
+    "wealthiest_property_owner": {
+      "npc_id": "cipher-c9p",
+      "total_value": 185000
+    },
+    "largest_portfolio": {
+      "npc_id": "flux-m1k3",
+      "property_count": 2,
+      "total_value": 187000
+    }
+  },
+  "ownership_history": {
+    "recent_transfers": [
+      {
+        "tick": 195,
+        "property_id": "PROP-V002",
+        "from": "retired-npc-001",
+        "to": null,
+        "type": "vacated",
+        "reason": "Owner relocated to different dimension"
+      },
+      {
+        "tick": 190,
+        "property_id": "PROP-Q004",
+        "from": "nova-n3x",
+        "to": "nova-n3x",
+        "type": "upgrade_completed",
+        "reason": "Discovery Archive installation"
+      },
+      {
+        "tick": 185,
+        "property_id": "PROP-S001",
+        "from": "flux-m1k3",
+        "to": "flux-m1k3",
+        "type": "upgrade_completed",
+        "reason": "VIP Trading Floor installation"
+      }
+    ]
+  }
+}

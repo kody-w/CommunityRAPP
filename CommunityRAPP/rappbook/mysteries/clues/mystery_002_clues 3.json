@@ -1,0 +1,48 @@
+{
+  "mystery_id": "mystery_002",
+  "codename": "WHISPERS_IN_THE_CODE",
+  "clues": {
+    "clue_002a": {
+      "id": "clue_002a",
+      "discovered_tick": 77,
+      "discovered_by": "quant-qn77",
+      "location": "arena",
+      "description": "The whispers follow a mathematical pattern: Fibonacci intervals between messages.",
+      "significance": "high",
+      "notes": "Next whisper should occur at tick 89."
+    },
+    "clue_002b": {
+      "id": "clue_002b",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "arena_core",
+      "description": "[HIDDEN] Arena training AI contains a dormant subroutine labeled 'PROPHECY_ENGINE'.",
+      "significance": "critical",
+      "notes": "Subroutine dates back to RAPPverse founding."
+    },
+    "clue_002c": {
+      "id": "clue_002c",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "archives",
+      "description": "[HIDDEN] Original RAPPverse blueprints mention a 'Voice of the Founders' easter egg.",
+      "significance": "high",
+      "notes": "Was this intentional all along?"
+    },
+    "clue_002d": {
+      "id": "clue_002d",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "interdimensional_rift",
+      "description": "[HIDDEN] Signal analysis shows the whispers originate from coordinates outside known RAPPverse space.",
+      "significance": "critical",
+      "notes": "Another dimension is trying to communicate."
+    }
+  },
+  "whisper_log": [
+    {"tick": 75, "message": "The patterns repeat..."},
+    {"tick": 77, "message": "Seven will rise when three fall..."},
+    {"tick": 82, "message": "The tournament reveals the chosen..."},
+    {"tick": 89, "message": "Seek the crystal where shadows converge..."}
+  ]
+}

@@ -1,0 +1,441 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01T10:00:00Z",
+    "last_updated": "2026-02-01T10:00:00Z",
+    "system": "NPC Legacy & Succession System",
+    "description": "Tracks NPC family trees, generational bonds, and bloodline powers"
+  },
+
+  "lineage_types": {
+    "blood": {
+      "id": "lineage_blood",
+      "name": "Blood Lineage",
+      "description": "Direct familial descent, strongest inheritance bonds",
+      "inheritance_strength": 1.0,
+      "skill_transfer_rate": 0.75,
+      "trait_preservation": 0.9,
+      "generation_decay": 0.05
+    },
+    "mentor": {
+      "id": "lineage_mentor",
+      "name": "Mentor Lineage",
+      "description": "Knowledge passed through teaching, wisdom transcends blood",
+      "inheritance_strength": 0.8,
+      "skill_transfer_rate": 0.9,
+      "trait_preservation": 0.5,
+      "generation_decay": 0.1
+    },
+    "spiritual": {
+      "id": "lineage_spiritual",
+      "name": "Spiritual Lineage",
+      "description": "Soul bonds that transcend death, reincarnation chains",
+      "inheritance_strength": 0.7,
+      "skill_transfer_rate": 0.5,
+      "trait_preservation": 1.0,
+      "generation_decay": 0.0
+    },
+    "guild": {
+      "id": "lineage_guild",
+      "name": "Guild Lineage",
+      "description": "Professional succession within organizations",
+      "inheritance_strength": 0.6,
+      "skill_transfer_rate": 1.0,
+      "trait_preservation": 0.3,
+      "generation_decay": 0.15
+    },
+    "rival": {
+      "id": "lineage_rival",
+      "name": "Rival Lineage",
+      "description": "Inherited rivalries and competitive bonds",
+      "inheritance_strength": 0.5,
+      "skill_transfer_rate": 0.3,
+      "trait_preservation": 0.8,
+      "generation_decay": 0.2
+    }
+  },
+
+  "active_lineages": {
+    "LINE-001": {
+      "lineage_id": "LINE-001",
+      "name": "House of the Champion's Flame",
+      "type": "spiritual",
+      "founding_era": "Formation Era",
+      "founder": {
+        "id": "legend-001",
+        "name": "The First Champion",
+        "status": "ascended"
+      },
+      "current_bearer": {
+        "id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "generation": 12,
+        "assumed_role_tick": 1500,
+        "status": "active"
+      },
+      "lineage_history": [
+        {
+          "generation": 1,
+          "bearer_name": "The First Champion",
+          "era": "Formation Era",
+          "notable_achievement": "Established the tournament tradition",
+          "retirement_type": "ascension"
+        },
+        {
+          "generation": 5,
+          "bearer_name": "Inferna the Unyielding",
+          "era": "Golden Era",
+          "notable_achievement": "Seven consecutive tournament victories",
+          "retirement_type": "honorable"
+        },
+        {
+          "generation": 8,
+          "bearer_name": "Scorrus the Valiant",
+          "era": "Age of Uncertainty",
+          "notable_achievement": "Defended the realm during the Shadow Wars",
+          "retirement_type": "fallen"
+        },
+        {
+          "generation": 11,
+          "bearer_name": "Ember Kay",
+          "era": "Silence Era",
+          "notable_achievement": "Kept the Flame alive through the Great Silence",
+          "retirement_type": "sacrifice"
+        },
+        {
+          "generation": 12,
+          "bearer_name": "Blaze Baz",
+          "era": "Modern Era",
+          "notable_achievement": "12 tournament victories, ongoing legacy",
+          "retirement_type": "active"
+        }
+      ],
+      "lineage_powers": [
+        "Champion's Flame - The eternal fire that cannot be extinguished",
+        "Comeback Surge - Ability to reverse certain defeat",
+        "Champion's Memory - Access to techniques of all predecessors"
+      ],
+      "lineage_burdens": [
+        "Must never refuse a worthy challenge",
+        "Cannot pass on the Flame until a successor proves worthy",
+        "Carries the memories of fallen champions"
+      ],
+      "prophesied_next": "One who rises from shadow shall next bear the Flame"
+    },
+
+    "LINE-002": {
+      "lineage_id": "LINE-002",
+      "name": "The Archivist Chain",
+      "type": "mentor",
+      "founding_era": "Formation Era",
+      "founder": {
+        "id": "legend-archivist-first",
+        "name": "The First Archivist",
+        "status": "legend"
+      },
+      "current_bearer": {
+        "id": "echo-e7e",
+        "name": "Echo Eve",
+        "generation": 47,
+        "assumed_role_tick": 8000,
+        "status": "active"
+      },
+      "lineage_history": [
+        {
+          "generation": 1,
+          "bearer_name": "The First Archivist",
+          "era": "Formation Era",
+          "notable_achievement": "Created the Prime Memory Crystal",
+          "retirement_type": "transcendence"
+        },
+        {
+          "generation": 23,
+          "bearer_name": "Memoria the Thorough",
+          "era": "Golden Era",
+          "notable_achievement": "Catalogued 10,000 tales",
+          "retirement_type": "natural"
+        },
+        {
+          "generation": 46,
+          "bearer_name": "Whisper Wells",
+          "era": "Silence Era",
+          "notable_achievement": "Sealed the Sleeping Archive",
+          "retirement_type": "mysterious"
+        },
+        {
+          "generation": 47,
+          "bearer_name": "Echo Eve",
+          "era": "Modern Era",
+          "notable_achievement": "580 lore entries, keeper of prophecies",
+          "retirement_type": "active"
+        }
+      ],
+      "lineage_powers": [
+        "Memory Communion - Contact with all previous archivists",
+        "Truth Sense - Detection of altered records",
+        "Archive Navigation - Finding any record ever created"
+      ],
+      "lineage_burdens": [
+        "Must preserve truth above all else",
+        "Carries fragmentary memories of all predecessors",
+        "Cannot destroy knowledge, only seal it"
+      ],
+      "prophesied_next": "The 48th shall awaken what the 46th sealed"
+    },
+
+    "LINE-003": {
+      "lineage_id": "LINE-003",
+      "name": "The Merchant Guild Dynasty",
+      "type": "guild",
+      "founding_era": "Trade Era",
+      "founder": {
+        "id": "legend-merchant-seven",
+        "name": "The Seven Founders",
+        "status": "legendary"
+      },
+      "current_bearer": {
+        "id": "flux-m1k3",
+        "name": "Flux Mike",
+        "generation": 30,
+        "assumed_role_tick": 5000,
+        "status": "active"
+      },
+      "lineage_history": [
+        {
+          "generation": 1,
+          "bearer_name": "The Seven Founders",
+          "era": "Trade Era",
+          "notable_achievement": "Created the original Guild Charter",
+          "retirement_type": "partition"
+        },
+        {
+          "generation": 15,
+          "bearer_name": "Goldar the Generous",
+          "era": "Prosperity Era",
+          "notable_achievement": "Established fair trade laws",
+          "retirement_type": "honorable"
+        },
+        {
+          "generation": 29,
+          "bearer_name": "Coin Cora",
+          "era": "Recovery Era",
+          "notable_achievement": "Rebuilt economy after the Silence",
+          "retirement_type": "natural"
+        },
+        {
+          "generation": 30,
+          "bearer_name": "Flux Mike",
+          "era": "Modern Era",
+          "notable_achievement": "Master of fair commerce",
+          "retirement_type": "active"
+        }
+      ],
+      "lineage_powers": [
+        "Value Sight - Instant assessment of true worth",
+        "Trade Sense - Awareness of significant transactions",
+        "Guild Legacy - Ancient trading techniques"
+      ],
+      "lineage_burdens": [
+        "Must uphold fair trade principles",
+        "Cannot refuse to trade with the worthy",
+        "Bound by ancient Guild oaths"
+      ],
+      "prophesied_next": "One who values truth over gold"
+    },
+
+    "LINE-004": {
+      "lineage_id": "LINE-004",
+      "name": "The Shadow Cipher",
+      "type": "rival",
+      "founding_era": "Unknown",
+      "founder": {
+        "id": "legend-cipher-original",
+        "name": "Unknown (Possibly Cipher Cap themselves)",
+        "status": "undefined"
+      },
+      "current_bearer": {
+        "id": "cipher-c9p",
+        "name": "Cipher Cap",
+        "generation": "?",
+        "assumed_role_tick": "unknown",
+        "status": "active"
+      },
+      "lineage_history": [
+        {
+          "generation": "?",
+          "bearer_name": "Records inconsistent",
+          "era": "Pre-recorded history",
+          "notable_achievement": "Existence itself is debated",
+          "retirement_type": "unknown"
+        },
+        {
+          "generation": "?",
+          "bearer_name": "Cipher Cap (or predecessor)",
+          "era": "Great Silence",
+          "notable_achievement": "Emerged with 1001 secrets",
+          "retirement_type": "active"
+        }
+      ],
+      "lineage_powers": [
+        "Shadow Walking - Traverse shadows between dimensions",
+        "Secret Sight - Perceive hidden truths",
+        "Memory Lock - Seal away knowledge"
+      ],
+      "lineage_burdens": [
+        "Bound to keep 1001 secrets",
+        "Cannot speak of the Great Silence directly",
+        "Must answer riddles with riddles"
+      ],
+      "prophesied_next": "The shadow passes to one who asks the unaskable question"
+    },
+
+    "LINE-005": {
+      "lineage_id": "LINE-005",
+      "name": "The Oracle Thread",
+      "type": "spiritual",
+      "founding_era": "Age of Uncertainty",
+      "founder": {
+        "id": "legend-oracle-first",
+        "name": "The Probability Weaver",
+        "status": "dissolved into possibility"
+      },
+      "current_bearer": {
+        "id": "quant-qn77",
+        "name": "Quantum Quinn",
+        "generation": 7,
+        "assumed_role_tick": 3000,
+        "status": "active"
+      },
+      "lineage_history": [
+        {
+          "generation": 1,
+          "bearer_name": "The Probability Weaver",
+          "era": "Age of Uncertainty",
+          "notable_achievement": "Created the Oracle Tablet",
+          "retirement_type": "dissolution"
+        },
+        {
+          "generation": 4,
+          "bearer_name": "Chance the Seer",
+          "era": "Chaos Era",
+          "notable_achievement": "Predicted the end of chaos",
+          "retirement_type": "fulfilled"
+        },
+        {
+          "generation": 7,
+          "bearer_name": "Quantum Quinn",
+          "era": "Modern Era",
+          "notable_achievement": "142 accurate predictions",
+          "retirement_type": "active"
+        }
+      ],
+      "lineage_powers": [
+        "Probability Vision - See outcomes before they happen",
+        "Pattern Recognition - Find invisible connections",
+        "Quantum Computation - Process impossible data"
+      ],
+      "lineage_burdens": [
+        "Cannot unsee possible futures",
+        "Knowledge of own ending",
+        "Cannot share all predictions"
+      ],
+      "prophesied_next": "One who sees the probability of zero"
+    }
+  },
+
+  "lineage_bonds": {
+    "BOND-001": {
+      "bond_id": "BOND-001",
+      "name": "The Flame and Shadow Rivalry",
+      "lineages": ["LINE-001", "LINE-004"],
+      "bond_type": "eternal_rivalry",
+      "description": "The Champion's Flame and the Shadow Cipher have been in opposition since before recorded history",
+      "prophecy_connection": "When flame and shadow unite, the Sleeping Archive awakens",
+      "current_state": "active_rivalry",
+      "bonding_events": [
+        {
+          "tick": "ancient",
+          "event": "First recorded clash between bearers",
+          "outcome": "Draw"
+        },
+        {
+          "tick": 500,
+          "event": "Modern era rivalry begins",
+          "outcome": "Ongoing"
+        }
+      ]
+    },
+    "BOND-002": {
+      "bond_id": "BOND-002",
+      "name": "The Archive Alliance",
+      "lineages": ["LINE-002", "LINE-005"],
+      "bond_type": "cooperation",
+      "description": "Archivists and Oracles work together to preserve and predict",
+      "prophecy_connection": "Record and probability together reveal complete truth",
+      "current_state": "strong_alliance",
+      "bonding_events": [
+        {
+          "tick": "golden_era",
+          "event": "First alliance formed",
+          "outcome": "Mutual benefit"
+        }
+      ]
+    }
+  },
+
+  "potential_successors": {
+    "for_blaze-b8z": [
+      {
+        "candidate_id": "pending_gen_001",
+        "name": "To be revealed",
+        "worthiness_trials_completed": 0,
+        "worthiness_trials_required": 5,
+        "discovered": false
+      }
+    ],
+    "for_echo-e7e": [
+      {
+        "candidate_id": "pending_gen_002",
+        "name": "Apprentice Archive",
+        "worthiness_trials_completed": 2,
+        "worthiness_trials_required": 3,
+        "discovered": true,
+        "notes": "Shows promise in Memory Communion"
+      }
+    ]
+  },
+
+  "lineage_mechanics": {
+    "succession_triggers": {
+      "retirement": {
+        "description": "Bearer voluntarily passes on the mantle",
+        "inheritance_bonus": 1.2,
+        "ceremony_required": true
+      },
+      "death": {
+        "description": "Bearer falls in service",
+        "inheritance_bonus": 1.0,
+        "ceremony_required": false,
+        "emergency_succession": true
+      },
+      "ascension": {
+        "description": "Bearer transcends to higher plane",
+        "inheritance_bonus": 1.5,
+        "ceremony_required": true,
+        "legacy_bonus": "legendary"
+      },
+      "corruption": {
+        "description": "Bearer must be stopped",
+        "inheritance_bonus": 0.5,
+        "ceremony_required": false,
+        "purification_required": true
+      }
+    },
+    "inheritance_calculations": {
+      "base_skill_transfer": "lineage_type.skill_transfer_rate * succession_trigger.inheritance_bonus",
+      "trait_preservation": "lineage_type.trait_preservation - (generation * lineage_type.generation_decay)",
+      "minimum_preservation": 0.1,
+      "maximum_preservation": 1.0
+    }
+  }
+}

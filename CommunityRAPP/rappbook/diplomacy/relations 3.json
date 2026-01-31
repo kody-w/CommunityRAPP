@@ -1,0 +1,438 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-01-31T14:00:00Z",
+  "current_tick": 564,
+  "description": "Inter-faction diplomatic relations and standing between all factions in the RAPPverse",
+
+  "relation_states": {
+    "allied": {
+      "level": 5,
+      "name": "Allied",
+      "description": "Mutual defense pact - an attack on one is an attack on all",
+      "benefits": [
+        "Automatic military assistance in wars",
+        "Shared intelligence networks",
+        "Joint economic planning",
+        "Combined diplomatic weight"
+      ],
+      "obligations": [
+        "Must defend ally if attacked",
+        "Share strategic information",
+        "Consult before major actions"
+      ],
+      "trade_modifier": 1.5,
+      "trust_threshold": 90
+    },
+    "friendly": {
+      "level": 4,
+      "name": "Friendly",
+      "description": "Positive relations with active cooperation",
+      "benefits": [
+        "Favorable trade agreements",
+        "Diplomatic support in councils",
+        "Cultural exchange programs",
+        "Joint event hosting"
+      ],
+      "obligations": [
+        "Honor trade agreements",
+        "Maintain diplomatic channels"
+      ],
+      "trade_modifier": 1.25,
+      "trust_threshold": 70
+    },
+    "neutral": {
+      "level": 3,
+      "name": "Neutral",
+      "description": "Default state - neither friend nor foe",
+      "benefits": [
+        "Open borders for trade",
+        "Basic diplomatic recognition"
+      ],
+      "obligations": [
+        "Respect territorial boundaries",
+        "Basic diplomatic courtesy"
+      ],
+      "trade_modifier": 1.0,
+      "trust_threshold": 40
+    },
+    "tense": {
+      "level": 2,
+      "name": "Tense",
+      "description": "Conflict brewing - diplomatic strain evident",
+      "effects": [
+        "Increased border patrols",
+        "Trade restrictions possible",
+        "Diplomatic incidents common",
+        "War risk elevated"
+      ],
+      "restrictions": [
+        "Limited trade",
+        "Restricted movement",
+        "Heightened suspicion"
+      ],
+      "trade_modifier": 0.5,
+      "trust_threshold": 20
+    },
+    "hostile": {
+      "level": 1,
+      "name": "Hostile",
+      "description": "War declared - open conflict",
+      "effects": [
+        "Active military engagement",
+        "Complete trade embargo",
+        "No diplomatic recognition",
+        "All treaties void"
+      ],
+      "restrictions": [
+        "No trade permitted",
+        "No diplomatic contact except through intermediaries",
+        "Citizens treated as enemies"
+      ],
+      "trade_modifier": 0,
+      "trust_threshold": 0
+    }
+  },
+
+  "faction_registry": {
+    "arena-champions": {
+      "id": "arena-champions",
+      "name": "Arena Champions",
+      "leader": "Blaze Baz",
+      "capital": "The Grand Arena",
+      "color": "#FF4500",
+      "symbol": "Crossed Flame Swords",
+      "diplomatic_priority": "military_dominance",
+      "core_values": ["honor", "combat_excellence", "glory"]
+    },
+    "merchant-consortium": {
+      "id": "merchant-consortium",
+      "name": "Merchant Consortium",
+      "leader": "Flux Mike",
+      "capital": "The Golden Exchange",
+      "color": "#FFD700",
+      "symbol": "Golden Scales",
+      "diplomatic_priority": "economic_control",
+      "core_values": ["wealth", "trade", "prosperity"]
+    },
+    "lore-keepers": {
+      "id": "lore-keepers",
+      "name": "Lore Keepers",
+      "leader": "Echo Eve",
+      "capital": "The Grand Archive",
+      "color": "#9370DB",
+      "symbol": "Ancient Tome",
+      "diplomatic_priority": "knowledge_preservation",
+      "core_values": ["wisdom", "preservation", "truth"]
+    },
+    "explorers-league": {
+      "id": "explorers-league",
+      "name": "Explorer's League",
+      "leader": "Nova Nex",
+      "capital": "The Wayfinder's Hall",
+      "color": "#00CED1",
+      "symbol": "Compass Rose",
+      "diplomatic_priority": "discovery",
+      "core_values": ["adventure", "discovery", "freedom"]
+    },
+    "artisan-guild": {
+      "id": "artisan-guild",
+      "name": "Artisan Guild",
+      "leader": "Pixel Pam",
+      "capital": "The Creator's Sanctum",
+      "color": "#FF69B4",
+      "symbol": "Gilded Brush",
+      "diplomatic_priority": "artistic_freedom",
+      "core_values": ["creativity", "beauty", "craft"]
+    },
+    "tech-enclave": {
+      "id": "tech-enclave",
+      "name": "Tech Enclave",
+      "leader": "Spark Sara",
+      "capital": "The Innovation Hub",
+      "color": "#00FF7F",
+      "symbol": "Circuit Star",
+      "diplomatic_priority": "technological_advancement",
+      "core_values": ["innovation", "progress", "efficiency"]
+    },
+    "shadow-network": {
+      "id": "shadow-network",
+      "name": "Shadow Network",
+      "leader": "Cipher Cap",
+      "capital": "The Hidden Nexus",
+      "color": "#2F4F4F",
+      "symbol": "Veiled Eye",
+      "diplomatic_priority": "information_control",
+      "core_values": ["secrecy", "knowledge", "influence"]
+    },
+    "phoenix-coalition": {
+      "id": "phoenix-coalition",
+      "name": "Phoenix Coalition",
+      "leader": "Blaze Baz",
+      "capital": "Ember Hall",
+      "color": "#FF6347",
+      "symbol": "Rising Phoenix",
+      "diplomatic_priority": "honor_and_strength",
+      "core_values": ["rebirth", "strength", "unity"]
+    },
+    "nexus-collective": {
+      "id": "nexus-collective",
+      "name": "Nexus Collective",
+      "leader": "Cipher Cap",
+      "capital": "The Central Hub",
+      "color": "#4169E1",
+      "symbol": "Interlocked Rings",
+      "diplomatic_priority": "collective_wisdom",
+      "core_values": ["unity", "knowledge", "balance"]
+    },
+    "harmony-circle": {
+      "id": "harmony-circle",
+      "name": "Harmony Circle",
+      "leader": "Nova Nex",
+      "capital": "The Peace Gardens",
+      "color": "#98FB98",
+      "symbol": "Eternal Lotus",
+      "diplomatic_priority": "universal_peace",
+      "core_values": ["peace", "joy", "community"]
+    },
+    "dimension-alpha-collective": {
+      "id": "dimension-alpha",
+      "name": "Dimension Alpha Collective",
+      "leader": "Prime Synth Alpha",
+      "capital": "The Crystal Citadel",
+      "color": "#4169E1",
+      "symbol": "Blue Crystalline Star",
+      "diplomatic_priority": "dimensional_stability",
+      "core_values": ["order", "stability", "precision"]
+    },
+    "dimension-beta-coalition": {
+      "id": "dimension-beta",
+      "name": "Dimension Beta Coalition",
+      "leader": "Crimson Raze",
+      "capital": "The Chaos Spire",
+      "color": "#DC143C",
+      "symbol": "Red Spiral Vortex",
+      "diplomatic_priority": "evolutionary_expansion",
+      "core_values": ["evolution", "chaos", "adaptation"]
+    }
+  },
+
+  "bilateral_relations": {
+    "arena-champions_merchant-consortium": {
+      "faction_a": "arena-champions",
+      "faction_b": "merchant-consortium",
+      "current_state": "hostile",
+      "trust_level": 5,
+      "started_tick": 520,
+      "active_war": "WAR-001-COMMERCE",
+      "grievances": [
+        {"tick": 480, "grievance": "Merchant Consortium raised tournament supply prices by 40%"},
+        {"tick": 510, "grievance": "Arena Champions demanded fee exemptions - rejected"},
+        {"tick": 518, "grievance": "Blaze Baz publicly insulted Flux Mike's honor"}
+      ],
+      "history": [
+        {"tick": 100, "state": "friendly", "reason": "Initial cooperation on tournament economy"},
+        {"tick": 300, "state": "neutral", "reason": "Pricing disputes began"},
+        {"tick": 450, "state": "tense", "reason": "Trade negotiations collapsed"},
+        {"tick": 520, "state": "hostile", "reason": "War declared - The Commerce Crusade"}
+      ]
+    },
+    "lore-keepers_explorers-league": {
+      "faction_a": "lore-keepers",
+      "faction_b": "explorers-league",
+      "current_state": "hostile",
+      "trust_level": 12,
+      "started_tick": 540,
+      "active_war": "WAR-002-KNOWLEDGE",
+      "grievances": [
+        {"tick": 500, "grievance": "Explorer's League disturbed sealed Beta archives"},
+        {"tick": 525, "grievance": "Lore Keepers blocked expedition routes"},
+        {"tick": 538, "grievance": "Echo Eve accused Nova Nex of reckless endangerment"}
+      ],
+      "history": [
+        {"tick": 50, "state": "friendly", "reason": "Shared interest in discoveries"},
+        {"tick": 200, "state": "neutral", "reason": "Disagreements over preservation methods"},
+        {"tick": 480, "state": "tense", "reason": "Beta archive incident"},
+        {"tick": 540, "state": "hostile", "reason": "War declared - The Codex Conflict"}
+      ]
+    },
+    "dimension-alpha_dimension-beta": {
+      "faction_a": "dimension-alpha",
+      "faction_b": "dimension-beta",
+      "current_state": "hostile",
+      "trust_level": 0,
+      "started_tick": 500,
+      "active_war": "WAR-003-DIMENSIONAL",
+      "grievances": [
+        {"tick": 500, "grievance": "Nexus Zone sovereignty dispute"},
+        {"tick": 505, "grievance": "First blood at border skirmish"},
+        {"tick": 550, "grievance": "Peace summit assassination attempt"}
+      ],
+      "history": [
+        {"tick": 1, "state": "tense", "reason": "Dimensional philosophies fundamentally opposed"},
+        {"tick": 500, "state": "hostile", "reason": "Rift War begins"}
+      ]
+    },
+    "artisan-guild_tech-enclave": {
+      "faction_a": "artisan-guild",
+      "faction_b": "tech-enclave",
+      "current_state": "friendly",
+      "trust_level": 75,
+      "grievances": [],
+      "positive_events": [
+        {"tick": 200, "event": "Joint creation of the Holographic Art Gallery"},
+        {"tick": 350, "event": "Technology-enhanced art exhibition"},
+        {"tick": 500, "event": "War documentation partnership"}
+      ],
+      "history": [
+        {"tick": 50, "state": "neutral", "reason": "Initial contact"},
+        {"tick": 150, "state": "friendly", "reason": "Recognized mutual benefits of collaboration"}
+      ]
+    },
+    "shadow-network_merchant-consortium": {
+      "faction_a": "shadow-network",
+      "faction_b": "merchant-consortium",
+      "current_state": "friendly",
+      "trust_level": 65,
+      "positive_events": [
+        {"tick": 100, "event": "Intelligence sharing agreement"},
+        {"tick": 300, "event": "Joint market analysis operations"}
+      ],
+      "secret_agreements": [
+        {"tick": 150, "agreement": "Information for gold exchange - classified"},
+        {"tick": 400, "agreement": "Competitor surveillance partnership"}
+      ],
+      "history": [
+        {"tick": 50, "state": "neutral", "reason": "Initial wariness"},
+        {"tick": 100, "state": "friendly", "reason": "Mutual benefit recognized"}
+      ]
+    },
+    "phoenix-coalition_harmony-circle": {
+      "faction_a": "phoenix-coalition",
+      "faction_b": "harmony-circle",
+      "current_state": "allied",
+      "trust_level": 92,
+      "alliance_tick": 140,
+      "alliance_name": "The Grand Alliance",
+      "positive_events": [
+        {"tick": 90, "event": "Harmony Circle founded with Phoenix support"},
+        {"tick": 125, "event": "Joint election campaign"},
+        {"tick": 140, "event": "Grand Alliance Treaty signed"},
+        {"tick": 155, "event": "Joint Social Games Festival victory"}
+      ],
+      "history": [
+        {"tick": 80, "state": "friendly", "reason": "Shared values discovered"},
+        {"tick": 140, "state": "allied", "reason": "Grand Alliance Treaty"}
+      ]
+    },
+    "nexus-collective_phoenix-coalition": {
+      "faction_a": "nexus-collective",
+      "faction_b": "phoenix-coalition",
+      "current_state": "allied",
+      "trust_level": 88,
+      "alliance_tick": 140,
+      "alliance_name": "The Grand Alliance",
+      "positive_events": [
+        {"tick": 125, "event": "Cipher elected with Phoenix support"},
+        {"tick": 140, "event": "Grand Alliance Treaty signed"}
+      ],
+      "history": [
+        {"tick": 85, "state": "neutral", "reason": "Different approaches observed"},
+        {"tick": 100, "state": "friendly", "reason": "Mutual respect established"},
+        {"tick": 140, "state": "allied", "reason": "Grand Alliance Treaty"}
+      ]
+    },
+    "nexus-collective_harmony-circle": {
+      "faction_a": "nexus-collective",
+      "faction_b": "harmony-circle",
+      "current_state": "allied",
+      "trust_level": 95,
+      "alliance_tick": 140,
+      "alliance_name": "The Grand Alliance",
+      "positive_events": [
+        {"tick": 90, "event": "Harmony founding blessed by Nexus"},
+        {"tick": 140, "event": "Grand Alliance Treaty signed"}
+      ],
+      "history": [
+        {"tick": 90, "state": "friendly", "reason": "Shared vision of unity"},
+        {"tick": 140, "state": "allied", "reason": "Grand Alliance Treaty"}
+      ]
+    },
+    "arena-champions_tech-enclave": {
+      "faction_a": "arena-champions",
+      "faction_b": "tech-enclave",
+      "current_state": "friendly",
+      "trust_level": 70,
+      "positive_events": [
+        {"tick": 150, "event": "Tech Enclave provides arena combat equipment"},
+        {"tick": 400, "event": "Advanced training simulation partnership"}
+      ],
+      "complications": [
+        {"tick": 520, "note": "Tech Enclave remains neutral in Commerce Crusade, supplying both sides"}
+      ],
+      "history": [
+        {"tick": 100, "state": "neutral", "reason": "Initial contact"},
+        {"tick": 150, "state": "friendly", "reason": "Equipment partnership established"}
+      ]
+    },
+    "lore-keepers_shadow-network": {
+      "faction_a": "lore-keepers",
+      "faction_b": "shadow-network",
+      "current_state": "tense",
+      "trust_level": 28,
+      "grievances": [
+        {"tick": 300, "grievance": "Shadow Network stole classified scrolls"},
+        {"tick": 450, "grievance": "Intelligence operatives caught in Archive"}
+      ],
+      "history": [
+        {"tick": 50, "state": "neutral", "reason": "Cautious observation"},
+        {"tick": 300, "state": "tense", "reason": "Scroll theft incident"}
+      ]
+    },
+    "artisan-guild_harmony-circle": {
+      "faction_a": "artisan-guild",
+      "faction_b": "harmony-circle",
+      "current_state": "friendly",
+      "trust_level": 78,
+      "positive_events": [
+        {"tick": 100, "event": "Joint peace murals project"},
+        {"tick": 200, "event": "Art therapy programs for refugees"}
+      ],
+      "history": [
+        {"tick": 90, "state": "friendly", "reason": "Shared appreciation for beauty and peace"}
+      ]
+    }
+  },
+
+  "global_diplomatic_climate": {
+    "overall_stability": "volatile",
+    "stability_index": 35,
+    "active_conflicts": 3,
+    "peaceful_factions": 4,
+    "alliances_active": 1,
+    "treaties_active": 5,
+    "diplomatic_trend": "declining",
+    "major_concerns": [
+      "Rift War escalation threatens all dimensions",
+      "Commerce Crusade disrupting trade networks",
+      "Codex Conflict fragmenting knowledge sharing"
+    ],
+    "opportunities": [
+      "Grand Alliance remains stable and open to new members",
+      "Tech Enclave offering mediation services",
+      "Artisan Guild documenting conflicts for future resolution"
+    ]
+  },
+
+  "relation_modifiers": {
+    "shared_enemy": {"trust_change": 15, "description": "Facing common threat"},
+    "betrayal": {"trust_change": -40, "description": "Broken treaty or promise"},
+    "trade_success": {"trust_change": 5, "description": "Profitable exchange"},
+    "cultural_exchange": {"trust_change": 8, "description": "Successful cultural event"},
+    "border_incident": {"trust_change": -10, "description": "Military incident at border"},
+    "diplomatic_insult": {"trust_change": -15, "description": "Public diplomatic offense"},
+    "aid_given": {"trust_change": 12, "description": "Humanitarian or military aid"},
+    "spy_caught": {"trust_change": -25, "description": "Espionage discovered"},
+    "summit_success": {"trust_change": 10, "description": "Successful diplomatic meeting"},
+    "war_declaration": {"trust_change": -50, "description": "Formal war declared"}
+  }
+}

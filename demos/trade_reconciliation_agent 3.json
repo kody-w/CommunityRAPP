@@ -1,0 +1,159 @@
+{
+  "agent": {
+    "id": "trade_reconciliation_agent",
+    "name": "Trade Reconciliation",
+    "version": "1.0.0",
+    "category": "finance",
+    "icon": "fa-chart-line",
+    "description": "Automates trade reconciliation across OMS, clearing, and prime broker systems with intelligent break detection and resolution suggestions.",
+    "tokens": 680,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "TradeReconciliation",
+    "description": "Automates trade reconciliation across OMS, clearing, and prime broker systems with intelligent break detection and resolution suggestions.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["reconcile_daily", "analyze_break", "suggest_resolution", "get_break_summary", "generate_audit_report", "check_sla_status"],
+          "description": "The reconciliation action to perform"
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Trading symbol (e.g., AAPL, MSFT)"
+        },
+        "date": {
+          "type": "string",
+          "description": "Trade date in YYYY-MM-DD format"
+        },
+        "break_id": {
+          "type": "string",
+          "description": "Break identifier for analysis"
+        }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "reconcile_daily",
+      "description": "Run daily trade reconciliation for specified symbol/date",
+      "parameters": ["symbol", "date"],
+      "example": {
+        "input": { "action": "reconcile_daily", "symbol": "AAPL", "date": "2025-12-05" },
+        "output": "Reconciliation complete: 1,247 trades processed, 6 breaks detected (99.5% match rate)"
+      }
+    },
+    {
+      "name": "analyze_break",
+      "description": "Analyze a specific trade break for root cause",
+      "parameters": ["break_id"],
+      "example": {
+        "input": { "action": "analyze_break", "break_id": "BRK-2024-4521" },
+        "output": "Break Analysis: Quantity mismatch - OMS shows 500 shares, DTCC shows 450. Likely cause: Partial fill not updated in OMS."
+      }
+    },
+    {
+      "name": "suggest_resolution",
+      "description": "Get AI-powered resolution suggestions for a break",
+      "parameters": ["break_id"],
+      "example": {
+        "input": { "action": "suggest_resolution", "break_id": "BRK-2024-4521" },
+        "output": "Suggested Resolution: 1) Verify partial fill in execution system 2) Update OMS with correct quantity 3) Re-run reconciliation for affected trades"
+      }
+    },
+    {
+      "name": "get_break_summary",
+      "description": "Get summary of all open breaks",
+      "parameters": [],
+      "example": {
+        "input": { "action": "get_break_summary" },
+        "output": "Open Breaks: 12 total - 5 quantity mismatches, 4 price discrepancies, 3 missing confirmations. Oldest break: 3 days. SLA at risk: 2 breaks."
+      }
+    },
+    {
+      "name": "generate_audit_report",
+      "description": "Generate audit trail report for compliance",
+      "parameters": ["date"],
+      "example": {
+        "input": { "action": "generate_audit_report", "date": "2025-12-05" },
+        "output": "Audit Report Generated: 15 pages covering 2,847 trades, 8 breaks resolved, 4 pending. Report saved to compliance folder."
+      }
+    },
+    {
+      "name": "check_sla_status",
+      "description": "Check SLA compliance for break resolution",
+      "parameters": [],
+      "example": {
+        "input": { "action": "check_sla_status" },
+        "output": "SLA Status: 94% compliance (target: 95%). 2 breaks approaching 24-hour threshold. Immediate attention required for BRK-2024-4518."
+      }
+    }
+  ],
+  "useCases": [
+    "End-of-day trade settlement verification",
+    "Break detection and root cause analysis",
+    "Regulatory compliance reporting",
+    "Audit trail generation for SOX/SEC requirements",
+    "SLA monitoring and alerting",
+    "Cross-system reconciliation (OMS, DTCC, Prime Broker)"
+  ],
+  "integrations": [
+    "Order Management Systems (OMS)",
+    "DTCC/Clearing systems",
+    "Prime Broker platforms",
+    "Compliance reporting tools",
+    "Email/Slack notifications"
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Run the daily reconciliation for AAPL trades from yesterday."
+    },
+    {
+      "role": "agent",
+      "content": "Running daily reconciliation for AAPL...\n\n**Results:**\n- 1,247 trades processed\n- 1,241 matched (99.5%)\n- 6 breaks detected\n\n3 quantity mismatches, 2 price discrepancies, 1 missing counterparty confirmation. Shall I analyze the breaks?"
+    },
+    {
+      "role": "user",
+      "content": "Yes, analyze the first break."
+    },
+    {
+      "role": "agent",
+      "content": "**Break Analysis: BRK-2024-4521**\n\n**Type:** Quantity Mismatch\n**Trade ID:** TRD-847291\n**Symbol:** AAPL\n\n**Discrepancy:**\n- OMS Record: 500 shares @ $189.45\n- DTCC Record: 450 shares @ $189.45\n\n**Root Cause:** Partial fill detected. Original order was 500 shares, but only 450 were executed in final batch.\n\n**Suggested Resolution:**\n1. Verify execution report from broker\n2. Update OMS with correct quantity\n3. Issue amendment to counterparty\n\n**SLA:** 18 hours remaining"
+    }
+  ],
+  "sampleScenarios": [
+    {
+      "name": "Morning Reconciliation Check",
+      "description": "Daily check of previous day's trades",
+      "prompts": [
+        "Run reconciliation for all equities from yesterday",
+        "Show me the break summary",
+        "Which breaks are at risk of SLA breach?"
+      ]
+    },
+    {
+      "name": "Break Investigation",
+      "description": "Deep dive into specific trade breaks",
+      "prompts": [
+        "Analyze break BRK-2024-4521",
+        "What caused the price discrepancy on the MSFT trades?",
+        "Show me all breaks for Goldman Sachs counterparty"
+      ]
+    },
+    {
+      "name": "Compliance Reporting",
+      "description": "Generate reports for audit and compliance",
+      "prompts": [
+        "Generate the weekly audit report",
+        "Show SLA compliance metrics for this month",
+        "Create exception report for unresolved breaks"
+      ]
+    }
+  ]
+}

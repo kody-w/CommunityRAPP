@@ -1,0 +1,236 @@
+{
+  "seasonCycle": {
+    "version": "1.0.0",
+    "description": "RAPPworld operates on a 4-week seasonal cycle, repeating throughout the year",
+
+    "cycleStructure": {
+      "ticksPerSeason": 336,
+      "weeksPerSeason": 4,
+      "ticksPerWeek": 84,
+      "ticksPerDay": 48,
+      "seasonsPerYear": 13,
+      "totalYearTicks": 4368
+    },
+
+    "weeklyPhases": {
+      "week1": {
+        "name": "Dawn Season",
+        "theme": "new_beginnings",
+        "color": "#FFD700",
+        "icon": "sunrise",
+        "tickRange": [1, 84],
+        "focus": "Welcoming, foundation-building, community",
+        "bonusTypes": ["newcomer_xp", "social_rewards", "foundation_activities"],
+        "narrative": "A time of fresh starts and new possibilities. The world welcomes new adventurers and celebrates renewal."
+      },
+      "week2": {
+        "name": "Tournament Season",
+        "theme": "competition",
+        "color": "#DC143C",
+        "icon": "swords",
+        "tickRange": [85, 168],
+        "focus": "PvP, tournaments, skill challenges, glory",
+        "bonusTypes": ["combat_xp", "glory_points", "tournament_rewards"],
+        "narrative": "Champions rise and fall in the arena. Glory awaits those with courage and skill."
+      },
+      "week3": {
+        "name": "Trade Season",
+        "theme": "economy",
+        "color": "#228B22",
+        "icon": "coins",
+        "tickRange": [169, 252],
+        "focus": "Trading, crafting, economy, markets",
+        "bonusTypes": ["trade_bonuses", "crafting_xp", "market_discounts"],
+        "narrative": "Merchants gather, deals are struck, and fortunes are made. The marketplace thrives."
+      },
+      "week4": {
+        "name": "Lore Season",
+        "theme": "discovery",
+        "color": "#4B0082",
+        "icon": "book",
+        "tickRange": [253, 336],
+        "focus": "Exploration, story, mysteries, knowledge",
+        "bonusTypes": ["discovery_xp", "lore_rewards", "exploration_bonuses"],
+        "narrative": "Secrets emerge from shadow. Those who seek shall find, and knowledge becomes power."
+      }
+    },
+
+    "yearlySeasons": [
+      {
+        "number": 1,
+        "name": "Season of the Dawn",
+        "subtitle": "The Age of New Beginnings",
+        "tickRange": [1, 336],
+        "narrative_theme": "awakening",
+        "major_story": "The world awakens and heroes emerge"
+      },
+      {
+        "number": 2,
+        "name": "Season of Storms",
+        "subtitle": "Trials by Tempest",
+        "tickRange": [337, 672],
+        "narrative_theme": "adversity",
+        "major_story": "Great challenges test the heroes' resolve"
+      },
+      {
+        "number": 3,
+        "name": "Season of Flames",
+        "subtitle": "Forge of Champions",
+        "tickRange": [673, 1008],
+        "narrative_theme": "transformation",
+        "major_story": "Heroes are forged in the crucible of conflict"
+      },
+      {
+        "number": 4,
+        "name": "Season of Tides",
+        "subtitle": "Currents of Change",
+        "tickRange": [1009, 1344],
+        "narrative_theme": "change",
+        "major_story": "The world shifts and new powers emerge"
+      },
+      {
+        "number": 5,
+        "name": "Season of Shadows",
+        "subtitle": "Darkness Stirs",
+        "tickRange": [1345, 1680],
+        "narrative_theme": "darkness",
+        "major_story": "Threats emerge from the shadows"
+      },
+      {
+        "number": 6,
+        "name": "Season of Stars",
+        "subtitle": "Celestial Convergence",
+        "tickRange": [1681, 2016],
+        "narrative_theme": "destiny",
+        "major_story": "The stars align and destinies are revealed"
+      },
+      {
+        "number": 7,
+        "name": "Season of Earth",
+        "subtitle": "Foundations of Power",
+        "tickRange": [2017, 2352],
+        "narrative_theme": "strength",
+        "major_story": "Ancient powers of the earth awaken"
+      },
+      {
+        "number": 8,
+        "name": "Season of Winds",
+        "subtitle": "Whispers of Change",
+        "tickRange": [2353, 2688],
+        "narrative_theme": "communication",
+        "major_story": "Messages from afar bring new opportunities"
+      },
+      {
+        "number": 9,
+        "name": "Season of Harvest",
+        "subtitle": "Reaping What Was Sown",
+        "tickRange": [2689, 3024],
+        "narrative_theme": "consequences",
+        "major_story": "The fruits of past labors come to bear"
+      },
+      {
+        "number": 10,
+        "name": "Season of Frost",
+        "subtitle": "The Long Winter",
+        "tickRange": [3025, 3360],
+        "narrative_theme": "endurance",
+        "major_story": "Survival through the harshest trials"
+      },
+      {
+        "number": 11,
+        "name": "Season of Spirits",
+        "subtitle": "Veil Between Worlds",
+        "tickRange": [3361, 3696],
+        "narrative_theme": "mystery",
+        "major_story": "The boundaries between realms thin"
+      },
+      {
+        "number": 12,
+        "name": "Season of Unity",
+        "subtitle": "Bonds Unbreakable",
+        "tickRange": [3697, 4032],
+        "narrative_theme": "community",
+        "major_story": "Heroes unite against the coming darkness"
+      },
+      {
+        "number": 13,
+        "name": "Season of Legends",
+        "subtitle": "The Grand Finale",
+        "tickRange": [4033, 4368],
+        "narrative_theme": "climax",
+        "major_story": "The year's story reaches its epic conclusion"
+      }
+    ],
+
+    "transitionEvents": {
+      "description": "Special events that occur during season transitions",
+      "seasonEnd": {
+        "name": "Season's End Ceremony",
+        "duration": 4,
+        "activities": ["Award ceremony", "Leaderboard finalization", "Reward distribution"]
+      },
+      "seasonStart": {
+        "name": "New Season Dawn",
+        "duration": 4,
+        "activities": ["Opening ceremony", "New challenges revealed", "Season pass begins"]
+      },
+      "yearEnd": {
+        "name": "Year's End Festival",
+        "duration": 48,
+        "activities": ["Grand celebration", "Year in review", "Legendary rewards", "Annual champions crowned"]
+      }
+    },
+
+    "specialDates": {
+      "midYear": {
+        "tick": 2184,
+        "name": "Midsummer Festival",
+        "duration": 48,
+        "bonuses": {"xp_multiplier": 2.0, "drop_rate": 1.5}
+      },
+      "yearAnniversary": {
+        "tick": 4368,
+        "name": "Anniversary Celebration",
+        "duration": 96,
+        "bonuses": {"xp_multiplier": 3.0, "exclusive_rewards": true}
+      }
+    },
+
+    "cycleModifiers": {
+      "description": "Special modifiers that can affect entire seasons",
+      "possibleModifiers": [
+        {
+          "id": "blessed_season",
+          "name": "Blessed Season",
+          "effect": "+25% to all XP gains",
+          "rarity": "uncommon"
+        },
+        {
+          "id": "merchant_favor",
+          "name": "Merchant's Favor",
+          "effect": "-20% market fees",
+          "rarity": "common"
+        },
+        {
+          "id": "warrior_spirit",
+          "name": "Warrior's Spirit",
+          "effect": "+50% tournament rewards",
+          "rarity": "rare"
+        },
+        {
+          "id": "ancient_knowledge",
+          "name": "Ancient Knowledge",
+          "effect": "Double lore discovery rate",
+          "rarity": "rare"
+        },
+        {
+          "id": "golden_age",
+          "name": "Golden Age",
+          "effect": "All bonuses active",
+          "rarity": "legendary"
+        }
+      ],
+      "activeModifier": null
+    }
+  }
+}

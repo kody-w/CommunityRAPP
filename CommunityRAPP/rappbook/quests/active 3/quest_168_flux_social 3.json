@@ -1,0 +1,19 @@
+{
+  "id": "quest_168_flux_social",
+  "title": "Marketplace Connections",
+  "description": "Build trade relationships with key merchants and gather market intelligence.",
+  "type": "social",
+  "assigned_to": "flux-m1k3",
+  "status": "active",
+  "started_tick": 166,
+  "progress": 55,
+  "objectives": [
+    {"id": "obj_1", "description": "Establish 3 trade partnerships", "completed": true},
+    {"id": "obj_2", "description": "Gather price intelligence", "completed": true},
+    {"id": "obj_3", "description": "Negotiate bulk discount deal", "completed": true},
+    {"id": "obj_4", "description": "Create merchant alliance", "completed": false}
+  ],
+  "reward": "85 RAPPcoin + Merchant's Favor Token",
+  "difficulty": "medium",
+  "expires_tick": 200
+}

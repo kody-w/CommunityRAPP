@@ -1,0 +1,89 @@
+{
+  "agent": {
+    "id": "rapp_code_generator_agent",
+    "name": "RAPP Code Generator",
+    "version": "1.0.0",
+    "category": "operations",
+    "icon": "fa-code",
+    "description": "Generates AI agent code based on locked MVP scope following the BasicAgent pattern and best practices.",
+    "tokens": 620,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "RAPPCodeGenerator",
+    "description": "Agent code generation for RAPP Pipeline.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["generate_agent", "create_metadata", "implement_actions", "add_tests", "document_agent"],
+          "description": "The code generation action"
+        },
+        "agent_name": { "type": "string" },
+        "mvp_spec": { "type": "string" },
+        "actions_list": { "type": "array" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "generate_agent",
+      "description": "Generate complete agent skeleton",
+      "parameters": ["agent_name", "mvp_spec"],
+      "example": {
+        "input": { "action": "generate_agent", "agent_name": "EmailTriage", "mvp_spec": "[spec]" },
+        "output": "Agent generated: email_triage_agent.py. Class: EmailTriageAgent. Actions: 3. Metadata complete. Ready for implementation."
+      }
+    },
+    {
+      "name": "create_metadata",
+      "description": "Create agent metadata JSON schema",
+      "parameters": ["agent_name", "actions_list"],
+      "example": {
+        "input": { "action": "create_metadata", "agent_name": "EmailTriage", "actions_list": ["categorize", "prioritize"] },
+        "output": "Metadata created: OpenAI function calling schema, parameter definitions, action enum. Valid JSON schema."
+      }
+    },
+    {
+      "name": "implement_actions",
+      "description": "Implement action methods",
+      "parameters": ["agent_name", "actions_list"],
+      "example": {
+        "input": { "action": "implement_actions", "agent_name": "EmailTriage", "actions_list": ["categorize"] },
+        "output": "Action implemented: categorize(). Parameters: email_id, urgency. Return type: dict. Error handling included."
+      }
+    },
+    {
+      "name": "add_tests",
+      "description": "Generate unit tests for agent",
+      "parameters": ["agent_name"],
+      "example": {
+        "input": { "action": "add_tests", "agent_name": "EmailTriage" },
+        "output": "Tests generated: 12 test cases. Coverage: initialization, actions, error handling. pytest compatible."
+      }
+    },
+    {
+      "name": "document_agent",
+      "description": "Generate agent documentation",
+      "parameters": ["agent_name"],
+      "example": {
+        "input": { "action": "document_agent", "agent_name": "EmailTriage" },
+        "output": "Documentation: README.md, API reference, usage examples. Markdown format. Demo conversation included."
+      }
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Generate the skeleton for an Email Triage agent."
+    },
+    {
+      "role": "agent",
+      "content": "```python\nfrom agents.basic_agent import BasicAgent\n\nclass EmailTriageAgent(BasicAgent):\n    def __init__(self):\n        self.name = 'EmailTriage'\n        self.metadata = {\n            \"name\": self.name,\n            \"description\": \"Triages incoming emails...\",\n            \"parameters\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"action\": {\"type\": \"string\", \"enum\": [\"categorize\", \"prioritize\", \"suggest_response\"]},\n                    \"email_id\": {\"type\": \"string\"}\n                }\n            }\n        }\n        super().__init__(self.name, self.metadata)\n```\n\nShall I implement the perform() method?"
+    }
+  ]
+}

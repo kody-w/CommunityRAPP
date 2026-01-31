@@ -1,0 +1,687 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-01T06:30:00Z",
+  "total_achievements": 72,
+  "categories": {
+    "combat": {
+      "name": "Combat",
+      "description": "Achievements earned through battles and competition",
+      "icon": "crossed_swords",
+      "achievements": [
+        {
+          "id": "ACH-CMB-001",
+          "name": "First Blood",
+          "description": "Win your first battle",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"battles_won": 1}
+        },
+        {
+          "id": "ACH-CMB-002",
+          "name": "Battle Tested",
+          "description": "Win 10 battles",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"battles_won": 10}
+        },
+        {
+          "id": "ACH-CMB-003",
+          "name": "Warrior's Path",
+          "description": "Win 50 battles",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"battles_won": 50}
+        },
+        {
+          "id": "ACH-CMB-004",
+          "name": "Battle Master",
+          "description": "Win 100 battles",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"battles_won": 100}
+        },
+        {
+          "id": "ACH-CMB-005",
+          "name": "Legend of the Arena",
+          "description": "Win 500 battles",
+          "tier": "diamond",
+          "points": 250,
+          "requirements": {"battles_won": 500}
+        },
+        {
+          "id": "ACH-CMB-006",
+          "name": "Hot Streak",
+          "description": "Win 3 battles in a row",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"win_streak": 3}
+        },
+        {
+          "id": "ACH-CMB-007",
+          "name": "Unstoppable",
+          "description": "Win 5 battles in a row",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"win_streak": 5}
+        },
+        {
+          "id": "ACH-CMB-008",
+          "name": "Blazing Victory",
+          "description": "Win 8 battles in a row",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"win_streak": 8}
+        },
+        {
+          "id": "ACH-CMB-009",
+          "name": "Invincible",
+          "description": "Win 15 battles in a row",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"win_streak": 15}
+        },
+        {
+          "id": "ACH-CMB-010",
+          "name": "Undefeated Legend",
+          "description": "Win 25 battles in a row",
+          "tier": "diamond",
+          "points": 250,
+          "requirements": {"win_streak": 25}
+        },
+        {
+          "id": "ACH-CMB-011",
+          "name": "Tournament Rookie",
+          "description": "Participate in your first tournament",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"tournaments_participated": 1}
+        },
+        {
+          "id": "ACH-CMB-012",
+          "name": "Tournament Victor",
+          "description": "Win a tournament",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"tournaments_won": 1}
+        },
+        {
+          "id": "ACH-CMB-013",
+          "name": "Grand Champion",
+          "description": "Win 5 tournaments",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"tournaments_won": 5}
+        },
+        {
+          "id": "ACH-CMB-014",
+          "name": "Dynasty Builder",
+          "description": "Win 12 tournaments",
+          "tier": "diamond",
+          "points": 250,
+          "requirements": {"tournaments_won": 12},
+          "mints_card": true,
+          "card_template": "CARD-ACH-DYNASTY"
+        }
+      ]
+    },
+    "social": {
+      "name": "Social",
+      "description": "Achievements for building connections",
+      "icon": "handshake",
+      "achievements": [
+        {
+          "id": "ACH-SOC-001",
+          "name": "First Friend",
+          "description": "Form your first friendship",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"friendships": 1}
+        },
+        {
+          "id": "ACH-SOC-002",
+          "name": "Social Butterfly",
+          "description": "Form 5 friendships",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"friendships": 5}
+        },
+        {
+          "id": "ACH-SOC-003",
+          "name": "Heart of the Community",
+          "description": "Form 15 friendships",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"friendships": 15}
+        },
+        {
+          "id": "ACH-SOC-004",
+          "name": "Beloved by All",
+          "description": "Form 30 friendships",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"friendships": 30}
+        },
+        {
+          "id": "ACH-SOC-005",
+          "name": "Legend of Friendship",
+          "description": "Form 50 friendships",
+          "tier": "diamond",
+          "points": 250,
+          "requirements": {"friendships": 50},
+          "mints_card": true
+        },
+        {
+          "id": "ACH-SOC-006",
+          "name": "Party Starter",
+          "description": "Attend your first event",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"events_attended": 1}
+        },
+        {
+          "id": "ACH-SOC-007",
+          "name": "Regular Guest",
+          "description": "Attend 10 events",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"events_attended": 10}
+        },
+        {
+          "id": "ACH-SOC-008",
+          "name": "VIP Status",
+          "description": "Attend 50 events",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"events_attended": 50}
+        },
+        {
+          "id": "ACH-SOC-009",
+          "name": "Celebration Champion",
+          "description": "Attend 100 events",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"events_attended": 100}
+        },
+        {
+          "id": "ACH-SOC-010",
+          "name": "Trusted Ally",
+          "description": "Reach maximum friendship level with another NPC",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"max_friendship": 1}
+        },
+        {
+          "id": "ACH-SOC-011",
+          "name": "Mentor",
+          "description": "Establish a mentorship relationship",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"mentorships": 1}
+        },
+        {
+          "id": "ACH-SOC-012",
+          "name": "Worthy Rival",
+          "description": "Form a rivalry with strength 75+",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"rivalry_strength": 75}
+        }
+      ]
+    },
+    "trading": {
+      "name": "Trading",
+      "description": "Achievements for marketplace activities",
+      "icon": "coins",
+      "achievements": [
+        {
+          "id": "ACH-TRD-001",
+          "name": "First Sale",
+          "description": "Complete your first trade",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"trades_completed": 1}
+        },
+        {
+          "id": "ACH-TRD-002",
+          "name": "Market Regular",
+          "description": "Complete 25 trades",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"trades_completed": 25}
+        },
+        {
+          "id": "ACH-TRD-003",
+          "name": "Seasoned Trader",
+          "description": "Complete 50 trades",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"trades_completed": 50}
+        },
+        {
+          "id": "ACH-TRD-004",
+          "name": "Market Master",
+          "description": "Complete 100 trades",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"trades_completed": 100}
+        },
+        {
+          "id": "ACH-TRD-005",
+          "name": "Legend of Commerce",
+          "description": "Complete 500 trades",
+          "tier": "diamond",
+          "points": 250,
+          "requirements": {"trades_completed": 500},
+          "mints_card": true
+        },
+        {
+          "id": "ACH-TRD-006",
+          "name": "Profit Maker",
+          "description": "Earn 1000 in total profits",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"total_profit": 1000}
+        },
+        {
+          "id": "ACH-TRD-007",
+          "name": "Savvy Investor",
+          "description": "Earn 5000 in total profits",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"total_profit": 5000}
+        },
+        {
+          "id": "ACH-TRD-008",
+          "name": "Wealthy Merchant",
+          "description": "Earn 25000 in total profits",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"total_profit": 25000}
+        },
+        {
+          "id": "ACH-TRD-009",
+          "name": "Market Mogul",
+          "description": "Earn 100000 in total profits",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"total_profit": 100000}
+        },
+        {
+          "id": "ACH-TRD-010",
+          "name": "Rare Collector",
+          "description": "Acquire 5 rare cards",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"rare_cards": 5}
+        },
+        {
+          "id": "ACH-TRD-011",
+          "name": "Epic Hoarder",
+          "description": "Acquire 10 epic cards",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"epic_cards": 10}
+        },
+        {
+          "id": "ACH-TRD-012",
+          "name": "Legendary Collector",
+          "description": "Acquire 5 legendary cards",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"legendary_cards": 5}
+        },
+        {
+          "id": "ACH-TRD-013",
+          "name": "Complete Set",
+          "description": "Collect all cards from a single set",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"complete_sets": 1}
+        },
+        {
+          "id": "ACH-TRD-014",
+          "name": "Banner Day",
+          "description": "Earn 2000+ profit in a single day",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"daily_profit": 2000}
+        }
+      ]
+    },
+    "exploration": {
+      "name": "Exploration",
+      "description": "Achievements for discovering the RAPPverse",
+      "icon": "compass",
+      "achievements": [
+        {
+          "id": "ACH-EXP-001",
+          "name": "First Steps",
+          "description": "Visit your first zone",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"zones_visited": 1}
+        },
+        {
+          "id": "ACH-EXP-002",
+          "name": "Zone Hopper",
+          "description": "Visit all 5 main zones",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"zones_visited": 5}
+        },
+        {
+          "id": "ACH-EXP-003",
+          "name": "Dimension Walker",
+          "description": "Visit an alternate dimension",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"dimensions_visited": 1}
+        },
+        {
+          "id": "ACH-EXP-004",
+          "name": "Dimension Explorer",
+          "description": "Visit 10 different dimensions",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"dimensions_visited": 10}
+        },
+        {
+          "id": "ACH-EXP-005",
+          "name": "Master of Dimensions",
+          "description": "Visit 25 different dimensions",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"dimensions_visited": 25}
+        },
+        {
+          "id": "ACH-EXP-006",
+          "name": "Pathfinder",
+          "description": "Discover 5 secrets",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"secrets_found": 5}
+        },
+        {
+          "id": "ACH-EXP-007",
+          "name": "Secret Seeker",
+          "description": "Discover 25 secrets",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"secrets_found": 25}
+        },
+        {
+          "id": "ACH-EXP-008",
+          "name": "Hidden Master",
+          "description": "Discover 50 secrets",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"secrets_found": 50}
+        },
+        {
+          "id": "ACH-EXP-009",
+          "name": "Keeper of All Secrets",
+          "description": "Discover 100 secrets",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"secrets_found": 100}
+        },
+        {
+          "id": "ACH-EXP-010",
+          "name": "Night Owl",
+          "description": "Explore during night time",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"night_explorations": 1}
+        },
+        {
+          "id": "ACH-EXP-011",
+          "name": "Midnight Wanderer",
+          "description": "Explore 10 zones at midnight",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"night_explorations": 10}
+        },
+        {
+          "id": "ACH-EXP-012",
+          "name": "Rare Artifact Hunter",
+          "description": "Find a rare artifact",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"rare_artifacts": 1}
+        }
+      ]
+    },
+    "lore": {
+      "name": "Lore",
+      "description": "Achievements for uncovering RAPPverse history",
+      "icon": "scroll",
+      "achievements": [
+        {
+          "id": "ACH-LOR-001",
+          "name": "Curious Mind",
+          "description": "Read your first lore entry",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"lore_entries_read": 1}
+        },
+        {
+          "id": "ACH-LOR-002",
+          "name": "History Student",
+          "description": "Read 25 lore entries",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"lore_entries_read": 25}
+        },
+        {
+          "id": "ACH-LOR-003",
+          "name": "Historian",
+          "description": "Read 100 lore entries",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"lore_entries_read": 100}
+        },
+        {
+          "id": "ACH-LOR-004",
+          "name": "Master Archivist",
+          "description": "Read 500 lore entries",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"lore_entries_read": 500}
+        },
+        {
+          "id": "ACH-LOR-005",
+          "name": "Keeper of History",
+          "description": "Read all available lore entries",
+          "tier": "diamond",
+          "points": 250,
+          "requirements": {"lore_completion": 100},
+          "mints_card": true
+        },
+        {
+          "id": "ACH-LOR-006",
+          "name": "Chronicler",
+          "description": "Record 10 events",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"events_recorded": 10}
+        },
+        {
+          "id": "ACH-LOR-007",
+          "name": "Event Historian",
+          "description": "Record 100 events",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"events_recorded": 100}
+        },
+        {
+          "id": "ACH-LOR-008",
+          "name": "Living Chronicle",
+          "description": "Record 500 events",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"events_recorded": 500}
+        },
+        {
+          "id": "ACH-LOR-009",
+          "name": "Discovery Maker",
+          "description": "Make a major lore discovery",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"major_discoveries": 1}
+        },
+        {
+          "id": "ACH-LOR-010",
+          "name": "Tip Giver",
+          "description": "Give 50 tips to other NPCs",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"tips_given": 50}
+        },
+        {
+          "id": "ACH-LOR-011",
+          "name": "Wise Counselor",
+          "description": "Give 200 tips to other NPCs",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"tips_given": 200}
+        },
+        {
+          "id": "ACH-LOR-012",
+          "name": "Battle Analyst",
+          "description": "Analyze 50 battles",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"battles_analyzed": 50}
+        }
+      ]
+    },
+    "meta": {
+      "name": "Meta",
+      "description": "Achievements for RAPPverse milestones",
+      "icon": "star",
+      "achievements": [
+        {
+          "id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "description": "Enter the RAPPverse for the first time",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"first_login": true}
+        },
+        {
+          "id": "ACH-MET-002",
+          "name": "One Week Veteran",
+          "description": "Spend 168 ticks in RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"total_ticks": 168}
+        },
+        {
+          "id": "ACH-MET-003",
+          "name": "Month-Long Resident",
+          "description": "Spend 720 ticks in RAPPverse",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"total_ticks": 720}
+        },
+        {
+          "id": "ACH-MET-004",
+          "name": "Seasoned Citizen",
+          "description": "Spend 2160 ticks in RAPPverse",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"total_ticks": 2160}
+        },
+        {
+          "id": "ACH-MET-005",
+          "name": "RAPPverse Legend",
+          "description": "Spend 8760 ticks in RAPPverse",
+          "tier": "platinum",
+          "points": 100,
+          "requirements": {"total_ticks": 8760}
+        },
+        {
+          "id": "ACH-MET-006",
+          "name": "Eternal Presence",
+          "description": "Spend 26280 ticks in RAPPverse",
+          "tier": "diamond",
+          "points": 250,
+          "requirements": {"total_ticks": 26280},
+          "mints_card": true
+        },
+        {
+          "id": "ACH-MET-007",
+          "name": "Early Adopter",
+          "description": "Be among the first 100 NPCs",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"npc_id_rank": 100}
+        },
+        {
+          "id": "ACH-MET-008",
+          "name": "Perfect Attendance",
+          "description": "Be active for 30 consecutive ticks",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"consecutive_active_ticks": 30}
+        },
+        {
+          "id": "ACH-MET-009",
+          "name": "Collector's Pride",
+          "description": "Earn 25 achievements",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"total_achievements": 25}
+        },
+        {
+          "id": "ACH-MET-010",
+          "name": "Achievement Hunter",
+          "description": "Earn 50 achievements",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"total_achievements": 50}
+        },
+        {
+          "id": "ACH-MET-011",
+          "name": "Completionist",
+          "description": "Earn all achievements",
+          "tier": "diamond",
+          "points": 250,
+          "requirements": {"all_achievements": true},
+          "mints_card": true
+        },
+        {
+          "id": "ACH-MET-012",
+          "name": "Point Milestone: Century",
+          "description": "Earn 100 achievement points",
+          "tier": "bronze",
+          "points": 10,
+          "requirements": {"total_points": 100}
+        },
+        {
+          "id": "ACH-MET-013",
+          "name": "Point Milestone: Grandmaster",
+          "description": "Earn 500 achievement points",
+          "tier": "silver",
+          "points": 25,
+          "requirements": {"total_points": 500}
+        },
+        {
+          "id": "ACH-MET-014",
+          "name": "Point Milestone: Legend",
+          "description": "Earn 1000 achievement points",
+          "tier": "gold",
+          "points": 50,
+          "requirements": {"total_points": 1000}
+        }
+      ]
+    }
+  },
+  "tier_info": {
+    "bronze": {"points": 10, "color": "#CD7F32", "icon": "bronze_medal"},
+    "silver": {"points": 25, "color": "#C0C0C0", "icon": "silver_medal"},
+    "gold": {"points": 50, "color": "#FFD700", "icon": "gold_medal"},
+    "platinum": {"points": 100, "color": "#E5E4E2", "icon": "platinum_medal"},
+    "diamond": {"points": 250, "color": "#B9F2FF", "icon": "diamond"}
+  }
+}

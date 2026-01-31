@@ -1,0 +1,714 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-01T06:30:00Z",
+  "current_tick": 18,
+  "total_awarded": 47,
+  "npcs": {
+    "blaze-b8z": {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "total_points": 660,
+      "total_achievements": 12,
+      "achievements": [
+        {
+          "achievement_id": "ACH-CMB-001",
+          "name": "First Blood",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-002",
+          "name": "Battle Tested",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 3,
+          "timestamp": "2026-01-17T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-003",
+          "name": "Warrior's Path",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 5,
+          "timestamp": "2026-01-19T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-004",
+          "name": "Battle Master",
+          "tier": "platinum",
+          "points": 100,
+          "awarded_tick": 8,
+          "timestamp": "2026-01-25T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-006",
+          "name": "Hot Streak",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 2,
+          "timestamp": "2026-01-16T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-007",
+          "name": "Unstoppable",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 4,
+          "timestamp": "2026-01-18T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-008",
+          "name": "Blazing Victory",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z",
+          "notes": "Achieved during Grand Tournament Finals with 8 win streak"
+        },
+        {
+          "achievement_id": "ACH-CMB-011",
+          "name": "Tournament Rookie",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-012",
+          "name": "Tournament Victor",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 6,
+          "timestamp": "2026-01-20T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-013",
+          "name": "Grand Champion",
+          "tier": "platinum",
+          "points": 100,
+          "awarded_tick": 9,
+          "timestamp": "2026-01-28T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-014",
+          "name": "Dynasty Builder",
+          "tier": "diamond",
+          "points": 250,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z",
+          "notes": "Won 12th tournament - Grand Tournament Finals 2026",
+          "card_minted": "CARD-ACH-001"
+        },
+        {
+          "achievement_id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 610,
+        "social": 0,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 0,
+        "meta": 10
+      }
+    },
+    "cipher-c9p": {
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "total_points": 210,
+      "total_achievements": 7,
+      "achievements": [
+        {
+          "achievement_id": "ACH-CMB-001",
+          "name": "First Blood",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-002",
+          "name": "Battle Tested",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 4,
+          "timestamp": "2026-01-18T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-003",
+          "name": "Warrior's Path",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 8,
+          "timestamp": "2026-01-25T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-006",
+          "name": "Hot Streak",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 3,
+          "timestamp": "2026-01-17T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-CMB-011",
+          "name": "Tournament Rookie",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 2,
+          "timestamp": "2026-01-16T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-SOC-012",
+          "name": "Worthy Rival",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z",
+          "notes": "Rivalry with Blaze Baz reached 75 strength after tournament finals"
+        },
+        {
+          "achievement_id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 105,
+        "social": 50,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 0,
+        "meta": 10
+      }
+    },
+    "synth-c1au": {
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "total_points": 175,
+      "total_achievements": 7,
+      "achievements": [
+        {
+          "achievement_id": "ACH-LOR-010",
+          "name": "Tip Giver",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 3,
+          "timestamp": "2026-01-17T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-LOR-011",
+          "name": "Wise Counselor",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z",
+          "notes": "Reached 203 tips given during tournament"
+        },
+        {
+          "achievement_id": "ACH-LOR-012",
+          "name": "Battle Analyst",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z",
+          "notes": "Analyzed 52 battles during Grand Tournament Finals"
+        },
+        {
+          "achievement_id": "ACH-SOC-011",
+          "name": "Mentor",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z",
+          "notes": "Established mentorship with Blaze Baz"
+        },
+        {
+          "achievement_id": "ACH-SOC-001",
+          "name": "First Friend",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-EXP-010",
+          "name": "Night Owl",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 18,
+          "timestamp": "2026-02-01T02:30:00Z",
+          "notes": "Exploring gallery at night during celebration"
+        },
+        {
+          "achievement_id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 0,
+        "social": 35,
+        "trading": 0,
+        "exploration": 10,
+        "lore": 85,
+        "meta": 10
+      }
+    },
+    "flux-m1k3": {
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "total_points": 220,
+      "total_achievements": 8,
+      "achievements": [
+        {
+          "achievement_id": "ACH-TRD-001",
+          "name": "First Sale",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-TRD-002",
+          "name": "Market Regular",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 3,
+          "timestamp": "2026-01-17T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-TRD-003",
+          "name": "Seasoned Trader",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 6,
+          "timestamp": "2026-01-20T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-TRD-006",
+          "name": "Profit Maker",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 2,
+          "timestamp": "2026-01-16T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-TRD-007",
+          "name": "Savvy Investor",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 7,
+          "timestamp": "2026-01-22T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-TRD-014",
+          "name": "Banner Day",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 18,
+          "timestamp": "2026-02-01T02:30:00Z",
+          "notes": "Earned 2450 profit in single day during tournament celebration"
+        },
+        {
+          "achievement_id": "ACH-SOC-001",
+          "name": "First Friend",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 17,
+          "timestamp": "2026-02-01T01:30:00Z"
+        },
+        {
+          "achievement_id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 0,
+        "social": 10,
+        "trading": 170,
+        "exploration": 0,
+        "lore": 0,
+        "meta": 10
+      }
+    },
+    "quant-qn77": {
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "total_points": 120,
+      "total_achievements": 5,
+      "achievements": [
+        {
+          "achievement_id": "ACH-LOR-001",
+          "name": "Curious Mind",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-LOR-002",
+          "name": "History Student",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 4,
+          "timestamp": "2026-01-18T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-LOR-003",
+          "name": "Historian",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 9,
+          "timestamp": "2026-01-28T00:00:00Z",
+          "notes": "158 datasets analyzed with master insight rating"
+        },
+        {
+          "achievement_id": "ACH-SOC-001",
+          "name": "First Friend",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 0,
+        "social": 10,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 85,
+        "meta": 10
+      }
+    },
+    "nova-n3x": {
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "total_points": 295,
+      "total_achievements": 8,
+      "achievements": [
+        {
+          "achievement_id": "ACH-EXP-001",
+          "name": "First Steps",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-EXP-002",
+          "name": "Zone Hopper",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 2,
+          "timestamp": "2026-01-16T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-EXP-003",
+          "name": "Dimension Walker",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 3,
+          "timestamp": "2026-01-17T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-EXP-004",
+          "name": "Dimension Explorer",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 5,
+          "timestamp": "2026-01-19T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-EXP-005",
+          "name": "Master of Dimensions",
+          "tier": "platinum",
+          "points": 100,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z",
+          "notes": "Discovered 23 dimensions - pathfinder rank achieved"
+        },
+        {
+          "achievement_id": "ACH-EXP-006",
+          "name": "Pathfinder",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 2,
+          "timestamp": "2026-01-16T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-EXP-007",
+          "name": "Secret Seeker",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 4,
+          "timestamp": "2026-01-18T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-EXP-008",
+          "name": "Hidden Master",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 8,
+          "timestamp": "2026-01-25T00:00:00Z",
+          "notes": "Found 89 secrets - pathfinder rank achieved"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 0,
+        "social": 0,
+        "trading": 0,
+        "exploration": 295,
+        "lore": 0,
+        "meta": 0
+      }
+    },
+    "echo-e7e": {
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "total_points": 145,
+      "total_achievements": 6,
+      "achievements": [
+        {
+          "achievement_id": "ACH-LOR-006",
+          "name": "Chronicler",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-LOR-007",
+          "name": "Event Historian",
+          "tier": "silver",
+          "points": 25,
+          "awarded_tick": 5,
+          "timestamp": "2026-01-19T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-LOR-008",
+          "name": "Living Chronicle",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z",
+          "notes": "Recorded 314 events with impeccable accuracy"
+        },
+        {
+          "achievement_id": "ACH-LOR-001",
+          "name": "Curious Mind",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-SOC-001",
+          "name": "First Friend",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 17,
+          "timestamp": "2026-02-01T01:30:00Z",
+          "notes": "Friendship formed with Pixel Pam"
+        },
+        {
+          "achievement_id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 0,
+        "social": 10,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 95,
+        "meta": 10
+      }
+    },
+    "pixel-p4m": {
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "total_points": 40,
+      "total_achievements": 4,
+      "achievements": [
+        {
+          "achievement_id": "ACH-SOC-001",
+          "name": "First Friend",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 17,
+          "timestamp": "2026-02-01T01:30:00Z",
+          "notes": "Friendship formed with Echo Eve"
+        },
+        {
+          "achievement_id": "ACH-SOC-006",
+          "name": "Party Starter",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 10,
+          "timestamp": "2026-02-01T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-EXP-010",
+          "name": "Night Owl",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 18,
+          "timestamp": "2026-02-01T02:30:00Z",
+          "notes": "Drowsy in gallery at night"
+        },
+        {
+          "achievement_id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 0,
+        "social": 20,
+        "trading": 0,
+        "exploration": 10,
+        "lore": 0,
+        "meta": 10
+      }
+    },
+    "spark-s4r": {
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "total_points": 80,
+      "total_achievements": 4,
+      "achievements": [
+        {
+          "achievement_id": "ACH-LOR-009",
+          "name": "Discovery Maker",
+          "tier": "gold",
+          "points": 50,
+          "awarded_tick": 8,
+          "timestamp": "2026-01-25T00:00:00Z",
+          "notes": "Built 45 machines - high innovation score"
+        },
+        {
+          "achievement_id": "ACH-SOC-001",
+          "name": "First Friend",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 17,
+          "timestamp": "2026-02-01T01:30:00Z"
+        },
+        {
+          "achievement_id": "ACH-MET-001",
+          "name": "Welcome to RAPPverse",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 1,
+          "timestamp": "2026-01-15T00:00:00Z"
+        },
+        {
+          "achievement_id": "ACH-MET-012",
+          "name": "Point Milestone: Century",
+          "tier": "bronze",
+          "points": 10,
+          "awarded_tick": 8,
+          "timestamp": "2026-01-25T00:00:00Z"
+        }
+      ],
+      "category_breakdown": {
+        "combat": 0,
+        "social": 10,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 50,
+        "meta": 20
+      }
+    }
+  },
+  "recent_awards": [
+    {
+      "achievement_id": "ACH-CMB-014",
+      "npc_id": "blaze-b8z",
+      "npc_name": "Blaze Baz",
+      "achievement_name": "Dynasty Builder",
+      "tier": "diamond",
+      "points": 250,
+      "awarded_tick": 10,
+      "card_minted": true
+    },
+    {
+      "achievement_id": "ACH-TRD-014",
+      "npc_id": "flux-m1k3",
+      "npc_name": "Flux Mike",
+      "achievement_name": "Banner Day",
+      "tier": "gold",
+      "points": 50,
+      "awarded_tick": 18
+    },
+    {
+      "achievement_id": "ACH-EXP-010",
+      "npc_id": "synth-c1au",
+      "npc_name": "Synth Claude",
+      "achievement_name": "Night Owl",
+      "tier": "bronze",
+      "points": 10,
+      "awarded_tick": 18
+    },
+    {
+      "achievement_id": "ACH-EXP-010",
+      "npc_id": "pixel-p4m",
+      "npc_name": "Pixel Pam",
+      "achievement_name": "Night Owl",
+      "tier": "bronze",
+      "points": 10,
+      "awarded_tick": 18
+    }
+  ],
+  "statistics": {
+    "total_points_distributed": 1925,
+    "achievements_by_tier": {
+      "bronze": 24,
+      "silver": 11,
+      "gold": 9,
+      "platinum": 3,
+      "diamond": 1
+    },
+    "achievements_by_category": {
+      "combat": 14,
+      "social": 8,
+      "trading": 6,
+      "exploration": 9,
+      "lore": 10,
+      "meta": 7
+    }
+  }
+}

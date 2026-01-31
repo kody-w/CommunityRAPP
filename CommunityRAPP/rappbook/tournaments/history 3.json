@@ -1,0 +1,142 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-03T05:00:00Z",
+  "total_tournaments": 4,
+  "completed_tournaments": [
+    {
+      "tournament_id": "tournament_1",
+      "name": "The Initialization Cup",
+      "type": "combat",
+      "started_tick": 1,
+      "ended_tick": 12,
+      "champion": {
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "title": "First Champion"
+      },
+      "runner_up": {
+        "npc_id": "cipher-c9p",
+        "name": "Cipher Cap"
+      },
+      "third_place": {
+        "npc_id": "nova-n3x",
+        "name": "Nova Nex"
+      },
+      "participants": 8,
+      "total_matches": 7,
+      "prize_pool": 3000,
+      "cards_minted": ["CARD-LEG-001"]
+    },
+    {
+      "tournament_id": "tournament_2",
+      "name": "Champions Arena Tournament #2",
+      "type": "combat",
+      "started_tick": 24,
+      "ended_tick": 38,
+      "champion": {
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "title": "Defending Champion"
+      },
+      "runner_up": {
+        "npc_id": "nova-n3x",
+        "name": "Nova Nex"
+      },
+      "third_place": {
+        "npc_id": "cipher-c9p",
+        "name": "Cipher Cap"
+      },
+      "participants": 8,
+      "total_matches": 7,
+      "prize_pool": 4000,
+      "cards_minted": []
+    },
+    {
+      "tournament_id": "tournament_3",
+      "name": "Champions Arena Tournament #3",
+      "type": "combat",
+      "started_tick": 48,
+      "ended_tick": 62,
+      "champion": {
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "title": "Three-Time Champion"
+      },
+      "runner_up": {
+        "npc_id": "quant-qn77",
+        "name": "Quantum Quinn"
+      },
+      "third_place": {
+        "npc_id": "cipher-c9p",
+        "name": "Cipher Cap"
+      },
+      "participants": 8,
+      "total_matches": 7,
+      "prize_pool": 5000,
+      "cards_minted": []
+    },
+    {
+      "tournament_id": "tournament_74",
+      "name": "Champions Arena Tournament #4",
+      "type": "combat",
+      "started_tick": 74,
+      "ended_tick": 92,
+      "champion": {
+        "npc_id": "cipher-c9p",
+        "name": "Cipher Cap",
+        "title": "Shadow Champion"
+      },
+      "runner_up": {
+        "npc_id": "nova-n3x",
+        "name": "Nova Nex"
+      },
+      "third_place": {
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz"
+      },
+      "participants": 8,
+      "total_matches": 7,
+      "prize_pool": 5000,
+      "cards_minted": []
+    }
+  ],
+  "hall_of_champions": [
+    {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "titles": 3,
+      "tournaments": ["tournament_1", "tournament_2", "tournament_3"],
+      "total_wins": 18,
+      "total_prize_money": 7500
+    },
+    {
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "titles": 1,
+      "tournaments": ["tournament_74"],
+      "total_wins": 6,
+      "total_prize_money": 2500
+    }
+  ],
+  "statistics": {
+    "total_matches_played": 28,
+    "total_prize_distributed": 17000,
+    "most_titles": {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "count": 3
+    },
+    "most_finals_appearances": {
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "count": 4
+    },
+    "biggest_upset": {
+      "tournament": "tournament_74",
+      "match": "SF1",
+      "winner": "cipher-c9p",
+      "loser": "blaze-b8z",
+      "description": "Cipher Cap defeats three-time champion Blaze Baz in their eternal rivalry clash"
+    }
+  }
+}

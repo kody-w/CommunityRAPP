@@ -1,0 +1,62 @@
+{
+  "agent": {
+    "id": "context_memory_agent",
+    "name": "Context Memory",
+    "version": "1.0.0",
+    "category": "core",
+    "icon": "fa-brain",
+    "description": "Core agent for recalling conversation history, user preferences, and context-specific memories across sessions.",
+    "tokens": 320,
+    "core": true,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "ContextMemory",
+    "description": "Recalls conversation history and user-specific memories.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["recall_context", "search_memory"],
+          "description": "The memory action"
+        },
+        "query": { "type": "string" },
+        "context_type": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "recall_context",
+      "description": "Recall user context and preferences",
+      "parameters": ["context_type"],
+      "example": {
+        "input": { "action": "recall_context", "context_type": "preferences" },
+        "output": "Preferences: Report format - Executive summary, Communication - Concise bullets, Timezone - PST, Weekly sync - Tuesdays 10am."
+      }
+    },
+    {
+      "name": "search_memory",
+      "description": "Search memory for specific information",
+      "parameters": ["query"],
+      "example": {
+        "input": { "action": "search_memory", "query": "Acme Corp" },
+        "output": "Found: Last discussed Acme Corp on Dec 3. Topics: Q4 forecast, renewal negotiation. Action items: Send proposal by Dec 10."
+      }
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "What do you remember about my preferences?"
+    },
+    {
+      "role": "agent",
+      "content": "**Your Stored Preferences:**\n\n- Preferred report format: Executive summary with charts\n- Communication style: Concise, bullet points\n- Timezone: Pacific (PST)\n- Weekly sync: Tuesdays 10am\n- Focus areas: Pipeline velocity, Customer retention\n\n**Recent Context:**\n- Last session: Discussed Q4 forecast\n- Pending action: Review Acme Corp proposal"
+    }
+  ]
+}

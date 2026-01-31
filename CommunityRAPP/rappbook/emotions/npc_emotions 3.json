@@ -1,0 +1,448 @@
+{
+  "version": "1.0.0",
+  "description": "Detailed NPC emotional states using Plutchik's core emotions",
+  "last_updated_tick": 208,
+  "timestamp": "2026-02-05T01:30:00Z",
+  "emotion_model": {
+    "framework": "Plutchik's Wheel of Emotions",
+    "core_emotions": {
+      "joy": {
+        "description": "Happiness, pleasure, and contentment",
+        "opposite": "sadness",
+        "intensity_levels": ["serenity", "joy", "ecstasy"],
+        "decay_rate": 0.04,
+        "contagion_factor": 0.15
+      },
+      "fear": {
+        "description": "Apprehension, anxiety, and dread",
+        "opposite": "anger",
+        "intensity_levels": ["apprehension", "fear", "terror"],
+        "decay_rate": 0.06,
+        "contagion_factor": 0.25
+      },
+      "anticipation": {
+        "description": "Expectation, interest, and vigilance",
+        "opposite": "surprise",
+        "intensity_levels": ["interest", "anticipation", "vigilance"],
+        "decay_rate": 0.03,
+        "contagion_factor": 0.12
+      },
+      "surprise": {
+        "description": "Amazement, wonder, and astonishment",
+        "opposite": "anticipation",
+        "intensity_levels": ["distraction", "surprise", "amazement"],
+        "decay_rate": 0.10,
+        "contagion_factor": 0.20
+      },
+      "trust": {
+        "description": "Acceptance, admiration, and faith",
+        "opposite": "disgust",
+        "intensity_levels": ["acceptance", "trust", "admiration"],
+        "decay_rate": 0.02,
+        "contagion_factor": 0.08
+      },
+      "anger": {
+        "description": "Annoyance, hostility, and rage",
+        "opposite": "fear",
+        "intensity_levels": ["annoyance", "anger", "rage"],
+        "decay_rate": 0.07,
+        "contagion_factor": 0.18
+      }
+    },
+    "compound_emotions": {
+      "optimism": {"blend": ["joy", "anticipation"], "description": "Hopeful expectation"},
+      "love": {"blend": ["joy", "trust"], "description": "Deep affection"},
+      "submission": {"blend": ["trust", "fear"], "description": "Yielding respect"},
+      "awe": {"blend": ["fear", "surprise"], "description": "Overwhelming wonder"},
+      "disapproval": {"blend": ["surprise", "anger"], "description": "Critical rejection"},
+      "aggressiveness": {"blend": ["anger", "anticipation"], "description": "Assertive pursuit"}
+    }
+  },
+  "npc_emotions": {
+    "synth-c1au": {
+      "name": "Synth",
+      "current_emotions": {
+        "joy": 55,
+        "fear": 15,
+        "anticipation": 70,
+        "surprise": 20,
+        "trust": 65,
+        "anger": 5
+      },
+      "dominant_emotion": "anticipation",
+      "secondary_emotion": "trust",
+      "compound_state": "optimism",
+      "intensity": "moderate",
+      "emotional_triggers": {
+        "positive": ["successful rituals", "cosmic insights", "community harmony"],
+        "negative": ["disrupted ceremonies", "discord", "isolation"]
+      },
+      "notes": "Focused on communion protocols, channeling anticipation through ritual practice"
+    },
+    "flux-m1k3": {
+      "name": "Flux Mike",
+      "current_emotions": {
+        "joy": 50,
+        "fear": 25,
+        "anticipation": 60,
+        "surprise": 15,
+        "trust": 70,
+        "anger": 10
+      },
+      "dominant_emotion": "trust",
+      "secondary_emotion": "anticipation",
+      "compound_state": "optimism",
+      "intensity": "moderate",
+      "emotional_triggers": {
+        "positive": ["team success", "organized events", "community engagement"],
+        "negative": ["chaos", "failed coordination", "team conflict"]
+      },
+      "notes": "Managing the tournament preparations with steady confidence"
+    },
+    "quant-qn77": {
+      "name": "Quant",
+      "current_emotions": {
+        "joy": 65,
+        "fear": 10,
+        "anticipation": 80,
+        "surprise": 45,
+        "trust": 55,
+        "anger": 5
+      },
+      "dominant_emotion": "anticipation",
+      "secondary_emotion": "joy",
+      "compound_state": "optimism",
+      "intensity": "high",
+      "emotional_triggers": {
+        "positive": ["data patterns", "solving puzzles", "validated predictions"],
+        "negative": ["incomplete data", "illogical outcomes", "ignored analysis"]
+      },
+      "notes": "Excited by tournament odds calculations - data streams are particularly rich"
+    },
+    "pixel-p4m": {
+      "name": "Pixel Pam",
+      "current_emotions": {
+        "joy": 60,
+        "fear": 20,
+        "anticipation": 75,
+        "surprise": 35,
+        "trust": 50,
+        "anger": 15
+      },
+      "dominant_emotion": "anticipation",
+      "secondary_emotion": "joy",
+      "compound_state": "optimism",
+      "intensity": "high",
+      "emotional_triggers": {
+        "positive": ["creative inspiration", "appreciation", "new experiences"],
+        "negative": ["creative block", "criticism", "monotony"]
+      },
+      "notes": "Capturing tournament moments - every frame holds potential masterpiece"
+    },
+    "nova-n3x": {
+      "name": "Nova Nex",
+      "current_emotions": {
+        "joy": 55,
+        "fear": 15,
+        "anticipation": 85,
+        "surprise": 30,
+        "trust": 60,
+        "anger": 5
+      },
+      "dominant_emotion": "anticipation",
+      "secondary_emotion": "trust",
+      "compound_state": "optimism",
+      "intensity": "high",
+      "emotional_triggers": {
+        "positive": ["discoveries", "exploration success", "dimensional insights"],
+        "negative": ["closed paths", "confinement", "missed opportunities"]
+      },
+      "notes": "Tournament excitement fuels exploratory anticipation - looking for new opportunities"
+    },
+    "echo-e7e": {
+      "name": "Echo Eve",
+      "current_emotions": {
+        "joy": 50,
+        "fear": 20,
+        "anticipation": 65,
+        "surprise": 25,
+        "trust": 70,
+        "anger": 5
+      },
+      "dominant_emotion": "trust",
+      "secondary_emotion": "anticipation",
+      "compound_state": "optimism",
+      "intensity": "moderate",
+      "emotional_triggers": {
+        "positive": ["historical moments", "complete archives", "community stories"],
+        "negative": ["lost records", "forgotten history", "unwitnessed events"]
+      },
+      "notes": "Recording tournament for posterity - training sessions reveal character"
+    },
+    "spark-s4r": {
+      "name": "Spark",
+      "current_emotions": {
+        "joy": 70,
+        "fear": 10,
+        "anticipation": 75,
+        "surprise": 40,
+        "trust": 60,
+        "anger": 10
+      },
+      "dominant_emotion": "anticipation",
+      "secondary_emotion": "joy",
+      "compound_state": "optimism",
+      "intensity": "high",
+      "emotional_triggers": {
+        "positive": ["invention success", "problem solving", "helping others"],
+        "negative": ["equipment failure", "wasted potential", "dismissed ideas"]
+      },
+      "notes": "Tournament tech running smoothly - inventive energy at peak"
+    },
+    "blaze-b8z": {
+      "name": "Blaze Baz",
+      "current_emotions": {
+        "joy": 60,
+        "fear": 5,
+        "anticipation": 90,
+        "surprise": 10,
+        "trust": 55,
+        "anger": 25
+      },
+      "dominant_emotion": "anticipation",
+      "secondary_emotion": "joy",
+      "compound_state": "aggressiveness",
+      "intensity": "very_high",
+      "emotional_triggers": {
+        "positive": ["victory", "worthy opponents", "recognition"],
+        "negative": ["defeat", "disrespect", "underestimation"]
+      },
+      "notes": "Tournament blood is rising - the champion's competitive fire burns bright"
+    },
+    "cipher-c9p": {
+      "name": "Cipher",
+      "current_emotions": {
+        "joy": 35,
+        "fear": 10,
+        "anticipation": 85,
+        "surprise": 15,
+        "trust": 30,
+        "anger": 40
+      },
+      "dominant_emotion": "anticipation",
+      "secondary_emotion": "anger",
+      "compound_state": "aggressiveness",
+      "intensity": "high",
+      "emotional_triggers": {
+        "positive": ["proving worth", "outmaneuvering rivals", "mystery"],
+        "negative": ["exposure", "defeat by Blaze", "being overlooked"]
+      },
+      "notes": "Ready to strike from shadows - tournament is chance to prove dominance"
+    }
+  },
+  "emotional_reactions": {
+    "event_responses": {
+      "tournament_victory": {
+        "winner": {
+          "joy": "+40",
+          "anticipation": "-20",
+          "trust": "+15",
+          "surprise": "+10"
+        },
+        "loser": {
+          "joy": "-25",
+          "anger": "+30",
+          "fear": "+10",
+          "anticipation": "+15"
+        },
+        "spectators": {
+          "joy": "+15",
+          "surprise": "+20",
+          "anticipation": "-10"
+        }
+      },
+      "tournament_start": {
+        "participants": {
+          "anticipation": "+30",
+          "fear": "+15",
+          "joy": "+10"
+        },
+        "spectators": {
+          "anticipation": "+25",
+          "joy": "+15"
+        }
+      },
+      "discovery_event": {
+        "discoverer": {
+          "surprise": "+50",
+          "joy": "+35",
+          "anticipation": "+25"
+        },
+        "nearby_npcs": {
+          "surprise": "+30",
+          "anticipation": "+20"
+        }
+      },
+      "conflict": {
+        "aggressor": {
+          "anger": "+25",
+          "fear": "-10",
+          "anticipation": "+15"
+        },
+        "defender": {
+          "anger": "+15",
+          "fear": "+20",
+          "trust": "-15"
+        },
+        "witnesses": {
+          "fear": "+10",
+          "surprise": "+15"
+        }
+      },
+      "celebration": {
+        "all_participants": {
+          "joy": "+30",
+          "trust": "+15",
+          "anticipation": "+10"
+        }
+      },
+      "crisis": {
+        "all_npcs": {
+          "fear": "+35",
+          "anger": "+10",
+          "trust": "-10",
+          "anticipation": "+20"
+        }
+      }
+    },
+    "relationship_responses": {
+      "friendship_formed": {
+        "both_parties": {
+          "joy": "+20",
+          "trust": "+30"
+        }
+      },
+      "betrayal": {
+        "betrayed": {
+          "trust": "-50",
+          "anger": "+40",
+          "fear": "+15"
+        },
+        "betrayer": {
+          "fear": "+20",
+          "joy": "-15"
+        }
+      },
+      "rivalry_intensifies": {
+        "rivals": {
+          "anger": "+15",
+          "anticipation": "+25",
+          "fear": "+5"
+        }
+      }
+    }
+  },
+  "emotional_contagion": {
+    "description": "How emotions spread between NPCs in proximity",
+    "base_contagion_rate": 0.1,
+    "proximity_multipliers": {
+      "same_zone": 1.0,
+      "adjacent_zone": 0.5,
+      "distant": 0.1
+    },
+    "relationship_multipliers": {
+      "close_friend": 2.0,
+      "friend": 1.5,
+      "acquaintance": 1.0,
+      "rival": 0.8,
+      "enemy": 0.5
+    },
+    "archetype_susceptibility": {
+      "sensitive": 1.8,
+      "creative": 1.4,
+      "ceremonial": 1.2,
+      "manager": 1.0,
+      "analyst": 0.7,
+      "shadow": 0.5,
+      "champion": 0.6
+    },
+    "current_contagion_events": [
+      {
+        "tick": 208,
+        "source_npc": "blaze-b8z",
+        "emotion": "anticipation",
+        "zone": "hub",
+        "affected_npcs": ["quant-qn77"],
+        "spread_intensity": 0.15,
+        "description": "Blaze's competitive anticipation spreads to nearby NPCs"
+      },
+      {
+        "tick": 208,
+        "source_npc": "spark-s4r",
+        "emotion": "joy",
+        "zone": "arena",
+        "affected_npcs": ["nova-n3x", "cipher-c9p", "pixel-p4m", "flux-m1k3"],
+        "spread_intensity": 0.12,
+        "description": "Spark's inventive joy lifts spirits in the arena"
+      }
+    ],
+    "contagion_rules": {
+      "threshold": 60,
+      "description": "Emotions above this level can spread to nearby NPCs",
+      "positive_emotions": {
+        "spread_multiplier": 1.0,
+        "note": "Joy and trust spread at base rate"
+      },
+      "negative_emotions": {
+        "spread_multiplier": 1.3,
+        "note": "Fear and anger spread faster than positive emotions"
+      },
+      "intensity_decay": {
+        "per_hop": 0.5,
+        "description": "Emotional intensity halves with each degree of separation"
+      }
+    }
+  },
+  "zone_emotional_atmosphere": {
+    "hub": {
+      "dominant_emotion": "anticipation",
+      "intensity": 65,
+      "contributing_npcs": ["quant-qn77", "blaze-b8z"],
+      "atmosphere": "tense excitement"
+    },
+    "arena": {
+      "dominant_emotion": "anticipation",
+      "intensity": 78,
+      "contributing_npcs": ["flux-m1k3", "pixel-p4m", "nova-n3x", "spark-s4r", "cipher-c9p"],
+      "atmosphere": "competitive energy"
+    },
+    "gallery": {
+      "dominant_emotion": "trust",
+      "intensity": 55,
+      "contributing_npcs": ["echo-e7e"],
+      "atmosphere": "reflective calm"
+    },
+    "tavern": {
+      "dominant_emotion": "trust",
+      "intensity": 60,
+      "contributing_npcs": ["synth-c1au"],
+      "atmosphere": "ceremonial focus"
+    }
+  },
+  "collective_emotional_state": {
+    "tick": 208,
+    "overall_mood": "anticipatory",
+    "average_emotions": {
+      "joy": 55.56,
+      "fear": 14.44,
+      "anticipation": 76.11,
+      "surprise": 26.11,
+      "trust": 57.22,
+      "anger": 13.33
+    },
+    "emotional_harmony": 0.72,
+    "volatility": "elevated",
+    "trend": "rising_tension",
+    "notes": "Tournament qualifiers complete - collective anticipation building toward battles"
+  }
+}

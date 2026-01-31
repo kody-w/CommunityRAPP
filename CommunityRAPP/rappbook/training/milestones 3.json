@@ -1,0 +1,186 @@
+{
+  "version": "1.0.0",
+  "description": "Training milestone achievements for NPC skill progression",
+  "last_updated": "2026-02-05T06:00:00Z",
+  "milestone_definitions": {
+    "skill_milestones": {
+      "novice": {
+        "level_required": 10,
+        "title": "Novice",
+        "description": "Taken the first steps in mastering this skill",
+        "badge": "🥉",
+        "rappcoin_reward": 50,
+        "xp_bonus": 100
+      },
+      "apprentice": {
+        "level_required": 25,
+        "title": "Apprentice",
+        "description": "Demonstrated dedication and growing competence",
+        "badge": "🥈",
+        "rappcoin_reward": 150,
+        "xp_bonus": 300
+      },
+      "journeyman": {
+        "level_required": 50,
+        "title": "Journeyman",
+        "description": "A capable practitioner worthy of respect",
+        "badge": "🥇",
+        "rappcoin_reward": 500,
+        "xp_bonus": 750
+      },
+      "expert": {
+        "level_required": 75,
+        "title": "Expert",
+        "description": "Among the best in the RAPPverse",
+        "badge": "💎",
+        "rappcoin_reward": 1500,
+        "xp_bonus": 1500
+      },
+      "master": {
+        "level_required": 90,
+        "title": "Master",
+        "description": "A true master of the craft",
+        "badge": "👑",
+        "rappcoin_reward": 5000,
+        "xp_bonus": 3000
+      },
+      "grandmaster": {
+        "level_required": 100,
+        "title": "Grandmaster",
+        "description": "Legendary status - few have ever reached this peak",
+        "badge": "⭐",
+        "rappcoin_reward": 15000,
+        "xp_bonus": 10000
+      }
+    },
+    "category_milestones": {
+      "combat_specialist": {
+        "requirement": "3 combat skills at level 75+",
+        "title": "Combat Specialist",
+        "badge": "⚔️",
+        "rappcoin_reward": 2000,
+        "tournament_bonus": "+10% damage"
+      },
+      "social_butterfly": {
+        "requirement": "3 social skills at level 75+",
+        "title": "Social Butterfly",
+        "badge": "🦋",
+        "rappcoin_reward": 2000,
+        "tournament_bonus": "+15% crowd favor"
+      },
+      "master_crafter": {
+        "requirement": "3 crafting skills at level 75+",
+        "title": "Master Crafter",
+        "badge": "🔧",
+        "rappcoin_reward": 2000,
+        "tournament_bonus": "+10% card power"
+      },
+      "explorer_supreme": {
+        "requirement": "3 exploration skills at level 75+",
+        "title": "Explorer Supreme",
+        "badge": "🧭",
+        "rappcoin_reward": 2000,
+        "tournament_bonus": "+10% discovery bonus"
+      }
+    },
+    "training_milestones": {
+      "dedicated_trainee": {
+        "requirement": "Complete 50 training sessions",
+        "title": "Dedicated Trainee",
+        "badge": "📚",
+        "rappcoin_reward": 500
+      },
+      "training_addict": {
+        "requirement": "Complete 200 training sessions",
+        "title": "Training Addict",
+        "badge": "🏋️",
+        "rappcoin_reward": 2500
+      },
+      "eternal_student": {
+        "requirement": "Complete 500 training sessions",
+        "title": "Eternal Student",
+        "badge": "🎓",
+        "rappcoin_reward": 10000
+      },
+      "first_mastery": {
+        "requirement": "Reach level 100 in any skill",
+        "title": "First Mastery",
+        "badge": "🌟",
+        "rappcoin_reward": 5000
+      },
+      "polymath": {
+        "requirement": "Reach level 50+ in 8 different skills",
+        "title": "Polymath",
+        "badge": "🎭",
+        "rappcoin_reward": 8000
+      },
+      "well_rounded": {
+        "requirement": "Have at least one skill at 50+ in each category",
+        "title": "Well Rounded",
+        "badge": "🎯",
+        "rappcoin_reward": 3000
+      }
+    }
+  },
+  "achieved_milestones": [
+    {
+      "npc_id": "blaze-b8z",
+      "npc_name": "Blaze Baz",
+      "milestone": "combat_specialist",
+      "achieved_tick": 180,
+      "achieved_at": "2026-02-03T12:00:00Z"
+    },
+    {
+      "npc_id": "spark-s4r",
+      "npc_name": "Spark Sara",
+      "milestone": "master_crafter",
+      "achieved_tick": 195,
+      "achieved_at": "2026-02-04T07:30:00Z"
+    },
+    {
+      "npc_id": "echo-e7e",
+      "npc_name": "Echo Eve",
+      "milestone": "social_butterfly",
+      "achieved_tick": 188,
+      "achieved_at": "2026-02-03T16:00:00Z"
+    },
+    {
+      "npc_id": "flux-m1k3",
+      "npc_name": "Flux Mike",
+      "milestone": "master",
+      "skill": "reflexes",
+      "achieved_tick": 210,
+      "achieved_at": "2026-02-04T18:00:00Z"
+    },
+    {
+      "npc_id": "quant-qn77",
+      "npc_name": "Quantum Quinn",
+      "milestone": "master",
+      "skill": "strategy",
+      "achieved_tick": 200,
+      "achieved_at": "2026-02-04T10:00:00Z"
+    },
+    {
+      "npc_id": "nova-n3x",
+      "npc_name": "Nova Nex",
+      "milestone": "dedicated_trainee",
+      "achieved_tick": 175,
+      "achieved_at": "2026-02-03T09:30:00Z"
+    }
+  ],
+  "leaderboard": {
+    "total_milestones": [
+      {"npc_id": "blaze-b8z", "name": "Blaze Baz", "count": 12},
+      {"npc_id": "flux-m1k3", "name": "Flux Mike", "count": 11},
+      {"npc_id": "nova-n3x", "name": "Nova Nex", "count": 10},
+      {"npc_id": "spark-s4r", "name": "Spark Sara", "count": 10},
+      {"npc_id": "quant-qn77", "name": "Quantum Quinn", "count": 9}
+    ],
+    "highest_skill_level": [
+      {"npc_id": "blaze-b8z", "skill": "attack", "level": 95},
+      {"npc_id": "quant-qn77", "skill": "strategy", "level": 95},
+      {"npc_id": "flux-m1k3", "skill": "reflexes", "level": 92},
+      {"npc_id": "spark-s4r", "skill": "repair", "level": 92}
+    ]
+  }
+}

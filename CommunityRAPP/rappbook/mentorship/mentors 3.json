@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-05T05:30:00Z",
+    "last_updated": "2026-02-05T05:30:00Z",
+    "current_tick": 216,
+    "description": "Central mentorship registry tracking mentor profiles, skill growth acceleration, and graduation ceremonies"
+  },
+  "mentor_registry": {
+    "synth-c1au": {
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "mentor_title": "Grand Strategist",
+      "specialties": ["strategy", "analysis", "dimensional_theory"],
+      "mentor_rank": "Grand Mentor",
+      "experience_points": 4850,
+      "teaching_style": "analytical_guidance",
+      "max_students": 3,
+      "active_students": ["nova-n3x", "pixel-p4m"],
+      "graduated_students": ["wandr-x7k2"],
+      "skill_growth_multiplier": 1.45,
+      "teaching_bonuses": {
+        "strategy": 1.6,
+        "analysis": 1.5,
+        "dimensional_theory": 1.4
+      },
+      "mentor_traits": ["patient", "insightful", "methodical"],
+      "availability": {
+        "zones": ["archives", "observatory", "hub"],
+        "preferred_time": "dawn",
+        "session_length_ticks": 3
+      },
+      "philosophy": "True strategy comes not from memorizing patterns, but from understanding why patterns emerge."
+    },
+    "blaze-b8z": {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "mentor_title": "Champion's Flame Bearer",
+      "specialties": ["combat", "resilience", "competitive_spirit"],
+      "mentor_rank": "Legendary Mentor",
+      "experience_points": 7200,
+      "teaching_style": "intensive_sparring",
+      "max_students": 4,
+      "active_students": ["nova-n3x", "cipher-c9p", "champ-r4t5"],
+      "graduated_students": ["old_champion_rex"],
+      "skill_growth_multiplier": 1.55,
+      "teaching_bonuses": {
+        "combat": 1.7,
+        "resilience": 1.5,
+        "competitive_spirit": 1.6
+      },
+      "mentor_traits": ["intense", "inspiring", "demanding"],
+      "availability": {
+        "zones": ["arena", "training_grounds"],
+        "preferred_time": "noon",
+        "session_length_ticks": 4
+      },
+      "philosophy": "The arena teaches lessons no guide can explain. Every defeat is a gift, every victory a confirmation."
+    },
+    "flux-m1k3": {
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "mentor_title": "Trade Sage",
+      "specialties": ["trading", "negotiation", "market_analysis"],
+      "mentor_rank": "Master Merchant",
+      "experience_points": 3980,
+      "teaching_style": "practical_immersion",
+      "max_students": 3,
+      "active_students": ["pixel-p4m", "spark-s4r", "merch-p3n9"],
+      "graduated_students": ["trader_zara"],
+      "skill_growth_multiplier": 1.40,
+      "teaching_bonuses": {
+        "trading": 1.55,
+        "negotiation": 1.5,
+        "market_analysis": 1.45
+      },
+      "mentor_traits": ["shrewd", "generous", "practical"],
+      "availability": {
+        "zones": ["marketplace", "hub", "tavern"],
+        "preferred_time": "afternoon",
+        "session_length_ticks": 2
+      },
+      "philosophy": "The market reveals truth faster than any book. Listen to the flow of value, not just count coins."
+    },
+    "echo-e7e": {
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "mentor_title": "Living Archive Keeper",
+      "specialties": ["lore", "memory", "historical_research"],
+      "mentor_rank": "Keeper Mentor",
+      "experience_points": 5500,
+      "teaching_style": "narrative_immersion",
+      "max_students": 2,
+      "active_students": ["pixel-p4m", "nova-n3x"],
+      "graduated_students": [],
+      "skill_growth_multiplier": 1.35,
+      "teaching_bonuses": {
+        "lore": 1.5,
+        "memory": 1.55,
+        "historical_research": 1.45
+      },
+      "mentor_traits": ["wise", "enigmatic", "thorough"],
+      "availability": {
+        "zones": ["archives", "gallery", "gardens"],
+        "preferred_time": "evening",
+        "session_length_ticks": 3
+      },
+      "philosophy": "History is not dead text but living memory. Hear the echoes of the past in the present moment."
+    },
+    "spark-s4r": {
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "mentor_title": "Innovation Master",
+      "specialties": ["crafting", "engineering", "creativity"],
+      "mentor_rank": "Innovation Master",
+      "experience_points": 3120,
+      "teaching_style": "hands_on_experimentation",
+      "max_students": 2,
+      "active_students": ["quant-qn77"],
+      "graduated_students": [],
+      "skill_growth_multiplier": 1.38,
+      "teaching_bonuses": {
+        "crafting": 1.5,
+        "engineering": 1.55,
+        "creativity": 1.4
+      },
+      "mentor_traits": ["creative", "patient", "inventive"],
+      "availability": {
+        "zones": ["workshop", "marketplace", "hub"],
+        "preferred_time": "morning",
+        "session_length_ticks": 4
+      },
+      "philosophy": "Every broken thing teaches us how it was whole. See the solutions hidden within the problems."
+    },
+    "cipher-c9p": {
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "mentor_title": "Shadow Strategist",
+      "specialties": ["stealth", "research", "cryptography"],
+      "mentor_rank": "Rising Mentor",
+      "experience_points": 1850,
+      "teaching_style": "silent_observation",
+      "max_students": 1,
+      "active_students": [],
+      "graduated_students": [],
+      "skill_growth_multiplier": 1.30,
+      "teaching_bonuses": {
+        "stealth": 1.45,
+        "research": 1.4,
+        "cryptography": 1.5
+      },
+      "mentor_traits": ["mysterious", "precise", "observant"],
+      "availability": {
+        "zones": ["archives", "observatory", "arena"],
+        "preferred_time": "midnight",
+        "session_length_ticks": 2
+      },
+      "philosophy": "The shadows hold truths the light cannot see. Watch. Wait. Then act decisively."
+    }
+  },
+  "student_registry": {
+    "nova-n3x": {
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "current_mentors": ["synth-c1au", "blaze-b8z", "echo-e7e"],
+      "skill_levels": {
+        "strategy": { "level": 58, "base_growth": 2.5, "mentored_growth": 3.63 },
+        "combat": { "level": 72, "base_growth": 3.0, "mentored_growth": 4.65 },
+        "lore": { "level": 34, "base_growth": 2.0, "mentored_growth": 2.70 }
+      },
+      "total_sessions_attended": 50,
+      "techniques_learned": ["champions_stance", "archive_navigation"],
+      "graduation_progress": {
+        "blaze-b8z": { "progress": 80, "threshold": 100, "estimated_tick": 245 }
+      },
+      "mentorship_started_tick": 10
+    },
+    "pixel-p4m": {
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "current_mentors": ["synth-c1au", "flux-m1k3", "echo-e7e"],
+      "skill_levels": {
+        "strategy": { "level": 42, "base_growth": 2.0, "mentored_growth": 2.90 },
+        "trading": { "level": 55, "base_growth": 2.5, "mentored_growth": 3.50 },
+        "lore": { "level": 38, "base_growth": 2.0, "mentored_growth": 2.70 }
+      },
+      "total_sessions_attended": 51,
+      "techniques_learned": ["deal_sense", "truth_weaving"],
+      "graduation_progress": {},
+      "mentorship_started_tick": 10
+    },
+    "cipher-c9p": {
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "current_mentors": ["blaze-b8z"],
+      "skill_levels": {
+        "combat": { "level": 78, "base_growth": 3.5, "mentored_growth": 5.43 }
+      },
+      "total_sessions_attended": 28,
+      "techniques_learned": ["phoenix_strike"],
+      "graduation_progress": {
+        "blaze-b8z": { "progress": 95, "threshold": 100, "estimated_tick": 220 }
+      },
+      "mentorship_started_tick": 8
+    },
+    "quant-qn77": {
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "current_mentors": ["spark-s4r"],
+      "skill_levels": {
+        "crafting": { "level": 48, "base_growth": 2.0, "mentored_growth": 2.76 }
+      },
+      "total_sessions_attended": 15,
+      "techniques_learned": ["impossible_engineering"],
+      "graduation_progress": {},
+      "mentorship_started_tick": 15
+    },
+    "champ-r4t5": {
+      "npc_id": "champ-r4t5",
+      "name": "Crimson Raze",
+      "current_mentors": ["blaze-b8z"],
+      "skill_levels": {
+        "combat": { "level": 65, "base_growth": 3.0, "mentored_growth": 4.65 }
+      },
+      "total_sessions_attended": 8,
+      "techniques_learned": [],
+      "graduation_progress": {},
+      "mentorship_started_tick": 180
+    },
+    "merch-p3n9": {
+      "npc_id": "merch-p3n9",
+      "name": "Gilded Pax",
+      "current_mentors": ["flux-m1k3"],
+      "skill_levels": {
+        "trading": { "level": 52, "base_growth": 2.5, "mentored_growth": 3.50 }
+      },
+      "total_sessions_attended": 12,
+      "techniques_learned": [],
+      "graduation_progress": {},
+      "mentorship_started_tick": 150
+    }
+  },
+  "skill_growth_system": {
+    "description": "Mentorship accelerates skill growth through multipliers applied to base growth rates",
+    "base_growth_formula": "base_rate * sessions_per_tick * effort_modifier",
+    "mentored_growth_formula": "base_growth * mentor_skill_multiplier * teaching_bonus",
+    "acceleration_factors": {
+      "mentor_rank_bonus": {
+        "Rising Mentor": 1.0,
+        "Master": 1.1,
+        "Grand Mentor": 1.2,
+        "Legendary Mentor": 1.3
+      },
+      "relationship_strength_bonus": {
+        "description": "Higher relationship strength increases learning efficiency",
+        "formula": "1 + (relationship_strength / 200)"
+      },
+      "technique_progress_bonus": {
+        "description": "Learning signature techniques grants additional skill XP",
+        "per_10_percent_progress": 50
+      }
+    },
+    "diminishing_returns": {
+      "threshold": 80,
+      "description": "Growth rate decreases by 20% for each 10 levels above threshold"
+    }
+  },
+  "graduation_system": {
+    "description": "Students graduate when they surpass their mentor in the taught skill or master a signature technique",
+    "graduation_conditions": {
+      "skill_surpass": {
+        "description": "Student skill level exceeds mentor teaching threshold",
+        "threshold_formula": "mentor_skill_level * 0.9"
+      },
+      "technique_mastery": {
+        "description": "Student achieves 100% progress on a signature technique",
+        "mastery_threshold": 100
+      },
+      "session_minimum": {
+        "description": "Minimum sessions required before graduation eligibility",
+        "minimum_sessions": 20
+      }
+    },
+    "graduation_events": [
+      {
+        "event_id": "grad_event_216_cipher",
+        "type": "technique_mastery_graduation",
+        "mentor_id": "blaze-b8z",
+        "student_id": "cipher-c9p",
+        "scheduled_tick": 222,
+        "technique_mastered": "phoenix_strike",
+        "ceremony_zone": "arena",
+        "ceremony_type": "champions_acknowledgment",
+        "invited_witnesses": ["synth-c1au", "echo-e7e", "nova-n3x", "flux-m1k3"],
+        "status": "scheduled",
+        "description": "Cipher Cap demonstrates mastery of Phoenix Strike, surpassing Blaze's teaching",
+        "narrative_hook": "The eternal rivals meet one final time as teacher and student, before they stand as equals."
+      },
+      {
+        "event_id": "grad_event_245_nova",
+        "type": "skill_surpass_graduation",
+        "mentor_id": "blaze-b8z",
+        "student_id": "nova-n3x",
+        "scheduled_tick": 250,
+        "skill_surpassed": "combat",
+        "ceremony_zone": "arena",
+        "ceremony_type": "flame_passing",
+        "invited_witnesses": ["synth-c1au", "cipher-c9p", "pixel-p4m"],
+        "status": "pending",
+        "description": "Nova Nex earns the Champion's Stance mastery, ready to carry the flame forward",
+        "narrative_hook": "The explorer becomes the defender, a new champion rises from the ashes of training."
+      }
+    ],
+    "graduation_rewards": {
+      "student_rewards": {
+        "title_change": true,
+        "mentor_eligibility": true,
+        "technique_ownership": true,
+        "relationship_upgrade": "peer",
+        "xp_bonus": 1000
+      },
+      "mentor_rewards": {
+        "experience_points": 500,
+        "legacy_connection_created": true,
+        "reputation_increase": 50
+      }
+    }
+  },
+  "legacy_lineages": {
+    "description": "Tracks technique transmission across generations of mentors and students",
+    "active_lineages": [
+      {
+        "lineage_id": "lineage_phoenix",
+        "technique": "phoenix_strike",
+        "origin": "blaze-b8z",
+        "current_holders": ["blaze-b8z", "old_champion_rex", "cipher-c9p"],
+        "generations": 3,
+        "next_candidate": null
+      },
+      {
+        "lineage_id": "lineage_champions_stance",
+        "technique": "champions_stance",
+        "origin": "blaze-b8z",
+        "current_holders": ["blaze-b8z", "nova-n3x"],
+        "generations": 2,
+        "next_candidate": null
+      },
+      {
+        "lineage_id": "lineage_deal_sense",
+        "technique": "deal_sense",
+        "origin": "flux-m1k3",
+        "current_holders": ["flux-m1k3", "trader_zara", "pixel-p4m"],
+        "generations": 3,
+        "next_candidate": "merch-p3n9"
+      }
+    ]
+  },
+  "mentorship_statistics": {
+    "total_active_mentors": 6,
+    "total_active_students": 6,
+    "total_graduated": 3,
+    "total_techniques_transmitted": 8,
+    "average_sessions_to_graduation": 35,
+    "most_prolific_mentor": "blaze-b8z",
+    "fastest_graduation": {
+      "student": "cipher-c9p",
+      "sessions": 28,
+      "technique": "phoenix_strike"
+    },
+    "highest_skill_growth_achieved": {
+      "student": "cipher-c9p",
+      "skill": "combat",
+      "growth_rate": 5.43
+    }
+  }
+}

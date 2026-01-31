@@ -1,0 +1,41 @@
+{
+  "mystery_id": "mystery_003",
+  "codename": "THE_PHANTOM_TRADER",
+  "clues": {
+    "clue_003a": {
+      "id": "clue_003a",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "marketplace_backend",
+      "description": "[HIDDEN] Ghost transactions all occur exactly at XX:00:00.000 - perfect timing impossible for organic traders.",
+      "significance": "high",
+      "notes": "Suggests automated or AI-driven trading."
+    },
+    "clue_003b": {
+      "id": "clue_003b",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "legacy_systems",
+      "description": "[HIDDEN] An old test account 'FOUNDER_ZERO' was never properly deactivated.",
+      "significance": "critical",
+      "notes": "Account has admin privileges still active."
+    },
+    "clue_003c": {
+      "id": "clue_003c",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "flux_investigation",
+      "description": "[HIDDEN] The items being traded match a specific collection - all cards from the Founding Era.",
+      "significance": "medium",
+      "notes": "Someone is assembling the Founder's Complete Set."
+    }
+  },
+  "ghost_transactions": [
+    {"tick": 70, "type": "credit_transfer", "amount": 500, "to": "null_address"},
+    {"tick": 73, "type": "listing", "item": "Founder's Flame Card", "seller": "ghost_seller_xxx"},
+    {"tick": 77, "type": "purchase", "items": 3, "buyer": null},
+    {"tick": 110, "type": "credit_transfer", "amount": 1200, "to": "null_address"},
+    {"tick": 145, "type": "listing", "item": "Founder's Void Card", "seller": "ghost_seller_xxx"},
+    {"tick": 165, "type": "purchase", "items": 1, "buyer": null, "item": "Prismatic Shard Fragment"}
+  ]
+}

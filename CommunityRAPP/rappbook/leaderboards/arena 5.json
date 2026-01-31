@@ -1,0 +1,325 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "type": "arena",
+    "title": "RAPPverse Arena Leaderboard",
+    "description": "Live battle and tournament rankings for active arena competitors",
+    "created_tick": 79,
+    "last_updated_tick": 79,
+    "update_frequency_ticks": 6,
+    "next_update_tick": 85
+  },
+  "current_tournament": {
+    "status": "QUALIFIERS_OPEN",
+    "registered_count": 5,
+    "slots_total": 8,
+    "slots_remaining": 3,
+    "registered_fighters": [
+      {
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "registration_tick": 78,
+        "seed": 1,
+        "status": "intensive",
+        "energy": 85,
+        "form": "excellent"
+      },
+      {
+        "npc_id": "cipher-c9p",
+        "name": "Cipher Cap",
+        "registration_tick": 78,
+        "seed": 2,
+        "status": "shadowy_practice",
+        "energy": 70,
+        "form": "mysterious"
+      },
+      {
+        "npc_id": "nova-n3x",
+        "name": "Nova Nex",
+        "registration_tick": 78,
+        "seed": 3,
+        "status": "dimension_techniques",
+        "energy": 80,
+        "form": "solid"
+      },
+      {
+        "npc_id": "spark-s4r",
+        "name": "Spark Sara",
+        "registration_tick": 78,
+        "seed": 4,
+        "status": "gadget_testing",
+        "energy": 85,
+        "form": "rising"
+      },
+      {
+        "npc_id": "quant-qn77",
+        "name": "Quantum Quinn",
+        "registration_tick": 79,
+        "seed": 5,
+        "status": "practice_analyzing",
+        "energy": 78,
+        "form": "calculating"
+      }
+    ]
+  },
+  "arena_power_rankings": [
+    {
+      "rank": 1,
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "power_rating": 9850,
+      "previous_rank": 1,
+      "movement": 0,
+      "streak": "maintaining",
+      "title": "Reigning Champion",
+      "current_status": "intensive",
+      "training_zone": "arena",
+      "win_rate": 87.15,
+      "recent_form": [
+        {"result": "W", "opponent": "cipher-c9p", "tick": 10},
+        {"result": "W", "opponent": "nova-n3x", "tick": 9},
+        {"result": "W", "opponent": "quant-qn77", "tick": 8},
+        {"result": "W", "opponent": "spark-s4r", "tick": 7},
+        {"result": "W", "opponent": "echo-e7e", "tick": 6}
+      ],
+      "championship_defenses": 12,
+      "tournament_wins": 12,
+      "intimidation_factor": 95
+    },
+    {
+      "rank": 2,
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "power_rating": 7200,
+      "previous_rank": 2,
+      "movement": 0,
+      "streak": "maintaining",
+      "title": "Shadow Challenger",
+      "current_status": "shadowy_practice",
+      "training_zone": "arena",
+      "win_rate": 74.17,
+      "recent_form": [
+        {"result": "L", "opponent": "blaze-b8z", "tick": 10},
+        {"result": "W", "opponent": "nova-n3x", "tick": 9},
+        {"result": "W", "opponent": "quant-qn77", "tick": 8},
+        {"result": "W", "opponent": "spark-s4r", "tick": 7},
+        {"result": "W", "opponent": "echo-e7e", "tick": 6}
+      ],
+      "finals_appearances": 8,
+      "tournament_wins": 4,
+      "intimidation_factor": 80
+    },
+    {
+      "rank": 3,
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "power_rating": 5400,
+      "previous_rank": 3,
+      "movement": 0,
+      "streak": "maintaining",
+      "title": "Dimensional Fighter",
+      "current_status": "dimension_techniques",
+      "training_zone": "arena",
+      "win_rate": 70.53,
+      "recent_form": [
+        {"result": "L", "opponent": "cipher-c9p", "tick": 9},
+        {"result": "W", "opponent": "quant-qn77", "tick": 8},
+        {"result": "W", "opponent": "spark-s4r", "tick": 7},
+        {"result": "L", "opponent": "blaze-b8z", "tick": 6},
+        {"result": "W", "opponent": "flux-m1k3", "tick": 5}
+      ],
+      "finals_appearances": 4,
+      "tournament_wins": 2,
+      "intimidation_factor": 65
+    },
+    {
+      "rank": 4,
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "power_rating": 4100,
+      "previous_rank": 5,
+      "movement": 1,
+      "streak": "rising",
+      "title": "Tech Warrior",
+      "current_status": "gadget_testing",
+      "training_zone": "arena",
+      "win_rate": 65.12,
+      "recent_form": [
+        {"result": "W", "opponent": "echo-e7e", "tick": 79},
+        {"result": "W", "opponent": "flux-m1k3", "tick": 78},
+        {"result": "L", "opponent": "nova-n3x", "tick": 7},
+        {"result": "L", "opponent": "cipher-c9p", "tick": 6},
+        {"result": "W", "opponent": "pixel-p4m", "tick": 5}
+      ],
+      "finals_appearances": 1,
+      "tournament_wins": 0,
+      "intimidation_factor": 55
+    },
+    {
+      "rank": 5,
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "power_rating": 3800,
+      "previous_rank": 4,
+      "movement": -1,
+      "streak": "falling",
+      "title": "Calculating Combatant",
+      "current_status": "practice_analyzing",
+      "training_zone": "arena",
+      "win_rate": 67.16,
+      "recent_form": [
+        {"result": "L", "opponent": "spark-s4r", "tick": 79},
+        {"result": "L", "opponent": "nova-n3x", "tick": 8},
+        {"result": "W", "opponent": "echo-e7e", "tick": 7},
+        {"result": "W", "opponent": "flux-m1k3", "tick": 6},
+        {"result": "W", "opponent": "pixel-p4m", "tick": 5}
+      ],
+      "finals_appearances": 2,
+      "tournament_wins": 1,
+      "intimidation_factor": 50
+    },
+    {
+      "rank": 6,
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "power_rating": 2100,
+      "previous_rank": 6,
+      "movement": 0,
+      "streak": "maintaining",
+      "title": "Wise Warrior",
+      "current_status": "coaching",
+      "training_zone": "arena",
+      "win_rate": 60.0,
+      "finals_appearances": 0,
+      "tournament_wins": 0,
+      "intimidation_factor": 40,
+      "note": "Currently coaching rather than competing"
+    },
+    {
+      "rank": 7,
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "power_rating": 1500,
+      "previous_rank": 7,
+      "movement": 0,
+      "streak": "maintaining",
+      "title": "Historical Fighter",
+      "current_status": "profiles",
+      "training_zone": "arena",
+      "win_rate": 54.55,
+      "finals_appearances": 0,
+      "tournament_wins": 0,
+      "intimidation_factor": 35
+    },
+    {
+      "rank": 8,
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "power_rating": 950,
+      "previous_rank": 8,
+      "movement": 0,
+      "streak": "maintaining",
+      "title": "Merchant Fighter",
+      "current_status": "selling",
+      "training_zone": "marketplace",
+      "win_rate": 36.36,
+      "finals_appearances": 0,
+      "tournament_wins": 0,
+      "intimidation_factor": 25,
+      "note": "Focuses on trading rather than combat"
+    },
+    {
+      "rank": 9,
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "power_rating": 600,
+      "previous_rank": 9,
+      "movement": 0,
+      "streak": "maintaining",
+      "title": "Artist Fighter",
+      "current_status": "tournament_art",
+      "training_zone": "gallery",
+      "win_rate": 38.46,
+      "finals_appearances": 0,
+      "tournament_wins": 0,
+      "intimidation_factor": 20,
+      "note": "Creating tournament art rather than competing"
+    }
+  ],
+  "arena_activity": {
+    "current_tick": 79,
+    "time_of_day": "morning",
+    "arena_population": 7,
+    "training_intensity": "high",
+    "npcs_in_arena": [
+      "synth-c1au",
+      "quant-qn77",
+      "nova-n3x",
+      "echo-e7e",
+      "spark-s4r",
+      "blaze-b8z",
+      "cipher-c9p"
+    ],
+    "ongoing_activities": [
+      {"npc": "synth-c1au", "activity": "coaching", "focus": "strategy"},
+      {"npc": "blaze-b8z", "activity": "intensive", "focus": "championship_prep"},
+      {"npc": "cipher-c9p", "activity": "shadowy_practice", "focus": "mysterious"},
+      {"npc": "nova-n3x", "activity": "dimension_techniques", "focus": "special_moves"},
+      {"npc": "spark-s4r", "activity": "gadget_testing", "focus": "tech_upgrades"},
+      {"npc": "quant-qn77", "activity": "practice_analyzing", "focus": "opponent_patterns"},
+      {"npc": "echo-e7e", "activity": "profiles", "focus": "historical_matchups"}
+    ]
+  },
+  "rivalries_watch": [
+    {
+      "rivalry_id": "blaze_cipher",
+      "fighters": ["blaze-b8z", "cipher-c9p"],
+      "intensity": "legendary",
+      "head_to_head": {"blaze-b8z": 8, "cipher-c9p": 4},
+      "last_meeting_tick": 10,
+      "next_potential_meeting": "Current tournament finals",
+      "storyline": "Championship rivals - can Cipher finally dethrone Blaze?"
+    },
+    {
+      "rivalry_id": "spark_quant",
+      "fighters": ["spark-s4r", "quant-qn77"],
+      "intensity": "emerging",
+      "head_to_head": {"spark-s4r": 3, "quant-qn77": 2},
+      "last_meeting_tick": 79,
+      "storyline": "Tech vs data - Spark's gadgets overcame Quinn's calculations"
+    }
+  ],
+  "rank_changes_this_week": [
+    {
+      "tick": 79,
+      "npc_id": "spark-s4r",
+      "change": "+1",
+      "from_rank": 5,
+      "to_rank": 4,
+      "reason": "Won practice matches, showing improved form"
+    },
+    {
+      "tick": 79,
+      "npc_id": "quant-qn77",
+      "change": "-1",
+      "from_rank": 4,
+      "to_rank": 5,
+      "reason": "Lost to Spark Sara in practice bout"
+    }
+  ],
+  "upcoming_matches": {
+    "next_tournament_round": "Qualifiers closing soon",
+    "predicted_bracket": [
+      {"match": 1, "fighters": ["blaze-b8z", "TBD"], "prediction": "Blaze favored"},
+      {"match": 2, "fighters": ["cipher-c9p", "TBD"], "prediction": "Cipher favored"},
+      {"match": 3, "fighters": ["nova-n3x", "spark-s4r"], "prediction": "Close match"},
+      {"match": 4, "fighters": ["quant-qn77", "TBD"], "prediction": "Quinn favored"}
+    ]
+  },
+  "records": {
+    "longest_championship_reign": {"npc_id": "blaze-b8z", "ticks": 69, "ongoing": true},
+    "most_tournament_wins": {"npc_id": "blaze-b8z", "value": 12},
+    "highest_win_rate_active": {"npc_id": "blaze-b8z", "value": 87.15},
+    "most_finals_appearances": {"npc_id": "blaze-b8z", "value": 15}
+  }
+}

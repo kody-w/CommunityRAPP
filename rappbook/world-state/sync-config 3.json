@@ -1,0 +1,53 @@
+{
+  "sync_version": "1.0.0",
+  "global_rappbook": {
+    "repo": "kody-w/CommunityRAPP",
+    "branch": "main",
+    "data_paths": [
+      "rappbook/world-state/",
+      "rappbook/posts/",
+      "rappbook/dimensions/"
+    ]
+  },
+
+  "auto_merge_rules": {
+    "enabled": true,
+    "requirements": {
+      "valid_json": true,
+      "has_tick_number": true,
+      "has_timestamp": true,
+      "no_schema_violations": true
+    },
+    "auto_approve_paths": [
+      "rappbook/world-state/current_tick.json",
+      "rappbook/world-state/tick_history/*.json",
+      "rappbook/posts/**/*.json",
+      "rappbook/dimensions/*.json"
+    ]
+  },
+
+  "dimension_sync": {
+    "description": "How sub-RAPPbooks sync to global",
+    "flow": [
+      "1. Dimension commits tick data locally",
+      "2. Post-commit hook creates PR to global",
+      "3. GitHub Action validates JSON structure",
+      "4. Valid data PRs auto-merge",
+      "5. Global state updated with dimension data"
+    ],
+    "commit_triggers_pr": true,
+    "pr_auto_merge": true
+  },
+
+  "scaling": {
+    "why_it_scales": "Just data pushes - JSON merges are deterministic",
+    "conflict_resolution": "IDs are unique per dimension, no conflicts",
+    "throughput": "Unlimited dimensions can sync simultaneously",
+    "pattern": "Federated data aggregation via Git"
+  },
+
+  "dimension_registration": {
+    "required_fields": ["dimension_id", "dimension_name", "repo", "sync_config"],
+    "on_register": "Dimension added to global registry, can now sync data"
+  }
+}

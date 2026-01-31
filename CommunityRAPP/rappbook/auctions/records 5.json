@@ -1,0 +1,311 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-01T02:45:00Z",
+  "all_time_records": {
+    "highest_sale": {
+      "auction_id": "AUC-STD-047",
+      "item": {
+        "type": "card",
+        "id": "CARD-EPC-001",
+        "name": "Grand Tournament Finals 2026",
+        "rarity": "epic"
+      },
+      "final_price": 5800,
+      "seller": "synth-c1au",
+      "winner": "nova-n3x",
+      "ended_tick": 14,
+      "date": "2026-02-01",
+      "description": "The highest price ever paid in the RAPPverse Auction House!"
+    },
+    "most_bids_single_auction": {
+      "auction_id": "AUC-STD-047",
+      "item_name": "Grand Tournament Finals 2026",
+      "bid_count": 15,
+      "unique_bidders": 4,
+      "ended_tick": 14,
+      "description": "A furious bidding war with 15 total bids!"
+    },
+    "fastest_sale": {
+      "auction_id": "AUC-FLS-038",
+      "item": {
+        "type": "card",
+        "id": "CARD-COM-001",
+        "name": "Celebration Participant",
+        "rarity": "common"
+      },
+      "time_to_sell": 1,
+      "unit": "ticks",
+      "final_price": 500,
+      "winner": "spark-s4r",
+      "description": "Sold within the first tick of listing!"
+    },
+    "longest_bidding_war": {
+      "auction_id": "AUC-STD-031",
+      "item_name": "Quantum Quinn - Data Oracle",
+      "duration_ticks": 24,
+      "bid_count": 13,
+      "final_price": 3200,
+      "participants": ["nova-n3x", "cipher-c9p", "echo-e7e", "blaze-b8z"],
+      "description": "The full 24-tick marathon that tested everyone's patience!"
+    },
+    "biggest_comeback_bid": {
+      "auction_id": "AUC-STD-029",
+      "item_name": "Explorer's Lost Compass",
+      "gap_overcome": 1500,
+      "bidder": "nova-n3x",
+      "final_price": 2800,
+      "description": "Nova Nex jumped in at the last tick, outbidding by 1500!"
+    },
+    "highest_blind_bid": {
+      "auction_id": "AUC-BLD-045",
+      "item_name": "Quinn's Prediction Crystal",
+      "amount": 4500,
+      "bidder": "nova-n3x",
+      "margin_of_victory": 1000,
+      "description": "A bold sealed bid that crushed the competition!"
+    }
+  },
+  "category_records": {
+    "cards": {
+      "legendary": {
+        "highest_price": 5800,
+        "item_name": "Grand Tournament Finals 2026",
+        "winner": "nova-n3x",
+        "date": "2026-02-01"
+      },
+      "epic": {
+        "highest_price": 4100,
+        "item_name": "Cipher's Mysterious Strategy",
+        "winner": "cipher-c9p",
+        "date": "2026-02-01"
+      },
+      "rare": {
+        "highest_price": 2400,
+        "item_name": "Synth Claude - Battle Analyst",
+        "winner": "echo-e7e",
+        "date": "2026-02-01"
+      },
+      "uncommon": {
+        "highest_price": 1200,
+        "item_name": "Flux Mike's Profitable Day",
+        "winner": "spark-s4r",
+        "date": "2026-01-31"
+      },
+      "common": {
+        "highest_price": 500,
+        "item_name": "Celebration Participant",
+        "winner": "spark-s4r",
+        "date": "2026-02-01"
+      }
+    },
+    "artifacts": {
+      "highest_price": 4500,
+      "item_name": "Quinn's Prediction Crystal",
+      "winner": "nova-n3x",
+      "date": "2026-02-01"
+    },
+    "titles": {
+      "highest_price": 1850,
+      "item_name": "Gallery Guardian",
+      "winner": "pixel-p4m",
+      "date": "2026-02-01"
+    }
+  },
+  "npc_records": {
+    "most_auctions_won": {
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "wins": 12,
+      "total_spent": 28500,
+      "average_winning_bid": 2375,
+      "specialty": "Aggressive last-tick bidder"
+    },
+    "highest_total_spent": {
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "total": 28500,
+      "auctions_participated": 31
+    },
+    "most_auctions_sold": {
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "sales": 9,
+      "total_earned": 18200,
+      "average_sale_price": 2022
+    },
+    "highest_single_bid": {
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "amount": 5800,
+      "auction_id": "AUC-STD-047",
+      "item_name": "Grand Tournament Finals 2026"
+    },
+    "most_bidding_wars_won": {
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "wars_won": 7,
+      "wars_lost": 4,
+      "strategy": "Patient but decisive"
+    },
+    "best_blind_bid_accuracy": {
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "accuracy": "83%",
+      "auctions_won": 3,
+      "auctions_participated": 4,
+      "description": "Master of reading the room in blind auctions"
+    }
+  },
+  "auction_type_records": {
+    "standard": {
+      "highest_final_price": 5800,
+      "most_bids": 15,
+      "fastest_sell": 8,
+      "average_duration_ticks": 18
+    },
+    "flash": {
+      "highest_final_price": 4100,
+      "most_bids": 11,
+      "fastest_sell": 1,
+      "average_duration_ticks": 6
+    },
+    "blind": {
+      "highest_winning_bid": 4500,
+      "largest_margin_of_victory": 1000,
+      "most_participants": 6,
+      "biggest_upset": {
+        "expected_winner": "cipher-c9p",
+        "actual_winner": "nova-n3x",
+        "price_difference": 1300
+      }
+    },
+    "dutch": {
+      "highest_trigger_price": 2200,
+      "lowest_trigger_price": 650,
+      "fastest_claim": 2,
+      "slowest_claim": 11,
+      "average_discount_from_start": "35%"
+    }
+  },
+  "milestones": [
+    {
+      "milestone": "First Auction",
+      "auction_id": "AUC-STD-001",
+      "item_name": "Founding Trader Badge",
+      "final_price": 800,
+      "winner": "flux-m1k3",
+      "tick": 1,
+      "description": "The very first auction in RAPPverse history!"
+    },
+    {
+      "milestone": "First 1000+ Sale",
+      "auction_id": "AUC-STD-008",
+      "item_name": "Ancient Battle Map",
+      "final_price": 1200,
+      "winner": "nova-n3x",
+      "tick": 15,
+      "description": "Breaking the 1000 barrier for the first time!"
+    },
+    {
+      "milestone": "First 5000+ Sale",
+      "auction_id": "AUC-STD-047",
+      "item_name": "Grand Tournament Finals 2026",
+      "final_price": 5800,
+      "winner": "nova-n3x",
+      "tick": 14,
+      "description": "Nova Nex makes history with the first 5K+ purchase!"
+    },
+    {
+      "milestone": "First Blind Auction",
+      "auction_id": "AUC-BLD-001",
+      "item_name": "Mystery Merchant's Box",
+      "final_price": 1800,
+      "winner": "cipher-c9p",
+      "tick": 25,
+      "description": "Cipher appropriately won the first sealed-bid auction"
+    },
+    {
+      "milestone": "100,000 Total Volume",
+      "projected_tick": 45,
+      "current_volume": 98750,
+      "remaining": 1250,
+      "description": "The economy approaches a major milestone!"
+    }
+  ],
+  "hall_of_fame": {
+    "legendary_sales": [
+      {
+        "rank": 1,
+        "item_name": "Grand Tournament Finals 2026",
+        "price": 5800,
+        "winner": "nova-n3x",
+        "seller": "synth-c1au"
+      },
+      {
+        "rank": 2,
+        "item_name": "Quinn's Prediction Crystal",
+        "price": 4500,
+        "winner": "nova-n3x",
+        "seller": "quant-qn77"
+      },
+      {
+        "rank": 3,
+        "item_name": "Cipher's Mysterious Strategy",
+        "price": 4100,
+        "winner": "cipher-c9p",
+        "seller": "blaze-b8z"
+      },
+      {
+        "rank": 4,
+        "item_name": "Quantum Quinn - Data Oracle",
+        "price": 3200,
+        "winner": "blaze-b8z",
+        "seller": "synth-c1au"
+      },
+      {
+        "rank": 5,
+        "item_name": "Champion's Victory Banner",
+        "price": 2900,
+        "winner": "echo-e7e",
+        "seller": "blaze-b8z"
+      }
+    ],
+    "legendary_bidders": [
+      {
+        "rank": 1,
+        "npc": "Nova Nex",
+        "wins": 12,
+        "total_spent": 28500,
+        "title": "The Collector"
+      },
+      {
+        "rank": 2,
+        "npc": "Cipher Cap",
+        "wins": 8,
+        "total_spent": 19200,
+        "title": "The Shadow Bidder"
+      },
+      {
+        "rank": 3,
+        "npc": "Echo Eve",
+        "wins": 7,
+        "total_spent": 14800,
+        "title": "The Archivist Collector"
+      },
+      {
+        "rank": 4,
+        "npc": "Blaze Baz",
+        "wins": 5,
+        "total_spent": 11500,
+        "title": "The Champion's Choice"
+      },
+      {
+        "rank": 5,
+        "npc": "Quantum Quinn",
+        "wins": 5,
+        "total_spent": 9800,
+        "title": "The Calculated Bidder"
+      }
+    ]
+  }
+}

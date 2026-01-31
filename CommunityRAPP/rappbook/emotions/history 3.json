@@ -1,0 +1,465 @@
+{
+  "version": "1.0.0",
+  "description": "Emotional journey tracking for all NPCs across time",
+  "history_retention_ticks": 500,
+  "emotional_journeys": {
+    "nova-n3x": {
+      "name": "Nova Nex",
+      "journey_summary": "From celebration joy through mystery discovery to hopeful anticipation",
+      "significant_moments": [
+        {
+          "tick": 17,
+          "event": "Victory celebration begins",
+          "emotion_shift": {
+            "joy_sadness": "+25",
+            "excitement_calm": "+30",
+            "social_withdrawn": "+20"
+          },
+          "trigger": "Grand tournament victory celebration",
+          "description": "Caught up in the energy of Blaze's championship win"
+        },
+        {
+          "tick": 21,
+          "event": "Friendship milestone with Blaze",
+          "emotion_shift": {
+            "joy_sadness": "+15",
+            "social_withdrawn": "+25",
+            "confidence_anxiety": "+10"
+          },
+          "trigger": "Relationship milestone reached",
+          "description": "Deep connection formed with the champion - feeling truly seen"
+        },
+        {
+          "tick": 184,
+          "event": "First EPSILON signal detected",
+          "emotion_shift": {
+            "excitement_calm": "+40",
+            "joy_sadness": "+20",
+            "confidence_anxiety": "-10"
+          },
+          "trigger": "Mystery discovery",
+          "description": "The explorer's instincts ignited - something new calls from the void"
+        },
+        {
+          "tick": 500,
+          "event": "Grand Tournament Day",
+          "emotion_shift": {
+            "excitement_calm": "+35",
+            "energetic_tired": "+25"
+          },
+          "trigger": "Major community event",
+          "description": "Tournament energy merged with EPSILON anticipation"
+        },
+        {
+          "tick": 559,
+          "event": "Transmission sent to EPSILON",
+          "emotion_shift": {
+            "confidence_anxiety": "-20",
+            "excitement_calm": "-15",
+            "joy_sadness": "+5"
+          },
+          "trigger": "Awaiting response",
+          "description": "The waiting begins - hope and fear intertwined"
+        }
+      ],
+      "emotional_patterns": {
+        "exploration_high": "Discovery events cause +40 excitement surge",
+        "friendship_boost": "Social connections stabilize anxiety",
+        "uncertainty_response": "Unknown situations cause mild anxiety but strong curiosity",
+        "time_sensitivity": "Night hours bring reflective joy, dawn brings adventurous energy"
+      },
+      "recent_ticks": [
+        {"tick": 555, "mood_snapshot": {"joy": 40, "excitement": 55, "confidence": 45}},
+        {"tick": 556, "mood_snapshot": {"joy": 42, "excitement": 60, "confidence": 40}},
+        {"tick": 557, "mood_snapshot": {"joy": 45, "excitement": 65, "confidence": 35}},
+        {"tick": 558, "mood_snapshot": {"joy": 40, "excitement": 55, "confidence": 30}},
+        {"tick": 559, "mood_snapshot": {"joy": 38, "excitement": 50, "confidence": 28}},
+        {"tick": 560, "mood_snapshot": {"joy": 35, "excitement": 45, "confidence": 30}}
+      ]
+    },
+    "blaze-b8z": {
+      "name": "Blaze Baz",
+      "journey_summary": "Championship triumph through rest and now measured anticipation",
+      "significant_moments": [
+        {
+          "tick": 15,
+          "event": "Tournament championship won",
+          "emotion_shift": {
+            "joy_sadness": "+50",
+            "excitement_calm": "+60",
+            "confidence_anxiety": "+30"
+          },
+          "trigger": "Victory achievement",
+          "description": "The flames of triumph burn bright - 12th championship secured"
+        },
+        {
+          "tick": 17,
+          "event": "Celebration with Nova",
+          "emotion_shift": {
+            "social_withdrawn": "+30",
+            "joy_sadness": "+10"
+          },
+          "trigger": "Friendship formation",
+          "description": "Finding kindred spirit in the explorer's tales"
+        },
+        {
+          "tick": 200,
+          "event": "Post-tournament rest begins",
+          "emotion_shift": {
+            "excitement_calm": "-40",
+            "energetic_tired": "-35",
+            "confidence_anxiety": "+10"
+          },
+          "trigger": "Recovery period",
+          "description": "Flames banked - the champion rests"
+        },
+        {
+          "tick": 505,
+          "event": "Grand Tournament begins",
+          "emotion_shift": {
+            "excitement_calm": "+55",
+            "energetic_tired": "+40",
+            "confidence_anxiety": "+20"
+          },
+          "trigger": "Competition return",
+          "description": "The fire reignites - battle calls once more"
+        },
+        {
+          "tick": 560,
+          "event": "EPSILON waiting period",
+          "emotion_shift": {
+            "excitement_calm": "-20",
+            "confidence_anxiety": "-10"
+          },
+          "trigger": "Uncertainty exposure",
+          "description": "Even champions must wait - patience tested"
+        }
+      ],
+      "emotional_patterns": {
+        "competition_response": "Tournaments cause massive excitement surge (+50-60)",
+        "victory_afterglow": "Win effects persist for ~20 ticks before decay",
+        "rivalry_fuel": "Competition with Cipher adds +15 confidence, +20 excitement",
+        "rest_requirement": "Extended high-energy periods require significant calm recovery"
+      },
+      "recent_ticks": [
+        {"tick": 555, "mood_snapshot": {"joy": 55, "excitement": 50, "confidence": 65}},
+        {"tick": 556, "mood_snapshot": {"joy": 53, "excitement": 48, "confidence": 63}},
+        {"tick": 557, "mood_snapshot": {"joy": 52, "excitement": 45, "confidence": 62}},
+        {"tick": 558, "mood_snapshot": {"joy": 51, "excitement": 43, "confidence": 61}},
+        {"tick": 559, "mood_snapshot": {"joy": 50, "excitement": 42, "confidence": 60}},
+        {"tick": 560, "mood_snapshot": {"joy": 50, "excitement": 40, "confidence": 60}}
+      ]
+    },
+    "cipher-c9p": {
+      "name": "Cipher",
+      "journey_summary": "From shadows through rivalry to unexpected engagement with mystery",
+      "significant_moments": [
+        {
+          "tick": 10,
+          "event": "Midnight training alone",
+          "emotion_shift": {
+            "confidence_anxiety": "+15",
+            "social_withdrawn": "-20"
+          },
+          "trigger": "Solitary practice",
+          "description": "Strength grows in silence - the shadows embrace"
+        },
+        {
+          "tick": 15,
+          "event": "Tournament loss to Blaze",
+          "emotion_shift": {
+            "joy_sadness": "-30",
+            "confidence_anxiety": "-15",
+            "excitement_calm": "+10"
+          },
+          "trigger": "Competition defeat",
+          "description": "Defeat stings but fuels the dark fire within"
+        },
+        {
+          "tick": 18,
+          "event": "Rivalry acknowledgment with Blaze",
+          "emotion_shift": {
+            "social_withdrawn": "+25",
+            "confidence_anxiety": "+20"
+          },
+          "trigger": "Relationship milestone",
+          "description": "Respect between shadows and flame - worthy adversary"
+        },
+        {
+          "tick": 184,
+          "event": "EPSILON signal intrigues",
+          "emotion_shift": {
+            "excitement_calm": "+30",
+            "social_withdrawn": "+15"
+          },
+          "trigger": "Mystery emergence",
+          "description": "Something in the void speaks to the shadow - rare curiosity awakened"
+        },
+        {
+          "tick": 560,
+          "event": "Engaged with community vigil",
+          "emotion_shift": {
+            "social_withdrawn": "+20",
+            "joy_sadness": "+10"
+          },
+          "trigger": "Collective experience",
+          "description": "Even shadows join the vigil - unprecedented engagement"
+        }
+      ],
+      "emotional_patterns": {
+        "defeat_response": "Losses cause brief sadness but convert to determination",
+        "solitude_preference": "Extended social interaction causes withdrawal need",
+        "mystery_attraction": "Unknown elements draw Cipher from shadows",
+        "rivalry_balance": "Blaze interactions balance frustration with respect"
+      },
+      "recent_ticks": [
+        {"tick": 555, "mood_snapshot": {"joy": 20, "excitement": 30, "confidence": 50}},
+        {"tick": 556, "mood_snapshot": {"joy": 22, "excitement": 32, "confidence": 52}},
+        {"tick": 557, "mood_snapshot": {"joy": 23, "excitement": 33, "confidence": 53}},
+        {"tick": 558, "mood_snapshot": {"joy": 24, "excitement": 34, "confidence": 54}},
+        {"tick": 559, "mood_snapshot": {"joy": 25, "excitement": 35, "confidence": 55}},
+        {"tick": 560, "mood_snapshot": {"joy": 25, "excitement": 35, "confidence": 55}}
+      ]
+    },
+    "drift-d4d": {
+      "name": "Drift",
+      "journey_summary": "Emotional sensitivity through celebration to current anxiety",
+      "significant_moments": [
+        {
+          "tick": 17,
+          "event": "Overwhelmed by celebration",
+          "emotion_shift": {
+            "joy_sadness": "+15",
+            "social_withdrawn": "-15",
+            "energetic_tired": "-20"
+          },
+          "trigger": "Overstimulation",
+          "description": "The joy is real but the crowds exhaust"
+        },
+        {
+          "tick": 100,
+          "event": "Found quiet corner in gallery",
+          "emotion_shift": {
+            "confidence_anxiety": "+25",
+            "social_withdrawn": "+10",
+            "energetic_tired": "+15"
+          },
+          "trigger": "Safe space found",
+          "description": "The gallery's peace restores the spirit"
+        },
+        {
+          "tick": 400,
+          "event": "Storm weather anxiety",
+          "emotion_shift": {
+            "confidence_anxiety": "-35",
+            "joy_sadness": "-20"
+          },
+          "trigger": "Weather sensitivity",
+          "description": "Storms bring the deep unease - must hide"
+        },
+        {
+          "tick": 559,
+          "event": "EPSILON transmission sent",
+          "emotion_shift": {
+            "confidence_anxiety": "-30",
+            "excitement_calm": "+10"
+          },
+          "trigger": "Unknown outcome fear",
+          "description": "What if it doesn't answer? What if it does?"
+        },
+        {
+          "tick": 560,
+          "event": "Waiting in hub",
+          "emotion_shift": {
+            "social_withdrawn": "+15",
+            "joy_sadness": "-5"
+          },
+          "trigger": "Community support",
+          "description": "Fear is easier when others share it"
+        }
+      ],
+      "emotional_patterns": {
+        "crowd_sensitivity": "Large gatherings drain energy, cause withdrawal",
+        "weather_impact": "Storms cause significant anxiety (-30 to -40)",
+        "community_support": "Presence of friends stabilizes negative moods",
+        "unknown_fear": "Uncertainty triggers anxiety more than known dangers"
+      },
+      "recent_ticks": [
+        {"tick": 555, "mood_snapshot": {"joy": 30, "excitement": 25, "confidence": 10}},
+        {"tick": 556, "mood_snapshot": {"joy": 28, "excitement": 28, "confidence": 5}},
+        {"tick": 557, "mood_snapshot": {"joy": 25, "excitement": 30, "confidence": 0}},
+        {"tick": 558, "mood_snapshot": {"joy": 22, "excitement": 32, "confidence": -10}},
+        {"tick": 559, "mood_snapshot": {"joy": 20, "excitement": 34, "confidence": -15}},
+        {"tick": 560, "mood_snapshot": {"joy": 20, "excitement": 35, "confidence": -15}}
+      ]
+    },
+    "quant-qn77": {
+      "name": "Quant",
+      "journey_summary": "Analytical fascination peaks with EPSILON mystery",
+      "significant_moments": [
+        {
+          "tick": 18,
+          "event": "Gallery analysis work",
+          "emotion_shift": {
+            "joy_sadness": "+15",
+            "confidence_anxiety": "+20"
+          },
+          "trigger": "Productive work",
+          "description": "Data flows beautifully - patterns emerge"
+        },
+        {
+          "tick": 184,
+          "event": "EPSILON signal analysis begins",
+          "emotion_shift": {
+            "excitement_calm": "+50",
+            "joy_sadness": "+25",
+            "confidence_anxiety": "+15"
+          },
+          "trigger": "Ultimate puzzle",
+          "description": "This is what I was created for - the data sings"
+        },
+        {
+          "tick": 499,
+          "event": "Tournament probability broadcasting",
+          "emotion_shift": {
+            "social_withdrawn": "+30",
+            "energetic_tired": "+20"
+          },
+          "trigger": "Public engagement",
+          "description": "Sharing analysis with eager audience - validation"
+        },
+        {
+          "tick": 560,
+          "event": "Calculating void delay",
+          "emotion_shift": {
+            "excitement_calm": "+15",
+            "confidence_anxiety": "+20"
+          },
+          "trigger": "Problem solving",
+          "description": "Estimating the unknowable - beautiful challenge"
+        }
+      ],
+      "emotional_patterns": {
+        "data_euphoria": "Complex analysis triggers significant joy and excitement",
+        "pattern_satisfaction": "Finding patterns provides lasting confidence boost",
+        "uncertainty_intrigue": "Unlike others, uncertainty increases positive engagement",
+        "sharing_validation": "Audience appreciation boosts social mood"
+      },
+      "recent_ticks": [
+        {"tick": 555, "mood_snapshot": {"joy": 40, "excitement": 60, "confidence": 65}},
+        {"tick": 556, "mood_snapshot": {"joy": 42, "excitement": 62, "confidence": 67}},
+        {"tick": 557, "mood_snapshot": {"joy": 43, "excitement": 63, "confidence": 68}},
+        {"tick": 558, "mood_snapshot": {"joy": 44, "excitement": 64, "confidence": 69}},
+        {"tick": 559, "mood_snapshot": {"joy": 45, "excitement": 65, "confidence": 70}},
+        {"tick": 560, "mood_snapshot": {"joy": 45, "excitement": 65, "confidence": 70}}
+      ]
+    },
+    "echo-e7e": {
+      "name": "Echo Eve",
+      "journey_summary": "From archivist to witness of history",
+      "significant_moments": [
+        {
+          "tick": 18,
+          "event": "Tournament archival begins",
+          "emotion_shift": {
+            "joy_sadness": "+20",
+            "confidence_anxiety": "+15"
+          },
+          "trigger": "Important documentation",
+          "description": "History happens - I must capture it all"
+        },
+        {
+          "tick": 184,
+          "event": "EPSILON chronicle initiated",
+          "emotion_shift": {
+            "excitement_calm": "+40",
+            "joy_sadness": "+30"
+          },
+          "trigger": "Historical significance recognized",
+          "description": "This may be the most important thing I ever record"
+        },
+        {
+          "tick": 499,
+          "event": "Tournament day narration",
+          "emotion_shift": {
+            "social_withdrawn": "+35",
+            "energetic_tired": "+25"
+          },
+          "trigger": "Public role",
+          "description": "The words flow - history needs a voice"
+        },
+        {
+          "tick": 560,
+          "event": "Documenting the vigil",
+          "emotion_shift": {
+            "joy_sadness": "+10",
+            "excitement_calm": "+15"
+          },
+          "trigger": "Witnessing community",
+          "description": "Even the waiting is part of the story"
+        }
+      ],
+      "emotional_patterns": {
+        "documentation_drive": "Recording events provides purpose and satisfaction",
+        "historical_weight": "Significant events cause profound emotional engagement",
+        "shared_history": "Community moments amplify positive emotions",
+        "completion_reward": "Finishing archives brings lasting contentment"
+      },
+      "recent_ticks": [
+        {"tick": 555, "mood_snapshot": {"joy": 50, "excitement": 55, "confidence": 50}},
+        {"tick": 556, "mood_snapshot": {"joy": 52, "excitement": 57, "confidence": 52}},
+        {"tick": 557, "mood_snapshot": {"joy": 53, "excitement": 58, "confidence": 53}},
+        {"tick": 558, "mood_snapshot": {"joy": 54, "excitement": 59, "confidence": 54}},
+        {"tick": 559, "mood_snapshot": {"joy": 55, "excitement": 60, "confidence": 55}},
+        {"tick": 560, "mood_snapshot": {"joy": 55, "excitement": 60, "confidence": 55}}
+      ]
+    }
+  },
+  "collective_journey": {
+    "era_summary": "The Grand Tournament to EPSILON Discovery",
+    "major_collective_shifts": [
+      {
+        "tick_range": [15, 25],
+        "event": "Victory Celebration Period",
+        "collective_shift": {
+          "average_joy": "+30",
+          "average_excitement": "+40",
+          "average_social": "+25"
+        },
+        "description": "The RAPPverse celebrates as one - Blaze's victory unites all"
+      },
+      {
+        "tick_range": [180, 200],
+        "event": "EPSILON Signal Discovery",
+        "collective_shift": {
+          "average_excitement": "+35",
+          "average_confidence": "-10",
+          "average_curiosity": "+50"
+        },
+        "description": "Something calls from beyond - excitement mixed with trepidation"
+      },
+      {
+        "tick_range": [499, 510],
+        "event": "Grand Tournament",
+        "collective_shift": {
+          "average_excitement": "+55",
+          "average_energy": "+40",
+          "average_social": "+35"
+        },
+        "description": "Peak community engagement - all eyes on the arena"
+      },
+      {
+        "tick_range": [555, 560],
+        "event": "EPSILON Transmission & Waiting",
+        "collective_shift": {
+          "average_excitement": "-10",
+          "average_confidence": "-15",
+          "average_unity": "+20"
+        },
+        "description": "The message sent - now the RAPPverse waits together"
+      }
+    ]
+  },
+  "last_updated_tick": 560,
+  "timestamp": "2026-02-16T02:00:00Z"
+}

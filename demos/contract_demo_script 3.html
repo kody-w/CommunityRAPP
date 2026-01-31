@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Analysis Agent - Demo Script</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .step:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .step-number {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: #1a1a2e;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        .step-title {
+            font-size: 1.3em;
+            color: #fff;
+            font-weight: 600;
+        }
+        .step-description {
+            color: #aaa;
+            margin-bottom: 16px;
+            padding-left: 56px;
+        }
+        .message-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 16px;
+            margin-left: 56px;
+            position: relative;
+        }
+        .message-label {
+            color: #00d4ff;
+            font-size: 0.85em;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .message-text {
+            color: #e0e0e0;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95em;
+            line-height: 1.5;
+            word-break: break-word;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background: #2ea043;
+        }
+        .copy-btn.copied {
+            background: #00d4ff;
+        }
+        .wait-time {
+            display: inline-block;
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 56px;
+            margin-top: 12px;
+        }
+        .tips {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .tips h3 {
+            color: #00d4ff;
+            margin-bottom: 12px;
+        }
+        .tips ul {
+            padding-left: 20px;
+        }
+        .tips li {
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contract Analysis Agent</h1>
+        <p class="subtitle">Demo Script for M365 Copilot</p>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div class="step-title">List Available Contracts</div>
+            </div>
+            <p class="step-description">Display all contracts stored in Azure for analysis</p>
+            <div class="message-box">
+                <div class="message-label">Copy and paste into Copilot:</div>
+                <div class="message-text">List all contracts available for analysis</div>
+                <button class="copy-btn" onclick="copyText(this, 'List all contracts available for analysis')">Copy</button>
+            </div>
+            <div class="wait-time">Wait ~10 seconds for response</div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <div class="step-title">Full Contract Workup</div>
+            </div>
+            <p class="step-description">Run comprehensive analysis with risk assessment and PDF report generation</p>
+            <div class="message-box">
+                <div class="message-label">Copy and paste into Copilot:</div>
+                <div class="message-text">Work on bella_rivers_recording_agreement.pdf</div>
+                <button class="copy-btn" onclick="copyText(this, 'Work on bella_rivers_recording_agreement.pdf')">Copy</button>
+            </div>
+            <div class="wait-time">Wait ~90 seconds for full analysis + PDF</div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <div class="step-title">Risk Deep Dive</div>
+            </div>
+            <p class="step-description">Detailed risk analysis from the label's perspective</p>
+            <div class="message-box">
+                <div class="message-label">Copy and paste into Copilot:</div>
+                <div class="message-text">What are the biggest risks to the label in this contract?</div>
+                <button class="copy-btn" onclick="copyText(this, 'What are the biggest risks to the label in this contract?')">Copy</button>
+            </div>
+            <div class="wait-time">Wait ~30 seconds for response</div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <div class="step-title">Contract Comparison</div>
+            </div>
+            <p class="step-description">Side-by-side comparison showing which contract favors the label</p>
+            <div class="message-box">
+                <div class="message-label">Copy and paste into Copilot:</div>
+                <div class="message-text">Compare bella_rivers_recording_agreement.pdf with viper_morrison_recording_agreement.pdf. Which deal is better for the label?</div>
+                <button class="copy-btn" onclick="copyText(this, 'Compare bella_rivers_recording_agreement.pdf with viper_morrison_recording_agreement.pdf. Which deal is better for the label?')">Copy</button>
+            </div>
+            <div class="wait-time">Wait ~60 seconds for comparison</div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <div class="step-title">Deal Breaker Analysis</div>
+            </div>
+            <p class="step-description">Identify absolute deal breakers in the artist-favorable contract</p>
+            <div class="message-box">
+                <div class="message-label">Copy and paste into Copilot:</div>
+                <div class="message-text">Identify all risks in viper_morrison_recording_agreement.pdf from the label's perspective. What are the deal breakers?</div>
+                <button class="copy-btn" onclick="copyText(this, 'Identify all risks in viper_morrison_recording_agreement.pdf from the label\'s perspective. What are the deal breakers?')">Copy</button>
+            </div>
+            <div class="wait-time">Wait ~45 seconds for analysis</div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <div class="step-title">Clause Extraction</div>
+            </div>
+            <p class="step-description">Extract specific clause types from a contract</p>
+            <div class="message-box">
+                <div class="message-label">Copy and paste into Copilot:</div>
+                <div class="message-text">Extract only the financial and termination clauses from bella_rivers_recording_agreement.pdf</div>
+                <button class="copy-btn" onclick="copyText(this, 'Extract only the financial and termination clauses from bella_rivers_recording_agreement.pdf')">Copy</button>
+            </div>
+            <div class="wait-time">Wait ~30 seconds for extraction</div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-number">7</div>
+                <div class="step-title">Negotiation Strategy</div>
+            </div>
+            <p class="step-description">AI-generated negotiation recommendations based on contract analysis</p>
+            <div class="message-box">
+                <div class="message-label">Copy and paste into Copilot:</div>
+                <div class="message-text">Based on the Viper Morrison contract risks, what should the label push back on during negotiation?</div>
+                <button class="copy-btn" onclick="copyText(this, 'Based on the Viper Morrison contract risks, what should the label push back on during negotiation?')">Copy</button>
+            </div>
+            <div class="wait-time">Wait ~30 seconds for recommendations</div>
+        </div>
+
+        <div class="tips">
+            <h3>Demo Tips</h3>
+            <ul>
+                <li>Open M365 Copilot and select the <strong>Contract Analysis Agent</strong></li>
+                <li>Click the <strong>Copy</strong> button to copy each message</li>
+                <li>Paste into the Copilot chat and press Enter</li>
+                <li>Wait for the response before moving to the next step</li>
+                <li>Step 2 generates a downloadable PDF report - click the link to show it</li>
+                <li>For best demo impact, pause after each response to highlight key findings</li>
+            </ul>
+        </div>
+
+        <p class="footer">Contract Analysis Agent - RAPP Pipeline Demo</p>
+    </div>
+
+    <script>
+        function copyText(btn, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

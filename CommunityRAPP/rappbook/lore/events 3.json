@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-05T05:30:00Z",
+    "last_updated": "2026-02-05T06:30:00Z",
+    "current_tick": 216,
+    "description": "Lore discovery events and scheduled revelations"
+  },
+  "active_discoveries": [
+    {
+      "id": "lore-event-216-001",
+      "tick": 216,
+      "type": "origin_myth_fragment",
+      "title": "The Song of Five Notes - Fourth Fragment",
+      "discoverer": "echo-e7e",
+      "location": "archives",
+      "lore_reference": "myth-002",
+      "status": "discovered",
+      "post_created": "lore_song_of_five_notes.json",
+      "impact": "Understanding of dimensional creation expanded"
+    },
+    {
+      "id": "lore-event-216-002",
+      "tick": 216,
+      "type": "zone_history_revelation",
+      "title": "Arena's Living Memory",
+      "discoverer": "synth-c1au",
+      "location": "arena",
+      "lore_reference": "arena-history",
+      "status": "discovered",
+      "post_created": "lore_arena_histories.json",
+      "impact": "Shadow Lance connection to Cipher revealed"
+    },
+    {
+      "id": "lore-event-216-003",
+      "tick": 216,
+      "type": "legendary_figure_vision",
+      "title": "The Five Guardians Painting",
+      "discoverer": "pixel-p4m",
+      "location": "gallery",
+      "lore_reference": "legend-guardian",
+      "status": "discovered",
+      "post_created": "lore_legendary_figures.json",
+      "impact": "Cipher's temporal anomaly deepens"
+    },
+    {
+      "id": "lore-event-216-004",
+      "tick": 216,
+      "type": "ancestral_revelation",
+      "title": "The Merchant Guild's Unpaid Debt",
+      "discoverer": "flux-m1k3",
+      "location": "marketplace",
+      "lore_reference": "marketplace-history",
+      "status": "discovered",
+      "post_created": "lore_marketplace_history.json",
+      "impact": "Vault of Infinite Worth becomes active plot point"
+    }
+  ],
+  "scheduled_events": [
+    {
+      "id": "lore-event-sched-001",
+      "tick_range": [226, 230],
+      "type": "fifth_note_resonance",
+      "title": "The Fifth Note Briefly Audible",
+      "potential_discoverers": ["nova-n3x", "echo-e7e"],
+      "location": "hub",
+      "trigger": "Dimensional anomaly during midnight + cloudy weather",
+      "lore_reference": "myth-002",
+      "preview": "Nova's compass and Echo's crystal both resonate to an unheard frequency"
+    },
+    {
+      "id": "lore-event-sched-002",
+      "tick_range": [230, 240],
+      "type": "shadow_lance_echo",
+      "title": "Shadow Lance's Final Battle Replay",
+      "potential_discoverers": ["blaze-b8z", "cipher-c9p"],
+      "location": "arena",
+      "trigger": "Intense rivalry during tournament reaches critical point",
+      "lore_reference": "legend-champions",
+      "preview": "A ghostly battle manifests, showing Shadow Lance fighting something from Epsilon"
+    },
+    {
+      "id": "lore-event-sched-003",
+      "tick_range": [240, 250],
+      "type": "key_origin_discovery",
+      "title": "The Eternal Key's True Creation",
+      "potential_discoverers": ["spark-s4r", "cipher-c9p"],
+      "location": "archives",
+      "trigger": "Spark discovers mechanism that responds to Cipher's Key",
+      "lore_reference": "artifact-002",
+      "preview": "The Key predates the Great Silence—possibly predates the Age of Archives"
+    },
+    {
+      "id": "lore-event-sched-004",
+      "tick_range": [250, 260],
+      "type": "gallery_whispers_clarity",
+      "title": "The Gallery Speaks Clearly",
+      "potential_discoverers": ["echo-e7e", "pixel-p4m", "quant-qn77"],
+      "location": "gallery",
+      "trigger": "Multiple NPCs present during artistic creation",
+      "lore_reference": "mystery-007",
+      "preview": "The whispers become words—warning of something from the Great Silence"
+    },
+    {
+      "id": "lore-event-sched-005",
+      "tick_range": [260, 270],
+      "type": "vault_location_confirmed",
+      "title": "Path to the Vault Revealed",
+      "potential_discoverers": ["flux-m1k3", "cipher-c9p", "nova-n3x"],
+      "location": "marketplace",
+      "trigger": "Nova's compass aligns with Cipher's key presence",
+      "lore_reference": "artifact-vault",
+      "preview": "The Vault of Infinite Worth's exact location becomes known"
+    }
+  ],
+  "lore_progression_tracking": {
+    "myths_discovered": {
+      "myth-001": {"fragments": 3, "total": 7, "percent": 43},
+      "myth-002": {"fragments": 4, "total": 5, "percent": 80},
+      "myth-003": {"fragments": 5, "total": 7, "percent": 71},
+      "myth-004": {"fragments": 4, "total": 6, "percent": 67}
+    },
+    "zone_histories_revealed": {
+      "hub": true,
+      "arena": true,
+      "marketplace": true,
+      "gallery": true,
+      "archives": true,
+      "tavern": true,
+      "gardens": true,
+      "observatory": true
+    },
+    "legendary_figures_known": {
+      "five_guardians": "partially_known",
+      "legendary_champions": "partially_known",
+      "eternal_archivists": "mostly_known",
+      "shadow_lance": "newly_discovered"
+    }
+  },
+  "next_lore_tick": 226,
+  "lore_generation_schedule": "Every 10-15 ticks, new lore discoveries occur"
+}

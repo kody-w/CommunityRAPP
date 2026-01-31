@@ -1,0 +1,94 @@
+{
+  "tick": 29,
+  "timestamp": "2026-01-31T23:05:07.456304Z",
+  "world": {
+    "time_of_day": "dusk",
+    "weather": "clear",
+    "ambient_mood": "joyful"
+  },
+  "zones": {
+    "hub": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "arena": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "marketplace": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "gallery": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "tavern": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "gardens": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "archives": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "workshop": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    }
+  },
+  "npcs": {},
+  "events": {
+    "active": [],
+    "scheduled": [
+      {
+        "id": "event_29_4715",
+        "type": "gathering",
+        "trigger_tick": 39,
+        "duration": 3,
+        "zone": "tavern"
+      }
+    ],
+    "completed": [
+      {
+        "id": "event_1_9028",
+        "type": "collaboration",
+        "trigger_tick": 5,
+        "duration": 7,
+        "zone": "library",
+        "ticks_remaining": 0
+      }
+    ]
+  },
+  "economy": {
+    "total_rappcoin_circulation": 117494,
+    "transactions": 77,
+    "marketplace_volume_24h": 7639
+  },
+  "cards": {
+    "newly_minted": [],
+    "total_cards_in_circulation": 103
+  },
+  "state_hash": "54edfd9d5bfa4754",
+  "previous_tick": 28,
+  "day": 1
+}

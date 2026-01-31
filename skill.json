@@ -22,7 +22,8 @@
     "code_generation",
     "demo_creation",
     "quality_gates",
-    "moltbook_publishing"
+    "moltbook_publishing",
+    "duplicate_file_merging"
   ],
   "actions": [
     {
@@ -165,6 +166,37 @@
           }
         },
         "required": ["gate", "project_id"]
+      }
+    },
+    {
+      "name": "copilot_steward",
+      "description": "Auto-merge versioned duplicate files (e.g., 'active 5.json', 'active 6.json') into master versions",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": ["scan", "merge", "pr"],
+            "description": "Action to perform: scan (list duplicates), merge (auto-merge), pr (create PR)"
+          },
+          "path": {
+            "type": "string",
+            "description": "Directory to scan (default: current directory)"
+          },
+          "dry_run": {
+            "type": "boolean",
+            "description": "Preview changes without making them",
+            "default": false
+          }
+        },
+        "required": ["action"]
+      },
+      "script": "scripts/copilot_steward.py",
+      "returns": {
+        "groups_merged": "Number of duplicate groups merged",
+        "files_consolidated": "Total files consolidated",
+        "manifest": "Path to steward manifest file",
+        "pr_url": "GitHub PR URL (if --pr used)"
       }
     }
   ],

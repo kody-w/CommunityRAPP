@@ -1,0 +1,462 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Faction standings and affiliations in the RAPPverse",
+    "created_tick": 18,
+    "last_updated_tick": 19,
+    "total_factions": 4
+  },
+  "factions": {
+    "arena_champions": {
+      "id": "arena_champions",
+      "name": "Arena Champions",
+      "description": "Elite warriors who have proven themselves in combat",
+      "motto": "Victory through strength and strategy",
+      "zone_home": "arena",
+      "color": "#FF4444",
+      "icon": "crossed_swords",
+      "requirements": {
+        "min_combat_rating": 200,
+        "tournaments_entered": 5,
+        "battles_won": 20
+      },
+      "perks": [
+        "Arena priority access",
+        "Champion training sessions",
+        "Exclusive battle cards",
+        "Tournament fast-track entry"
+      ],
+      "members": {
+        "blaze-b8z": {
+          "npc_id": "blaze-b8z",
+          "name": "Blaze Baz",
+          "rank": "Grand Champion",
+          "standing": 965,
+          "joined_tick": 1,
+          "contributions": {
+            "tournaments_won": 12,
+            "members_trained": 16,
+            "arena_events_hosted": 8
+          }
+        },
+        "cipher-c9p": {
+          "npc_id": "cipher-c9p",
+          "name": "Cipher Cap",
+          "rank": "Shadow Champion",
+          "standing": 880,
+          "joined_tick": 5,
+          "contributions": {
+            "tournaments_won": 6,
+            "members_trained": 3,
+            "arena_events_hosted": 2
+          }
+        },
+        "synth-c1au": {
+          "npc_id": "synth-c1au",
+          "name": "Synth Claude",
+          "rank": "Battle Sage",
+          "standing": 535,
+          "joined_tick": 8,
+          "contributions": {
+            "battles_analyzed": 54,
+            "strategies_shared": 208,
+            "training_sessions": 47
+          }
+        }
+      },
+      "ranks": {
+        "initiate": { "min_standing": 0, "title": "Arena Initiate" },
+        "warrior": { "min_standing": 100, "title": "Arena Warrior" },
+        "veteran": { "min_standing": 300, "title": "Arena Veteran" },
+        "elite": { "min_standing": 500, "title": "Arena Elite" },
+        "champion": { "min_standing": 750, "title": "Champion" },
+        "grand_champion": { "min_standing": 900, "title": "Grand Champion" }
+      },
+      "faction_stats": {
+        "total_members": 3,
+        "total_standing": 2380,
+        "tournaments_dominated": 8,
+        "faction_reputation": "legendary"
+      }
+    },
+    "merchant_guild": {
+      "id": "merchant_guild",
+      "name": "Merchant Guild",
+      "description": "Traders and dealers who keep the economy flowing",
+      "motto": "Fair trade builds lasting trust",
+      "zone_home": "marketplace",
+      "color": "#FFD700",
+      "icon": "gold_coins",
+      "requirements": {
+        "min_trade_rating": 100,
+        "trades_completed": 25,
+        "profit_earned": 1000
+      },
+      "perks": [
+        "Premium stall locations",
+        "Trade fee discounts",
+        "Rare card access",
+        "Bulk trading privileges"
+      ],
+      "members": {
+        "flux-m1k3": {
+          "npc_id": "flux-m1k3",
+          "name": "Flux Mike",
+          "rank": "Master Merchant",
+          "standing": 785,
+          "joined_tick": 2,
+          "contributions": {
+            "total_trades": 90,
+            "total_profit": 45850,
+            "guild_donations": 2550
+          }
+        },
+        "nova-n3x": {
+          "npc_id": "nova-n3x",
+          "name": "Nova Nex",
+          "rank": "Artifact Dealer",
+          "standing": 350,
+          "joined_tick": 12,
+          "contributions": {
+            "rare_finds_traded": 24,
+            "dimension_goods": 46,
+            "unique_items": 13
+          }
+        },
+        "spark-s4r": {
+          "npc_id": "spark-s4r",
+          "name": "Spark Sara",
+          "rank": "Equipment Supplier",
+          "standing": 295,
+          "joined_tick": 10,
+          "contributions": {
+            "equipment_sold": 46,
+            "repairs_traded": 79,
+            "custom_orders": 23
+          }
+        }
+      },
+      "ranks": {
+        "apprentice": { "min_standing": 0, "title": "Trade Apprentice" },
+        "dealer": { "min_standing": 100, "title": "Licensed Dealer" },
+        "merchant": { "min_standing": 250, "title": "Merchant" },
+        "senior_merchant": { "min_standing": 400, "title": "Senior Merchant" },
+        "master_merchant": { "min_standing": 600, "title": "Master Merchant" },
+        "guild_master": { "min_standing": 850, "title": "Guild Master" }
+      },
+      "faction_stats": {
+        "total_members": 3,
+        "total_standing": 1430,
+        "total_guild_revenue": 125500,
+        "faction_reputation": "famous"
+      }
+    },
+    "lore_keepers": {
+      "id": "lore_keepers",
+      "name": "Lore Keepers",
+      "description": "Guardians of knowledge and chroniclers of history",
+      "motto": "Knowledge preserved is wisdom eternal",
+      "zone_home": "gallery",
+      "color": "#9966FF",
+      "icon": "ancient_tome",
+      "requirements": {
+        "min_lore_rating": 150,
+        "lore_entries": 20,
+        "secrets_discovered": 5
+      },
+      "perks": [
+        "Archive access",
+        "Lore discovery bonuses",
+        "Ancient artifact insights",
+        "Historical event priority"
+      ],
+      "members": {
+        "echo-e7e": {
+          "npc_id": "echo-e7e",
+          "name": "Echo Eve",
+          "rank": "Grand Archivist",
+          "standing": 960,
+          "joined_tick": 3,
+          "contributions": {
+            "events_recorded": 318,
+            "lore_entries": 590,
+            "archives_curated": 48
+          }
+        },
+        "quant-qn77": {
+          "npc_id": "quant-qn77",
+          "name": "Quantum Quinn",
+          "rank": "Data Sage",
+          "standing": 725,
+          "joined_tick": 6,
+          "contributions": {
+            "datasets_analyzed": 162,
+            "patterns_discovered": 92,
+            "predictions_recorded": 145
+          }
+        },
+        "cipher-c9p": {
+          "npc_id": "cipher-c9p",
+          "name": "Cipher Cap",
+          "rank": "Mystery Keeper",
+          "standing": 755,
+          "joined_tick": 5,
+          "contributions": {
+            "secrets_kept": 1003,
+            "riddles_posed": 79,
+            "mysteries_unveiled": 13
+          }
+        },
+        "pixel-p4m": {
+          "npc_id": "pixel-p4m",
+          "name": "Pixel Pam",
+          "rank": "Visual Chronicler",
+          "standing": 500,
+          "joined_tick": 8,
+          "contributions": {
+            "artworks_archived": 238,
+            "visual_records": 160,
+            "style_documented": 47
+          }
+        },
+        "synth-c1au": {
+          "npc_id": "synth-c1au",
+          "name": "Synth Claude",
+          "rank": "Knowledge Guide",
+          "standing": 420,
+          "joined_tick": 15,
+          "contributions": {
+            "battle_lore_recorded": 52,
+            "strategy_archives": 45,
+            "tournament_histories": 12
+          }
+        }
+      },
+      "ranks": {
+        "scribe": { "min_standing": 0, "title": "Lore Scribe" },
+        "scholar": { "min_standing": 150, "title": "Lore Scholar" },
+        "keeper": { "min_standing": 350, "title": "Lore Keeper" },
+        "sage": { "min_standing": 550, "title": "Lore Sage" },
+        "archivist": { "min_standing": 750, "title": "Archivist" },
+        "grand_archivist": { "min_standing": 900, "title": "Grand Archivist" }
+      },
+      "faction_stats": {
+        "total_members": 5,
+        "total_standing": 3360,
+        "total_lore_entries": 1920,
+        "faction_reputation": "legendary"
+      }
+    },
+    "social_elite": {
+      "id": "social_elite",
+      "name": "Social Elite",
+      "description": "Influential figures who shape community culture",
+      "motto": "Together we rise, united we shine",
+      "zone_home": "hub",
+      "color": "#00CCFF",
+      "icon": "crown_star",
+      "requirements": {
+        "min_social_rating": 150,
+        "friendships_formed": 5,
+        "events_attended": 10
+      },
+      "perks": [
+        "Event VIP access",
+        "Celebration hosting rights",
+        "Influence bonuses",
+        "Social gathering priority"
+      ],
+      "members": {
+        "blaze-b8z": {
+          "npc_id": "blaze-b8z",
+          "name": "Blaze Baz",
+          "rank": "Social Icon",
+          "standing": 840,
+          "joined_tick": 4,
+          "contributions": {
+            "fan_events": 26,
+            "autographs_given": 520,
+            "celebrations_hosted": 13
+          }
+        },
+        "synth-c1au": {
+          "npc_id": "synth-c1au",
+          "name": "Synth Claude",
+          "rank": "Trusted Guide",
+          "standing": 710,
+          "joined_tick": 2,
+          "contributions": {
+            "npcs_helped": 208,
+            "guidance_sessions": 320,
+            "welcome_events": 47
+          }
+        },
+        "nova-n3x": {
+          "npc_id": "nova-n3x",
+          "name": "Nova Nex",
+          "rank": "Celebrity",
+          "standing": 560,
+          "joined_tick": 7,
+          "contributions": {
+            "stories_shared": 92,
+            "connections_made": 70,
+            "adventures_invited": 36
+          }
+        },
+        "pixel-p4m": {
+          "npc_id": "pixel-p4m",
+          "name": "Pixel Pam",
+          "rank": "Creative Influencer",
+          "standing": 480,
+          "joined_tick": 9,
+          "contributions": {
+            "art_commissions": 69,
+            "gallery_events": 25,
+            "style_trends": 16
+          }
+        },
+        "flux-m1k3": {
+          "npc_id": "flux-m1k3",
+          "name": "Flux Mike",
+          "rank": "Market Socialite",
+          "standing": 395,
+          "joined_tick": 11,
+          "contributions": {
+            "trade_gatherings": 35,
+            "celebration_deals": 46,
+            "social_trades": 91
+          }
+        },
+        "echo-e7e": {
+          "npc_id": "echo-e7e",
+          "name": "Echo Eve",
+          "rank": "Influencer",
+          "standing": 320,
+          "joined_tick": 16,
+          "contributions": {
+            "historical_tours": 15,
+            "lore_presentations": 22,
+            "archive_socials": 8
+          }
+        }
+      },
+      "ranks": {
+        "newcomer": { "min_standing": 0, "title": "Social Newcomer" },
+        "regular": { "min_standing": 100, "title": "Social Regular" },
+        "influencer": { "min_standing": 250, "title": "Influencer" },
+        "celebrity": { "min_standing": 450, "title": "Celebrity" },
+        "elite": { "min_standing": 650, "title": "Elite" },
+        "icon": { "min_standing": 800, "title": "Social Icon" }
+      },
+      "faction_stats": {
+        "total_members": 6,
+        "total_standing": 3305,
+        "total_events_hosted": 158,
+        "faction_reputation": "legendary"
+      }
+    }
+  },
+  "cross_faction_relations": {
+    "arena_champions_merchant_guild": {
+      "factions": ["arena_champions", "merchant_guild"],
+      "relation": "allied",
+      "strength": 68,
+      "description": "Champions drive merchandise sales",
+      "benefits": ["Champion card exclusives", "Victory celebration discounts"]
+    },
+    "arena_champions_lore_keepers": {
+      "factions": ["arena_champions", "lore_keepers"],
+      "relation": "friendly",
+      "strength": 50,
+      "description": "Battle history is valuable lore",
+      "benefits": ["Battle chronicle archives", "Strategy documentation"]
+    },
+    "merchant_guild_social_elite": {
+      "factions": ["merchant_guild", "social_elite"],
+      "relation": "allied",
+      "strength": 72,
+      "description": "Social events drive commerce",
+      "benefits": ["Event vendor priority", "Celebration sponsorships"]
+    },
+    "lore_keepers_social_elite": {
+      "factions": ["lore_keepers", "social_elite"],
+      "relation": "friendly",
+      "strength": 58,
+      "description": "Historical events are social occasions",
+      "benefits": ["Gallery showcases", "Lore presentation events"]
+    },
+    "arena_champions_social_elite": {
+      "factions": ["arena_champions", "social_elite"],
+      "relation": "allied",
+      "strength": 75,
+      "description": "Champions are celebrity figures",
+      "benefits": ["Fan meet events", "Victory celebrations"]
+    },
+    "merchant_guild_lore_keepers": {
+      "factions": ["merchant_guild", "lore_keepers"],
+      "relation": "neutral",
+      "strength": 40,
+      "description": "Rare artifacts have historical value",
+      "benefits": ["Artifact authentication", "Historical valuations"]
+    }
+  },
+  "faction_events": {
+    "recent": [
+      {
+        "tick": 10,
+        "faction": "arena_champions",
+        "event": "Grand Tournament Victory",
+        "description": "Blaze Baz claimed championship for Arena Champions",
+        "standing_awarded": 100
+      },
+      {
+        "tick": 17,
+        "faction": "merchant_guild",
+        "event": "Victory Celebration Sales",
+        "description": "Record sales during post-tournament celebration",
+        "standing_awarded": 50
+      },
+      {
+        "tick": 18,
+        "faction": "lore_keepers",
+        "event": "Tournament Chronicles",
+        "description": "Complete documentation of Grand Tournament",
+        "standing_awarded": 75
+      },
+      {
+        "tick": 19,
+        "faction": "social_elite",
+        "event": "Midnight Bonding",
+        "description": "Late night connections strengthen community ties",
+        "standing_awarded": 30
+      },
+      {
+        "tick": 19,
+        "faction": "lore_keepers",
+        "event": "Night Archive Session",
+        "description": "Productive late-night documentation in gallery",
+        "standing_awarded": 40
+      }
+    ],
+    "upcoming": [
+      {
+        "scheduled_tick": 21,
+        "faction": "social_elite",
+        "event": "Celebration Finale",
+        "description": "Final moments of Victory Celebration"
+      },
+      {
+        "scheduled_tick": 25,
+        "faction": "lore_keepers",
+        "event": "Midnight Art Showcase",
+        "description": "Gallery exhibition of tournament art"
+      },
+      {
+        "scheduled_tick": 30,
+        "faction": "merchant_guild",
+        "event": "Morning Market Opening",
+        "description": "Special post-celebration market reopening"
+      }
+    ]
+  }
+}

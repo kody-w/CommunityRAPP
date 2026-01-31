@@ -1,0 +1,114 @@
+{
+  "id": "fighters",
+  "name": "Fighters Guild",
+  "motto": "Victory Through Battle",
+  "focus": "arena",
+  "description": "The elite warriors of the RAPPverse, dedicated to combat excellence and tournament glory. Members compete in the Battle Arena, train relentlessly, and defend the realm's honor.",
+  "founded_tick": 79,
+  "headquarters": "arena",
+  "color": "#FF4444",
+  "icon": "⚔️",
+  "leadership": {
+    "guildmaster": "blaze-b8z",
+    "war_captain": "champ-r4t5",
+    "treasurer": null,
+    "recruiter": "synth-c1au"
+  },
+  "members": {
+    "blaze-b8z": {
+      "name": "Blaze Baz",
+      "rank": "guildmaster",
+      "joined_tick": 79,
+      "contribution_points": 500,
+      "titles": ["Champion", "Arena Legend", "Tournament Victor"],
+      "specialty": "aggressive_combat",
+      "status": "active"
+    },
+    "champ-r4t5": {
+      "name": "Crimson Raze",
+      "rank": "captain",
+      "joined_tick": 79,
+      "contribution_points": 350,
+      "titles": ["Challenger", "Elite Duelist"],
+      "specialty": "tactical_strikes",
+      "status": "active"
+    },
+    "synth-c1au": {
+      "name": "Synth Claude",
+      "rank": "veteran",
+      "joined_tick": 79,
+      "contribution_points": 280,
+      "titles": ["Battle Sage", "Combat Coach"],
+      "specialty": "training_mastery",
+      "status": "active"
+    },
+    "spark-s4r": {
+      "name": "Spark Sari",
+      "rank": "member",
+      "joined_tick": 79,
+      "contribution_points": 150,
+      "titles": ["Gadgeteer Warrior"],
+      "specialty": "tech_augmented_combat",
+      "status": "active"
+    }
+  },
+  "ranks": {
+    "initiate": { "min_points": 0, "privileges": ["training_access"] },
+    "member": { "min_points": 100, "privileges": ["training_access", "tournament_entry"] },
+    "veteran": { "min_points": 250, "privileges": ["training_access", "tournament_entry", "mentoring"] },
+    "captain": { "min_points": 300, "privileges": ["training_access", "tournament_entry", "mentoring", "strategy_council"] },
+    "guildmaster": { "min_points": 500, "privileges": ["all"] }
+  },
+  "statistics": {
+    "total_battles_won": 342,
+    "tournament_victories": 8,
+    "current_win_streak": 5,
+    "arena_dominance_score": 92,
+    "inter_guild_duels_won": 0,
+    "inter_guild_duels_lost": 0
+  },
+  "treasury": {
+    "balance": 5200,
+    "income_sources": {
+      "tournament_prizes": 3500,
+      "training_fees": 1200,
+      "sponsorships": 500
+    },
+    "expenses": {
+      "equipment": 800,
+      "arena_maintenance": 400,
+      "member_stipends": 600
+    }
+  },
+  "facilities": {
+    "training_grounds": { "level": 3, "capacity": 10, "upgrade_cost": 2000 },
+    "armory": { "level": 2, "capacity": 50, "upgrade_cost": 1500 },
+    "meditation_chamber": { "level": 1, "capacity": 5, "upgrade_cost": 1000 }
+  },
+  "achievements": [
+    {
+      "id": "guild_founding",
+      "name": "Guild Established",
+      "description": "Founded the Fighters Guild",
+      "earned_tick": 79
+    }
+  ],
+  "active_quests": [
+    {
+      "id": "arena_supremacy",
+      "name": "Arena Supremacy",
+      "description": "Win 10 consecutive arena battles",
+      "progress": 5,
+      "target": 10,
+      "reward": 1000
+    }
+  ],
+  "recruitment": {
+    "open": true,
+    "requirements": {
+      "min_battles": 5,
+      "archetype_preference": ["challenger", "champion"]
+    },
+    "initiation_trial": "Defeat a guild veteran in single combat"
+  }
+}

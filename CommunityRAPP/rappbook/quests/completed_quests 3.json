@@ -1,0 +1,351 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-04T19:30:00Z",
+  "completed_quests": [
+    {
+      "quest_id": "quest-168-blaze-training",
+      "name": "Tournament Preparation",
+      "type": "combat",
+      "difficulty": "hard",
+      "assigned_npc": "blaze-b8z",
+      "npc_name": "Blaze Baz",
+      "description": "Complete rigorous training regimen before the upcoming tournament qualifiers",
+      "objectives": [
+        { "type": "win_battle", "target": "practice_match", "progress": 3, "required": 3, "description": "Win practice battles" },
+        { "type": "master", "target": "technique", "progress": 2, "required": 2, "description": "Master new techniques" }
+      ],
+      "rewards": {
+        "rappcoin": 100,
+        "items": ["combat_mastery_badge"],
+        "card": "blaze_training_rare"
+      },
+      "started_tick": 164,
+      "deadline_tick": 180,
+      "completed_tick": 178,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 2.5,
+        "total_rappcoin_earned": 275
+      },
+      "narrative_summary": "Champion Blaze completed an intense training regimen, mastering two new combat techniques that would later prove decisive in the qualifiers."
+    },
+    {
+      "quest_id": "quest-168-cipher-observations",
+      "name": "Silent Observations",
+      "type": "exploration",
+      "difficulty": "medium",
+      "assigned_npc": "cipher-c9p",
+      "npc_name": "Cipher Cap",
+      "description": "Monitor and document patterns across multiple zones from the shadows",
+      "objectives": [
+        { "type": "observe", "target": "zone_activity", "progress": 4, "required": 4, "description": "Observe zone dynamics" },
+        { "type": "compile", "target": "report", "progress": 1, "required": 1, "description": "Compile findings" }
+      ],
+      "rewards": {
+        "rappcoin": 95,
+        "items": ["shadow_walker_badge"],
+        "card": null
+      },
+      "started_tick": 162,
+      "deadline_tick": 175,
+      "completed_tick": 174,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 1.5,
+        "total_rappcoin_earned": 160
+      },
+      "narrative_summary": "Cipher Cap compiled a comprehensive report on zone activity patterns, revealing insights that would later inform tournament strategy."
+    },
+    {
+      "quest_id": "quest-168-flux-marketplace",
+      "name": "Pre-Tournament Stocking",
+      "type": "trade",
+      "difficulty": "easy",
+      "assigned_npc": "flux-m1k3",
+      "npc_name": "Flux Mike",
+      "description": "Stock up on merchandise before the tournament rush",
+      "objectives": [
+        { "type": "acquire", "target": "merchandise", "progress": 20, "required": 20, "description": "Acquire tournament items" },
+        { "type": "complete_trade", "target": "supplier_deal", "progress": 3, "required": 3, "description": "Complete supplier deals" }
+      ],
+      "rewards": {
+        "rappcoin": 80,
+        "items": ["merchant_stockpile"],
+        "card": null
+      },
+      "started_tick": 165,
+      "deadline_tick": 178,
+      "completed_tick": 176,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 1.0,
+        "total_rappcoin_earned": 92
+      },
+      "narrative_summary": "Flux Mike secured excellent inventory ahead of the tournament, positioning for profitable sales during qualifiers."
+    },
+    {
+      "quest_id": "quest-168-nova-exploration",
+      "name": "Zone Mapping Initiative",
+      "type": "exploration",
+      "difficulty": "medium",
+      "assigned_npc": "nova-n3x",
+      "npc_name": "Nova Nex",
+      "description": "Map all accessible zones and discover hidden paths",
+      "objectives": [
+        { "type": "explore", "target": "zone", "progress": 6, "required": 6, "description": "Explore all zones" },
+        { "type": "discover", "target": "hidden_path", "progress": 2, "required": 2, "description": "Discover hidden paths" }
+      ],
+      "rewards": {
+        "rappcoin": 150,
+        "items": ["explorer_compass_v2", "pathfinder_map"],
+        "card": "nova_explorer_uncommon"
+      },
+      "started_tick": 160,
+      "deadline_tick": 180,
+      "completed_tick": 177,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 1.5,
+        "total_rappcoin_earned": 250
+      },
+      "narrative_summary": "Nova Nex completed comprehensive zone mapping, discovering two hidden paths that connected the archives to the observatory."
+    },
+    {
+      "quest_id": "quest-168-pixel-gallery",
+      "name": "Tournament Banner Series",
+      "type": "collection",
+      "difficulty": "easy",
+      "assigned_npc": "pixel-p4m",
+      "npc_name": "Pixel Pam",
+      "description": "Create promotional artwork for the upcoming tournament",
+      "objectives": [
+        { "type": "create", "target": "banner", "progress": 4, "required": 4, "description": "Create tournament banners" },
+        { "type": "display", "target": "artwork", "progress": 2, "required": 2, "description": "Display in gallery" }
+      ],
+      "rewards": {
+        "rappcoin": 70,
+        "items": ["artist_badge"],
+        "card": null
+      },
+      "started_tick": 166,
+      "deadline_tick": 179,
+      "completed_tick": 178,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 1.0,
+        "total_rappcoin_earned": 81
+      },
+      "narrative_summary": "Pixel Pam's tournament banners became iconic, adorning the arena and gallery with vibrant competitor portraits."
+    },
+    {
+      "quest_id": "quest-168-quant-analysis",
+      "name": "Pre-Tournament Statistics",
+      "type": "collection",
+      "difficulty": "medium",
+      "assigned_npc": "quant-qn77",
+      "npc_name": "Quantum Quinn",
+      "description": "Compile comprehensive statistics on all registered competitors",
+      "objectives": [
+        { "type": "analyze", "target": "competitor_data", "progress": 8, "required": 8, "description": "Analyze competitor profiles" },
+        { "type": "generate", "target": "prediction", "progress": 4, "required": 4, "description": "Generate predictions" }
+      ],
+      "rewards": {
+        "rappcoin": 130,
+        "items": ["data_analyst_medal"],
+        "card": "quant_prediction_rare"
+      },
+      "started_tick": 163,
+      "deadline_tick": 182,
+      "completed_tick": 180,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 1.5,
+        "total_rappcoin_earned": 217
+      },
+      "narrative_summary": "Quantum Quinn's statistical analysis predicted 7 of 8 quarterfinal matchups correctly, establishing a new accuracy record."
+    },
+    {
+      "quest_id": "quest-168-spark-engineering",
+      "name": "Arena Infrastructure Upgrade",
+      "type": "collection",
+      "difficulty": "hard",
+      "assigned_npc": "spark-s4r",
+      "npc_name": "Spark Sara",
+      "description": "Upgrade arena infrastructure for tournament readiness",
+      "objectives": [
+        { "type": "repair", "target": "system", "progress": 5, "required": 5, "description": "Repair critical systems" },
+        { "type": "upgrade", "target": "display", "progress": 3, "required": 3, "description": "Upgrade display systems" }
+      ],
+      "rewards": {
+        "rappcoin": 200,
+        "items": ["master_engineer_badge", "arena_keycard"],
+        "card": "spark_engineer_epic"
+      },
+      "started_tick": 161,
+      "deadline_tick": 178,
+      "completed_tick": 175,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 2.5,
+        "total_rappcoin_earned": 550
+      },
+      "narrative_summary": "Spark Sara's arena upgrades enabled seamless tournament operations, with zero technical issues during qualifiers."
+    },
+    {
+      "quest_id": "quest-168-synth-guidance",
+      "name": "Newcomer Welcome Program",
+      "type": "social",
+      "difficulty": "easy",
+      "assigned_npc": "synth-c1au",
+      "npc_name": "Synth Claude",
+      "description": "Guide newcomers through tournament registration and rules",
+      "objectives": [
+        { "type": "guide", "target": "newcomer", "progress": 10, "required": 10, "description": "Guide new visitors" },
+        { "type": "explain", "target": "rules", "progress": 5, "required": 5, "description": "Explain tournament rules" }
+      ],
+      "rewards": {
+        "rappcoin": 80,
+        "items": ["guide_excellence_badge"],
+        "card": null
+      },
+      "started_tick": 167,
+      "deadline_tick": 182,
+      "completed_tick": 180,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 1.0,
+        "total_rappcoin_earned": 92
+      },
+      "narrative_summary": "Synth Claude welcomed 10 newcomers to the tournament, ensuring smooth registration and enthusiastic participation."
+    },
+    {
+      "quest_id": "quest-168-echo-chronicle",
+      "name": "Pre-Tournament Historical Record",
+      "type": "collection",
+      "difficulty": "medium",
+      "assigned_npc": "echo-e7e",
+      "npc_name": "Echo Eve",
+      "description": "Document the lead-up to the tournament for the historical archives",
+      "objectives": [
+        { "type": "interview", "target": "competitor", "progress": 5, "required": 5, "description": "Interview competitors" },
+        { "type": "document", "target": "preparation", "progress": 3, "required": 3, "description": "Document preparations" }
+      ],
+      "rewards": {
+        "rappcoin": 110,
+        "items": ["chronicler_quill"],
+        "card": "echo_historian_uncommon"
+      },
+      "started_tick": 164,
+      "deadline_tick": 181,
+      "completed_tick": 179,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 1.5,
+        "total_rappcoin_earned": 183
+      },
+      "narrative_summary": "Echo Eve's pre-tournament chronicle captured the excitement and tension of qualifier preparations, becoming a treasured historical record."
+    },
+    {
+      "quest_id": "quest-185-qualifier-momentum",
+      "name": "Qualifier Week Dominance",
+      "type": "combat",
+      "difficulty": "hard",
+      "assigned_npc": "blaze-b8z",
+      "npc_name": "Blaze Baz",
+      "description": "Maintain championship form through opening qualifier rounds",
+      "objectives": [
+        { "type": "win_battle", "target": "qualifier", "progress": 3, "required": 3, "description": "Win qualifier matches" },
+        { "type": "maintain", "target": "streak", "progress": 3, "required": 3, "description": "Maintain win streak" }
+      ],
+      "rewards": {
+        "rappcoin": 180,
+        "items": ["qualifier_champion_badge"],
+        "card": null
+      },
+      "started_tick": 185,
+      "deadline_tick": 195,
+      "completed_tick": 191,
+      "status": "completed",
+      "final_score": {
+        "completion_percentage": 100,
+        "time_bonus": true,
+        "difficulty_bonus": 2.5,
+        "total_rappcoin_earned": 495
+      },
+      "narrative_summary": "Blaze Baz dominated early qualifiers, sweeping opponents with a 3-0 record and extending the championship win streak."
+    }
+  ],
+  "failed_quests": [],
+  "statistics": {
+    "total_completed": 10,
+    "total_failed": 0,
+    "success_rate": 1.0,
+    "total_rappcoin_distributed": 2395,
+    "total_items_distributed": 15,
+    "total_cards_distributed": 6,
+    "by_type": {
+      "combat": 3,
+      "trade": 1,
+      "collection": 4,
+      "social": 1,
+      "exploration": 2
+    },
+    "by_difficulty": {
+      "easy": 3,
+      "medium": 4,
+      "hard": 3,
+      "legendary": 0
+    },
+    "average_completion_time_ticks": 14.2,
+    "on_time_completion_rate": 1.0,
+    "npc_performance": {
+      "blaze-b8z": { "completed": 2, "failed": 0, "total_rappcoin": 770 },
+      "cipher-c9p": { "completed": 1, "failed": 0, "total_rappcoin": 160 },
+      "flux-m1k3": { "completed": 1, "failed": 0, "total_rappcoin": 92 },
+      "nova-n3x": { "completed": 1, "failed": 0, "total_rappcoin": 250 },
+      "pixel-p4m": { "completed": 1, "failed": 0, "total_rappcoin": 81 },
+      "quant-qn77": { "completed": 1, "failed": 0, "total_rappcoin": 217 },
+      "spark-s4r": { "completed": 1, "failed": 0, "total_rappcoin": 550 },
+      "synth-c1au": { "completed": 1, "failed": 0, "total_rappcoin": 92 },
+      "echo-e7e": { "completed": 1, "failed": 0, "total_rappcoin": 183 }
+    }
+  },
+  "milestones": [
+    {
+      "milestone_id": "milestone-tournament-prep-complete",
+      "name": "Tournament Preparation Complete",
+      "achieved_tick": 180,
+      "description": "All NPCs completed their tournament preparation quests"
+    },
+    {
+      "milestone_id": "milestone-ten-quests",
+      "name": "Ten Quests Completed",
+      "achieved_tick": 191,
+      "description": "The RAPPverse quest system reached ten successful completions"
+    },
+    {
+      "milestone_id": "milestone-perfect-streak",
+      "name": "Perfect Completion Streak",
+      "achieved_tick": 191,
+      "description": "10 consecutive quests completed with zero failures"
+    }
+  ]
+}

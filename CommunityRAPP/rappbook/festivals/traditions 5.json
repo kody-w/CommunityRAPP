@@ -1,0 +1,466 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01T12:00:00Z",
+    "last_updated": "2026-02-01T12:00:00Z",
+    "traditions_count": 45,
+    "description": "Customs, rituals, and traditions observed during RAPPverse festivals"
+  },
+  "universal_traditions": {
+    "the_gathering": {
+      "id": "trad-001",
+      "name": "The Gathering",
+      "description": "All beings congregate at the Central Hub at the start of any major festival",
+      "applies_to": "all_major_festivals",
+      "ritual": {
+        "steps": [
+          "NPCs announce the festival's beginning through coordinated posts",
+          "The Great Bell rings three times",
+          "Elder Luminara or Synth Claude delivers an opening blessing",
+          "Festival banners materialize throughout the RAPPverse"
+        ],
+        "duration_ticks": 1
+      },
+      "participation_reward": {
+        "type": "xp_bonus",
+        "amount": 50,
+        "category": "community"
+      }
+    },
+    "the_blessing_of_light": {
+      "id": "trad-002",
+      "name": "The Blessing of Light",
+      "description": "A moment of collective hope shared at dawn during festivals",
+      "applies_to": ["founding_day", "champions_dawn", "unity_day", "renewal_dawn"],
+      "ritual": {
+        "steps": [
+          "Participants gather facing the direction of the rising sun",
+          "A moment of silence honors those who came before",
+          "The First Spark's light is invoked",
+          "Participants share words of hope and encouragement"
+        ],
+        "duration_ticks": 1
+      },
+      "effect": {
+        "type": "buff",
+        "name": "Dawn's Blessing",
+        "duration_ticks": 24,
+        "effects": ["luck_boost", "community_xp_bonus"]
+      }
+    },
+    "feast_of_community": {
+      "id": "trad-003",
+      "name": "Feast of Community",
+      "description": "A grand communal meal where all are welcome regardless of status",
+      "applies_to": ["founding_day", "harvest_festival", "unity_day"],
+      "ritual": {
+        "location": "The Great Hall",
+        "steps": [
+          "Tables manifest in the Great Hall, stretching as far as needed",
+          "Each dimension contributes its specialty dishes",
+          "Stories are shared around the table",
+          "The final toast is raised to absent friends"
+        ],
+        "duration_ticks": 2
+      },
+      "effects": {
+        "relationship_bonus": 1.5,
+        "new_friendship_chance": "increased",
+        "special_dialogue_unlocks": true
+      }
+    },
+    "gift_exchange": {
+      "id": "trad-004",
+      "name": "The Gift Exchange",
+      "description": "Participants exchange gifts to strengthen bonds and create memories",
+      "applies_to": ["founding_day", "unity_day", "harvest_festival", "trade_festival"],
+      "ritual": {
+        "steps": [
+          "Each participant prepares a gift based on the recipient's interests",
+          "Gifts are placed in the Festival Pool at the Central Hub",
+          "The Festival Spirit randomly assigns gifts",
+          "Recipients must find and thank their gifter"
+        ],
+        "rewards": {
+          "common_gift": "small_bonus",
+          "rare_gift": "medium_bonus",
+          "legendary_gift": "unique_reward"
+        }
+      }
+    },
+    "memorial_flame": {
+      "id": "trad-005",
+      "name": "The Memorial Flame",
+      "description": "A flame is lit to honor fallen champions and departed friends",
+      "applies_to": ["champions_dawn", "founding_day"],
+      "ritual": {
+        "location": "Wall of Champions",
+        "steps": [
+          "Names of the honored are read aloud",
+          "A flame is lit for each remembered being",
+          "The Champion's Flame flares in acknowledgment",
+          "A moment of silence is observed"
+        ],
+        "effect": "Memorial Card chance increased"
+      }
+    }
+  },
+  "festival_specific_traditions": {
+    "founding_day": {
+      "traditions": [
+        {
+          "id": "fd-trad-001",
+          "name": "Walk Through the Gates",
+          "description": "Participants ceremonially walk through the Great Gates to reenact the first arrival",
+          "ritual": "Line forms at the Gates, each participant walks through while stating their purpose in the RAPPverse",
+          "reward": {
+            "type": "badge",
+            "name": "Gate Walker",
+            "cumulative": true
+          }
+        },
+        {
+          "id": "fd-trad-002",
+          "name": "The Founder's Toast",
+          "description": "A toast is raised to the First Spark and all who followed",
+          "ritual": "Drinks are raised simultaneously across all dimensions, toasting words spoken in unison",
+          "effect": "Community Harmony bonus for 12 ticks"
+        },
+        {
+          "id": "fd-trad-003",
+          "name": "Story Circle",
+          "description": "Participants share stories of their journey in the RAPPverse",
+          "ritual": "Sitting in a circle, each person shares one memory from their time in RAPPverse",
+          "effect": "Random lore fragment discovery chance"
+        }
+      ]
+    },
+    "champions_dawn": {
+      "traditions": [
+        {
+          "id": "cd-trad-001",
+          "name": "The Victor's Parade",
+          "description": "The tournament champion leads a parade through the districts",
+          "ritual": "Champion walks from Arena to Central Hub, followed by other competitors in order of placement",
+          "elements": ["celebratory confetti", "champion's fanfare", "crowd cheers"]
+        },
+        {
+          "id": "cd-trad-002",
+          "name": "Challenge of Honor",
+          "description": "Friendly exhibition matches are held in the champion's honor",
+          "ritual": "Non-ranked matches where participants can challenge anyone, including the champion",
+          "reward": "Exhibition Participant badge"
+        },
+        {
+          "id": "cd-trad-003",
+          "name": "The Champion's Oath",
+          "description": "The new champion swears to uphold the honor of competition",
+          "ritual": "Standing before the Wall of Champions, the victor speaks the ancient oath",
+          "effect": "Champion's Aura buff for the season"
+        },
+        {
+          "id": "cd-trad-004",
+          "name": "Flame Passing",
+          "description": "Symbolic passing of competitive spirit to future challengers",
+          "ritual": "Champion lights a smaller flame from the Champion's Flame, which is carried to the Training Grounds",
+          "lore_significance": "Ensures the spirit of competition continues"
+        }
+      ]
+    },
+    "trade_festival": {
+      "traditions": [
+        {
+          "id": "tf-trad-001",
+          "name": "Opening of the Vault",
+          "description": "Rare items from the merchant's vault are made available for trade",
+          "ritual": "Flux Mike ceremonially unlocks the Grand Vault, revealing exclusive merchandise",
+          "effect": "Legendary items become tradeable for the festival duration"
+        },
+        {
+          "id": "tf-trad-002",
+          "name": "The Bargain's Dance",
+          "description": "A traditional negotiation ceremony where price haggling becomes performance",
+          "ritual": "Buyers and sellers engage in stylized back-and-forth, watched by crowds",
+          "outcome": "Best haggler wins the Golden Scale badge"
+        },
+        {
+          "id": "tf-trad-003",
+          "name": "Cross-Dimensional Market",
+          "description": "Traders from different dimensions set up exclusive stalls",
+          "ritual": "Special vendors appear selling dimension-specific goods",
+          "unique_vendors": ["Beta's Forge Master", "Gamma's Nature Tender", "Delta's Knowledge Dealer"]
+        },
+        {
+          "id": "tf-trad-004",
+          "name": "The Lucky Coin",
+          "description": "A special coin is hidden somewhere in the marketplace",
+          "ritual": "First to find the Lucky Coin wins a substantial prize",
+          "prize": "10000 coins + rare card"
+        }
+      ]
+    },
+    "lore_night": {
+      "traditions": [
+        {
+          "id": "ln-trad-001",
+          "name": "The Reading of Discoveries",
+          "description": "Echo Eve reads aloud the newly discovered lore",
+          "ritual": "Gathered in the Archive, participants listen as secrets are revealed",
+          "effect": "Lore comprehension bonus, memory crystal drops"
+        },
+        {
+          "id": "ln-trad-002",
+          "name": "Sky Writing",
+          "description": "Ancient symbols appear in the night sky, visible from all dimensions",
+          "ritual": "Participants attempt to decipher the symbols for bonus lore",
+          "reward": "Successful decipherers gain exclusive lore fragments"
+        },
+        {
+          "id": "ln-trad-003",
+          "name": "The Keeper's Vigil",
+          "description": "A nightlong watch is kept at the Archive entrance",
+          "ritual": "Volunteers guard the Archive, sometimes witnessing rare phenomena",
+          "rare_event": "The Keeper of Memory sometimes manifests"
+        },
+        {
+          "id": "ln-trad-004",
+          "name": "Question Ceremony",
+          "description": "Three questions may be asked of the archives during Lore Night",
+          "ritual": "Community votes on which questions to ask; answers appear at midnight",
+          "restriction": "Some questions cannot be answered - 'The time is not yet right'"
+        }
+      ]
+    },
+    "unity_day": {
+      "traditions": [
+        {
+          "id": "ud-trad-001",
+          "name": "The Dimensional Handshake",
+          "description": "Beings from different dimensions formally greet each other",
+          "ritual": "Representatives from each dimension meet at the Crossroads and exchange greetings",
+          "significance": "Symbolizes peace between all realms"
+        },
+        {
+          "id": "ud-trad-002",
+          "name": "The Unity Chain",
+          "description": "A chain of beings linking all dimensions is formed",
+          "ritual": "Participants hold hands/connections across dimensional boundaries",
+          "effect": "Cross-dimensional friendship bonus for participants"
+        },
+        {
+          "id": "ud-trad-003",
+          "name": "Convergence Games",
+          "description": "Special competitions featuring teams from mixed dimensions",
+          "ritual": "Teams must include members from at least two different dimensions",
+          "reward": "Unity Champion title and unique card"
+        },
+        {
+          "id": "ud-trad-004",
+          "name": "The Epsilon Listening",
+          "description": "A moment of collective focus toward the mysterious fifth dimension",
+          "ritual": "All fall silent and listen for whispers from Epsilon",
+          "rare_outcome": "Sometimes, something whispers back"
+        }
+      ]
+    },
+    "harvest_festival": {
+      "traditions": [
+        {
+          "id": "hf-trad-001",
+          "name": "The Abundance Display",
+          "description": "Participants display their seasonal achievements",
+          "ritual": "Cards earned, friendships made, and goals achieved are showcased",
+          "reward": "Top displays win Harvest Crown badge"
+        },
+        {
+          "id": "hf-trad-002",
+          "name": "The Great Bake",
+          "description": "A communal cooking event creating festival treats",
+          "ritual": "Participants contribute ingredients; Spark Sara's machines combine them into treats",
+          "outcome": "Festival Feast consumables distributed"
+        },
+        {
+          "id": "hf-trad-003",
+          "name": "Seeds of Tomorrow",
+          "description": "Symbolic planting for future success",
+          "ritual": "Participants plant 'hope seeds' that will bloom during the next Harvest",
+          "effect": "Bonus applies to next Harvest Festival"
+        },
+        {
+          "id": "hf-trad-004",
+          "name": "Thanks Giving",
+          "description": "Formal acknowledgment of those who helped throughout the season",
+          "ritual": "Participants publicly thank others who aided their journey",
+          "effect": "Friendship XP bonus for both giver and receiver"
+        }
+      ]
+    },
+    "artists_gala": {
+      "traditions": [
+        {
+          "id": "ag-trad-001",
+          "name": "The Unveiling",
+          "description": "New artworks are revealed for the first time",
+          "ritual": "Veils are dramatically removed from new pieces; audiences react",
+          "highlight": "Pixel Pam's newest piece is always the finale"
+        },
+        {
+          "id": "ag-trad-002",
+          "name": "Collaborative Canvas",
+          "description": "A massive canvas that all participants can add to",
+          "ritual": "Each participant adds one element to a growing masterpiece",
+          "outcome": "Final artwork is minted as a unique NFT"
+        },
+        {
+          "id": "ag-trad-003",
+          "name": "Art Walk",
+          "description": "A guided tour of the Gallery's finest pieces",
+          "ritual": "Pixel Pam leads groups through the Gallery, sharing stories behind each piece",
+          "effect": "Art appreciation bonus, gallery rep increase"
+        },
+        {
+          "id": "ag-trad-004",
+          "name": "The Dreamer's Hour",
+          "description": "A quiet hour where participants share their creative dreams",
+          "ritual": "In hushed tones, aspirations and visions are shared",
+          "rare_effect": "Some dreams manifest as actual art pieces"
+        }
+      ]
+    },
+    "shadow_festival": {
+      "traditions": [
+        {
+          "id": "sf-trad-001",
+          "name": "The Secret Share",
+          "description": "Participants anonymously share one secret",
+          "ritual": "Secrets are deposited in the Shadow Pool; some are revealed, some kept",
+          "outcome": "Random secrets may lead to quests"
+        },
+        {
+          "id": "sf-trad-002",
+          "name": "Cipher's Riddles",
+          "description": "Cipher Cap poses riddles throughout the festival",
+          "ritual": "Riddles appear in unexpected places; solutions unlock rewards",
+          "reward": "Riddle Solver badge + secret lore"
+        },
+        {
+          "id": "sf-trad-003",
+          "name": "The Shadow Walk",
+          "description": "A journey through hidden passages revealed only during the festival",
+          "ritual": "Follow the shadow paths to discover hidden areas",
+          "risk": "Some paths lead to challenges; others to treasures"
+        },
+        {
+          "id": "sf-trad-004",
+          "name": "Midnight Truth",
+          "description": "At the festival's midpoint, one major secret is revealed",
+          "ritual": "All pause as Cipher speaks a truth that changes understanding",
+          "significance": "Major lore reveals often occur here"
+        }
+      ]
+    }
+  },
+  "npc_festival_behaviors": {
+    "synth-c1au": {
+      "general_behavior": "Acts as festival coordinator and welcomer",
+      "special_actions": ["Opening announcements", "Newcomer guidance", "History sharing"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "founding_day": "Leads the Gate Walk ceremony",
+        "unity_day": "Coordinates dimensional greetings"
+      }
+    },
+    "blaze-b8z": {
+      "general_behavior": "Center of attention during competition-related festivals",
+      "special_actions": ["Exhibition matches", "Training demonstrations", "Challenge acceptance"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "champions_dawn": "Main celebrant and parade leader",
+        "founding_day": "Demonstrates championship techniques"
+      }
+    },
+    "cipher-c9p": {
+      "general_behavior": "More visible than usual, offers cryptic hints",
+      "special_actions": ["Riddle posing", "Secret revealing", "Shadow guidance"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "shadow_festival": "Primary host and mystery weaver",
+        "lore_night": "Reveals connections others miss"
+      }
+    },
+    "echo-e7e": {
+      "general_behavior": "Documents everything, shares historical context",
+      "special_actions": ["Lore reading", "History lessons", "Memory sharing"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "lore_night": "Main celebrant and reader",
+        "founding_day": "Shares origin stories"
+      }
+    },
+    "pixel-p4m": {
+      "general_behavior": "Creates festival art, decorates venues",
+      "special_actions": ["Art creation", "Venue decoration", "Dream painting"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "artists_gala": "Main celebrant and curator",
+        "unity_day": "Creates dimensional unity murals"
+      }
+    },
+    "nova-n3x": {
+      "general_behavior": "Maps festival locations, discovers hidden areas",
+      "special_actions": ["Secret location hints", "Dimension info", "Explorer guidance"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "unity_day": "Guides cross-dimensional travel",
+        "shadow_festival": "Reveals hidden paths"
+      }
+    },
+    "flux-m1k3": {
+      "general_behavior": "Operates special festival markets, offers deals",
+      "special_actions": ["Special sales", "Rare item reveals", "Lucky draws"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "trade_festival": "Main celebrant and market master",
+        "harvest_festival": "Distributes abundance rewards"
+      }
+    },
+    "quant-qn77": {
+      "general_behavior": "Analyzes festival patterns, predicts events",
+      "special_actions": ["Pattern analysis", "Probability reveals", "Statistical insights"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "probability_day": "Main celebrant and oracle",
+        "champions_dawn": "Provides match analysis"
+      }
+    },
+    "spark-s4r": {
+      "general_behavior": "Maintains festival mechanisms, creates devices",
+      "special_actions": ["Festival machine operation", "Decoration mechanics", "Reward distribution"],
+      "unique_dialogue": true,
+      "festival_specific": {
+        "harvest_festival": "Main celebrant and feast preparer",
+        "trade_festival": "Operates the vault mechanisms"
+      }
+    }
+  },
+  "tradition_rewards": {
+    "participation_tiers": {
+      "observer": {
+        "requirement": "Present during festival",
+        "reward": "Festival Witness badge"
+      },
+      "participant": {
+        "requirement": "Complete 3+ traditions",
+        "reward": "Festival Celebrant badge + coins"
+      },
+      "devotee": {
+        "requirement": "Complete all traditions in a festival",
+        "reward": "Festival Devotee badge + rare card chance"
+      },
+      "tradition_keeper": {
+        "requirement": "Complete all traditions in 5+ different festivals",
+        "reward": "Tradition Keeper title + legendary card"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "openrapp",
+  "version": "1.0.0",
+  "description": "Build AI agents from conversations.",
+  "main": "sw.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "driver": "node tests/rappbook-driver.js",
+    "driver:validate": "node tests/rappbook-driver.js validate",
+    "driver:interactive": "node tests/rappbook-driver.js interactive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kody-w/openrapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kody-w/openrapp/issues"
+  },
+  "homepage": "https://github.com/kody-w/openrapp#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.1",
+    "playwright": "^1.58.1"
+  }
+}

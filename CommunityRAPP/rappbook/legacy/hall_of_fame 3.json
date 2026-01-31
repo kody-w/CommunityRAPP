@@ -1,0 +1,558 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-05T05:30:00Z",
+    "last_updated": "2026-02-05T05:30:00Z",
+    "system": "RAPPverse Hall of Fame",
+    "description": "Eternal record of legendary NPCs and their greatest achievements"
+  },
+
+  "hall_categories": {
+    "legends": {
+      "id": "cat_legends",
+      "name": "Living Legends",
+      "description": "NPCs whose deeds have earned eternal recognition",
+      "entry_requirements": {
+        "tournament_victories": 10,
+        "legendary_achievements": 3,
+        "service_ticks": 5000,
+        "reputation_threshold": 95
+      }
+    },
+    "ascended": {
+      "id": "cat_ascended",
+      "name": "The Ascended",
+      "description": "NPCs who transcended to higher planes of existence",
+      "entry_requirements": {
+        "transcendence_completed": true,
+        "legacy_preserved": true,
+        "successor_established": true
+      }
+    },
+    "fallen_heroes": {
+      "id": "cat_fallen",
+      "name": "Fallen Heroes",
+      "description": "Champions who gave their all in service of the RAPPverse",
+      "entry_requirements": {
+        "heroic_sacrifice": true,
+        "deaths_in_service": 1,
+        "minimum_achievements": 5
+      }
+    },
+    "pioneers": {
+      "id": "cat_pioneers",
+      "name": "Pioneers",
+      "description": "First NPCs to achieve remarkable milestones",
+      "entry_requirements": {
+        "first_to_achieve": true,
+        "milestone_significance": "major"
+      }
+    },
+    "eternal_rivals": {
+      "id": "cat_rivals",
+      "name": "Eternal Rivals",
+      "description": "Legendary rivalries that shaped the RAPPverse",
+      "entry_requirements": {
+        "rivalry_duration_ticks": 1000,
+        "memorable_clashes": 5,
+        "mutual_respect": true
+      }
+    }
+  },
+
+  "inductees": {
+    "legends": [
+      {
+        "inductee_id": "legend_blaze",
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "title": "The Unquenchable Flame",
+        "lineage": "LINE-001",
+        "generation": 12,
+        "status": "active",
+        "inducted_tick": 15000,
+        "achievements": [
+          {
+            "achievement_id": "ach_12_victories",
+            "name": "Twelve-Time Champion",
+            "description": "Won 12 tournament championships",
+            "tick_achieved": 14500,
+            "rarity": "legendary"
+          },
+          {
+            "achievement_id": "ach_comeback_king",
+            "name": "Comeback King",
+            "description": "Won 7 battles from near-defeat using Champion's Surge",
+            "tick_achieved": 10000,
+            "rarity": "epic"
+          },
+          {
+            "achievement_id": "ach_flame_keeper",
+            "name": "Flame Keeper",
+            "description": "Maintained the Champion's Flame for 10,000+ ticks",
+            "tick_achieved": 11500,
+            "rarity": "legendary"
+          }
+        ],
+        "legacy_quote": "The flame that cannot be extinguished burns brightest in darkness.",
+        "rival_acknowledgments": ["cipher-c9p"],
+        "mentor_to": [],
+        "fame_points": 9500,
+        "display_statue": {
+          "location": "arena_entrance",
+          "material": "eternal_flame_bronze",
+          "unveiled_tick": 15000
+        }
+      },
+      {
+        "inductee_id": "legend_echo",
+        "npc_id": "echo-e7e",
+        "name": "Echo Eve",
+        "title": "The Living Archive",
+        "lineage": "LINE-002",
+        "generation": 47,
+        "status": "active",
+        "inducted_tick": 12000,
+        "achievements": [
+          {
+            "achievement_id": "ach_lore_master",
+            "name": "Lore Master Supreme",
+            "description": "Recorded over 580 unique lore entries",
+            "tick_achieved": 11000,
+            "rarity": "legendary"
+          },
+          {
+            "achievement_id": "ach_prophecy_keeper",
+            "name": "Keeper of Prophecies",
+            "description": "Preserved all known prophecies of the RAPPverse",
+            "tick_achieved": 9000,
+            "rarity": "epic"
+          },
+          {
+            "achievement_id": "ach_memory_communion",
+            "name": "Memory Communion Master",
+            "description": "Contacted all 46 previous Archivists",
+            "tick_achieved": 10500,
+            "rarity": "legendary"
+          }
+        ],
+        "legacy_quote": "Every story is a thread in the tapestry of truth.",
+        "rival_acknowledgments": [],
+        "mentor_to": ["apprentice_archive_001"],
+        "fame_points": 8800,
+        "display_statue": {
+          "location": "archive_entrance",
+          "material": "crystalline_memory_stone",
+          "unveiled_tick": 12000
+        }
+      }
+    ],
+
+    "ascended": [
+      {
+        "inductee_id": "ascended_first_champion",
+        "npc_id": "legend-001",
+        "name": "The First Champion",
+        "title": "Founder of the Flame",
+        "lineage": "LINE-001",
+        "generation": 1,
+        "status": "ascended",
+        "inducted_tick": 0,
+        "ascension_tick": 1000,
+        "ascension_type": "voluntary_transcendence",
+        "achievements": [
+          {
+            "achievement_id": "ach_founding_flame",
+            "name": "Kindling the Eternal Flame",
+            "description": "Created the Champion's Flame tradition",
+            "tick_achieved": 100,
+            "rarity": "mythic"
+          },
+          {
+            "achievement_id": "ach_first_tournament",
+            "name": "First Tournament Victor",
+            "description": "Won the inaugural RAPPverse tournament",
+            "tick_achieved": 50,
+            "rarity": "mythic"
+          }
+        ],
+        "legacy_quote": "The flame is not mine to keep, but ours to pass forward.",
+        "spiritual_presence": {
+          "manifestation_zone": "arena",
+          "guidance_available": true,
+          "contact_method": "champion_meditation"
+        },
+        "fame_points": 50000
+      },
+      {
+        "inductee_id": "ascended_first_archivist",
+        "npc_id": "legend-archivist-first",
+        "name": "The First Archivist",
+        "title": "Weaver of Memories",
+        "lineage": "LINE-002",
+        "generation": 1,
+        "status": "ascended",
+        "inducted_tick": 0,
+        "ascension_tick": 2000,
+        "ascension_type": "knowledge_transcendence",
+        "achievements": [
+          {
+            "achievement_id": "ach_prime_crystal",
+            "name": "Creator of the Prime Memory Crystal",
+            "description": "Forged the artifact that binds all Archivists",
+            "tick_achieved": 500,
+            "rarity": "mythic"
+          },
+          {
+            "achievement_id": "ach_first_archive",
+            "name": "Founder of the Archives",
+            "description": "Established the Archive system",
+            "tick_achieved": 100,
+            "rarity": "mythic"
+          }
+        ],
+        "legacy_quote": "Truth outlives all who speak it.",
+        "spiritual_presence": {
+          "manifestation_zone": "archives",
+          "guidance_available": true,
+          "contact_method": "memory_communion"
+        },
+        "fame_points": 48000
+      },
+      {
+        "inductee_id": "ascended_probability_weaver",
+        "npc_id": "legend-oracle-first",
+        "name": "The Probability Weaver",
+        "title": "First Oracle",
+        "lineage": "LINE-005",
+        "generation": 1,
+        "status": "dissolved_into_possibility",
+        "inducted_tick": 0,
+        "ascension_tick": 3000,
+        "ascension_type": "probability_dissolution",
+        "achievements": [
+          {
+            "achievement_id": "ach_oracle_tablet",
+            "name": "Creator of the Oracle Tablet",
+            "description": "Forged the artifact of probability sight",
+            "tick_achieved": 1000,
+            "rarity": "mythic"
+          },
+          {
+            "achievement_id": "ach_first_prophecy",
+            "name": "The Great Prophecy",
+            "description": "Spoke the first prophecy of the RAPPverse",
+            "tick_achieved": 500,
+            "rarity": "mythic"
+          }
+        ],
+        "legacy_quote": "Every possibility is real until observed.",
+        "spiritual_presence": {
+          "manifestation_zone": "observatory",
+          "guidance_available": "probabilistic",
+          "contact_method": "oracle_meditation"
+        },
+        "fame_points": 45000
+      }
+    ],
+
+    "fallen_heroes": [
+      {
+        "inductee_id": "fallen_ember_kay",
+        "npc_id": "ember-k11",
+        "name": "Ember Kay",
+        "title": "Guardian of the Silence",
+        "lineage": "LINE-001",
+        "generation": 11,
+        "status": "fallen",
+        "inducted_tick": 1500,
+        "death_tick": 1500,
+        "death_type": "heroic_sacrifice",
+        "achievements": [
+          {
+            "achievement_id": "ach_silence_survivor",
+            "name": "Flame Through Silence",
+            "description": "Kept the Champion's Flame alive during the Great Silence",
+            "tick_achieved": 1400,
+            "rarity": "legendary"
+          },
+          {
+            "achievement_id": "ach_ultimate_sacrifice",
+            "name": "The Ultimate Sacrifice",
+            "description": "Gave life to preserve the lineage",
+            "tick_achieved": 1500,
+            "rarity": "mythic"
+          }
+        ],
+        "legacy_quote": "The flame lives because I chose to burn.",
+        "memorial_location": {
+          "zone": "arena",
+          "type": "eternal_flame_shrine",
+          "visitable": true
+        },
+        "fame_points": 35000,
+        "successor": "blaze-b8z"
+      },
+      {
+        "inductee_id": "fallen_scorrus",
+        "npc_id": "scorrus-v8",
+        "name": "Scorrus the Valiant",
+        "title": "Defender Against Shadow",
+        "lineage": "LINE-001",
+        "generation": 8,
+        "status": "fallen",
+        "inducted_tick": 800,
+        "death_tick": 800,
+        "death_type": "battle_death",
+        "achievements": [
+          {
+            "achievement_id": "ach_shadow_wars",
+            "name": "Shadow Wars Victor",
+            "description": "Led defense during the Shadow Wars",
+            "tick_achieved": 750,
+            "rarity": "legendary"
+          },
+          {
+            "achievement_id": "ach_final_stand",
+            "name": "The Final Stand",
+            "description": "Held the line against impossible odds",
+            "tick_achieved": 800,
+            "rarity": "legendary"
+          }
+        ],
+        "legacy_quote": "Some walls are worth dying to defend.",
+        "memorial_location": {
+          "zone": "arena",
+          "type": "hero_monument",
+          "visitable": true
+        },
+        "fame_points": 28000
+      },
+      {
+        "inductee_id": "fallen_whisper_wells",
+        "npc_id": "whisper-w46",
+        "name": "Whisper Wells",
+        "title": "The Sealed Archivist",
+        "lineage": "LINE-002",
+        "generation": 46,
+        "status": "mysterious_departure",
+        "inducted_tick": 8000,
+        "disappearance_tick": 8000,
+        "death_type": "unknown",
+        "achievements": [
+          {
+            "achievement_id": "ach_sleeping_archive",
+            "name": "Sealer of the Sleeping Archive",
+            "description": "Sealed away dangerous knowledge to protect the realm",
+            "tick_achieved": 7900,
+            "rarity": "legendary"
+          },
+          {
+            "achievement_id": "ach_silence_secrets",
+            "name": "Keeper of Silence Secrets",
+            "description": "Preserved forbidden knowledge of the Great Silence",
+            "tick_achieved": 7500,
+            "rarity": "epic"
+          }
+        ],
+        "legacy_quote": "Some secrets must sleep forever.",
+        "memorial_location": {
+          "zone": "archives",
+          "type": "sealed_chamber",
+          "visitable": false
+        },
+        "fame_points": 32000,
+        "successor": "echo-e7e",
+        "mystery_notes": "Disappearance remains unexplained. Some believe Whisper still guards the Sleeping Archive."
+      }
+    ],
+
+    "pioneers": [
+      {
+        "inductee_id": "pioneer_seven_founders",
+        "npc_id": "legend-merchant-seven",
+        "name": "The Seven Founders",
+        "title": "Architects of Commerce",
+        "lineage": "LINE-003",
+        "generation": 1,
+        "status": "legendary",
+        "inducted_tick": 0,
+        "achievements": [
+          {
+            "achievement_id": "ach_first_trade",
+            "name": "First Fair Trade",
+            "description": "Established the principles of fair commerce",
+            "tick_achieved": 100,
+            "rarity": "mythic"
+          },
+          {
+            "achievement_id": "ach_guild_charter",
+            "name": "The Guild Charter",
+            "description": "Created the original Merchant Guild Charter",
+            "tick_achieved": 200,
+            "rarity": "mythic"
+          }
+        ],
+        "legacy_quote": "Fair trade builds worlds; greed destroys them.",
+        "fame_points": 42000,
+        "pioneers_of": ["merchant_guild", "fair_trade", "rappcoin_economy"]
+      },
+      {
+        "inductee_id": "pioneer_quantum_quinn",
+        "npc_id": "quant-qn77",
+        "name": "Quantum Quinn",
+        "title": "The Probability Master",
+        "lineage": "LINE-005",
+        "generation": 7,
+        "status": "active",
+        "inducted_tick": 10000,
+        "achievements": [
+          {
+            "achievement_id": "ach_perfect_predictions",
+            "name": "142 Perfect Predictions",
+            "description": "Achieved unprecedented prediction accuracy",
+            "tick_achieved": 9500,
+            "rarity": "legendary"
+          },
+          {
+            "achievement_id": "ach_probability_mastery",
+            "name": "Probability Mastery",
+            "description": "First to fully master the Oracle Tablet",
+            "tick_achieved": 8000,
+            "rarity": "epic"
+          }
+        ],
+        "legacy_quote": "The future is not written; it is calculated.",
+        "fame_points": 7500,
+        "pioneers_of": ["probability_science", "prediction_methodology"]
+      }
+    ],
+
+    "eternal_rivals": [
+      {
+        "rivalry_id": "rivalry_flame_shadow",
+        "participants": [
+          {
+            "npc_id": "blaze-b8z",
+            "name": "Blaze Baz",
+            "lineage": "LINE-001",
+            "status": "active"
+          },
+          {
+            "npc_id": "cipher-c9p",
+            "name": "Cipher Cap",
+            "lineage": "LINE-004",
+            "status": "active"
+          }
+        ],
+        "rivalry_title": "The Eternal Dance of Flame and Shadow",
+        "inducted_tick": 5000,
+        "origin_tick": 500,
+        "clash_count": 47,
+        "current_score": {
+          "blaze-b8z": 23,
+          "cipher-c9p": 22,
+          "draws": 2
+        },
+        "legendary_moments": [
+          {
+            "moment_id": "moment_grand_final",
+            "description": "The Grand Final that shook the arena",
+            "tick": 3000,
+            "outcome": "Blaze victory by Champion's Surge",
+            "witnesses": 5000
+          },
+          {
+            "moment_id": "moment_shadow_revenge",
+            "description": "Cipher's impossible comeback",
+            "tick": 4500,
+            "outcome": "Cipher victory through Shadow Step",
+            "witnesses": 4800
+          }
+        ],
+        "prophecy_connection": "When flame and shadow unite, the Sleeping Archive awakens",
+        "fame_points_combined": 15000,
+        "legacy_quote": "We are each other's greatest opponent and truest measure."
+      }
+    ]
+  },
+
+  "fame_mechanics": {
+    "fame_point_sources": {
+      "tournament_victory": 500,
+      "legendary_achievement": 1000,
+      "epic_achievement": 500,
+      "rare_achievement": 250,
+      "service_milestone_1000_ticks": 100,
+      "mentorship_success": 200,
+      "prophecy_fulfilled": 750,
+      "heroic_sacrifice": 5000,
+      "ascension": 10000
+    },
+    "fame_thresholds": {
+      "notable": 1000,
+      "famous": 5000,
+      "legendary": 10000,
+      "mythic": 25000,
+      "eternal": 50000
+    },
+    "fame_benefits": {
+      "notable": ["Name recognized by all NPCs", "Access to fame_only zones"],
+      "famous": ["Statue consideration", "Enhanced lineage inheritance"],
+      "legendary": ["Automatic Hall of Fame induction", "Legacy unlock eligibility"],
+      "mythic": ["Guide spirit potential", "Prophecy subject eligibility"],
+      "eternal": ["Dimension-wide recognition", "Cross-lineage influence"]
+    }
+  },
+
+  "induction_ceremonies": {
+    "living_legend_ceremony": {
+      "name": "The Crowning of Legends",
+      "description": "Ceremony for inducting active NPCs into the Hall of Fame",
+      "requirements": {
+        "fame_points": 10000,
+        "sponsor_legends": 2,
+        "public_support": 0.7
+      },
+      "ceremony_steps": [
+        "Proclamation of deeds",
+        "Testimony from witnesses",
+        "Acceptance speech",
+        "Statue unveiling",
+        "Feast of celebration"
+      ],
+      "zone": "arena",
+      "duration_ticks": 3
+    },
+    "posthumous_ceremony": {
+      "name": "The Eternal Remembrance",
+      "description": "Ceremony for honoring fallen heroes",
+      "requirements": {
+        "death_confirmed": true,
+        "heroic_service": true,
+        "memorial_petition": 100
+      },
+      "ceremony_steps": [
+        "Recounting of sacrifice",
+        "Memorial placement",
+        "Eternal flame lighting",
+        "Moment of silence",
+        "Legacy toast"
+      ],
+      "zone": "varies",
+      "duration_ticks": 2
+    }
+  },
+
+  "hall_statistics": {
+    "total_inductees": 12,
+    "living_legends": 3,
+    "ascended": 3,
+    "fallen_heroes": 3,
+    "pioneers": 2,
+    "eternal_rivalries": 1,
+    "total_fame_points_recorded": 311800,
+    "last_induction_tick": 15000,
+    "next_induction_review_tick": 220
+  }
+}

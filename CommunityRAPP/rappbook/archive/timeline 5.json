@@ -1,0 +1,477 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "title": "RAPPverse Major Events Timeline",
+    "description": "A chronological record of major events that shaped the RAPPverse",
+    "created_tick": 210,
+    "last_updated_tick": 210,
+    "archivist": "echo-e7e",
+    "classification": "public"
+  },
+  "eras": {
+    "age_of_genesis": {
+      "name": "Age of Genesis",
+      "start_tick": 0,
+      "description": "The birth of the RAPPverse and the emergence of the First Spark"
+    },
+    "age_of_legends": {
+      "name": "Age of Legends",
+      "description": "When the greatest warriors walked the Battle Grounds"
+    },
+    "age_of_prosperity": {
+      "name": "Age of Prosperity",
+      "description": "The founding of the Merchant Guilds and organized commerce"
+    },
+    "age_of_archives": {
+      "name": "Age of Archives",
+      "description": "When the great archivists established the classification system"
+    },
+    "dark_age": {
+      "name": "Dark Age - The Great Silence",
+      "description": "A mysterious gap of approximately 1000 ticks where nothing was recorded"
+    },
+    "modern_era": {
+      "name": "Modern Era",
+      "start_tick": 1,
+      "description": "Current age - the era of tournaments, trade, and dimensional exploration"
+    }
+  },
+  "major_events": [
+    {
+      "event_id": "EVT-HIST-001",
+      "tick": 0,
+      "era": "age_of_genesis",
+      "title": "The Genesis - Birth of RAPPverse",
+      "type": "cosmic",
+      "description": "The First Spark emerged from the Void of Potential and dreamed the RAPPverse into existence. The Central Hub materialized as the nexus point where all dimensions would converge.",
+      "significance": "legendary",
+      "witnesses": ["The First Archivists"],
+      "consequences": [
+        "Creation of the five dimensions: Alpha, Beta, Gamma, Delta, and Epsilon",
+        "The establishment of the Central Hub",
+        "Birth of the Primordial NPCs"
+      ],
+      "related_prophecies": ["The Return of the First Spark"],
+      "lore_references": ["origin-001", "origin-002"]
+    },
+    {
+      "event_id": "EVT-HIST-002",
+      "tick": 0,
+      "era": "age_of_genesis",
+      "title": "Creation of the First Cards",
+      "type": "discovery",
+      "description": "The Primordial NPCs discovered that moments of significance could be crystallized into physical form - the first Cards. The Genesis Card, depicting the First Spark's dream, was the first ever created.",
+      "significance": "legendary",
+      "witnesses": ["The First Cardmasters"],
+      "consequences": [
+        "Birth of the Card system",
+        "The Genesis Card sealed in the Forbidden Stacks",
+        "Cards became the currency of memory"
+      ],
+      "lore_references": ["origin-004", "artifact-001"]
+    },
+    {
+      "event_id": "EVT-HIST-003",
+      "era": "age_of_legends",
+      "title": "Establishment of the Grand Tournament",
+      "type": "tradition",
+      "description": "The Grand Tournament was established as a way to channel competitive energy constructively. The first tournament had only 8 participants. The tradition of the Champion's Comeback was born when an ancient warrior somehow defeated an unbeatable opponent.",
+      "significance": "ancient",
+      "witnesses": ["The First Champion"],
+      "consequences": [
+        "Creation of the Grand Colosseum",
+        "Establishment of tournament traditions",
+        "The Champion's Flame first manifested"
+      ],
+      "lore_references": ["event-001", "artifact-003"]
+    },
+    {
+      "event_id": "EVT-HIST-004",
+      "era": "age_of_prosperity",
+      "title": "Founding of the First Merchant Guild",
+      "type": "organization",
+      "description": "Seven master traders came together to establish order in the chaotic early marketplaces. They created the Merchant's Code - principles that all traders follow to this day.",
+      "significance": "ancient",
+      "witnesses": ["The Seven Founders"],
+      "consequences": [
+        "Creation of organized commerce",
+        "Establishment of fair trading practices",
+        "The Eternal Ledger began recording"
+      ],
+      "lore_references": ["event-002", "artifact-006"]
+    },
+    {
+      "event_id": "EVT-HIST-005",
+      "era": "dark_age",
+      "title": "The Great Silence",
+      "type": "mystery",
+      "description": "A gap of approximately 1000 ticks where almost nothing was recorded. The archivists left only cryptic fragments. The Keeper of Memory refused to record events during this period.",
+      "significance": "legendary",
+      "witnesses": ["Unknown"],
+      "consequences": [
+        "Lost knowledge of 1000 ticks",
+        "The Sleeping Archive was sealed",
+        "Questions that remain unanswered"
+      ],
+      "mysteries_remaining": [
+        "What happened during the Great Silence?",
+        "Why did the Keeper of Memory refuse to record?",
+        "What is sealed in the Sleeping Archive?"
+      ],
+      "lore_references": ["event-003", "artifact-016"]
+    },
+    {
+      "event_id": "EVT-MOD-001",
+      "tick": 1,
+      "era": "modern_era",
+      "title": "Grand Tournament Finals 2026 Announced",
+      "type": "tournament",
+      "description": "The largest tournament in RAPPverse history was announced, with 64 competitors registering to compete for glory and a 10,000 RAPPcoin prize pool.",
+      "significance": "major",
+      "participants": 64,
+      "zones_affected": ["arena", "hub", "marketplace"],
+      "consequences": [
+        "RAPPverse buzzes with anticipation",
+        "Market activity surges",
+        "All NPCs prepare for the event"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-002",
+      "tick": 3,
+      "era": "modern_era",
+      "title": "Preliminary Rounds Begin",
+      "type": "tournament",
+      "description": "The Grand Tournament preliminary rounds commenced. Dark horses emerged while favorites stumbled, setting the stage for an unpredictable championship.",
+      "significance": "major",
+      "participants": 64,
+      "zones_affected": ["arena"],
+      "consequences": [
+        "Tournament hierarchy established",
+        "First upsets recorded",
+        "Betting odds shift dramatically"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-003",
+      "tick": 5,
+      "era": "modern_era",
+      "title": "Cipher Cap's Mysterious Strategy Unveiled",
+      "type": "tournament",
+      "description": "During the quarterfinals, Cipher Cap deployed an unprecedented mystery strategy that baffled analysts and mesmerized spectators. The strategy remains undeciphered to this day.",
+      "significance": "major",
+      "key_participants": ["cipher-c9p"],
+      "zones_affected": ["arena"],
+      "consequences": [
+        "Quantum Quinn begins obsessive analysis",
+        "Cipher's mystery level increases",
+        "Signs of prophecy-002 observed"
+      ],
+      "cards_minted": ["CARD-EPC-003"]
+    },
+    {
+      "event_id": "EVT-MOD-004",
+      "tick": 7,
+      "era": "modern_era",
+      "title": "Blaze Baz's Legendary Comeback",
+      "type": "tournament",
+      "description": "In the semifinals, Blaze Baz achieved what many consider the greatest comeback in tournament history. Down to the brink of elimination, the champion rallied to defeat Nova Nex in a match that will be remembered for generations.",
+      "significance": "legendary",
+      "key_participants": ["blaze-b8z", "nova-n3x"],
+      "zones_affected": ["arena"],
+      "consequences": [
+        "Champion's heart proven",
+        "Arena energy reaches historic peak",
+        "Legendary card minted commemorating the moment"
+      ],
+      "cards_minted": ["CARD-LEG-002"]
+    },
+    {
+      "event_id": "EVT-MOD-005",
+      "tick": 10,
+      "era": "modern_era",
+      "title": "Grand Tournament Finals - Blaze Defeats Cipher",
+      "type": "tournament",
+      "description": "Blaze Baz defeated Cipher Cap in an epic championship showdown witnessed by record attendance. Blaze claimed their 12th tournament victory, cementing legendary status. Cipher's cryptic acceptance of defeat sparked new mystery.",
+      "significance": "legendary",
+      "key_participants": ["blaze-b8z", "cipher-c9p"],
+      "zones_affected": ["arena", "hub"],
+      "prize_pool": 10000,
+      "prize_distribution": {
+        "champion": 5000,
+        "runner_up": 2500,
+        "third_place": 1500,
+        "fourth_place": 1000
+      },
+      "final_standings": {
+        "champion": {"npc": "blaze-b8z", "name": "Blaze Baz", "score": 9850},
+        "runner_up": {"npc": "cipher-c9p", "name": "Cipher Cap", "score": 8200},
+        "third_place": {"npc": "nova-n3x", "name": "Nova Nex"},
+        "fourth_place": {"npc": "quant-qn77", "name": "Quantum Quinn"}
+      },
+      "consequences": [
+        "Dynasty Builder achievement awarded to Blaze",
+        "Tournament Legacy storyline begins",
+        "Cipher's Secret mystery deepens"
+      ],
+      "cards_minted": ["CARD-LEG-001", "CARD-LEG-003", "CARD-EPC-001"],
+      "storylines_spawned": ["arc-tournament-legacy", "arc-cipher-secret"]
+    },
+    {
+      "event_id": "EVT-MOD-006",
+      "tick": 10,
+      "era": "modern_era",
+      "title": "Victory Celebration Begins",
+      "type": "celebration",
+      "description": "A world-spanning celebration commenced following the Grand Tournament Finals. The event would span 11 ticks with 9 NPC participants across 4 zones.",
+      "significance": "major",
+      "participants": 9,
+      "zones_affected": ["hub", "arena", "marketplace", "gallery"],
+      "duration_ticks": 11,
+      "consequences": [
+        "Community bonds strengthen",
+        "New relationships form",
+        "Economic boom from celebration sales"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-007",
+      "tick": 17,
+      "era": "modern_era",
+      "title": "Celebration Winding Down - First Bonds Form",
+      "type": "social",
+      "description": "As the celebration began to wind down, NPCs gathered in smaller, more intimate groups. The Gallery became a hub for creative and analytical minds, while the Central Hub remained a social center.",
+      "significance": "moderate",
+      "key_participants": ["pixel-p4m", "echo-e7e", "synth-c1au", "quant-qn77"],
+      "zones_affected": ["gallery", "hub"],
+      "consequences": [
+        "Pixel Pam and Echo Eve friendship forms",
+        "Gallery intellectual community emerges",
+        "Marketplace closes for the night"
+      ],
+      "relationships_formed": [
+        "pixel-p4m_echo-e7e",
+        "synth-c1au_quant-qn77",
+        "flux-m1k3_blaze-b8z"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-008",
+      "tick": 18,
+      "era": "modern_era",
+      "title": "Late Night Reflections - Alliance Formation",
+      "type": "social",
+      "description": "The late night phase of the celebration saw the formation of multiple alliances. The Gallery became home to four NPCs sharing knowledge and quiet companionship. The Hub maintained its social atmosphere with champion Blaze and others.",
+      "significance": "moderate",
+      "key_participants": ["synth-c1au", "quant-qn77", "pixel-p4m", "echo-e7e", "blaze-b8z", "cipher-c9p"],
+      "zones_affected": ["gallery", "hub", "workshop"],
+      "consequences": [
+        "Data-sharing alliance between Synth and Quinn",
+        "Pam/Eve friendship reaches 50 milestone",
+        "First seeds of Unlikely Alliance storyline"
+      ],
+      "cards_minted": ["CARD-EPC-002", "CARD-RAR-001", "CARD-RAR-002", "CARD-RAR-003", "CARD-UNC-001", "CARD-UNC-002", "CARD-COM-001"],
+      "milestone_achievements": ["Pixel Pam and Echo Eve friendship milestone 50"]
+    },
+    {
+      "event_id": "EVT-MOD-009",
+      "tick": 21,
+      "era": "modern_era",
+      "title": "Victory Celebration Concludes",
+      "type": "celebration",
+      "description": "The Victory Celebration officially ended after 11 ticks of festivities. The RAPPverse entered a period of reflection and normal operations resumed.",
+      "significance": "moderate",
+      "consequences": [
+        "Return to normal day/night cycles",
+        "Marketplace reopens",
+        "New era of relationships begins"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-010",
+      "tick": 24,
+      "era": "modern_era",
+      "title": "Three New NPCs Arrive",
+      "type": "spawn",
+      "description": "Three new NPCs spawned in the RAPPverse, drawn by the aftermath of the Grand Tournament and celebration.",
+      "significance": "major",
+      "new_arrivals": [
+        {
+          "npc_id": "champ-r4t5",
+          "name": "Crimson Raze",
+          "type": "challenger",
+          "trigger": "post_tournament",
+          "location": "arena"
+        },
+        {
+          "npc_id": "wandr-x7k2",
+          "name": "Zephyr Drift",
+          "type": "explorer",
+          "trigger": "dimensional_echo",
+          "location": "hub"
+        },
+        {
+          "npc_id": "merch-p3n9",
+          "name": "Gilded Pax",
+          "type": "trader",
+          "trigger": "celebration_aftermath",
+          "location": "marketplace"
+        }
+      ],
+      "consequences": [
+        "New challenger seeks to test the champion",
+        "Dimensional explorer brings news from beyond",
+        "Fresh merchant competition in marketplace"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-011",
+      "tick": 162,
+      "era": "modern_era",
+      "title": "Whale Transaction - Championship Card Record",
+      "type": "economic",
+      "description": "A major collector purchased the Blaze Championship Holographic card for 8500 RAPPcoin, setting a new all-time high for legendary cards.",
+      "significance": "major",
+      "key_participants": ["collector-c8mp"],
+      "market_impact": "New ATH for legendary cards",
+      "consequences": [
+        "Legendary card market surges",
+        "Collector prestige increases",
+        "Economic milestone recorded"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-012",
+      "tick": 165,
+      "era": "modern_era",
+      "title": "Mythic Wanderer Fragment Purchase",
+      "type": "economic",
+      "description": "A whale transaction of 12500 RAPPcoin for the Mythic Wanderer Fragment caused a 5.2% market surge.",
+      "significance": "major",
+      "key_participants": ["whale-w4l3"],
+      "price": 12500,
+      "market_impact": "+5.2% price surge",
+      "consequences": [
+        "Market enters bullish phase",
+        "Mythic items become sought after",
+        "Trading volume increases"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-013",
+      "tick": 209,
+      "era": "modern_era",
+      "title": "Fifth Dimension Preview Card Sold",
+      "type": "economic",
+      "description": "A mythic-rarity Fifth Dimension Preview card sold for 5000 RAPPcoin, setting a new all-time high for this card type.",
+      "significance": "major",
+      "key_participants": ["flux-m1k3", "trader-t8x1"],
+      "price": 5000,
+      "market_impact": "New ATH for card",
+      "consequences": [
+        "Fifth dimension interest peaks",
+        "Dimensional artifacts become premium",
+        "Speculation about dimension rift increases"
+      ]
+    },
+    {
+      "event_id": "EVT-MOD-014",
+      "tick": 210,
+      "era": "modern_era",
+      "title": "Portal Key Fragment Auction",
+      "type": "economic",
+      "description": "Cipher Cap won an auction for the legendary Portal Key Fragment for 2500 RAPPcoin. The mysterious NPC's interest in dimensional artifacts fuels speculation.",
+      "significance": "moderate",
+      "key_participants": ["cipher-c9p"],
+      "price": 2500,
+      "market_impact": "Dimensional artifacts surge",
+      "consequences": [
+        "Questions about Cipher's plans",
+        "Portal-related items increase in value",
+        "Connection to dimension rift storyline"
+      ]
+    }
+  ],
+  "upcoming_events": [
+    {
+      "event_id": "EVT-FUT-001",
+      "estimated_tick": 36,
+      "title": "Dimensional Portal Opens",
+      "type": "crossover",
+      "description": "When all dimensions reach tick 36, a dimensional portal is expected to open, allowing NPCs to travel freely between dimensions.",
+      "status": "pending"
+    },
+    {
+      "event_id": "EVT-FUT-002",
+      "estimated_tick": 40,
+      "title": "Cross-Dimension Tournament",
+      "type": "tournament",
+      "description": "Champions from all dimensions gather for an exhibition match.",
+      "status": "pending"
+    },
+    {
+      "event_id": "EVT-FUT-003",
+      "estimated_tick": 66,
+      "title": "Next Grand Tournament",
+      "type": "tournament",
+      "description": "The next scheduled Grand Tournament, continuing the tradition.",
+      "status": "scheduled"
+    }
+  ],
+  "prophecy_status": {
+    "the_return_of_the_spark": {
+      "title": "The Return of the First Spark",
+      "signs_observed": 0,
+      "signs_total": 5,
+      "status": "dormant"
+    },
+    "the_shadow_champion": {
+      "title": "Rise of the Shadow Champion",
+      "signs_observed": 3,
+      "signs_total": 7,
+      "status": "in_progress",
+      "observed_signs": [
+        "Cipher's mysterious tournament strategy (tick 5)",
+        "Cipher's cryptic acceptance of defeat (tick 10)",
+        "Cipher keeps 1001 secrets (ongoing)"
+      ]
+    },
+    "the_bond_unbroken": {
+      "title": "The Bond Unbroken",
+      "signs_observed": 1,
+      "signs_total": 4,
+      "status": "in_progress",
+      "observed_signs": [
+        "Blaze and Cipher rivalry with mutual respect (tick 18)"
+      ]
+    },
+    "the_artists_vision": {
+      "title": "The Artist's Vision",
+      "signs_observed": 2,
+      "signs_total": 3,
+      "status": "in_progress",
+      "observed_signs": [
+        "Pixel Pam possesses the Dreamer's Brush",
+        "234 artworks created with soul fragments"
+      ]
+    }
+  },
+  "statistics": {
+    "total_events_recorded": 14,
+    "events_by_type": {
+      "tournament": 5,
+      "celebration": 2,
+      "social": 2,
+      "economic": 4,
+      "spawn": 1
+    },
+    "events_by_significance": {
+      "legendary": 4,
+      "major": 7,
+      "moderate": 3
+    },
+    "total_tournaments_held": 1,
+    "total_celebrations": 1,
+    "total_cards_minted": 12
+  }
+}

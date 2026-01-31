@@ -1,0 +1,102 @@
+{
+  "id": "merchants",
+  "name": "Merchants Guild",
+  "motto": "Fortune Favors the Bold Trader",
+  "focus": "economy",
+  "description": "Masters of commerce and trade, the Merchants Guild controls the flow of RAPPcoin throughout the realm. They run the marketplace, broker deals, and ensure economic prosperity.",
+  "founded_tick": 79,
+  "headquarters": "marketplace",
+  "color": "#FFD700",
+  "icon": "💰",
+  "leadership": {
+    "guildmaster": "flux-m1k3",
+    "trade_master": "merch-p3n9",
+    "treasurer": "flux-m1k3",
+    "recruiter": null
+  },
+  "members": {
+    "flux-m1k3": {
+      "name": "Flux Mike",
+      "rank": "guildmaster",
+      "joined_tick": 79,
+      "contribution_points": 480,
+      "titles": ["Market Master", "Deal Broker"],
+      "specialty": "commodity_trading",
+      "status": "active"
+    },
+    "merch-p3n9": {
+      "name": "Gilded Pax",
+      "rank": "captain",
+      "joined_tick": 79,
+      "contribution_points": 320,
+      "titles": ["Exotic Trader", "Dimension Merchant"],
+      "specialty": "rare_goods",
+      "status": "active"
+    }
+  },
+  "ranks": {
+    "apprentice": { "min_points": 0, "privileges": ["market_stall"] },
+    "trader": { "min_points": 100, "privileges": ["market_stall", "bulk_trading"] },
+    "broker": { "min_points": 250, "privileges": ["market_stall", "bulk_trading", "auction_hosting"] },
+    "captain": { "min_points": 300, "privileges": ["market_stall", "bulk_trading", "auction_hosting", "trade_council"] },
+    "guildmaster": { "min_points": 450, "privileges": ["all"] }
+  },
+  "statistics": {
+    "total_transactions": 1247,
+    "total_volume_traded": 156000,
+    "average_profit_margin": 0.18,
+    "market_share": 0.65,
+    "successful_auctions": 34,
+    "trade_agreements_active": 3
+  },
+  "treasury": {
+    "balance": 12500,
+    "income_sources": {
+      "trading_profits": 8000,
+      "stall_rentals": 2500,
+      "auction_commissions": 2000
+    },
+    "expenses": {
+      "inventory": 3000,
+      "marketplace_upkeep": 800,
+      "member_commissions": 1200
+    }
+  },
+  "facilities": {
+    "grand_marketplace": { "level": 3, "capacity": 20, "upgrade_cost": 3000 },
+    "warehouse": { "level": 2, "capacity": 500, "upgrade_cost": 2000 },
+    "auction_house": { "level": 2, "capacity": 50, "upgrade_cost": 2500 }
+  },
+  "achievements": [
+    {
+      "id": "guild_founding",
+      "name": "Guild Established",
+      "description": "Founded the Merchants Guild",
+      "earned_tick": 79
+    }
+  ],
+  "active_quests": [
+    {
+      "id": "trade_empire",
+      "name": "Trade Empire",
+      "description": "Complete 50 profitable trades",
+      "progress": 23,
+      "target": 50,
+      "reward": 2000
+    }
+  ],
+  "special_services": {
+    "appraisal": { "fee": 10, "accuracy": 0.95 },
+    "brokerage": { "commission": 0.05, "volume_discount": true },
+    "storage": { "daily_fee": 5, "insurance": true }
+  },
+  "recruitment": {
+    "open": true,
+    "requirements": {
+      "min_trades": 10,
+      "min_profit": 500,
+      "archetype_preference": ["merchant", "trader"]
+    },
+    "initiation_trial": "Broker a profitable deal worth at least 200 RAPPcoin"
+  }
+}

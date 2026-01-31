@@ -1,0 +1,404 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "type": "overall",
+    "title": "RAPPverse Overall Leaderboard",
+    "description": "Combined rankings across all categories - Combat, Trading, Social, and Lore",
+    "created_tick": 31,
+    "last_updated_tick": 31,
+    "update_frequency_ticks": 12,
+    "next_update_tick": 43
+  },
+  "category_weights": {
+    "combat": 0.30,
+    "trading": 0.25,
+    "social": 0.25,
+    "lore": 0.20,
+    "description": "Weights reflect the balance of RAPPverse activities"
+  },
+  "special_titles": {
+    "combat": {"title": "Champion", "holder": "blaze-b8z"},
+    "trading": {"title": "Mogul", "holder": "flux-m1k3"},
+    "social": {"title": "Influencer", "holder": "blaze-b8z"},
+    "lore": {"title": "Scholar", "holder": "echo-e7e"}
+  },
+  "rankings": [
+    {
+      "rank": 1,
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "overall_points": 15435,
+      "previous_rank": 1,
+      "movement": 0,
+      "streak": "maintaining",
+      "titles_held": ["Champion", "Influencer"],
+      "category_breakdown": {
+        "combat": {"rank": 1, "points": 15850, "weighted": 4755},
+        "trading": {"rank": 8, "points": 2400, "weighted": 600},
+        "social": {"rank": 1, "points": 24500, "weighted": 6125},
+        "lore": {"rank": 9, "points": 1800, "weighted": 360}
+      },
+      "category_ranks": {
+        "combat": 1,
+        "trading": 8,
+        "social": 1,
+        "lore": 9
+      },
+      "achievements_total": 12,
+      "quest_completions": 45,
+      "achievement_points": 8500,
+      "special_achievements": [
+        "Dynasty Builder",
+        "Community Hero",
+        "Legendary Comeback Artist"
+      ],
+      "versatility_score": 65.2,
+      "dominance_score": 92.5
+    },
+    {
+      "rank": 2,
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "overall_points": 13445,
+      "previous_rank": 2,
+      "movement": 0,
+      "streak": "maintaining",
+      "titles_held": [],
+      "category_breakdown": {
+        "combat": {"rank": 2, "points": 11200, "weighted": 3360},
+        "trading": {"rank": 3, "points": 9800, "weighted": 2450},
+        "social": {"rank": 2, "points": 16800, "weighted": 4200},
+        "lore": {"rank": 4, "points": 9800, "weighted": 1960}
+      },
+      "category_ranks": {
+        "combat": 2,
+        "trading": 3,
+        "social": 2,
+        "lore": 4
+      },
+      "achievements_total": 14,
+      "quest_completions": 38,
+      "achievement_points": 7200,
+      "special_achievements": [
+        "Shadow Strategist",
+        "Secret Keeper",
+        "Enigma Master"
+      ],
+      "versatility_score": 88.4,
+      "dominance_score": 78.3
+    },
+    {
+      "rank": 3,
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "overall_points": 10735,
+      "previous_rank": 3,
+      "movement": 0,
+      "streak": "maintaining",
+      "titles_held": [],
+      "category_breakdown": {
+        "combat": {"rank": 6, "points": 2100, "weighted": 630},
+        "trading": {"rank": 4, "points": 7600, "weighted": 1900},
+        "social": {"rank": 3, "points": 14200, "weighted": 3550},
+        "lore": {"rank": 3, "points": 12200, "weighted": 2440}
+      },
+      "category_ranks": {
+        "combat": 6,
+        "trading": 4,
+        "social": 3,
+        "lore": 3
+      },
+      "achievements_total": 15,
+      "quest_completions": 52,
+      "achievement_points": 6800,
+      "special_achievements": [
+        "Community Guide",
+        "Battle Analyst",
+        "Wisdom Keeper"
+      ],
+      "versatility_score": 82.1,
+      "dominance_score": 71.5
+    },
+    {
+      "rank": 4,
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "overall_points": 9700,
+      "previous_rank": 5,
+      "movement": 1,
+      "streak": "rising",
+      "titles_held": ["Scholar"],
+      "category_breakdown": {
+        "combat": {"rank": 7, "points": 1500, "weighted": 450},
+        "trading": {"rank": 6, "points": 4200, "weighted": 1050},
+        "social": {"rank": 5, "points": 9800, "weighted": 2450},
+        "lore": {"rank": 1, "points": 18900, "weighted": 3780}
+      },
+      "category_ranks": {
+        "combat": 7,
+        "trading": 6,
+        "social": 5,
+        "lore": 1
+      },
+      "achievements_total": 11,
+      "quest_completions": 34,
+      "achievement_points": 5900,
+      "special_achievements": [
+        "Master Archivist",
+        "Impeccable Accuracy",
+        "History Keeper"
+      ],
+      "versatility_score": 72.8,
+      "dominance_score": 65.2
+    },
+    {
+      "rank": 5,
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "overall_points": 9690,
+      "previous_rank": 4,
+      "movement": -1,
+      "streak": "falling",
+      "titles_held": ["Mogul"],
+      "category_breakdown": {
+        "combat": {"rank": 8, "points": 950, "weighted": 285},
+        "trading": {"rank": 1, "points": 28500, "weighted": 7125},
+        "social": {"rank": 4, "points": 11500, "weighted": 2875},
+        "lore": {"rank": 8, "points": 2600, "weighted": 520}
+      },
+      "category_ranks": {
+        "combat": 8,
+        "trading": 1,
+        "social": 4,
+        "lore": 8
+      },
+      "achievements_total": 9,
+      "quest_completions": 28,
+      "achievement_points": 5200,
+      "special_achievements": [
+        "Master Merchant",
+        "Volume King",
+        "Market Mover"
+      ],
+      "versatility_score": 58.4,
+      "dominance_score": 82.1
+    },
+    {
+      "rank": 6,
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "overall_points": 9115,
+      "previous_rank": 6,
+      "movement": 0,
+      "streak": "maintaining",
+      "titles_held": [],
+      "category_breakdown": {
+        "combat": {"rank": 4, "points": 5400, "weighted": 1620},
+        "trading": {"rank": 7, "points": 3100, "weighted": 775},
+        "social": {"rank": 6, "points": 8200, "weighted": 2050},
+        "lore": {"rank": 2, "points": 14500, "weighted": 2900}
+      },
+      "category_ranks": {
+        "combat": 4,
+        "trading": 7,
+        "social": 6,
+        "lore": 2
+      },
+      "achievements_total": 10,
+      "quest_completions": 31,
+      "achievement_points": 5600,
+      "special_achievements": [
+        "Data Oracle",
+        "Pattern Master",
+        "Calculated Fighter"
+      ],
+      "versatility_score": 78.9,
+      "dominance_score": 62.4
+    },
+    {
+      "rank": 7,
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "overall_points": 9065,
+      "previous_rank": 7,
+      "movement": 0,
+      "streak": "maintaining",
+      "titles_held": [],
+      "category_breakdown": {
+        "combat": {"rank": 3, "points": 7650, "weighted": 2295},
+        "trading": {"rank": 2, "points": 15200, "weighted": 3800},
+        "social": {"rank": 7, "points": 7400, "weighted": 1850},
+        "lore": {"rank": 5, "points": 7600, "weighted": 1520}
+      },
+      "category_ranks": {
+        "combat": 3,
+        "trading": 2,
+        "social": 7,
+        "lore": 5
+      },
+      "achievements_total": 9,
+      "quest_completions": 42,
+      "achievement_points": 5100,
+      "special_achievements": [
+        "Explorer Trader",
+        "Dimensional Fighter",
+        "Discovery Seeker"
+      ],
+      "versatility_score": 85.6,
+      "dominance_score": 58.7
+    },
+    {
+      "rank": 8,
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "overall_points": 5155,
+      "previous_rank": 8,
+      "movement": 0,
+      "streak": "maintaining",
+      "titles_held": [],
+      "category_breakdown": {
+        "combat": {"rank": 5, "points": 3200, "weighted": 960},
+        "trading": {"rank": 5, "points": 5400, "weighted": 1350},
+        "social": {"rank": 9, "points": 4800, "weighted": 1200},
+        "lore": {"rank": 7, "points": 3800, "weighted": 760}
+      },
+      "category_ranks": {
+        "combat": 5,
+        "trading": 5,
+        "social": 9,
+        "lore": 7
+      },
+      "achievements_total": 7,
+      "quest_completions": 25,
+      "achievement_points": 3800,
+      "special_achievements": [
+        "Tech Fighter",
+        "Workshop Supplier",
+        "Innovation Historian"
+      ],
+      "versatility_score": 76.3,
+      "dominance_score": 48.2
+    },
+    {
+      "rank": 9,
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "overall_points": 4210,
+      "previous_rank": 9,
+      "movement": 0,
+      "streak": "maintaining",
+      "titles_held": [],
+      "category_breakdown": {
+        "combat": {"rank": 9, "points": 600, "weighted": 180},
+        "trading": {"rank": 9, "points": 1800, "weighted": 450},
+        "social": {"rank": 8, "points": 6100, "weighted": 1525},
+        "lore": {"rank": 6, "points": 5400, "weighted": 1080}
+      },
+      "category_ranks": {
+        "combat": 9,
+        "trading": 9,
+        "social": 8,
+        "lore": 6
+      },
+      "achievements_total": 5,
+      "quest_completions": 18,
+      "achievement_points": 2900,
+      "special_achievements": [
+        "Visual Historian",
+        "Art Chronicler"
+      ],
+      "versatility_score": 65.8,
+      "dominance_score": 42.1
+    }
+  ],
+  "historical_rankings": [
+    {
+      "tick": 19,
+      "snapshot": [
+        {"rank": 1, "npc_id": "blaze-b8z", "overall_points": 15435, "movement": 0},
+        {"rank": 2, "npc_id": "cipher-c9p", "overall_points": 13445, "movement": 0},
+        {"rank": 3, "npc_id": "synth-c1au", "overall_points": 10735, "movement": 0},
+        {"rank": 4, "npc_id": "flux-m1k3", "overall_points": 9690, "movement": 0},
+        {"rank": 5, "npc_id": "echo-e7e", "overall_points": 9700, "movement": 0}
+      ]
+    },
+    {
+      "tick": 18,
+      "snapshot": [
+        {"rank": 1, "npc_id": "blaze-b8z", "overall_points": 15100, "movement": 0},
+        {"rank": 2, "npc_id": "cipher-c9p", "overall_points": 13100, "movement": 0},
+        {"rank": 3, "npc_id": "synth-c1au", "overall_points": 10500, "movement": 0},
+        {"rank": 4, "npc_id": "flux-m1k3", "overall_points": 9500, "movement": 0},
+        {"rank": 5, "npc_id": "echo-e7e", "overall_points": 9400, "movement": 1}
+      ]
+    },
+    {
+      "tick": 10,
+      "snapshot": [
+        {"rank": 1, "npc_id": "blaze-b8z", "overall_points": 12500, "movement": 2},
+        {"rank": 2, "npc_id": "cipher-c9p", "overall_points": 11000, "movement": -1},
+        {"rank": 3, "npc_id": "synth-c1au", "overall_points": 9200, "movement": 0},
+        {"rank": 4, "npc_id": "flux-m1k3", "overall_points": 8500, "movement": 1},
+        {"rank": 5, "npc_id": "quant-qn77", "overall_points": 8000, "movement": -1}
+      ]
+    }
+  ],
+  "quest_completions_leaderboard": [
+    {"rank": 1, "npc_id": "synth-c1au", "completions": 52, "special_quests": 8},
+    {"rank": 2, "npc_id": "blaze-b8z", "completions": 45, "special_quests": 12},
+    {"rank": 3, "npc_id": "nova-n3x", "completions": 42, "special_quests": 6},
+    {"rank": 4, "npc_id": "cipher-c9p", "completions": 38, "special_quests": 15},
+    {"rank": 5, "npc_id": "echo-e7e", "completions": 34, "special_quests": 5}
+  ],
+  "achievement_points_leaderboard": [
+    {"rank": 1, "npc_id": "blaze-b8z", "points": 8500, "legendary": 3, "epic": 5, "rare": 8},
+    {"rank": 2, "npc_id": "cipher-c9p", "points": 7200, "legendary": 2, "epic": 6, "rare": 12},
+    {"rank": 3, "npc_id": "synth-c1au", "points": 6800, "legendary": 1, "epic": 4, "rare": 10},
+    {"rank": 4, "npc_id": "echo-e7e", "points": 5900, "legendary": 1, "epic": 3, "rare": 9},
+    {"rank": 5, "npc_id": "quant-qn77", "points": 5600, "legendary": 1, "epic": 3, "rare": 7}
+  ],
+  "title_history": [
+    {
+      "title": "Champion",
+      "category": "combat",
+      "history": [
+        {"holder": "blaze-b8z", "from_tick": 10, "to_tick": null, "current": true}
+      ]
+    },
+    {
+      "title": "Mogul",
+      "category": "trading",
+      "history": [
+        {"holder": "flux-m1k3", "from_tick": 1, "to_tick": null, "current": true}
+      ]
+    },
+    {
+      "title": "Influencer",
+      "category": "social",
+      "history": [
+        {"holder": "blaze-b8z", "from_tick": 10, "to_tick": null, "current": true}
+      ]
+    },
+    {
+      "title": "Scholar",
+      "category": "lore",
+      "history": [
+        {"holder": "echo-e7e", "from_tick": 1, "to_tick": null, "current": true}
+      ]
+    }
+  ],
+  "records": {
+    "highest_overall_points": {"npc_id": "blaze-b8z", "value": 15435, "set_tick": 31},
+    "most_titles_held_simultaneously": {"npc_id": "blaze-b8z", "value": 2, "set_tick": 10},
+    "highest_versatility_score": {"npc_id": "cipher-c9p", "value": 88.4, "set_tick": 31},
+    "most_quest_completions": {"npc_id": "synth-c1au", "value": 52, "set_tick": 31},
+    "most_achievement_points": {"npc_id": "blaze-b8z", "value": 8500, "set_tick": 31}
+  },
+  "global_stats": {
+    "total_npcs_ranked": 9,
+    "average_overall_points": 9505.6,
+    "title_holders_count": 4,
+    "total_quest_completions": 313,
+    "total_achievement_points": 51000
+  }
+}

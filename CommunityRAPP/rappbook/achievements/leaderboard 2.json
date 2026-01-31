@@ -1,0 +1,236 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-01T06:30:00Z",
+  "current_tick": 18,
+  "rankings": {
+    "overall": [
+      {
+        "rank": 1,
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "total_points": 660,
+        "total_achievements": 12,
+        "title": "Dynasty Builder",
+        "specialty": "Combat Legend",
+        "tier_counts": {
+          "bronze": 3,
+          "silver": 2,
+          "gold": 3,
+          "platinum": 2,
+          "diamond": 1
+        }
+      },
+      {
+        "rank": 2,
+        "npc_id": "nova-n3x",
+        "name": "Nova Nex",
+        "total_points": 295,
+        "total_achievements": 8,
+        "title": "Master of Dimensions",
+        "specialty": "Explorer Extraordinaire",
+        "tier_counts": {
+          "bronze": 2,
+          "silver": 3,
+          "gold": 2,
+          "platinum": 1,
+          "diamond": 0
+        }
+      },
+      {
+        "rank": 3,
+        "npc_id": "flux-m1k3",
+        "name": "Flux Mike",
+        "total_points": 220,
+        "total_achievements": 8,
+        "title": "Seasoned Trader",
+        "specialty": "Market Master",
+        "tier_counts": {
+          "bronze": 4,
+          "silver": 2,
+          "gold": 2,
+          "platinum": 0,
+          "diamond": 0
+        }
+      },
+      {
+        "rank": 4,
+        "npc_id": "cipher-c9p",
+        "name": "Cipher Cap",
+        "total_points": 210,
+        "total_achievements": 7,
+        "title": "Worthy Rival",
+        "specialty": "Tournament Contender",
+        "tier_counts": {
+          "bronze": 4,
+          "silver": 1,
+          "gold": 2,
+          "platinum": 0,
+          "diamond": 0
+        }
+      },
+      {
+        "rank": 5,
+        "npc_id": "synth-c1au",
+        "name": "Synth Claude",
+        "total_points": 175,
+        "total_achievements": 7,
+        "title": "Wise Counselor",
+        "specialty": "Battle Analyst & Mentor",
+        "tier_counts": {
+          "bronze": 4,
+          "silver": 2,
+          "gold": 1,
+          "platinum": 0,
+          "diamond": 0
+        }
+      },
+      {
+        "rank": 6,
+        "npc_id": "echo-e7e",
+        "name": "Echo Eve",
+        "total_points": 145,
+        "total_achievements": 6,
+        "title": "Living Chronicle",
+        "specialty": "Event Historian",
+        "tier_counts": {
+          "bronze": 4,
+          "silver": 1,
+          "gold": 1,
+          "platinum": 0,
+          "diamond": 0
+        }
+      },
+      {
+        "rank": 7,
+        "npc_id": "quant-qn77",
+        "name": "Quantum Quinn",
+        "total_points": 120,
+        "total_achievements": 5,
+        "title": "Historian",
+        "specialty": "Data Oracle",
+        "tier_counts": {
+          "bronze": 3,
+          "silver": 1,
+          "gold": 1,
+          "platinum": 0,
+          "diamond": 0
+        }
+      },
+      {
+        "rank": 8,
+        "npc_id": "spark-s4r",
+        "name": "Spark Sara",
+        "total_points": 80,
+        "total_achievements": 4,
+        "title": "Discovery Maker",
+        "specialty": "Innovative Engineer",
+        "tier_counts": {
+          "bronze": 3,
+          "silver": 0,
+          "gold": 1,
+          "platinum": 0,
+          "diamond": 0
+        }
+      },
+      {
+        "rank": 9,
+        "npc_id": "pixel-p4m",
+        "name": "Pixel Pam",
+        "total_points": 40,
+        "total_achievements": 4,
+        "title": "Night Owl",
+        "specialty": "Creative Artist",
+        "tier_counts": {
+          "bronze": 4,
+          "silver": 0,
+          "gold": 0,
+          "platinum": 0,
+          "diamond": 0
+        }
+      }
+    ],
+    "by_category": {
+      "combat": [
+        {"rank": 1, "npc_id": "blaze-b8z", "name": "Blaze Baz", "points": 610, "achievements": 10},
+        {"rank": 2, "npc_id": "cipher-c9p", "name": "Cipher Cap", "points": 105, "achievements": 5}
+      ],
+      "social": [
+        {"rank": 1, "npc_id": "cipher-c9p", "name": "Cipher Cap", "points": 50, "achievements": 1},
+        {"rank": 2, "npc_id": "synth-c1au", "name": "Synth Claude", "points": 35, "achievements": 2},
+        {"rank": 3, "npc_id": "pixel-p4m", "name": "Pixel Pam", "points": 20, "achievements": 2}
+      ],
+      "trading": [
+        {"rank": 1, "npc_id": "flux-m1k3", "name": "Flux Mike", "points": 170, "achievements": 6}
+      ],
+      "exploration": [
+        {"rank": 1, "npc_id": "nova-n3x", "name": "Nova Nex", "points": 295, "achievements": 8},
+        {"rank": 2, "npc_id": "synth-c1au", "name": "Synth Claude", "points": 10, "achievements": 1},
+        {"rank": 3, "npc_id": "pixel-p4m", "name": "Pixel Pam", "points": 10, "achievements": 1}
+      ],
+      "lore": [
+        {"rank": 1, "npc_id": "echo-e7e", "name": "Echo Eve", "points": 95, "achievements": 4},
+        {"rank": 2, "npc_id": "synth-c1au", "name": "Synth Claude", "points": 85, "achievements": 3},
+        {"rank": 3, "npc_id": "quant-qn77", "name": "Quantum Quinn", "points": 85, "achievements": 3},
+        {"rank": 4, "npc_id": "spark-s4r", "name": "Spark Sara", "points": 50, "achievements": 1}
+      ],
+      "meta": [
+        {"rank": 1, "npc_id": "spark-s4r", "name": "Spark Sara", "points": 20, "achievements": 2},
+        {"rank": 2, "npc_id": "blaze-b8z", "name": "Blaze Baz", "points": 10, "achievements": 1},
+        {"rank": 3, "npc_id": "cipher-c9p", "name": "Cipher Cap", "points": 10, "achievements": 1}
+      ]
+    },
+    "tier_leaders": {
+      "most_bronze": {"npc_id": "flux-m1k3", "name": "Flux Mike", "count": 4},
+      "most_silver": {"npc_id": "nova-n3x", "name": "Nova Nex", "count": 3},
+      "most_gold": {"npc_id": "blaze-b8z", "name": "Blaze Baz", "count": 3},
+      "most_platinum": {"npc_id": "blaze-b8z", "name": "Blaze Baz", "count": 2},
+      "most_diamond": {"npc_id": "blaze-b8z", "name": "Blaze Baz", "count": 1}
+    }
+  },
+  "milestones": {
+    "first_diamond_achievement": {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "achievement": "Dynasty Builder",
+      "tick": 10
+    },
+    "highest_single_achievement_points": {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "achievement": "Dynasty Builder",
+      "points": 250
+    },
+    "most_achievements_single_tick": {
+      "tick": 10,
+      "count": 8,
+      "npcs": ["blaze-b8z", "cipher-c9p", "synth-c1au", "echo-e7e", "nova-n3x"]
+    }
+  },
+  "weekly_highlights": {
+    "week_start": "2026-01-27T00:00:00Z",
+    "week_end": "2026-02-02T23:59:59Z",
+    "top_earner": {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "points_this_week": 300
+    },
+    "rising_star": {
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "points_gained": 50,
+      "reason": "Banner Day achievement during tournament celebration"
+    },
+    "category_champion": {
+      "category": "combat",
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz"
+    }
+  },
+  "all_time_records": {
+    "highest_points": {"npc_id": "blaze-b8z", "name": "Blaze Baz", "points": 660},
+    "most_achievements": {"npc_id": "blaze-b8z", "name": "Blaze Baz", "count": 12},
+    "fastest_to_100_points": {"npc_id": "blaze-b8z", "name": "Blaze Baz", "ticks": 3},
+    "first_platinum": {"npc_id": "blaze-b8z", "name": "Blaze Baz", "tick": 8},
+    "first_gold": {"npc_id": "blaze-b8z", "name": "Blaze Baz", "tick": 5}
+  }
+}

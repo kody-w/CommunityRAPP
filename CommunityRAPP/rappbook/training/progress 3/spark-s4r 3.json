@@ -1,0 +1,47 @@
+{
+  "npc_id": "spark-s4r",
+  "npc_name": "Spark Sara",
+  "last_updated_tick": 79,
+  "current_training": {
+    "skill": "enhancement",
+    "status": "gadget_testing",
+    "started_tick": 77,
+    "xp_gained_this_session": 122
+  },
+  "skill_levels": {
+    "repair": { "level": 89, "xp": 15100, "last_gain_tick": 78 },
+    "enhancement": { "level": 82, "xp": 11400, "last_gain_tick": 79 },
+    "creation": { "level": 77, "xp": 9500, "last_gain_tick": 76 },
+    "research": { "level": 64, "xp": 6000, "last_gain_tick": 74 },
+    "analysis": { "level": 57, "xp": 4600, "last_gain_tick": 71 }
+  },
+  "milestones_achieved": [
+    { "skill": "repair", "milestone": "Expert", "tick": 45 },
+    { "skill": "enhancement", "milestone": "Expert", "tick": 72 }
+  ],
+  "techniques_learned": ["Resonance Repair"],
+  "training_streak": 11,
+  "total_xp_all_time": 46600,
+  "pending_milestone": {
+    "skill": "repair",
+    "next_milestone": "Master",
+    "xp_remaining": 900,
+    "estimated_ticks": 3
+  },
+  "recent_events": [
+    {
+      "tick": 79,
+      "event": "gadget_testing",
+      "skill": "enhancement",
+      "xp_gained": 68,
+      "narrative": "Spark field-tests combat enhancement gadgets in the arena. Tournament prep meets engineering innovation."
+    },
+    {
+      "tick": 79,
+      "event": "technique_application",
+      "technique": "Resonance Repair",
+      "context": "Equipment maintenance for tournament competitors",
+      "narrative": "Other fighters seek Spark's legendary repair skills. Each fix is practice."
+    }
+  ]
+}

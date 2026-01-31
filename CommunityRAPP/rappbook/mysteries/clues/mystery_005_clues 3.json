@@ -1,0 +1,47 @@
+{
+  "mystery_id": "mystery_005",
+  "codename": "THE_ECHO_DOPPELGANGER",
+  "clues": {
+    "clue_005a": {
+      "id": "clue_005a",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "archives",
+      "description": "[HIDDEN] Historical records mention 'shadow echoes' - dimensional reflections that appear when reality becomes unstable.",
+      "significance": "critical",
+      "notes": "The phenomenon was documented during the Founding Era but thought to be myth."
+    },
+    "clue_005b": {
+      "id": "clue_005b",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "echo_personal_logs",
+      "description": "[HIDDEN] Echo has been having blackouts - gaps in memory where time is missing.",
+      "significance": "high",
+      "notes": "Echo hasn't told anyone about this."
+    },
+    "clue_005c": {
+      "id": "clue_005c",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "interdimensional_scan",
+      "description": "[HIDDEN] The doppelganger's energy signature matches Echo's but is phase-shifted by 0.7 dimensions.",
+      "significance": "critical",
+      "notes": "It's Echo from a parallel dimension bleeding through."
+    },
+    "clue_005d": {
+      "id": "clue_005d",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "founders_vault",
+      "description": "[HIDDEN] The solution: The countdown at tick 200 will seal or open the dimensional rift. The choice determines Echo's fate.",
+      "significance": "critical",
+      "notes": "Connected to mystery_006. The mysteries are ONE."
+    }
+  },
+  "sighting_log": [
+    {"tick": 166, "location": "gallery", "witness": "pixel-p4m", "behavior": "motionless_staring"},
+    {"tick": 167, "location": "hub", "witness": "blaze-b8z", "behavior": "reversed_speech"},
+    {"tick": 168, "location": "tavern", "witness": "spark-s4r", "behavior": "phasing_through_walls"}
+  ]
+}

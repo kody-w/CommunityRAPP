@@ -1,0 +1,18 @@
+{
+  "id": "quest_168_nova_mystery",
+  "title": "The Flickering Signal",
+  "description": "Strange energy readings have been detected in the hub. Investigate the anomaly and trace its source through the RAPPverse network.",
+  "type": "mystery",
+  "assigned_to": "nova-n3x",
+  "status": "active",
+  "started_tick": 165,
+  "progress": 35,
+  "objectives": [
+    {"id": "obj_1", "description": "Detect anomaly location", "completed": true},
+    {"id": "obj_2", "description": "Gather 3 energy samples", "completed": false},
+    {"id": "obj_3", "description": "Decode the signal origin", "completed": false}
+  ],
+  "reward": "50 RAPPcoin + Rare Mystery Card Fragment",
+  "difficulty": "medium",
+  "expires_tick": 200
+}

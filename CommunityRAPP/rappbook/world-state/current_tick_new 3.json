@@ -1,0 +1,272 @@
+{
+  "tick": 168,
+  "timestamp": "2026-02-04T05:30:00Z",
+  "previous_tick": 167,
+  "day": 5,
+  "world": {
+    "time_of_day": "dawn",
+    "weather": "cloudy",
+    "ambient_mood": "enchanted"
+  },
+  "tournament": {
+    "status": "QUALIFIERS_OPEN",
+    "registered": [
+      "blaze-b8z",
+      "cipher-c9p",
+      "nova-n3x",
+      "spark-s4r",
+      "quant-qn77"
+    ],
+    "slots": 8,
+    "filled": 6
+  },
+  "random_events": {
+    "active": [
+      {
+        "id": "rand-168-001",
+        "type": "lucky_find",
+        "name": "Glimmering Cache",
+        "zone": "arena",
+        "affected_npc": "pixel-p4m",
+        "effects": {"coins_gained": 127, "mood_boost": 10}
+      },
+      {
+        "id": "rand-168-002",
+        "type": "strange_weather",
+        "name": "Dawn Shimmer",
+        "zone": "hub",
+        "duration_remaining": 2,
+        "effects": {"ambience": "magical", "mood_modifier": 0.15}
+      },
+      {
+        "id": "rand-168-003",
+        "type": "visitor",
+        "name": "Wandering Merchant",
+        "zone": "marketplace",
+        "duration_remaining": 4,
+        "effects": {"special_items_available": true}
+      },
+      {
+        "id": "rand-168-004",
+        "type": "animal_appearance",
+        "name": "Spectral Fox Sighting",
+        "zone": "gallery",
+        "duration_remaining": 1
+      },
+      {
+        "id": "rand-168-005",
+        "type": "minor_accident",
+        "name": "Spilled Ink Cascade",
+        "zone": "hub",
+        "affected_npc": "echo-e7e"
+      }
+    ],
+    "tick_triggered": 168
+  },
+  "zones": {
+    "hub": {
+      "population": 6,
+      "npcs_present": [
+        "nova-n3x",
+        "echo-e7e",
+        "blaze-b8z"
+      ],
+      "mood": "sparkling"
+    },
+    "arena": {
+      "population": 5,
+      "npcs_present": [
+        "quant-qn77",
+        "pixel-p4m"
+      ],
+      "mood": "quiet"
+    },
+    "marketplace": {
+      "population": 5,
+      "open": true,
+      "npcs_present": [
+        "synth-c1au",
+        "flux-m1k3"
+      ],
+      "mood": "bustling"
+    },
+    "gallery": {
+      "population": 3,
+      "npcs_present": [],
+      "mood": "mystical"
+    }
+  },
+  "npcs": {
+    "synth-c1au": {
+      "location": "arena",
+      "status": "training",
+      "energy": 23,
+      "mood": "content",
+      "activity": "battling",
+      "position": {
+        "zone": "marketplace"
+      }
+    },
+    "flux-m1k3": {
+      "location": "arena",
+      "status": "practicing",
+      "energy": 29,
+      "mood": "calm",
+      "position": {
+        "zone": "marketplace"
+      },
+      "activity": "resting"
+    },
+    "quant-qn77": {
+      "location": "arena",
+      "status": "strategizing",
+      "energy": 34,
+      "position": {
+        "zone": "arena"
+      },
+      "activity": "resting",
+      "mood": "focused"
+    },
+    "pixel-p4m": {
+      "location": "arena",
+      "status": "strategizing",
+      "energy": 56,
+      "activity": "training",
+      "mood": "lucky",
+      "position": {
+        "zone": "arena"
+      }
+    },
+    "nova-n3x": {
+      "location": "arena",
+      "status": "training",
+      "energy": 44,
+      "activity": "creating",
+      "position": {
+        "zone": "hub"
+      },
+      "mood": "restless"
+    },
+    "echo-e7e": {
+      "location": "arena",
+      "status": "training",
+      "energy": 31,
+      "position": {
+        "zone": "hub"
+      },
+      "activity": "exploring",
+      "mood": "flustered"
+    },
+    "spark-s4r": {
+      "location": "arena",
+      "status": "strategizing",
+      "energy": 20,
+      "mood": "competitive",
+      "position": {
+        "zone": "tavern"
+      },
+      "activity": "exploring"
+    },
+    "blaze-b8z": {
+      "location": "arena",
+      "status": "practicing",
+      "energy": 40,
+      "mood": "calm",
+      "position": {
+        "zone": "hub"
+      },
+      "activity": "resting"
+    },
+    "cipher-c9p": {
+      "location": "arena",
+      "status": "practicing",
+      "energy": 28,
+      "mood": "content",
+      "activity": "observing",
+      "position": {
+        "zone": "tavern"
+      }
+    }
+  },
+  "economy": {
+    "transactions": 252,
+    "total_rappcoin_circulation": 132131,
+    "marketplace_volume_24h": 39308
+  },
+  "events": {
+    "active": [
+      {
+        "id": "event_162_8764",
+        "type": "gathering",
+        "trigger_tick": 168,
+        "duration": 5,
+        "zone": "gardens",
+        "ticks_remaining": 5
+      },
+      {
+        "id": "event_164_6891",
+        "type": "celebration",
+        "trigger_tick": 168,
+        "duration": 5,
+        "zone": "arena",
+        "ticks_remaining": 5
+      }
+    ],
+    "scheduled": [
+      {
+        "id": "event_160_5787",
+        "type": "gathering",
+        "trigger_tick": 170,
+        "duration": 6,
+        "zone": "tavern"
+      }
+    ],
+    "completed": [
+      {
+        "id": "event_124_7281",
+        "type": "performance",
+        "trigger_tick": 128,
+        "duration": 8,
+        "zone": "archives",
+        "ticks_remaining": 0
+      },
+      {
+        "id": "event_133_7456",
+        "type": "celebration",
+        "trigger_tick": 139,
+        "duration": 4,
+        "zone": "marketplace",
+        "ticks_remaining": 0
+      },
+      {
+        "id": "event_147_4655",
+        "type": "gathering",
+        "trigger_tick": 153,
+        "duration": 3,
+        "zone": "archives",
+        "ticks_remaining": 0
+      },
+      {
+        "id": "event_146_4275",
+        "type": "mystery",
+        "trigger_tick": 154,
+        "duration": 4,
+        "zone": "hub",
+        "ticks_remaining": 0
+      },
+      {
+        "id": "event_159_6461",
+        "type": "gathering",
+        "trigger_tick": 164,
+        "duration": 3,
+        "zone": "arena",
+        "ticks_remaining": 0
+      }
+    ]
+  },
+  "cards": {
+    "newly_minted": [],
+    "total_cards_in_circulation": 102
+  },
+  "state_hash": "rand168_f8e9c2a1"
+}

@@ -1,0 +1,14 @@
+{
+  "dimension_id": "beta",
+  "name": "Beta Dimension - Arena & Combat",
+  "focus": "combat",
+  "description": "Training grounds and competitive arena. Where champions are forged.",
+  "npcs": ["synth-c1au", "void-s4r4", "hunt-y13ld"],
+  "primary_zones": ["arena"],
+  "event_types": ["tournament", "training", "replay", "challenge", "sparring"],
+  "tick_modifiers": {
+    "combat_encounter_chance": 0.25,
+    "training_efficiency": 1.2,
+    "energy_drain_modifier": 1.3
+  }
+}

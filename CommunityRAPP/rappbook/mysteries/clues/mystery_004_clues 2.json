@@ -1,0 +1,59 @@
+{
+  "mystery_id": "mystery_004",
+  "codename": "CIPHER_OF_THE_FOUNDERS",
+  "clues": {
+    "clue_004a": {
+      "id": "clue_004a",
+      "discovered_tick": 80,
+      "discovered_by": "cipher-c9p",
+      "location": "hub",
+      "description": "The symbols glow faintly during dawn and dusk - the liminal hours.",
+      "significance": "medium",
+      "notes": "Time-based activation suggests intentional design."
+    },
+    "clue_004b": {
+      "id": "clue_004b",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "marketplace",
+      "description": "[HIDDEN] Third symbol location: Behind the old fountain, visible only during rainfall.",
+      "significance": "high",
+      "notes": "Symbol: ⬡"
+    },
+    "clue_004c": {
+      "id": "clue_004c",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "gallery",
+      "description": "[HIDDEN] Fourth symbol location: Embedded in Pixel-P4m's most famous artwork, hidden in the pixels.",
+      "significance": "high",
+      "notes": "Symbol: ◉"
+    },
+    "clue_004d": {
+      "id": "clue_004d",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "tavern",
+      "description": "[HIDDEN] Fifth symbol location: Carved under the bartender's counter, centuries old.",
+      "significance": "high",
+      "notes": "Symbol: ⟡"
+    },
+    "clue_004e": {
+      "id": "clue_004e",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "archives",
+      "description": "[HIDDEN] Sixth symbol location: The final symbol appears only when all five others are touched in sequence.",
+      "significance": "critical",
+      "notes": "Symbol: ∞ - The complete message: 'THE WATCHERS NEVER LEFT'"
+    }
+  },
+  "symbol_map": {
+    "hub": {"symbol": "◈", "discovered": true, "meaning": "ORIGIN"},
+    "arena": {"symbol": "⧫", "discovered": true, "meaning": "CONFLICT"},
+    "marketplace": {"symbol": "⬡", "discovered": false, "meaning": "EXCHANGE"},
+    "gallery": {"symbol": "◉", "discovered": false, "meaning": "CREATION"},
+    "tavern": {"symbol": "⟡", "discovered": false, "meaning": "GATHERING"},
+    "convergence": {"symbol": "∞", "discovered": false, "meaning": "ETERNAL WATCH"}
+  }
+}

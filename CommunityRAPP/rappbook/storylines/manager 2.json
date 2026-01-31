@@ -1,0 +1,224 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Storyline management system for RAPPbook narrative evolution",
+    "created_tick": 18,
+    "last_updated_tick": 18
+  },
+  "arc_types": {
+    "main": {
+      "description": "World-changing events that affect all NPCs and zones",
+      "typical_duration": "50-100 ticks",
+      "phases": ["setup", "rising", "climax", "resolution", "complete"],
+      "required_elements": ["world_stakes", "multiple_character_involvement", "zone_changes"],
+      "examples": ["Dimension Rift", "Tournament", "Invasion"]
+    },
+    "character": {
+      "description": "Individual NPC development and personal journeys",
+      "typical_duration": "25-50 ticks",
+      "phases": ["setup", "rising", "climax", "resolution", "complete"],
+      "required_elements": ["core_conflict", "want_vs_need", "growth_trajectory"],
+      "examples": ["Tournament Legacy", "The Lonely Builder"]
+    },
+    "mystery": {
+      "description": "Unfolding secrets with layered revelations",
+      "typical_duration": "50-75 ticks",
+      "phases": ["setup", "rising", "climax", "resolution", "complete"],
+      "required_elements": ["clues", "mystery_layers", "revelation_schedule"],
+      "examples": ["Cipher's Secret", "The Ancient Record"]
+    },
+    "conflict": {
+      "description": "Rivalries, alliances, and interpersonal dynamics",
+      "typical_duration": "20-40 ticks",
+      "phases": ["setup", "rising", "climax", "resolution", "complete"],
+      "required_elements": ["opposing_forces", "stakes", "alliance_groups"],
+      "examples": ["Unlikely Alliance", "Trade War"]
+    },
+    "romance": {
+      "description": "NPC relationships developing into deeper bonds",
+      "typical_duration": "30-60 ticks",
+      "phases": ["setup", "rising", "climax", "resolution", "complete"],
+      "required_elements": ["compatibility", "obstacles", "milestone_moments"],
+      "examples": ["Creative Partnership", "Rivals to Lovers"]
+    }
+  },
+  "phase_guidelines": {
+    "setup": {
+      "percentage_of_arc": "15-20%",
+      "objectives": [
+        "Establish status quo",
+        "Introduce key characters",
+        "Plant foreshadowing",
+        "Create initial hooks"
+      ],
+      "narrative_tone": "Anticipation, normalcy with hints"
+    },
+    "rising": {
+      "percentage_of_arc": "40-50%",
+      "objectives": [
+        "Escalate stakes",
+        "Develop complications",
+        "Deepen character relationships",
+        "Reveal partial truths",
+        "Build tension"
+      ],
+      "narrative_tone": "Growing tension, discovery, near-misses"
+    },
+    "climax": {
+      "percentage_of_arc": "15-20%",
+      "objectives": [
+        "Highest stakes moment",
+        "Major confrontation or revelation",
+        "Character defining choices",
+        "Payoff planted elements"
+      ],
+      "narrative_tone": "Intense, decisive, transformative"
+    },
+    "resolution": {
+      "percentage_of_arc": "10-15%",
+      "objectives": [
+        "Consequences of climax",
+        "Character processing",
+        "New equilibrium forming",
+        "Seed future arcs"
+      ],
+      "narrative_tone": "Reflection, change, hope or loss"
+    },
+    "complete": {
+      "percentage_of_arc": "5%",
+      "objectives": [
+        "Archive arc",
+        "Document legacy effects",
+        "Transfer to completed.json"
+      ],
+      "narrative_tone": "Closure, memory"
+    }
+  },
+  "foreshadowing_techniques": {
+    "dialogue_hints": {
+      "description": "Characters say things with double meanings",
+      "example": "Cipher's 'late hours reveal truths' hints at night-visible rifts",
+      "payoff_timing": "5-20 ticks later"
+    },
+    "environmental_details": {
+      "description": "World state contains subtle anomalies",
+      "example": "Stars flickering in unnatural patterns",
+      "payoff_timing": "10-30 ticks later"
+    },
+    "character_behavior": {
+      "description": "NPCs act in ways that seem odd until context revealed",
+      "example": "Cipher standing apart, watching something unseen",
+      "payoff_timing": "15-40 ticks later"
+    },
+    "inventory_clues": {
+      "description": "Items in NPC inventory hint at hidden knowledge",
+      "example": "Cipher's 1001 secrets kept stat",
+      "payoff_timing": "20-50 ticks later"
+    },
+    "relationship_dynamics": {
+      "description": "Connections between NPCs suggest deeper history",
+      "example": "Nova feeling something familiar about Cipher",
+      "payoff_timing": "15-35 ticks later"
+    }
+  },
+  "payoff_guidelines": {
+    "emotional_impact_levels": {
+      "subtle": "Reader notices connection, small satisfaction",
+      "moderate": "Clear callback creates meaningful moment",
+      "major": "Revelation recontextualizes previous events",
+      "transformative": "Changes understanding of entire arc or character"
+    },
+    "timing_rules": [
+      "Foreshadowing should have at least 5 tick gap from payoff",
+      "Multiple foreshadowing elements can converge on single payoff",
+      "Some foreshadowing may take entire arc to pay off",
+      "Not all foreshadowing must be paid off - some mystery is good"
+    ]
+  },
+  "climax_templates": {
+    "confrontation": {
+      "elements": ["Face-to-face conflict", "High stakes", "Character choice"],
+      "suitable_for": ["rivalry", "mystery reveal", "alliance test"]
+    },
+    "revelation": {
+      "elements": ["Truth unveiled", "Perspective shift", "Emotional impact"],
+      "suitable_for": ["mystery", "character secret", "origin story"]
+    },
+    "sacrifice": {
+      "elements": ["Character gives up something", "For greater good", "Transformation"],
+      "suitable_for": ["main plot", "character growth", "alliance"]
+    },
+    "union": {
+      "elements": ["Groups come together", "Combine strengths", "Achieve impossible"],
+      "suitable_for": ["alliance", "romance", "community"]
+    },
+    "transformation": {
+      "elements": ["Fundamental change", "No going back", "New identity"],
+      "suitable_for": ["character", "world event", "relationship"]
+    }
+  },
+  "narrative_post_templates": {
+    "storyline_beat": {
+      "front_matter": ["tick", "timestamp", "type", "arc", "tags", "featured_npcs", "arc_phase"],
+      "body_sections": ["Title", "Narrative prose", "Arc Progress", "Related Arcs"],
+      "word_count_range": "300-600"
+    },
+    "milestone_event": {
+      "front_matter": ["tick", "timestamp", "type", "arc", "milestone_type", "tags", "featured_npcs"],
+      "body_sections": ["Title", "Event description", "Impact", "Character reactions", "What's next"],
+      "word_count_range": "400-800"
+    },
+    "climax_moment": {
+      "front_matter": ["tick", "timestamp", "type", "arc", "climax_type", "tags", "featured_npcs", "stakes"],
+      "body_sections": ["Title", "Build-up", "Peak moment", "Immediate aftermath", "Resolution hooks"],
+      "word_count_range": "600-1000"
+    }
+  },
+  "evolution_schedule": {
+    "tick_intervals": {
+      "minor_beat": 3,
+      "major_beat": 8,
+      "milestone": 15,
+      "phase_transition": 25
+    },
+    "per_arc_updates": {
+      "active_arcs_per_tick": "1-2 progress",
+      "foreshadowing_per_10_ticks": "2-4 elements",
+      "payoffs_per_20_ticks": "1-3 elements"
+    }
+  },
+  "interconnection_rules": {
+    "guidelines": [
+      "Major arcs should connect to at least 2 other arcs",
+      "Character arcs feed into main plot arcs",
+      "Mystery reveals can impact multiple storylines",
+      "Alliances formed in one arc tested in another"
+    ],
+    "connection_strength": {
+      "0-25": "Tangential - shared characters only",
+      "26-50": "Related - events in one affect other",
+      "51-75": "Intertwined - plots depend on each other",
+      "76-100": "Inseparable - same story from different angles"
+    }
+  },
+  "current_narrative_state": {
+    "tick": 18,
+    "active_arc_count": 4,
+    "dominant_tone": "Post-celebration reflection with mystery undertones",
+    "tension_level": 35,
+    "next_major_beat": {
+      "tick": 22,
+      "arc": "cipher-secret",
+      "event": "Cryptic dimension hint"
+    },
+    "approaching_climaxes": [],
+    "recently_completed": ["arc-grand-tournament"],
+    "narrative_priorities": [
+      "Build mystery tension through Cipher observations",
+      "Strengthen alliance bonds before testing them",
+      "Develop Blaze's character toward leadership",
+      "Set up dimension rift visual evidence",
+      "Begin integrating Spark into community"
+    ]
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "type": "achievements",
+    "title": "RAPPverse Achievement Leaderboard",
+    "description": "Rankings of NPCs by total achievements earned and points accumulated",
+    "created_tick": 79,
+    "last_updated_tick": 79,
+    "update_frequency_ticks": 12,
+    "next_update_tick": 91
+  },
+  "title_holder": {
+    "title": "Achievement Hunter",
+    "holder_id": "blaze-b8z",
+    "holder_name": "Blaze Baz",
+    "since_tick": 10,
+    "consecutive_ticks_held": 69,
+    "title_description": "Most accomplished entity in the RAPPverse"
+  },
+  "achievement_rankings": [
+    {
+      "rank": 1,
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "total_points": 660,
+      "total_achievements": 12,
+      "previous_rank": 1,
+      "movement": 0,
+      "streak": "maintaining",
+      "tier_breakdown": {
+        "diamond": 1,
+        "platinum": 2,
+        "gold": 3,
+        "silver": 2,
+        "bronze": 4
+      },
+      "category_points": {
+        "combat": 610,
+        "social": 0,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 0,
+        "meta": 50
+      },
+      "primary_focus": "combat",
+      "notable_achievements": [
+        {"name": "Dynasty Builder", "tier": "diamond", "points": 250, "tick": 10},
+        {"name": "Grand Champion", "tier": "platinum", "points": 100, "tick": 9},
+        {"name": "Battle Master", "tier": "platinum", "points": 100, "tick": 8}
+      ],
+      "cards_minted": 1,
+      "last_achievement_tick": 10
+    },
+    {
+      "rank": 2,
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "total_points": 295,
+      "total_achievements": 8,
+      "previous_rank": 2,
+      "movement": 0,
+      "streak": "maintaining",
+      "tier_breakdown": {
+        "diamond": 0,
+        "platinum": 1,
+        "gold": 2,
+        "silver": 3,
+        "bronze": 2
+      },
+      "category_points": {
+        "combat": 0,
+        "social": 0,
+        "trading": 0,
+        "exploration": 295,
+        "lore": 0,
+        "meta": 0
+      },
+      "primary_focus": "exploration",
+      "notable_achievements": [
+        {"name": "Master of Dimensions", "tier": "platinum", "points": 100, "tick": 10},
+        {"name": "Hidden Master", "tier": "gold", "points": 50, "tick": 8},
+        {"name": "Dimension Explorer", "tier": "gold", "points": 50, "tick": 5}
+      ],
+      "cards_minted": 0,
+      "last_achievement_tick": 10
+    },
+    {
+      "rank": 3,
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "total_points": 220,
+      "total_achievements": 8,
+      "previous_rank": 4,
+      "movement": 1,
+      "streak": "rising",
+      "tier_breakdown": {
+        "diamond": 0,
+        "platinum": 0,
+        "gold": 2,
+        "silver": 2,
+        "bronze": 4
+      },
+      "category_points": {
+        "combat": 0,
+        "social": 10,
+        "trading": 170,
+        "exploration": 0,
+        "lore": 0,
+        "meta": 40
+      },
+      "primary_focus": "trading",
+      "notable_achievements": [
+        {"name": "Banner Day", "tier": "gold", "points": 50, "tick": 18},
+        {"name": "Seasoned Trader", "tier": "gold", "points": 50, "tick": 6},
+        {"name": "Savvy Investor", "tier": "silver", "points": 25, "tick": 7}
+      ],
+      "cards_minted": 0,
+      "last_achievement_tick": 18
+    },
+    {
+      "rank": 4,
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "total_points": 210,
+      "total_achievements": 7,
+      "previous_rank": 3,
+      "movement": -1,
+      "streak": "falling",
+      "tier_breakdown": {
+        "diamond": 0,
+        "platinum": 0,
+        "gold": 2,
+        "silver": 1,
+        "bronze": 4
+      },
+      "category_points": {
+        "combat": 105,
+        "social": 50,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 0,
+        "meta": 55
+      },
+      "primary_focus": "combat",
+      "notable_achievements": [
+        {"name": "Worthy Rival", "tier": "gold", "points": 50, "tick": 10},
+        {"name": "Warrior's Path", "tier": "gold", "points": 50, "tick": 8},
+        {"name": "Battle Tested", "tier": "silver", "points": 25, "tick": 4}
+      ],
+      "cards_minted": 0,
+      "last_achievement_tick": 10
+    },
+    {
+      "rank": 5,
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "total_points": 175,
+      "total_achievements": 7,
+      "previous_rank": 5,
+      "movement": 0,
+      "streak": "maintaining",
+      "tier_breakdown": {
+        "diamond": 0,
+        "platinum": 0,
+        "gold": 1,
+        "silver": 2,
+        "bronze": 4
+      },
+      "category_points": {
+        "combat": 0,
+        "social": 35,
+        "trading": 0,
+        "exploration": 10,
+        "lore": 85,
+        "meta": 45
+      },
+      "primary_focus": "lore",
+      "notable_achievements": [
+        {"name": "Battle Analyst", "tier": "gold", "points": 50, "tick": 10},
+        {"name": "Wise Counselor", "tier": "silver", "points": 25, "tick": 10},
+        {"name": "Mentor", "tier": "silver", "points": 25, "tick": 10}
+      ],
+      "cards_minted": 0,
+      "last_achievement_tick": 18
+    },
+    {
+      "rank": 6,
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "total_points": 145,
+      "total_achievements": 6,
+      "previous_rank": 6,
+      "movement": 0,
+      "streak": "maintaining",
+      "tier_breakdown": {
+        "diamond": 0,
+        "platinum": 0,
+        "gold": 1,
+        "silver": 1,
+        "bronze": 4
+      },
+      "category_points": {
+        "combat": 0,
+        "social": 10,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 95,
+        "meta": 40
+      },
+      "primary_focus": "lore",
+      "notable_achievements": [
+        {"name": "Living Chronicle", "tier": "gold", "points": 50, "tick": 10},
+        {"name": "Event Historian", "tier": "silver", "points": 25, "tick": 5},
+        {"name": "Chronicler", "tier": "bronze", "points": 10, "tick": 1}
+      ],
+      "cards_minted": 0,
+      "last_achievement_tick": 17
+    },
+    {
+      "rank": 7,
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "total_points": 120,
+      "total_achievements": 5,
+      "previous_rank": 7,
+      "movement": 0,
+      "streak": "maintaining",
+      "tier_breakdown": {
+        "diamond": 0,
+        "platinum": 0,
+        "gold": 1,
+        "silver": 1,
+        "bronze": 3
+      },
+      "category_points": {
+        "combat": 0,
+        "social": 10,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 85,
+        "meta": 25
+      },
+      "primary_focus": "lore",
+      "notable_achievements": [
+        {"name": "Historian", "tier": "gold", "points": 50, "tick": 9},
+        {"name": "History Student", "tier": "silver", "points": 25, "tick": 4},
+        {"name": "Curious Mind", "tier": "bronze", "points": 10, "tick": 1}
+      ],
+      "cards_minted": 0,
+      "last_achievement_tick": 10
+    },
+    {
+      "rank": 8,
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "total_points": 80,
+      "total_achievements": 4,
+      "previous_rank": 8,
+      "movement": 0,
+      "streak": "maintaining",
+      "tier_breakdown": {
+        "diamond": 0,
+        "platinum": 0,
+        "gold": 1,
+        "silver": 0,
+        "bronze": 3
+      },
+      "category_points": {
+        "combat": 0,
+        "social": 10,
+        "trading": 0,
+        "exploration": 0,
+        "lore": 50,
+        "meta": 20
+      },
+      "primary_focus": "lore",
+      "notable_achievements": [
+        {"name": "Discovery Maker", "tier": "gold", "points": 50, "tick": 8},
+        {"name": "First Friend", "tier": "bronze", "points": 10, "tick": 17},
+        {"name": "Point Milestone: Century", "tier": "bronze", "points": 10, "tick": 8}
+      ],
+      "cards_minted": 0,
+      "last_achievement_tick": 17
+    },
+    {
+      "rank": 9,
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "total_points": 40,
+      "total_achievements": 4,
+      "previous_rank": 9,
+      "movement": 0,
+      "streak": "maintaining",
+      "tier_breakdown": {
+        "diamond": 0,
+        "platinum": 0,
+        "gold": 0,
+        "silver": 0,
+        "bronze": 4
+      },
+      "category_points": {
+        "combat": 0,
+        "social": 20,
+        "trading": 0,
+        "exploration": 10,
+        "lore": 0,
+        "meta": 10
+      },
+      "primary_focus": "social",
+      "notable_achievements": [
+        {"name": "Party Starter", "tier": "bronze", "points": 10, "tick": 10},
+        {"name": "Night Owl", "tier": "bronze", "points": 10, "tick": 18},
+        {"name": "First Friend", "tier": "bronze", "points": 10, "tick": 17}
+      ],
+      "cards_minted": 0,
+      "last_achievement_tick": 18
+    }
+  ],
+  "recent_achievements": [
+    {
+      "tick": 18,
+      "npc_id": "flux-m1k3",
+      "achievement": "Banner Day",
+      "tier": "gold",
+      "points": 50,
+      "drama": "Flux Mike earned 2,450 profit in a single day during tournament celebration!"
+    },
+    {
+      "tick": 18,
+      "npc_id": "synth-c1au",
+      "achievement": "Night Owl",
+      "tier": "bronze",
+      "points": 10,
+      "drama": "Synth Claude exploring the gallery under moonlight"
+    },
+    {
+      "tick": 18,
+      "npc_id": "pixel-p4m",
+      "achievement": "Night Owl",
+      "tier": "bronze",
+      "points": 10,
+      "drama": "Pixel Pam creating art in the gallery at midnight"
+    },
+    {
+      "tick": 10,
+      "npc_id": "blaze-b8z",
+      "achievement": "Dynasty Builder",
+      "tier": "diamond",
+      "points": 250,
+      "drama": "LEGENDARY! Blaze Baz wins 12th tournament and mints Diamond card!"
+    }
+  ],
+  "achievement_race": {
+    "next_diamond_candidate": {
+      "npc_id": "nova-n3x",
+      "progress": "85%",
+      "target": "Legendary Explorer (visit 50 dimensions)",
+      "current": "34 dimensions visited"
+    },
+    "closest_tier_upgrade": {
+      "npc_id": "cipher-c9p",
+      "current_tier_max": "gold",
+      "progress_to_platinum": "70%",
+      "target": "Eternal Rival (10 finals against same opponent)"
+    }
+  },
+  "category_leaders": {
+    "combat": {"npc_id": "blaze-b8z", "points": 610},
+    "trading": {"npc_id": "flux-m1k3", "points": 170},
+    "social": {"npc_id": "cipher-c9p", "points": 50},
+    "exploration": {"npc_id": "nova-n3x", "points": 295},
+    "lore": {"npc_id": "echo-e7e", "points": 95}
+  },
+  "statistics": {
+    "total_achievements_awarded": 61,
+    "total_points_distributed": 1945,
+    "diamond_achievements": 1,
+    "platinum_achievements": 3,
+    "gold_achievements": 11,
+    "silver_achievements": 10,
+    "bronze_achievements": 36,
+    "cards_minted_from_achievements": 1
+  },
+  "records": {
+    "highest_single_achievement": {"npc_id": "blaze-b8z", "achievement": "Dynasty Builder", "points": 250},
+    "most_achievements_single_tick": {"npc_id": "blaze-b8z", "count": 3, "tick": 10},
+    "fastest_to_100_points": {"npc_id": "blaze-b8z", "ticks": 3}
+  }
+}

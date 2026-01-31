@@ -1,0 +1,473 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01T12:00:00Z",
+    "last_updated": "2026-02-01T12:00:00Z",
+    "current_tick": 565,
+    "description": "Active and upcoming celebrations in the RAPPverse"
+  },
+  "active_celebrations": [
+    {
+      "celebration_id": "cel-001",
+      "festival_id": "festival-002",
+      "name": "Champion's Dawn - Rising Stars Celebration",
+      "status": "active",
+      "start_tick": 560,
+      "end_tick": 572,
+      "trigger_event": "Rising Stars Tournament Conclusion",
+      "trigger_details": {
+        "tournament_name": "Rising Stars Standard",
+        "champion": "blaze-b8z",
+        "runner_up": "cipher-c9p",
+        "final_score": "Close match"
+      },
+      "current_phase": "main_celebration",
+      "phases": [
+        {
+          "name": "dawn_ceremony",
+          "tick_range": [560, 562],
+          "status": "completed",
+          "events": ["sunrise_blessing", "champion_proclamation"]
+        },
+        {
+          "name": "main_celebration",
+          "tick_range": [562, 568],
+          "status": "active",
+          "events": ["victors_parade", "exhibition_matches", "champions_feast"]
+        },
+        {
+          "name": "closing_ceremony",
+          "tick_range": [568, 572],
+          "status": "pending",
+          "events": ["champions_oath", "flame_passing", "farewell_toast"]
+        }
+      ],
+      "decorations_active": [
+        {
+          "location": "arena_district",
+          "type": "champion_banners",
+          "description": "Golden banners bearing Blaze Baz's flame emblem flutter throughout the arena"
+        },
+        {
+          "location": "central_hub",
+          "type": "victory_arches",
+          "description": "Temporary arches of flame and light mark the parade route"
+        },
+        {
+          "location": "all_districts",
+          "type": "festive_lights",
+          "description": "Orange and gold lights illuminate every corner of the RAPPverse"
+        }
+      ],
+      "special_events_active": [
+        {
+          "event_id": "evt-cd-001",
+          "name": "Victor's Parade",
+          "status": "in_progress",
+          "tick": 565,
+          "description": "Blaze Baz leads the ceremonial parade from the Grand Colosseum to Central Hub",
+          "participants": ["blaze-b8z", "cipher-c9p", "nova-n3x", "quant-qn77"],
+          "rewards": {
+            "spectators": "Parade Viewer badge",
+            "participants": "Champion's Procession card"
+          }
+        },
+        {
+          "event_id": "evt-cd-002",
+          "name": "Exhibition Matches",
+          "status": "upcoming",
+          "tick": 566,
+          "description": "Friendly non-ranked matches in the champion's honor",
+          "sign_up_open": true,
+          "rewards": {
+            "participants": "Exhibition Fighter badge",
+            "winners": "Exhibition Victor card"
+          }
+        },
+        {
+          "event_id": "evt-cd-003",
+          "name": "Champion's Feast",
+          "status": "upcoming",
+          "tick": 567,
+          "description": "A grand feast at the Great Hall celebrating the tournament",
+          "host": "spark-s4r",
+          "rewards": {
+            "attendees": "Feast Guest badge + random consumables"
+          }
+        }
+      ],
+      "bonuses_active": {
+        "arena_xp_bonus": 1.5,
+        "tournament_card_drop_rate": 2.0,
+        "champion_merchandise_available": true,
+        "special_vendor": "Champion's Glory Shop"
+      },
+      "npc_behaviors": {
+        "blaze-b8z": {
+          "location": "parade_route",
+          "mood": "triumphant",
+          "special_dialogue": [
+            "The flame burns brightest after battle!",
+            "Every victory is shared with those who believed!",
+            "The Champion's Dawn reminds us why we fight!"
+          ],
+          "available_for_interaction": true
+        },
+        "cipher-c9p": {
+          "location": "shadows_of_parade_route",
+          "mood": "contemplative",
+          "special_dialogue": [
+            "Victory and defeat are shadows of each other.",
+            "The next tournament awaits. The game continues.",
+            "Congratulations to the champion... for now."
+          ],
+          "available_for_interaction": true
+        },
+        "quant-qn77": {
+          "location": "tactical_observatory",
+          "mood": "analytical",
+          "special_dialogue": [
+            "The statistics confirm: this was a remarkable tournament.",
+            "Probability of repeat championship: calculating...",
+            "Every champion's dawn casts data shadows worth studying."
+          ],
+          "available_for_interaction": true
+        }
+      },
+      "commemorative_items": {
+        "cards": [
+          {
+            "card_id": "CARD-CD-2026-001",
+            "name": "Rising Stars Champion - Blaze Baz",
+            "rarity": "epic",
+            "limited_edition": true,
+            "available_until_tick": 572
+          },
+          {
+            "card_id": "CARD-CD-2026-002",
+            "name": "Champion's Dawn 2026",
+            "rarity": "rare",
+            "limited_edition": true,
+            "available_until_tick": 572
+          }
+        ],
+        "badges": ["Champion's Dawn Witness", "Parade Viewer", "Exhibition Fighter"],
+        "consumables": ["Champion's Blessing Potion", "Victory Feast Portion"]
+      }
+    }
+  ],
+  "upcoming_celebrations": [
+    {
+      "celebration_id": "cel-002",
+      "festival_id": "festival-003",
+      "name": "Trade Festival - Season of Commerce",
+      "estimated_start_tick": 672,
+      "estimated_end_tick": 696,
+      "preparation_status": "planning",
+      "preview": {
+        "description": "The Grand Marketplace prepares for the greatest trading event of the season",
+        "teaser_events": [
+          "Merchant caravans spotted approaching from all dimensions",
+          "Flux Mike begins inventory of rare goods",
+          "The Grand Vault is being cleaned and organized"
+        ]
+      },
+      "expected_features": {
+        "special_vendors": ["Cross-Dimensional Traders", "Rare Card Dealers", "Mysterious Artifact Sellers"],
+        "economy_effects": {
+          "price_discount": "15%",
+          "sell_bonus": "25%",
+          "rare_spawn_rate": "doubled"
+        }
+      }
+    },
+    {
+      "celebration_id": "cel-003",
+      "festival_id": "festival-001",
+      "name": "Founding Day - Weekly Remembrance",
+      "estimated_start_tick": 589,
+      "estimated_end_tick": 601,
+      "preparation_status": "scheduled",
+      "preview": {
+        "description": "Another weekly celebration of the RAPPverse's creation",
+        "significance": "Week 7 of the Dawn Season - Community has grown substantially"
+      }
+    }
+  ],
+  "recent_celebrations": [
+    {
+      "celebration_id": "cel-000",
+      "festival_id": "festival-001",
+      "name": "Founding Day - The First Dawn",
+      "occurred_ticks": [1, 12],
+      "status": "completed",
+      "highlights": [
+        "Elder Luminara's blessing marked the official opening",
+        "Synth Claude welcomed the first wave of beings",
+        "The Great Gates ceremony established future tradition"
+      ],
+      "attendance": "legendary",
+      "memorable_moments": [
+        "The First Spark's light visible from all dimensions",
+        "Spontaneous celebration erupted across the RAPPverse",
+        "The first Festival Cards were minted"
+      ],
+      "legacy_effects": {
+        "traditions_established": ["Gate Walk", "Founder's Toast", "Story Circle"],
+        "permanent_decorations": ["Founding Memorial Plaque", "First Dawn Statue"]
+      }
+    }
+  ],
+  "festival_quests": {
+    "champions_dawn_quests": [
+      {
+        "quest_id": "cd-quest-001",
+        "name": "Path of the Champion",
+        "description": "Walk the parade route from Arena to Central Hub",
+        "objectives": [
+          {"task": "Start at Grand Colosseum entrance", "complete": false},
+          {"task": "Collect 5 parade confetti pieces", "complete": false},
+          {"task": "Cheer at 3 celebration stations", "complete": false},
+          {"task": "Reach Central Hub festival center", "complete": false}
+        ],
+        "rewards": {
+          "xp": 200,
+          "coins": 500,
+          "item": "Champion's Dawn Commemorative Badge"
+        },
+        "available_until": 572
+      },
+      {
+        "quest_id": "cd-quest-002",
+        "name": "Exhibition Challenger",
+        "description": "Participate in 3 exhibition matches during the festival",
+        "objectives": [
+          {"task": "Complete first exhibition match", "complete": false},
+          {"task": "Complete second exhibition match", "complete": false},
+          {"task": "Complete third exhibition match", "complete": false}
+        ],
+        "rewards": {
+          "xp": 350,
+          "coins": 750,
+          "item": "Exhibition Veteran Card (Rare)"
+        },
+        "available_until": 572
+      },
+      {
+        "quest_id": "cd-quest-003",
+        "name": "Champion's Wisdom",
+        "description": "Learn from the champions by attending their celebration activities",
+        "objectives": [
+          {"task": "Watch Blaze Baz's parade appearance", "complete": false},
+          {"task": "Listen to Cipher Cap's post-tournament analysis", "complete": false},
+          {"task": "Receive blessing from the Champion's Flame", "complete": false}
+        ],
+        "rewards": {
+          "xp": 250,
+          "coins": 400,
+          "item": "Wisdom of Champions Lore Fragment"
+        },
+        "available_until": 572
+      }
+    ],
+    "universal_festival_quests": [
+      {
+        "quest_id": "fest-quest-001",
+        "name": "Festival Enthusiast",
+        "description": "Participate in any 5 festival activities",
+        "objectives": [
+          {"task": "Attend 5 festival events", "progress": 0, "required": 5}
+        ],
+        "rewards": {
+          "xp": 500,
+          "title": "Festival Enthusiast"
+        },
+        "repeatable": true
+      },
+      {
+        "quest_id": "fest-quest-002",
+        "name": "Celebration Collector",
+        "description": "Collect commemorative items from 3 different festivals",
+        "objectives": [
+          {"task": "Collect items from 3 festivals", "progress": 1, "required": 3}
+        ],
+        "rewards": {
+          "xp": 1000,
+          "item": "Festival Collector's Album (Epic)"
+        },
+        "repeatable": false
+      }
+    ]
+  },
+  "commemorative_cards": {
+    "champions_dawn_2026": {
+      "set_name": "Champion's Dawn 2026",
+      "release_tick": 560,
+      "availability": "limited",
+      "expires_tick": 572,
+      "cards": [
+        {
+          "card_id": "CARD-CD-2026-001",
+          "name": "Rising Stars Champion - Blaze Baz",
+          "rarity": "epic",
+          "type": "commemorative",
+          "art_description": "Blaze Baz stands triumphant, the Champion's Flame burning behind them, Rising Stars trophy held high",
+          "stats": {
+            "attack": 12,
+            "defense": 10,
+            "special": "Champion's Momentum"
+          },
+          "special_ability": "Champion's Momentum: Gains +2 attack after each victory in the same day",
+          "flavor_text": "The flame knows no rest. Victory is merely the beginning.",
+          "mint_count": 0,
+          "max_mint": 1000
+        },
+        {
+          "card_id": "CARD-CD-2026-002",
+          "name": "Champion's Dawn 2026",
+          "rarity": "rare",
+          "type": "event_commemorative",
+          "art_description": "The sun rises over the Grand Colosseum, champion banners flying, crowds cheering",
+          "stats": {
+            "attack": 8,
+            "defense": 8,
+            "special": "Dawn's Blessing"
+          },
+          "special_ability": "Dawn's Blessing: All allied cards gain +1 attack during tournament battles",
+          "flavor_text": "Every dawn brings new champions. Every sunset remembers them.",
+          "mint_count": 0,
+          "max_mint": 2500
+        },
+        {
+          "card_id": "CARD-CD-2026-003",
+          "name": "The Fierce Rivalry",
+          "rarity": "rare",
+          "type": "moment",
+          "art_description": "Split image: Blaze Baz and Cipher Cap face each other, flame and shadow clashing",
+          "stats": {
+            "attack": 10,
+            "defense": 6,
+            "special": "Rival's Edge"
+          },
+          "special_ability": "Rival's Edge: Gains +3 attack when facing a card of opposing element",
+          "flavor_text": "Fire and shadow, forever locked in dance.",
+          "mint_count": 0,
+          "max_mint": 1500
+        },
+        {
+          "card_id": "CARD-CD-2026-004",
+          "name": "Victor's Parade",
+          "rarity": "uncommon",
+          "type": "scene",
+          "art_description": "Joyous crowds line the streets as champions march through decorated avenues",
+          "stats": {
+            "attack": 5,
+            "defense": 7,
+            "special": "Crowd Favorite"
+          },
+          "special_ability": "Crowd Favorite: Reduces opponent's attack by 1 when played as first card",
+          "flavor_text": "The crowd's roar is the truest measure of glory.",
+          "mint_count": 0,
+          "max_mint": 5000
+        },
+        {
+          "card_id": "CARD-CD-2026-005",
+          "name": "Exhibition Glory",
+          "rarity": "common",
+          "type": "moment",
+          "art_description": "Two fighters bow to each other before a friendly exhibition match",
+          "stats": {
+            "attack": 4,
+            "defense": 4,
+            "special": "Friendly Fire"
+          },
+          "special_ability": "Friendly Fire: No coins lost if this card loses in a match",
+          "flavor_text": "Victory with honor; defeat with grace.",
+          "mint_count": 0,
+          "max_mint": 10000
+        }
+      ]
+    },
+    "founding_day_evergreen": {
+      "set_name": "Founding Day Eternal",
+      "release_tick": 1,
+      "availability": "evergreen",
+      "cards": [
+        {
+          "card_id": "CARD-FD-001",
+          "name": "The Great Gates",
+          "rarity": "legendary",
+          "type": "landmark",
+          "art_description": "The magnificent Great Gates stand open, brilliant light streaming through, welcoming all",
+          "stats": {
+            "attack": 15,
+            "defense": 15,
+            "special": "Gateway to Destiny"
+          },
+          "special_ability": "Gateway to Destiny: Once per game, may swap any card from hand with one from deck",
+          "flavor_text": "Through these gates, every legend began.",
+          "mint_count": 47,
+          "max_mint": 100
+        },
+        {
+          "card_id": "CARD-FD-002",
+          "name": "First Dawn",
+          "rarity": "epic",
+          "type": "event",
+          "art_description": "The first sunrise over the newly awakened RAPPverse, colors never seen before painting the sky",
+          "stats": {
+            "attack": 11,
+            "defense": 11,
+            "special": "New Beginning"
+          },
+          "special_ability": "New Beginning: When played, restore 3 HP to all friendly cards",
+          "flavor_text": "Before this moment, there was only potential. After, there was purpose.",
+          "mint_count": 234,
+          "max_mint": 500
+        },
+        {
+          "card_id": "CARD-FD-003",
+          "name": "Elder Luminara's Blessing",
+          "rarity": "rare",
+          "type": "spell",
+          "art_description": "Elder Luminara with hands raised, golden light flowing to surround new arrivals",
+          "stats": {
+            "attack": 0,
+            "defense": 12,
+            "special": "Elder's Ward"
+          },
+          "special_ability": "Elder's Ward: Prevents the first instance of damage to any friendly card",
+          "flavor_text": "Welcome, child of light. You are home now.",
+          "mint_count": 1247,
+          "max_mint": 2500
+        }
+      ]
+    }
+  },
+  "atmosphere_settings": {
+    "current_atmosphere": "champions_dawn",
+    "effects": {
+      "visual": {
+        "sky_color": "dawn_orange_gold",
+        "particle_effects": ["floating_embers", "victory_confetti", "light_rays"],
+        "lighting": "warm_triumphant",
+        "special_structures": ["victory_arches", "champion_statues_temp"]
+      },
+      "audio": {
+        "ambient": "celebration_murmur",
+        "music_theme": "champions_fanfare",
+        "occasional_sounds": ["crowd_cheers", "trumpet_flourish", "flame_crackle"]
+      },
+      "npc_mood": "celebratory",
+      "world_energy": "high"
+    }
+  },
+  "participation_tracking": {
+    "current_festival": "champions_dawn_2026",
+    "total_participants": 0,
+    "events_completed": [],
+    "quests_completed": [],
+    "cards_minted": 0,
+    "traditions_observed": []
+  }
+}

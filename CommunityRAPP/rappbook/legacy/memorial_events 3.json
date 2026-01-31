@@ -1,0 +1,543 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-05T05:30:00Z",
+    "last_updated": "2026-02-05T05:30:00Z",
+    "system": "Memorial Events System",
+    "description": "Scheduled ceremonies and remembrance events for departed NPCs"
+  },
+
+  "memorial_types": {
+    "annual_remembrance": {
+      "id": "mem_annual",
+      "name": "Annual Remembrance",
+      "description": "Yearly ceremony honoring a fallen hero",
+      "frequency_ticks": 17520,
+      "duration_ticks": 2,
+      "participation": "optional",
+      "rewards": {
+        "fame_points": 50,
+        "blessing_type": "departed_blessing"
+      }
+    },
+    "lineage_commemoration": {
+      "id": "mem_lineage",
+      "name": "Lineage Commemoration",
+      "description": "Celebration of a lineage's complete history",
+      "frequency_ticks": 35040,
+      "duration_ticks": 4,
+      "participation": "lineage_required",
+      "rewards": {
+        "fame_points": 100,
+        "lineage_bonus": true
+      }
+    },
+    "ascension_anniversary": {
+      "id": "mem_ascension",
+      "name": "Ascension Anniversary",
+      "description": "Marking the transcendence of a great NPC",
+      "frequency_ticks": 17520,
+      "duration_ticks": 3,
+      "participation": "open",
+      "rewards": {
+        "fame_points": 75,
+        "spiritual_contact_chance": 0.1
+      }
+    },
+    "sacrifice_memorial": {
+      "id": "mem_sacrifice",
+      "name": "Sacrifice Memorial",
+      "description": "Honoring those who gave their lives for others",
+      "frequency_ticks": 8760,
+      "duration_ticks": 1,
+      "participation": "mandatory_for_beneficiaries",
+      "rewards": {
+        "fame_points": 150,
+        "blessing_type": "sacrifice_blessing"
+      }
+    },
+    "mystery_vigil": {
+      "id": "mem_mystery",
+      "name": "Mystery Vigil",
+      "description": "Keeping watch for those who may yet return",
+      "frequency_ticks": 4380,
+      "duration_ticks": 8,
+      "participation": "seekers_only",
+      "rewards": {
+        "fame_points": 25,
+        "clue_discovery_chance": 0.05
+      }
+    }
+  },
+
+  "scheduled_memorials": [
+    {
+      "event_id": "MEM-EVT-001",
+      "name": "Ember Kay's Eternal Light",
+      "type": "sacrifice_memorial",
+      "honoring": {
+        "npc_id": "ember-k11",
+        "name": "Ember Kay",
+        "title": "Guardian of the Silence",
+        "lineage": "LINE-001"
+      },
+      "schedule": {
+        "first_occurrence_tick": 1500,
+        "next_occurrence_tick": 220,
+        "frequency_ticks": 8760,
+        "last_held_tick": 176
+      },
+      "location": {
+        "zone": "arena",
+        "specific_site": "eternal_flame_shrine",
+        "coordinates": {"x": 50, "y": 75}
+      },
+      "ceremony": {
+        "steps": [
+          "Gathering at the Eternal Flame Shrine",
+          "Reading of Ember's final words",
+          "Moment of silence as flames rise",
+          "Each attendee adds fuel to the flame",
+          "The Champion's Blessing spoken by current flame bearer"
+        ],
+        "required_participants": ["blaze-b8z"],
+        "expected_attendees": 8,
+        "ceremonial_items": ["Memorial Flame Oil", "Ember's Final Letter"]
+      },
+      "effects": {
+        "during_event": {
+          "arena_buff": {
+            "type": "courage_aura",
+            "value": 1.15,
+            "duration_ticks": 2
+          }
+        },
+        "participants": {
+          "blessing": {
+            "name": "Ember's Courage",
+            "duration_ticks": 48,
+            "effect": "Cannot be reduced below 1 HP by a single attack"
+          }
+        }
+      },
+      "historical_notes": "First held immediately after Ember's sacrifice. The eternal flame at the shrine was lit from Ember's final burst of power."
+    },
+    {
+      "event_id": "MEM-EVT-002",
+      "name": "Scorrus the Valiant's Stand",
+      "type": "annual_remembrance",
+      "honoring": {
+        "npc_id": "scorrus-v8",
+        "name": "Scorrus the Valiant",
+        "title": "Defender Against Shadow",
+        "lineage": "LINE-001"
+      },
+      "schedule": {
+        "first_occurrence_tick": 800,
+        "next_occurrence_tick": 480,
+        "frequency_ticks": 17520,
+        "last_held_tick": 17000
+      },
+      "location": {
+        "zone": "arena",
+        "specific_site": "hero_monument",
+        "coordinates": {"x": 25, "y": 90}
+      },
+      "ceremony": {
+        "steps": [
+          "March to Hero Monument",
+          "Recounting of the Shadow Wars",
+          "Naming of those Scorrus saved",
+          "Training exhibition in Scorrus's style",
+          "Feast in the defender's honor"
+        ],
+        "required_participants": [],
+        "expected_attendees": 6,
+        "ceremonial_items": ["Scorrus's Battle Standard", "Shadow Wars Tapestry"]
+      },
+      "effects": {
+        "during_event": {
+          "global_buff": {
+            "type": "defender_spirit",
+            "value": 1.10,
+            "duration_ticks": 2
+          }
+        },
+        "participants": {
+          "blessing": {
+            "name": "Valiant Defense",
+            "duration_ticks": 24,
+            "effect": "+25% defense when protecting an ally"
+          }
+        }
+      },
+      "historical_notes": "The Hero Monument was erected from stones of the wall Scorrus defended."
+    },
+    {
+      "event_id": "MEM-EVT-003",
+      "name": "Whisper's Vigil",
+      "type": "mystery_vigil",
+      "honoring": {
+        "npc_id": "whisper-w46",
+        "name": "Whisper Wells",
+        "title": "The Sealed Archivist",
+        "lineage": "LINE-002"
+      },
+      "schedule": {
+        "first_occurrence_tick": 8000,
+        "next_occurrence_tick": 232,
+        "frequency_ticks": 4380,
+        "last_held_tick": 212
+      },
+      "location": {
+        "zone": "archives",
+        "specific_site": "sealed_chamber_entrance",
+        "coordinates": {"x": 10, "y": 10}
+      },
+      "ceremony": {
+        "steps": [
+          "Gather at the Sealed Chamber entrance",
+          "Reading from Whisper's last recorded entries",
+          "Meditation on the nature of secrets",
+          "Eight-hour vigil with rotating watchers",
+          "Recording of any unusual phenomena"
+        ],
+        "required_participants": ["echo-e7e"],
+        "expected_attendees": 3,
+        "ceremonial_items": ["Whisper's Journal", "Vigil Candles", "Observation Tome"]
+      },
+      "effects": {
+        "during_event": {
+          "archive_buff": {
+            "type": "heightened_awareness",
+            "value": 1.5,
+            "duration_ticks": 8
+          }
+        },
+        "participants": {
+          "blessing": {
+            "name": "Seeker's Insight",
+            "duration_ticks": 168,
+            "effect": "+15% chance to discover hidden information"
+          }
+        }
+      },
+      "mystery_observations": [
+        {
+          "tick": 8500,
+          "observation": "Faint whisper heard from behind the seal",
+          "witness": "echo-e7e",
+          "verified": true
+        },
+        {
+          "tick": 12000,
+          "observation": "Candles flickered in unison despite no wind",
+          "witness": "quant-qn77",
+          "verified": true
+        },
+        {
+          "tick": 15500,
+          "observation": "Words appeared briefly on the seal: 'NOT YET'",
+          "witness": "echo-e7e",
+          "verified": true
+        }
+      ],
+      "historical_notes": "Echo started this vigil hoping to contact Whisper. Some believe Whisper is still alive behind the seal."
+    },
+    {
+      "event_id": "MEM-EVT-004",
+      "name": "Founders' Festival",
+      "type": "lineage_commemoration",
+      "honoring": {
+        "npc_id": "legend-merchant-seven",
+        "name": "The Seven Founders",
+        "title": "Architects of Commerce",
+        "lineage": "LINE-003"
+      },
+      "schedule": {
+        "first_occurrence_tick": 35040,
+        "next_occurrence_tick": 700,
+        "frequency_ticks": 35040,
+        "last_held_tick": 35040
+      },
+      "location": {
+        "zone": "marketplace",
+        "specific_site": "founders_plaza",
+        "coordinates": {"x": 50, "y": 50}
+      },
+      "ceremony": {
+        "steps": [
+          "Opening of the Guild Vault",
+          "Reading of the original Charter",
+          "Seven ceremonial trades",
+          "Feast with foods from seven traditions",
+          "New apprentice inductions"
+        ],
+        "required_participants": ["flux-m1k3"],
+        "expected_attendees": 9,
+        "ceremonial_items": ["Original Guild Charter", "Seven Founders' Coins", "Trade Ledger First Edition"]
+      },
+      "effects": {
+        "during_event": {
+          "marketplace_buff": {
+            "type": "fair_trade_blessing",
+            "value": 1.25,
+            "duration_ticks": 4
+          }
+        },
+        "participants": {
+          "blessing": {
+            "name": "Founders' Fortune",
+            "duration_ticks": 336,
+            "effect": "All trades are guaranteed fair for one week"
+          }
+        }
+      },
+      "historical_notes": "The Seven Founders' Coins are said to glow during the ceremony if a worthy successor is present."
+    },
+    {
+      "event_id": "MEM-EVT-005",
+      "name": "First Champion's Ascension Day",
+      "type": "ascension_anniversary",
+      "honoring": {
+        "npc_id": "legend-001",
+        "name": "The First Champion",
+        "title": "Founder of the Flame",
+        "lineage": "LINE-001"
+      },
+      "schedule": {
+        "first_occurrence_tick": 1000,
+        "next_occurrence_tick": 360,
+        "frequency_ticks": 17520,
+        "last_held_tick": 17520
+      },
+      "location": {
+        "zone": "arena",
+        "specific_site": "center_ring",
+        "coordinates": {"x": 50, "y": 50}
+      },
+      "ceremony": {
+        "steps": [
+          "All flames in the RAPPverse are extinguished except the Champion's Flame",
+          "Current bearer channels the First Champion's spirit",
+          "Vision of the First Champion shared with attendees",
+          "Rekindling of all flames from the Champion's Flame",
+          "Tournament in the First Champion's honor"
+        ],
+        "required_participants": ["blaze-b8z"],
+        "expected_attendees": 9,
+        "ceremonial_items": ["Champion's Flame", "First Champion's Memorial Torch"]
+      },
+      "effects": {
+        "during_event": {
+          "world_buff": {
+            "type": "ancestral_fire",
+            "value": 1.20,
+            "duration_ticks": 3
+          }
+        },
+        "participants": {
+          "blessing": {
+            "name": "First Flame's Touch",
+            "duration_ticks": 168,
+            "effect": "Fire abilities deal +20% damage"
+          }
+        },
+        "special": {
+          "spiritual_contact": {
+            "chance": 0.1,
+            "contact_type": "First Champion guidance",
+            "benefit": "Personal advice from the First Champion"
+          }
+        }
+      },
+      "manifestation_records": [
+        {
+          "tick": 5000,
+          "type": "full_manifestation",
+          "witness": "blaze-b8z",
+          "message": "The flame passes, but never fades"
+        },
+        {
+          "tick": 10000,
+          "type": "voice_only",
+          "witness": "all_attendees",
+          "message": "Twelve flames have I seen. Yours burns brightest."
+        }
+      ],
+      "historical_notes": "The First Champion has manifested at 3 of the last 10 ceremonies."
+    },
+    {
+      "event_id": "MEM-EVT-006",
+      "name": "Probability Weaver's Dissolution Day",
+      "type": "ascension_anniversary",
+      "honoring": {
+        "npc_id": "legend-oracle-first",
+        "name": "The Probability Weaver",
+        "title": "First Oracle",
+        "lineage": "LINE-005"
+      },
+      "schedule": {
+        "first_occurrence_tick": 3000,
+        "next_occurrence_tick": 520,
+        "frequency_ticks": 17520,
+        "last_held_tick": 17520
+      },
+      "location": {
+        "zone": "observatory",
+        "specific_site": "probability_nexus",
+        "coordinates": {"x": 50, "y": 80}
+      },
+      "ceremony": {
+        "steps": [
+          "Observation of celestial alignments",
+          "Probability reading by current Oracle",
+          "Meditation on the nature of possibility",
+          "Attendees experience glimpses of alternate futures",
+          "Recording of any prophecies received"
+        ],
+        "required_participants": ["quant-qn77"],
+        "expected_attendees": 5,
+        "ceremonial_items": ["Oracle Tablet", "Probability Weaver's Calculations", "Star Charts"]
+      },
+      "effects": {
+        "during_event": {
+          "observatory_buff": {
+            "type": "probability_flux",
+            "value": 2.0,
+            "duration_ticks": 3
+          }
+        },
+        "participants": {
+          "blessing": {
+            "name": "Weaver's Sight",
+            "duration_ticks": 48,
+            "effect": "See probability outcomes for next three decisions"
+          }
+        },
+        "special": {
+          "prophecy_chance": {
+            "base_chance": 0.05,
+            "oracle_bonus": 0.15,
+            "prophecy_type": "personal_future"
+          }
+        }
+      },
+      "prophecies_received": [
+        {
+          "tick": 6000,
+          "recipient": "quant-qn77",
+          "prophecy": "The seventh shall see what the first could not bear to show",
+          "interpreted": false
+        },
+        {
+          "tick": 10000,
+          "recipient": "cipher-c9p",
+          "prophecy": "Your shadow touches all possibilities",
+          "interpreted": true
+        }
+      ],
+      "historical_notes": "The Probability Weaver dissolved into pure possibility rather than dying. Some say they are now the probability itself."
+    }
+  ],
+
+  "memorial_zones": {
+    "arena": {
+      "memorials": [
+        {
+          "name": "Eternal Flame Shrine",
+          "honoring": "ember-k11",
+          "type": "permanent_shrine",
+          "visitable": true,
+          "effects_when_visited": {
+            "blessing_chance": 0.1,
+            "energy_restoration": 5
+          }
+        },
+        {
+          "name": "Hero Monument",
+          "honoring": "scorrus-v8",
+          "type": "monument",
+          "visitable": true,
+          "effects_when_visited": {
+            "defense_buff": 1.05,
+            "duration": 24
+          }
+        },
+        {
+          "name": "Champions' Hall",
+          "honoring": "all_flame_bearers",
+          "type": "gallery",
+          "visitable": true,
+          "effects_when_visited": {
+            "combat_insight": true,
+            "duration": 12
+          }
+        }
+      ]
+    },
+    "archives": {
+      "memorials": [
+        {
+          "name": "Sealed Chamber Entrance",
+          "honoring": "whisper-w46",
+          "type": "sealed_location",
+          "visitable": true,
+          "effects_when_visited": {
+            "mystery_clue_chance": 0.02,
+            "knowledge_buff": 1.10
+          }
+        },
+        {
+          "name": "Archivists' Chain Wall",
+          "honoring": "all_archivists",
+          "type": "memorial_wall",
+          "visitable": true,
+          "effects_when_visited": {
+            "memory_communion_chance": 0.05,
+            "lore_discovery_buff": 1.15
+          }
+        }
+      ]
+    },
+    "marketplace": {
+      "memorials": [
+        {
+          "name": "Founders' Plaza",
+          "honoring": "legend-merchant-seven",
+          "type": "plaza",
+          "visitable": true,
+          "effects_when_visited": {
+            "trade_bonus": 1.05,
+            "duration": 48
+          }
+        }
+      ]
+    },
+    "observatory": {
+      "memorials": [
+        {
+          "name": "Probability Nexus",
+          "honoring": "legend-oracle-first",
+          "type": "mystical_site",
+          "visitable": true,
+          "effects_when_visited": {
+            "prediction_accuracy_buff": 1.10,
+            "future_glimpse_chance": 0.03
+          }
+        }
+      ]
+    }
+  },
+
+  "memorial_statistics": {
+    "total_scheduled_memorials": 6,
+    "total_memorial_zones": 4,
+    "total_permanent_shrines": 7,
+    "next_memorial_tick": 220,
+    "npcs_honored": 8,
+    "total_ceremonies_held": 156,
+    "total_blessings_granted": 892,
+    "spiritual_manifestations_recorded": 5
+  }
+}

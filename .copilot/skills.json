@@ -1,0 +1,44 @@
+{
+  "skills": [
+    {
+      "name": "copilot-steward",
+      "description": "Background organizing librarian that auto-merges versioned duplicate files. Use when asked to clean up, organize, merge duplicates, or consolidate files.",
+      "script": "scripts/copilot_steward_daemon.py",
+      "commands": {
+        "scan": {
+          "description": "Scan for versioned duplicate files",
+          "args": ["--path", "."],
+          "script": "scripts/copilot_steward.py --scan"
+        },
+        "merge": {
+          "description": "Auto-merge all duplicate files",
+          "args": ["--path", "."],
+          "script": "scripts/copilot_steward.py --auto"
+        },
+        "dry-run": {
+          "description": "Preview what would be merged",
+          "args": ["--path", "."],
+          "script": "scripts/copilot_steward.py --auto --dry-run"
+        },
+        "pr": {
+          "description": "Merge and create GitHub PR",
+          "args": ["--path", ".", "--repo", "kody-w/CommunityRAPP"],
+          "script": "scripts/copilot_steward.py --auto --pr"
+        },
+        "daemon": {
+          "description": "Run as background daemon",
+          "args": ["--interval", "300"],
+          "script": "scripts/copilot_steward_daemon.py",
+          "background": true
+        }
+      },
+      "triggers": [
+        "clean up duplicates",
+        "merge versioned files",
+        "organize repository",
+        "consolidate files",
+        "run steward"
+      ]
+    }
+  ]
+}

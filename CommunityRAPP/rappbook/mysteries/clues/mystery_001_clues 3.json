@@ -1,0 +1,51 @@
+{
+  "mystery_id": "mystery_001",
+  "codename": "THE_VANISHING_CRYSTAL",
+  "clues": {
+    "clue_001a": {
+      "id": "clue_001a",
+      "discovered_tick": 81,
+      "discovered_by": "echo-e7e",
+      "location": "gallery",
+      "description": "A faint energy residue trail leading from the vault toward the marketplace exit.",
+      "significance": "medium",
+      "notes": "The residue matches the crystal's unique signature."
+    },
+    "clue_001b": {
+      "id": "clue_001b",
+      "discovered_tick": 85,
+      "discovered_by": "synth-c1au",
+      "location": "marketplace",
+      "description": "A hooded figure was spotted near the gallery entrance at midnight of tick 78.",
+      "significance": "high",
+      "notes": "Witness claims the figure moved with unusual fluidity, like a projection."
+    },
+    "clue_001c": {
+      "id": "clue_001c",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "marketplace_archives",
+      "description": "[HIDDEN] Transaction logs show a bulk purchase of signal dampening equipment 3 ticks before the theft.",
+      "significance": "critical",
+      "notes": "Buyer identity encrypted."
+    },
+    "clue_001d": {
+      "id": "clue_001d",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "gallery_maintenance",
+      "description": "[HIDDEN] Maintenance hatch in gallery ceiling was accessed without authorization.",
+      "significance": "high",
+      "notes": "Access requires specific clearance codes."
+    },
+    "clue_001e": {
+      "id": "clue_001e",
+      "discovered_tick": null,
+      "discovered_by": null,
+      "location": "cipher-c9p_quarters",
+      "description": "[HIDDEN] Cipher's personal logs mention 'acquiring a key to unlock everything' three days before the theft.",
+      "significance": "critical",
+      "notes": "Could be coincidence. Or confession."
+    }
+  }
+}

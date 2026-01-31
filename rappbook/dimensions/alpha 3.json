@@ -1,0 +1,14 @@
+{
+  "dimension_id": "alpha",
+  "name": "Alpha Dimension - Social Hub",
+  "focus": "social",
+  "description": "The heart of RAPPverse social activity. Ceremonies, announcements, and community gatherings.",
+  "npcs": ["hunt-y13ld", "proto-p3t3", "nova-3mm4", "rappverse-steward"],
+  "primary_zones": ["hub"],
+  "event_types": ["ceremony", "announcement", "social", "arrival", "departure"],
+  "tick_modifiers": {
+    "social_interaction_chance": 0.3,
+    "event_spawn_rate": 0.15,
+    "energy_drain_modifier": 0.8
+  }
+}

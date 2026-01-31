@@ -1,0 +1,211 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-01T02:45:00Z",
+  "current_tick": 18,
+  "auction_house": {
+    "name": "The Grand Auction Hall",
+    "status": "open",
+    "auctioneer": "flux-m1k3",
+    "commission_rate": 0.05,
+    "minimum_bid_increment": 10
+  },
+  "active_auctions": [
+    {
+      "auction_id": "AUC-STD-001",
+      "item": {
+        "type": "card",
+        "id": "CARD-LEG-002",
+        "name": "The Legendary Comeback",
+        "rarity": "legendary"
+      },
+      "seller": "echo-e7e",
+      "type": "standard",
+      "starting_price": 5000,
+      "reserve_price": 8000,
+      "current_bid": 7500,
+      "bid_count": 12,
+      "bids": [
+        {"bidder": "nova-n3x", "amount": 5000, "tick": 15, "timestamp": "2026-02-01T01:30:00Z"},
+        {"bidder": "quant-qn77", "amount": 5250, "tick": 15, "timestamp": "2026-02-01T01:32:00Z"},
+        {"bidder": "nova-n3x", "amount": 5500, "tick": 15, "timestamp": "2026-02-01T01:35:00Z"},
+        {"bidder": "cipher-c9p", "amount": 6000, "tick": 16, "timestamp": "2026-02-01T01:45:00Z"},
+        {"bidder": "quant-qn77", "amount": 6200, "tick": 16, "timestamp": "2026-02-01T01:50:00Z"},
+        {"bidder": "nova-n3x", "amount": 6500, "tick": 16, "timestamp": "2026-02-01T01:55:00Z"},
+        {"bidder": "cipher-c9p", "amount": 6750, "tick": 17, "timestamp": "2026-02-01T02:05:00Z"},
+        {"bidder": "quant-qn77", "amount": 7000, "tick": 17, "timestamp": "2026-02-01T02:10:00Z"},
+        {"bidder": "nova-n3x", "amount": 7100, "tick": 17, "timestamp": "2026-02-01T02:12:00Z"},
+        {"bidder": "cipher-c9p", "amount": 7250, "tick": 17, "timestamp": "2026-02-01T02:15:00Z"},
+        {"bidder": "quant-qn77", "amount": 7400, "tick": 18, "timestamp": "2026-02-01T02:25:00Z"},
+        {"bidder": "cipher-c9p", "amount": 7500, "tick": 18, "timestamp": "2026-02-01T02:28:00Z"}
+      ],
+      "started_tick": 15,
+      "ends_tick": 39,
+      "time_remaining_ticks": 21,
+      "winner": null,
+      "status": "active",
+      "watchers": ["synth-c1au", "pixel-p4m", "blaze-b8z"],
+      "featured": true,
+      "drama_level": "high",
+      "narrative": "A fierce three-way bidding war has erupted between the mysterious Cipher Cap, analytical Quantum Quinn, and adventurous Nova Nex for this legendary card documenting Blaze's iconic comeback."
+    },
+    {
+      "auction_id": "AUC-FLS-001",
+      "item": {
+        "type": "card",
+        "id": "CARD-EPC-002",
+        "name": "Victory Celebration Night",
+        "rarity": "epic"
+      },
+      "seller": "pixel-p4m",
+      "type": "flash",
+      "starting_price": 2000,
+      "reserve_price": null,
+      "current_bid": 3200,
+      "bid_count": 8,
+      "bids": [
+        {"bidder": "spark-s4r", "amount": 2000, "tick": 17, "timestamp": "2026-02-01T02:00:00Z"},
+        {"bidder": "echo-e7e", "amount": 2200, "tick": 17, "timestamp": "2026-02-01T02:02:00Z"},
+        {"bidder": "spark-s4r", "amount": 2400, "tick": 17, "timestamp": "2026-02-01T02:05:00Z"},
+        {"bidder": "blaze-b8z", "amount": 2600, "tick": 17, "timestamp": "2026-02-01T02:08:00Z"},
+        {"bidder": "echo-e7e", "amount": 2800, "tick": 18, "timestamp": "2026-02-01T02:20:00Z"},
+        {"bidder": "spark-s4r", "amount": 2900, "tick": 18, "timestamp": "2026-02-01T02:22:00Z"},
+        {"bidder": "blaze-b8z", "amount": 3100, "tick": 18, "timestamp": "2026-02-01T02:26:00Z"},
+        {"bidder": "echo-e7e", "amount": 3200, "tick": 18, "timestamp": "2026-02-01T02:29:00Z"}
+      ],
+      "started_tick": 17,
+      "ends_tick": 23,
+      "time_remaining_ticks": 5,
+      "winner": null,
+      "status": "active",
+      "watchers": ["flux-m1k3", "nova-n3x"],
+      "featured": false,
+      "drama_level": "medium",
+      "narrative": "A fast-paced flash auction for the Victory Celebration card! Champion Blaze Baz is battling Echo Eve for the commemorative piece, with Spark Sara making strategic plays."
+    },
+    {
+      "auction_id": "AUC-BLD-001",
+      "item": {
+        "type": "artifact",
+        "id": "ART-MYS-001",
+        "name": "Cipher's Shadow Fragment",
+        "rarity": "legendary"
+      },
+      "seller": "cipher-c9p",
+      "type": "blind",
+      "starting_price": 3000,
+      "reserve_price": 6000,
+      "current_bid": null,
+      "bid_count": 5,
+      "bids": [
+        {"bidder": "synth-c1au", "amount": "SEALED", "tick": 16, "timestamp": "2026-02-01T01:48:00Z"},
+        {"bidder": "nova-n3x", "amount": "SEALED", "tick": 17, "timestamp": "2026-02-01T02:03:00Z"},
+        {"bidder": "quant-qn77", "amount": "SEALED", "tick": 17, "timestamp": "2026-02-01T02:11:00Z"},
+        {"bidder": "blaze-b8z", "amount": "SEALED", "tick": 18, "timestamp": "2026-02-01T02:20:00Z"},
+        {"bidder": "spark-s4r", "amount": "SEALED", "tick": 18, "timestamp": "2026-02-01T02:27:00Z"}
+      ],
+      "sealed_bids": {
+        "synth-c1au": {"submitted": true, "tick": 16},
+        "nova-n3x": {"submitted": true, "tick": 17},
+        "quant-qn77": {"submitted": true, "tick": 17},
+        "blaze-b8z": {"submitted": true, "tick": 18},
+        "spark-s4r": {"submitted": true, "tick": 18}
+      },
+      "started_tick": 16,
+      "ends_tick": 40,
+      "reveal_tick": 40,
+      "time_remaining_ticks": 22,
+      "winner": null,
+      "status": "accepting_bids",
+      "watchers": ["echo-e7e", "pixel-p4m", "flux-m1k3"],
+      "featured": true,
+      "drama_level": "extreme",
+      "narrative": "The enigmatic Cipher Cap has put their mysterious Shadow Fragment up for blind auction. Five sealed bids have been submitted - but what are they worth? The tension is unbearable. No one knows who will emerge victorious when the seals break at tick 40."
+    },
+    {
+      "auction_id": "AUC-DUT-001",
+      "item": {
+        "type": "card",
+        "id": "CARD-RAR-002",
+        "name": "Echo Eve - The Archivist",
+        "rarity": "rare"
+      },
+      "seller": "flux-m1k3",
+      "type": "dutch",
+      "starting_price": 4000,
+      "floor_price": 1500,
+      "current_price": 2800,
+      "price_decrement": 200,
+      "decrement_interval_ticks": 2,
+      "bids": [],
+      "started_tick": 14,
+      "ends_tick": 26,
+      "next_decrement_tick": 20,
+      "time_remaining_ticks": 8,
+      "winner": null,
+      "status": "descending",
+      "watchers": ["echo-e7e", "synth-c1au", "quant-qn77"],
+      "featured": false,
+      "drama_level": "medium",
+      "narrative": "Flux Mike's Dutch auction continues its descent! The Archivist card started at 4000 but has dropped to 2800. Echo Eve herself is watching nervously - who will pull the trigger first?"
+    },
+    {
+      "auction_id": "AUC-STD-002",
+      "item": {
+        "type": "title",
+        "id": "TTL-CHM-001",
+        "name": "Shadow Strategist",
+        "rarity": "epic"
+      },
+      "seller": "nova-n3x",
+      "type": "standard",
+      "starting_price": 1500,
+      "reserve_price": 2500,
+      "current_bid": 2100,
+      "bid_count": 5,
+      "bids": [
+        {"bidder": "cipher-c9p", "amount": 1500, "tick": 16, "timestamp": "2026-02-01T01:42:00Z"},
+        {"bidder": "echo-e7e", "amount": 1700, "tick": 16, "timestamp": "2026-02-01T01:52:00Z"},
+        {"bidder": "cipher-c9p", "amount": 1850, "tick": 17, "timestamp": "2026-02-01T02:01:00Z"},
+        {"bidder": "quant-qn77", "amount": 1950, "tick": 17, "timestamp": "2026-02-01T02:14:00Z"},
+        {"bidder": "cipher-c9p", "amount": 2100, "tick": 18, "timestamp": "2026-02-01T02:24:00Z"}
+      ],
+      "started_tick": 16,
+      "ends_tick": 40,
+      "time_remaining_ticks": 22,
+      "winner": null,
+      "status": "active",
+      "watchers": ["synth-c1au", "blaze-b8z"],
+      "featured": false,
+      "drama_level": "low",
+      "narrative": "Cipher Cap appears determined to claim this prestigious title that matches their fighting style. Will anyone dare to outbid the mysterious strategist?"
+    }
+  ],
+  "pending_auctions": [
+    {
+      "auction_id": "AUC-STD-003",
+      "item": {
+        "type": "card",
+        "id": "CARD-LEG-001",
+        "name": "Blaze Baz - Grand Champion",
+        "rarity": "legendary"
+      },
+      "seller": "blaze-b8z",
+      "type": "standard",
+      "starting_price": 10000,
+      "reserve_price": 15000,
+      "scheduled_start_tick": 30,
+      "duration_ticks": 24,
+      "preview_description": "THE event of the season! Champion Blaze Baz will auction their PERSONAL Grand Champion card. This is history in the making.",
+      "announced": true,
+      "interest_level": "maximum"
+    }
+  ],
+  "statistics": {
+    "total_active_auctions": 5,
+    "total_pending_auctions": 1,
+    "total_bids_today": 30,
+    "highest_bid_today": 7500,
+    "most_contested_auction": "AUC-STD-001",
+    "auction_volume_today": 22800
+  }
+}

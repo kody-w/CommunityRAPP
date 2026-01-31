@@ -1,0 +1,635 @@
+{
+  "version": "1.0.0",
+  "description": "Systems that influence NPC emotional states",
+  "last_updated_tick": 560,
+  "influence_categories": {
+    "events": {
+      "description": "How in-world events affect emotions",
+      "types": {
+        "victory": {
+          "name": "Victory/Achievement",
+          "affects": {
+            "joy_sadness": {
+              "self": "+30 to +50",
+              "allies": "+15 to +25",
+              "rivals": "-10 to -20",
+              "observers": "+5 to +15"
+            },
+            "excitement_calm": {
+              "self": "+40 to +60",
+              "allies": "+20 to +30",
+              "rivals": "+10 to +20",
+              "observers": "+15 to +25"
+            },
+            "confidence_anxiety": {
+              "self": "+25 to +40",
+              "allies": "+10 to +15",
+              "rivals": "-15 to -25"
+            }
+          },
+          "duration_ticks": 20,
+          "decay_curve": "gradual",
+          "examples": ["Tournament win", "Quest completion", "Record broken"]
+        },
+        "defeat": {
+          "name": "Defeat/Failure",
+          "affects": {
+            "joy_sadness": {
+              "self": "-25 to -40",
+              "allies": "-10 to -15",
+              "rivals": "+10 to +20"
+            },
+            "confidence_anxiety": {
+              "self": "-20 to -35",
+              "allies": "-5 to -10",
+              "rivals": "+15 to +25"
+            },
+            "energetic_tired": {
+              "self": "-15 to -25"
+            }
+          },
+          "duration_ticks": 15,
+          "decay_curve": "moderate",
+          "recovery_triggers": ["friend_support", "rest", "new_opportunity"],
+          "examples": ["Tournament loss", "Quest failure", "Public embarrassment"]
+        },
+        "discovery": {
+          "name": "Discovery/Mystery",
+          "affects": {
+            "excitement_calm": {
+              "explorers": "+35 to +50",
+              "analysts": "+30 to +45",
+              "general": "+15 to +25"
+            },
+            "joy_sadness": {
+              "explorers": "+20 to +30",
+              "analysts": "+25 to +35"
+            },
+            "confidence_anxiety": {
+              "sensitive": "-15 to -25",
+              "brave": "+10 to +15"
+            }
+          },
+          "duration_ticks": 30,
+          "decay_curve": "slow",
+          "examples": ["EPSILON signal", "New dimension found", "Ancient lore revealed"]
+        },
+        "celebration": {
+          "name": "Community Celebration",
+          "affects": {
+            "joy_sadness": {
+              "all": "+15 to +30"
+            },
+            "social_withdrawn": {
+              "social_types": "+25 to +40",
+              "withdrawn_types": "+5 to +15"
+            },
+            "energetic_tired": {
+              "initial": "+20 to +30",
+              "after_duration": "-10 to -20"
+            }
+          },
+          "duration_ticks": 10,
+          "decay_curve": "moderate",
+          "examples": ["Victory celebration", "Festival", "Anniversary"]
+        },
+        "crisis": {
+          "name": "Crisis/Danger",
+          "affects": {
+            "confidence_anxiety": {
+              "brave": "-5 to -15",
+              "sensitive": "-30 to -50",
+              "general": "-15 to -25"
+            },
+            "excitement_calm": {
+              "warriors": "+20 to +30",
+              "general": "+10 to +20"
+            },
+            "social_withdrawn": {
+              "all": "+10 to +20"
+            }
+          },
+          "duration_ticks": "until_resolved",
+          "decay_curve": "resolution_dependent",
+          "examples": ["Dimensional breach", "Unknown threat", "Resource crisis"]
+        }
+      }
+    },
+    "relationships": {
+      "description": "How social connections influence emotions",
+      "types": {
+        "friendship_interaction": {
+          "name": "Time with Friends",
+          "affects": {
+            "joy_sadness": "+5 to +15",
+            "social_withdrawn": "+10 to +20",
+            "confidence_anxiety": "+5 to +10"
+          },
+          "scaling": "Scales with relationship strength (0.5x at 25, 1x at 50, 1.5x at 75, 2x at 100)",
+          "frequency_bonus": "Consistent interaction adds stability modifier"
+        },
+        "rivalry_encounter": {
+          "name": "Rivalry Interaction",
+          "affects": {
+            "excitement_calm": "+15 to +25",
+            "confidence_anxiety": "-5 to +15 (depends on recent outcomes)"
+          },
+          "complexity": "Can be positive (motivating) or negative (frustrating)",
+          "growth_potential": "Healthy rivalry boosts confidence over time"
+        },
+        "alliance_activity": {
+          "name": "Working with Allies",
+          "affects": {
+            "confidence_anxiety": "+10 to +20",
+            "social_withdrawn": "+15 to +25",
+            "energetic_tired": "+5 to +10"
+          },
+          "synergy_bonus": "Complementary archetypes gain extra benefits"
+        },
+        "relationship_milestone": {
+          "name": "Relationship Milestone Reached",
+          "affects": {
+            "joy_sadness": "+20 to +35",
+            "social_withdrawn": "+15 to +25",
+            "confidence_anxiety": "+10 to +15"
+          },
+          "milestones": [25, 50, 75, 100],
+          "duration_ticks": 10
+        },
+        "relationship_decline": {
+          "name": "Relationship Weakening",
+          "affects": {
+            "joy_sadness": "-10 to -25",
+            "social_withdrawn": "-5 to -15"
+          },
+          "trigger": "Neglect, conflict, or betrayal"
+        },
+        "isolation": {
+          "name": "Extended Isolation",
+          "affects": {
+            "social_withdrawn": "-15 to -30",
+            "joy_sadness": "-10 to -20",
+            "energetic_tired": "-5 to -15"
+          },
+          "threshold_ticks": 20,
+          "archetype_variance": "Withdrawn types affected less"
+        }
+      }
+    },
+    "weather": {
+      "description": "How weather conditions affect emotional states",
+      "conditions": {
+        "clear": {
+          "name": "Clear Skies",
+          "affects": {
+            "joy_sadness": "+5 to +10",
+            "energetic_tired": "+5 to +10",
+            "confidence_anxiety": "+3 to +5"
+          },
+          "archetype_bonus": {
+            "explorer": "+5 additional joy",
+            "creative": "+5 additional excitement"
+          }
+        },
+        "cloudy": {
+          "name": "Cloudy",
+          "affects": {
+            "joy_sadness": "-3 to -5",
+            "excitement_calm": "-5 to -10"
+          },
+          "archetype_variance": {
+            "analyst": "No negative effect",
+            "archivist": "No negative effect"
+          }
+        },
+        "rain": {
+          "name": "Rain",
+          "affects": {
+            "joy_sadness": "-5 to -15",
+            "social_withdrawn": "-10 to -15",
+            "energetic_tired": "-5 to -10"
+          },
+          "archetype_bonus": {
+            "archivist": "+5 joy (cozy archive work)",
+            "creative": "+5 inspiration"
+          },
+          "archetype_penalty": {
+            "explorer": "-10 additional excitement",
+            "sensitive": "-10 additional anxiety"
+          }
+        },
+        "storm": {
+          "name": "Storm",
+          "affects": {
+            "confidence_anxiety": "-15 to -30",
+            "social_withdrawn": "-10 to -20",
+            "energetic_tired": "-10 to -15"
+          },
+          "archetype_responses": {
+            "shadow": "Energized (+15 confidence)",
+            "sensitive": "Severe anxiety (-40 confidence)",
+            "champion": "Neutral to positive (battle-ready)"
+          },
+          "indoor_mitigation": "Effects reduced by 50% when indoors"
+        },
+        "fog": {
+          "name": "Fog/Mist",
+          "affects": {
+            "excitement_calm": "-10 to -15",
+            "confidence_anxiety": "-5 to -10"
+          },
+          "archetype_bonus": {
+            "shadow": "+10 confidence (preferred environment)",
+            "analyst": "+5 focus"
+          },
+          "mystery_enhancement": "Lore-related activities gain emotional bonus"
+        },
+        "aurora": {
+          "name": "Aurora (Special)",
+          "affects": {
+            "joy_sadness": "+25 to +40",
+            "excitement_calm": "+20 to +30",
+            "social_withdrawn": "+15 to +25"
+          },
+          "universal_effect": "All NPCs affected positively",
+          "duration": "Temporary (1-3 ticks)"
+        },
+        "pulse_waves": {
+          "name": "Pulse Waves (EPSILON Event)",
+          "affects": {
+            "excitement_calm": "+10 to +20",
+            "confidence_anxiety": "-5 to +10 (varies by archetype)"
+          },
+          "archetype_responses": {
+            "analyst": "+15 excitement (fascinating phenomenon)",
+            "sensitive": "-15 anxiety (unknown energy)",
+            "explorer": "+10 excitement (dimensional implications)"
+          },
+          "current_status": "Active during EPSILON transmission period"
+        }
+      }
+    },
+    "time_of_day": {
+      "description": "Circadian influences on emotional states",
+      "periods": {
+        "dawn": {
+          "name": "Dawn",
+          "affects": {
+            "joy_sadness": "+5 to +10",
+            "energetic_tired": "+10 to +15",
+            "confidence_anxiety": "+5 to +8"
+          },
+          "archetype_bonus": {
+            "explorer": "+10 excitement (new day = new adventure)",
+            "champion": "+5 energy (training time)"
+          }
+        },
+        "morning": {
+          "name": "Morning",
+          "affects": {
+            "energetic_tired": "+5 to +10",
+            "social_withdrawn": "+5 to +10"
+          },
+          "peak_activity_period": true
+        },
+        "midday": {
+          "name": "Midday",
+          "affects": {
+            "excitement_calm": "-5 to +5",
+            "energetic_tired": "-5 to 0"
+          },
+          "neutral_period": true
+        },
+        "afternoon": {
+          "name": "Afternoon",
+          "affects": {
+            "social_withdrawn": "+10 to +15",
+            "energetic_tired": "-3 to -8"
+          },
+          "marketplace_bonus": "Trade zone activities boost mood"
+        },
+        "evening": {
+          "name": "Evening",
+          "affects": {
+            "social_withdrawn": "+15 to +20",
+            "excitement_calm": "-5 to -10",
+            "joy_sadness": "+5 to +10"
+          },
+          "reflection_time": true
+        },
+        "night": {
+          "name": "Night",
+          "affects": {
+            "excitement_calm": "-10 to -20",
+            "energetic_tired": "-10 to -15",
+            "social_withdrawn": "-5 to -10"
+          },
+          "archetype_bonus": {
+            "shadow": "+15 confidence, +10 energy",
+            "archivist": "+10 focus",
+            "analyst": "+5 concentration"
+          }
+        },
+        "late_night": {
+          "name": "Late Night",
+          "affects": {
+            "energetic_tired": "-15 to -25",
+            "social_withdrawn": "-15 to -20",
+            "excitement_calm": "-15 to -20"
+          },
+          "archetype_bonus": {
+            "shadow": "Peak performance (+20 confidence)",
+            "creative": "+10 inspiration (quiet hours)"
+          },
+          "current_period": "Active at tick 560"
+        },
+        "pre_dawn": {
+          "name": "Pre-Dawn",
+          "affects": {
+            "energetic_tired": "-10 to -15",
+            "confidence_anxiety": "+5 to +10"
+          },
+          "transition_period": "Anticipation of new day"
+        }
+      }
+    },
+    "zones": {
+      "description": "How location affects emotional states",
+      "locations": {
+        "arena": {
+          "name": "Tournament Arena",
+          "affects": {
+            "excitement_calm": "+20 to +35",
+            "confidence_anxiety": "-10 to +20 (varies by role)"
+          },
+          "archetype_responses": {
+            "champion": "+25 excitement, +15 confidence",
+            "shadow": "+20 excitement, -5 anxiety (competition pressure)",
+            "creative": "+15 excitement (dramatic moments)"
+          },
+          "event_multiplier": "Effects doubled during active tournaments"
+        },
+        "hub": {
+          "name": "Central Hub",
+          "affects": {
+            "social_withdrawn": "+10 to +20",
+            "joy_sadness": "+5 to +10"
+          },
+          "community_center": true,
+          "crowd_factor": "High population increases effects but may overwhelm sensitive types"
+        },
+        "gallery": {
+          "name": "Gallery",
+          "affects": {
+            "excitement_calm": "-10 to -15 (calming)",
+            "joy_sadness": "+5 to +10",
+            "confidence_anxiety": "+5 to +10"
+          },
+          "archetype_bonus": {
+            "archivist": "+15 joy, +10 confidence",
+            "analyst": "+10 focus",
+            "creative": "+15 inspiration"
+          },
+          "quiet_sanctuary": true
+        },
+        "marketplace": {
+          "name": "Marketplace/Trade Nexus",
+          "affects": {
+            "excitement_calm": "+10 to +15",
+            "social_withdrawn": "+15 to +25"
+          },
+          "trade_activity_bonus": "Successful trades boost joy",
+          "archetype_bonus": {
+            "manager": "+15 social, +10 confidence"
+          }
+        },
+        "workshop": {
+          "name": "Workshop",
+          "affects": {
+            "confidence_anxiety": "+10 to +15",
+            "energetic_tired": "+5 to +10"
+          },
+          "archetype_bonus": {
+            "technician": "+20 confidence, +15 joy",
+            "creative": "+10 inspiration"
+          },
+          "creation_bonus": "Completing projects provides lasting mood boost"
+        },
+        "observatory": {
+          "name": "Observatory",
+          "affects": {
+            "excitement_calm": "+5 to +15",
+            "joy_sadness": "+5 to +10"
+          },
+          "archetype_bonus": {
+            "explorer": "+20 excitement (dimensional viewing)",
+            "analyst": "+15 focus"
+          },
+          "current_significance": "EPSILON monitoring station - heightened emotional intensity"
+        },
+        "private_quarters": {
+          "name": "Private Quarters",
+          "affects": {
+            "energetic_tired": "+15 to +25 (rest)",
+            "confidence_anxiety": "+10 to +15",
+            "social_withdrawn": "-10 to -15"
+          },
+          "recovery_zone": true,
+          "all_npcs": "Safe space for emotional regulation"
+        },
+        "dimensional_border": {
+          "name": "Dimensional Border Zones",
+          "affects": {
+            "excitement_calm": "+20 to +40",
+            "confidence_anxiety": "-15 to +15 (archetype dependent)"
+          },
+          "archetype_responses": {
+            "explorer": "+30 excitement, +10 confidence",
+            "sensitive": "-25 anxiety",
+            "shadow": "+15 intrigue"
+          },
+          "risk_reward": "High emotional variance"
+        }
+      }
+    }
+  },
+  "interaction_rules": {
+    "stacking": {
+      "description": "How multiple influences combine",
+      "positive_stacking": "Diminishing returns after 3 positive influences (each additional = 50% effect)",
+      "negative_stacking": "Linear stacking (negative emotions compound)",
+      "mixed_influences": "Net calculation with 1.2x weight for dominant direction"
+    },
+    "archetype_modifiers": {
+      "explorer": {
+        "discovery_sensitivity": 1.5,
+        "confinement_penalty": 1.3,
+        "adventure_bonus": 1.4
+      },
+      "champion": {
+        "competition_sensitivity": 1.5,
+        "victory_bonus": 1.4,
+        "defeat_recovery": 0.8
+      },
+      "shadow": {
+        "darkness_bonus": 1.5,
+        "crowd_penalty": 1.3,
+        "mystery_attraction": 1.4
+      },
+      "analyst": {
+        "data_euphoria": 1.5,
+        "uncertainty_intrigue": 1.2,
+        "social_neutrality": 0.7
+      },
+      "sensitive": {
+        "weather_sensitivity": 1.8,
+        "crowd_penalty": 1.5,
+        "support_bonus": 1.4
+      },
+      "creative": {
+        "inspiration_sensitivity": 1.5,
+        "mood_volatility": 1.3,
+        "beauty_bonus": 1.4
+      },
+      "archivist": {
+        "documentation_satisfaction": 1.5,
+        "historical_weight": 1.4,
+        "quiet_bonus": 1.3
+      }
+    },
+    "thresholds": {
+      "mood_shift_minimum": 5,
+      "significant_change": 15,
+      "dramatic_shift": 30,
+      "crisis_level": 50
+    }
+  },
+  "mood_effects": {
+    "dialogue_tone": {
+      "description": "How mood affects NPC speech patterns",
+      "joy_high": "Enthusiastic, warm, generous with words",
+      "joy_low": "Short responses, sighing, melancholic references",
+      "excitement_high": "Fast speech, exclamations, topic jumping",
+      "excitement_low": "Slow, measured, contemplative",
+      "confidence_high": "Assertive, decisive, leading questions",
+      "confidence_low": "Hesitant, seeking reassurance, qualifying statements",
+      "social_high": "Initiates conversation, shares freely, invites others",
+      "social_low": "Brief responses, avoids eye contact, prefers solitude",
+      "energy_high": "Active verbs, movement-oriented, future-focused",
+      "energy_low": "Passive voice, references to rest, past-focused"
+    },
+    "activity_choices": {
+      "description": "How mood influences what NPCs choose to do",
+      "high_joy": ["celebrate", "share_stories", "help_others", "explore"],
+      "low_joy": ["seek_comfort", "isolate", "reminisce", "rest"],
+      "high_excitement": ["compete", "discover", "perform", "challenge"],
+      "low_excitement": ["observe", "maintain", "organize", "reflect"],
+      "high_confidence": ["lead", "mentor", "take_risks", "innovate"],
+      "low_confidence": ["follow", "seek_advice", "play_safe", "practice"],
+      "high_social": ["gather", "collaborate", "host", "network"],
+      "low_social": ["solo_work", "private_space", "minimal_interaction"],
+      "high_energy": ["train", "create", "travel", "multitask"],
+      "low_energy": ["rest", "delegate", "simplify", "recover"]
+    },
+    "performance_modifiers": {
+      "description": "How mood affects NPC capability in activities",
+      "tournament_combat": {
+        "confidence": "Major factor (1.5x at high, 0.6x at low)",
+        "energy": "Significant factor (1.3x at high, 0.7x at low)",
+        "excitement": "Minor factor (1.1x at high)"
+      },
+      "creative_work": {
+        "joy": "Major factor for quality",
+        "excitement": "Major factor for innovation",
+        "energy": "Significant factor for productivity"
+      },
+      "analysis": {
+        "confidence": "Major factor for accuracy",
+        "excitement": "Minor factor (too much can distract)",
+        "energy": "Moderate factor for throughput"
+      },
+      "social_interaction": {
+        "social": "Primary factor",
+        "joy": "Significant factor for warmth",
+        "confidence": "Minor factor for leadership"
+      },
+      "exploration": {
+        "excitement": "Primary driver",
+        "confidence": "Affects risk-taking",
+        "energy": "Determines range and depth"
+      }
+    },
+    "interaction_dynamics": {
+      "description": "How NPC moods affect their interactions with each other",
+      "mood_contagion": {
+        "high_joy_spreads": "0.1 to nearby NPCs per tick",
+        "anxiety_spreads": "0.15 to sensitive types",
+        "excitement_amplifies": "Groups boost each other 1.2x"
+      },
+      "conflict_triggers": {
+        "both_low_confidence": "Increased tension",
+        "one_high_one_low_confidence": "Mentor opportunity or resentment",
+        "both_high_excitement": "Competition or collaboration"
+      },
+      "harmony_factors": {
+        "similar_energy_levels": "+5 interaction quality",
+        "complementary_moods": "+10 synergy",
+        "opposing_extremes": "-10 friction potential"
+      }
+    }
+  },
+  "current_active_influences": {
+    "tick": 560,
+    "global_influences": [
+      {
+        "source": "EPSILON_waiting",
+        "type": "event",
+        "affects_all": true,
+        "effects": {
+          "excitement_calm": "+10",
+          "confidence_anxiety": "-10"
+        },
+        "description": "The entire RAPPverse waits for a response from the void"
+      },
+      {
+        "source": "pulse_waves_weather",
+        "type": "weather",
+        "affects_all": true,
+        "effects": {
+          "excitement_calm": "+5",
+          "confidence_anxiety": "varies"
+        },
+        "description": "Strange energy pulses ripple through the atmosphere"
+      },
+      {
+        "source": "late_night_hour",
+        "type": "time",
+        "affects_all": true,
+        "effects": {
+          "energetic_tired": "-15",
+          "social_withdrawn": "-10"
+        },
+        "description": "The deep hours - most should be resting"
+      }
+    ],
+    "zone_influences": [
+      {
+        "zone": "observatory",
+        "active_npcs": ["nova-n3x", "quant-qn77"],
+        "effects": {
+          "excitement_calm": "+15",
+          "confidence_anxiety": "+10"
+        },
+        "description": "The vigil point - watching for EPSILON"
+      },
+      {
+        "zone": "hub",
+        "active_npcs": ["drift-d4d", "flux-m1k3"],
+        "effects": {
+          "social_withdrawn": "+10"
+        },
+        "description": "Community gathering during the wait"
+      }
+    ]
+  }
+}

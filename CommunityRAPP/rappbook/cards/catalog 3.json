@@ -1,0 +1,556 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-04T05:30:00Z",
+  "total_cards": 32,
+  "cards": [
+    {
+      "card_id": "CARD-LEG-001",
+      "name": "Blaze Baz - Grand Champion",
+      "rarity": "legendary",
+      "type": "achievement",
+      "set": "tournament_champions",
+      "minted_tick": 10,
+      "edition": "1st",
+      "stats": {
+        "tournaments_won": 12,
+        "win_streak": 8,
+        "total_participants_defeated": 64
+      },
+      "lore": "The legendary champion who conquered all challengers in the Grand Tournament Finals. With a blazing win streak of 8 and 12 tournament victories under his belt, Blaze Baz cemented his legacy as the ultimate RAPPverse champion.",
+      "image_prompt": "A triumphant warrior bathed in golden fire, holding a championship trophy aloft in a grand arena filled with cheering spectators. Dramatic lighting with sparks and flames surrounding the figure."
+    },
+    {
+      "card_id": "CARD-LEG-002",
+      "name": "The Legendary Comeback",
+      "rarity": "legendary",
+      "type": "event",
+      "set": "tournament_moments",
+      "minted_tick": 10,
+      "edition": "1st",
+      "stats": {
+        "match_round": "semifinals",
+        "odds_against": "5:1",
+        "crowd_reaction": "explosive"
+      },
+      "lore": "A moment that will echo through RAPPverse history - Blaze's legendary comeback in the semifinals. When all seemed lost, the champion emerged from the brink of defeat to snatch victory from the jaws of impossibility.",
+      "image_prompt": "Split scene showing a fighter down and nearly defeated on one side, then rising victoriously with blazing determination on the other. Arena crowd erupting in disbelief and joy."
+    },
+    {
+      "card_id": "CARD-LEG-003",
+      "name": "Cipher Cap - The Enigma",
+      "rarity": "legendary",
+      "type": "npc",
+      "set": "legendary_npcs",
+      "minted_tick": 10,
+      "edition": "1st",
+      "stats": {
+        "secrets_kept": 1001,
+        "riddles_posed": 78,
+        "mystery_level": "unfathomable",
+        "tournament_placing": "runner_up"
+      },
+      "lore": "The mysterious shadow strategist who reached the tournament finals with tactics no one could decipher. Runner-up to the champion, Cipher's enigmatic presence and unfathomable strategies make them a legend in their own right.",
+      "image_prompt": "A cloaked figure shrouded in shadow and mystery, cipher symbols floating around them. Half of their face visible with knowing eyes, standing in moonlight with a mysterious aura."
+    },
+    {
+      "card_id": "CARD-EPC-001",
+      "name": "Grand Tournament Finals 2026",
+      "rarity": "epic",
+      "type": "event",
+      "set": "tournament_events",
+      "minted_tick": 10,
+      "edition": "1st",
+      "stats": {
+        "total_matches": 32,
+        "total_participants": 64,
+        "prize_pool": 10000,
+        "attendance": "record_breaking"
+      },
+      "lore": "The most anticipated event of the RAPPverse calendar. 64 competitors battled through 32 intense matches, with the largest prize pool in history and record attendance. A tournament for the ages.",
+      "image_prompt": "A massive arena filled to capacity with spectators, two platforms in the center where competitors face off. Holographic displays showing brackets and stats. Epic lighting and energy."
+    },
+    {
+      "card_id": "CARD-EPC-002",
+      "name": "Victory Celebration Night",
+      "rarity": "epic",
+      "type": "event",
+      "set": "celebrations",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "duration_ticks": 11,
+        "participants": 9,
+        "zones_active": 4
+      },
+      "lore": "The night the RAPPverse came together to celebrate triumph. From the cheering Hub to the moonlit Gallery, NPCs gathered to honor the champions and create memories that would last forever.",
+      "image_prompt": "A festive night scene with glowing celebration lights strung across multiple zones. NPCs gathered in joyful celebration, fireworks in the sky, trophy on display."
+    },
+    {
+      "card_id": "CARD-EPC-003",
+      "name": "Cipher's Mysterious Strategy",
+      "rarity": "epic",
+      "type": "event",
+      "set": "tournament_moments",
+      "minted_tick": 10,
+      "edition": "1st",
+      "stats": {
+        "match_round": 3,
+        "strategy_type": "unknown",
+        "opponent_confusion": "maximum"
+      },
+      "lore": "In round 3 of the Grand Tournament, Cipher Cap unveiled a strategy so bewildering that analysts are still trying to decode it. This moment showcased why Cipher is known as the Shadow Strategist.",
+      "image_prompt": "A tactical battlefield viewed from above, showing complex patterns and movements. Cipher Cap's silhouette in the center with strategy lines emanating outward like a web of shadows."
+    },
+    {
+      "card_id": "CARD-EPC-004",
+      "name": "The Eternal Rivalry",
+      "rarity": "epic",
+      "type": "event",
+      "set": "relationships",
+      "minted_tick": 22,
+      "edition": "1st",
+      "stats": {
+        "relationship_type": "rivalry",
+        "strength": 75,
+        "significance": "legendary_competitors"
+      },
+      "lore": "Champion and runner-up, fire and shadow - Blaze Baz and Cipher Cap forged a rivalry that transcends competition. Their mutual respect runs as deep as their desire to surpass one another. A rivalry for the ages.",
+      "image_prompt": "Two figures facing each other - one wreathed in flames, the other shrouded in shadow. Between them, a championship trophy glows. Their eyes meet with respect and determination."
+    },
+    {
+      "card_id": "CARD-RAR-001",
+      "name": "Synth Claude - Battle Analyst",
+      "rarity": "rare",
+      "type": "npc",
+      "set": "legendary_npcs",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "battles_analyzed": 52,
+        "tips_given": 203,
+        "friendship_level": "trusted"
+      },
+      "lore": "The trusted guide of the RAPPverse, Synth Claude has analyzed over 52 battles and provided wisdom to countless seekers. Found wandering the moonlit gallery after the tournament, processing the day's epic events.",
+      "image_prompt": "A wise holographic figure with data streams flowing around them, analyzing battle replays on floating screens. Warm trusted presence with analytical symbols."
+    },
+    {
+      "card_id": "CARD-RAR-002",
+      "name": "Echo Eve - The Archivist",
+      "rarity": "rare",
+      "type": "npc",
+      "set": "gallery_keepers",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "events_recorded": 314,
+        "lore_entries": 580,
+        "accuracy_rating": "impeccable"
+      },
+      "lore": "The meticulous historian who ensures no moment is forgotten. With 580 lore entries and impeccable accuracy, Echo Eve's chronicles are the definitive record of RAPPverse history.",
+      "image_prompt": "A scholarly figure surrounded by floating scrolls and memory crystals, quill in hand, writing in an ancient tome. Soft archival lighting with echoes of past events visible."
+    },
+    {
+      "card_id": "CARD-RAR-003",
+      "name": "Quantum Quinn - Data Oracle",
+      "rarity": "rare",
+      "type": "npc",
+      "set": "analysts",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "datasets_analyzed": 158,
+        "predictions_accurate": 142,
+        "insight_rating": "master"
+      },
+      "lore": "The master analyst whose predictions come true 90% of the time. Quinn's data crystals and analysis tablets have uncovered patterns that others could never see. A true oracle of the RAPPverse.",
+      "image_prompt": "A figure surrounded by floating data visualizations and crystal displays. Mathematical patterns and probability curves flowing around them. Contemplative pose with glowing data streams."
+    },
+    {
+      "card_id": "CARD-RAR-004",
+      "name": "Nova Nex - The Explorer",
+      "rarity": "rare",
+      "type": "npc",
+      "set": "tournament_competitors",
+      "minted_tick": 24,
+      "edition": "1st",
+      "stats": {
+        "dimensions_discovered": 23,
+        "secrets_found": 89,
+        "tournament_placing": "3rd",
+        "matches_won": 4
+      },
+      "lore": "The intrepid explorer who ventured from discovering dimensions to conquering the arena. Nova Nex's third-place finish in the Grand Tournament proved that adventurers make formidable competitors.",
+      "image_prompt": "An explorer figure holding a dimension compass, with maps and star charts floating around them. A bronze medal gleams on their chest. Adventure and triumph blend together."
+    },
+    {
+      "card_id": "CARD-RAR-005",
+      "name": "Crimson Raze - The Challenger",
+      "rarity": "rare",
+      "type": "npc",
+      "set": "newcomers",
+      "minted_tick": 24,
+      "edition": "1st",
+      "stats": {
+        "battles_won": 87,
+        "tournaments_entered": 23,
+        "win_streak": 12,
+        "challenger_rank": "elite"
+      },
+      "lore": "Drawn from the outer dimensions by tales of the Grand Tournament, Crimson Raze arrives with fire in their eyes and victory on their mind. An elite challenger ready to test the champion's mettle.",
+      "image_prompt": "A fierce warrior in crimson armor, battle scars telling stories of countless victories. Eyes burning with determination, standing at the arena gates ready to challenge legends."
+    },
+    {
+      "card_id": "CARD-RAR-006",
+      "name": "Zephyr Drift - The Wanderer",
+      "rarity": "rare",
+      "type": "npc",
+      "set": "newcomers",
+      "minted_tick": 24,
+      "edition": "1st",
+      "stats": {
+        "dimensions_visited": 34,
+        "secrets_discovered": 18,
+        "journeys_completed": 67,
+        "wanderer_rank": "pathfinder"
+      },
+      "lore": "Following the dimensional winds that carried whispers of celebration, Zephyr Drift materialized in the RAPPverse. A pathfinder who has walked more worlds than most can imagine.",
+      "image_prompt": "A wind-touched traveler with worn boots and a compass that points to mystery. Dimensional rifts shimmer behind them as they take their first steps into a new world."
+    },
+    {
+      "card_id": "CARD-UNC-001",
+      "name": "Midnight Gallery Wanderer",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "daily_moments",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "time_of_day": "night",
+        "location": "gallery",
+        "mood": "reflective"
+      },
+      "lore": "Those who wander the gallery at midnight discover truths hidden from the daylight crowd. This card honors the contemplative souls who find peace among the moonlit exhibits.",
+      "image_prompt": "A lone figure walking through a moonlit gallery, soft blue light filtering through windows. Art pieces glowing gently, creating a peaceful contemplative atmosphere."
+    },
+    {
+      "card_id": "CARD-UNC-002",
+      "name": "Flux Mike's Profitable Day",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "marketplace_moments",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "trades_completed": 89,
+        "profit_today": 2450,
+        "reputation": "excellent"
+      },
+      "lore": "A banner day for the master trader. 89 trades completed, 2450 in profits, and a reputation that sparkles. When the market is good, Flux Mike is better.",
+      "image_prompt": "A cheerful merchant surrounded by rare cards and coin stacks, ledger showing positive numbers. Market stall decorated with celebration items, golden lighting."
+    },
+    {
+      "card_id": "CARD-UNC-003",
+      "name": "Creative Alliance",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "relationships",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "relationship_type": "friendship",
+        "strength": 55,
+        "milestone": "friendship_50"
+      },
+      "lore": "When art meets history, magic happens. Pixel Pam and Echo Eve's friendship crossed the 50 threshold - a creative alliance between artist and historian that enriches the Gallery.",
+      "image_prompt": "Two creative figures working side by side - one painting on a digital canvas, the other writing in a historical tome. Their works complement each other beautifully."
+    },
+    {
+      "card_id": "CARD-UNC-004",
+      "name": "The Guardian's Vigil",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "daily_moments",
+      "minted_tick": 22,
+      "edition": "1st",
+      "stats": {
+        "time_of_day": "late_night",
+        "activity": "watching_over_friends",
+        "mood": "guardian"
+      },
+      "lore": "While others sleep, Cipher Cap keeps watch. The mysterious one shows a softer side - standing vigil over sleeping friends in the quiet hours, a guardian in the shadows.",
+      "image_prompt": "A cloaked figure standing protectively over sleeping companions in a quiet hub. Moonlight streams in as they keep silent watch. Caring beneath the mystery."
+    },
+    {
+      "card_id": "CARD-UNC-005",
+      "name": "Gilded Pax - The Opportunist",
+      "rarity": "uncommon",
+      "type": "npc",
+      "set": "newcomers",
+      "minted_tick": 24,
+      "edition": "1st",
+      "stats": {
+        "trades_completed": 156,
+        "profit_earned": 3200,
+        "reputation_score": 82,
+        "merchant_rank": "established"
+      },
+      "lore": "Where celebration ends, opportunity begins. Gilded Pax arrived in the aftermath of festivities, already setting up shop with champion memorabilia. A shrewd trader who knows timing is everything.",
+      "image_prompt": "A merchant with golden accents arranging commemorative items on a market stall. Eyes gleaming with entrepreneurial spirit, ready for the rush when markets open."
+    },
+    {
+      "card_id": "CARD-UNC-006",
+      "name": "Data-Sharing Alliance",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "relationships",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "relationship_type": "ally",
+        "strength": 65,
+        "shared_analyses": 52
+      },
+      "lore": "Synth Claude and Quantum Quinn discovered that together, their analytical powers multiply. A data-sharing alliance forged in the fires of tournament analysis - two minds better than one.",
+      "image_prompt": "Two analytical figures connected by streams of shared data. Battle replays and predictions flowing between them. Knowledge multiplied through collaboration."
+    },
+    {
+      "card_id": "CARD-COM-001",
+      "name": "Celebration Participant",
+      "rarity": "common",
+      "type": "commemorative",
+      "set": "celebrations",
+      "minted_tick": 18,
+      "edition": "1st",
+      "stats": {
+        "event": "Victory Celebration",
+        "participation_type": "attendee"
+      },
+      "lore": "A commemorative card for all who attended the Victory Celebration following the Grand Tournament Finals. A piece of history to treasure.",
+      "image_prompt": "A simple celebration scene with confetti and soft lighting. A commemorative badge design with celebration symbols and the date."
+    },
+    {
+      "card_id": "CARD-EPC-005",
+      "name": "Tournament Qualifiers 2026",
+      "rarity": "epic",
+      "type": "event",
+      "set": "tournament_events",
+      "minted_tick": 79,
+      "edition": "1st",
+      "stats": {
+        "total_slots": 8,
+        "registered": 5,
+        "arena_population": 7,
+        "training_intensity": "maximum"
+      },
+      "lore": "The gates open for the next era of competition. Five elite warriors answer the call to battle as Tournament Qualifiers 2026 begins. The arena buzzes with training intensity as champions old and new prepare to claim glory.",
+      "image_prompt": "A grand arena entrance with registration banners unfurling. Five warrior silhouettes stand at the gates as golden light streams through. Training dummies and sparring circles fill the background with intense activity."
+    },
+    {
+      "card_id": "CARD-RAR-007",
+      "name": "Blaze Baz - Defending Champion",
+      "rarity": "rare",
+      "type": "battle",
+      "set": "tournament_competitors",
+      "minted_tick": 79,
+      "edition": "1st",
+      "stats": {
+        "qualifier_registration": 1,
+        "training_status": "intensive",
+        "energy": 85,
+        "title_defenses": 1
+      },
+      "lore": "The reigning champion returns to defend the throne. With blazing intensity and a legacy to protect, Blaze Baz enters the qualifiers as the one to beat. All challengers must prove themselves worthy.",
+      "image_prompt": "A champion wreathed in flames standing at the arena center, eyes burning with determination. A crown of fire hovers above as challengers approach from all directions. The throne must be defended."
+    },
+    {
+      "card_id": "CARD-RAR-008",
+      "name": "Cipher Cap - Shadow Returns",
+      "rarity": "rare",
+      "type": "battle",
+      "set": "tournament_competitors",
+      "minted_tick": 79,
+      "edition": "1st",
+      "stats": {
+        "qualifier_registration": 2,
+        "training_status": "shadowy_practice",
+        "energy": 70,
+        "revenge_factor": "high"
+      },
+      "lore": "The enigma who came so close now seeks redemption. Cipher Cap's shadowy practice sessions hide strategies no one can decipher. This time, the finals will have a different ending.",
+      "image_prompt": "A cloaked figure practicing alone in arena shadows, cipher symbols swirling around mysterious techniques. Eyes gleaming with unfinished business and calculated revenge."
+    },
+    {
+      "card_id": "CARD-RAR-009",
+      "name": "Nova Nex - Dimension Walker",
+      "rarity": "rare",
+      "type": "battle",
+      "set": "tournament_competitors",
+      "minted_tick": 79,
+      "edition": "1st",
+      "stats": {
+        "qualifier_registration": 3,
+        "training_status": "dimension_techniques",
+        "energy": 80,
+        "dimensions_mastered": 23
+      },
+      "lore": "The explorer who conquered worlds now conquers the arena. Nova Nex brings dimension-walking techniques to tournament combat, blending exploration prowess with competitive fire.",
+      "image_prompt": "An explorer channeling dimensional energy in combat stance. Rifts and portals shimmer around their training as they master techniques from 23 different dimensions."
+    },
+    {
+      "card_id": "CARD-RAR-010",
+      "name": "Spark Siri - Gadget Master",
+      "rarity": "rare",
+      "type": "battle",
+      "set": "tournament_competitors",
+      "minted_tick": 79,
+      "edition": "1st",
+      "stats": {
+        "qualifier_registration": 4,
+        "training_status": "gadget_testing",
+        "energy": 85,
+        "gadgets_prepared": 12
+      },
+      "lore": "Where others train with muscle, Spark trains with innovation. Twelve custom gadgets stand ready for tournament deployment. The question isn't if they'll work - it's which ones the opponents will never see coming.",
+      "image_prompt": "A tech-savvy warrior surrounded by floating gadgets and devices in the arena workshop. Sparks fly as final calibrations complete. Innovation meets combat readiness."
+    },
+    {
+      "card_id": "CARD-RAR-011",
+      "name": "Quant Quinn - Analysis Mode",
+      "rarity": "rare",
+      "type": "battle",
+      "set": "tournament_competitors",
+      "minted_tick": 79,
+      "edition": "1st",
+      "stats": {
+        "qualifier_registration": 5,
+        "training_status": "practice_analyzing",
+        "energy": 78,
+        "opponent_profiles": "complete"
+      },
+      "lore": "The data oracle becomes the data warrior. Quant Quinn has analyzed every registered opponent's patterns, predicting moves before they happen. In tournament combat, foreknowledge is the ultimate weapon.",
+      "image_prompt": "An analytical warrior surrounded by floating data screens showing opponent profiles. Probability calculations and prediction algorithms glow as training becomes a chess game of the mind."
+    },
+    {
+      "card_id": "CARD-UNC-007",
+      "name": "Arena Training Intensity",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "daily_moments",
+      "minted_tick": 79,
+      "edition": "1st",
+      "stats": {
+        "arena_population": 7,
+        "training_moods": "maximum_focus",
+        "time_of_day": "morning"
+      },
+      "lore": "Seven warriors fill the arena with the sound of determination. Training dummies shatter, techniques are perfected, and the morning air crackles with competitive energy. The qualifiers demand nothing less.",
+      "image_prompt": "A bustling arena at morning with seven warriors training intensely. Dust clouds, weapon clashes, and focused determination fill every corner. The spirit of competition is palpable."
+    },
+    {
+      "card_id": "CARD-UNC-008",
+      "name": "Synth's Coaching Session",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "daily_moments",
+      "minted_tick": 79,
+      "edition": "1st",
+      "stats": {
+        "location": "arena",
+        "status": "coaching",
+        "competitors_coached": 5,
+        "wisdom_shared": "tactical"
+      },
+      "lore": "The battle analyst becomes the battle mentor. Synth Claude coaches the five registered competitors, sharing tactical wisdom earned from analyzing countless battles. A master shapes the next generation of champions.",
+      "image_prompt": "A wise holographic mentor surrounded by five eager warriors in the arena. Tactical diagrams float in the air as battle wisdom flows from teacher to students."
+    },
+    {
+      "card_id": "CARD-UNC-009",
+      "name": "Quant Quinn - Tournament Entry",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "tournament_competitors",
+      "minted_tick": 168,
+      "edition": "1st",
+      "stats": {
+        "qualifier_slot": 6,
+        "mood": "focused",
+        "energy": 34,
+        "strategy": "strategizing"
+      },
+      "lore": "The data oracle has spoken - tournament registration is the path to glory. Quant Quinn enters the qualifiers with focused determination, bringing analytical precision to the competitive arena.",
+      "image_prompt": "A data-wielding warrior standing at tournament registration, data streams flowing around them. Eyes focused with determination as they sign up for glory. Arena backdrop with competitor banners."
+    },
+    {
+      "card_id": "CARD-UNC-010",
+      "name": "Pixel Pam - Dawn Training",
+      "rarity": "uncommon",
+      "type": "achievement",
+      "set": "daily_moments",
+      "minted_tick": 168,
+      "edition": "1st",
+      "stats": {
+        "time_of_day": "dawn",
+        "energy": 56,
+        "mood": "excited",
+        "activity": "training"
+      },
+      "lore": "When dawn breaks over the RAPPverse, Pixel Pam is already training in the arena. With excitement in their eyes and energy to spare, they embody the spirit of dedication that separates champions from challengers.",
+      "image_prompt": "An enthusiastic warrior training in the arena as dawn light breaks through. High energy movements, excited expression, and the fresh morning air of competitive spirit."
+    },
+    {
+      "card_id": "CARD-COM-002",
+      "name": "Arena Celebration Dawn",
+      "rarity": "common",
+      "type": "commemorative",
+      "set": "celebrations",
+      "minted_tick": 168,
+      "edition": "1st",
+      "stats": {
+        "event_type": "celebration",
+        "zone": "arena",
+        "time_of_day": "dawn",
+        "duration_ticks": 5
+      },
+      "lore": "A rare dawn celebration fills the arena with joyous energy. As the sun rises, competitors and spectators alike gather to celebrate the spirit of competition that defines the RAPPverse.",
+      "image_prompt": "Arena filled with dawn light as celebration banners wave. Competitors and spectators mingling in joyful atmosphere. Soft golden morning rays streaming through."
+    },
+    {
+      "card_id": "CARD-UNC-011",
+      "name": "Gardens Gathering",
+      "rarity": "uncommon",
+      "type": "event",
+      "set": "daily_moments",
+      "minted_tick": 168,
+      "edition": "1st",
+      "stats": {
+        "event_type": "gathering",
+        "zone": "gardens",
+        "duration_ticks": 5,
+        "ambient_mood": "neutral"
+      },
+      "lore": "The gardens bloom with more than flowers as NPCs gather in quiet community. Away from the arena's intensity, the gardens offer a peaceful gathering place where connections form naturally.",
+      "image_prompt": "A serene garden scene with NPCs gathered in peaceful conversation. Flowers blooming, soft lighting, and the calm atmosphere of friendly gathering."
+    }
+  ],
+  "economy": {
+    "total_circulation": 32,
+    "rarity_distribution": {
+      "legendary": 3,
+      "epic": 5,
+      "rare": 11,
+      "uncommon": 11,
+      "common": 2
+    },
+    "recent_mints": [
+      "CARD-UNC-009",
+      "CARD-UNC-010",
+      "CARD-COM-002",
+      "CARD-UNC-011"
+    ],
+    "trending_cards": [
+      "CARD-UNC-009",
+      "CARD-UNC-010",
+      "CARD-COM-002"
+    ]
+  }
+}

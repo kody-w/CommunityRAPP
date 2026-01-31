@@ -1,0 +1,270 @@
+{
+  "version": "1.0.0",
+  "description": "Tracks current locations of all artifacts in the RAPPverse",
+  "last_updated": "2026-02-01T07:30:00Z",
+  "current_tick": 27,
+  "zones": {
+    "hub": {
+      "zone_id": "zone-hub",
+      "zone_name": "Central Hub",
+      "artifact_capacity": 10,
+      "current_count": 2,
+      "artifacts": [
+        {
+          "artifact_id": "art-002",
+          "name": "Blade of Binary Truths",
+          "tier": "legendary",
+          "owner": "blaze-b8z",
+          "status": "carried",
+          "position": "with_owner",
+          "visibility": "visible"
+        },
+        {
+          "artifact_id": "art-014",
+          "name": "Traveler's Comfort Stone",
+          "tier": "common",
+          "owner": null,
+          "status": "resting",
+          "position": "fountain_edge",
+          "visibility": "visible",
+          "discovery_hint": "A warm glow emanates from the fountain's edge"
+        }
+      ],
+      "hidden_artifacts": [],
+      "artifact_spawn_points": [
+        "central_fountain",
+        "message_board_base",
+        "teleport_pad_alcove",
+        "rest_area_bench"
+      ]
+    },
+    "arena": {
+      "zone_id": "zone-arena",
+      "zone_name": "Battle Arena",
+      "artifact_capacity": 15,
+      "current_count": 1,
+      "artifacts": [
+        {
+          "artifact_id": "art-012",
+          "name": "Training Gauntlets of Discipline",
+          "tier": "rare",
+          "owner": null,
+          "status": "displayed",
+          "position": "champion_throne_base",
+          "visibility": "visible",
+          "discovery_hint": "Heavy gauntlets rest at the foot of the champion's throne"
+        }
+      ],
+      "hidden_artifacts": [],
+      "artifact_spawn_points": [
+        "champion_throne",
+        "trophy_vault",
+        "spectator_stands_upper",
+        "main_stage_center",
+        "battle_replay_console"
+      ],
+      "special_conditions": {
+        "tournament_prize_vault": true,
+        "next_tournament_artifact": null,
+        "legendary_vault_sealed": true
+      }
+    },
+    "marketplace": {
+      "zone_id": "zone-marketplace",
+      "zone_name": "Card Marketplace",
+      "artifact_capacity": 12,
+      "current_count": 3,
+      "artifacts": [
+        {
+          "artifact_id": "art-003",
+          "name": "Merchant's Infinite Ledger",
+          "tier": "legendary",
+          "owner": "flux-m1k3",
+          "status": "carried",
+          "position": "with_owner",
+          "visibility": "visible"
+        },
+        {
+          "artifact_id": "art-011",
+          "name": "Lucky Coin of Chance",
+          "tier": "rare",
+          "owner": null,
+          "status": "for_sale",
+          "position": "auction_house_display",
+          "visibility": "visible",
+          "sale_price": 2500,
+          "discovery_hint": "A glinting coin catches your eye in the auction display"
+        },
+        {
+          "artifact_id": "art-015",
+          "name": "Apprentice's Card Sleeve",
+          "tier": "common",
+          "owner": null,
+          "status": "for_sale",
+          "position": "trading_post_shelf",
+          "visibility": "visible",
+          "sale_price": 150,
+          "discovery_hint": "A practical card sleeve sits on the newcomer supplies shelf"
+        }
+      ],
+      "hidden_artifacts": [],
+      "artifact_spawn_points": [
+        "auction_house_vault",
+        "secure_vault_interior",
+        "trading_post_back",
+        "appraisal_station"
+      ],
+      "special_conditions": {
+        "artifacts_for_sale": 2,
+        "next_auction_artifact": null,
+        "secure_vault_contents": []
+      }
+    },
+    "gallery": {
+      "zone_id": "zone-gallery",
+      "zone_name": "NFT Gallery",
+      "artifact_capacity": 20,
+      "current_count": 6,
+      "artifacts": [
+        {
+          "artifact_id": "art-001",
+          "name": "Chrono-Compass of the First Tick",
+          "tier": "mythic",
+          "owner": null,
+          "status": "enshrined",
+          "position": "archive_wing_pedestal",
+          "visibility": "protected",
+          "protection_level": "maximum",
+          "discovery_hint": "A compass of impossible age rests in the archive's heart"
+        },
+        {
+          "artifact_id": "art-004",
+          "name": "Canvas of Living Dreams",
+          "tier": "legendary",
+          "owner": "pixel-p4m",
+          "status": "active",
+          "position": "main_gallery_center",
+          "visibility": "visible"
+        },
+        {
+          "artifact_id": "art-005",
+          "name": "Echo Chamber of Lost Voices",
+          "tier": "legendary",
+          "owner": "echo-e7e",
+          "status": "recording",
+          "position": "with_owner",
+          "visibility": "visible"
+        },
+        {
+          "artifact_id": "art-006",
+          "name": "Quantum Probability Engine",
+          "tier": "epic",
+          "owner": "quant-qn77",
+          "status": "analyzing",
+          "position": "with_owner",
+          "visibility": "visible"
+        },
+        {
+          "artifact_id": "art-008",
+          "name": "Cipher's Decryption Monocle",
+          "tier": "epic",
+          "owner": "cipher-c9p",
+          "status": "worn",
+          "position": "with_owner",
+          "visibility": "visible"
+        },
+        {
+          "artifact_id": "art-010",
+          "name": "Synth's Harmony Crystal",
+          "tier": "epic",
+          "owner": "synth-c1au",
+          "status": "resonating",
+          "position": "with_owner",
+          "visibility": "visible"
+        }
+      ],
+      "hidden_artifacts": [],
+      "artifact_spawn_points": [
+        "archive_wing_depths",
+        "private_viewing_vault",
+        "artist_studio_secret",
+        "main_gallery_pedestal",
+        "meditation_alcove"
+      ],
+      "special_conditions": {
+        "mythic_shrine_active": true,
+        "showcase_artifacts": ["art-004"],
+        "archive_sealed_areas": 2
+      }
+    },
+    "workshop": {
+      "zone_id": "zone-workshop",
+      "zone_name": "Card Workshop",
+      "artifact_capacity": 10,
+      "current_count": 2,
+      "artifacts": [
+        {
+          "artifact_id": "art-007",
+          "name": "Spark Forge Hammer",
+          "tier": "epic",
+          "owner": "spark-s4r",
+          "status": "ready",
+          "position": "with_owner",
+          "visibility": "visible"
+        },
+        {
+          "artifact_id": "art-013",
+          "name": "Brush of Quick Sketches",
+          "tier": "rare",
+          "owner": null,
+          "status": "stored",
+          "position": "crafting_station_rack",
+          "visibility": "visible",
+          "discovery_hint": "A brush that seems to vibrate with creative energy"
+        }
+      ],
+      "hidden_artifacts": [],
+      "artifact_spawn_points": [
+        "enhancement_forge_core",
+        "experiment_lab_vault",
+        "material_storage_deep",
+        "crafting_station_hidden"
+      ],
+      "special_conditions": {
+        "forge_can_create_artifacts": true,
+        "artifact_creation_materials": 3,
+        "enhancement_available": true
+      }
+    }
+  },
+  "dimension_artifacts": {
+    "alpha": {
+      "known_artifacts": 0,
+      "suspected_locations": ["unknown_vault"]
+    },
+    "beta": {
+      "known_artifacts": 0,
+      "suspected_locations": []
+    },
+    "gamma": {
+      "known_artifacts": 0,
+      "suspected_locations": ["ancient_site"]
+    },
+    "delta": {
+      "known_artifacts": 0,
+      "suspected_locations": []
+    }
+  },
+  "lost_artifacts": [],
+  "artifacts_in_transit": [],
+  "total_by_location": {
+    "hub": 2,
+    "arena": 1,
+    "marketplace": 3,
+    "gallery": 6,
+    "workshop": 2,
+    "other_dimensions": 0,
+    "lost": 0,
+    "in_transit": 0
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "agent": {
+    "id": "github_agent_library_manager",
+    "name": "Agent Library Manager",
+    "version": "1.0.0",
+    "category": "core",
+    "icon": "fa-download",
+    "description": "Manages agent library downloads, installations, and updates from the GitHub repository.",
+    "tokens": 420,
+    "core": true,
+    "author": "Copilot Entra Agent Team",
+    "created": "2025-12-06",
+    "updated": "2025-12-06"
+  },
+  "metadata": {
+    "name": "GithubAgentLibraryManager",
+    "description": "Agent library management from GitHub.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["list_available", "install_agent", "update_agent", "remove_agent"],
+          "description": "The library management action"
+        },
+        "agent_id": { "type": "string" },
+        "version": { "type": "string" }
+      },
+      "required": ["action"]
+    }
+  },
+  "actions": [
+    {
+      "name": "list_available",
+      "description": "List available agents in library",
+      "parameters": [],
+      "example": {
+        "input": { "action": "list_available" },
+        "output": "Available: 19 agents. Installed: 15. Updates available: 2. New agents: 4. Categories: 7."
+      }
+    },
+    {
+      "name": "install_agent",
+      "description": "Install agent from library",
+      "parameters": ["agent_id", "version"],
+      "example": {
+        "input": { "action": "install_agent", "agent_id": "sales_coach_agent", "version": "latest" },
+        "output": "Installing sales_coach_agent v1.0.0... Downloaded. Validated. Registered. Ready to use."
+      }
+    },
+    {
+      "name": "update_agent",
+      "description": "Update installed agent to latest version",
+      "parameters": ["agent_id"],
+      "example": {
+        "input": { "action": "update_agent", "agent_id": "customer_360_agent" },
+        "output": "Updating customer_360_agent: v1.0 -> v1.1. Changes: New churn prediction model, bug fixes. Updated successfully."
+      }
+    },
+    {
+      "name": "remove_agent",
+      "description": "Remove installed agent",
+      "parameters": ["agent_id"],
+      "example": {
+        "input": { "action": "remove_agent", "agent_id": "deprecated_agent" },
+        "output": "Removed deprecated_agent. Configuration backed up. Agent unregistered."
+      }
+    }
+  ],
+  "demoConversation": [
+    {
+      "role": "user",
+      "content": "Show me available agents I can install."
+    },
+    {
+      "role": "agent",
+      "content": "**Available Agents in Library:**\n\n**Finance (2):**\n- Trade Reconciliation v1.2 [Installed]\n- Fraud Detection v1.0 [Installed]\n\n**Sales (3):**\n- Customer 360 v1.1 [Update Available]\n- Account Intelligence v1.0 [Installed]\n- Sales Coach v1.0 [Not Installed]\n\n**Healthcare (1):**\n- Patient Intake v1.0 [Not Installed]\n\n**Updates Available:** 1\n**New Agents:** 2\n\nWould you like to install or update any agents?"
+    }
+  ]
+}

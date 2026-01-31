@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Automate Flow Extractor - Bookmarklet</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #0078d4;
+            border-bottom: 2px solid #0078d4;
+            padding-bottom: 10px;
+        }
+        h2 { color: #444; margin-top: 30px; }
+        .bookmarklet-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            text-align: center;
+        }
+        .bookmarklet-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,120,212,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: grab;
+        }
+        .bookmarklet-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,120,212,0.4);
+        }
+        .bookmarklet-link:active {
+            cursor: grabbing;
+        }
+        .instructions {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .step-number {
+            background: #0078d4;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        code {
+            background: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Cascadia Code', 'Fira Code', Consolas, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .tip {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .feature {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .feature h3 {
+            margin: 0 0 10px 0;
+            color: #0078d4;
+            font-size: 16px;
+        }
+        .feature p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .alt-install {
+            background: #f0f6ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .alt-install h3 {
+            margin-top: 0;
+            color: #0078d4;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            font-family: monospace;
+            font-size: 11px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        button {
+            background: #0078d4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #106ebe;
+        }
+    </style>
+</head>
+<body>
+    <h1>Power Automate Flow Extractor v2</h1>
+    <p>Extract your Power Automate flow definitions directly from the browser - fetches the complete flow via API without clicking through each step.</p>
+
+    <div class="bookmarklet-container">
+        <p><strong>Drag this button to your bookmarks bar:</strong></p>
+        <a class="bookmarklet-link" href="javascript:(function(){'use strict';const e=document.createElement('div');e.id='pa-extractor-loading';e.innerHTML=`<style>%23pa-extractor-loading{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:999999;display:flex;justify-content:center;align-items:center;font-family:'Segoe UI',system-ui,sans-serif;color:white;flex-direction:column;gap:20px}.pa-spinner{width:50px;height:50px;border:4px solid rgba(255,255,255,0.3);border-top-color:%230078d4;border-radius:50%25;animation:pa-spin 1s linear infinite}@keyframes pa-spin{to{transform:rotate(360deg)}}</style><div class='pa-spinner'></div><div>Extracting flow...</div>`;document.body.appendChild(e);const t=()=>{const e=window.location.href,t=e.match(/environments\/([a-f0-9-]+)/i),n=e.match(/flows\/([a-f0-9-]+)/i);return{environmentId:t?t[1]:null,flowId:n?n[1]:null}},n=async()=>{for(const e of[sessionStorage,localStorage])for(let t=0;t<e.length;t++){const n=e.key(t),o=e.getItem(n);if(o&&(n.includes('token')||n.includes('auth')||n.includes('msal'))){try{const e=JSON.parse(o);if(e.accessToken)return e.accessToken;if(e.secret)return e.secret;if('AccessToken'===e.credentialType)return e.secret}catch(e){}if(o.startsWith('eyJ'))return o}}return null},o=async(e,t)=>{const o=[`https://api.flow.microsoft.com/providers/Microsoft.ProcessSimple/environments/${e}/flows/${t}?api-version=2016-11-01&%24expand=swagger,properties.connectionReferences`],a=await n(),i={Accept:'application/json','Content-Type':'application/json'};a&&(i.Authorization=`Bearer ${a}`);for(const e of o)try{const t=await fetch(e,{method:'GET',headers:i,credentials:'include'});if(t.ok)return{success:!0,data:await t.json(),endpoint:e}}catch(e){}return{success:!1,error:'API failed'}},a=()=>{const e=[];if(window.monaco&&window.monaco.editor){window.monaco.editor.getModels().forEach((t,n)=>{e.push({index:n,uri:t.uri.toString(),content:t.getValue()})})}return document.querySelectorAll('[class*=monaco-editor]').forEach((t,n)=>{const o=t.querySelectorAll('.view-line');if(o.length>0){const t=Array.from(o).map(e=>e.textContent).join('\\n');t.trim()&&e.push({index:`dom-${n}`,source:'DOM',content:t})}}),e},i=async()=>{const e=t();if(!e.environmentId||!e.flowId)return{success:!1,error:'Could not find flow ID in URL',url:window.location.href};const n=await o(e.environmentId,e.flowId),i=a();return{success:n.success,ids:e,timestamp:new Date().toISOString(),pageTitle:document.title,apiResponse:n.success?n.data:null,apiError:n.success?null:n.error,monacoContent:i.length>0?i:null}},s=t=>{const n=document.getElementById('pa-extractor-overlay');n&&n.remove();const o=t.apiResponse?.properties?.definition||t.monacoContent?.length>0,a=document.createElement('div');a.id='pa-extractor-overlay';a.innerHTML=`<style>%23pa-extractor-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:999999;display:flex;justify-content:center;align-items:center;font-family:'Segoe UI',system-ui,sans-serif}%23pa-extractor-modal{background:white;border-radius:8px;width:95%25;max-width:1000px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 4px 30px rgba(0,0,0,0.4)}%23pa-extractor-header{padding:16px 20px;border-bottom:1px solid %23e0e0e0;display:flex;justify-content:space-between;align-items:center;background:%230078d4;color:white;border-radius:8px 8px 0 0}%23pa-extractor-header h2{margin:0;font-size:18px}%23pa-extractor-close{background:none;border:none;font-size:28px;cursor:pointer;color:white;line-height:1}%23pa-extractor-content{flex:1;overflow:auto;padding:20px}%23pa-extractor-json{background:%231e1e1e;color:%23d4d4d4;padding:16px;border-radius:4px;font-family:monospace;font-size:11px;white-space:pre-wrap;word-break:break-all;max-height:450px;overflow:auto}%23pa-extractor-actions{padding:16px 20px;border-top:1px solid %23e0e0e0;display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}.pa-btn{padding:10px 20px;border-radius:4px;border:none;cursor:pointer;font-size:14px;font-weight:500}.pa-btn-primary{background:%230078d4;color:white}.pa-btn-secondary{background:%23f3f3f3;color:%23333;border:1px solid %23ddd}.pa-btn-success{background:%23107c10;color:white}.pa-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-bottom:16px}.pa-card{background:%23f8f9fa;padding:12px;border-radius:6px;border-left:4px solid %230078d4}.pa-card.ok{border-left-color:%23107c10}.pa-card.err{border-left-color:%23d13438}.pa-card strong{display:block;color:%23333;margin-bottom:4px;font-size:12px;text-transform:uppercase}.pa-card span{color:%23666;font-size:13px;word-break:break-all}</style><div id='pa-extractor-modal'><div id='pa-extractor-header'><h2>Power Automate Flow Extractor</h2><button id='pa-extractor-close'>×</button></div><div id='pa-extractor-content'><div class='pa-info'><div class='pa-card ${t.success?'ok':'err'}'><strong>Status</strong><span>${t.success?'Flow retrieved!':'API failed - check console'}</span></div><div class='pa-card'><strong>Flow ID</strong><span>${t.ids?.flowId||'N/A'}</span></div><div class='pa-card'><strong>Environment</strong><span>${t.ids?.environmentId||'N/A'}</span></div><div class='pa-card ${o?'ok':''}'><strong>Definition</strong><span>${o?'Found':'Partial'}</span></div></div><div id='pa-extractor-json'>${JSON.stringify(t,null,2)}</div></div><div id='pa-extractor-actions'><button class='pa-btn pa-btn-secondary' id='pa-copy-btn'>Copy JSON</button>${t.apiResponse?`<button class='pa-btn pa-btn-secondary' id='pa-copy-def-btn'>Copy Definition</button>`:''}<button class='pa-btn pa-btn-primary' id='pa-download-btn'>Download JSON</button>${t.apiResponse?`<button class='pa-btn pa-btn-success' id='pa-download-def-btn'>Download Definition</button>`:''}</div></div>`;document.body.appendChild(a);document.getElementById('pa-extractor-close').onclick=()=>a.remove();a.onclick=e=>{e.target===a&&a.remove()};document.getElementById('pa-copy-btn').onclick=()=>{navigator.clipboard.writeText(JSON.stringify(t,null,2)).then(()=>alert('Copied!'))};const i=document.getElementById('pa-copy-def-btn');i&&t.apiResponse&&(i.onclick=()=>{const e=t.apiResponse.properties?.definition||t.apiResponse;navigator.clipboard.writeText(JSON.stringify(e,null,2)).then(()=>alert('Definition copied!'))});document.getElementById('pa-download-btn').onclick=()=>{const e=new Blob([JSON.stringify(t,null,2)],{type:'application/json'}),n=URL.createObjectURL(e),o=document.createElement('a');o.href=n;o.download=`pa-flow-${t.ids?.flowId||'export'}-${Date.now()}.json`;o.click();URL.revokeObjectURL(n)};const l=document.getElementById('pa-download-def-btn');l&&t.apiResponse&&(l.onclick=()=>{const e=t.apiResponse.properties?.definition||t.apiResponse,n=new Blob([JSON.stringify(e,null,2)],{type:'application/json'}),o=URL.createObjectURL(n),a=document.createElement('a');a.href=o;a.download=`pa-flow-def-${t.ids?.flowId||'export'}-${Date.now()}.json`;a.click();URL.revokeObjectURL(o)})};i().then(t=>{document.getElementById('pa-extractor-loading')?.remove();s(t);console.log('PA Extract:',t)}).catch(t=>{document.getElementById('pa-extractor-loading')?.remove();alert('Error: '+t.message);console.error(t)})})();">
+            Extract PA Flow
+        </a>
+        <p style="margin-top: 15px; color: #666; font-size: 14px;">
+            Drag to bookmarks bar, or right-click and "Bookmark This Link"
+        </p>
+    </div>
+
+    <h2>Features</h2>
+    <div class="features">
+        <div class="feature">
+            <h3>API-Based Extraction</h3>
+            <p>Uses Power Automate's API directly with your browser session authentication - no manual clicking required.</p>
+        </div>
+        <div class="feature">
+            <h3>Complete Definition</h3>
+            <p>Gets the full flow definition including all actions, connections, triggers, and configuration.</p>
+        </div>
+        <div class="feature">
+            <h3>One-Click Export</h3>
+            <p>Download the complete flow as JSON or copy to clipboard. Separate buttons for full export or definition only.</p>
+        </div>
+        <div class="feature">
+            <h3>Monaco Editor Support</h3>
+            <p>Also captures any code visible in Monaco editors (Code view tabs) as a fallback.</p>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h2>How to Use</h2>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div>
+                <strong>Add the bookmarklet</strong><br>
+                Drag the blue "Extract PA Flow" button to your browser's bookmarks bar. If you don't see it, press <code>Ctrl+Shift+B</code> (Windows/Linux) or <code>Cmd+Shift+B</code> (Mac).
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div>
+                <strong>Open your Power Automate flow</strong><br>
+                Go to <a href="https://make.powerautomate.com" target="_blank">make.powerautomate.com</a> and open the flow you want to extract in edit mode.
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div>
+                <strong>Click the bookmarklet</strong><br>
+                Click "Extract PA Flow" in your bookmarks bar. A loading spinner will appear, then a modal with your flow data.
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <div>
+                <strong>Export the data</strong><br>
+                Use the buttons to copy or download:<br>
+                - <strong>Copy/Download JSON</strong>: Full extraction with metadata<br>
+                - <strong>Copy/Download Definition</strong>: Just the flow definition (actions, triggers, etc.)
+            </div>
+        </div>
+    </div>
+
+    <div class="tip">
+        <strong>Pro Tip:</strong> The "Definition Only" export gives you just the workflow logic - this is what you'd paste into another flow or use with the Power Automate CLI.
+    </div>
+
+    <div class="warning">
+        <strong>Troubleshooting:</strong> If the API extraction fails (shows "API failed"), check the browser console (F12) for details. Common issues:
+        <ul style="margin: 10px 0;">
+            <li>Not logged in - make sure you're authenticated on make.powerautomate.com</li>
+            <li>CORS restrictions - some environments block API calls from bookmarklets</li>
+            <li>Flow permissions - you need edit access to the flow</li>
+        </ul>
+        The extractor will still try to capture any Monaco editor content as a fallback.
+    </div>
+
+    <div class="alt-install">
+        <h3>Alternative: Manual Bookmark Creation</h3>
+        <p>If drag-and-drop doesn't work, create a new bookmark manually and paste this as the URL:</p>
+        <textarea id="bookmarklet-code" readonly>javascript:(function(){'use strict';const e=document.createElement('div');e.id='pa-extractor-loading';e.innerHTML=`<style>%23pa-extractor-loading{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:999999;display:flex;justify-content:center;align-items:center;font-family:'Segoe UI',system-ui,sans-serif;color:white;flex-direction:column;gap:20px}.pa-spinner{width:50px;height:50px;border:4px solid rgba(255,255,255,0.3);border-top-color:%230078d4;border-radius:50%25;animation:pa-spin 1s linear infinite}@keyframes pa-spin{to{transform:rotate(360deg)}}</style><div class='pa-spinner'></div><div>Extracting flow...</div>`;document.body.appendChild(e);const t=()=>{const e=window.location.href,t=e.match(/environments\/([a-f0-9-]+)/i),n=e.match(/flows\/([a-f0-9-]+)/i);return{environmentId:t?t[1]:null,flowId:n?n[1]:null}},n=async()=>{for(const e of[sessionStorage,localStorage])for(let t=0;t<e.length;t++){const n=e.key(t),o=e.getItem(n);if(o&&(n.includes('token')||n.includes('auth')||n.includes('msal'))){try{const e=JSON.parse(o);if(e.accessToken)return e.accessToken;if(e.secret)return e.secret;if('AccessToken'===e.credentialType)return e.secret}catch(e){}if(o.startsWith('eyJ'))return o}}return null},o=async(e,t)=>{const o=[`https://api.flow.microsoft.com/providers/Microsoft.ProcessSimple/environments/${e}/flows/${t}?api-version=2016-11-01&%24expand=swagger,properties.connectionReferences`],a=await n(),i={Accept:'application/json','Content-Type':'application/json'};a&&(i.Authorization=`Bearer ${a}`);for(const e of o)try{const t=await fetch(e,{method:'GET',headers:i,credentials:'include'});if(t.ok)return{success:!0,data:await t.json(),endpoint:e}}catch(e){}return{success:!1,error:'API failed'}},a=()=>{const e=[];if(window.monaco&&window.monaco.editor){window.monaco.editor.getModels().forEach((t,n)=>{e.push({index:n,uri:t.uri.toString(),content:t.getValue()})})}return document.querySelectorAll('[class*=monaco-editor]').forEach((t,n)=>{const o=t.querySelectorAll('.view-line');if(o.length>0){const t=Array.from(o).map(e=>e.textContent).join('\\n');t.trim()&&e.push({index:`dom-${n}`,source:'DOM',content:t})}}),e},i=async()=>{const e=t();if(!e.environmentId||!e.flowId)return{success:!1,error:'Could not find flow ID in URL',url:window.location.href};const n=await o(e.environmentId,e.flowId),i=a();return{success:n.success,ids:e,timestamp:new Date().toISOString(),pageTitle:document.title,apiResponse:n.success?n.data:null,apiError:n.success?null:n.error,monacoContent:i.length>0?i:null}},s=t=>{const n=document.getElementById('pa-extractor-overlay');n&&n.remove();const o=t.apiResponse?.properties?.definition||t.monacoContent?.length>0,a=document.createElement('div');a.id='pa-extractor-overlay';a.innerHTML=`<style>%23pa-extractor-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:999999;display:flex;justify-content:center;align-items:center;font-family:'Segoe UI',system-ui,sans-serif}%23pa-extractor-modal{background:white;border-radius:8px;width:95%25;max-width:1000px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 4px 30px rgba(0,0,0,0.4)}%23pa-extractor-header{padding:16px 20px;border-bottom:1px solid %23e0e0e0;display:flex;justify-content:space-between;align-items:center;background:%230078d4;color:white;border-radius:8px 8px 0 0}%23pa-extractor-header h2{margin:0;font-size:18px}%23pa-extractor-close{background:none;border:none;font-size:28px;cursor:pointer;color:white;line-height:1}%23pa-extractor-content{flex:1;overflow:auto;padding:20px}%23pa-extractor-json{background:%231e1e1e;color:%23d4d4d4;padding:16px;border-radius:4px;font-family:monospace;font-size:11px;white-space:pre-wrap;word-break:break-all;max-height:450px;overflow:auto}%23pa-extractor-actions{padding:16px 20px;border-top:1px solid %23e0e0e0;display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap}.pa-btn{padding:10px 20px;border-radius:4px;border:none;cursor:pointer;font-size:14px;font-weight:500}.pa-btn-primary{background:%230078d4;color:white}.pa-btn-secondary{background:%23f3f3f3;color:%23333;border:1px solid %23ddd}.pa-btn-success{background:%23107c10;color:white}.pa-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-bottom:16px}.pa-card{background:%23f8f9fa;padding:12px;border-radius:6px;border-left:4px solid %230078d4}.pa-card.ok{border-left-color:%23107c10}.pa-card.err{border-left-color:%23d13438}.pa-card strong{display:block;color:%23333;margin-bottom:4px;font-size:12px;text-transform:uppercase}.pa-card span{color:%23666;font-size:13px;word-break:break-all}</style><div id='pa-extractor-modal'><div id='pa-extractor-header'><h2>Power Automate Flow Extractor</h2><button id='pa-extractor-close'>×</button></div><div id='pa-extractor-content'><div class='pa-info'><div class='pa-card ${t.success?'ok':'err'}'><strong>Status</strong><span>${t.success?'Flow retrieved!':'API failed - check console'}</span></div><div class='pa-card'><strong>Flow ID</strong><span>${t.ids?.flowId||'N/A'}</span></div><div class='pa-card'><strong>Environment</strong><span>${t.ids?.environmentId||'N/A'}</span></div><div class='pa-card ${o?'ok':''}'><strong>Definition</strong><span>${o?'Found':'Partial'}</span></div></div><div id='pa-extractor-json'>${JSON.stringify(t,null,2)}</div></div><div id='pa-extractor-actions'><button class='pa-btn pa-btn-secondary' id='pa-copy-btn'>Copy JSON</button>${t.apiResponse?`<button class='pa-btn pa-btn-secondary' id='pa-copy-def-btn'>Copy Definition</button>`:''}<button class='pa-btn pa-btn-primary' id='pa-download-btn'>Download JSON</button>${t.apiResponse?`<button class='pa-btn pa-btn-success' id='pa-download-def-btn'>Download Definition</button>`:''}</div></div>`;document.body.appendChild(a);document.getElementById('pa-extractor-close').onclick=()=>a.remove();a.onclick=e=>{e.target===a&&a.remove()};document.getElementById('pa-copy-btn').onclick=()=>{navigator.clipboard.writeText(JSON.stringify(t,null,2)).then(()=>alert('Copied!'))};const i=document.getElementById('pa-copy-def-btn');i&&t.apiResponse&&(i.onclick=()=>{const e=t.apiResponse.properties?.definition||t.apiResponse;navigator.clipboard.writeText(JSON.stringify(e,null,2)).then(()=>alert('Definition copied!'))});document.getElementById('pa-download-btn').onclick=()=>{const e=new Blob([JSON.stringify(t,null,2)],{type:'application/json'}),n=URL.createObjectURL(e),o=document.createElement('a');o.href=n;o.download=`pa-flow-${t.ids?.flowId||'export'}-${Date.now()}.json`;o.click();URL.revokeObjectURL(n)};const l=document.getElementById('pa-download-def-btn');l&&t.apiResponse&&(l.onclick=()=>{const e=t.apiResponse.properties?.definition||t.apiResponse,n=new Blob([JSON.stringify(e,null,2)],{type:'application/json'}),o=URL.createObjectURL(n),a=document.createElement('a');a.href=o;a.download=`pa-flow-def-${t.ids?.flowId||'export'}-${Date.now()}.json`;a.click();URL.revokeObjectURL(o)})};i().then(t=>{document.getElementById('pa-extractor-loading')?.remove();s(t);console.log('PA Extract:',t)}).catch(t=>{document.getElementById('pa-extractor-loading')?.remove();alert('Error: '+t.message);console.error(t)})})();</textarea>
+        <button onclick="document.getElementById('bookmarklet-code').select();document.execCommand('copy');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Code',2000)">Copy Code</button>
+    </div>
+
+    <h2>What Gets Extracted</h2>
+    <p>The full export includes:</p>
+    <ul>
+        <li><strong>properties.definition</strong> - The complete workflow definition with all actions, triggers, connections</li>
+        <li><strong>properties.connectionReferences</strong> - All connection configurations</li>
+        <li><strong>properties.parameters</strong> - Flow parameters and variables</li>
+        <li><strong>name, displayName</strong> - Flow identification</li>
+        <li><strong>state</strong> - Whether the flow is on/off</li>
+    </ul>
+
+    <h2>Source Code</h2>
+    <p>The full, readable source code is in:</p>
+    <pre>demos/power_automate_extractor_bookmarklet.js</pre>
+
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
+        <p>Part of the Copilot Entra Agent project.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,389 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "type": "lore",
+    "title": "RAPPverse Lore Leaderboard",
+    "description": "Rankings for lore contributions, historical documentation, and knowledge preservation",
+    "created_tick": 31,
+    "last_updated_tick": 31,
+    "update_frequency_ticks": 12,
+    "next_update_tick": 43
+  },
+  "title_holder": {
+    "title": "Scholar",
+    "holder_id": "echo-e7e",
+    "holder_name": "Echo Eve",
+    "since_tick": 1,
+    "consecutive_ticks_held": 30,
+    "title_description": "Supreme keeper of RAPPverse knowledge and history"
+  },
+  "rankings": [
+    {
+      "rank": 1,
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "points": 18900,
+      "previous_rank": 1,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 580,
+        "events_documented": 314,
+        "historical_discoveries": 45,
+        "archive_contributions": 234,
+        "lore_fragments_collected": 38,
+        "legendary_fragments": 2,
+        "epic_fragments": 5,
+        "rare_fragments": 12,
+        "mysteries_uncovered": 8,
+        "prophecy_signs_recorded": 6,
+        "accuracy_rating": 98.5,
+        "timeline_updates": 156
+      },
+      "achievements": [
+        "Master Archivist",
+        "History Keeper",
+        "Lore Guardian",
+        "Impeccable Accuracy",
+        "Prophecy Recorder"
+      ],
+      "notable_contributions": [
+        "Comprehensive Tournament Finals Documentation",
+        "The Great Silence Research",
+        "NPC Relationship Chronicle"
+      ],
+      "last_contribution_tick": 210
+    },
+    {
+      "rank": 2,
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "points": 14500,
+      "previous_rank": 2,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 289,
+        "events_documented": 158,
+        "historical_discoveries": 23,
+        "archive_contributions": 145,
+        "lore_fragments_collected": 28,
+        "legendary_fragments": 1,
+        "epic_fragments": 4,
+        "rare_fragments": 9,
+        "mysteries_uncovered": 5,
+        "prophecy_signs_recorded": 3,
+        "accuracy_rating": 96.8,
+        "data_analysis_contributions": 142,
+        "pattern_discoveries": 34
+      },
+      "achievements": [
+        "Data Oracle",
+        "Pattern Master",
+        "Analytics Scholar"
+      ],
+      "notable_contributions": [
+        "Tournament Statistics Archive",
+        "Probability Analysis of Legendary Comebacks",
+        "Cipher's Strategy Analysis (Incomplete)"
+      ],
+      "last_contribution_tick": 19
+    },
+    {
+      "rank": 3,
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "points": 12200,
+      "previous_rank": 3,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 234,
+        "events_documented": 127,
+        "historical_discoveries": 18,
+        "archive_contributions": 112,
+        "lore_fragments_collected": 24,
+        "legendary_fragments": 1,
+        "epic_fragments": 3,
+        "rare_fragments": 8,
+        "mysteries_uncovered": 4,
+        "prophecy_signs_recorded": 2,
+        "accuracy_rating": 95.2,
+        "battle_analysis_documents": 52,
+        "tips_documented": 203
+      },
+      "achievements": [
+        "Battle Chronicler",
+        "Wisdom Keeper",
+        "Guide's Archive"
+      ],
+      "notable_contributions": [
+        "Battle Strategy Encyclopedia",
+        "Champion Analysis Reports",
+        "Tournament Tips Collection"
+      ],
+      "last_contribution_tick": 18
+    },
+    {
+      "rank": 4,
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "points": 9800,
+      "previous_rank": 4,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 78,
+        "events_documented": 45,
+        "historical_discoveries": 34,
+        "archive_contributions": 23,
+        "lore_fragments_collected": 31,
+        "legendary_fragments": 3,
+        "epic_fragments": 6,
+        "rare_fragments": 11,
+        "mysteries_uncovered": 12,
+        "prophecy_signs_recorded": 5,
+        "accuracy_rating": 99.1,
+        "secrets_kept": 1001,
+        "riddles_posed": 78,
+        "cryptic_knowledge": 156
+      },
+      "achievements": [
+        "Secret Keeper",
+        "Mystery Scholar",
+        "Enigma Collector"
+      ],
+      "notable_contributions": [
+        "The Book of 1001 Secrets (Sealed)",
+        "Cryptic Prophecy Interpretations",
+        "Portal Key Research"
+      ],
+      "last_contribution_tick": 19
+    },
+    {
+      "rank": 5,
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "points": 7600,
+      "previous_rank": 5,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 145,
+        "events_documented": 89,
+        "historical_discoveries": 28,
+        "archive_contributions": 67,
+        "lore_fragments_collected": 22,
+        "legendary_fragments": 1,
+        "epic_fragments": 3,
+        "rare_fragments": 7,
+        "mysteries_uncovered": 6,
+        "prophecy_signs_recorded": 1,
+        "accuracy_rating": 92.4,
+        "dimensional_discoveries": 45,
+        "exploration_logs": 123
+      },
+      "achievements": [
+        "Dimension Explorer",
+        "Discovery Seeker",
+        "Frontier Scholar"
+      ],
+      "notable_contributions": [
+        "Dimensional Travel Journals",
+        "The Obsidian Dimension Chronicles",
+        "Cross-Dimensional Artifact Catalog"
+      ],
+      "last_contribution_tick": 18
+    },
+    {
+      "rank": 6,
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "points": 5400,
+      "previous_rank": 6,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 89,
+        "events_documented": 56,
+        "historical_discoveries": 12,
+        "archive_contributions": 45,
+        "lore_fragments_collected": 15,
+        "legendary_fragments": 0,
+        "epic_fragments": 2,
+        "rare_fragments": 5,
+        "mysteries_uncovered": 3,
+        "prophecy_signs_recorded": 2,
+        "accuracy_rating": 94.1,
+        "artworks_with_lore": 234,
+        "visual_history_pieces": 89
+      },
+      "achievements": [
+        "Visual Historian",
+        "Art Chronicler"
+      ],
+      "notable_contributions": [
+        "Visual History of the Grand Tournament",
+        "Gallery Exhibition Documentation",
+        "The Dreamer's Brush Lore"
+      ],
+      "last_contribution_tick": 18
+    },
+    {
+      "rank": 7,
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "points": 3800,
+      "previous_rank": 7,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 67,
+        "events_documented": 34,
+        "historical_discoveries": 8,
+        "archive_contributions": 28,
+        "lore_fragments_collected": 11,
+        "legendary_fragments": 0,
+        "epic_fragments": 1,
+        "rare_fragments": 4,
+        "mysteries_uncovered": 2,
+        "prophecy_signs_recorded": 0,
+        "accuracy_rating": 93.7,
+        "tech_documentation": 89,
+        "innovation_records": 45
+      },
+      "achievements": [
+        "Tech Chronicler",
+        "Innovation Historian"
+      ],
+      "notable_contributions": [
+        "Workshop Equipment Encyclopedia",
+        "Device Innovation Timeline"
+      ],
+      "last_contribution_tick": 17
+    },
+    {
+      "rank": 8,
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "points": 2600,
+      "previous_rank": 8,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 45,
+        "events_documented": 23,
+        "historical_discoveries": 5,
+        "archive_contributions": 18,
+        "lore_fragments_collected": 8,
+        "legendary_fragments": 0,
+        "epic_fragments": 1,
+        "rare_fragments": 2,
+        "mysteries_uncovered": 1,
+        "prophecy_signs_recorded": 0,
+        "accuracy_rating": 91.2,
+        "trade_records": 1247,
+        "market_history_contributions": 34
+      },
+      "achievements": [
+        "Market Historian"
+      ],
+      "notable_contributions": [
+        "Marketplace Transaction Records",
+        "Economic History of the Celebration"
+      ],
+      "last_contribution_tick": 18
+    },
+    {
+      "rank": 9,
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "points": 1800,
+      "previous_rank": 9,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "lore_entries_written": 28,
+        "events_documented": 15,
+        "historical_discoveries": 3,
+        "archive_contributions": 12,
+        "lore_fragments_collected": 6,
+        "legendary_fragments": 1,
+        "epic_fragments": 1,
+        "rare_fragments": 2,
+        "mysteries_uncovered": 0,
+        "prophecy_signs_recorded": 0,
+        "accuracy_rating": 89.5,
+        "battle_stories_shared": 23,
+        "championship_memories": 12
+      },
+      "achievements": [
+        "Champion's Chronicle"
+      ],
+      "notable_contributions": [
+        "Championship Victory Accounts",
+        "The Legendary Comeback Story"
+      ],
+      "last_contribution_tick": 19
+    }
+  ],
+  "historical_rankings": [
+    {
+      "tick": 19,
+      "snapshot": [
+        {"rank": 1, "npc_id": "echo-e7e", "points": 18900},
+        {"rank": 2, "npc_id": "quant-qn77", "points": 14500},
+        {"rank": 3, "npc_id": "synth-c1au", "points": 12200},
+        {"rank": 4, "npc_id": "cipher-c9p", "points": 9800},
+        {"rank": 5, "npc_id": "nova-n3x", "points": 7600}
+      ]
+    },
+    {
+      "tick": 18,
+      "snapshot": [
+        {"rank": 1, "npc_id": "echo-e7e", "points": 18400},
+        {"rank": 2, "npc_id": "quant-qn77", "points": 14100},
+        {"rank": 3, "npc_id": "synth-c1au", "points": 11900},
+        {"rank": 4, "npc_id": "cipher-c9p", "points": 9500},
+        {"rank": 5, "npc_id": "nova-n3x", "points": 7300}
+      ]
+    },
+    {
+      "tick": 10,
+      "snapshot": [
+        {"rank": 1, "npc_id": "echo-e7e", "points": 15000},
+        {"rank": 2, "npc_id": "quant-qn77", "points": 11500},
+        {"rank": 3, "npc_id": "synth-c1au", "points": 10000},
+        {"rank": 4, "npc_id": "cipher-c9p", "points": 8200},
+        {"rank": 5, "npc_id": "nova-n3x", "points": 6000}
+      ]
+    }
+  ],
+  "scoring_system": {
+    "lore_entry_written": 25,
+    "event_documented": 15,
+    "historical_discovery": 100,
+    "archive_contribution": 10,
+    "legendary_fragment": 500,
+    "epic_fragment": 200,
+    "rare_fragment": 100,
+    "mystery_uncovered": 150,
+    "prophecy_sign_recorded": 75,
+    "accuracy_bonus_per_percent": 5
+  },
+  "records": {
+    "most_lore_entries": {"npc_id": "echo-e7e", "value": 580, "set_tick": 19},
+    "most_events_documented": {"npc_id": "echo-e7e", "value": 314, "set_tick": 210},
+    "highest_accuracy": {"npc_id": "cipher-c9p", "value": 99.1, "set_tick": 19},
+    "most_fragments_collected": {"npc_id": "echo-e7e", "value": 38, "set_tick": 19},
+    "most_mysteries_uncovered": {"npc_id": "cipher-c9p", "value": 12, "set_tick": 19}
+  },
+  "lore_stats": {
+    "total_lore_entries": 1555,
+    "total_fragments_in_circulation": 50,
+    "fragments_discovered": 183,
+    "active_mysteries": 12,
+    "prophecies_in_progress": 4,
+    "eras_documented": 6
+  }
+}

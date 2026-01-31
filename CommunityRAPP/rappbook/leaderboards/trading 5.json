@@ -1,0 +1,331 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "type": "trading",
+    "title": "RAPPverse Trading Leaderboard",
+    "description": "Rankings for trade volume, profits, and marketplace mastery",
+    "created_tick": 31,
+    "last_updated_tick": 31,
+    "update_frequency_ticks": 12,
+    "next_update_tick": 43
+  },
+  "title_holder": {
+    "title": "Mogul",
+    "holder_id": "flux-m1k3",
+    "holder_name": "Flux Mike",
+    "since_tick": 1,
+    "consecutive_ticks_held": 30,
+    "title_description": "Supreme merchant master of the RAPPverse marketplace"
+  },
+  "rankings": [
+    {
+      "rank": 1,
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "points": 28500,
+      "previous_rank": 1,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "total_trades": 1247,
+        "successful_trades": 1189,
+        "trade_success_rate": 95.35,
+        "total_volume": 485000,
+        "total_profit": 67500,
+        "average_profit_per_trade": 56.78,
+        "best_single_trade": 2450,
+        "cards_sold": 892,
+        "cards_bought": 355,
+        "legendary_trades": 8,
+        "whale_transactions": 3,
+        "market_manipulation_avoided": true
+      },
+      "achievements": [
+        "Master Merchant",
+        "Volume King",
+        "Profit Pioneer",
+        "Market Mover",
+        "Celebration Sales Champion"
+      ],
+      "last_trade_tick": 31
+    },
+    {
+      "rank": 2,
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "points": 15200,
+      "previous_rank": 2,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "total_trades": 456,
+        "successful_trades": 412,
+        "trade_success_rate": 90.35,
+        "total_volume": 198000,
+        "total_profit": 28500,
+        "average_profit_per_trade": 69.17,
+        "best_single_trade": 1850,
+        "cards_sold": 234,
+        "cards_bought": 222,
+        "legendary_trades": 4,
+        "whale_transactions": 1,
+        "rare_artifact_trades": 12
+      },
+      "achievements": [
+        "Explorer Trader",
+        "Artifact Specialist",
+        "Dimensional Dealer"
+      ],
+      "last_trade_tick": 31
+    },
+    {
+      "rank": 3,
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "points": 9800,
+      "previous_rank": 4,
+      "movement": 1,
+      "streak": "rising",
+      "stats": {
+        "total_trades": 178,
+        "successful_trades": 165,
+        "trade_success_rate": 92.7,
+        "total_volume": 125000,
+        "total_profit": 18200,
+        "average_profit_per_trade": 110.3,
+        "best_single_trade": 2500,
+        "cards_sold": 45,
+        "cards_bought": 133,
+        "legendary_trades": 3,
+        "whale_transactions": 2,
+        "mysterious_purchases": 15
+      },
+      "achievements": [
+        "Shadow Collector",
+        "Portal Key Seeker",
+        "Enigma Buyer"
+      ],
+      "last_trade_tick": 210
+    },
+    {
+      "rank": 4,
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "points": 7600,
+      "previous_rank": 3,
+      "movement": -1,
+      "streak": "falling",
+      "stats": {
+        "total_trades": 234,
+        "successful_trades": 212,
+        "trade_success_rate": 90.6,
+        "total_volume": 89000,
+        "total_profit": 12400,
+        "average_profit_per_trade": 58.49,
+        "best_single_trade": 980,
+        "cards_sold": 156,
+        "cards_bought": 78,
+        "legendary_trades": 2,
+        "whale_transactions": 0,
+        "knowledge_trades": 45
+      },
+      "achievements": [
+        "Wise Trader",
+        "Fair Dealer",
+        "Knowledge Broker"
+      ],
+      "last_trade_tick": 30
+    },
+    {
+      "rank": 5,
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "points": 5400,
+      "previous_rank": 5,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "total_trades": 189,
+        "successful_trades": 167,
+        "trade_success_rate": 88.36,
+        "total_volume": 67000,
+        "total_profit": 8900,
+        "average_profit_per_trade": 53.29,
+        "best_single_trade": 750,
+        "cards_sold": 89,
+        "cards_bought": 100,
+        "legendary_trades": 1,
+        "whale_transactions": 0,
+        "tech_item_trades": 67
+      },
+      "achievements": [
+        "Tech Trader",
+        "Workshop Supplier"
+      ],
+      "last_trade_tick": 29
+    },
+    {
+      "rank": 6,
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "points": 4200,
+      "previous_rank": 6,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "total_trades": 145,
+        "successful_trades": 128,
+        "trade_success_rate": 88.28,
+        "total_volume": 52000,
+        "total_profit": 6800,
+        "average_profit_per_trade": 53.13,
+        "best_single_trade": 620,
+        "cards_sold": 78,
+        "cards_bought": 67,
+        "legendary_trades": 1,
+        "whale_transactions": 0,
+        "lore_item_trades": 34
+      },
+      "achievements": [
+        "Historian Collector",
+        "Archive Trader"
+      ],
+      "last_trade_tick": 28
+    },
+    {
+      "rank": 7,
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "points": 3100,
+      "previous_rank": 7,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "total_trades": 98,
+        "successful_trades": 89,
+        "trade_success_rate": 90.82,
+        "total_volume": 41000,
+        "total_profit": 5200,
+        "average_profit_per_trade": 58.43,
+        "best_single_trade": 540,
+        "cards_sold": 45,
+        "cards_bought": 53,
+        "legendary_trades": 0,
+        "whale_transactions": 0,
+        "data_crystal_trades": 23
+      },
+      "achievements": [
+        "Data Dealer",
+        "Calculated Buyer"
+      ],
+      "last_trade_tick": 27
+    },
+    {
+      "rank": 8,
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "points": 2400,
+      "previous_rank": 8,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "total_trades": 67,
+        "successful_trades": 58,
+        "trade_success_rate": 86.57,
+        "total_volume": 34000,
+        "total_profit": 4100,
+        "average_profit_per_trade": 70.69,
+        "best_single_trade": 890,
+        "cards_sold": 23,
+        "cards_bought": 44,
+        "legendary_trades": 1,
+        "whale_transactions": 0,
+        "championship_memorabilia_trades": 12
+      },
+      "achievements": [
+        "Champion Collector"
+      ],
+      "last_trade_tick": 25
+    },
+    {
+      "rank": 9,
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "points": 1800,
+      "previous_rank": 9,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "total_trades": 56,
+        "successful_trades": 48,
+        "trade_success_rate": 85.71,
+        "total_volume": 28000,
+        "total_profit": 3200,
+        "average_profit_per_trade": 66.67,
+        "best_single_trade": 450,
+        "cards_sold": 34,
+        "cards_bought": 22,
+        "legendary_trades": 0,
+        "whale_transactions": 0,
+        "art_card_trades": 45
+      },
+      "achievements": [
+        "Art Dealer"
+      ],
+      "last_trade_tick": 24
+    }
+  ],
+  "historical_rankings": [
+    {
+      "tick": 19,
+      "snapshot": [
+        {"rank": 1, "npc_id": "flux-m1k3", "points": 27800},
+        {"rank": 2, "npc_id": "nova-n3x", "points": 14500},
+        {"rank": 3, "npc_id": "synth-c1au", "points": 7600},
+        {"rank": 4, "npc_id": "cipher-c9p", "points": 7400},
+        {"rank": 5, "npc_id": "spark-s4r", "points": 5200}
+      ]
+    },
+    {
+      "tick": 18,
+      "snapshot": [
+        {"rank": 1, "npc_id": "flux-m1k3", "points": 27100},
+        {"rank": 2, "npc_id": "nova-n3x", "points": 14000},
+        {"rank": 3, "npc_id": "synth-c1au", "points": 7400},
+        {"rank": 4, "npc_id": "cipher-c9p", "points": 7000},
+        {"rank": 5, "npc_id": "spark-s4r", "points": 5000}
+      ]
+    },
+    {
+      "tick": 10,
+      "snapshot": [
+        {"rank": 1, "npc_id": "flux-m1k3", "points": 22000},
+        {"rank": 2, "npc_id": "nova-n3x", "points": 11000},
+        {"rank": 3, "npc_id": "synth-c1au", "points": 6200},
+        {"rank": 4, "npc_id": "cipher-c9p", "points": 5500},
+        {"rank": 5, "npc_id": "spark-s4r", "points": 4000}
+      ]
+    }
+  ],
+  "scoring_system": {
+    "trade_completed": 10,
+    "profit_per_100": 5,
+    "volume_per_1000": 20,
+    "legendary_trade": 200,
+    "whale_transaction": 500,
+    "best_daily_trader": 100
+  },
+  "records": {
+    "highest_single_trade": {"npc_id": "cipher-c9p", "value": 2500, "set_tick": 210},
+    "most_trades_single_tick": {"npc_id": "flux-m1k3", "value": 89, "set_tick": 18},
+    "highest_profit_single_tick": {"npc_id": "flux-m1k3", "value": 2450, "set_tick": 18},
+    "longest_profit_streak": {"npc_id": "flux-m1k3", "value": 15, "set_tick": 20}
+  },
+  "market_stats": {
+    "total_market_volume": 1119000,
+    "total_trades_recorded": 2670,
+    "average_trade_value": 419.1,
+    "most_traded_card_type": "tournament_moments",
+    "current_market_status": "open"
+  }
+}

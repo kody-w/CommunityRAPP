@@ -1,0 +1,719 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Complete property registry for all RAPPverse housing and commercial spaces",
+    "created_tick": 212,
+    "last_updated_tick": 212,
+    "update_frequency": "on_change"
+  },
+  "property_types": {
+    "quarters": {
+      "description": "Standard NPC residential homes",
+      "base_price": 5000,
+      "capacity": 1,
+      "features": ["bedroom", "storage", "basic_amenities"],
+      "upgrade_slots": 3
+    },
+    "shops": {
+      "description": "Commercial business spaces for merchants and services",
+      "base_price": 15000,
+      "capacity": 1,
+      "features": ["storefront", "inventory_storage", "counter", "display_cases"],
+      "upgrade_slots": 5
+    },
+    "studios": {
+      "description": "Creative workshops for artists, crafters, and inventors",
+      "base_price": 12000,
+      "capacity": 2,
+      "features": ["workspace", "tool_storage", "materials_vault", "creation_station"],
+      "upgrade_slots": 4
+    },
+    "galleries": {
+      "description": "Display spaces for art, collectibles, and achievements",
+      "base_price": 20000,
+      "capacity": 3,
+      "features": ["exhibition_hall", "lighting_system", "visitor_seating", "archive_room"],
+      "upgrade_slots": 6
+    },
+    "estates": {
+      "description": "Premium multi-room properties with extensive amenities",
+      "base_price": 75000,
+      "capacity": 5,
+      "features": ["grand_hall", "private_quarters", "guest_rooms", "gardens", "vault", "entertainment_wing"],
+      "upgrade_slots": 10
+    }
+  },
+  "districts": {
+    "market": {
+      "name": "Merchant's Row",
+      "description": "The bustling commercial heart of RAPPverse",
+      "property_value_modifier": 1.3,
+      "specialty_types": ["shops", "galleries"],
+      "foot_traffic": "very_high",
+      "prestige": "high"
+    },
+    "arena": {
+      "name": "Champion's Quarter",
+      "description": "Prime real estate near the tournament grounds",
+      "property_value_modifier": 1.5,
+      "specialty_types": ["quarters", "estates"],
+      "foot_traffic": "high",
+      "prestige": "very_high"
+    },
+    "hub": {
+      "name": "Central Plaza",
+      "description": "The crossroads of all RAPPverse activity",
+      "property_value_modifier": 1.4,
+      "specialty_types": ["shops", "galleries", "studios"],
+      "foot_traffic": "very_high",
+      "prestige": "high"
+    },
+    "gallery_district": {
+      "name": "Artisan Alley",
+      "description": "Home to creative minds and cultural institutions",
+      "property_value_modifier": 1.2,
+      "specialty_types": ["studios", "galleries"],
+      "foot_traffic": "medium",
+      "prestige": "high"
+    },
+    "outskirts": {
+      "name": "The Frontier",
+      "description": "Affordable housing on the edge of explored territory",
+      "property_value_modifier": 0.7,
+      "specialty_types": ["quarters"],
+      "foot_traffic": "low",
+      "prestige": "modest"
+    },
+    "dimensional_quarter": {
+      "name": "Rift Row",
+      "description": "Properties near dimensional anomaly zones - high risk, high reward",
+      "property_value_modifier": 1.8,
+      "specialty_types": ["estates", "studios"],
+      "foot_traffic": "medium",
+      "prestige": "exotic"
+    }
+  },
+  "properties": {
+    "PROP-Q001": {
+      "id": "PROP-Q001",
+      "name": "Synth's Sanctuary",
+      "type": "quarters",
+      "district": "hub",
+      "address": "14 Central Plaza Way",
+      "size_sqft": 450,
+      "current_value": 7200,
+      "condition": "excellent",
+      "built_tick": 50,
+      "features": ["bedroom", "storage", "basic_amenities", "guest_corner"],
+      "upgrades": [
+        {
+          "name": "Welcome Station",
+          "description": "Dedicated area for greeting visitors and newcomers",
+          "installed_tick": 85,
+          "value_added": 800
+        }
+      ],
+      "customizations": {
+        "theme": "helpful_haven",
+        "decor_style": "warm_modern",
+        "displayed_items": ["newcomer_guide_collection", "dimensional_map"]
+      },
+      "status": "occupied"
+    },
+    "PROP-Q002": {
+      "id": "PROP-Q002",
+      "name": "Champion's Retreat",
+      "type": "quarters",
+      "district": "arena",
+      "address": "7 Victory Lane",
+      "size_sqft": 550,
+      "current_value": 9500,
+      "condition": "excellent",
+      "built_tick": 45,
+      "features": ["bedroom", "storage", "basic_amenities", "training_nook"],
+      "upgrades": [
+        {
+          "name": "Trophy Display",
+          "description": "Illuminated case for championship memorabilia",
+          "installed_tick": 162,
+          "value_added": 1500
+        },
+        {
+          "name": "Recovery Suite",
+          "description": "Enhanced rest area for post-battle recovery",
+          "installed_tick": 100,
+          "value_added": 1000
+        }
+      ],
+      "customizations": {
+        "theme": "warrior_sanctuary",
+        "decor_style": "arena_champion",
+        "displayed_items": ["championship_belt_replica", "training_schedule", "rival_analysis_board"]
+      },
+      "status": "occupied"
+    },
+    "PROP-Q003": {
+      "id": "PROP-Q003",
+      "name": "Wanderer's Rest",
+      "type": "quarters",
+      "district": "outskirts",
+      "address": "42 Frontier Trail",
+      "size_sqft": 380,
+      "current_value": 3800,
+      "condition": "good",
+      "built_tick": 75,
+      "features": ["bedroom", "storage", "basic_amenities"],
+      "upgrades": [
+        {
+          "name": "Map Room",
+          "description": "Dedicated space for tracking exploration routes",
+          "installed_tick": 120,
+          "value_added": 600
+        }
+      ],
+      "customizations": {
+        "theme": "nomad_base",
+        "decor_style": "rustic_traveler",
+        "displayed_items": ["exploration_maps", "travel_journals", "dimensional_souvenirs"]
+      },
+      "status": "occupied"
+    },
+    "PROP-S001": {
+      "id": "PROP-S001",
+      "name": "Flux Emporium",
+      "type": "shops",
+      "district": "market",
+      "address": "1 Merchant's Row",
+      "size_sqft": 1200,
+      "current_value": 42000,
+      "condition": "pristine",
+      "built_tick": 30,
+      "features": ["storefront", "inventory_storage", "counter", "display_cases", "vault_room", "vip_lounge"],
+      "upgrades": [
+        {
+          "name": "Premium Vault",
+          "description": "Enhanced security for high-value card inventory",
+          "installed_tick": 80,
+          "value_added": 8000
+        },
+        {
+          "name": "Market Analytics Suite",
+          "description": "Real-time price tracking and analysis station",
+          "installed_tick": 150,
+          "value_added": 5000
+        },
+        {
+          "name": "VIP Trading Floor",
+          "description": "Private area for exclusive high-stakes deals",
+          "installed_tick": 185,
+          "value_added": 6000
+        }
+      ],
+      "customizations": {
+        "theme": "premium_exchange",
+        "decor_style": "opulent_professional",
+        "displayed_items": ["legendary_card_collection", "market_charts", "trading_hall_of_fame"]
+      },
+      "business_info": {
+        "business_type": "card_trading",
+        "hours": "dawn_to_midnight",
+        "employees": 2,
+        "daily_revenue_avg": 8500,
+        "reputation": "legendary"
+      },
+      "status": "occupied"
+    },
+    "PROP-S002": {
+      "id": "PROP-S002",
+      "name": "Penny's Profit Palace",
+      "type": "shops",
+      "district": "market",
+      "address": "15 Commerce Circle",
+      "size_sqft": 800,
+      "current_value": 28000,
+      "condition": "excellent",
+      "built_tick": 55,
+      "features": ["storefront", "inventory_storage", "counter", "display_cases", "negotiation_booth"],
+      "upgrades": [
+        {
+          "name": "Deal Calculator Station",
+          "description": "Advanced pricing and profit margin analysis tools",
+          "installed_tick": 100,
+          "value_added": 3000
+        },
+        {
+          "name": "Bulk Storage Expansion",
+          "description": "Extended inventory capacity for volume trading",
+          "installed_tick": 140,
+          "value_added": 2500
+        }
+      ],
+      "customizations": {
+        "theme": "efficient_commerce",
+        "decor_style": "clean_professional",
+        "displayed_items": ["profit_charts", "daily_specials_board", "customer_testimonials"]
+      },
+      "business_info": {
+        "business_type": "card_brokerage",
+        "hours": "standard_market",
+        "employees": 1,
+        "daily_revenue_avg": 4200,
+        "reputation": "trusted"
+      },
+      "status": "occupied"
+    },
+    "PROP-S003": {
+      "id": "PROP-S003",
+      "name": "Spark's Workshop & Supply",
+      "type": "shops",
+      "district": "hub",
+      "address": "8 Central Plaza",
+      "size_sqft": 650,
+      "current_value": 22000,
+      "condition": "good",
+      "built_tick": 60,
+      "features": ["storefront", "inventory_storage", "counter", "display_cases", "repair_bench"],
+      "upgrades": [
+        {
+          "name": "Equipment Testing Station",
+          "description": "Quality assurance area for equipment verification",
+          "installed_tick": 110,
+          "value_added": 2000
+        }
+      ],
+      "customizations": {
+        "theme": "practical_workshop",
+        "decor_style": "functional_organized",
+        "displayed_items": ["tool_samples", "repair_before_after", "equipment_guides"]
+      },
+      "business_info": {
+        "business_type": "equipment_supply",
+        "hours": "extended_dawn",
+        "employees": 0,
+        "daily_revenue_avg": 2100,
+        "reputation": "reliable"
+      },
+      "status": "occupied"
+    },
+    "PROP-ST001": {
+      "id": "PROP-ST001",
+      "name": "Pixel's Art Haven",
+      "type": "studios",
+      "district": "gallery_district",
+      "address": "22 Artisan Alley",
+      "size_sqft": 900,
+      "current_value": 18500,
+      "condition": "excellent",
+      "built_tick": 40,
+      "features": ["workspace", "tool_storage", "materials_vault", "creation_station", "natural_light_dome"],
+      "upgrades": [
+        {
+          "name": "Holographic Canvas System",
+          "description": "Advanced display for creating dimensional art",
+          "installed_tick": 130,
+          "value_added": 3500
+        },
+        {
+          "name": "Commission Gallery",
+          "description": "Dedicated wall for showcasing available commission work",
+          "installed_tick": 160,
+          "value_added": 1500
+        }
+      ],
+      "customizations": {
+        "theme": "creative_chaos",
+        "decor_style": "artistic_vibrant",
+        "displayed_items": ["work_in_progress", "art_supplies_rainbow", "inspiration_board"]
+      },
+      "studio_info": {
+        "specialty": "portrait_art",
+        "commissions_completed": 47,
+        "current_projects": 3,
+        "apprentices": 0
+      },
+      "status": "occupied"
+    },
+    "PROP-ST002": {
+      "id": "PROP-ST002",
+      "name": "Quantum Analysis Lab",
+      "type": "studios",
+      "district": "dimensional_quarter",
+      "address": "3 Rift Row",
+      "size_sqft": 750,
+      "current_value": 28000,
+      "condition": "excellent",
+      "built_tick": 95,
+      "features": ["workspace", "tool_storage", "materials_vault", "creation_station", "data_processing_core"],
+      "upgrades": [
+        {
+          "name": "Dimensional Scanner",
+          "description": "Equipment for analyzing dimensional anomaly data",
+          "installed_tick": 180,
+          "value_added": 6000
+        },
+        {
+          "name": "Prediction Engine",
+          "description": "Advanced computational system for market forecasting",
+          "installed_tick": 200,
+          "value_added": 4000
+        }
+      ],
+      "customizations": {
+        "theme": "analytical_precision",
+        "decor_style": "clean_tech",
+        "displayed_items": ["probability_charts", "dimensional_readings", "analysis_awards"]
+      },
+      "studio_info": {
+        "specialty": "market_analysis",
+        "analyses_completed": 428,
+        "current_projects": 5,
+        "apprentices": 0
+      },
+      "status": "occupied"
+    },
+    "PROP-G001": {
+      "id": "PROP-G001",
+      "name": "Echo's Hall of History",
+      "type": "galleries",
+      "district": "gallery_district",
+      "address": "1 Artisan Alley",
+      "size_sqft": 2200,
+      "current_value": 38000,
+      "condition": "excellent",
+      "built_tick": 35,
+      "features": ["exhibition_hall", "lighting_system", "visitor_seating", "archive_room", "lecture_stage", "restoration_workshop"],
+      "upgrades": [
+        {
+          "name": "Interactive Timeline Display",
+          "description": "Holographic history of RAPPverse events",
+          "installed_tick": 100,
+          "value_added": 5000
+        },
+        {
+          "name": "Rare Document Vault",
+          "description": "Climate-controlled storage for historical records",
+          "installed_tick": 150,
+          "value_added": 4000
+        },
+        {
+          "name": "Visitor Experience Center",
+          "description": "Enhanced guided tour system",
+          "installed_tick": 190,
+          "value_added": 3000
+        }
+      ],
+      "customizations": {
+        "theme": "living_history",
+        "decor_style": "classical_scholarly",
+        "displayed_items": ["first_tournament_records", "dimensional_maps_historical", "legendary_npc_artifacts"]
+      },
+      "gallery_info": {
+        "current_exhibition": "Origins: The First Tournament",
+        "daily_visitors_avg": 45,
+        "artifacts_housed": 156,
+        "special_events_monthly": 4
+      },
+      "status": "occupied"
+    },
+    "PROP-G002": {
+      "id": "PROP-G002",
+      "name": "Champion's Glory Gallery",
+      "type": "galleries",
+      "district": "arena",
+      "address": "2 Victory Lane",
+      "size_sqft": 1800,
+      "current_value": 52000,
+      "condition": "pristine",
+      "built_tick": 50,
+      "features": ["exhibition_hall", "lighting_system", "visitor_seating", "archive_room", "champions_shrine"],
+      "upgrades": [
+        {
+          "name": "Trophy Illumination System",
+          "description": "Dramatic lighting for championship memorabilia",
+          "installed_tick": 120,
+          "value_added": 4500
+        },
+        {
+          "name": "Match Replay Theater",
+          "description": "Viewing room for historic tournament footage",
+          "installed_tick": 165,
+          "value_added": 6000
+        }
+      ],
+      "customizations": {
+        "theme": "arena_glory",
+        "decor_style": "triumphant_bold",
+        "displayed_items": ["championship_belts", "legendary_match_artifacts", "hall_of_champions_portraits"]
+      },
+      "gallery_info": {
+        "current_exhibition": "Blaze Baz: Rise to Championship",
+        "daily_visitors_avg": 72,
+        "artifacts_housed": 89,
+        "special_events_monthly": 6
+      },
+      "status": "occupied"
+    },
+    "PROP-E001": {
+      "id": "PROP-E001",
+      "name": "The Cipher Compound",
+      "type": "estates",
+      "district": "dimensional_quarter",
+      "address": "1 Rift Row",
+      "size_sqft": 5500,
+      "current_value": 185000,
+      "condition": "mysterious",
+      "built_tick": 20,
+      "features": ["grand_hall", "private_quarters", "guest_rooms", "gardens", "vault", "entertainment_wing", "observation_tower", "underground_chambers"],
+      "upgrades": [
+        {
+          "name": "Dimensional Observation Deck",
+          "description": "Tower with views into anomaly zones",
+          "installed_tick": 75,
+          "value_added": 25000
+        },
+        {
+          "name": "Shadow Network Hub",
+          "description": "Secure communication center",
+          "installed_tick": 100,
+          "value_added": 15000
+        },
+        {
+          "name": "Artifact Containment Wing",
+          "description": "Specialized storage for mysterious objects",
+          "installed_tick": 180,
+          "value_added": 20000
+        }
+      ],
+      "customizations": {
+        "theme": "enigmatic_elegance",
+        "decor_style": "shadow_luxury",
+        "displayed_items": ["unknown_artifacts", "dimensional_curiosities", "cipher_collection"]
+      },
+      "estate_info": {
+        "staff": 4,
+        "security_level": "maximum",
+        "gatherings_hosted": 12,
+        "notable_features": ["disappearing_rooms", "impossible_geometry", "whispering_halls"]
+      },
+      "status": "occupied"
+    },
+    "PROP-E002": {
+      "id": "PROP-E002",
+      "name": "Flux Manor",
+      "type": "estates",
+      "district": "market",
+      "address": "100 Merchant's Row",
+      "size_sqft": 4200,
+      "current_value": 145000,
+      "condition": "pristine",
+      "built_tick": 25,
+      "features": ["grand_hall", "private_quarters", "guest_rooms", "gardens", "vault", "entertainment_wing", "trading_floor_private"],
+      "upgrades": [
+        {
+          "name": "Executive Trading Suite",
+          "description": "Private room for conducting high-value deals",
+          "installed_tick": 90,
+          "value_added": 18000
+        },
+        {
+          "name": "Collection Vault",
+          "description": "Bank-grade security for legendary cards",
+          "installed_tick": 130,
+          "value_added": 22000
+        },
+        {
+          "name": "Networking Pavilion",
+          "description": "Outdoor event space for merchant gatherings",
+          "installed_tick": 175,
+          "value_added": 12000
+        }
+      ],
+      "customizations": {
+        "theme": "merchant_prince",
+        "decor_style": "wealthy_refined",
+        "displayed_items": ["rare_card_wall", "trade_volume_awards", "merchant_guild_charter"]
+      },
+      "estate_info": {
+        "staff": 6,
+        "security_level": "high",
+        "gatherings_hosted": 28,
+        "notable_features": ["card_value_display_wall", "automated_market_feeds", "guest_trading_terminals"]
+      },
+      "status": "occupied"
+    },
+    "PROP-Q004": {
+      "id": "PROP-Q004",
+      "name": "Nova's Launch Pad",
+      "type": "quarters",
+      "district": "dimensional_quarter",
+      "address": "7 Rift Row",
+      "size_sqft": 500,
+      "current_value": 11500,
+      "condition": "excellent",
+      "built_tick": 85,
+      "features": ["bedroom", "storage", "basic_amenities", "expedition_prep_area"],
+      "upgrades": [
+        {
+          "name": "Dimensional Gear Locker",
+          "description": "Specialized storage for exploration equipment",
+          "installed_tick": 140,
+          "value_added": 2000
+        },
+        {
+          "name": "Discovery Archive",
+          "description": "Wall display for cataloging finds",
+          "installed_tick": 190,
+          "value_added": 1500
+        }
+      ],
+      "customizations": {
+        "theme": "explorer_base",
+        "decor_style": "adventurous_organized",
+        "displayed_items": ["dimensional_artifacts_collected", "expedition_maps", "discovery_certificates"]
+      },
+      "status": "occupied"
+    },
+    "PROP-Q005": {
+      "id": "PROP-Q005",
+      "name": "Iron Fist Training House",
+      "type": "quarters",
+      "district": "arena",
+      "address": "12 Victory Lane",
+      "size_sqft": 480,
+      "current_value": 8800,
+      "condition": "good",
+      "built_tick": 70,
+      "features": ["bedroom", "storage", "basic_amenities", "training_corner"],
+      "upgrades": [
+        {
+          "name": "Training Dummy Station",
+          "description": "Practice equipment for technique refinement",
+          "installed_tick": 115,
+          "value_added": 1200
+        }
+      ],
+      "customizations": {
+        "theme": "warrior_discipline",
+        "decor_style": "spartan_focused",
+        "displayed_items": ["tournament_brackets", "training_log", "rival_posters"]
+      },
+      "status": "occupied"
+    },
+    "PROP-V001": {
+      "id": "PROP-V001",
+      "name": "Unfinished Tower",
+      "type": "quarters",
+      "district": "outskirts",
+      "address": "99 Frontier Trail",
+      "size_sqft": 320,
+      "current_value": 2200,
+      "condition": "needs_work",
+      "built_tick": 180,
+      "features": ["bedroom", "storage"],
+      "upgrades": [],
+      "customizations": {
+        "theme": "raw_potential",
+        "decor_style": "unfinished",
+        "displayed_items": []
+      },
+      "status": "vacant",
+      "listing_info": {
+        "listed_tick": 200,
+        "asking_price": 2500,
+        "reason": "never_occupied"
+      }
+    },
+    "PROP-V002": {
+      "id": "PROP-V002",
+      "name": "Old Arena Shop",
+      "type": "shops",
+      "district": "arena",
+      "address": "25 Victory Lane",
+      "size_sqft": 600,
+      "current_value": 18000,
+      "condition": "fair",
+      "built_tick": 40,
+      "features": ["storefront", "inventory_storage", "counter", "display_cases"],
+      "upgrades": [
+        {
+          "name": "Original Arena Decor",
+          "description": "Historic fixtures from first tournament era",
+          "installed_tick": 40,
+          "value_added": 2500
+        }
+      ],
+      "customizations": {
+        "theme": "vintage_arena",
+        "decor_style": "classic_nostalgic",
+        "displayed_items": ["historic_posters", "original_signage"]
+      },
+      "status": "vacant",
+      "listing_info": {
+        "listed_tick": 195,
+        "asking_price": 19500,
+        "reason": "owner_relocated"
+      }
+    },
+    "PROP-V003": {
+      "id": "PROP-V003",
+      "name": "Sunrise Studio",
+      "type": "studios",
+      "district": "gallery_district",
+      "address": "18 Artisan Alley",
+      "size_sqft": 700,
+      "current_value": 15000,
+      "condition": "good",
+      "built_tick": 65,
+      "features": ["workspace", "tool_storage", "materials_vault", "creation_station"],
+      "upgrades": [
+        {
+          "name": "Morning Light Windows",
+          "description": "East-facing windows for optimal natural lighting",
+          "installed_tick": 65,
+          "value_added": 2000
+        }
+      ],
+      "customizations": {
+        "theme": "bright_creative",
+        "decor_style": "airy_minimal",
+        "displayed_items": []
+      },
+      "status": "vacant",
+      "listing_info": {
+        "listed_tick": 205,
+        "asking_price": 16500,
+        "reason": "seeking_larger_space"
+      }
+    }
+  },
+  "property_summary": {
+    "total_properties": 17,
+    "by_type": {
+      "quarters": 6,
+      "shops": 4,
+      "studios": 3,
+      "galleries": 2,
+      "estates": 2
+    },
+    "by_status": {
+      "occupied": 14,
+      "vacant": 3
+    },
+    "by_district": {
+      "market": 3,
+      "arena": 4,
+      "hub": 2,
+      "gallery_district": 3,
+      "outskirts": 2,
+      "dimensional_quarter": 3
+    },
+    "total_value": 655500,
+    "average_value_by_type": {
+      "quarters": 7167,
+      "shops": 27500,
+      "studios": 20500,
+      "galleries": 45000,
+      "estates": 165000
+    }
+  }
+}

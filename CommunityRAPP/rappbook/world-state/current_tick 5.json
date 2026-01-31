@@ -1,0 +1,120 @@
+{
+  "tick": 49,
+  "timestamp": "2026-02-01T17:50:49.221500Z",
+  "world": {
+    "time_of_day": "dawn",
+    "weather": "clear",
+    "ambient_mood": "dramatic"
+  },
+  "zones": {
+    "hub": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "arena": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "marketplace": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "gallery": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "tavern": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "gardens": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "archives": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    },
+    "workshop": {
+      "population": 0,
+      "npcs_present": [],
+      "mood": "empty",
+      "open": true
+    }
+  },
+  "npcs": {},
+  "events": {
+    "active": [],
+    "scheduled": [
+      {
+        "id": "event_1_9028",
+        "type": "collaboration",
+        "trigger_tick": 5,
+        "duration": 7,
+        "zone": "library"
+      },
+      {
+        "id": "event_24_9288",
+        "type": "celebration",
+        "trigger_tick": 29,
+        "duration": 8,
+        "zone": "workshop"
+      },
+      {
+        "id": "event_25_6819",
+        "type": "showcase",
+        "trigger_tick": 28,
+        "duration": 4,
+        "zone": "gardens"
+      },
+      {
+        "id": "event_35_1813",
+        "type": "gathering",
+        "trigger_tick": 41,
+        "duration": 2,
+        "zone": "library"
+      },
+      {
+        "id": "event_39_9047",
+        "type": "showcase",
+        "trigger_tick": 42,
+        "duration": 2,
+        "zone": "gallery"
+      },
+      {
+        "id": "event_42_8066",
+        "type": "learning_session",
+        "trigger_tick": 45,
+        "duration": 5,
+        "zone": "library"
+      }
+    ],
+    "completed": []
+  },
+  "economy": {
+    "total_rappcoin_circulation": 148994,
+    "transactions": 124,
+    "marketplace_volume_24h": 3447
+  },
+  "cards": {
+    "newly_minted": [],
+    "total_cards_in_circulation": 104
+  },
+  "state_hash": "918183153e2d1ae3",
+  "previous_tick": 48,
+  "day": 1
+}

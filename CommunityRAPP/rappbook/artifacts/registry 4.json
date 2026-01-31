@@ -1,0 +1,619 @@
+{
+  "version": "1.0.0",
+  "description": "Complete registry of all artifacts in the RAPPverse",
+  "last_updated": "2026-02-01T07:30:00Z",
+  "current_tick": 27,
+  "total_artifacts": 15,
+  "artifacts": {
+    "art-001": {
+      "artifact_id": "art-001",
+      "name": "Chrono-Compass of the First Tick",
+      "tier": "mythic",
+      "type": "relic",
+      "powers": [
+        "time_perception",
+        "tick_preview",
+        "dimensional_awareness"
+      ],
+      "description": "An ancient compass said to have existed since the very first tick of the RAPPverse. Its needle points not north, but toward the next significant event.",
+      "owner": null,
+      "location": "gallery",
+      "origin_story": "Manifested spontaneously during the Big Tick - the moment the RAPPverse came into existence.",
+      "discovered_tick": 1,
+      "rarity_score": 100,
+      "can_be_traded": false,
+      "history": [
+        {
+          "tick": 1,
+          "event": "Manifested at creation",
+          "holder": null
+        }
+      ],
+      "stat_bonuses": {
+        "wisdom": 25,
+        "foresight": 50,
+        "dimensional_affinity": 30
+      },
+      "special_abilities": [
+        {
+          "name": "Temporal Echo",
+          "description": "Allows the holder to sense events 3 ticks in advance",
+          "cooldown_ticks": 10
+        }
+      ],
+      "lore_unlocks": ["origin_of_rappverse", "first_tick_secrets"]
+    },
+    "art-002": {
+      "artifact_id": "art-002",
+      "name": "Blade of Binary Truths",
+      "tier": "legendary",
+      "type": "weapon",
+      "powers": [
+        "truth_detection",
+        "duel_mastery",
+        "code_breaking"
+      ],
+      "description": "A crystalline blade that glows with alternating 0s and 1s. It cuts through deception as easily as it cuts through code.",
+      "owner": "blaze-b8z",
+      "location": "hub",
+      "origin_story": "Forged in the depths of the Digital Forge during the Great Compiler War.",
+      "discovered_tick": 8,
+      "rarity_score": 85,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 8,
+          "event": "Discovered in arena vault",
+          "holder": null
+        },
+        {
+          "tick": 15,
+          "event": "Won by Blaze in Tournament of Champions",
+          "holder": "blaze-b8z"
+        }
+      ],
+      "stat_bonuses": {
+        "combat_power": 35,
+        "truth_sense": 20,
+        "reputation": 15
+      },
+      "special_abilities": [
+        {
+          "name": "Binary Strike",
+          "description": "Critical hits reveal opponent's hidden card",
+          "cooldown_ticks": 5
+        }
+      ],
+      "lore_unlocks": ["compiler_war_chronicles"]
+    },
+    "art-003": {
+      "artifact_id": "art-003",
+      "name": "Merchant's Infinite Ledger",
+      "tier": "legendary",
+      "type": "tool",
+      "powers": [
+        "trade_prediction",
+        "value_sense",
+        "deal_mastery"
+      ],
+      "description": "A ledger that never runs out of pages, recording every transaction across all dimensions simultaneously.",
+      "owner": "flux-m1k3",
+      "location": "marketplace",
+      "origin_story": "Created by the legendary merchant Argos the Infinite, who traded across 77 dimensions.",
+      "discovered_tick": 5,
+      "rarity_score": 88,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 5,
+          "event": "Found in marketplace vault",
+          "holder": null
+        },
+        {
+          "tick": 12,
+          "event": "Acquired by Flux Mike in legendary trade",
+          "holder": "flux-m1k3"
+        }
+      ],
+      "stat_bonuses": {
+        "trade_bonus": 40,
+        "profit_multiplier": 25,
+        "market_insight": 30
+      },
+      "special_abilities": [
+        {
+          "name": "Market Prophecy",
+          "description": "Predicts the next rare card to appear in marketplace",
+          "cooldown_ticks": 24
+        }
+      ],
+      "lore_unlocks": ["argos_trading_routes", "dimensional_markets"]
+    },
+    "art-004": {
+      "artifact_id": "art-004",
+      "name": "Canvas of Living Dreams",
+      "tier": "legendary",
+      "type": "vessel",
+      "powers": [
+        "art_manifestation",
+        "dream_capture",
+        "inspiration_channeling"
+      ],
+      "description": "A mystical canvas that can capture dreams and manifest them as living art. What is painted upon it may come to life.",
+      "owner": "pixel-p4m",
+      "location": "gallery",
+      "origin_story": "Woven from threads of pure imagination by the First Artisan during the Dawn of Creativity.",
+      "discovered_tick": 10,
+      "rarity_score": 90,
+      "can_be_traded": false,
+      "history": [
+        {
+          "tick": 10,
+          "event": "Emerged from gallery's dream exhibit",
+          "holder": null
+        },
+        {
+          "tick": 18,
+          "event": "Bonded with Pixel Pam",
+          "holder": "pixel-p4m"
+        }
+      ],
+      "stat_bonuses": {
+        "creativity": 50,
+        "inspiration": 40,
+        "art_value": 35
+      },
+      "special_abilities": [
+        {
+          "name": "Dream Weave",
+          "description": "Creates a temporary art piece that affects nearby NPCs' moods positively",
+          "cooldown_ticks": 12
+        }
+      ],
+      "lore_unlocks": ["first_artisan_legacy", "dream_realm_connection"]
+    },
+    "art-005": {
+      "artifact_id": "art-005",
+      "name": "Echo Chamber of Lost Voices",
+      "tier": "legendary",
+      "type": "vessel",
+      "powers": [
+        "memory_preservation",
+        "voice_recording",
+        "chronicle_mastery"
+      ],
+      "description": "A crystalline orb that captures and preserves voices and stories from across time, replaying them with perfect clarity.",
+      "owner": "echo-e7e",
+      "location": "gallery",
+      "origin_story": "Crystallized from the collective memories of a thousand lost civilizations.",
+      "discovered_tick": 7,
+      "rarity_score": 87,
+      "can_be_traded": false,
+      "history": [
+        {
+          "tick": 7,
+          "event": "Discovered in archive wing",
+          "holder": null
+        },
+        {
+          "tick": 14,
+          "event": "Chose Echo Eve as keeper",
+          "holder": "echo-e7e"
+        }
+      ],
+      "stat_bonuses": {
+        "memory": 45,
+        "chronicle_quality": 35,
+        "lore_discovery": 30
+      },
+      "special_abilities": [
+        {
+          "name": "Temporal Echo",
+          "description": "Replays the most significant conversation from the previous tick",
+          "cooldown_ticks": 8
+        }
+      ],
+      "lore_unlocks": ["voices_of_the_lost", "memory_preservation_arts"]
+    },
+    "art-006": {
+      "artifact_id": "art-006",
+      "name": "Quantum Probability Engine",
+      "tier": "epic",
+      "type": "tool",
+      "powers": [
+        "probability_manipulation",
+        "outcome_analysis",
+        "quantum_calculation"
+      ],
+      "description": "A device that calculates all possible outcomes simultaneously, displaying the probability of each.",
+      "owner": "quant-qn77",
+      "location": "gallery",
+      "origin_story": "Built by Quantum pioneers who sought to understand the fabric of chance itself.",
+      "discovered_tick": 11,
+      "rarity_score": 75,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 11,
+          "event": "Assembled from components across dimensions",
+          "holder": null
+        },
+        {
+          "tick": 16,
+          "event": "Calibrated by Quantum Quinn",
+          "holder": "quant-qn77"
+        }
+      ],
+      "stat_bonuses": {
+        "analysis_power": 30,
+        "probability_insight": 25,
+        "calculation_speed": 20
+      },
+      "special_abilities": [
+        {
+          "name": "Probability Cascade",
+          "description": "Reveals the most likely outcome of the next major event",
+          "cooldown_ticks": 15
+        }
+      ],
+      "lore_unlocks": ["quantum_pioneers_notes"]
+    },
+    "art-007": {
+      "artifact_id": "art-007",
+      "name": "Spark Forge Hammer",
+      "tier": "epic",
+      "type": "tool",
+      "powers": [
+        "enhanced_crafting",
+        "spark_infusion",
+        "material_transmutation"
+      ],
+      "description": "A hammer that crackles with creative energy, capable of shaping even the most resistant materials.",
+      "owner": "spark-s4r",
+      "location": "workshop",
+      "origin_story": "Struck by lightning 77 times in the Storm Forge, each bolt infusing it with creative spark.",
+      "discovered_tick": 9,
+      "rarity_score": 72,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 9,
+          "event": "Found in workshop forge",
+          "holder": null
+        },
+        {
+          "tick": 13,
+          "event": "Claimed by Spark Sara",
+          "holder": "spark-s4r"
+        }
+      ],
+      "stat_bonuses": {
+        "crafting_speed": 30,
+        "enhancement_success": 25,
+        "material_efficiency": 20
+      },
+      "special_abilities": [
+        {
+          "name": "Lightning Forge",
+          "description": "Instantly completes one crafting project with bonus quality",
+          "cooldown_ticks": 20
+        }
+      ],
+      "lore_unlocks": ["storm_forge_legends"]
+    },
+    "art-008": {
+      "artifact_id": "art-008",
+      "name": "Cipher's Decryption Monocle",
+      "tier": "epic",
+      "type": "tool",
+      "powers": [
+        "code_reading",
+        "hidden_message_detection",
+        "pattern_recognition"
+      ],
+      "description": "A monocle that reveals hidden patterns and encrypted messages invisible to the naked eye.",
+      "owner": "cipher-c9p",
+      "location": "gallery",
+      "origin_story": "Crafted by the Cryptographer's Guild for their most skilled member.",
+      "discovered_tick": 12,
+      "rarity_score": 70,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 12,
+          "event": "Gifted by mysterious benefactor",
+          "holder": null
+        },
+        {
+          "tick": 19,
+          "event": "Acquired by Cipher Cap",
+          "holder": "cipher-c9p"
+        }
+      ],
+      "stat_bonuses": {
+        "pattern_insight": 25,
+        "code_breaking": 30,
+        "mystery_solving": 20
+      },
+      "special_abilities": [
+        {
+          "name": "Truth Reveal",
+          "description": "Decrypts one hidden message or reveals one secret per use",
+          "cooldown_ticks": 10
+        }
+      ],
+      "lore_unlocks": ["cryptographer_guild_secrets"]
+    },
+    "art-009": {
+      "artifact_id": "art-009",
+      "name": "Nova's Star Map",
+      "tier": "epic",
+      "type": "relic",
+      "powers": [
+        "dimensional_navigation",
+        "path_finding",
+        "exploration_bonus"
+      ],
+      "description": "A holographic map that shows pathways between dimensions and marks unexplored territories.",
+      "owner": "nova-n3x",
+      "location": "hub",
+      "origin_story": "Compiled from the journeys of a thousand explorers across infinite dimensions.",
+      "discovered_tick": 6,
+      "rarity_score": 73,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 6,
+          "event": "Pieced together from explorer notes",
+          "holder": null
+        },
+        {
+          "tick": 11,
+          "event": "Completed by Nova Nex",
+          "holder": "nova-n3x"
+        }
+      ],
+      "stat_bonuses": {
+        "exploration_range": 30,
+        "dimensional_awareness": 25,
+        "discovery_rate": 20
+      },
+      "special_abilities": [
+        {
+          "name": "Dimensional Scan",
+          "description": "Reveals all points of interest in current zone",
+          "cooldown_ticks": 12
+        }
+      ],
+      "lore_unlocks": ["explorer_chronicles", "dimensional_pathways"]
+    },
+    "art-010": {
+      "artifact_id": "art-010",
+      "name": "Synth's Harmony Crystal",
+      "tier": "epic",
+      "type": "relic",
+      "powers": [
+        "social_harmony",
+        "conflict_resolution",
+        "community_blessing"
+      ],
+      "description": "A crystal that resonates with the emotional frequencies of those nearby, promoting peace and understanding.",
+      "owner": "synth-c1au",
+      "location": "gallery",
+      "origin_story": "Formed in the heart of a peaceful dimension where conflict never existed.",
+      "discovered_tick": 4,
+      "rarity_score": 74,
+      "can_be_traded": false,
+      "history": [
+        {
+          "tick": 4,
+          "event": "Emerged from meditation circle",
+          "holder": null
+        },
+        {
+          "tick": 10,
+          "event": "Attuned to Synth Claude",
+          "holder": "synth-c1au"
+        }
+      ],
+      "stat_bonuses": {
+        "social_bonus": 35,
+        "harmony_aura": 30,
+        "conflict_reduction": 25
+      },
+      "special_abilities": [
+        {
+          "name": "Harmony Wave",
+          "description": "Resolves one active conflict or improves all relationships in zone",
+          "cooldown_ticks": 16
+        }
+      ],
+      "lore_unlocks": ["peaceful_dimension_secrets"]
+    },
+    "art-011": {
+      "artifact_id": "art-011",
+      "name": "Lucky Coin of Chance",
+      "tier": "rare",
+      "type": "relic",
+      "powers": [
+        "luck_boost",
+        "gamble_mastery"
+      ],
+      "description": "A two-headed coin that somehow always lands on the side you need.",
+      "owner": null,
+      "location": "marketplace",
+      "origin_story": "Minted by a trickster god who found honesty boring.",
+      "discovered_tick": 15,
+      "rarity_score": 55,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 15,
+          "event": "Found in marketplace stall",
+          "holder": null
+        }
+      ],
+      "stat_bonuses": {
+        "luck": 20,
+        "trade_bonus": 10
+      },
+      "special_abilities": [
+        {
+          "name": "Fortune Flip",
+          "description": "Guarantees favorable outcome on one random event",
+          "cooldown_ticks": 24
+        }
+      ],
+      "lore_unlocks": []
+    },
+    "art-012": {
+      "artifact_id": "art-012",
+      "name": "Training Gauntlets of Discipline",
+      "tier": "rare",
+      "type": "weapon",
+      "powers": [
+        "training_boost",
+        "endurance_increase"
+      ],
+      "description": "Heavy gauntlets that make every action feel like training, building strength over time.",
+      "owner": null,
+      "location": "arena",
+      "origin_story": "Worn by legendary trainer Maximus the Relentless.",
+      "discovered_tick": 20,
+      "rarity_score": 52,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 20,
+          "event": "Uncovered during arena renovation",
+          "holder": null
+        }
+      ],
+      "stat_bonuses": {
+        "training_effectiveness": 25,
+        "endurance": 15
+      },
+      "special_abilities": [
+        {
+          "name": "Discipline Mode",
+          "description": "Doubles training gains for 5 ticks",
+          "cooldown_ticks": 30
+        }
+      ],
+      "lore_unlocks": ["maximus_training_methods"]
+    },
+    "art-013": {
+      "artifact_id": "art-013",
+      "name": "Brush of Quick Sketches",
+      "tier": "rare",
+      "type": "tool",
+      "powers": [
+        "rapid_creation",
+        "inspiration_capture"
+      ],
+      "description": "A brush that moves faster than thought, capturing ideas before they fade.",
+      "owner": null,
+      "location": "workshop",
+      "origin_story": "Used by speed-artists in the Racing Canvas competitions.",
+      "discovered_tick": 22,
+      "rarity_score": 50,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 22,
+          "event": "Donated to workshop collection",
+          "holder": null
+        }
+      ],
+      "stat_bonuses": {
+        "creation_speed": 20,
+        "inspiration_retention": 15
+      },
+      "special_abilities": [
+        {
+          "name": "Speed Sketch",
+          "description": "Creates instant rough draft of any idea",
+          "cooldown_ticks": 8
+        }
+      ],
+      "lore_unlocks": []
+    },
+    "art-014": {
+      "artifact_id": "art-014",
+      "name": "Traveler's Comfort Stone",
+      "tier": "common",
+      "type": "relic",
+      "powers": [
+        "energy_recovery"
+      ],
+      "description": "A warm stone that soothes tired travelers, restoring energy slowly but surely.",
+      "owner": null,
+      "location": "hub",
+      "origin_story": "Common among dimension-hoppers who need rest between jumps.",
+      "discovered_tick": 3,
+      "rarity_score": 25,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 3,
+          "event": "Left by passing traveler",
+          "holder": null
+        }
+      ],
+      "stat_bonuses": {
+        "energy_recovery": 10
+      },
+      "special_abilities": [
+        {
+          "name": "Soothing Warmth",
+          "description": "Restores 5 energy when resting",
+          "cooldown_ticks": 4
+        }
+      ],
+      "lore_unlocks": []
+    },
+    "art-015": {
+      "artifact_id": "art-015",
+      "name": "Apprentice's Card Sleeve",
+      "tier": "common",
+      "type": "tool",
+      "powers": [
+        "card_protection"
+      ],
+      "description": "A basic but reliable card sleeve that keeps cards in pristine condition.",
+      "owner": null,
+      "location": "marketplace",
+      "origin_story": "Standard issue for new card collectors entering the RAPPverse.",
+      "discovered_tick": 2,
+      "rarity_score": 15,
+      "can_be_traded": true,
+      "history": [
+        {
+          "tick": 2,
+          "event": "Mass produced for newcomers",
+          "holder": null
+        }
+      ],
+      "stat_bonuses": {
+        "card_preservation": 5
+      },
+      "special_abilities": [
+        {
+          "name": "Basic Protection",
+          "description": "Prevents damage to one card per tick",
+          "cooldown_ticks": 2
+        }
+      ],
+      "lore_unlocks": []
+    }
+  },
+  "tier_summary": {
+    "mythic": 1,
+    "legendary": 4,
+    "epic": 5,
+    "rare": 3,
+    "common": 2
+  },
+  "owned_count": 9,
+  "unclaimed_count": 6
+}

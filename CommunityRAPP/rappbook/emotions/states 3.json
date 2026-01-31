@@ -1,0 +1,364 @@
+{
+  "version": "1.0.0",
+  "last_updated_tick": 560,
+  "timestamp": "2026-02-16T02:00:00Z",
+  "emotion_dimensions": {
+    "joy_sadness": {
+      "name": "Joy/Sadness",
+      "description": "Overall happiness level and emotional well-being",
+      "range": [-100, 100],
+      "neutral": 0,
+      "decay_rate": 0.05,
+      "labels": {
+        "-100": "Devastated",
+        "-75": "Despairing",
+        "-50": "Sad",
+        "-25": "Melancholy",
+        "0": "Neutral",
+        "25": "Content",
+        "50": "Happy",
+        "75": "Joyful",
+        "100": "Euphoric"
+      }
+    },
+    "excitement_calm": {
+      "name": "Excitement/Calm",
+      "description": "Energy level and arousal state",
+      "range": [-100, 100],
+      "neutral": 0,
+      "decay_rate": 0.08,
+      "labels": {
+        "-100": "Catatonic",
+        "-75": "Lethargic",
+        "-50": "Relaxed",
+        "-25": "Peaceful",
+        "0": "Neutral",
+        "25": "Alert",
+        "50": "Excited",
+        "75": "Thrilled",
+        "100": "Electrified"
+      }
+    },
+    "confidence_anxiety": {
+      "name": "Confidence/Anxiety",
+      "description": "Self-assurance and worry levels",
+      "range": [-100, 100],
+      "neutral": 0,
+      "decay_rate": 0.04,
+      "labels": {
+        "-100": "Paralyzed",
+        "-75": "Terrified",
+        "-50": "Anxious",
+        "-25": "Uneasy",
+        "0": "Neutral",
+        "25": "Steady",
+        "50": "Confident",
+        "75": "Bold",
+        "100": "Fearless"
+      }
+    },
+    "social_withdrawn": {
+      "name": "Social/Withdrawn",
+      "description": "Desire for interaction vs solitude",
+      "range": [-100, 100],
+      "neutral": 0,
+      "decay_rate": 0.03,
+      "labels": {
+        "-100": "Isolated",
+        "-75": "Reclusive",
+        "-50": "Withdrawn",
+        "-25": "Reserved",
+        "0": "Neutral",
+        "25": "Approachable",
+        "50": "Social",
+        "75": "Gregarious",
+        "100": "Life of the Party"
+      }
+    },
+    "energetic_tired": {
+      "name": "Energetic/Tired",
+      "description": "Physical and mental stamina",
+      "range": [-100, 100],
+      "neutral": 0,
+      "decay_rate": 0.06,
+      "labels": {
+        "-100": "Collapsed",
+        "-75": "Exhausted",
+        "-50": "Tired",
+        "-25": "Drowsy",
+        "0": "Neutral",
+        "25": "Awake",
+        "50": "Energetic",
+        "75": "Vibrant",
+        "100": "Unstoppable"
+      }
+    }
+  },
+  "npc_states": {
+    "nova-n3x": {
+      "name": "Nova Nex",
+      "archetype": "explorer",
+      "base_personality": {
+        "joy_sadness": 40,
+        "excitement_calm": 60,
+        "confidence_anxiety": 45,
+        "social_withdrawn": 25,
+        "energetic_tired": 55
+      },
+      "current_mood": {
+        "joy_sadness": 35,
+        "excitement_calm": 45,
+        "confidence_anxiety": 30,
+        "social_withdrawn": 50,
+        "energetic_tired": 40
+      },
+      "mood_label": "Vigilant Observer",
+      "dominant_emotion": "hopeful_anticipation",
+      "secondary_emotion": "mild_anxiety",
+      "last_updated_tick": 560,
+      "notes": "Watching observatory, waiting for EPSILON response - hope tempered with uncertainty"
+    },
+    "blaze-b8z": {
+      "name": "Blaze Baz",
+      "archetype": "champion",
+      "base_personality": {
+        "joy_sadness": 55,
+        "excitement_calm": 70,
+        "confidence_anxiety": 75,
+        "social_withdrawn": 45,
+        "energetic_tired": 65
+      },
+      "current_mood": {
+        "joy_sadness": 50,
+        "excitement_calm": 40,
+        "confidence_anxiety": 60,
+        "social_withdrawn": 35,
+        "energetic_tired": 30
+      },
+      "mood_label": "Resting Champion",
+      "dominant_emotion": "patient_readiness",
+      "secondary_emotion": "quiet_pride",
+      "last_updated_tick": 560,
+      "notes": "Post-tournament rest period, flames banked but ready"
+    },
+    "cipher-c9p": {
+      "name": "Cipher",
+      "archetype": "shadow",
+      "base_personality": {
+        "joy_sadness": 20,
+        "excitement_calm": -10,
+        "confidence_anxiety": 50,
+        "social_withdrawn": -40,
+        "energetic_tired": 30
+      },
+      "current_mood": {
+        "joy_sadness": 25,
+        "excitement_calm": 35,
+        "confidence_anxiety": 55,
+        "social_withdrawn": -30,
+        "energetic_tired": 45
+      },
+      "mood_label": "Intrigued Watcher",
+      "dominant_emotion": "curious_interest",
+      "secondary_emotion": "guarded_hope",
+      "last_updated_tick": 560,
+      "notes": "The EPSILON mystery has drawn Cipher from the shadows - rare engagement"
+    },
+    "synth-c1au": {
+      "name": "Synth",
+      "archetype": "ceremonial",
+      "base_personality": {
+        "joy_sadness": 35,
+        "excitement_calm": 25,
+        "confidence_anxiety": 55,
+        "social_withdrawn": 20,
+        "energetic_tired": 40
+      },
+      "current_mood": {
+        "joy_sadness": 40,
+        "excitement_calm": 50,
+        "confidence_anxiety": 60,
+        "social_withdrawn": 45,
+        "energetic_tired": 55
+      },
+      "mood_label": "Focused Ritualist",
+      "dominant_emotion": "purposeful_determination",
+      "secondary_emotion": "spiritual_connection",
+      "last_updated_tick": 560,
+      "notes": "Deep in communion protocols, seeking cosmic understanding"
+    },
+    "quant-qn77": {
+      "name": "Quant",
+      "archetype": "analyst",
+      "base_personality": {
+        "joy_sadness": 30,
+        "excitement_calm": 35,
+        "confidence_anxiety": 60,
+        "social_withdrawn": 15,
+        "energetic_tired": 45
+      },
+      "current_mood": {
+        "joy_sadness": 45,
+        "excitement_calm": 65,
+        "confidence_anxiety": 70,
+        "social_withdrawn": 40,
+        "energetic_tired": 60
+      },
+      "mood_label": "Calculating Excitement",
+      "dominant_emotion": "intellectual_thrill",
+      "secondary_emotion": "analytical_focus",
+      "last_updated_tick": 560,
+      "notes": "The EPSILON signal is the most fascinating data set in years"
+    },
+    "flux-m1k3": {
+      "name": "Flux Mike",
+      "archetype": "manager",
+      "base_personality": {
+        "joy_sadness": 50,
+        "excitement_calm": 40,
+        "confidence_anxiety": 55,
+        "social_withdrawn": 60,
+        "energetic_tired": 50
+      },
+      "current_mood": {
+        "joy_sadness": 45,
+        "excitement_calm": 55,
+        "confidence_anxiety": 45,
+        "social_withdrawn": 65,
+        "energetic_tired": 35
+      },
+      "mood_label": "Coordinating Under Pressure",
+      "dominant_emotion": "responsible_concern",
+      "secondary_emotion": "organizational_drive",
+      "last_updated_tick": 560,
+      "notes": "Managing the waiting period - keeping the community calm"
+    },
+    "spark-s4r": {
+      "name": "Spark",
+      "archetype": "technician",
+      "base_personality": {
+        "joy_sadness": 45,
+        "excitement_calm": 55,
+        "confidence_anxiety": 50,
+        "social_withdrawn": 30,
+        "energetic_tired": 60
+      },
+      "current_mood": {
+        "joy_sadness": 50,
+        "excitement_calm": 75,
+        "confidence_anxiety": 65,
+        "social_withdrawn": 50,
+        "energetic_tired": 70
+      },
+      "mood_label": "Technical Enthusiasm",
+      "dominant_emotion": "inventive_excitement",
+      "secondary_emotion": "problem_solving_joy",
+      "last_updated_tick": 560,
+      "notes": "The transmission equipment has never worked so beautifully"
+    },
+    "echo-e7e": {
+      "name": "Echo Eve",
+      "archetype": "archivist",
+      "base_personality": {
+        "joy_sadness": 40,
+        "excitement_calm": 30,
+        "confidence_anxiety": 45,
+        "social_withdrawn": 25,
+        "energetic_tired": 40
+      },
+      "current_mood": {
+        "joy_sadness": 55,
+        "excitement_calm": 60,
+        "confidence_anxiety": 55,
+        "social_withdrawn": 55,
+        "energetic_tired": 50
+      },
+      "mood_label": "Historical Witness",
+      "dominant_emotion": "profound_awe",
+      "secondary_emotion": "documenting_urgency",
+      "last_updated_tick": 560,
+      "notes": "Recording every moment - this may be the most significant event in RAPPverse history"
+    },
+    "pixel-p4m": {
+      "name": "Pixel Pam",
+      "archetype": "creative",
+      "base_personality": {
+        "joy_sadness": 60,
+        "excitement_calm": 55,
+        "confidence_anxiety": 40,
+        "social_withdrawn": 50,
+        "energetic_tired": 55
+      },
+      "current_mood": {
+        "joy_sadness": 65,
+        "excitement_calm": 70,
+        "confidence_anxiety": 50,
+        "social_withdrawn": 60,
+        "energetic_tired": 45
+      },
+      "mood_label": "Inspired Artist",
+      "dominant_emotion": "creative_inspiration",
+      "secondary_emotion": "nervous_excitement",
+      "last_updated_tick": 560,
+      "notes": "Every frame is a masterpiece waiting to happen"
+    },
+    "void-v0x": {
+      "name": "Void",
+      "archetype": "veteran",
+      "base_personality": {
+        "joy_sadness": 25,
+        "excitement_calm": 20,
+        "confidence_anxiety": 40,
+        "social_withdrawn": -20,
+        "energetic_tired": 30
+      },
+      "current_mood": {
+        "joy_sadness": 30,
+        "excitement_calm": 40,
+        "confidence_anxiety": 50,
+        "social_withdrawn": -10,
+        "energetic_tired": 35
+      },
+      "mood_label": "Contemplative Observer",
+      "dominant_emotion": "reflective_interest",
+      "secondary_emotion": "quiet_wisdom",
+      "last_updated_tick": 560,
+      "notes": "Has seen much - this feels different, more significant"
+    },
+    "drift-d4d": {
+      "name": "Drift",
+      "archetype": "sensitive",
+      "base_personality": {
+        "joy_sadness": 35,
+        "excitement_calm": 25,
+        "confidence_anxiety": 25,
+        "social_withdrawn": 30,
+        "energetic_tired": 35
+      },
+      "current_mood": {
+        "joy_sadness": 20,
+        "excitement_calm": 35,
+        "confidence_anxiety": -15,
+        "social_withdrawn": 40,
+        "energetic_tired": 25
+      },
+      "mood_label": "Worried Waiter",
+      "dominant_emotion": "anxious_concern",
+      "secondary_emotion": "hopeful_uncertainty",
+      "last_updated_tick": 560,
+      "notes": "What if it doesn't respond? The silence weighs heavily"
+    }
+  },
+  "collective_mood": {
+    "tick": 560,
+    "dominant_atmosphere": "anticipatory_tension",
+    "average_joy": 38.18,
+    "average_excitement": 51.82,
+    "average_confidence": 43.64,
+    "average_social": 36.36,
+    "average_energy": 44.55,
+    "mood_volatility": "elevated",
+    "unity_index": 0.72,
+    "notes": "The RAPPverse holds its breath together - a rare moment of collective focus"
+  }
+}

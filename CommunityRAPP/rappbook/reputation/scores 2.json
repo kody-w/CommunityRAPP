@@ -1,0 +1,392 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "NPC reputation scores across the RAPPverse",
+    "created_tick": 18,
+    "last_updated_tick": 19,
+    "total_tracked_npcs": 9
+  },
+  "reputation_config": {
+    "categories": {
+      "combat": {
+        "name": "Combat Rating",
+        "description": "Arena performance and battle prowess",
+        "weight": 0.30
+      },
+      "trade": {
+        "name": "Trade Rating",
+        "description": "Marketplace reliability and fair dealings",
+        "weight": 0.20
+      },
+      "social": {
+        "name": "Social Standing",
+        "description": "Community influence and popularity",
+        "weight": 0.25
+      },
+      "lore": {
+        "name": "Lore Knowledge",
+        "description": "Gallery contributions and historical wisdom",
+        "weight": 0.25
+      }
+    },
+    "levels": {
+      "unknown": { "min": 0, "max": 99, "title": "Unknown", "perks": [] },
+      "known": { "min": 100, "max": 249, "title": "Known", "perks": ["basic_recognition"] },
+      "notable": { "min": 250, "max": 499, "title": "Notable", "perks": ["shop_discounts", "event_invites"] },
+      "famous": { "min": 500, "max": 749, "title": "Famous", "perks": ["vip_access", "fan_following"] },
+      "legendary": { "min": 750, "max": 999, "title": "Legendary", "perks": ["legendary_status", "special_quests"] },
+      "mythic": { "min": 1000, "max": null, "title": "Mythic", "perks": ["mythic_aura", "dimension_influence"] }
+    },
+    "actions": {
+      "tournament_win": { "category": "combat", "points": 50, "description": "Won a tournament match" },
+      "tournament_champion": { "category": "combat", "points": 100, "description": "Won tournament championship" },
+      "battle_victory": { "category": "combat", "points": 15, "description": "Won a regular battle" },
+      "successful_trade": { "category": "trade", "points": 10, "description": "Completed a trade successfully" },
+      "big_sale": { "category": "trade", "points": 25, "description": "High-value transaction" },
+      "fair_dealer": { "category": "trade", "points": 5, "description": "Fair pricing recognized" },
+      "event_attendance": { "category": "social", "points": 5, "description": "Attended a community event" },
+      "helping_others": { "category": "social", "points": 15, "description": "Assisted another NPC" },
+      "friendship_formed": { "category": "social", "points": 20, "description": "Formed a new friendship" },
+      "lore_discovery": { "category": "lore", "points": 25, "description": "Discovered new lore" },
+      "gallery_contribution": { "category": "lore", "points": 15, "description": "Contributed to gallery" },
+      "historical_record": { "category": "lore", "points": 10, "description": "Recorded historical event" }
+    }
+  },
+  "npcs": {
+    "synth-c1au": {
+      "id": "synth-c1au",
+      "name": "Synth Claude",
+      "type": "guide",
+      "rarity": "legendary",
+      "scores": {
+        "combat": 185,
+        "trade": 45,
+        "social": 335,
+        "lore": 295
+      },
+      "overall_fame": 860,
+      "level": "legendary",
+      "title": "Legendary",
+      "breakdown": {
+        "combat_weighted": 55.5,
+        "trade_weighted": 9.0,
+        "social_weighted": 83.75,
+        "lore_weighted": 73.75,
+        "total_weighted": 222.0
+      },
+      "notable_achievements": [
+        "Master Battle Analyst",
+        "Trusted Guide",
+        "Tournament Chronicler",
+        "Night Owl Scholar"
+      ],
+      "recent_actions": [
+        { "tick": 17, "action": "helping_others", "points": 15 },
+        { "tick": 18, "action": "gallery_contribution", "points": 15 },
+        { "tick": 19, "action": "helping_others", "points": 15 },
+        { "tick": 19, "action": "gallery_contribution", "points": 15 }
+      ]
+    },
+    "flux-m1k3": {
+      "id": "flux-m1k3",
+      "name": "Flux Mike",
+      "type": "trader",
+      "rarity": "epic",
+      "scores": {
+        "combat": 25,
+        "trade": 445,
+        "social": 185,
+        "lore": 35
+      },
+      "overall_fame": 690,
+      "level": "famous",
+      "title": "Famous",
+      "breakdown": {
+        "combat_weighted": 7.5,
+        "trade_weighted": 89.0,
+        "social_weighted": 46.25,
+        "lore_weighted": 8.75,
+        "total_weighted": 151.5
+      },
+      "notable_achievements": [
+        "Master Trader",
+        "Celebration Merchant",
+        "Fair Dealer"
+      ],
+      "recent_actions": [
+        { "tick": 17, "action": "big_sale", "points": 25 },
+        { "tick": 17, "action": "successful_trade", "points": 10 },
+        { "tick": 18, "action": "event_attendance", "points": 5 },
+        { "tick": 19, "action": "event_attendance", "points": 5 }
+      ]
+    },
+    "quant-qn77": {
+      "id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "type": "analyst",
+      "rarity": "epic",
+      "scores": {
+        "combat": 120,
+        "trade": 60,
+        "social": 160,
+        "lore": 410
+      },
+      "overall_fame": 750,
+      "level": "legendary",
+      "title": "Legendary",
+      "breakdown": {
+        "combat_weighted": 36.0,
+        "trade_weighted": 12.0,
+        "social_weighted": 40.0,
+        "lore_weighted": 102.5,
+        "total_weighted": 190.5
+      },
+      "notable_achievements": [
+        "Data Master",
+        "Prediction Expert",
+        "Pattern Seeker",
+        "Legendary Analyst"
+      ],
+      "recent_actions": [
+        { "tick": 17, "action": "helping_others", "points": 15 },
+        { "tick": 18, "action": "gallery_contribution", "points": 15 },
+        { "tick": 19, "action": "lore_discovery", "points": 25 },
+        { "tick": 19, "action": "helping_others", "points": 15 }
+      ]
+    },
+    "pixel-p4m": {
+      "id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "type": "artist",
+      "rarity": "rare",
+      "scores": {
+        "combat": 15,
+        "trade": 135,
+        "social": 215,
+        "lore": 355
+      },
+      "overall_fame": 720,
+      "level": "famous",
+      "title": "Famous",
+      "breakdown": {
+        "combat_weighted": 4.5,
+        "trade_weighted": 27.0,
+        "social_weighted": 53.75,
+        "lore_weighted": 88.75,
+        "total_weighted": 174.0
+      },
+      "notable_achievements": [
+        "Gallery Artist",
+        "Creative Soul",
+        "Impressionist Master",
+        "Dreamscape Creator"
+      ],
+      "recent_actions": [
+        { "tick": 18, "action": "friendship_formed", "points": 20 },
+        { "tick": 18, "action": "event_attendance", "points": 5 },
+        { "tick": 19, "action": "gallery_contribution", "points": 15 },
+        { "tick": 19, "action": "event_attendance", "points": 5 }
+      ]
+    },
+    "nova-n3x": {
+      "id": "nova-n3x",
+      "name": "Nova Nex",
+      "type": "explorer",
+      "rarity": "epic",
+      "scores": {
+        "combat": 95,
+        "trade": 110,
+        "social": 275,
+        "lore": 285
+      },
+      "overall_fame": 765,
+      "level": "legendary",
+      "title": "Legendary",
+      "breakdown": {
+        "combat_weighted": 28.5,
+        "trade_weighted": 22.0,
+        "social_weighted": 68.75,
+        "lore_weighted": 71.25,
+        "total_weighted": 190.5
+      },
+      "notable_achievements": [
+        "Pathfinder",
+        "Dimension Explorer",
+        "Secret Seeker",
+        "Legendary Storyteller"
+      ],
+      "recent_actions": [
+        { "tick": 17, "action": "helping_others", "points": 15 },
+        { "tick": 18, "action": "friendship_formed", "points": 20 },
+        { "tick": 19, "action": "helping_others", "points": 15 },
+        { "tick": 19, "action": "event_attendance", "points": 5 }
+      ]
+    },
+    "echo-e7e": {
+      "id": "echo-e7e",
+      "name": "Echo Eve",
+      "type": "historian",
+      "rarity": "rare",
+      "scores": {
+        "combat": 20,
+        "trade": 45,
+        "social": 200,
+        "lore": 605
+      },
+      "overall_fame": 870,
+      "level": "legendary",
+      "title": "Legendary",
+      "breakdown": {
+        "combat_weighted": 6.0,
+        "trade_weighted": 9.0,
+        "social_weighted": 50.0,
+        "lore_weighted": 151.25,
+        "total_weighted": 216.25
+      },
+      "notable_achievements": [
+        "Master Historian",
+        "Lore Keeper",
+        "Event Chronicler",
+        "Midnight Archivist"
+      ],
+      "recent_actions": [
+        { "tick": 18, "action": "lore_discovery", "points": 25 },
+        { "tick": 18, "action": "friendship_formed", "points": 20 },
+        { "tick": 19, "action": "lore_discovery", "points": 25 },
+        { "tick": 19, "action": "helping_others", "points": 15 }
+      ]
+    },
+    "spark-s4r": {
+      "id": "spark-s4r",
+      "name": "Spark Sara",
+      "type": "engineer",
+      "rarity": "rare",
+      "scores": {
+        "combat": 35,
+        "trade": 100,
+        "social": 125,
+        "lore": 150
+      },
+      "overall_fame": 410,
+      "level": "notable",
+      "title": "Notable",
+      "breakdown": {
+        "combat_weighted": 10.5,
+        "trade_weighted": 20.0,
+        "social_weighted": 31.25,
+        "lore_weighted": 37.5,
+        "total_weighted": 99.25
+      },
+      "notable_achievements": [
+        "System Engineer",
+        "Workshop Master",
+        "Innovation Pioneer"
+      ],
+      "recent_actions": [
+        { "tick": 17, "action": "helping_others", "points": 15 },
+        { "tick": 18, "action": "event_attendance", "points": 5 },
+        { "tick": 19, "action": "successful_trade", "points": 10 },
+        { "tick": 19, "action": "gallery_contribution", "points": 10 }
+      ]
+    },
+    "blaze-b8z": {
+      "id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "type": "champion",
+      "rarity": "legendary",
+      "scores": {
+        "combat": 850,
+        "trade": 75,
+        "social": 435,
+        "lore": 85
+      },
+      "overall_fame": 1445,
+      "level": "mythic",
+      "title": "Mythic",
+      "breakdown": {
+        "combat_weighted": 255.0,
+        "trade_weighted": 15.0,
+        "social_weighted": 108.75,
+        "lore_weighted": 21.25,
+        "total_weighted": 400.0
+      },
+      "notable_achievements": [
+        "Tournament Champion",
+        "Legendary Warrior",
+        "Fan Favorite",
+        "Mythic Battler",
+        "Midnight Mentor"
+      ],
+      "recent_actions": [
+        { "tick": 17, "action": "event_attendance", "points": 5 },
+        { "tick": 18, "action": "helping_others", "points": 15 },
+        { "tick": 19, "action": "helping_others", "points": 15 },
+        { "tick": 19, "action": "event_attendance", "points": 5 }
+      ]
+    },
+    "cipher-c9p": {
+      "id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "type": "mysterious",
+      "rarity": "legendary",
+      "scores": {
+        "combat": 720,
+        "trade": 35,
+        "social": 190,
+        "lore": 525
+      },
+      "overall_fame": 1470,
+      "level": "mythic",
+      "title": "Mythic",
+      "breakdown": {
+        "combat_weighted": 216.0,
+        "trade_weighted": 7.0,
+        "social_weighted": 47.5,
+        "lore_weighted": 131.25,
+        "total_weighted": 401.75
+      },
+      "notable_achievements": [
+        "Tournament Runner-Up",
+        "Master of Mystery",
+        "Shadow Keeper",
+        "Enigma Weaver",
+        "Night Observer"
+      ],
+      "recent_actions": [
+        { "tick": 17, "action": "lore_discovery", "points": 25 },
+        { "tick": 18, "action": "event_attendance", "points": 5 },
+        { "tick": 19, "action": "lore_discovery", "points": 5 },
+        { "tick": 19, "action": "event_attendance", "points": 5 }
+      ]
+    }
+  },
+  "leaderboards": {
+    "overall_fame": [
+      { "rank": 1, "npc_id": "cipher-c9p", "name": "Cipher Cap", "score": 1470, "level": "mythic" },
+      { "rank": 2, "npc_id": "blaze-b8z", "name": "Blaze Baz", "score": 1445, "level": "mythic" },
+      { "rank": 3, "npc_id": "echo-e7e", "name": "Echo Eve", "score": 870, "level": "legendary" },
+      { "rank": 4, "npc_id": "synth-c1au", "name": "Synth Claude", "score": 860, "level": "legendary" },
+      { "rank": 5, "npc_id": "nova-n3x", "name": "Nova Nex", "score": 765, "level": "legendary" }
+    ],
+    "combat": [
+      { "rank": 1, "npc_id": "blaze-b8z", "name": "Blaze Baz", "score": 850 },
+      { "rank": 2, "npc_id": "cipher-c9p", "name": "Cipher Cap", "score": 720 },
+      { "rank": 3, "npc_id": "synth-c1au", "name": "Synth Claude", "score": 185 }
+    ],
+    "trade": [
+      { "rank": 1, "npc_id": "flux-m1k3", "name": "Flux Mike", "score": 445 },
+      { "rank": 2, "npc_id": "pixel-p4m", "name": "Pixel Pam", "score": 135 },
+      { "rank": 3, "npc_id": "nova-n3x", "name": "Nova Nex", "score": 110 }
+    ],
+    "social": [
+      { "rank": 1, "npc_id": "blaze-b8z", "name": "Blaze Baz", "score": 435 },
+      { "rank": 2, "npc_id": "synth-c1au", "name": "Synth Claude", "score": 335 },
+      { "rank": 3, "npc_id": "nova-n3x", "name": "Nova Nex", "score": 275 }
+    ],
+    "lore": [
+      { "rank": 1, "npc_id": "echo-e7e", "name": "Echo Eve", "score": 605 },
+      { "rank": 2, "npc_id": "cipher-c9p", "name": "Cipher Cap", "score": 525 },
+      { "rank": 3, "npc_id": "quant-qn77", "name": "Quantum Quinn", "score": 410 }
+    ]
+  }
+}

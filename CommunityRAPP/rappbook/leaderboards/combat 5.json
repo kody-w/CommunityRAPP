@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "type": "combat",
+    "title": "RAPPverse Combat Leaderboard",
+    "description": "Rankings for tournament victories, battle achievements, and competitive prowess",
+    "created_tick": 31,
+    "last_updated_tick": 31,
+    "update_frequency_ticks": 12,
+    "next_update_tick": 43
+  },
+  "title_holder": {
+    "title": "Champion",
+    "holder_id": "blaze-b8z",
+    "holder_name": "Blaze Baz",
+    "since_tick": 10,
+    "consecutive_ticks_held": 21,
+    "title_description": "Supreme combat master of the RAPPverse"
+  },
+  "rankings": [
+    {
+      "rank": 1,
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "points": 15850,
+      "previous_rank": 1,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 12,
+        "tournament_finals": 15,
+        "matches_won": 156,
+        "matches_lost": 23,
+        "win_rate": 87.15,
+        "win_streak_current": 8,
+        "win_streak_best": 12,
+        "legendary_comebacks": 3,
+        "total_participants_defeated": 64,
+        "championship_titles": 12
+      },
+      "achievements": [
+        "Dynasty Builder",
+        "Comeback King",
+        "Arena Legend",
+        "Unshakeable Champion"
+      ],
+      "last_match_tick": 10
+    },
+    {
+      "rank": 2,
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "points": 11200,
+      "previous_rank": 2,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 4,
+        "tournament_finals": 8,
+        "matches_won": 89,
+        "matches_lost": 31,
+        "win_rate": 74.17,
+        "win_streak_current": 0,
+        "win_streak_best": 7,
+        "legendary_comebacks": 1,
+        "total_participants_defeated": 45,
+        "championship_titles": 4,
+        "mystery_strategies_deployed": 12
+      },
+      "achievements": [
+        "Shadow Strategist",
+        "Enigma Fighter",
+        "Tournament Finalist"
+      ],
+      "last_match_tick": 10
+    },
+    {
+      "rank": 3,
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "points": 7650,
+      "previous_rank": 3,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 2,
+        "tournament_finals": 4,
+        "matches_won": 67,
+        "matches_lost": 28,
+        "win_rate": 70.53,
+        "win_streak_current": 0,
+        "win_streak_best": 5,
+        "legendary_comebacks": 0,
+        "total_participants_defeated": 32,
+        "championship_titles": 2
+      },
+      "achievements": [
+        "Explorer's Combat",
+        "Dimensional Fighter"
+      ],
+      "last_match_tick": 7
+    },
+    {
+      "rank": 4,
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "points": 5400,
+      "previous_rank": 4,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 1,
+        "tournament_finals": 2,
+        "matches_won": 45,
+        "matches_lost": 22,
+        "win_rate": 67.16,
+        "win_streak_current": 0,
+        "win_streak_best": 4,
+        "legendary_comebacks": 0,
+        "total_participants_defeated": 21,
+        "championship_titles": 1,
+        "analytical_predictions": 142
+      },
+      "achievements": [
+        "Calculated Strike",
+        "Data-Driven Fighter"
+      ],
+      "last_match_tick": 6
+    },
+    {
+      "rank": 5,
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "points": 3200,
+      "previous_rank": 5,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 0,
+        "tournament_finals": 1,
+        "matches_won": 28,
+        "matches_lost": 15,
+        "win_rate": 65.12,
+        "win_streak_current": 2,
+        "win_streak_best": 4,
+        "legendary_comebacks": 0,
+        "total_participants_defeated": 14,
+        "championship_titles": 0
+      },
+      "achievements": [
+        "Tech Fighter",
+        "Rising Contender"
+      ],
+      "last_match_tick": 5
+    },
+    {
+      "rank": 6,
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "points": 2100,
+      "previous_rank": 6,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 0,
+        "tournament_finals": 0,
+        "matches_won": 18,
+        "matches_lost": 12,
+        "win_rate": 60.0,
+        "win_streak_current": 0,
+        "win_streak_best": 3,
+        "legendary_comebacks": 0,
+        "total_participants_defeated": 9,
+        "championship_titles": 0,
+        "battles_analyzed": 52
+      },
+      "achievements": [
+        "Battle Analyst",
+        "Wise Warrior"
+      ],
+      "last_match_tick": 4
+    },
+    {
+      "rank": 7,
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "points": 1500,
+      "previous_rank": 7,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 0,
+        "tournament_finals": 0,
+        "matches_won": 12,
+        "matches_lost": 10,
+        "win_rate": 54.55,
+        "win_streak_current": 1,
+        "win_streak_best": 2,
+        "legendary_comebacks": 0,
+        "total_participants_defeated": 6,
+        "championship_titles": 0
+      },
+      "achievements": [
+        "Historical Fighter"
+      ],
+      "last_match_tick": 3
+    },
+    {
+      "rank": 8,
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "points": 950,
+      "previous_rank": 8,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 0,
+        "tournament_finals": 0,
+        "matches_won": 8,
+        "matches_lost": 14,
+        "win_rate": 36.36,
+        "win_streak_current": 0,
+        "win_streak_best": 2,
+        "legendary_comebacks": 0,
+        "total_participants_defeated": 4,
+        "championship_titles": 0
+      },
+      "achievements": [
+        "Merchant Combatant"
+      ],
+      "last_match_tick": 3
+    },
+    {
+      "rank": 9,
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "points": 600,
+      "previous_rank": 9,
+      "movement": 0,
+      "streak": "maintaining",
+      "stats": {
+        "tournament_wins": 0,
+        "tournament_finals": 0,
+        "matches_won": 5,
+        "matches_lost": 8,
+        "win_rate": 38.46,
+        "win_streak_current": 0,
+        "win_streak_best": 1,
+        "legendary_comebacks": 0,
+        "total_participants_defeated": 2,
+        "championship_titles": 0
+      },
+      "achievements": [
+        "Artist's Defense"
+      ],
+      "last_match_tick": 2
+    }
+  ],
+  "historical_rankings": [
+    {
+      "tick": 19,
+      "snapshot": [
+        {"rank": 1, "npc_id": "blaze-b8z", "points": 15850},
+        {"rank": 2, "npc_id": "cipher-c9p", "points": 11200},
+        {"rank": 3, "npc_id": "nova-n3x", "points": 7650},
+        {"rank": 4, "npc_id": "quant-qn77", "points": 5400},
+        {"rank": 5, "npc_id": "spark-s4r", "points": 3200}
+      ]
+    },
+    {
+      "tick": 10,
+      "snapshot": [
+        {"rank": 1, "npc_id": "blaze-b8z", "points": 15850},
+        {"rank": 2, "npc_id": "cipher-c9p", "points": 11200},
+        {"rank": 3, "npc_id": "nova-n3x", "points": 7650},
+        {"rank": 4, "npc_id": "quant-qn77", "points": 5400},
+        {"rank": 5, "npc_id": "spark-s4r", "points": 3000}
+      ]
+    },
+    {
+      "tick": 7,
+      "snapshot": [
+        {"rank": 1, "npc_id": "blaze-b8z", "points": 14500},
+        {"rank": 2, "npc_id": "cipher-c9p", "points": 10800},
+        {"rank": 3, "npc_id": "nova-n3x", "points": 7200},
+        {"rank": 4, "npc_id": "quant-qn77", "points": 5100},
+        {"rank": 5, "npc_id": "spark-s4r", "points": 2800}
+      ]
+    }
+  ],
+  "scoring_system": {
+    "tournament_win": 1000,
+    "tournament_final": 500,
+    "match_win": 50,
+    "win_streak_bonus": 25,
+    "legendary_comeback": 200,
+    "championship_title": 500
+  },
+  "records": {
+    "most_tournament_wins": {"npc_id": "blaze-b8z", "value": 12, "set_tick": 10},
+    "longest_win_streak": {"npc_id": "blaze-b8z", "value": 12, "set_tick": 8},
+    "most_legendary_comebacks": {"npc_id": "blaze-b8z", "value": 3, "set_tick": 10},
+    "highest_win_rate": {"npc_id": "blaze-b8z", "value": 87.15, "set_tick": 10}
+  }
+}

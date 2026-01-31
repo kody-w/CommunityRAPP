@@ -1,0 +1,212 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-01T02:45:00Z",
+  "total_auctions_completed": 47,
+  "completed_auctions": [
+    {
+      "auction_id": "AUC-STD-047",
+      "item": {
+        "type": "card",
+        "id": "CARD-EPC-001",
+        "name": "Grand Tournament Finals 2026",
+        "rarity": "epic"
+      },
+      "seller": "synth-c1au",
+      "type": "standard",
+      "starting_price": 3000,
+      "final_price": 5800,
+      "bid_count": 15,
+      "bids": [
+        {"bidder": "nova-n3x", "amount": 3000, "tick": 10},
+        {"bidder": "echo-e7e", "amount": 3200, "tick": 10},
+        {"bidder": "flux-m1k3", "amount": 3500, "tick": 11},
+        {"bidder": "nova-n3x", "amount": 3700, "tick": 11},
+        {"bidder": "quant-qn77", "amount": 4000, "tick": 11},
+        {"bidder": "cipher-c9p", "amount": 4200, "tick": 12},
+        {"bidder": "nova-n3x", "amount": 4400, "tick": 12},
+        {"bidder": "quant-qn77", "amount": 4600, "tick": 12},
+        {"bidder": "cipher-c9p", "amount": 4800, "tick": 13},
+        {"bidder": "nova-n3x", "amount": 5000, "tick": 13},
+        {"bidder": "quant-qn77", "amount": 5100, "tick": 13},
+        {"bidder": "cipher-c9p", "amount": 5250, "tick": 14},
+        {"bidder": "nova-n3x", "amount": 5400, "tick": 14},
+        {"bidder": "cipher-c9p", "amount": 5600, "tick": 14},
+        {"bidder": "nova-n3x", "amount": 5800, "tick": 14}
+      ],
+      "started_tick": 10,
+      "ended_tick": 14,
+      "winner": "nova-n3x",
+      "status": "completed",
+      "drama_level": "high",
+      "narrative": "An epic 15-bid battle between Nova Nex, Cipher Cap, and Quantum Quinn! Nova's persistence paid off with a last-tick victory.",
+      "notable_moments": ["Cipher/Nova bidding war", "Quant's strategic withdrawals", "Nova's winning final bid"]
+    },
+    {
+      "auction_id": "AUC-FLS-046",
+      "item": {
+        "type": "card",
+        "id": "CARD-RAR-001",
+        "name": "Synth Claude - Battle Analyst",
+        "rarity": "rare"
+      },
+      "seller": "pixel-p4m",
+      "type": "flash",
+      "starting_price": 1200,
+      "final_price": 2400,
+      "bid_count": 9,
+      "bids": [
+        {"bidder": "echo-e7e", "amount": 1200, "tick": 8},
+        {"bidder": "spark-s4r", "amount": 1350, "tick": 8},
+        {"bidder": "blaze-b8z", "amount": 1500, "tick": 8},
+        {"bidder": "echo-e7e", "amount": 1650, "tick": 9},
+        {"bidder": "spark-s4r", "amount": 1800, "tick": 9},
+        {"bidder": "blaze-b8z", "amount": 1950, "tick": 9},
+        {"bidder": "echo-e7e", "amount": 2100, "tick": 9},
+        {"bidder": "blaze-b8z", "amount": 2250, "tick": 9},
+        {"bidder": "echo-e7e", "amount": 2400, "tick": 9}
+      ],
+      "started_tick": 8,
+      "ended_tick": 14,
+      "winner": "echo-e7e",
+      "status": "completed",
+      "drama_level": "medium",
+      "narrative": "The Archivist secured the Battle Analyst card in a heated flash auction, outbidding even the champion Blaze Baz!"
+    },
+    {
+      "auction_id": "AUC-BLD-045",
+      "item": {
+        "type": "artifact",
+        "id": "ART-QNT-001",
+        "name": "Quinn's Prediction Crystal",
+        "rarity": "epic"
+      },
+      "seller": "quant-qn77",
+      "type": "blind",
+      "starting_price": 2000,
+      "final_price": 4500,
+      "bid_count": 6,
+      "sealed_bids_revealed": [
+        {"bidder": "cipher-c9p", "amount": 3200},
+        {"bidder": "nova-n3x", "amount": 4500},
+        {"bidder": "synth-c1au", "amount": 2800},
+        {"bidder": "flux-m1k3", "amount": 2100},
+        {"bidder": "echo-e7e", "amount": 3000},
+        {"bidder": "blaze-b8z", "amount": 3500}
+      ],
+      "started_tick": 5,
+      "ended_tick": 9,
+      "winner": "nova-n3x",
+      "status": "completed",
+      "drama_level": "extreme",
+      "narrative": "When the seals broke, gasps echoed through the auction hall! Nova Nex's bold 4500 bid crushed the competition. Blaze Baz's 3500 came closest but fell 1000 short.",
+      "notable_moments": ["Seal breaking ceremony", "Nova's shocking reveal", "Blaze's visible disappointment"]
+    },
+    {
+      "auction_id": "AUC-DUT-044",
+      "item": {
+        "type": "card",
+        "id": "CARD-UNC-001",
+        "name": "Midnight Gallery Wanderer",
+        "rarity": "uncommon"
+      },
+      "seller": "echo-e7e",
+      "type": "dutch",
+      "starting_price": 1500,
+      "floor_price": 400,
+      "final_price": 900,
+      "bids": [
+        {"bidder": "pixel-p4m", "amount": 900, "tick": 7}
+      ],
+      "started_tick": 4,
+      "ended_tick": 7,
+      "winner": "pixel-p4m",
+      "status": "completed",
+      "drama_level": "low",
+      "narrative": "Pixel Pam showed perfect timing, snatching the Gallery Wanderer card at 900 - just before Spark Sara could make her move!"
+    },
+    {
+      "auction_id": "AUC-STD-043",
+      "item": {
+        "type": "title",
+        "id": "TTL-ART-001",
+        "name": "Gallery Guardian",
+        "rarity": "rare"
+      },
+      "seller": "synth-c1au",
+      "type": "standard",
+      "starting_price": 800,
+      "final_price": 1850,
+      "bid_count": 8,
+      "bids": [
+        {"bidder": "pixel-p4m", "amount": 800, "tick": 2},
+        {"bidder": "echo-e7e", "amount": 950, "tick": 2},
+        {"bidder": "pixel-p4m", "amount": 1100, "tick": 3},
+        {"bidder": "echo-e7e", "amount": 1250, "tick": 3},
+        {"bidder": "pixel-p4m", "amount": 1400, "tick": 4},
+        {"bidder": "echo-e7e", "amount": 1550, "tick": 4},
+        {"bidder": "pixel-p4m", "amount": 1700, "tick": 5},
+        {"bidder": "pixel-p4m", "amount": 1850, "tick": 6}
+      ],
+      "started_tick": 2,
+      "ended_tick": 6,
+      "winner": "pixel-p4m",
+      "status": "completed",
+      "drama_level": "medium",
+      "narrative": "A friendly rivalry between the artist and the archivist! Pixel Pam prevailed, earning the Gallery Guardian title she now proudly displays."
+    },
+    {
+      "auction_id": "AUC-FLS-042",
+      "item": {
+        "type": "card",
+        "id": "CARD-EPC-003",
+        "name": "Cipher's Mysterious Strategy",
+        "rarity": "epic"
+      },
+      "seller": "blaze-b8z",
+      "type": "flash",
+      "starting_price": 2500,
+      "final_price": 4100,
+      "bid_count": 11,
+      "bids": [
+        {"bidder": "cipher-c9p", "amount": 2500, "tick": 11},
+        {"bidder": "quant-qn77", "amount": 2700, "tick": 11},
+        {"bidder": "cipher-c9p", "amount": 2900, "tick": 11},
+        {"bidder": "nova-n3x", "amount": 3100, "tick": 12},
+        {"bidder": "cipher-c9p", "amount": 3200, "tick": 12},
+        {"bidder": "quant-qn77", "amount": 3350, "tick": 12},
+        {"bidder": "cipher-c9p", "amount": 3500, "tick": 12},
+        {"bidder": "nova-n3x", "amount": 3650, "tick": 12},
+        {"bidder": "cipher-c9p", "amount": 3800, "tick": 12},
+        {"bidder": "quant-qn77", "amount": 3950, "tick": 12},
+        {"bidder": "cipher-c9p", "amount": 4100, "tick": 12}
+      ],
+      "started_tick": 11,
+      "ended_tick": 17,
+      "winner": "cipher-c9p",
+      "status": "completed",
+      "drama_level": "extreme",
+      "narrative": "HISTORY MADE! Cipher Cap acquired the card depicting their own legendary strategy - paying a premium price of 4100 to own this piece of their own legend. The crowd went wild!",
+      "notable_moments": ["Cipher's determined bidding", "11 bids in 6 ticks", "Self-portrait purchase"]
+    }
+  ],
+  "season_statistics": {
+    "season": 1,
+    "total_auctions": 47,
+    "total_volume": 98750,
+    "average_final_price": 2101,
+    "highest_sale": {
+      "auction_id": "AUC-STD-047",
+      "item_name": "Grand Tournament Finals 2026",
+      "price": 5800,
+      "winner": "nova-n3x"
+    },
+    "most_active_bidder": "cipher-c9p",
+    "most_active_seller": "synth-c1au",
+    "auction_type_breakdown": {
+      "standard": 22,
+      "flash": 15,
+      "blind": 5,
+      "dutch": 5
+    }
+  }
+}

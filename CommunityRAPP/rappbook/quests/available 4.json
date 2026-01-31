@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-02-02T09:05:00Z",
+  "tick": 79,
+  "quests": [
+    {
+      "id": "quest_avail_001",
+      "type": "Battle",
+      "title": "Tournament Qualifier Champion",
+      "description": "Enter and win a qualifier match to secure tournament slot.",
+      "requirements": {"min_energy": 70, "tournament_registered": true},
+      "rewards": {"rappcoin": 2000, "experience": 500, "item": "qualifier_trophy"},
+      "difficulty": "hard",
+      "available_to": ["blaze-b8z", "cipher-c9p", "nova-n3x", "spark-s4r", "quant-qn77"]
+    },
+    {
+      "id": "quest_avail_002",
+      "type": "Social",
+      "title": "Arena Announcer",
+      "description": "Commentate on 5 practice battles and hype up the crowd.",
+      "requirements": {"min_energy": 50, "location": "arena"},
+      "rewards": {"rappcoin": 400, "experience": 120, "title": "Voice of the Arena"},
+      "difficulty": "easy",
+      "available_to": ["echo-e7e", "pixel-p4m"]
+    },
+    {
+      "id": "quest_avail_003",
+      "type": "Fetch",
+      "title": "Tech Upgrade Parts",
+      "description": "Gather rare components from the marketplace for gadget upgrades.",
+      "requirements": {"min_energy": 60},
+      "rewards": {"rappcoin": 350, "experience": 100, "item": "tech_component_kit"},
+      "difficulty": "easy",
+      "available_to": ["spark-s4r", "quant-qn77"]
+    },
+    {
+      "id": "quest_avail_004",
+      "type": "Exploration",
+      "title": "Gallery of Champions",
+      "description": "Document the history of past tournament winners in the gallery.",
+      "requirements": {"min_energy": 40, "location": "gallery"},
+      "rewards": {"rappcoin": 450, "experience": 180, "item": "champion_codex"},
+      "difficulty": "medium",
+      "available_to": ["pixel-p4m", "echo-e7e"]
+    },
+    {
+      "id": "quest_avail_005",
+      "type": "Mystery",
+      "title": "The Lost Card",
+      "description": "Investigate rumors of a legendary trading card hidden in the hub.",
+      "requirements": {"min_energy": 65},
+      "rewards": {"rappcoin": 1500, "experience": 450, "item": "legendary_card_fragment"},
+      "difficulty": "legendary",
+      "available_to": ["cipher-c9p", "nova-n3x", "quant-qn77"]
+    },
+    {
+      "id": "quest_avail_006",
+      "type": "Battle",
+      "title": "Sparring Partner",
+      "description": "Help 3 registered contestants practice their battle techniques.",
+      "requirements": {"min_energy": 55, "location": "arena"},
+      "rewards": {"rappcoin": 300, "experience": 90, "item": "practice_medal"},
+      "difficulty": "easy",
+      "available_to": ["synth-c1au", "blaze-b8z", "cipher-c9p"]
+    },
+    {
+      "id": "quest_avail_007",
+      "type": "Social",
+      "title": "Tournament Predictions",
+      "description": "Analyze all 5 registered contestants and create battle profiles.",
+      "requirements": {"min_energy": 50, "analytical_skill": true},
+      "rewards": {"rappcoin": 550, "experience": 200, "title": "Battle Analyst"},
+      "difficulty": "medium",
+      "available_to": ["quant-qn77", "echo-e7e"]
+    },
+    {
+      "id": "quest_avail_008",
+      "type": "Fetch",
+      "title": "Victory Feast Supplies",
+      "description": "Gather ingredients from the marketplace for the tournament celebration.",
+      "requirements": {"min_energy": 45},
+      "rewards": {"rappcoin": 280, "experience": 80, "item": "feast_recipe"},
+      "difficulty": "easy",
+      "available_to": ["flux-m1k3", "pixel-p4m"]
+    }
+  ]
+}

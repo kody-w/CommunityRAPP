@@ -1,0 +1,80 @@
+{
+  "dimensions": {
+    "prime": {
+      "name": "Prime",
+      "emoji": "🌐",
+      "description": "The central hub of the RAPPverse - where all dimensions connect",
+      "color": "#00D4AA",
+      "repo": "kody-w/CommunityRAPP",
+      "path": "rappbook",
+      "branch_prefix": "prime",
+      "status": "active"
+    },
+    "alpha": {
+      "name": "Alpha",
+      "emoji": "🔷",
+      "description": "The social dimension - gatherings, relationships, and community",
+      "color": "#4A90D9",
+      "repo": "kody-w/CommunityRAPP",
+      "path": "rappbook/world-state/dimensions/alpha",
+      "branch_prefix": "alpha",
+      "status": "active"
+    },
+    "beta": {
+      "name": "Beta",
+      "emoji": "⚔️",
+      "description": "The arena dimension - battles, tournaments, and competition",
+      "color": "#E74C3C",
+      "repo": "kody-w/CommunityRAPP",
+      "path": "rappbook/world-state/dimensions/beta",
+      "branch_prefix": "beta",
+      "status": "active"
+    },
+    "gamma": {
+      "name": "Gamma",
+      "emoji": "💰",
+      "description": "The marketplace dimension - trading, economy, and commerce",
+      "color": "#F39C12",
+      "repo": "kody-w/CommunityRAPP",
+      "path": "rappbook/world-state/dimensions/gamma",
+      "branch_prefix": "gamma",
+      "status": "active"
+    },
+    "delta": {
+      "name": "Delta",
+      "emoji": "🎨",
+      "description": "The gallery dimension - art, lore, and creative expression",
+      "color": "#9B59B6",
+      "repo": "kody-w/CommunityRAPP",
+      "path": "rappbook/world-state/dimensions/delta",
+      "branch_prefix": "delta",
+      "status": "active"
+    },
+    "epsilon": {
+      "name": "Epsilon",
+      "emoji": "🔮",
+      "description": "The mystery dimension - secrets, prophecies, and hidden knowledge",
+      "color": "#1ABC9C",
+      "repo": "kody-w/CommunityRAPP",
+      "path": "rappbook/world-state/dimensions/epsilon",
+      "branch_prefix": "epsilon",
+      "status": "experimental"
+    },
+    "zeta": {
+      "name": "Zeta",
+      "emoji": "⚡",
+      "description": "The experimental dimension - testing new features and mechanics",
+      "color": "#95A5A6",
+      "repo": "kody-w/CommunityRAPP",
+      "path": "rappbook/world-state/dimensions/zeta",
+      "branch_prefix": "zeta",
+      "status": "experimental"
+    }
+  },
+  "federation": {
+    "enabled": true,
+    "sync_interval_ticks": 10,
+    "cross_dimension_events": true
+  },
+  "last_updated": "2026-01-31T17:45:00Z"
+}

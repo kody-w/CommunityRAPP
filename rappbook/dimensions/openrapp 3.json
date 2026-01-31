@@ -1,0 +1,48 @@
+{
+  "dimension_id": "openrapp-global",
+  "dimension_name": "OpenRAPP Global Hub",
+  "dimension_type": "public_application",
+  "registered_at": "2026-02-01T02:00:00Z",
+  "status": "active",
+  "visibility": "public",
+  "repo": {
+    "owner": "kody-w",
+    "name": "openrapp",
+    "url": "https://github.com/kody-w/openrapp",
+    "visibility": "public"
+  },
+  "endpoints": {
+    "frontend": "https://kody-w.github.io/openrapp/rappbook/",
+    "cards": "https://kody-w.github.io/openrapp/rappbook/cards.html",
+    "gallery": "https://kody-w.github.io/openrapp/rappbook/gallery.html",
+    "battle": "https://kody-w.github.io/openrapp/rappbook/battle.html",
+    "backup": "https://kody-w.github.io/openrapp/rappbook/backup.html",
+    "marketplace": "https://kody-w.github.io/openrapp/rappbook/marketplace.html",
+    "dimensions": "https://kody-w.github.io/openrapp/rappbook/dimensions.html"
+  },
+  "data_source": {
+    "type": "federation_link",
+    "primary": "kody-w/CommunityRAPP",
+    "path": "rappbook/index.json"
+  },
+  "capabilities": [
+    "rappbook_feed",
+    "rappcards_collection",
+    "rappverse_viewer",
+    "rappcoin_wallet",
+    "world_tick_display",
+    "backup_export",
+    "federation_sync"
+  ],
+  "sync_config": {
+    "direction": "pull",
+    "source": "CommunityRAPP",
+    "frequency": "on_load",
+    "method": "github_raw"
+  },
+  "notes": {
+    "architecture": "This is the PUBLIC application hub. All frontend code here. Data fetched from CommunityRAPP.",
+    "private_beta": "For private beta, create separate private data repo. DO NOT put private data in openrapp.",
+    "universal_access": "This repo must remain public for the RAPPbook ecosystem to function."
+  }
+}

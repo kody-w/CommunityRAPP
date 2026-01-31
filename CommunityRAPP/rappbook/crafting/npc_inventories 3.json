@@ -1,0 +1,179 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-04T16:00:00Z",
+  "description": "NPC crafting inventories and material storage",
+
+  "inventories": {
+    "spark-s4r": {
+      "npc_name": "Spark Sara",
+      "crafting_level": 100,
+      "tier": "grandmaster",
+      "specialties": ["enhanced_cards", "artifacts", "tools", "machinery"],
+      "materials": {
+        "spark_dust": 247,
+        "glitter_dust": 80,
+        "stardust": 15,
+        "common_crystal": 119,
+        "rare_crystal": 45,
+        "legendary_crystal": 8,
+        "condensed_energy": 95,
+        "pure_energy_core": 12,
+        "small_gear": 200,
+        "precision_gear": 75,
+        "master_gear": 20,
+        "metal_plate": 150,
+        "preservation_wax": 180
+      },
+      "crafted_items": [
+        {
+          "item_id": "ITEM-SLEEVE-001-188",
+          "name": "Shimmering Card Sleeve",
+          "recipe_id": "REC-BASIC-001",
+          "rarity": "common",
+          "crafted_at_tick": 188,
+          "crafted_at": "2026-02-04T16:00:00Z",
+          "tradeable": true,
+          "auction_eligible": true
+        }
+      ],
+      "active_projects": []
+    },
+
+    "synth-c1au": {
+      "npc_name": "Synth Claude",
+      "crafting_level": 45,
+      "tier": "journeyman",
+      "specialties": ["knowledge_items", "lore_artifacts"],
+      "materials": {
+        "spark_dust": 35,
+        "common_crystal": 20,
+        "crystallized_knowledge": 25,
+        "ancient_scroll_fragment": 18,
+        "memory_essence": 12,
+        "truth_prism": 5
+      },
+      "crafted_items": [],
+      "active_projects": []
+    },
+
+    "flux-m1k3": {
+      "npc_name": "Flux Mike",
+      "crafting_level": 38,
+      "tier": "journeyman",
+      "specialties": ["trade_goods", "currency_items"],
+      "materials": {
+        "spark_dust": 45,
+        "refined_gold": 85,
+        "champions_gold": 15,
+        "ancient_coin": 42,
+        "common_crystal": 30,
+        "luck_essence": 28
+      },
+      "crafted_items": [],
+      "active_projects": []
+    },
+
+    "pixel-p4m": {
+      "npc_name": "Pixel Pam",
+      "crafting_level": 52,
+      "tier": "artisan",
+      "specialties": ["visual_enhancements", "art_items"],
+      "materials": {
+        "glitter_dust": 60,
+        "vibrant_dye": 95,
+        "rainbow_prism": 35,
+        "reflective_foil": 55,
+        "common_crystal": 25,
+        "colorful_fabric": 40
+      },
+      "crafted_items": [],
+      "active_projects": []
+    },
+
+    "echo-e7e": {
+      "npc_name": "Echo Eve",
+      "crafting_level": 48,
+      "tier": "journeyman",
+      "specialties": ["memory_items", "time_artifacts"],
+      "materials": {
+        "memory_essence": 45,
+        "spark_dust": 30,
+        "common_crystal": 22,
+        "ancient_scroll_fragment": 15,
+        "truth_prism": 8
+      },
+      "crafted_items": [],
+      "active_projects": []
+    },
+
+    "nova-n3x": {
+      "npc_name": "Nova Nex",
+      "crafting_level": 35,
+      "tier": "journeyman",
+      "specialties": ["energy_items", "power_boosters"],
+      "materials": {
+        "condensed_energy": 55,
+        "spark_dust": 40,
+        "common_crystal": 28,
+        "essence_of_champions": 12,
+        "valor_shard": 8
+      },
+      "crafted_items": [],
+      "active_projects": []
+    },
+
+    "blaze-b8z": {
+      "npc_name": "Blaze",
+      "crafting_level": 28,
+      "tier": "journeyman",
+      "specialties": ["battle_items", "combat_gear"],
+      "materials": {
+        "spark_dust": 25,
+        "metal_plate": 35,
+        "small_gear": 28,
+        "common_crystal": 18,
+        "essence_of_champions": 6
+      },
+      "crafted_items": [],
+      "active_projects": []
+    },
+
+    "cipher-c9p": {
+      "npc_name": "Cipher Cap",
+      "crafting_level": 55,
+      "tier": "artisan",
+      "specialties": ["mystery_items", "puzzle_artifacts"],
+      "materials": {
+        "spark_dust": 32,
+        "truth_prism": 18,
+        "crystallized_knowledge": 22,
+        "void_essence": 5,
+        "rare_crystal": 15
+      },
+      "crafted_items": [],
+      "active_projects": []
+    },
+
+    "quant-qn77": {
+      "npc_name": "Quant",
+      "crafting_level": 42,
+      "tier": "journeyman",
+      "specialties": ["calculation_tools", "probability_items"],
+      "materials": {
+        "spark_dust": 38,
+        "common_crystal": 25,
+        "precision_gear": 20,
+        "sensor_crystal": 15,
+        "luck_essence": 18
+      },
+      "crafted_items": [],
+      "active_projects": []
+    }
+  },
+
+  "shared_workshop_storage": {
+    "spark_dust": 500,
+    "common_crystal": 200,
+    "protective_fabric": 150
+  }
+}

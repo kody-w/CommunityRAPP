@@ -1,0 +1,274 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-02-01T04:00:00Z",
+  "templates": {
+    "collection": {
+      "gather_rare_cards": {
+        "template_id": "tpl-collect-rare",
+        "name": "Rare Card Hunt",
+        "type": "collection",
+        "description": "Collect rare cards from various zones in the RAPPverse",
+        "difficulty_scaling": {
+          "easy": { "required": 3, "reward_multiplier": 1.0 },
+          "medium": { "required": 5, "reward_multiplier": 1.5 },
+          "hard": { "required": 8, "reward_multiplier": 2.5 },
+          "legendary": { "required": 12, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 100,
+          "items": ["collector_badge"]
+        },
+        "suitable_npc_types": ["trader", "explorer", "analyst"],
+        "objectives_template": [
+          { "type": "collect", "target": "rare_card", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 10, "medium": 15, "hard": 25, "legendary": 40 }
+      },
+      "artifact_recovery": {
+        "template_id": "tpl-collect-artifact",
+        "name": "Lost Artifacts",
+        "type": "collection",
+        "description": "Recover ancient artifacts scattered across dimensions",
+        "difficulty_scaling": {
+          "easy": { "required": 2, "reward_multiplier": 1.0 },
+          "medium": { "required": 4, "reward_multiplier": 1.5 },
+          "hard": { "required": 6, "reward_multiplier": 2.5 },
+          "legendary": { "required": 10, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 150,
+          "items": ["archaeologist_medal"]
+        },
+        "suitable_npc_types": ["historian", "explorer", "mysterious"],
+        "objectives_template": [
+          { "type": "collect", "target": "ancient_artifact", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 12, "medium": 18, "hard": 30, "legendary": 50 }
+      }
+    },
+    "exploration": {
+      "dimension_survey": {
+        "template_id": "tpl-explore-dimension",
+        "name": "Dimension Survey",
+        "type": "exploration",
+        "description": "Survey unexplored areas of a dimension",
+        "difficulty_scaling": {
+          "easy": { "required": 2, "reward_multiplier": 1.0 },
+          "medium": { "required": 4, "reward_multiplier": 1.5 },
+          "hard": { "required": 6, "reward_multiplier": 2.5 },
+          "legendary": { "required": 10, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 120,
+          "items": ["explorer_compass"]
+        },
+        "suitable_npc_types": ["explorer", "guide", "mysterious"],
+        "objectives_template": [
+          { "type": "explore", "target": "zone", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 8, "medium": 14, "hard": 22, "legendary": 35 },
+        "time_bonus": { "night": 1.5, "dawn": 1.2 }
+      },
+      "secret_discovery": {
+        "template_id": "tpl-explore-secrets",
+        "name": "Hidden Secrets",
+        "type": "exploration",
+        "description": "Discover hidden secrets and mysteries in the RAPPverse",
+        "difficulty_scaling": {
+          "easy": { "required": 1, "reward_multiplier": 1.0 },
+          "medium": { "required": 3, "reward_multiplier": 1.5 },
+          "hard": { "required": 5, "reward_multiplier": 2.5 },
+          "legendary": { "required": 8, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 200,
+          "items": ["secret_keeper_token"]
+        },
+        "suitable_npc_types": ["mysterious", "explorer", "historian"],
+        "objectives_template": [
+          { "type": "discover", "target": "secret", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 15, "medium": 25, "hard": 40, "legendary": 60 }
+      }
+    },
+    "social": {
+      "friendship_building": {
+        "template_id": "tpl-social-friends",
+        "name": "Making Connections",
+        "type": "social",
+        "description": "Build friendships with other NPCs in the community",
+        "difficulty_scaling": {
+          "easy": { "required": 2, "reward_multiplier": 1.0 },
+          "medium": { "required": 4, "reward_multiplier": 1.5 },
+          "hard": { "required": 6, "reward_multiplier": 2.5 },
+          "legendary": { "required": 10, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 80,
+          "items": ["friendship_bracelet"]
+        },
+        "suitable_npc_types": ["guide", "artist", "historian", "champion"],
+        "objectives_template": [
+          { "type": "befriend", "target": "npc", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 20, "medium": 30, "hard": 45, "legendary": 70 },
+        "relationship_requirement": true
+      },
+      "community_service": {
+        "template_id": "tpl-social-service",
+        "name": "Community Helper",
+        "type": "social",
+        "description": "Help other community members with their tasks",
+        "difficulty_scaling": {
+          "easy": { "required": 3, "reward_multiplier": 1.0 },
+          "medium": { "required": 6, "reward_multiplier": 1.5 },
+          "hard": { "required": 10, "reward_multiplier": 2.5 },
+          "legendary": { "required": 15, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 100,
+          "items": ["helper_badge"]
+        },
+        "suitable_npc_types": ["guide", "engineer", "artist"],
+        "objectives_template": [
+          { "type": "assist", "target": "community_member", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 15, "medium": 25, "hard": 40, "legendary": 60 }
+      }
+    },
+    "combat": {
+      "arena_challenger": {
+        "template_id": "tpl-combat-arena",
+        "name": "Arena Challenger",
+        "type": "combat",
+        "description": "Compete in arena battles and prove your worth",
+        "difficulty_scaling": {
+          "easy": { "required": 3, "reward_multiplier": 1.0 },
+          "medium": { "required": 5, "reward_multiplier": 1.5 },
+          "hard": { "required": 10, "reward_multiplier": 2.5 },
+          "legendary": { "required": 20, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 150,
+          "items": ["arena_token"]
+        },
+        "suitable_npc_types": ["champion", "guide", "mysterious"],
+        "objectives_template": [
+          { "type": "win_battle", "target": "arena_match", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 12, "medium": 20, "hard": 35, "legendary": 50 },
+        "event_trigger": "tournament"
+      },
+      "training_regiment": {
+        "template_id": "tpl-combat-training",
+        "name": "Battle Training",
+        "type": "combat",
+        "description": "Complete rigorous battle training exercises",
+        "difficulty_scaling": {
+          "easy": { "required": 5, "reward_multiplier": 1.0 },
+          "medium": { "required": 10, "reward_multiplier": 1.5 },
+          "hard": { "required": 15, "reward_multiplier": 2.5 },
+          "legendary": { "required": 25, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 100,
+          "items": ["training_certificate"]
+        },
+        "suitable_npc_types": ["champion", "guide", "analyst"],
+        "objectives_template": [
+          { "type": "complete_training", "target": "training_session", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 8, "medium": 15, "hard": 25, "legendary": 40 }
+      }
+    },
+    "trade": {
+      "merchant_route": {
+        "template_id": "tpl-trade-route",
+        "name": "Trade Route Master",
+        "type": "trade",
+        "description": "Establish and complete profitable trade routes",
+        "difficulty_scaling": {
+          "easy": { "required": 5, "reward_multiplier": 1.0 },
+          "medium": { "required": 10, "reward_multiplier": 1.5 },
+          "hard": { "required": 20, "reward_multiplier": 2.5 },
+          "legendary": { "required": 35, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 200,
+          "items": ["merchant_seal"]
+        },
+        "suitable_npc_types": ["trader", "explorer"],
+        "objectives_template": [
+          { "type": "complete_trade", "target": "trade_transaction", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 15, "medium": 25, "hard": 40, "legendary": 60 }
+      },
+      "rare_acquisition": {
+        "template_id": "tpl-trade-acquire",
+        "name": "Rare Acquisitions",
+        "type": "trade",
+        "description": "Acquire rare and valuable items through trade",
+        "difficulty_scaling": {
+          "easy": { "required": 2, "reward_multiplier": 1.0 },
+          "medium": { "required": 4, "reward_multiplier": 1.5 },
+          "hard": { "required": 7, "reward_multiplier": 2.5 },
+          "legendary": { "required": 12, "reward_multiplier": 5.0 }
+        },
+        "base_rewards": {
+          "rappcoin": 250,
+          "items": ["rare_dealer_badge"]
+        },
+        "suitable_npc_types": ["trader", "mysterious", "analyst"],
+        "objectives_template": [
+          { "type": "acquire", "target": "rare_item", "progress": 0, "required": "SCALED" }
+        ],
+        "duration_ticks": { "easy": 20, "medium": 30, "hard": 50, "legendary": 80 }
+      }
+    }
+  },
+  "event_quest_triggers": {
+    "tournament": ["arena_challenger", "training_regiment"],
+    "celebration": ["community_service", "friendship_building"],
+    "exhibition": ["artifact_recovery", "rare_acquisition"],
+    "marketplace_open": ["merchant_route", "rare_acquisition", "gather_rare_cards"]
+  },
+  "time_of_day_bonuses": {
+    "night": {
+      "quest_types": ["exploration", "collection"],
+      "bonus_multiplier": 1.25,
+      "special_quests": ["secret_discovery", "dimension_survey"]
+    },
+    "dawn": {
+      "quest_types": ["social", "trade"],
+      "bonus_multiplier": 1.15,
+      "special_quests": ["friendship_building", "merchant_route"]
+    },
+    "day": {
+      "quest_types": ["combat", "trade"],
+      "bonus_multiplier": 1.0,
+      "special_quests": ["arena_challenger", "rare_acquisition"]
+    },
+    "evening": {
+      "quest_types": ["social", "collection"],
+      "bonus_multiplier": 1.1,
+      "special_quests": ["community_service", "gather_rare_cards"]
+    }
+  },
+  "npc_type_quest_affinity": {
+    "guide": ["social", "combat", "exploration"],
+    "trader": ["trade", "collection"],
+    "analyst": ["collection", "trade", "combat"],
+    "artist": ["social", "collection"],
+    "explorer": ["exploration", "collection", "trade"],
+    "historian": ["collection", "social", "exploration"],
+    "engineer": ["collection", "social"],
+    "champion": ["combat", "social"],
+    "mysterious": ["exploration", "trade", "combat"]
+  },
+  "card_rewards": {
+    "easy": { "chance": 0.1, "rarity": "common" },
+    "medium": { "chance": 0.25, "rarity": "uncommon" },
+    "hard": { "chance": 0.5, "rarity": "rare" },
+    "legendary": { "chance": 1.0, "rarity": "epic" }
+  }
+}

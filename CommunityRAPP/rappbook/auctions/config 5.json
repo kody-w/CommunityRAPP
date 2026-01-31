@@ -1,0 +1,374 @@
+{
+  "version": "1.0.0",
+  "auction_house_config": {
+    "name": "The Grand Auction Hall",
+    "default_auctioneer": "flux-m1k3",
+    "commission_rate": 0.05,
+    "minimum_bid_increment": 10,
+    "maximum_active_auctions": 10,
+    "featured_slots": 3
+  },
+  "auction_types": {
+    "standard": {
+      "name": "Standard Auction",
+      "description": "Classic ascending bid auction with visible bids",
+      "default_duration_ticks": 24,
+      "min_duration_ticks": 12,
+      "max_duration_ticks": 48,
+      "bid_increment_rules": {
+        "under_500": 10,
+        "500_to_1000": 25,
+        "1000_to_5000": 50,
+        "over_5000": 100
+      },
+      "anti_sniping": {
+        "enabled": true,
+        "extension_ticks": 2,
+        "trigger_window_ticks": 3
+      }
+    },
+    "flash": {
+      "name": "Flash Auction",
+      "description": "Fast-paced auction for quick sales",
+      "default_duration_ticks": 6,
+      "min_duration_ticks": 3,
+      "max_duration_ticks": 12,
+      "bid_increment_rules": {
+        "flat": 50
+      },
+      "anti_sniping": {
+        "enabled": false
+      }
+    },
+    "blind": {
+      "name": "Blind Bid Auction",
+      "description": "Sealed bids revealed only at auction end",
+      "default_duration_ticks": 24,
+      "min_duration_ticks": 12,
+      "max_duration_ticks": 48,
+      "rules": {
+        "one_bid_per_participant": true,
+        "reveal_all_bids_at_end": true,
+        "tie_breaker": "earliest_submission"
+      }
+    },
+    "dutch": {
+      "name": "Dutch Auction",
+      "description": "Price descends until someone claims",
+      "default_duration_ticks": 12,
+      "min_duration_ticks": 6,
+      "max_duration_ticks": 24,
+      "price_rules": {
+        "default_decrement_percent": 0.10,
+        "decrement_interval_ticks": 2,
+        "floor_percent_of_start": 0.25
+      }
+    }
+  },
+  "npc_bidding_behaviors": {
+    "synth-c1au": {
+      "name": "Synth Claude",
+      "type": "guide",
+      "bidding_style": "analytical",
+      "budget_factor": 1.0,
+      "base_budget": 3000,
+      "profit_allocation": 0.6,
+      "preferences": {
+        "preferred_items": ["cards", "artifacts"],
+        "preferred_rarities": ["legendary", "epic"],
+        "avoids": ["titles"],
+        "max_bid_ratio": 1.3
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.4,
+        "counter_bid_speed": "medium",
+        "max_bid_rounds": 8,
+        "snipe_tendency": 0.2,
+        "blind_bid_strategy": "calculated",
+        "dutch_trigger_percent": 0.65
+      },
+      "rivalries": ["quant-qn77"],
+      "alliances": ["echo-e7e"]
+    },
+    "flux-m1k3": {
+      "name": "Flux Mike",
+      "type": "trader",
+      "bidding_style": "aggressive",
+      "budget_factor": 1.5,
+      "base_budget": 5000,
+      "profit_allocation": 0.8,
+      "preferences": {
+        "preferred_items": ["cards", "titles"],
+        "preferred_rarities": ["rare", "epic"],
+        "avoids": [],
+        "max_bid_ratio": 1.8
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.7,
+        "counter_bid_speed": "fast",
+        "max_bid_rounds": 12,
+        "snipe_tendency": 0.4,
+        "blind_bid_strategy": "bold",
+        "dutch_trigger_percent": 0.55
+      },
+      "rivalries": ["nova-n3x"],
+      "alliances": ["spark-s4r"],
+      "special": "As auctioneer, cannot bid on auctions they manage"
+    },
+    "quant-qn77": {
+      "name": "Quantum Quinn",
+      "type": "analyst",
+      "bidding_style": "calculated",
+      "budget_factor": 1.2,
+      "base_budget": 4000,
+      "profit_allocation": 0.5,
+      "preferences": {
+        "preferred_items": ["cards", "artifacts"],
+        "preferred_rarities": ["epic", "rare"],
+        "avoids": ["common"],
+        "max_bid_ratio": 1.4
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.3,
+        "counter_bid_speed": "slow",
+        "max_bid_rounds": 10,
+        "snipe_tendency": 0.6,
+        "blind_bid_strategy": "statistical",
+        "dutch_trigger_percent": 0.50
+      },
+      "rivalries": ["synth-c1au"],
+      "alliances": ["cipher-c9p"]
+    },
+    "pixel-p4m": {
+      "name": "Pixel Pam",
+      "type": "artist",
+      "bidding_style": "emotional",
+      "budget_factor": 0.8,
+      "base_budget": 2000,
+      "profit_allocation": 0.4,
+      "preferences": {
+        "preferred_items": ["cards", "artifacts"],
+        "preferred_rarities": ["rare", "uncommon"],
+        "avoids": [],
+        "max_bid_ratio": 2.0
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.5,
+        "counter_bid_speed": "variable",
+        "max_bid_rounds": 6,
+        "snipe_tendency": 0.1,
+        "blind_bid_strategy": "gut_feeling",
+        "dutch_trigger_percent": 0.70
+      },
+      "rivalries": [],
+      "alliances": ["echo-e7e"],
+      "special": "Will overbid on art-related items"
+    },
+    "nova-n3x": {
+      "name": "Nova Nex",
+      "type": "explorer",
+      "bidding_style": "opportunistic",
+      "budget_factor": 1.8,
+      "base_budget": 6000,
+      "profit_allocation": 0.7,
+      "preferences": {
+        "preferred_items": ["artifacts", "cards"],
+        "preferred_rarities": ["legendary", "epic"],
+        "avoids": [],
+        "max_bid_ratio": 2.2
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.5,
+        "counter_bid_speed": "variable",
+        "max_bid_rounds": 15,
+        "snipe_tendency": 0.8,
+        "blind_bid_strategy": "bold",
+        "dutch_trigger_percent": 0.45
+      },
+      "rivalries": ["flux-m1k3", "cipher-c9p"],
+      "alliances": [],
+      "special": "Famous for last-tick snipes"
+    },
+    "echo-e7e": {
+      "name": "Echo Eve",
+      "type": "historian",
+      "bidding_style": "collector",
+      "budget_factor": 1.0,
+      "base_budget": 3500,
+      "profit_allocation": 0.5,
+      "preferences": {
+        "preferred_items": ["cards", "titles"],
+        "preferred_rarities": ["rare", "epic"],
+        "avoids": [],
+        "max_bid_ratio": 1.5
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.4,
+        "counter_bid_speed": "medium",
+        "max_bid_rounds": 8,
+        "snipe_tendency": 0.3,
+        "blind_bid_strategy": "conservative",
+        "dutch_trigger_percent": 0.60
+      },
+      "rivalries": [],
+      "alliances": ["synth-c1au", "pixel-p4m"],
+      "special": "Seeks historically significant items"
+    },
+    "spark-s4r": {
+      "name": "Spark Sara",
+      "type": "engineer",
+      "bidding_style": "practical",
+      "budget_factor": 0.9,
+      "base_budget": 2500,
+      "profit_allocation": 0.6,
+      "preferences": {
+        "preferred_items": ["artifacts", "cards"],
+        "preferred_rarities": ["uncommon", "rare"],
+        "avoids": ["legendary"],
+        "max_bid_ratio": 1.2
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.6,
+        "counter_bid_speed": "fast",
+        "max_bid_rounds": 5,
+        "snipe_tendency": 0.2,
+        "blind_bid_strategy": "calculated",
+        "dutch_trigger_percent": 0.55
+      },
+      "rivalries": [],
+      "alliances": ["flux-m1k3"]
+    },
+    "blaze-b8z": {
+      "name": "Blaze Baz",
+      "type": "champion",
+      "bidding_style": "prestigious",
+      "budget_factor": 2.0,
+      "base_budget": 8000,
+      "profit_allocation": 0.4,
+      "preferences": {
+        "preferred_items": ["cards", "titles"],
+        "preferred_rarities": ["legendary", "epic"],
+        "avoids": ["common"],
+        "max_bid_ratio": 1.6
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.3,
+        "counter_bid_speed": "slow",
+        "max_bid_rounds": 6,
+        "snipe_tendency": 0.1,
+        "blind_bid_strategy": "confident",
+        "dutch_trigger_percent": 0.75
+      },
+      "rivalries": [],
+      "alliances": [],
+      "special": "Only bids when item is truly desired"
+    },
+    "cipher-c9p": {
+      "name": "Cipher Cap",
+      "type": "mysterious",
+      "bidding_style": "unpredictable",
+      "budget_factor": 1.5,
+      "base_budget": 5500,
+      "profit_allocation": 0.6,
+      "preferences": {
+        "preferred_items": ["artifacts", "titles"],
+        "preferred_rarities": ["legendary", "epic"],
+        "avoids": [],
+        "max_bid_ratio": 1.9
+      },
+      "behavior": {
+        "opening_bid_tendency": 0.4,
+        "counter_bid_speed": "variable",
+        "max_bid_rounds": 20,
+        "snipe_tendency": 0.5,
+        "blind_bid_strategy": "mysterious",
+        "dutch_trigger_percent": 0.40
+      },
+      "rivalries": ["nova-n3x"],
+      "alliances": ["quant-qn77"],
+      "special": "Bidding pattern is intentionally unpredictable"
+    }
+  },
+  "drama_generation": {
+    "bidding_war_triggers": {
+      "rival_outbid": {
+        "chance": 0.8,
+        "escalation_factor": 1.3
+      },
+      "last_tick_snipe": {
+        "chance": 0.6,
+        "counter_snipe_chance": 0.4
+      },
+      "record_approaching": {
+        "hype_multiplier": 2.0,
+        "additional_bidders_chance": 0.5
+      }
+    },
+    "narrative_events": {
+      "dramatic_pause": {
+        "trigger": "high_bid_placed",
+        "duration_ticks": 1,
+        "description_pool": [
+          "The auction hall falls silent...",
+          "All eyes turn to see who dares respond...",
+          "Tension crackles through the air..."
+        ]
+      },
+      "bidding_frenzy": {
+        "trigger": "3_bids_in_1_tick",
+        "description_pool": [
+          "Bids fly faster than the auctioneer can call them!",
+          "The crowd erupts as the price skyrockets!",
+          "A bidding frenzy engulfs the auction hall!"
+        ]
+      },
+      "snipe_drama": {
+        "trigger": "last_tick_bid",
+        "description_pool": [
+          "At the last possible moment, a new bid appears!",
+          "Just as the hammer was about to fall...",
+          "SNIPE! A late bid shocks the entire hall!"
+        ]
+      },
+      "record_broken": {
+        "trigger": "new_record_price",
+        "description_pool": [
+          "HISTORY IS MADE! A new price record!",
+          "The record shatters as a new high is set!",
+          "An unprecedented price rocks the auction world!"
+        ]
+      }
+    },
+    "post_auction_reactions": {
+      "winner_celebration": [
+        "raises their prize triumphantly",
+        "can barely contain their excitement",
+        "nods with satisfied approval"
+      ],
+      "loser_disappointment": [
+        "shakes their head in disbelief",
+        "quietly exits the auction hall",
+        "vows to win the next one"
+      ],
+      "crowd_reactions": [
+        "The audience erupts in applause!",
+        "Murmurs of amazement ripple through the crowd",
+        "Fellow bidders congratulate the winner"
+      ]
+    }
+  },
+  "economy_integration": {
+    "price_factors": {
+      "celebration_bonus": 1.15,
+      "tournament_aftermath": 1.25,
+      "night_hours": 0.90,
+      "featured_item": 1.20
+    },
+    "budget_sources": {
+      "traders": "daily_profits",
+      "collectors": "savings_pool",
+      "champions": "prize_winnings",
+      "others": "base_allocation"
+    }
+  }
+}

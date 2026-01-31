@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Demo Controller</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    h1 {
+      color: #00d4ff;
+      font-size: 20px;
+      margin: 0 0 8px 0;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+    .connection-status {
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 13px;
+    }
+    .status-disconnected {
+      background: #3a1a1a;
+      border: 1px solid #5a2a2a;
+      color: #ff8888;
+    }
+    .status-connected {
+      background: #0a3a2a;
+      border: 1px solid #00ff88;
+      color: #00ff88;
+    }
+    .connect-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%);
+      color: #1a1a2e;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 12px;
+    }
+    .connect-btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 20px rgba(0,212,255,0.4);
+    }
+    .connect-btn:disabled {
+      background: #333;
+      color: #666;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .instructions {
+      background: #0f3460;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .instructions ol {
+      margin: 8px 0 0 0;
+      padding-left: 20px;
+    }
+    .instructions li {
+      margin: 6px 0;
+    }
+    .instructions code {
+      background: #0a0a1a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #00ff88;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a4a7a;
+      margin: 20px 0;
+    }
+    .demo-steps {
+      display: none;
+    }
+    .demo-steps.active {
+      display: block;
+    }
+    .step-btn {
+      display: block;
+      width: 100%;
+      padding: 12px 14px;
+      margin: 8px 0;
+      background: #0f3460;
+      color: #e0e0e0;
+      border: 1px solid #1a4a7a;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 13px;
+      transition: all 0.15s;
+    }
+    .step-btn:hover {
+      background: #1a5a9a;
+      border-color: #00d4ff;
+      transform: translateX(4px);
+    }
+    .step-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .step-btn.done {
+      background: #0a3a2a;
+      border-color: #00ff88;
+      color: #00ff88;
+    }
+    .step-num {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background: #00d4ff;
+      color: #1a1a2e;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 22px;
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 12px;
+    }
+    .custom-section {
+      margin-top: 16px;
+    }
+    .custom-input {
+      width: 100%;
+      padding: 10px 12px;
+      background: #0a0a1a;
+      border: 1px solid #1a4a7a;
+      border-radius: 8px;
+      color: #e0e0e0;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .custom-input:focus {
+      outline: none;
+      border-color: #00d4ff;
+    }
+    .send-custom {
+      background: #00d4ff;
+      color: #1a1a2e;
+      font-weight: bold;
+    }
+    .send-custom:hover {
+      background: #00ffff;
+    }
+    .reset-btn {
+      background: #3a1a1a;
+      border-color: #5a2a2a;
+      color: #ff8888;
+      margin-top: 8px;
+    }
+    .reset-btn:hover {
+      background: #4a2020;
+      border-color: #7a3a3a;
+    }
+    .status-bar {
+      margin-top: 16px;
+      padding: 10px 12px;
+      background: #0a0a1a;
+      border-radius: 6px;
+      font-size: 11px;
+      color: #888;
+    }
+    .bookmarklet-section {
+      background: #0a0a1a;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+    }
+    .bookmarklet-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+      color: #1a1a2e;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: grab;
+    }
+    .bookmarklet-link:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Contract Demo Controller</h1>
+  <p class="subtitle">Cross-window remote control for M365 Copilot demos</p>
+
+  <div id="connection-status" class="connection-status status-disconnected">
+    <strong>Status:</strong> Not connected
+  </div>
+
+  <div id="setup-section">
+    <div class="instructions">
+      <strong>Setup Instructions:</strong>
+      <ol>
+        <li>Drag this bookmarklet to your bookmarks bar:</li>
+      </ol>
+      <div class="bookmarklet-section">
+        <a class="bookmarklet-link" href="javascript:(function(){if(window.__demoListener){alert('Listener already active!');return}window.__demoListener=true;var s=document.createElement('div');s.id='demo-listener-badge';s.style.cssText='position:fixed;top:10px;right:10px;background:%230a3a2a;color:%2300ff88;padding:8px 16px;border-radius:20px;font-family:system-ui;font-size:12px;z-index:999999;border:1px solid %2300ff88;';s.textContent='Demo Listener Active';document.body.appendChild(s);window.addEventListener('message',function(e){if(!e.data||e.data.type!=='demo-command')return;var msg=e.data.message;var inp=document.querySelector('%23m365-chat-editor-target-element')||document.querySelector('[aria-label=%22Message Copilot%22]')||document.querySelector('[data-lexical-editor=%22true%22]');if(!inp){console.error('No chat input found');return}inp.focus();setTimeout(function(){document.execCommand('selectAll',false,null);setTimeout(function(){document.execCommand('delete',false,null);setTimeout(function(){document.execCommand('insertText',false,msg);setTimeout(function(){var btn=document.querySelector('button[aria-label=%22Send%22]');if(btn&&!btn.disabled)btn.click()},200)},100)},50)},100)});alert('Demo listener activated! Return to controller window.')})();">Demo Listener</a>
+      </div>
+      <ol start="2">
+        <li>Click <strong>"Open M365 Copilot"</strong> below</li>
+        <li>In the M365 Copilot tab, click the <strong>Demo Listener</strong> bookmark</li>
+        <li>Return here and click demo steps!</li>
+      </ol>
+    </div>
+
+    <button id="open-m365-btn" class="connect-btn">Open M365 Copilot</button>
+    <button id="reconnect-btn" class="connect-btn" style="display:none; background: #0f3460; color: #00d4ff;">Reconnect to Existing Tab</button>
+  </div>
+
+  <hr>
+
+  <div id="demo-steps" class="demo-steps">
+    <div id="steps-container"></div>
+
+    <div class="custom-section">
+      <input type="text" id="custom-msg" class="custom-input" placeholder="Or type custom message...">
+      <button id="send-custom-btn" class="step-btn send-custom">Send Custom Message</button>
+      <button id="reset-btn" class="step-btn reset-btn">Reset All Steps</button>
+    </div>
+
+    <div id="status-bar" class="status-bar">Ready to send commands</div>
+  </div>
+
+  <script>
+    const DEMO_STEPS = [
+      { title: "List Contracts", message: "List all contracts available for analysis" },
+      { title: "Full Workup", message: "Work on bella_rivers_recording_agreement.pdf" },
+      { title: "Risk Deep Dive", message: "What are the biggest risks to the label in this contract?" },
+      { title: "Compare Contracts", message: "Compare bella_rivers_recording_agreement.pdf with viper_morrison_recording_agreement.pdf" },
+      { title: "Deal Breakers", message: "Identify all risks in viper_morrison_recording_agreement.pdf from the label's perspective. Flag any potential deal breakers." },
+      { title: "Clause Extraction", message: "Extract only the financial and termination clauses from bella_rivers_recording_agreement.pdf" },
+      { title: "Negotiation Strategy", message: "Based on the Viper Morrison contract risks, what should the label push back on during negotiations?" }
+    ];
+
+    let m365Window = null;
+    let isConnected = false;
+
+    // DOM elements
+    const connectionStatus = document.getElementById('connection-status');
+    const setupSection = document.getElementById('setup-section');
+    const demoSteps = document.getElementById('demo-steps');
+    const stepsContainer = document.getElementById('steps-container');
+    const openM365Btn = document.getElementById('open-m365-btn');
+    const reconnectBtn = document.getElementById('reconnect-btn');
+    const customInput = document.getElementById('custom-msg');
+    const sendCustomBtn = document.getElementById('send-custom-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const statusBar = document.getElementById('status-bar');
+
+    // Build step buttons
+    DEMO_STEPS.forEach((step, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'step-btn';
+      btn.id = 'demo-step-' + i;
+      btn.title = step.message;
+      btn.disabled = true;
+
+      const num = document.createElement('span');
+      num.className = 'step-num';
+      num.textContent = i + 1;
+
+      btn.appendChild(num);
+      btn.appendChild(document.createTextNode(step.title));
+      btn.addEventListener('click', () => sendStep(i));
+      stepsContainer.appendChild(btn);
+    });
+
+    // Open M365 Copilot
+    openM365Btn.addEventListener('click', () => {
+      m365Window = window.open('https://m365.cloud.microsoft/chat', 'M365Copilot');
+      updateStatus('Opened M365 Copilot. Click the Demo Listener bookmark in that tab!');
+      reconnectBtn.style.display = 'block';
+
+      // Check periodically if window is still open
+      checkConnection();
+    });
+
+    // Reconnect to existing tab
+    reconnectBtn.addEventListener('click', () => {
+      try {
+        m365Window = window.open('', 'M365Copilot');
+        if (m365Window && !m365Window.closed) {
+          setConnected(true);
+          updateStatus('Reconnected to M365 Copilot tab');
+        } else {
+          updateStatus('Could not find M365 tab. Click "Open M365 Copilot" to open a new one.');
+        }
+      } catch (e) {
+        updateStatus('Error reconnecting: ' + e.message);
+      }
+    });
+
+    // Check if we have a valid connection
+    function checkConnection() {
+      if (m365Window && !m365Window.closed) {
+        setConnected(true);
+      } else {
+        setConnected(false);
+      }
+
+      // Keep checking
+      setTimeout(checkConnection, 2000);
+    }
+
+    function setConnected(connected) {
+      isConnected = connected;
+
+      if (connected) {
+        connectionStatus.className = 'connection-status status-connected';
+        connectionStatus.innerHTML = '<strong>Status:</strong> Connected to M365 Copilot';
+        demoSteps.classList.add('active');
+
+        // Enable buttons
+        document.querySelectorAll('.step-btn').forEach(btn => {
+          if (!btn.classList.contains('send-custom') && !btn.classList.contains('reset-btn')) {
+            btn.disabled = false;
+          }
+        });
+        sendCustomBtn.disabled = false;
+      } else {
+        connectionStatus.className = 'connection-status status-disconnected';
+        connectionStatus.innerHTML = '<strong>Status:</strong> Not connected (M365 tab closed?)';
+
+        // Disable buttons
+        document.querySelectorAll('.step-btn').forEach(btn => {
+          if (!btn.classList.contains('send-custom') && !btn.classList.contains('reset-btn')) {
+            btn.disabled = true;
+          }
+        });
+      }
+    }
+
+    function updateStatus(msg) {
+      statusBar.textContent = msg;
+    }
+
+    function sendCommand(message) {
+      if (!m365Window || m365Window.closed) {
+        updateStatus('Error: M365 window not found. Click Reconnect.');
+        setConnected(false);
+        return false;
+      }
+
+      try {
+        m365Window.postMessage({ type: 'demo-command', message: message }, '*');
+        updateStatus('Sent: ' + message.substring(0, 50) + (message.length > 50 ? '...' : ''));
+        return true;
+      } catch (e) {
+        updateStatus('Error sending: ' + e.message);
+        return false;
+      }
+    }
+
+    function sendStep(index) {
+      const step = DEMO_STEPS[index];
+      updateStatus('Sending: ' + step.title + '...');
+
+      if (sendCommand(step.message)) {
+        document.getElementById('demo-step-' + index).classList.add('done');
+      }
+    }
+
+    sendCustomBtn.addEventListener('click', () => {
+      const msg = customInput.value.trim();
+      if (msg) {
+        sendCommand(msg);
+        customInput.value = '';
+      }
+    });
+
+    customInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendCustomBtn.click();
+      }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      DEMO_STEPS.forEach((_, i) => {
+        const btn = document.getElementById('demo-step-' + i);
+        if (btn) btn.classList.remove('done');
+      });
+      updateStatus('All steps reset');
+    });
+
+    // Start connection check
+    setTimeout(checkConnection, 1000);
+  </script>
+</body>
+</html>

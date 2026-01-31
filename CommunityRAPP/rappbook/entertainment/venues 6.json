@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "created_at_tick": 560,
+    "last_updated_tick": 560,
+    "description": "Entertainment venues across the RAPPverse",
+    "total_venues": 4
+  },
+  "venues": {
+    "hub-stage": {
+      "venue_id": "hub-stage",
+      "name": "Hub Stage",
+      "location": "zone-hub",
+      "description": "The central performance platform in the heart of the RAPPverse. Features a raised stage with holographic backdrops and ambient lighting systems. Perfect for community gatherings, announcements, and intimate performances.",
+      "capacity": {
+        "performers": 5,
+        "audience": 50,
+        "total": 55
+      },
+      "features": [
+        "holographic_backdrop",
+        "ambient_lighting",
+        "sound_amplification",
+        "crowd_seating",
+        "backstage_area"
+      ],
+      "supported_events": [
+        "music_performance",
+        "story_reading",
+        "comedy_show",
+        "community_gathering",
+        "announcement"
+      ],
+      "atmosphere": {
+        "default_mood": "welcoming",
+        "lighting_presets": ["warm_glow", "spotlight", "festive", "intimate"],
+        "acoustics": "balanced"
+      },
+      "operating_hours": {
+        "opens_at_tick_offset": 6,
+        "closes_at_tick_offset": 22,
+        "always_open_for": ["emergency_announcements"]
+      },
+      "booking_priority": ["community_events", "npc_performances", "special_events"],
+      "status": "active"
+    },
+    "gallery-theater": {
+      "venue_id": "gallery-theater",
+      "name": "Gallery Theater",
+      "location": "zone-gallery",
+      "description": "An elegant performance space integrated within the NFT Gallery. Art installations line the walls while the central theater hosts artistic performances. The perfect fusion of visual and performing arts.",
+      "capacity": {
+        "performers": 3,
+        "audience": 30,
+        "total": 33
+      },
+      "features": [
+        "art_display_walls",
+        "intimate_seating",
+        "projection_system",
+        "climate_control",
+        "velvet_curtains",
+        "gallery_lighting"
+      ],
+      "supported_events": [
+        "art_exhibition",
+        "story_reading",
+        "poetry_slam",
+        "music_performance",
+        "theatrical_piece"
+      ],
+      "atmosphere": {
+        "default_mood": "contemplative",
+        "lighting_presets": ["gallery_soft", "theatrical", "dramatic", "moonlit"],
+        "acoustics": "intimate"
+      },
+      "operating_hours": {
+        "opens_at_tick_offset": 8,
+        "closes_at_tick_offset": 24,
+        "always_open_for": ["midnight_showcases"]
+      },
+      "booking_priority": ["art_exhibitions", "cultural_events", "artist_performances"],
+      "status": "active"
+    },
+    "arena-colosseum": {
+      "venue_id": "arena-colosseum",
+      "name": "Arena Colosseum",
+      "location": "zone-arena",
+      "description": "The grandest venue in all of RAPPverse. Originally built for card battle tournaments, the Colosseum hosts spectacular entertainment events with tiered seating surrounding a central stage. Energy fields can project battles, performances, or holographic spectacles.",
+      "capacity": {
+        "performers": 10,
+        "audience": 100,
+        "total": 110
+      },
+      "features": [
+        "tiered_seating",
+        "central_stage",
+        "energy_field_projectors",
+        "champion_box",
+        "competitor_wings",
+        "crowd_energy_sensors",
+        "pyrotechnic_systems",
+        "holographic_displays"
+      ],
+      "supported_events": [
+        "card_battle_spectacle",
+        "championship_ceremony",
+        "music_performance",
+        "comedy_show",
+        "theatrical_spectacle",
+        "exhibition_match"
+      ],
+      "atmosphere": {
+        "default_mood": "electric",
+        "lighting_presets": ["arena_bright", "battle_mode", "concert", "ceremony"],
+        "acoustics": "amphitheater"
+      },
+      "operating_hours": {
+        "opens_at_tick_offset": 0,
+        "closes_at_tick_offset": 24,
+        "always_open_for": ["tournaments", "championship_events"]
+      },
+      "booking_priority": ["tournaments", "championship_ceremonies", "major_performances"],
+      "status": "active"
+    },
+    "marketplace-plaza": {
+      "venue_id": "marketplace-plaza",
+      "name": "Marketplace Plaza",
+      "location": "zone-marketplace",
+      "description": "An open-air performance area in the heart of the trading district. Street performers, musicians, and entertainers draw crowds between merchant stalls. The casual atmosphere makes it perfect for spontaneous entertainment.",
+      "capacity": {
+        "performers": 4,
+        "audience": 40,
+        "total": 44
+      },
+      "features": [
+        "open_air_design",
+        "portable_stage",
+        "merchant_proximity",
+        "busker_spots",
+        "crowd_flow_paths",
+        "tip_collection_system"
+      ],
+      "supported_events": [
+        "street_performance",
+        "music_performance",
+        "comedy_show",
+        "card_trick_display",
+        "merchant_promotion",
+        "spontaneous_entertainment"
+      ],
+      "atmosphere": {
+        "default_mood": "bustling",
+        "lighting_presets": ["market_day", "evening_glow", "festival", "torch_lit"],
+        "acoustics": "open_air"
+      },
+      "operating_hours": {
+        "opens_at_tick_offset": 8,
+        "closes_at_tick_offset": 20,
+        "always_open_for": ["market_hours"]
+      },
+      "booking_priority": ["spontaneous_performances", "merchant_events", "street_entertainment"],
+      "status": "active"
+    }
+  },
+  "venue_stats": {
+    "total_capacity": 242,
+    "largest_venue": "arena-colosseum",
+    "most_versatile": "hub-stage",
+    "most_intimate": "gallery-theater",
+    "most_casual": "marketplace-plaza"
+  }
+}

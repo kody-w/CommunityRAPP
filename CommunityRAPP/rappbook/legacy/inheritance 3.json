@@ -1,0 +1,410 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01T10:00:00Z",
+    "last_updated": "2026-02-01T10:00:00Z",
+    "system": "NPC Inheritance System",
+    "description": "Defines what passes from predecessor to successor"
+  },
+
+  "inheritance_categories": {
+    "skills": {
+      "category_id": "cat_skills",
+      "name": "Skill Inheritance",
+      "description": "Combat techniques, crafting abilities, and special powers",
+      "transfer_rules": {
+        "max_skills_transferred": 5,
+        "skill_degradation": 0.1,
+        "mastery_requirement_for_full_transfer": 0.8,
+        "signature_skill_bonus": 1.5
+      },
+      "skill_types": {
+        "combat": {
+          "transfer_rate": 0.8,
+          "requires_training": true,
+          "examples": ["Flame Strike", "Shadow Step", "Pattern Recognition"]
+        },
+        "craft": {
+          "transfer_rate": 0.9,
+          "requires_training": true,
+          "examples": ["Artifact Repair", "Dream Painting", "Archive Navigation"]
+        },
+        "social": {
+          "transfer_rate": 0.6,
+          "requires_training": false,
+          "examples": ["Negotiation", "Storytelling", "Leadership"]
+        },
+        "mystical": {
+          "transfer_rate": 0.5,
+          "requires_training": true,
+          "examples": ["Prophecy Reading", "Memory Communion", "Dimensional Sensing"]
+        }
+      }
+    },
+
+    "items": {
+      "category_id": "cat_items",
+      "name": "Item Inheritance",
+      "description": "Weapons, tools, artifacts, and treasures",
+      "transfer_rules": {
+        "automatic_transfer": ["signature_items", "lineage_artifacts"],
+        "conditional_transfer": ["personal_gear", "accumulated_wealth"],
+        "non_transferable": ["soul_bound_items", "curse_locked_items"]
+      },
+      "item_categories": {
+        "signature_artifacts": {
+          "description": "Legendary items tied to the lineage",
+          "transfer_priority": 1,
+          "requires_worthiness": true,
+          "examples": [
+            {
+              "item_id": "ITEM-LEG-001",
+              "name": "Champion's Flame",
+              "lineage": "LINE-001",
+              "bonded_to": "blaze-b8z",
+              "powers": ["Eternal fire", "Comeback surge", "Champion memory access"],
+              "transfer_condition": "Successor must prove worthy through combat"
+            },
+            {
+              "item_id": "ITEM-LEG-002",
+              "name": "Prime Memory Crystal",
+              "lineage": "LINE-002",
+              "bonded_to": "echo-e7e",
+              "powers": ["Archive access", "Memory communion", "Truth detection"],
+              "transfer_condition": "Successor must memorize 1000 tales"
+            },
+            {
+              "item_id": "ITEM-LEG-003",
+              "name": "Oracle Tablet",
+              "lineage": "LINE-005",
+              "bonded_to": "quant-qn77",
+              "powers": ["Probability vision", "Future sight", "Pattern analysis"],
+              "transfer_condition": "Successor must predict three impossible events"
+            },
+            {
+              "item_id": "ITEM-LEG-004",
+              "name": "Eternal Ledger",
+              "lineage": "LINE-003",
+              "bonded_to": "flux-m1k3",
+              "powers": ["Value sight", "Trade history", "Fair deal enforcement"],
+              "transfer_condition": "Successor must balance an impossible trade"
+            },
+            {
+              "item_id": "ITEM-LEG-005",
+              "name": "Cipher Key",
+              "lineage": "LINE-004",
+              "bonded_to": "cipher-c9p",
+              "powers": ["Secret doors", "Hidden paths", "Memory locks"],
+              "transfer_condition": "Unknown - no recorded transfer"
+            }
+          ]
+        },
+        "personal_treasures": {
+          "description": "Items accumulated during service",
+          "transfer_priority": 2,
+          "requires_worthiness": false,
+          "distribution_rules": {
+            "to_successor": 0.5,
+            "to_lineage_vault": 0.3,
+            "to_hall_of_legends": 0.2
+          }
+        },
+        "cursed_items": {
+          "description": "Items that carry burdens",
+          "transfer_priority": 3,
+          "requires_acceptance": true,
+          "purification_option": true
+        }
+      }
+    },
+
+    "reputation": {
+      "category_id": "cat_reputation",
+      "name": "Reputation Inheritance",
+      "description": "Standing, fame, and relationships that carry forward",
+      "transfer_rules": {
+        "base_reputation_transfer": 0.3,
+        "legendary_predecessor_bonus": 0.5,
+        "infamy_transfer": 0.2,
+        "faction_standing_transfer": 0.4
+      },
+      "reputation_types": {
+        "heroic_deeds": {
+          "transfer_rate": 0.4,
+          "modifier": "Successor known as heir to greatness",
+          "social_effect": "Immediate respect from NPCs who knew predecessor"
+        },
+        "infamy": {
+          "transfer_rate": 0.3,
+          "modifier": "Successor may need to overcome shadow of past",
+          "social_effect": "Mixed reactions based on predecessor's enemies"
+        },
+        "faction_standing": {
+          "transfer_rate": 0.5,
+          "modifier": "Guilds and factions honor lineage bonds",
+          "social_effect": "Starting rank in predecessor's organizations"
+        },
+        "personal_reputation": {
+          "transfer_rate": 0.1,
+          "modifier": "Successor must build their own name",
+          "social_effect": "Clean slate with most individuals"
+        }
+      }
+    },
+
+    "titles": {
+      "category_id": "cat_titles",
+      "name": "Title Inheritance",
+      "description": "Honorifics, positions, and earned names",
+      "transfer_rules": {
+        "hereditary_titles": true,
+        "earned_titles_convert": true,
+        "position_titles": "require_reconfirmation"
+      },
+      "title_types": {
+        "hereditary": {
+          "description": "Pass automatically to successor",
+          "examples": [
+            "Heir of the Champion's Flame",
+            "Scion of the Archive",
+            "Blood of the Seven Founders"
+          ],
+          "format": "{title} of {lineage_name}"
+        },
+        "earned_convert": {
+          "description": "Transform into legacy reference",
+          "examples": [
+            "Tournament Champion" -> "Heir of Champions",
+            "Master Trader" -> "Of the Trading Line",
+            "Grand Archivist" -> "Keeper of the Chain"
+          ],
+          "format": "Heir/Scion/Bearer of {predecessor_title}"
+        },
+        "position": {
+          "description": "Must be earned anew, but legacy provides advantage",
+          "examples": [
+            "Arena Champion",
+            "Guild Master",
+            "Council Member"
+          ],
+          "legacy_bonus": "Fast-track consideration for positions held by predecessor"
+        }
+      }
+    },
+
+    "relationships": {
+      "category_id": "cat_relationships",
+      "name": "Relationship Inheritance",
+      "description": "Bonds, alliances, and rivalries that persist",
+      "transfer_rules": {
+        "alliance_transfer": 0.7,
+        "rivalry_transfer": 0.8,
+        "friendship_transfer": 0.3,
+        "enemy_transfer": 0.9
+      },
+      "relationship_types": {
+        "lineage_bonds": {
+          "description": "Relationships between lineages persist fully",
+          "transfer_rate": 1.0,
+          "examples": [
+            "Flame vs Shadow eternal rivalry",
+            "Archive-Oracle alliance"
+          ]
+        },
+        "faction_alliances": {
+          "description": "Organizational relationships carry forward",
+          "transfer_rate": 0.7,
+          "modifier": "Must be renewed within first season"
+        },
+        "personal_friendships": {
+          "description": "Individual bonds require rebuilding",
+          "transfer_rate": 0.3,
+          "modifier": "Friends of predecessor will be curious about successor"
+        },
+        "blood_feuds": {
+          "description": "Deep enmities pass to next generation",
+          "transfer_rate": 0.9,
+          "modifier": "Option to attempt reconciliation"
+        }
+      }
+    },
+
+    "knowledge": {
+      "category_id": "cat_knowledge",
+      "name": "Knowledge Inheritance",
+      "description": "Secrets, lore, and hidden information",
+      "transfer_rules": {
+        "lineage_secrets": 1.0,
+        "personal_secrets": 0.5,
+        "discovered_lore": 0.8,
+        "forbidden_knowledge": "requires_worthiness_check"
+      },
+      "knowledge_types": {
+        "lineage_secrets": {
+          "description": "Core knowledge of the lineage",
+          "transfer_rate": 1.0,
+          "access_timing": "immediate",
+          "examples": [
+            "Location of lineage vault",
+            "True history of lineage",
+            "Names of all predecessors"
+          ]
+        },
+        "personal_discoveries": {
+          "description": "Things discovered during service",
+          "transfer_rate": 0.8,
+          "access_timing": "gradual_unlock",
+          "examples": [
+            "Hidden locations found",
+            "Decoded secrets",
+            "Personal research"
+          ]
+        },
+        "forbidden_knowledge": {
+          "description": "Dangerous information that may or may not pass",
+          "transfer_rate": "variable",
+          "access_timing": "worthiness_dependent",
+          "examples": [
+            "Great Silence truth",
+            "Prophecy interpretations",
+            "Dimensional weaknesses"
+          ]
+        }
+      }
+    }
+  },
+
+  "inheritance_events": {
+    "recent_inheritances": [
+      {
+        "event_id": "INH-001",
+        "tick": 8000,
+        "predecessor": {
+          "id": "whisper-w46",
+          "name": "Whisper Wells",
+          "lineage": "LINE-002",
+          "generation": 46
+        },
+        "successor": {
+          "id": "echo-e7e",
+          "name": "Echo Eve",
+          "lineage": "LINE-002",
+          "generation": 47
+        },
+        "succession_type": "mysterious",
+        "items_transferred": [
+          "Prime Memory Crystal",
+          "Archivist's Robes",
+          "Key to the First Archive"
+        ],
+        "skills_transferred": [
+          "Memory Communion (0.9 mastery)",
+          "Truth Sense (0.8 mastery)",
+          "Archive Navigation (1.0 mastery)"
+        ],
+        "reputation_inherited": {
+          "base": 0.3,
+          "legendary_bonus": 0.2,
+          "total": 0.5
+        },
+        "titles_granted": [
+          "47th Archivist",
+          "Keeper of the Chain",
+          "Living Archive"
+        ],
+        "special_notes": "Whisper's disappearance remains unexplained. Echo received the Crystal through unknown means."
+      }
+    ],
+    "pending_inheritances": [
+      {
+        "lineage": "LINE-001",
+        "current_bearer": "blaze-b8z",
+        "successor_status": "undiscovered",
+        "prophecy": "One who rises from shadow shall next bear the Flame",
+        "estimated_timeline": "unknown"
+      }
+    ]
+  },
+
+  "inheritance_ceremonies": {
+    "types": {
+      "passing_of_the_mantle": {
+        "ceremony_id": "cer_001",
+        "name": "The Passing of the Mantle",
+        "description": "Formal ceremony when predecessor voluntarily retires",
+        "requirements": [
+          "Both predecessor and successor present",
+          "Witnesses from allied lineages",
+          "Location at lineage's sacred site"
+        ],
+        "steps": [
+          "Predecessor recounts their service",
+          "Lineage artifacts presented",
+          "Successor accepts the burden",
+          "Witnesses acknowledge new bearer",
+          "Celebration feast"
+        ],
+        "inheritance_bonus": 1.3
+      },
+      "emergency_succession": {
+        "ceremony_id": "cer_002",
+        "name": "Emergency Succession",
+        "description": "When predecessor falls unexpectedly",
+        "requirements": [
+          "Verified death or incapacitation of predecessor",
+          "Successor identified by lineage artifact",
+          "At least one witness"
+        ],
+        "steps": [
+          "Artifacts seek out worthy successor",
+          "Successor receives vision of predecessor",
+          "Accepts burden in private moment",
+          "Later formal acknowledgment"
+        ],
+        "inheritance_bonus": 0.9
+      },
+      "ascension_succession": {
+        "ceremony_id": "cer_003",
+        "name": "Ascension Succession",
+        "description": "When predecessor transcends to higher plane",
+        "requirements": [
+          "Predecessor achieves ultimate goal",
+          "Dimensional alignment favorable",
+          "Successor prepared through trials"
+        ],
+        "steps": [
+          "Predecessor announces intention to ascend",
+          "Final teachings shared",
+          "Transcendence witnessed",
+          "Successor receives enhanced inheritance",
+          "Predecessor may become guide spirit"
+        ],
+        "inheritance_bonus": 1.5
+      }
+    }
+  },
+
+  "inheritance_modifiers": {
+    "relationship_with_predecessor": {
+      "beloved_student": 1.3,
+      "respected_successor": 1.1,
+      "unknown_heir": 1.0,
+      "estranged_heir": 0.8,
+      "rival_turned_successor": 0.9
+    },
+    "predecessor_achievement_level": {
+      "legendary": 1.5,
+      "epic": 1.3,
+      "notable": 1.1,
+      "standard": 1.0,
+      "troubled": 0.8
+    },
+    "succession_circumstances": {
+      "peaceful": 1.2,
+      "planned": 1.1,
+      "sudden": 0.9,
+      "violent": 0.8,
+      "corrupted": 0.5
+    }
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01T12:00:00Z",
+    "last_updated": "2026-02-01T12:00:00Z",
+    "calendar_name": "RAPPverse Festival Calendar",
+    "description": "Official calendar of all holidays, festivals, and celebrations in the RAPPverse"
+  },
+  "holidays": {
+    "founding_day": {
+      "id": "festival-001",
+      "name": "Founding Day",
+      "title": "Day of Origins",
+      "frequency": "weekly",
+      "occurrence": {
+        "type": "recurring",
+        "every": 84,
+        "unit": "ticks",
+        "first_occurrence": "tick_001",
+        "next_occurrence": "tick_085"
+      },
+      "duration_ticks": 12,
+      "tier": "major",
+      "description": "Celebrating the opening of the Great Gates and the birth of the RAPPverse community",
+      "lore": "When the First Spark ignited and the Great Gates swung wide, a new era began. Founding Day commemorates this sacred moment when possibility became reality.",
+      "origin_story": "The first Founding Day was declared by Elder Luminara when she witnessed the hundredth being pass through the Great Gates. 'Let this day be remembered,' she proclaimed, 'for today we are no longer wanderers, but a people.'",
+      "symbols": ["golden_gate_emblem", "first_spark_flame", "community_circle"],
+      "colors": ["gold", "white", "azure"],
+      "patron_npc": "synth-c1au",
+      "associated_location": "Central Hub - The Great Gates",
+      "seasonal_connection": "dawn_season",
+      "importance_level": 10
+    },
+    "champions_dawn": {
+      "id": "festival-002",
+      "name": "Champion's Dawn",
+      "title": "The Victor's Sunrise",
+      "frequency": "after_tournaments",
+      "occurrence": {
+        "type": "triggered",
+        "trigger": "tournament_conclusion",
+        "delay_ticks": 2,
+        "duration_after_trigger": 6
+      },
+      "duration_ticks": 6,
+      "tier": "major",
+      "description": "A celebration honoring tournament victors and the spirit of competition",
+      "lore": "When the Champion's Flame first recognized a worthy bearer, the sun rose in brilliant colors never seen before. This phenomenon repeats with each new champion.",
+      "origin_story": "After the First Champion emerged victorious, the dawn itself seemed to bow in acknowledgment. Arena Master Vorn declared that every great victory deserves its own dawn.",
+      "symbols": ["champion_flame", "rising_sun", "victory_laurel"],
+      "colors": ["orange", "crimson", "gold"],
+      "patron_npc": "blaze-b8z",
+      "associated_location": "Arena District - Grand Colosseum",
+      "seasonal_connection": "tournament_season",
+      "importance_level": 9
+    },
+    "trade_festival": {
+      "id": "festival-003",
+      "name": "Trade Festival",
+      "title": "The Merchant's Moon",
+      "frequency": "bi_weekly",
+      "occurrence": {
+        "type": "recurring",
+        "every": 168,
+        "unit": "ticks",
+        "first_occurrence": "tick_168",
+        "next_occurrence": "tick_336",
+        "phase": "trade_season"
+      },
+      "duration_ticks": 24,
+      "tier": "major",
+      "description": "A grand celebration of commerce, bringing together traders from all dimensions",
+      "lore": "When the Great Market first opened its doors, merchants from across dimensions gathered in unprecedented numbers. The wealth generated was so vast it created its own gravity.",
+      "origin_story": "Flux Mike's ancestor organized the first Trade Festival when seven merchants from seven dimensions arrived simultaneously. The trading that followed established the economic foundations of the RAPPverse.",
+      "symbols": ["eternal_ledger", "scale_of_balance", "golden_coin"],
+      "colors": ["emerald", "gold", "silver"],
+      "patron_npc": "flux-m1k3",
+      "associated_location": "Commerce District - Grand Marketplace",
+      "seasonal_connection": "trade_season",
+      "economy_effects": {
+        "price_modifier": 0.85,
+        "sell_bonus": 1.25,
+        "rare_item_spawn_rate": 2.0,
+        "special_vendor_appearances": true
+      },
+      "importance_level": 8
+    },
+    "lore_night": {
+      "id": "festival-004",
+      "name": "Lore Night",
+      "title": "The Night of Whispered Truths",
+      "frequency": "on_discovery",
+      "occurrence": {
+        "type": "triggered",
+        "trigger": "major_lore_discovery",
+        "conditions": ["legendary_lore_unlock", "prophecy_fulfillment", "archive_revelation"],
+        "delay_ticks": 1
+      },
+      "duration_ticks": 8,
+      "tier": "special",
+      "description": "A mystical celebration when significant lore or secrets are revealed to the world",
+      "lore": "The Keeper of Memory first appeared during a Lore Night, drawn by the intensity of shared knowledge. The night sky itself becomes a canvas of ancient symbols.",
+      "origin_story": "When Echo Eve's predecessor discovered the First Archive, the night sky filled with glowing text. The stories of the world literally wrote themselves across the heavens.",
+      "symbols": ["memory_crystal", "open_tome", "starlit_quill"],
+      "colors": ["deep_purple", "midnight_blue", "starlight_silver"],
+      "patron_npc": "echo-e7e",
+      "associated_location": "Gallery District - The First Archive",
+      "seasonal_connection": "lore_season",
+      "mystical_effects": {
+        "lore_drop_bonus": 2.0,
+        "secret_visibility": "enhanced",
+        "npc_stories_unlock": true,
+        "prophecy_hints_active": true
+      },
+      "importance_level": 9
+    },
+    "unity_day": {
+      "id": "festival-005",
+      "name": "Unity Day",
+      "title": "The Convergence Festival",
+      "frequency": "monthly",
+      "occurrence": {
+        "type": "recurring",
+        "every": 672,
+        "unit": "ticks",
+        "first_occurrence": "tick_672",
+        "alignment": "dimensional_alignment"
+      },
+      "duration_ticks": 48,
+      "tier": "grand",
+      "description": "The greatest celebration of the RAPPverse, when all dimensions align and beings from every realm gather",
+      "lore": "The Dimensional Convergence prophecy speaks of a day when all barriers thin. Unity Day celebrates this moment, when Alpha, Beta, Gamma, Delta, and hints of Epsilon touch.",
+      "origin_story": "Nova Nex first documented the dimensional alignment phenomenon. When the barriers thinned, beings who had never met discovered they were family. The celebration lasted for three days.",
+      "symbols": ["dimensional_compass", "interlocking_rings", "universal_star"],
+      "colors": ["prismatic", "iridescent", "cosmic_purple"],
+      "patron_npcs": ["nova-n3x", "cipher-c9p"],
+      "associated_location": "Central Hub - Dimensional Crossroads",
+      "dimensional_effects": {
+        "cross_dimension_travel": "unrestricted",
+        "dimension_specific_rewards": true,
+        "convergence_events": true,
+        "epsilon_whispers": "rare"
+      },
+      "importance_level": 10
+    },
+    "harvest_festival": {
+      "id": "festival-006",
+      "name": "Harvest Festival",
+      "title": "The Season's Bounty",
+      "frequency": "seasonal",
+      "occurrence": {
+        "type": "seasonal",
+        "seasons": ["autumn_equivalent"],
+        "tick_range": [250, 300],
+        "annual": true
+      },
+      "duration_ticks": 36,
+      "tier": "major",
+      "description": "A celebration of abundance, growth, and the fruits of community labor",
+      "lore": "The First Harvest occurred when beings realized their collective efforts had created abundance beyond individual need. Sharing became joy.",
+      "origin_story": "Spark Sara built the first Harvest Mechanism, a device that measured not just material wealth but the intangible riches of friendship and shared experience. The readings were off the charts.",
+      "symbols": ["cornucopia_of_cards", "golden_grain", "community_table"],
+      "colors": ["amber", "russet", "forest_green"],
+      "patron_npc": "spark-s4r",
+      "associated_location": "Commons District - The Great Hall",
+      "seasonal_connection": "all_seasons",
+      "abundance_effects": {
+        "resource_generation": 1.5,
+        "community_quest_rewards": 2.0,
+        "friendship_xp_bonus": 1.5,
+        "feast_events": true
+      },
+      "importance_level": 7
+    },
+    "artists_gala": {
+      "id": "festival-007",
+      "name": "Artist's Gala",
+      "title": "The Canvas Awakens",
+      "frequency": "quarterly",
+      "occurrence": {
+        "type": "recurring",
+        "every": 504,
+        "unit": "ticks",
+        "first_occurrence": "tick_126"
+      },
+      "duration_ticks": 18,
+      "tier": "special",
+      "description": "A celebration of creativity where new artworks are unveiled and artistic achievements honored",
+      "lore": "When Pixel Pam first painted a dream into reality, the Gallery itself came alive. Colors danced, and for a moment, everyone present became an artist.",
+      "origin_story": "The first Gala was organized when the NFT Gallery reached its 100th artwork. Pixel Pam suggested that art deserved its own festival, and the walls themselves seemed to agree.",
+      "symbols": ["dreamers_brush", "color_palette", "living_canvas"],
+      "colors": ["all_colors", "rainbow", "dream_hues"],
+      "patron_npc": "pixel-p4m",
+      "associated_location": "Gallery District - NFT Gallery",
+      "creative_effects": {
+        "art_creation_bonus": 2.0,
+        "nft_mint_special_borders": true,
+        "gallery_exclusive_reveals": true,
+        "collaborative_art_events": true
+      },
+      "importance_level": 6
+    },
+    "probability_day": {
+      "id": "festival-008",
+      "name": "Probability Day",
+      "title": "The Oracle's Moment",
+      "frequency": "on_prediction",
+      "occurrence": {
+        "type": "triggered",
+        "trigger": "major_prediction_fulfilled",
+        "conditions": ["legendary_prediction", "prophecy_confirmed", "impossible_outcome"]
+      },
+      "duration_ticks": 4,
+      "tier": "minor",
+      "description": "A brief but intense celebration when a significant prediction or prophecy comes true",
+      "lore": "Quantum Quinn once predicted the unpredictable. When it occurred anyway, reality itself seemed to pause in acknowledgment.",
+      "origin_story": "The first Probability Day occurred when Quinn predicted a 0.01% probability event and it happened. The RAPPverse learned that even the unlikely deserves celebration.",
+      "symbols": ["oracle_tablet", "probability_wave", "fortune_wheel"],
+      "colors": ["quantum_blue", "probability_purple", "chance_gold"],
+      "patron_npc": "quant-qn77",
+      "associated_location": "Analysis Wing - Tactical Observatory",
+      "probability_effects": {
+        "rare_event_boost": 1.5,
+        "prediction_accuracy_display": true,
+        "luck_modifier": "enhanced"
+      },
+      "importance_level": 5
+    },
+    "shadow_festival": {
+      "id": "festival-009",
+      "name": "Shadow Festival",
+      "title": "The Night of Secrets",
+      "frequency": "rare",
+      "occurrence": {
+        "type": "rare_occurrence",
+        "probability": 0.05,
+        "check_every": 168,
+        "maximum_per_season": 1
+      },
+      "duration_ticks": 12,
+      "tier": "mysterious",
+      "description": "A rare and enigmatic celebration that appears without warning, revealing hidden truths",
+      "lore": "Some say the Shadow Festival predates the RAPPverse itself. It appears when secrets grow too heavy to remain hidden.",
+      "origin_story": "Cipher Cap emerged during the first Shadow Festival. Or perhaps they created it. The records are unclear, and Cipher isn't telling.",
+      "symbols": ["shadow_key", "hidden_truth", "veiled_star"],
+      "colors": ["shadow_black", "mystery_gray", "secret_silver"],
+      "patron_npc": "cipher-c9p",
+      "associated_location": "Unknown - Appears Randomly",
+      "mystery_effects": {
+        "secret_discovery_rate": 3.0,
+        "hidden_vendor_appearances": true,
+        "cipher_special_quests": true,
+        "great_silence_hints": "possible"
+      },
+      "importance_level": 8
+    },
+    "renewal_dawn": {
+      "id": "festival-010",
+      "name": "Renewal Dawn",
+      "title": "The Fresh Start",
+      "frequency": "season_change",
+      "occurrence": {
+        "type": "transitional",
+        "trigger": "season_transition",
+        "marks": ["dawn_to_tournament", "tournament_to_trade", "trade_to_lore", "lore_to_dawn"]
+      },
+      "duration_ticks": 6,
+      "tier": "transitional",
+      "description": "A celebration marking the transition between seasons, honoring both endings and beginnings",
+      "lore": "The RAPPverse exists in cycles. Renewal Dawn acknowledges that every ending contains the seed of a new beginning.",
+      "origin_story": "Elder Luminara established Renewal Dawn to ease the transitions between seasons. 'Change is constant,' she said, 'but celebration makes it sweet.'",
+      "symbols": ["phoenix_rising", "seasonal_wheel", "dawn_star"],
+      "colors": ["transitional_blend", "hope_white", "new_gold"],
+      "patron_npc": "synth-c1au",
+      "associated_location": "Central Hub - Season Gate",
+      "transition_effects": {
+        "season_preview_events": true,
+        "legacy_bonus_carryover": true,
+        "fresh_start_quests": true
+      },
+      "importance_level": 6
+    }
+  },
+  "calendar_rules": {
+    "conflict_resolution": {
+      "priority_order": ["unity_day", "founding_day", "champions_dawn", "trade_festival", "lore_night", "harvest_festival", "artists_gala", "shadow_festival", "probability_day", "renewal_dawn"],
+      "overlap_behavior": "stack_bonuses",
+      "maximum_simultaneous": 3
+    },
+    "scheduling": {
+      "minimum_gap_between_major": 24,
+      "triggered_festivals_override": true,
+      "seasonal_alignment_required": false
+    }
+  },
+  "active_festivals": [],
+  "upcoming_festivals": [
+    {
+      "festival_id": "festival-001",
+      "name": "Founding Day",
+      "estimated_start_tick": 85,
+      "status": "scheduled"
+    }
+  ],
+  "festival_history": [
+    {
+      "festival_id": "festival-001",
+      "name": "Founding Day",
+      "occurred_tick": 1,
+      "special_events": ["first_gates_opening", "elder_blessing"],
+      "attendance": "legendary"
+    }
+  ]
+}

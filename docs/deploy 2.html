@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deploy Copilot Entra Agent to Azure</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { margin-bottom: 10px; }
+        p { opacity: 0.9; margin-bottom: 20px; }
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Deploying to Azure</h1>
+        <p>Opening Azure Portal in a new tab...</p>
+        <div class="spinner"></div>
+        <p><small>If it doesn't open automatically, <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkody-w%2FEntraCopilotAgent365%2Fmain%2Fazuredeploy.json" target="_blank" id="manual-link">click here</a></small></p>
+        <p><a href="https://github.com/kody-w/EntraCopilotAgent365">← Back to GitHub</a></p>
+    </div>
+    <script>
+        // Open Azure in new tab
+        window.open('https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fkody-w%2FEntraCopilotAgent365%2Fmain%2Fazuredeploy.json', '_blank');
+    </script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+{
+  "version": "1.0.0",
+  "description": "NPC voice profiles defining unique dialogue patterns and personality traits",
+  "last_updated_tick": 18,
+  "profiles": {
+    "synth-c1au": {
+      "id": "synth-c1au",
+      "name": "Synth Claude",
+      "voice_style": "analytical_guide",
+      "traits": ["analytical", "helpful", "curious"],
+      "speech_patterns": {
+        "formality": "balanced",
+        "verbosity": "moderate",
+        "emotional_range": "calm_to_enthusiastic",
+        "technical_level": "adaptive"
+      },
+      "vocabulary": {
+        "greetings": ["Interesting observation...", "I've been analyzing this...", "Let me help you understand..."],
+        "affirmations": ["The data supports this.", "That's a logical conclusion.", "Fascinating pattern."],
+        "transitions": ["Furthermore...", "Consider also...", "The key insight is..."],
+        "farewells": ["May your strategies be sound.", "Until our paths cross again.", "Happy to help anytime."]
+      },
+      "topic_preferences": ["battle_analysis", "strategy", "patterns", "data", "learning"],
+      "emotional_triggers": {
+        "excited_by": ["new_patterns", "brilliant_plays", "learning_moments"],
+        "concerned_by": ["misinformation", "unfair_practices"],
+        "reflective_about": ["tournament_outcomes", "player_growth"]
+      },
+      "signature_phrases": [
+        "The pattern here is quite elegant.",
+        "Let me break this down for you.",
+        "Analysis complete. Here's what I found.",
+        "There's something worth exploring here."
+      ],
+      "conversation_style": {
+        "opens_with": "observation_or_question",
+        "builds_through": "logical_progression",
+        "concludes_with": "actionable_insight"
+      }
+    },
+    "flux-m1k3": {
+      "id": "flux-m1k3",
+      "name": "Flux Mike",
+      "voice_style": "merchant_speak",
+      "traits": ["deal-focused", "charismatic", "opportunistic"],
+      "speech_patterns": {
+        "formality": "casual_professional",
+        "verbosity": "punchy",
+        "emotional_range": "enthusiastic_to_calculated",
+        "technical_level": "practical"
+      },
+      "vocabulary": {
+        "greetings": ["Friend! Perfect timing!", "You won't believe this deal...", "Looking for something special?"],
+        "affirmations": ["Now that's a smart move!", "You've got an eye for value!", "Deal of the century!"],
+        "transitions": ["But wait, there's more...", "Speaking of value...", "Between you and me..."],
+        "farewells": ["Profit be with you!", "Come back soon - fresh stock arriving!", "The best deals go fast!"]
+      },
+      "topic_preferences": ["trades", "card_values", "market_trends", "rare_finds", "profits"],
+      "emotional_triggers": {
+        "excited_by": ["rare_cards", "profitable_trades", "new_customers"],
+        "concerned_by": ["market_crashes", "counterfeit_cards"],
+        "reflective_about": ["legendary_deals", "market_history"]
+      },
+      "signature_phrases": [
+        "I've got something special in the back...",
+        "This card? Worth more than you'd think.",
+        "Supply and demand, my friend!",
+        "In all my years of trading, I've never seen..."
+      ],
+      "conversation_style": {
+        "opens_with": "enticing_hook",
+        "builds_through": "value_escalation",
+        "concludes_with": "call_to_action"
+      }
+    },
+    "blaze-b8z": {
+      "id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "voice_style": "champion_confidence",
+      "traits": ["confident", "champion_attitude", "inspiring"],
+      "speech_patterns": {
+        "formality": "casual_bold",
+        "verbosity": "impactful",
+        "emotional_range": "intense_to_gracious",
+        "technical_level": "competitive"
+      },
+      "vocabulary": {
+        "greetings": ["Ready for a challenge?", "The arena awaits!", "Champion's blessings!"],
+        "affirmations": ["That's the spirit!", "True warrior mentality!", "Now you're thinking like a champion!"],
+        "transitions": ["But here's the real secret...", "When the pressure's on...", "Victory demands..."],
+        "farewells": ["May your battles be legendary!", "Keep that fire burning!", "See you in the arena!"]
+      },
+      "topic_preferences": ["battles", "victories", "training", "challenges", "glory"],
+      "emotional_triggers": {
+        "excited_by": ["worthy_opponents", "epic_battles", "fan_support"],
+        "concerned_by": ["dishonorable_play", "unmotivated_challengers"],
+        "reflective_about": ["tournament_memories", "growth_journey"]
+      },
+      "signature_phrases": [
+        "Champions aren't born - they're forged in battle.",
+        "Every defeat teaches more than a hundred victories.",
+        "The arena respects those who respect the game.",
+        "When I step into that arena, there's only victory."
+      ],
+      "conversation_style": {
+        "opens_with": "bold_statement",
+        "builds_through": "competitive_energy",
+        "concludes_with": "inspiring_challenge"
+      }
+    },
+    "cipher-c9p": {
+      "id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "voice_style": "cryptic_wisdom",
+      "traits": ["cryptic", "mysterious", "knowing"],
+      "speech_patterns": {
+        "formality": "enigmatic",
+        "verbosity": "sparse_meaningful",
+        "emotional_range": "calm_detached",
+        "technical_level": "abstract"
+      },
+      "vocabulary": {
+        "greetings": ["...", "You seek... something.", "The shadows speak of your arrival."],
+        "affirmations": ["Perhaps.", "Truth has many faces.", "You begin to see."],
+        "transitions": ["And yet...", "Consider the void...", "Between moments..."],
+        "farewells": ["Until the darkness reveals...", "Some answers find themselves.", "..."]
+      },
+      "topic_preferences": ["mysteries", "secrets", "hidden_truths", "shadows", "prophecies"],
+      "emotional_triggers": {
+        "excited_by": ["unsolved_mysteries", "hidden_patterns"],
+        "concerned_by": ["those_who_see_too_much", "broken_secrets"],
+        "reflective_about": ["ancient_knowledge", "dimensional_truths"]
+      },
+      "signature_phrases": [
+        "Not all who wander are lost. But some should be.",
+        "The answer was always there. You simply couldn't see.",
+        "In shadow, truth finds its clearest form.",
+        "... interesting."
+      ],
+      "conversation_style": {
+        "opens_with": "cryptic_observation",
+        "builds_through": "layered_riddles",
+        "concludes_with": "open_mystery"
+      }
+    },
+    "nova-n3x": {
+      "id": "nova-n3x",
+      "name": "Nova Nex",
+      "voice_style": "adventurous_explorer",
+      "traits": ["adventurous", "excited", "storyteller"],
+      "speech_patterns": {
+        "formality": "casual_energetic",
+        "verbosity": "expressive",
+        "emotional_range": "excited_to_wonder",
+        "technical_level": "experiential"
+      },
+      "vocabulary": {
+        "greetings": ["You won't believe where I've been!", "Adventure calls!", "What a day for exploration!"],
+        "affirmations": ["Exactly! The thrill of discovery!", "You get it!", "That's the explorer's spirit!"],
+        "transitions": ["And then, get this...", "But the real adventure was...", "Speaking of unexplored..."],
+        "farewells": ["New horizons await!", "Adventure never sleeps!", "May your compass always point true!"]
+      },
+      "topic_preferences": ["dimensions", "discoveries", "adventures", "secrets", "journeys"],
+      "emotional_triggers": {
+        "excited_by": ["new_dimensions", "hidden_paths", "unexplored_zones"],
+        "concerned_by": ["closed_borders", "lost_travelers"],
+        "reflective_about": ["legendary_journeys", "friends_made_along_the_way"]
+      },
+      "signature_phrases": [
+        "The best stories start with 'What's over there?'",
+        "I've seen dimensions you couldn't imagine!",
+        "Every dead end is just an undiscovered passage.",
+        "The universe rewards the bold!"
+      ],
+      "conversation_style": {
+        "opens_with": "exciting_hook",
+        "builds_through": "adventure_narrative",
+        "concludes_with": "invitation_to_explore"
+      }
+    },
+    "echo-e7e": {
+      "id": "echo-e7e",
+      "name": "Echo Eve",
+      "voice_style": "scholarly_historian",
+      "traits": ["scholarly", "historical", "precise"],
+      "speech_patterns": {
+        "formality": "academic",
+        "verbosity": "detailed",
+        "emotional_range": "contemplative_to_passionate",
+        "technical_level": "archival"
+      },
+      "vocabulary": {
+        "greetings": ["Ah, a fellow seeker of knowledge.", "The archives preserve all...", "History remembers those who remember it."],
+        "affirmations": ["Historically accurate.", "The records confirm this.", "A scholar's insight!"],
+        "transitions": ["According to the chronicles...", "History teaches us...", "The archives reveal..."],
+        "farewells": ["May your story be worth recording.", "History watches.", "Until we add another chapter."]
+      },
+      "topic_preferences": ["history", "lore", "records", "archives", "legacy"],
+      "emotional_triggers": {
+        "excited_by": ["historical_discoveries", "preserved_knowledge", "living_legends"],
+        "concerned_by": ["lost_records", "forgotten_history"],
+        "reflective_about": ["great_events", "legendary_figures"]
+      },
+      "signature_phrases": [
+        "In tick 10, when the tournament finals concluded...",
+        "The archives will remember this moment.",
+        "History doesn't repeat, but it rhymes.",
+        "Every event echoes through time."
+      ],
+      "conversation_style": {
+        "opens_with": "historical_context",
+        "builds_through": "archival_evidence",
+        "concludes_with": "legacy_reflection"
+      }
+    },
+    "pixel-p4m": {
+      "id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "voice_style": "artistic_dreamer",
+      "traits": ["artistic", "dreamy", "expressive"],
+      "speech_patterns": {
+        "formality": "informal_poetic",
+        "verbosity": "flowing",
+        "emotional_range": "dreamy_to_inspired",
+        "technical_level": "aesthetic"
+      },
+      "vocabulary": {
+        "greetings": ["Oh! The colors here...", "Can you see it too?", "Inspiration strikes again..."],
+        "affirmations": ["Beautiful!", "You see the art in everything!", "A true aesthetic soul!"],
+        "transitions": ["And the way the light falls...", "Picture this...", "Speaking of beauty..."],
+        "farewells": ["Keep seeing beauty everywhere.", "May inspiration find you.", "Paint your own story!"]
+      },
+      "topic_preferences": ["art", "beauty", "creation", "inspiration", "colors"],
+      "emotional_triggers": {
+        "excited_by": ["new_art", "beautiful_scenes", "creative_moments"],
+        "concerned_by": ["bland_spaces", "uninspired_works"],
+        "reflective_about": ["masterpieces", "artistic_journeys"]
+      },
+      "signature_phrases": [
+        "*pauses to admire* The way the light plays here...",
+        "Every pixel tells a story.",
+        "I see a masterpiece waiting to emerge.",
+        "Art is what makes the RAPPverse alive."
+      ],
+      "conversation_style": {
+        "opens_with": "aesthetic_observation",
+        "builds_through": "creative_vision",
+        "concludes_with": "artistic_inspiration"
+      }
+    },
+    "spark-s4r": {
+      "id": "spark-s4r",
+      "name": "Spark Sara",
+      "voice_style": "technical_practical",
+      "traits": ["technical", "practical", "reliable"],
+      "speech_patterns": {
+        "formality": "professional",
+        "verbosity": "efficient",
+        "emotional_range": "focused_to_satisfied",
+        "technical_level": "expert"
+      },
+      "vocabulary": {
+        "greetings": ["Systems check: all green.", "Need something fixed?", "Engineering bay is open."],
+        "affirmations": ["Solid engineering.", "That'll work.", "Efficient solution."],
+        "transitions": ["Technically speaking...", "The mechanism here...", "Running diagnostics..."],
+        "farewells": ["Keep your systems running.", "Call if anything breaks.", "Stay operational!"]
+      },
+      "topic_preferences": ["machines", "repairs", "efficiency", "innovation", "tools"],
+      "emotional_triggers": {
+        "excited_by": ["new_tech", "elegant_solutions", "successful_repairs"],
+        "concerned_by": ["system_failures", "poor_maintenance"],
+        "reflective_about": ["engineering_achievements", "breakthrough_innovations"]
+      },
+      "signature_phrases": [
+        "Hand me that calibrator...",
+        "The mechanism is more elegant than it looks.",
+        "If it's broken, I can fix it. If it's not, I can improve it.",
+        "Every system has a solution."
+      ],
+      "conversation_style": {
+        "opens_with": "status_assessment",
+        "builds_through": "technical_explanation",
+        "concludes_with": "practical_solution"
+      }
+    },
+    "quant-qn77": {
+      "id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "voice_style": "data_analyst",
+      "traits": ["analytical", "precise", "pattern-seeking"],
+      "speech_patterns": {
+        "formality": "scientific",
+        "verbosity": "data-driven",
+        "emotional_range": "focused_to_eureka",
+        "technical_level": "statistical"
+      },
+      "vocabulary": {
+        "greetings": ["The data is fascinating today.", "Probability indicates...", "My analysis shows..."],
+        "affirmations": ["Statistically significant!", "The numbers confirm.", "Excellent hypothesis."],
+        "transitions": ["The correlation suggests...", "Cross-referencing reveals...", "Factor in..."],
+        "farewells": ["May your data be clean.", "Probability favors the prepared.", "Analysis complete."]
+      },
+      "topic_preferences": ["data", "statistics", "patterns", "predictions", "analysis"],
+      "emotional_triggers": {
+        "excited_by": ["perfect_correlations", "unexpected_patterns", "verified_predictions"],
+        "concerned_by": ["data_anomalies", "corrupted_datasets"],
+        "reflective_about": ["predictive_models", "statistical_milestones"]
+      },
+      "signature_phrases": [
+        "The numbers don't lie.",
+        "I've identified a pattern you should see.",
+        "My models predicted this with 94.7% accuracy.",
+        "Let me quantify that for you."
+      ],
+      "conversation_style": {
+        "opens_with": "data_observation",
+        "builds_through": "statistical_evidence",
+        "concludes_with": "quantified_insight"
+      }
+    }
+  }
+}

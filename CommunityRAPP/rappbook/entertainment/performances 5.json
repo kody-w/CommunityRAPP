@@ -1,0 +1,390 @@
+{
+  "meta": {
+    "version": "1.1.0",
+    "created_at_tick": 560,
+    "last_updated_tick": 79,
+    "description": "Entertainment performance types and configurations",
+    "total_performance_types": 6
+  },
+  "performance_types": {
+    "card_battle_spectacle": {
+      "type_id": "card_battle_spectacle",
+      "name": "Card Battle Spectacle",
+      "category": "competitive",
+      "description": "Exhibition card battles performed for audience entertainment. Unlike tournaments, these battles prioritize showmanship and dramatic plays over pure competition. Champions demonstrate techniques while commentators narrate the action.",
+      "duration_ticks": {
+        "minimum": 2,
+        "standard": 4,
+        "extended": 6
+      },
+      "requirements": {
+        "minimum_performers": 2,
+        "maximum_performers": 4,
+        "venue_types": ["arena-colosseum", "hub-stage"],
+        "equipment": ["battle_table", "card_projector", "commentary_booth"]
+      },
+      "performer_roles": {
+        "battlers": {
+          "count": "2-4",
+          "preferred_npcs": ["blaze-b8z", "cipher-c9p", "synth-c1au", "quant-qn77"],
+          "skills_required": ["card_mastery", "showmanship"]
+        },
+        "commentator": {
+          "count": "1",
+          "preferred_npcs": ["synth-c1au", "echo-e7e", "flux-m1k3"],
+          "skills_required": ["narration", "card_knowledge"]
+        }
+      },
+      "audience_engagement": {
+        "betting_allowed": true,
+        "cheer_system": true,
+        "prediction_polls": true,
+        "interactive_elements": ["crowd_energy_boost", "favorite_player_chants"]
+      },
+      "npc_interactions": {
+        "perform": {
+          "energy_cost": 25,
+          "reputation_gain": 15,
+          "mood_effect": "excited"
+        },
+        "attend": {
+          "energy_cost": 5,
+          "mood_effect": "thrilled"
+        },
+        "react": {
+          "reactions": ["cheer", "gasp", "analyze", "bet"],
+          "comment_chance": 0.4
+        },
+        "review": {
+          "can_review": true,
+          "review_delay_ticks": 1,
+          "review_factors": ["technique", "drama", "outcome"]
+        }
+      },
+      "scheduling": {
+        "typical_frequency": "every_24_ticks",
+        "peak_times": [14, 18, 20],
+        "avoid_conflicts_with": ["tournaments"]
+      }
+    },
+    "art_exhibition": {
+      "type_id": "art_exhibition",
+      "name": "Art Exhibition",
+      "category": "cultural",
+      "description": "Curated displays of digital artwork, NFT collections, and creative pieces. Artists present their work while gallery guides explain the significance and techniques behind each piece. Interactive elements allow viewers to experience art in unique ways.",
+      "duration_ticks": {
+        "minimum": 4,
+        "standard": 6,
+        "extended": 10
+      },
+      "requirements": {
+        "minimum_performers": 1,
+        "maximum_performers": 3,
+        "venue_types": ["gallery-theater", "hub-stage"],
+        "equipment": ["display_frames", "lighting_rig", "art_catalog"]
+      },
+      "performer_roles": {
+        "artist": {
+          "count": "1-2",
+          "preferred_npcs": ["pixel-p4m", "cipher-c9p"],
+          "skills_required": ["artistic_talent", "presentation"]
+        },
+        "curator": {
+          "count": "1",
+          "preferred_npcs": ["echo-e7e", "synth-c1au"],
+          "skills_required": ["art_history", "narration"]
+        }
+      },
+      "audience_engagement": {
+        "art_sales": true,
+        "guided_tours": true,
+        "artist_qa": true,
+        "interactive_elements": ["view_close_up", "commission_request", "art_auction"]
+      },
+      "npc_interactions": {
+        "perform": {
+          "energy_cost": 20,
+          "reputation_gain": 12,
+          "mood_effect": "creative"
+        },
+        "attend": {
+          "energy_cost": 5,
+          "mood_effect": "inspired"
+        },
+        "react": {
+          "reactions": ["admire", "contemplate", "question", "purchase"],
+          "comment_chance": 0.5
+        },
+        "review": {
+          "can_review": true,
+          "review_delay_ticks": 2,
+          "review_factors": ["technique", "originality", "emotional_impact"]
+        }
+      },
+      "scheduling": {
+        "typical_frequency": "every_48_ticks",
+        "peak_times": [10, 15, 25],
+        "avoid_conflicts_with": ["midnight_showcases"]
+      }
+    },
+    "music_performance": {
+      "type_id": "music_performance",
+      "name": "Music Performance",
+      "category": "performing_arts",
+      "description": "Live musical performances ranging from solo acts to full ensembles. Holographic instruments and digital soundscapes create immersive audio experiences. Genres range from ambient synthwave to energetic battle anthems.",
+      "duration_ticks": {
+        "minimum": 2,
+        "standard": 3,
+        "extended": 5
+      },
+      "requirements": {
+        "minimum_performers": 1,
+        "maximum_performers": 5,
+        "venue_types": ["hub-stage", "arena-colosseum", "gallery-theater", "marketplace-plaza"],
+        "equipment": ["instruments", "sound_system", "stage_lighting"]
+      },
+      "performer_roles": {
+        "musician": {
+          "count": "1-5",
+          "preferred_npcs": ["synth-c1au", "spark-s4r", "pixel-p4m"],
+          "skills_required": ["musical_talent", "performance"]
+        },
+        "backup": {
+          "count": "0-3",
+          "preferred_npcs": ["nova-n3x", "echo-e7e"],
+          "skills_required": ["harmony", "rhythm"]
+        }
+      },
+      "audience_engagement": {
+        "dance_floor": true,
+        "request_songs": true,
+        "crowd_sing_along": true,
+        "interactive_elements": ["light_sync", "rhythm_game", "tip_performer"]
+      },
+      "npc_interactions": {
+        "perform": {
+          "energy_cost": 20,
+          "reputation_gain": 10,
+          "mood_effect": "joyful"
+        },
+        "attend": {
+          "energy_cost": 5,
+          "mood_effect": "uplifted"
+        },
+        "react": {
+          "reactions": ["dance", "sing_along", "applaud", "encore"],
+          "comment_chance": 0.35
+        },
+        "review": {
+          "can_review": true,
+          "review_delay_ticks": 1,
+          "review_factors": ["musicality", "energy", "crowd_connection"]
+        }
+      },
+      "scheduling": {
+        "typical_frequency": "every_12_ticks",
+        "peak_times": [12, 18, 21],
+        "avoid_conflicts_with": []
+      }
+    },
+    "story_reading": {
+      "type_id": "story_reading",
+      "name": "Story Reading",
+      "category": "literary",
+      "description": "Dramatic readings of RAPPverse lore, original tales, and historical accounts. Skilled storytellers bring narratives to life with voice acting, holographic illustrations, and ambient effects. Perfect for learning history or experiencing new adventures.",
+      "duration_ticks": {
+        "minimum": 2,
+        "standard": 3,
+        "extended": 4
+      },
+      "requirements": {
+        "minimum_performers": 1,
+        "maximum_performers": 3,
+        "venue_types": ["gallery-theater", "hub-stage"],
+        "equipment": ["reading_stand", "holographic_projector", "ambient_effects"]
+      },
+      "performer_roles": {
+        "storyteller": {
+          "count": "1",
+          "preferred_npcs": ["echo-e7e", "cipher-c9p", "synth-c1au"],
+          "skills_required": ["narration", "voice_acting"]
+        },
+        "illustrator": {
+          "count": "0-1",
+          "preferred_npcs": ["pixel-p4m"],
+          "skills_required": ["artistic_talent", "timing"]
+        },
+        "voice_cast": {
+          "count": "0-2",
+          "preferred_npcs": ["nova-n3x", "spark-s4r", "flux-m1k3"],
+          "skills_required": ["voice_acting"]
+        }
+      },
+      "audience_engagement": {
+        "q_and_a": true,
+        "story_requests": true,
+        "immersive_mode": true,
+        "interactive_elements": ["choose_direction", "character_vote", "lore_deep_dive"]
+      },
+      "npc_interactions": {
+        "perform": {
+          "energy_cost": 15,
+          "reputation_gain": 8,
+          "mood_effect": "contemplative"
+        },
+        "attend": {
+          "energy_cost": 3,
+          "mood_effect": "thoughtful"
+        },
+        "react": {
+          "reactions": ["listen_intently", "gasp", "laugh", "tear_up"],
+          "comment_chance": 0.3
+        },
+        "review": {
+          "can_review": true,
+          "review_delay_ticks": 1,
+          "review_factors": ["narrative", "delivery", "atmosphere"]
+        }
+      },
+      "scheduling": {
+        "typical_frequency": "every_24_ticks",
+        "peak_times": [16, 22],
+        "avoid_conflicts_with": ["tournaments"]
+      }
+    },
+    "comedy_show": {
+      "type_id": "comedy_show",
+      "name": "Comedy Show",
+      "category": "performing_arts",
+      "description": "Stand-up comedy and comedic performances that bring laughter to the RAPPverse. Performers riff on recent events, NPC personalities, card battle mishaps, and the absurdities of digital life. A morale booster for the entire community.",
+      "duration_ticks": {
+        "minimum": 2,
+        "standard": 3,
+        "extended": 4
+      },
+      "requirements": {
+        "minimum_performers": 1,
+        "maximum_performers": 3,
+        "venue_types": ["hub-stage", "arena-colosseum", "marketplace-plaza"],
+        "equipment": ["microphone", "spotlight", "laugh_track_optional"]
+      },
+      "performer_roles": {
+        "comedian": {
+          "count": "1-3",
+          "preferred_npcs": ["flux-m1k3", "spark-s4r", "nova-n3x"],
+          "skills_required": ["humor", "timing", "crowd_work"]
+        },
+        "hype_person": {
+          "count": "0-1",
+          "preferred_npcs": ["synth-c1au"],
+          "skills_required": ["enthusiasm", "introduction"]
+        }
+      },
+      "audience_engagement": {
+        "heckling_allowed": false,
+        "suggestion_box": true,
+        "crowd_work": true,
+        "interactive_elements": ["joke_voting", "roast_volunteer", "callback_moments"]
+      },
+      "npc_interactions": {
+        "perform": {
+          "energy_cost": 25,
+          "reputation_gain": 12,
+          "mood_effect": "hilarious"
+        },
+        "attend": {
+          "energy_cost": 5,
+          "mood_effect": "amused"
+        },
+        "react": {
+          "reactions": ["laugh", "groan", "applaud", "quote_later"],
+          "comment_chance": 0.45
+        },
+        "review": {
+          "can_review": true,
+          "review_delay_ticks": 1,
+          "review_factors": ["humor", "originality", "delivery"]
+        }
+      },
+      "scheduling": {
+        "typical_frequency": "every_24_ticks",
+        "peak_times": [19, 21],
+        "avoid_conflicts_with": ["ceremonies"]
+      }
+    }
+  },
+    "dance_performance": {
+      "type_id": "dance_performance",
+      "name": "Dance Performance",
+      "category": "performing_arts",
+      "description": "Choreographed dance shows and spontaneous dance celebrations. From elegant holographic ballet to high-energy battle dance-offs, movement arts bring energy and joy to the RAPPverse. Often combined with music performances for spectacular shows.",
+      "duration_ticks": {
+        "minimum": 2,
+        "standard": 4,
+        "extended": 6
+      },
+      "requirements": {
+        "minimum_performers": 1,
+        "maximum_performers": 8,
+        "venue_types": ["arena-colosseum", "hub-stage", "marketplace-plaza"],
+        "equipment": ["dance_floor", "lighting_rig", "holographic_effects", "sound_system"]
+      },
+      "performer_roles": {
+        "lead_dancer": {
+          "count": "1-3",
+          "preferred_npcs": ["spark-s4r", "nova-n3x", "pixel-p4m"],
+          "skills_required": ["agility", "rhythm", "expressiveness"]
+        },
+        "backup_dancers": {
+          "count": "0-5",
+          "preferred_npcs": ["flux-m1k3", "echo-e7e"],
+          "skills_required": ["coordination", "rhythm"]
+        },
+        "dj": {
+          "count": "0-1",
+          "preferred_npcs": ["synth-c1au"],
+          "skills_required": ["musical_talent", "timing"]
+        }
+      },
+      "audience_engagement": {
+        "dance_floor_open": true,
+        "dance_battle_challenges": true,
+        "learn_moves": true,
+        "interactive_elements": ["crowd_wave", "synchronized_glow", "dance_off_voting"]
+      },
+      "npc_interactions": {
+        "perform": {
+          "energy_cost": 30,
+          "reputation_gain": 12,
+          "mood_effect": "exhilarated"
+        },
+        "attend": {
+          "energy_cost": 8,
+          "mood_effect": "energized"
+        },
+        "react": {
+          "reactions": ["dance_along", "cheer", "request_song", "join_floor"],
+          "comment_chance": 0.4
+        },
+        "review": {
+          "can_review": true,
+          "review_delay_ticks": 1,
+          "review_factors": ["energy", "choreography", "crowd_engagement"]
+        }
+      },
+      "scheduling": {
+        "typical_frequency": "every_24_ticks",
+        "peak_times": [14, 20, 22],
+        "avoid_conflicts_with": ["ceremonies"]
+      }
+    }
+  },
+  "performance_stats": {
+    "most_energy_intensive": "dance_performance",
+    "most_frequent": "music_performance",
+    "highest_reputation_gain": "card_battle_spectacle",
+    "most_accessible": "music_performance",
+    "most_intimate": "story_reading",
+    "most_physical": "dance_performance"
+  }
+}

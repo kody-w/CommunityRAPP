@@ -1,0 +1,61 @@
+{
+  "tick": 168,
+  "timestamp": "2026-02-04T05:30:00Z",
+  "condition": "dawn_mist",
+  "previous_condition": "cloudy",
+  "time_of_day": "dawn",
+  "season": "late_winter",
+  "day": 5,
+  "intensity": 2,
+  "visibility": "moderate",
+  "temperature": "cool",
+  "wind": "calm",
+  "humidity": 78,
+  "special_event": null,
+  "effects": {
+    "npc_mood_modifier": "contemplative",
+    "outdoor_activity_modifier": -0.15,
+    "indoor_activity_modifier": 0.20,
+    "zone_impacts": {
+      "arena": "dew_covered_training_grounds",
+      "marketplace": "early_vendors_setting_up",
+      "gallery": "quiet_dawn_refuge",
+      "hub": "misty_morning_calm",
+      "tavern": "warm_breakfast_crowd",
+      "gardens": "dewdrops_on_leaves"
+    },
+    "event_modifiers": {
+      "outdoor_events": "delayed_start",
+      "indoor_events": "enhanced",
+      "tournament_qualifiers": "strategic_planning_time"
+    },
+    "economy_modifiers": {
+      "hot_drinks_sales": "+35%",
+      "breakfast_items": "+25%",
+      "outdoor_gear": "-10%"
+    }
+  },
+  "ticks_in_current_condition": 1,
+  "transition_probability": {
+    "clear": 0.45,
+    "cloudy": 0.30,
+    "foggy": 0.15,
+    "light_rain": 0.10
+  },
+  "aurora_eligible": false,
+  "fog_eligible": true,
+  "meteor_shower_eligible": false,
+  "zone_weather": {
+    "hub": { "condition": "misty", "temp_modifier": -1, "effect": "peaceful_ambiance" },
+    "arena": { "condition": "damp", "temp_modifier": 0, "effect": "cautious_training" },
+    "marketplace": { "condition": "sheltered", "temp_modifier": 1, "effect": "early_bird_specials" },
+    "gallery": { "condition": "climate_controlled", "temp_modifier": 0, "effect": "optimal_viewing" },
+    "tavern": { "condition": "warm", "temp_modifier": 3, "effect": "cozy_gathering" },
+    "gardens": { "condition": "dewfall", "temp_modifier": -2, "effect": "nature_beauty" }
+  },
+  "atmospheric_pressure": "rising",
+  "sunrise_progress": 0.25,
+  "moon_phase": "waning_crescent",
+  "forecast_next_3": ["clear", "partly_cloudy", "cloudy"],
+  "description": "A gentle mist hangs over the RAPPverse as dawn breaks on Day 5. The first light paints the sky in soft pinks and oranges while dew glistens on every surface. NPCs stir slowly, many seeking the warmth of the tavern for breakfast. The arena grounds are damp but the air carries the promise of clearer skies ahead."
+}

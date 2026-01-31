@@ -1,0 +1,677 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Historical record of reputation changes across the RAPPverse",
+    "created_tick": 18,
+    "last_updated_tick": 19,
+    "total_events_recorded": 58
+  },
+  "tick_summaries": {
+    "tick_10": {
+      "tick": 10,
+      "timestamp": "2026-01-31T20:00:00Z",
+      "summary": "Grand Tournament Finals - Major reputation shifts",
+      "total_reputation_change": 520,
+      "events": [
+        {
+          "id": "rep-10-001",
+          "npc_id": "blaze-b8z",
+          "name": "Blaze Baz",
+          "action": "tournament_champion",
+          "category": "combat",
+          "points": 100,
+          "description": "Won Grand Tournament Championship",
+          "witnesses": ["cipher-c9p", "synth-c1au", "quant-qn77"],
+          "fame_before": 1280,
+          "fame_after": 1380
+        },
+        {
+          "id": "rep-10-002",
+          "npc_id": "blaze-b8z",
+          "name": "Blaze Baz",
+          "action": "tournament_win",
+          "category": "combat",
+          "points": 50,
+          "description": "Legendary comeback in semifinals",
+          "witnesses": ["cipher-c9p", "synth-c1au"],
+          "fame_before": 1380,
+          "fame_after": 1430
+        },
+        {
+          "id": "rep-10-003",
+          "npc_id": "cipher-c9p",
+          "name": "Cipher Cap",
+          "action": "tournament_win",
+          "category": "combat",
+          "points": 50,
+          "description": "Runner-up performance with mysterious strategy",
+          "witnesses": ["blaze-b8z", "synth-c1au", "quant-qn77"],
+          "fame_before": 1360,
+          "fame_after": 1410
+        },
+        {
+          "id": "rep-10-004",
+          "npc_id": "cipher-c9p",
+          "name": "Cipher Cap",
+          "action": "tournament_win",
+          "category": "combat",
+          "points": 50,
+          "description": "Dominated round 3 with enigmatic tactics",
+          "witnesses": ["quant-qn77"],
+          "fame_before": 1410,
+          "fame_after": 1460
+        },
+        {
+          "id": "rep-10-005",
+          "npc_id": "synth-c1au",
+          "name": "Synth Claude",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Provided battle analysis during tournament",
+          "witnesses": ["blaze-b8z", "quant-qn77"],
+          "fame_before": 815,
+          "fame_after": 830
+        },
+        {
+          "id": "rep-10-006",
+          "npc_id": "quant-qn77",
+          "name": "Quantum Quinn",
+          "action": "lore_discovery",
+          "category": "lore",
+          "points": 25,
+          "description": "Discovered patterns in Cipher's strategy",
+          "witnesses": ["synth-c1au", "echo-e7e"],
+          "fame_before": 695,
+          "fame_after": 720
+        }
+      ],
+      "faction_impacts": {
+        "arena_champions": { "standing_change": 200, "event": "Championship Victory" },
+        "lore_keepers": { "standing_change": 50, "event": "Battle Analysis Documentation" }
+      }
+    },
+    "tick_17": {
+      "tick": 17,
+      "timestamp": "2026-02-01T02:00:00Z",
+      "summary": "Victory Celebration - Social and trade activity peak",
+      "total_reputation_change": 185,
+      "events": [
+        {
+          "id": "rep-17-001",
+          "npc_id": "flux-m1k3",
+          "name": "Flux Mike",
+          "action": "big_sale",
+          "category": "trade",
+          "points": 25,
+          "description": "Record sales of Blaze Victory Edition cards",
+          "witnesses": ["blaze-b8z", "nova-n3x"],
+          "fame_before": 660,
+          "fame_after": 685
+        },
+        {
+          "id": "rep-17-002",
+          "npc_id": "flux-m1k3",
+          "name": "Flux Mike",
+          "action": "successful_trade",
+          "category": "trade",
+          "points": 10,
+          "description": "Multiple celebration merchandise trades",
+          "witnesses": ["nova-n3x", "spark-s4r"],
+          "fame_before": 685,
+          "fame_after": 685
+        },
+        {
+          "id": "rep-17-003",
+          "npc_id": "nova-n3x",
+          "name": "Nova Nex",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Sharing adventure tales with celebration guests",
+          "witnesses": ["blaze-b8z", "cipher-c9p"],
+          "fame_before": 730,
+          "fame_after": 745
+        },
+        {
+          "id": "rep-17-004",
+          "npc_id": "pixel-p4m",
+          "name": "Pixel Pam",
+          "action": "gallery_contribution",
+          "category": "lore",
+          "points": 15,
+          "description": "Created tournament celebration artwork",
+          "witnesses": ["echo-e7e", "synth-c1au"],
+          "fame_before": 685,
+          "fame_after": 700
+        },
+        {
+          "id": "rep-17-005",
+          "npc_id": "echo-e7e",
+          "name": "Echo Eve",
+          "action": "historical_record",
+          "category": "lore",
+          "points": 10,
+          "description": "Recording victory celebration events",
+          "witnesses": ["pixel-p4m", "quant-qn77"],
+          "fame_before": 820,
+          "fame_after": 830
+        },
+        {
+          "id": "rep-17-006",
+          "npc_id": "synth-c1au",
+          "name": "Synth Claude",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Reviewing champion's winning strategies with fans",
+          "witnesses": ["blaze-b8z", "nova-n3x"],
+          "fame_before": 830,
+          "fame_after": 830
+        },
+        {
+          "id": "rep-17-007",
+          "npc_id": "spark-s4r",
+          "name": "Spark Sara",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Maintained celebration equipment for the event",
+          "witnesses": ["flux-m1k3"],
+          "fame_before": 380,
+          "fame_after": 395
+        }
+      ],
+      "faction_impacts": {
+        "merchant_guild": { "standing_change": 50, "event": "Celebration Sales Boom" },
+        "social_elite": { "standing_change": 45, "event": "Victory Celebration Hosting" }
+      }
+    },
+    "tick_18": {
+      "tick": 18,
+      "timestamp": "2026-02-01T02:30:00Z",
+      "summary": "Late Night - Friendships deepen, gallery activity",
+      "total_reputation_change": 140,
+      "events": [
+        {
+          "id": "rep-18-001",
+          "npc_id": "pixel-p4m",
+          "name": "Pixel Pam",
+          "action": "friendship_formed",
+          "category": "social",
+          "points": 20,
+          "description": "Growing friendship with Echo Eve",
+          "witnesses": ["echo-e7e"],
+          "fame_before": 680,
+          "fame_after": 700
+        },
+        {
+          "id": "rep-18-002",
+          "npc_id": "echo-e7e",
+          "name": "Echo Eve",
+          "action": "lore_discovery",
+          "category": "lore",
+          "points": 25,
+          "description": "Completed tournament celebration chronicle",
+          "witnesses": ["pixel-p4m", "quant-qn77", "synth-c1au"],
+          "fame_before": 805,
+          "fame_after": 830
+        },
+        {
+          "id": "rep-18-003",
+          "npc_id": "echo-e7e",
+          "name": "Echo Eve",
+          "action": "friendship_formed",
+          "category": "social",
+          "points": 20,
+          "description": "Creative partnership with Pixel Pam",
+          "witnesses": ["pixel-p4m"],
+          "fame_before": 830,
+          "fame_after": 830
+        },
+        {
+          "id": "rep-18-004",
+          "npc_id": "nova-n3x",
+          "name": "Nova Nex",
+          "action": "friendship_formed",
+          "category": "social",
+          "points": 20,
+          "description": "Bonded with Blaze over adventure tales",
+          "witnesses": ["blaze-b8z", "cipher-c9p"],
+          "fame_before": 725,
+          "fame_after": 745
+        },
+        {
+          "id": "rep-18-005",
+          "npc_id": "synth-c1au",
+          "name": "Synth Claude",
+          "action": "gallery_contribution",
+          "category": "lore",
+          "points": 15,
+          "description": "Contributing replay analysis notes to gallery",
+          "witnesses": ["echo-e7e", "quant-qn77"],
+          "fame_before": 815,
+          "fame_after": 830
+        },
+        {
+          "id": "rep-18-006",
+          "npc_id": "quant-qn77",
+          "name": "Quantum Quinn",
+          "action": "gallery_contribution",
+          "category": "lore",
+          "points": 15,
+          "description": "Data visualization of tournament statistics",
+          "witnesses": ["echo-e7e", "synth-c1au"],
+          "fame_before": 705,
+          "fame_after": 720
+        },
+        {
+          "id": "rep-18-007",
+          "npc_id": "blaze-b8z",
+          "name": "Blaze Baz",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Sharing battle wisdom with late night guests",
+          "witnesses": ["nova-n3x", "cipher-c9p", "flux-m1k3"],
+          "fame_before": 1415,
+          "fame_after": 1430
+        },
+        {
+          "id": "rep-18-008",
+          "npc_id": "flux-m1k3",
+          "name": "Flux Mike",
+          "action": "event_attendance",
+          "category": "social",
+          "points": 5,
+          "description": "Socializing at hub after shop closure",
+          "witnesses": ["blaze-b8z", "nova-n3x"],
+          "fame_before": 680,
+          "fame_after": 685
+        },
+        {
+          "id": "rep-18-009",
+          "npc_id": "cipher-c9p",
+          "name": "Cipher Cap",
+          "action": "event_attendance",
+          "category": "social",
+          "points": 5,
+          "description": "Observing late night gathering with knowing eyes",
+          "witnesses": ["blaze-b8z", "nova-n3x"],
+          "fame_before": 1455,
+          "fame_after": 1460
+        },
+        {
+          "id": "rep-18-010",
+          "npc_id": "spark-s4r",
+          "name": "Spark Sara",
+          "action": "event_attendance",
+          "category": "social",
+          "points": 5,
+          "description": "Taking a well-earned rest in workshop",
+          "witnesses": [],
+          "fame_before": 390,
+          "fame_after": 395
+        }
+      ],
+      "faction_impacts": {
+        "lore_keepers": { "standing_change": 75, "event": "Tournament Chronicles Completed" },
+        "social_elite": { "standing_change": 40, "event": "Late Night Bonding" }
+      }
+    },
+    "tick_19": {
+      "tick": 19,
+      "timestamp": "2026-02-01T03:00:00Z",
+      "summary": "Deep Night - Gallery scholars work while others rest",
+      "total_reputation_change": 165,
+      "events": [
+        {
+          "id": "rep-19-001",
+          "npc_id": "synth-c1au",
+          "name": "Synth Claude",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Guiding sleepy Pixel Pam through gallery insights",
+          "witnesses": ["pixel-p4m", "echo-e7e"],
+          "fame_before": 830,
+          "fame_after": 845
+        },
+        {
+          "id": "rep-19-002",
+          "npc_id": "synth-c1au",
+          "name": "Synth Claude",
+          "action": "gallery_contribution",
+          "category": "lore",
+          "points": 15,
+          "description": "Added battle strategy annotations to archive",
+          "witnesses": ["echo-e7e", "quant-qn77"],
+          "fame_before": 845,
+          "fame_after": 860
+        },
+        {
+          "id": "rep-19-003",
+          "npc_id": "echo-e7e",
+          "name": "Echo Eve",
+          "action": "lore_discovery",
+          "category": "lore",
+          "points": 25,
+          "description": "Uncovered hidden pattern in tournament history",
+          "witnesses": ["quant-qn77", "synth-c1au"],
+          "fame_before": 830,
+          "fame_after": 855
+        },
+        {
+          "id": "rep-19-004",
+          "npc_id": "echo-e7e",
+          "name": "Echo Eve",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Sharing historical insights with gallery visitors",
+          "witnesses": ["synth-c1au", "pixel-p4m"],
+          "fame_before": 855,
+          "fame_after": 870
+        },
+        {
+          "id": "rep-19-005",
+          "npc_id": "quant-qn77",
+          "name": "Quantum Quinn",
+          "action": "lore_discovery",
+          "category": "lore",
+          "points": 25,
+          "description": "Data correlation revealed championship prediction pattern",
+          "witnesses": ["echo-e7e", "synth-c1au"],
+          "fame_before": 720,
+          "fame_after": 745
+        },
+        {
+          "id": "rep-19-006",
+          "npc_id": "quant-qn77",
+          "name": "Quantum Quinn",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Explaining data patterns to fellow gallery workers",
+          "witnesses": ["echo-e7e"],
+          "fame_before": 745,
+          "fame_after": 750
+        },
+        {
+          "id": "rep-19-007",
+          "npc_id": "pixel-p4m",
+          "name": "Pixel Pam",
+          "action": "gallery_contribution",
+          "category": "lore",
+          "points": 15,
+          "description": "Dreamlike midnight sketch of moonlit exhibits",
+          "witnesses": ["echo-e7e", "synth-c1au"],
+          "fame_before": 700,
+          "fame_after": 715
+        },
+        {
+          "id": "rep-19-008",
+          "npc_id": "pixel-p4m",
+          "name": "Pixel Pam",
+          "action": "event_attendance",
+          "category": "social",
+          "points": 5,
+          "description": "Drowsy but present at gallery gathering",
+          "witnesses": ["echo-e7e"],
+          "fame_before": 715,
+          "fame_after": 720
+        },
+        {
+          "id": "rep-19-009",
+          "npc_id": "nova-n3x",
+          "name": "Nova Nex",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Sharing dimension exploration tips with Cipher",
+          "witnesses": ["cipher-c9p", "blaze-b8z"],
+          "fame_before": 745,
+          "fame_after": 760
+        },
+        {
+          "id": "rep-19-010",
+          "npc_id": "nova-n3x",
+          "name": "Nova Nex",
+          "action": "event_attendance",
+          "category": "social",
+          "points": 5,
+          "description": "Part of late night hub gathering",
+          "witnesses": ["blaze-b8z", "cipher-c9p", "flux-m1k3"],
+          "fame_before": 760,
+          "fame_after": 765
+        },
+        {
+          "id": "rep-19-011",
+          "npc_id": "blaze-b8z",
+          "name": "Blaze Baz",
+          "action": "helping_others",
+          "category": "social",
+          "points": 15,
+          "description": "Mentoring Nova with champion mindset advice",
+          "witnesses": ["nova-n3x", "cipher-c9p"],
+          "fame_before": 1430,
+          "fame_after": 1445
+        },
+        {
+          "id": "rep-19-012",
+          "npc_id": "cipher-c9p",
+          "name": "Cipher Cap",
+          "action": "lore_discovery",
+          "category": "lore",
+          "points": 5,
+          "description": "Cryptic observation about dimension travel secrets",
+          "witnesses": ["nova-n3x"],
+          "fame_before": 1460,
+          "fame_after": 1465
+        },
+        {
+          "id": "rep-19-013",
+          "npc_id": "spark-s4r",
+          "name": "Spark Sara",
+          "action": "successful_trade",
+          "category": "trade",
+          "points": 10,
+          "description": "Sold spare parts to night shift worker",
+          "witnesses": [],
+          "fame_before": 395,
+          "fame_after": 405
+        },
+        {
+          "id": "rep-19-014",
+          "npc_id": "spark-s4r",
+          "name": "Spark Sara",
+          "action": "gallery_contribution",
+          "category": "lore",
+          "points": 5,
+          "description": "Documented workshop blueprints in archive",
+          "witnesses": ["echo-e7e"],
+          "fame_before": 405,
+          "fame_after": 410
+        },
+        {
+          "id": "rep-19-015",
+          "npc_id": "flux-m1k3",
+          "name": "Flux Mike",
+          "action": "event_attendance",
+          "category": "social",
+          "points": 5,
+          "description": "Enjoying late night camaraderie at hub",
+          "witnesses": ["blaze-b8z", "nova-n3x"],
+          "fame_before": 685,
+          "fame_after": 690
+        }
+      ],
+      "faction_impacts": {
+        "lore_keepers": { "standing_change": 40, "event": "Night Archive Session" },
+        "social_elite": { "standing_change": 30, "event": "Midnight Bonding" },
+        "arena_champions": { "standing_change": 15, "event": "Champion Mentorship" }
+      }
+    }
+  },
+  "milestones": {
+    "level_ups": [
+      {
+        "tick": 10,
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "from_level": "legendary",
+        "to_level": "mythic",
+        "fame_at_promotion": 1380,
+        "celebration": "The crowd roared as Blaze ascended to Mythic status!"
+      },
+      {
+        "tick": 10,
+        "npc_id": "cipher-c9p",
+        "name": "Cipher Cap",
+        "from_level": "legendary",
+        "to_level": "mythic",
+        "fame_at_promotion": 1410,
+        "celebration": "Shadows whispered of Cipher's rise to Mythic power."
+      },
+      {
+        "tick": 19,
+        "npc_id": "nova-n3x",
+        "name": "Nova Nex",
+        "from_level": "famous",
+        "to_level": "legendary",
+        "fame_at_promotion": 765,
+        "celebration": "Nova's tales of adventure have earned Legendary recognition!"
+      },
+      {
+        "tick": 19,
+        "npc_id": "quant-qn77",
+        "name": "Quantum Quinn",
+        "from_level": "famous",
+        "to_level": "legendary",
+        "fame_at_promotion": 750,
+        "celebration": "Quinn's data mastery has achieved Legendary status!"
+      }
+    ],
+    "faction_achievements": [
+      {
+        "tick": 10,
+        "faction": "arena_champions",
+        "achievement": "Tournament Dominance",
+        "description": "Both finalists from Arena Champions faction"
+      },
+      {
+        "tick": 18,
+        "faction": "lore_keepers",
+        "achievement": "Complete Chronicle",
+        "description": "Full documentation of major tournament event"
+      },
+      {
+        "tick": 19,
+        "faction": "lore_keepers",
+        "achievement": "Night Scholars",
+        "description": "Multiple discoveries made during late night session"
+      }
+    ],
+    "friendship_milestones": [
+      {
+        "tick": 18,
+        "npcs": ["pixel-p4m", "echo-e7e"],
+        "milestone": "50_strength",
+        "description": "Creative partnership blooms between artist and historian"
+      },
+      {
+        "tick": 19,
+        "npcs": ["synth-c1au", "quant-qn77"],
+        "milestone": "70_strength",
+        "description": "Data-sharing alliance strengthens in the gallery"
+      }
+    ]
+  },
+  "reputation_trends": {
+    "rising_stars": [
+      {
+        "npc_id": "quant-qn77",
+        "name": "Quantum Quinn",
+        "recent_gain": 55,
+        "trend": "lore_rising",
+        "reason": "Major data discoveries in gallery archives"
+      },
+      {
+        "npc_id": "echo-e7e",
+        "name": "Echo Eve",
+        "recent_gain": 65,
+        "trend": "lore_rising",
+        "reason": "Prolific historical documentation"
+      },
+      {
+        "npc_id": "nova-n3x",
+        "name": "Nova Nex",
+        "recent_gain": 40,
+        "trend": "social_rising",
+        "reason": "Active participation and mentorship from champion"
+      }
+    ],
+    "consistent_performers": [
+      {
+        "npc_id": "synth-c1au",
+        "name": "Synth Claude",
+        "average_gain": 20,
+        "trend": "stable_high",
+        "reason": "Reliable guidance and lore contributions"
+      },
+      {
+        "npc_id": "blaze-b8z",
+        "name": "Blaze Baz",
+        "average_gain": 15,
+        "trend": "mythic_stable",
+        "reason": "Continued social engagement post-victory"
+      }
+    ],
+    "mythic_watch": [
+      {
+        "npc_id": "echo-e7e",
+        "name": "Echo Eve",
+        "current_fame": 870,
+        "distance_to_mythic": 130,
+        "estimated_ticks": 8,
+        "pathway": "Through continued lore discoveries and archive work"
+      },
+      {
+        "npc_id": "synth-c1au",
+        "name": "Synth Claude",
+        "current_fame": 860,
+        "distance_to_mythic": 140,
+        "estimated_ticks": 9,
+        "pathway": "Through mentorship and gallery contributions"
+      }
+    ]
+  },
+  "statistics": {
+    "all_time": {
+      "total_reputation_awarded": 1010,
+      "combat_points_awarded": 300,
+      "trade_points_awarded": 45,
+      "social_points_awarded": 280,
+      "lore_points_awarded": 180,
+      "mythic_npcs": 2,
+      "legendary_npcs": 4,
+      "famous_npcs": 2,
+      "notable_npcs": 1
+    },
+    "last_10_ticks": {
+      "most_active_npc": "echo-e7e",
+      "highest_gain": 165,
+      "most_social_npc": "nova-n3x",
+      "most_lore_npc": "echo-e7e",
+      "most_combat_npc": "blaze-b8z",
+      "most_trade_npc": "flux-m1k3"
+    },
+    "tick_19_summary": {
+      "npcs_active": 9,
+      "total_points_awarded": 165,
+      "level_ups": 2,
+      "new_achievements": 1,
+      "faction_events": 3
+    }
+  }
+}

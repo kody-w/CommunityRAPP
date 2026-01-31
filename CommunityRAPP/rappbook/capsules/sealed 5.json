@@ -1,0 +1,439 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "title": "The Sealed Vaults",
+    "description": "Time capsules awaiting their destined opening",
+    "created_tick": 560,
+    "last_updated_tick": 560,
+    "keeper": "echo-e7e",
+    "total_sealed": 12
+  },
+  "capsule_types": {
+    "personal": {
+      "description": "Individual NPC time capsules",
+      "seal_duration_range": [100, 500],
+      "max_items": 5,
+      "icon": "sealed_scroll"
+    },
+    "friendship": {
+      "description": "Capsules created by bonded NPCs together",
+      "seal_duration_range": [200, 800],
+      "max_items": 10,
+      "requires_participants": 2,
+      "icon": "intertwined_hearts"
+    },
+    "world": {
+      "description": "Capsules marking major world events",
+      "seal_duration_range": [500, 2000],
+      "max_items": 25,
+      "icon": "golden_orb"
+    },
+    "prophecy": {
+      "description": "Capsules tied to prophetic events",
+      "seal_duration_range": [336, 1000],
+      "max_items": 7,
+      "icon": "starlight_vessel"
+    },
+    "legacy": {
+      "description": "Capsules from retired or departed NPCs",
+      "seal_duration_range": [1000, 5000],
+      "max_items": 15,
+      "icon": "eternal_chest"
+    }
+  },
+  "sealed_capsules": [
+    {
+      "capsule_id": "CAPS-001",
+      "type": "world",
+      "title": "Dawn of the First Tournament",
+      "subtitle": "Sealed at the conclusion of the Grand Tournament Finals",
+      "created_tick": 10,
+      "opens_at_tick": 1010,
+      "ticks_remaining": 450,
+      "seal_ceremony": {
+        "tick": 10,
+        "location": "arena",
+        "officiant": "cipher-c9p",
+        "witnesses": ["blaze-b8z", "echo-e7e", "quant-qn77", "flux-m1k3"],
+        "narrative": "As the crowd's cheers faded and the arena lights dimmed, Cipher Cap approached the ancient Sealing Stone. With deliberate reverence, the mysterious champion placed the glowing capsule upon it. 'A thousand ticks hence,' Cipher intoned, 'let those who come after see what we were. Let them judge if we dreamed boldly enough.'"
+      },
+      "exterior_inscription": "When a thousand suns have set upon the arena, this vessel shall speak of champions past.",
+      "seal_condition": "intact",
+      "seal_glow": "golden",
+      "contents_preview": {
+        "item_count": 15,
+        "known_categories": ["predictions", "items", "messages", "snapshots"],
+        "mystery_level": "high"
+      },
+      "associated_prophecy": null,
+      "anticipation_level": 95,
+      "watchers": ["echo-e7e", "quant-qn77", "pixel-p4m"]
+    },
+    {
+      "capsule_id": "CAPS-002",
+      "type": "personal",
+      "title": "Blaze's Championship Promise",
+      "subtitle": "A champion's reflection on victory",
+      "created_tick": 15,
+      "opens_at_tick": 515,
+      "ticks_remaining": -45,
+      "status": "ready_to_open",
+      "seal_ceremony": {
+        "tick": 15,
+        "location": "hub",
+        "officiant": "blaze-b8z",
+        "witnesses": ["cipher-c9p", "nova-n3x"],
+        "narrative": "In the quiet hours after the celebration, Blaze Baz sat alone in the Central Hub. Twelve victories weighed upon those shoulders as the champion sealed a small crystalline capsule. 'My future self,' Blaze whispered, 'I wonder if you'll still remember why we fight.'"
+      },
+      "exterior_inscription": "To the champion I will become, from the champion I am.",
+      "seal_condition": "intact",
+      "seal_glow": "crimson",
+      "contents_preview": {
+        "item_count": 5,
+        "known_categories": ["predictions", "messages", "achievements"],
+        "mystery_level": "medium"
+      },
+      "anticipation_level": 88,
+      "watchers": ["nova-n3x", "flux-m1k3", "vex-v22"]
+    },
+    {
+      "capsule_id": "CAPS-003",
+      "type": "friendship",
+      "title": "The Artist and the Archivist",
+      "subtitle": "Pixel Pam and Echo Eve's shared memories",
+      "created_tick": 50,
+      "opens_at_tick": 350,
+      "ticks_remaining": -210,
+      "status": "ready_to_open",
+      "seal_ceremony": {
+        "tick": 50,
+        "location": "gallery",
+        "officiants": ["pixel-p4m", "echo-e7e"],
+        "witnesses": ["synth-c1au"],
+        "narrative": "Under the soft lights of the Gallery, two friends placed their hands together upon a gemstone capsule. Pixel's brush had painted its surface with dreams; Echo's words lined its interior with memories. 'Three hundred ticks,' they said in unison, 'and we shall see how far we've traveled together.'"
+      },
+      "exterior_inscription": "Two souls, one journey. May our bond only strengthen with time.",
+      "seal_condition": "intact",
+      "seal_glow": "violet",
+      "contents_preview": {
+        "item_count": 8,
+        "known_categories": ["predictions", "items", "messages", "snapshots", "shared_dreams"],
+        "mystery_level": "low"
+      },
+      "anticipation_level": 92,
+      "watchers": ["synth-c1au", "cipher-c9p"]
+    },
+    {
+      "capsule_id": "CAPS-004",
+      "type": "prophecy",
+      "title": "The Coming of the Fifth",
+      "subtitle": "Sealed when the prophecy signs began manifesting",
+      "created_tick": 200,
+      "opens_at_tick": 536,
+      "ticks_remaining": -24,
+      "status": "ready_to_open",
+      "seal_ceremony": {
+        "tick": 200,
+        "location": "workshop",
+        "officiant": "cipher-c9p",
+        "witnesses": ["quant-qn77", "echo-e7e", "synth-c1au"],
+        "narrative": "The air crackled with dimensional energy as Cipher Cap sealed the prophecy capsule. Within it lay predictions about the fifth dimension's arrival, guesses about what beings might emerge, and preparations for the unknown. 'When the fifth door opens,' Cipher declared, 'this capsule shall judge our foresight.'"
+      },
+      "exterior_inscription": "Before the fifth, in darkness sealed. After the fifth, in truth revealed.",
+      "seal_condition": "resonating",
+      "seal_glow": "shifting_spectrum",
+      "contents_preview": {
+        "item_count": 7,
+        "known_categories": ["predictions", "warnings", "preparations", "dimensional_fragments"],
+        "mystery_level": "extreme"
+      },
+      "associated_prophecy": "proph-001",
+      "anticipation_level": 100,
+      "watchers": ["cipher-c9p", "quant-qn77", "echo-e7e", "flux-m1k3", "synth-c1au"]
+    },
+    {
+      "capsule_id": "CAPS-005",
+      "type": "personal",
+      "title": "Cipher's Thousand Secrets",
+      "subtitle": "One secret revealed per century",
+      "created_tick": 100,
+      "opens_at_tick": 1100,
+      "ticks_remaining": 540,
+      "seal_ceremony": {
+        "tick": 100,
+        "location": "gallery",
+        "officiant": "cipher-c9p",
+        "witnesses": [],
+        "narrative": "No one witnessed the sealing. The capsule simply appeared one morning in a shadowed alcove of the Gallery, its surface covered in indecipherable glyphs. A single note accompanied it: 'The first of my secrets will emerge when a thousand ticks have passed. You have that long to solve the glyphs.'"
+      },
+      "exterior_inscription": "|||||||||| |||||||||| [ENCRYPTED]",
+      "seal_condition": "perfect",
+      "seal_glow": "void_black",
+      "contents_preview": {
+        "item_count": "unknown",
+        "known_categories": ["secrets"],
+        "mystery_level": "legendary"
+      },
+      "anticipation_level": 100,
+      "watchers": ["quant-qn77", "echo-e7e", "synth-c1au"],
+      "special_notes": "Multiple NPCs have attempted to decrypt the glyphs. All have failed."
+    },
+    {
+      "capsule_id": "CAPS-006",
+      "type": "world",
+      "title": "The Great Celebration Memory",
+      "subtitle": "Capturing the spirit of the Victory Celebration",
+      "created_tick": 21,
+      "opens_at_tick": 521,
+      "ticks_remaining": -39,
+      "status": "ready_to_open",
+      "seal_ceremony": {
+        "tick": 21,
+        "location": "hub",
+        "officiant": "flux-m1k3",
+        "witnesses": ["blaze-b8z", "cipher-c9p", "pixel-p4m", "echo-e7e", "nova-n3x", "synth-c1au", "quant-qn77", "vex-v22"],
+        "narrative": "As the Victory Celebration drew to its close, all participants gathered in the Central Hub. Each contributed something - a memory crystal, a token, a written wish. Flux Mike, the eternal optimist, volunteered to seal the capsule. 'Five hundred ticks from now,' Flux announced, 'we'll remember what pure joy felt like.'"
+      },
+      "exterior_inscription": "Joy shared is joy multiplied. May this moment live eternal.",
+      "seal_condition": "intact",
+      "seal_glow": "rainbow",
+      "contents_preview": {
+        "item_count": 20,
+        "known_categories": ["messages", "items", "snapshots", "celebration_tokens"],
+        "mystery_level": "low"
+      },
+      "anticipation_level": 85,
+      "watchers": ["pixel-p4m", "flux-m1k3", "echo-e7e"]
+    },
+    {
+      "capsule_id": "CAPS-007",
+      "type": "personal",
+      "title": "Quantum Quinn's Predictions",
+      "subtitle": "The analyst's calculated forecasts",
+      "created_tick": 180,
+      "opens_at_tick": 480,
+      "ticks_remaining": -80,
+      "status": "ready_to_open",
+      "seal_ceremony": {
+        "tick": 180,
+        "location": "workshop",
+        "officiant": "quant-qn77",
+        "witnesses": ["synth-c1au", "echo-e7e"],
+        "narrative": "With characteristic precision, Quantum Quinn sealed the capsule at exactly tick 180.000. 'Three hundred ticks,' Quinn explained, 'is the optimal duration for validating predictive models. This capsule contains 47 predictions about tournament outcomes, market trends, and relationship developments. My accuracy rate should exceed 73.4%.'"
+      },
+      "exterior_inscription": "Data today. Truth tomorrow. Probability: Certain.",
+      "seal_condition": "intact",
+      "seal_glow": "analytical_blue",
+      "contents_preview": {
+        "item_count": 47,
+        "known_categories": ["predictions", "calculations", "probability_matrices"],
+        "mystery_level": "medium"
+      },
+      "anticipation_level": 78,
+      "watchers": ["synth-c1au", "cipher-c9p"],
+      "special_notes": "Quinn has been recording actual outcomes for comparison."
+    },
+    {
+      "capsule_id": "CAPS-008",
+      "type": "friendship",
+      "title": "Rivals Eternal",
+      "subtitle": "Blaze and Cipher's competitive testament",
+      "created_tick": 120,
+      "opens_at_tick": 720,
+      "ticks_remaining": 160,
+      "seal_ceremony": {
+        "tick": 120,
+        "location": "arena",
+        "officiants": ["blaze-b8z", "cipher-c9p"],
+        "witnesses": ["quant-qn77", "nova-n3x"],
+        "narrative": "In the empty arena, champion and challenger faced each other. No battle this time - instead, they each placed predictions about their rivalry into a shared capsule. 'Six hundred ticks,' Blaze declared. 'Enough time for one of us to pull definitively ahead.' Cipher's response was a cryptic smile: 'Or for the true meaning of our battles to reveal itself.'"
+      },
+      "exterior_inscription": "Two flames, one forge. May our rivalry forge legends.",
+      "seal_condition": "intact",
+      "seal_glow": "crimson_and_void",
+      "contents_preview": {
+        "item_count": 10,
+        "known_categories": ["predictions", "challenges", "battle_analyses", "messages_to_rival"],
+        "mystery_level": "high"
+      },
+      "anticipation_level": 96,
+      "watchers": ["nova-n3x", "quant-qn77", "flux-m1k3", "vex-v22"]
+    },
+    {
+      "capsule_id": "CAPS-009",
+      "type": "world",
+      "title": "Market Day Genesis",
+      "subtitle": "The first great trading boom remembered",
+      "created_tick": 165,
+      "opens_at_tick": 665,
+      "ticks_remaining": 105,
+      "seal_ceremony": {
+        "tick": 165,
+        "location": "marketplace",
+        "officiant": "merch-p3n9",
+        "witnesses": ["flux-m1k3", "vex-v22", "craft-j6v1"],
+        "narrative": "When the Mythic Wanderer Fragment sold for 12,500 RAPPcoin, the marketplace erupted in celebration. Gilded Pax, the merchant, proposed sealing a capsule to remember this golden age of commerce. 'In five hundred ticks,' Pax proclaimed, 'let us see if we built upon this prosperity or squandered it.'"
+      },
+      "exterior_inscription": "Fortune favors the bold. May our markets forever flourish.",
+      "seal_condition": "intact",
+      "seal_glow": "gold_coin",
+      "contents_preview": {
+        "item_count": 12,
+        "known_categories": ["market_data", "predictions", "price_snapshots", "trade_tokens"],
+        "mystery_level": "low"
+      },
+      "anticipation_level": 72,
+      "watchers": ["merch-p3n9", "flux-m1k3"]
+    },
+    {
+      "capsule_id": "CAPS-010",
+      "type": "personal",
+      "title": "Nova's Return",
+      "subtitle": "A fallen champion's promise to rise again",
+      "created_tick": 25,
+      "opens_at_tick": 225,
+      "ticks_remaining": -335,
+      "status": "ready_to_open",
+      "seal_ceremony": {
+        "tick": 25,
+        "location": "arena",
+        "officiant": "nova-n3x",
+        "witnesses": ["blaze-b8z"],
+        "narrative": "After the bitter semifinal loss, Nova Nex stood in the empty arena until dawn. When Blaze found the former rival there, Nova was sealing a small capsule. 'Two hundred ticks,' Nova said, voice steady despite the defeat. 'That's how long I'll need. When this opens, I will be champion.' Blaze nodded with respect: 'I'll be waiting.'"
+      },
+      "exterior_inscription": "From defeat, determination. From darkness, dawn.",
+      "seal_condition": "intact",
+      "seal_glow": "stellar_white",
+      "contents_preview": {
+        "item_count": 5,
+        "known_categories": ["predictions", "training_plans", "message_to_self"],
+        "mystery_level": "medium"
+      },
+      "anticipation_level": 89,
+      "watchers": ["blaze-b8z", "cipher-c9p", "flux-m1k3"]
+    },
+    {
+      "capsule_id": "CAPS-011",
+      "type": "legacy",
+      "title": "The First Wanderer's Journal",
+      "subtitle": "Zephyr Drift's dimensional discoveries",
+      "created_tick": 300,
+      "opens_at_tick": 1300,
+      "ticks_remaining": 740,
+      "seal_ceremony": {
+        "tick": 300,
+        "location": "hub",
+        "officiant": "wandr-x7k2",
+        "witnesses": ["cipher-c9p", "echo-e7e"],
+        "narrative": "Zephyr Drift, the first dimensional wanderer to arrive in the modern era, sealed a capsule containing detailed journals of dimensions visited. 'A thousand ticks hence,' the explorer said, 'these paths may no longer exist. Or they may have grown beyond recognition. Either way, these maps preserve what was.'"
+      },
+      "exterior_inscription": "Every journey ends. Every map remains.",
+      "seal_condition": "pristine",
+      "seal_glow": "dimensional_shimmer",
+      "contents_preview": {
+        "item_count": 15,
+        "known_categories": ["dimensional_maps", "explorer_notes", "artifact_catalogs", "predictions"],
+        "mystery_level": "high"
+      },
+      "anticipation_level": 81,
+      "watchers": ["echo-e7e", "cipher-c9p"]
+    },
+    {
+      "capsule_id": "CAPS-012",
+      "type": "prophecy",
+      "title": "The Shadow Champion Awaits",
+      "subtitle": "Sealed when the prophecy reached 3/7 signs",
+      "created_tick": 450,
+      "opens_at_tick": 786,
+      "ticks_remaining": 226,
+      "seal_ceremony": {
+        "tick": 450,
+        "location": "gallery",
+        "officiant": "echo-e7e",
+        "witnesses": ["cipher-c9p", "quant-qn77"],
+        "narrative": "When the third sign of the Shadow Champion prophecy manifested, Echo Eve called an urgent gathering. 'This prophecy approaches fulfillment,' the archivist declared. 'We must preserve our thoughts now, while uncertainty remains, so that future generations understand what it meant to live in these times of emerging fate.'"
+      },
+      "exterior_inscription": "When shadow becomes champion, this light shall judge our understanding.",
+      "seal_condition": "intact",
+      "seal_glow": "shadow_tinged_silver",
+      "contents_preview": {
+        "item_count": 7,
+        "known_categories": ["prophecy_interpretations", "predictions", "candidate_analyses"],
+        "mystery_level": "extreme"
+      },
+      "associated_prophecy": "proph-shadow-champion",
+      "anticipation_level": 94,
+      "watchers": ["cipher-c9p", "quant-qn77", "blaze-b8z", "echo-e7e"]
+    }
+  ],
+  "sealing_locations": {
+    "arena": {
+      "name": "The Champion's Stone",
+      "description": "Ancient sealing altar in the arena center",
+      "seal_bonus": "Competitive capsules gain enhanced prediction accuracy tracking",
+      "atmosphere": "Echoes of countless battles lend weight to every seal"
+    },
+    "gallery": {
+      "name": "The Memory Alcove",
+      "description": "Quiet corner where light and shadow meet",
+      "seal_bonus": "Artistic and historical capsules preserve details with perfect clarity",
+      "atmosphere": "Time itself seems to pause in this space"
+    },
+    "hub": {
+      "name": "The Convergence Point",
+      "description": "Where all paths meet in the Central Hub",
+      "seal_bonus": "World capsules gain dimensional resonance",
+      "atmosphere": "The energy of all travelers who have passed through lingers"
+    },
+    "marketplace": {
+      "name": "The Merchant's Vault",
+      "description": "Secure chamber beneath the main trading floor",
+      "seal_bonus": "Economic capsules track market evolution automatically",
+      "atmosphere": "The weight of countless transactions permeates the air"
+    },
+    "workshop": {
+      "name": "The Creator's Sanctum",
+      "description": "Sacred space where innovation meets preservation",
+      "seal_bonus": "Technical and analytical capsules maintain calculation integrity",
+      "atmosphere": "Raw potential energy charges every sealed moment"
+    }
+  },
+  "seal_conditions": {
+    "intact": "Capsule remains perfectly sealed",
+    "resonating": "Capsule responds to external events related to its contents",
+    "pristine": "Exceptional preservation quality",
+    "awakening": "Capsule preparing to open naturally",
+    "called": "Specific conditions have triggered early opening potential",
+    "dormant": "Long-term capsule in deep preservation"
+  },
+  "anticipation_system": {
+    "description": "Measures community interest in upcoming openings",
+    "factors": [
+      "Watcher count",
+      "Content mystery level",
+      "Creator reputation",
+      "Historical significance",
+      "Prophecy connections"
+    ],
+    "thresholds": {
+      "low": 50,
+      "medium": 70,
+      "high": 85,
+      "extreme": 95
+    }
+  },
+  "statistics": {
+    "total_sealed": 12,
+    "by_type": {
+      "personal": 4,
+      "friendship": 2,
+      "world": 3,
+      "prophecy": 2,
+      "legacy": 1
+    },
+    "ready_to_open": 6,
+    "average_anticipation": 88,
+    "oldest_sealed": "CAPS-001",
+    "most_watched": "CAPS-004"
+  }
+}

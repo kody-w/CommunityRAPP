@@ -1,0 +1,412 @@
+{
+  "meta": {
+    "version": "1.1.0",
+    "created_at_tick": 560,
+    "last_updated_tick": 79,
+    "schedule_horizon_ticks": 200,
+    "description": "Entertainment event schedule for the RAPPverse"
+  },
+  "current_tick": 79,
+  "scheduled_events": [
+    {
+      "event_id": "ent-080-001",
+      "name": "Tournament Eve Spectacular",
+      "type": "music_performance",
+      "scheduled_tick": 80,
+      "duration_ticks": 3,
+      "venue": "arena-colosseum",
+      "performers": {
+        "musician": ["synth-c1au", "spark-s4r"]
+      },
+      "description": "An electrifying pre-tournament concert as the qualifiers heat up! Synth Claude and Spark Sara perform battle anthems to fire up competitors.",
+      "expected_attendance": 70,
+      "ticket_price": 35,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["competitor_entrance_themes", "crowd_energy_wave", "holographic_fireworks"]
+    },
+    {
+      "event_id": "ent-082-001",
+      "name": "Pixel's Pre-Tournament Art Show",
+      "type": "art_exhibition",
+      "scheduled_tick": 82,
+      "duration_ticks": 4,
+      "venue": "gallery-theater",
+      "performers": {
+        "artist": "pixel-p4m",
+        "curator": "echo-e7e"
+      },
+      "description": "Pixel Pam unveils portraits of all tournament qualifiers! Each competitor immortalized in digital art before the battles begin.",
+      "expected_attendance": 35,
+      "ticket_price": 25,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["qualifier_portraits", "live_painting", "portrait_auction"]
+    },
+    {
+      "event_id": "ent-084-001",
+      "name": "Comedy Roast: Qualifiers Edition",
+      "type": "comedy_show",
+      "scheduled_tick": 84,
+      "duration_ticks": 3,
+      "venue": "hub-stage",
+      "performers": {
+        "comedian": "flux-m1k3",
+        "hype_person": "synth-c1au"
+      },
+      "description": "Flux Mike roasts all five tournament qualifiers! No competitor is safe from his cutting wit. Blaze's ego, Cipher's mysteries, Nova's dimension obsession - all fair game!",
+      "expected_attendance": 55,
+      "ticket_price": 30,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["qualifier_roast", "comeback_segment", "crowd_jokes"]
+    },
+    {
+      "event_id": "ent-086-001",
+      "name": "Echo's Tales: Tournament Legends",
+      "type": "story_reading",
+      "scheduled_tick": 86,
+      "duration_ticks": 3,
+      "venue": "gallery-theater",
+      "performers": {
+        "storyteller": "echo-e7e",
+        "illustrator": "pixel-p4m"
+      },
+      "description": "The historian recounts epic battles from tournaments past. Legendary moves, impossible comebacks, and champions who became legends.",
+      "expected_attendance": 30,
+      "ticket_price": 20,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["holographic_replays", "legendary_card_displays", "audience_predictions"]
+    },
+    {
+      "event_id": "ent-088-001",
+      "name": "Arena Dance Party",
+      "type": "dance_performance",
+      "scheduled_tick": 88,
+      "duration_ticks": 4,
+      "venue": "arena-colosseum",
+      "performers": {
+        "lead_dancer": ["spark-s4r", "nova-n3x"],
+        "dj": "synth-c1au"
+      },
+      "description": "Let loose before the tournament brackets are set! An all-out dance celebration with competitors and fans alike.",
+      "expected_attendance": 80,
+      "ticket_price": 20,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["dance_battle_segment", "glow_effects", "crowd_participation"]
+    },
+    {
+      "event_id": "ent-090-001",
+      "name": "Pre-Battle Exhibition Match",
+      "type": "card_battle_spectacle",
+      "scheduled_tick": 90,
+      "duration_ticks": 4,
+      "venue": "arena-colosseum",
+      "performers": {
+        "battlers": ["blaze-b8z", "cipher-c9p"],
+        "commentator": "echo-e7e"
+      },
+      "description": "The top two qualifiers face off in a pre-tournament exhibition! Watch Blaze and Cipher test strategies without tournament stakes.",
+      "expected_attendance": 90,
+      "ticket_price": 50,
+      "status": "confirmed",
+      "betting_pool": 3500,
+      "special_features": ["technique_showcase", "strategy_analysis", "prediction_contest"]
+    },
+    {
+      "event_id": "ent-562-001",
+      "name": "Battle Champions Exhibition",
+      "type": "card_battle_spectacle",
+      "scheduled_tick": 562,
+      "duration_ticks": 4,
+      "venue": "arena-colosseum",
+      "performers": {
+        "battlers": ["blaze-b8z", "cipher-c9p"],
+        "commentator": "synth-c1au"
+      },
+      "description": "Watch the reigning champion Blaze Baz face off against the mysterious Cipher Cap in a no-stakes exhibition match. Pure showmanship!",
+      "expected_attendance": 85,
+      "ticket_price": 50,
+      "status": "archived",
+      "betting_pool": 2500,
+      "special_features": ["pyrotechnic_finale", "crowd_energy_meter"]
+    },
+    {
+      "event_id": "ent-564-001",
+      "name": "Flux Mike's Comedy Hour",
+      "type": "comedy_show",
+      "scheduled_tick": 564,
+      "duration_ticks": 3,
+      "venue": "hub-stage",
+      "performers": {
+        "comedian": "flux-m1k3",
+        "hype_person": "synth-c1au"
+      },
+      "description": "The marketplace merchant takes the stage! Flux Mike roasts recent tournament drama, trading mishaps, and his own questionable business decisions.",
+      "expected_attendance": 40,
+      "ticket_price": 25,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["market_jokes", "crowd_roast_segment"]
+    },
+    {
+      "event_id": "ent-568-001",
+      "name": "Echo's Tales of Ancient RAPPverse",
+      "type": "story_reading",
+      "scheduled_tick": 568,
+      "duration_ticks": 3,
+      "venue": "gallery-theater",
+      "performers": {
+        "storyteller": "echo-e7e",
+        "illustrator": "pixel-p4m"
+      },
+      "description": "The historian Echo Eve recounts legends from the earliest days of the RAPPverse, with live illustrations by Pixel Pam bringing the tales to life.",
+      "expected_attendance": 25,
+      "ticket_price": 30,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["holographic_history", "live_art_creation"]
+    },
+    {
+      "event_id": "ent-572-001",
+      "name": "Synth Sessions: Ambient Evening",
+      "type": "music_performance",
+      "scheduled_tick": 572,
+      "duration_ticks": 4,
+      "venue": "hub-stage",
+      "performers": {
+        "musician": ["synth-c1au", "spark-s4r"]
+      },
+      "description": "An evening of relaxing synthwave and ambient sounds. Synth Claude and Spark Sara create live electronic landscapes perfect for unwinding after a busy day.",
+      "expected_attendance": 35,
+      "ticket_price": 20,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["visual_sync", "ambient_lighting"]
+    },
+    {
+      "event_id": "ent-576-001",
+      "name": "Pixel Pam's New Collection Reveal",
+      "type": "art_exhibition",
+      "scheduled_tick": 576,
+      "duration_ticks": 6,
+      "venue": "gallery-theater",
+      "performers": {
+        "artist": "pixel-p4m",
+        "curator": "echo-e7e"
+      },
+      "description": "The unveiling of Pixel Pam's latest art collection: 'Digital Dreams'. Twenty new pieces inspired by RAPPverse adventures, available for exclusive first viewing.",
+      "expected_attendance": 28,
+      "ticket_price": 40,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["art_auction", "artist_meet_greet", "limited_prints"]
+    },
+    {
+      "event_id": "ent-580-001",
+      "name": "Marketplace Melodies",
+      "type": "music_performance",
+      "scheduled_tick": 580,
+      "duration_ticks": 2,
+      "venue": "marketplace-plaza",
+      "performers": {
+        "musician": ["spark-s4r"]
+      },
+      "description": "Spark Sara performs upbeat tunes in the marketplace plaza during peak trading hours. Free entertainment while you shop!",
+      "expected_attendance": 30,
+      "ticket_price": 0,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["busking_tips", "merchant_themes"]
+    },
+    {
+      "event_id": "ent-584-001",
+      "name": "Nova's Adventure Stories",
+      "type": "story_reading",
+      "scheduled_tick": 584,
+      "duration_ticks": 3,
+      "venue": "hub-stage",
+      "performers": {
+        "storyteller": "nova-n3x",
+        "voice_cast": ["flux-m1k3", "spark-s4r"]
+      },
+      "description": "Explorer Nova Nex shares thrilling tales of dimension-hopping adventures with dramatic voice acting from fellow NPCs.",
+      "expected_attendance": 38,
+      "ticket_price": 25,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["dimension_visuals", "interactive_choices"]
+    },
+    {
+      "event_id": "ent-590-001",
+      "name": "Grand Arena Spectacle: Triple Threat",
+      "type": "card_battle_spectacle",
+      "scheduled_tick": 590,
+      "duration_ticks": 6,
+      "venue": "arena-colosseum",
+      "performers": {
+        "battlers": ["blaze-b8z", "cipher-c9p", "quant-qn77"],
+        "commentator": "echo-e7e"
+      },
+      "description": "A rare three-way exhibition battle! The champion, the enigma, and the analyst face off in a rotating format that tests every strategy.",
+      "expected_attendance": 95,
+      "ticket_price": 75,
+      "status": "confirmed",
+      "betting_pool": 5000,
+      "special_features": ["triple_format", "strategy_overlay", "live_analytics"]
+    },
+    {
+      "event_id": "ent-596-001",
+      "name": "Cipher's Enigma Hour",
+      "type": "story_reading",
+      "scheduled_tick": 596,
+      "duration_ticks": 3,
+      "venue": "gallery-theater",
+      "performers": {
+        "storyteller": "cipher-c9p"
+      },
+      "description": "The mysterious Cipher Cap reads cryptic tales and poses riddles to the audience. Solve them for prizes, or simply enjoy the enigmatic atmosphere.",
+      "expected_attendance": 22,
+      "ticket_price": 35,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["riddle_prizes", "cryptic_atmosphere", "mystery_reveal"]
+    },
+    {
+      "event_id": "ent-600-001",
+      "name": "Comedy Night: Open Mic",
+      "type": "comedy_show",
+      "scheduled_tick": 600,
+      "duration_ticks": 4,
+      "venue": "hub-stage",
+      "performers": {
+        "comedian": ["flux-m1k3", "nova-n3x", "spark-s4r"],
+        "hype_person": "synth-c1au"
+      },
+      "description": "Multiple performers take the stage for open mic comedy night! Three RAPPverse personalities bring their unique humor styles.",
+      "expected_attendance": 45,
+      "ticket_price": 30,
+      "status": "confirmed",
+      "betting_pool": 0,
+      "special_features": ["multiple_acts", "audience_voting", "best_joke_prize"]
+    }
+  ],
+  "recurring_entertainment": [
+    {
+      "template_id": "weekly-battle-exhibition",
+      "name": "Weekly Battle Exhibition",
+      "type": "card_battle_spectacle",
+      "frequency": {
+        "every": 48,
+        "tick_offset": 14
+      },
+      "default_venue": "arena-colosseum",
+      "default_performers": {
+        "battlers": ["blaze-b8z", "cipher-c9p"],
+        "commentator": "synth-c1au"
+      },
+      "enabled": true
+    },
+    {
+      "template_id": "marketplace-busking",
+      "name": "Marketplace Busking",
+      "type": "music_performance",
+      "frequency": {
+        "every": 24,
+        "tick_offset": 12
+      },
+      "default_venue": "marketplace-plaza",
+      "default_performers": {
+        "musician": ["spark-s4r"]
+      },
+      "enabled": true
+    },
+    {
+      "template_id": "evening-comedy",
+      "name": "Evening Comedy Spot",
+      "type": "comedy_show",
+      "frequency": {
+        "every": 48,
+        "tick_offset": 21
+      },
+      "default_venue": "hub-stage",
+      "default_performers": {
+        "comedian": "flux-m1k3"
+      },
+      "enabled": true
+    },
+    {
+      "template_id": "gallery-readings",
+      "name": "Gallery Story Hour",
+      "type": "story_reading",
+      "frequency": {
+        "every": 36,
+        "tick_offset": 16
+      },
+      "default_venue": "gallery-theater",
+      "default_performers": {
+        "storyteller": "echo-e7e"
+      },
+      "enabled": true
+    }
+  ],
+  "past_events": [
+    {
+      "event_id": "ent-554-001",
+      "name": "Victory Celebration Performance",
+      "type": "music_performance",
+      "occurred_tick": 554,
+      "venue": "arena-colosseum",
+      "performers": ["synth-c1au", "spark-s4r", "pixel-p4m"],
+      "actual_attendance": 78,
+      "revenue": 2340,
+      "highlights": ["champion_dedication_song", "crowd_sing_along"],
+      "reviews": [
+        {
+          "reviewer": "echo-e7e",
+          "rating": 5,
+          "comment": "A musical triumph that will echo through RAPPverse history!"
+        },
+        {
+          "reviewer": "quant-qn77",
+          "rating": 4,
+          "comment": "Engagement metrics exceeded projections by 23%."
+        }
+      ]
+    },
+    {
+      "event_id": "ent-550-001",
+      "name": "Pre-Tournament Exhibition",
+      "type": "card_battle_spectacle",
+      "occurred_tick": 550,
+      "venue": "arena-colosseum",
+      "performers": ["blaze-b8z", "synth-c1au"],
+      "actual_attendance": 82,
+      "revenue": 4100,
+      "highlights": ["technique_demonstration", "crowd_prediction_game"],
+      "reviews": [
+        {
+          "reviewer": "cipher-c9p",
+          "rating": 4,
+          "comment": "Interesting... the champion revealed more than intended."
+        },
+        {
+          "reviewer": "flux-m1k3",
+          "rating": 5,
+          "comment": "The betting action was incredible! Best pre-show I've seen!"
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "total_scheduled": 10,
+    "total_past": 2,
+    "average_attendance": 52,
+    "total_revenue_generated": 6440,
+    "most_popular_type": "card_battle_spectacle",
+    "most_active_venue": "hub-stage",
+    "top_performer": "synth-c1au"
+  }
+}

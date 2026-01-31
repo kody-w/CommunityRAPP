@@ -1,0 +1,820 @@
+{
+  "version": "1.0.0",
+  "description": "Comprehensive catalog of all artifact powers and their effects in the RAPPverse",
+  "last_updated": "2026-02-01T07:30:00Z",
+  "current_tick": 27,
+  "power_categories": {
+    "combat": {
+      "description": "Powers that enhance battle capabilities",
+      "powers": {
+        "duel_mastery": {
+          "power_id": "pow-001",
+          "name": "Duel Mastery",
+          "category": "combat",
+          "tier_requirement": "rare",
+          "description": "Enhances combat effectiveness in one-on-one battles",
+          "effects": [
+            {
+              "type": "stat_boost",
+              "target": "combat_power",
+              "value": 20,
+              "duration": "permanent_while_equipped"
+            },
+            {
+              "type": "special",
+              "target": "duel_win_chance",
+              "value": 15,
+              "unit": "percent"
+            }
+          ],
+          "artifacts_with_power": ["art-002"]
+        },
+        "training_boost": {
+          "power_id": "pow-002",
+          "name": "Training Boost",
+          "category": "combat",
+          "tier_requirement": "common",
+          "description": "Accelerates skill development through training",
+          "effects": [
+            {
+              "type": "multiplier",
+              "target": "training_effectiveness",
+              "value": 1.5,
+              "duration": "permanent_while_equipped"
+            }
+          ],
+          "artifacts_with_power": ["art-012"]
+        },
+        "endurance_increase": {
+          "power_id": "pow-003",
+          "name": "Endurance Increase",
+          "category": "combat",
+          "tier_requirement": "common",
+          "description": "Increases stamina and battle longevity",
+          "effects": [
+            {
+              "type": "stat_boost",
+              "target": "endurance",
+              "value": 15,
+              "duration": "permanent_while_equipped"
+            }
+          ],
+          "artifacts_with_power": ["art-012"]
+        }
+      }
+    },
+    "trade": {
+      "description": "Powers that enhance trading and commerce",
+      "powers": {
+        "trade_prediction": {
+          "power_id": "pow-010",
+          "name": "Trade Prediction",
+          "category": "trade",
+          "tier_requirement": "epic",
+          "description": "Foresees market trends and valuable trades",
+          "effects": [
+            {
+              "type": "special",
+              "target": "market_foresight",
+              "value": 3,
+              "unit": "ticks_ahead"
+            },
+            {
+              "type": "unlock",
+              "target": "rare_deal_visibility",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-003"]
+        },
+        "value_sense": {
+          "power_id": "pow-011",
+          "name": "Value Sense",
+          "category": "trade",
+          "tier_requirement": "rare",
+          "description": "Accurately assesses true value of items",
+          "effects": [
+            {
+              "type": "special",
+              "target": "appraisal_accuracy",
+              "value": 100,
+              "unit": "percent"
+            }
+          ],
+          "artifacts_with_power": ["art-003"]
+        },
+        "deal_mastery": {
+          "power_id": "pow-012",
+          "name": "Deal Mastery",
+          "category": "trade",
+          "tier_requirement": "rare",
+          "description": "Improves negotiation outcomes",
+          "effects": [
+            {
+              "type": "stat_boost",
+              "target": "trade_bonus",
+              "value": 25,
+              "duration": "permanent_while_equipped"
+            },
+            {
+              "type": "multiplier",
+              "target": "profit",
+              "value": 1.15
+            }
+          ],
+          "artifacts_with_power": ["art-003"]
+        },
+        "luck_boost": {
+          "power_id": "pow-013",
+          "name": "Luck Boost",
+          "category": "trade",
+          "tier_requirement": "common",
+          "description": "Increases favorable random outcomes",
+          "effects": [
+            {
+              "type": "stat_boost",
+              "target": "luck",
+              "value": 20,
+              "duration": "permanent_while_equipped"
+            }
+          ],
+          "artifacts_with_power": ["art-011"]
+        },
+        "gamble_mastery": {
+          "power_id": "pow-014",
+          "name": "Gamble Mastery",
+          "category": "trade",
+          "tier_requirement": "rare",
+          "description": "Improves odds in chance-based events",
+          "effects": [
+            {
+              "type": "special",
+              "target": "random_event_favor",
+              "value": 30,
+              "unit": "percent"
+            }
+          ],
+          "artifacts_with_power": ["art-011"]
+        }
+      }
+    },
+    "creation": {
+      "description": "Powers that enhance crafting and artistic abilities",
+      "powers": {
+        "art_manifestation": {
+          "power_id": "pow-020",
+          "name": "Art Manifestation",
+          "category": "creation",
+          "tier_requirement": "legendary",
+          "description": "Brings artistic creations to temporary life",
+          "effects": [
+            {
+              "type": "special",
+              "target": "living_art_creation",
+              "value": true
+            },
+            {
+              "type": "unlock",
+              "target": "animate_artwork",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-004"]
+        },
+        "dream_capture": {
+          "power_id": "pow-021",
+          "name": "Dream Capture",
+          "category": "creation",
+          "tier_requirement": "epic",
+          "description": "Records and visualizes dreams",
+          "effects": [
+            {
+              "type": "special",
+              "target": "dream_to_art",
+              "value": true
+            },
+            {
+              "type": "stat_boost",
+              "target": "inspiration",
+              "value": 30
+            }
+          ],
+          "artifacts_with_power": ["art-004"]
+        },
+        "inspiration_channeling": {
+          "power_id": "pow-022",
+          "name": "Inspiration Channeling",
+          "category": "creation",
+          "tier_requirement": "rare",
+          "description": "Channels creative inspiration from the environment",
+          "effects": [
+            {
+              "type": "multiplier",
+              "target": "creativity",
+              "value": 1.4
+            },
+            {
+              "type": "special",
+              "target": "never_creative_block",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-004"]
+        },
+        "enhanced_crafting": {
+          "power_id": "pow-023",
+          "name": "Enhanced Crafting",
+          "category": "creation",
+          "tier_requirement": "rare",
+          "description": "Improves crafting quality and speed",
+          "effects": [
+            {
+              "type": "multiplier",
+              "target": "crafting_speed",
+              "value": 1.3
+            },
+            {
+              "type": "stat_boost",
+              "target": "crafting_quality",
+              "value": 20
+            }
+          ],
+          "artifacts_with_power": ["art-007"]
+        },
+        "spark_infusion": {
+          "power_id": "pow-024",
+          "name": "Spark Infusion",
+          "category": "creation",
+          "tier_requirement": "epic",
+          "description": "Infuses creations with magical spark energy",
+          "effects": [
+            {
+              "type": "special",
+              "target": "spark_enchantment",
+              "value": true
+            },
+            {
+              "type": "stat_boost",
+              "target": "enhancement_success",
+              "value": 25
+            }
+          ],
+          "artifacts_with_power": ["art-007"]
+        },
+        "material_transmutation": {
+          "power_id": "pow-025",
+          "name": "Material Transmutation",
+          "category": "creation",
+          "tier_requirement": "epic",
+          "description": "Transforms crafting materials into higher quality versions",
+          "effects": [
+            {
+              "type": "special",
+              "target": "material_upgrade",
+              "value": 1,
+              "unit": "tier"
+            }
+          ],
+          "artifacts_with_power": ["art-007"]
+        },
+        "rapid_creation": {
+          "power_id": "pow-026",
+          "name": "Rapid Creation",
+          "category": "creation",
+          "tier_requirement": "common",
+          "description": "Dramatically speeds up creation process",
+          "effects": [
+            {
+              "type": "multiplier",
+              "target": "creation_speed",
+              "value": 2.0
+            }
+          ],
+          "artifacts_with_power": ["art-013"]
+        },
+        "inspiration_capture": {
+          "power_id": "pow-027",
+          "name": "Inspiration Capture",
+          "category": "creation",
+          "tier_requirement": "common",
+          "description": "Preserves fleeting ideas before they fade",
+          "effects": [
+            {
+              "type": "special",
+              "target": "idea_preservation",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-013"]
+        },
+        "card_protection": {
+          "power_id": "pow-028",
+          "name": "Card Protection",
+          "category": "creation",
+          "tier_requirement": "common",
+          "description": "Protects cards from damage and degradation",
+          "effects": [
+            {
+              "type": "special",
+              "target": "card_preservation",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-015"]
+        }
+      }
+    },
+    "knowledge": {
+      "description": "Powers that enhance learning and information gathering",
+      "powers": {
+        "truth_detection": {
+          "power_id": "pow-030",
+          "name": "Truth Detection",
+          "category": "knowledge",
+          "tier_requirement": "epic",
+          "description": "Senses deception and reveals truth",
+          "effects": [
+            {
+              "type": "special",
+              "target": "lie_detection",
+              "value": true
+            },
+            {
+              "type": "unlock",
+              "target": "hidden_truth_reveal",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-002"]
+        },
+        "code_breaking": {
+          "power_id": "pow-031",
+          "name": "Code Breaking",
+          "category": "knowledge",
+          "tier_requirement": "rare",
+          "description": "Decrypts coded messages and patterns",
+          "effects": [
+            {
+              "type": "stat_boost",
+              "target": "code_breaking",
+              "value": 30
+            },
+            {
+              "type": "special",
+              "target": "decrypt_any_message",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-002", "art-008"]
+        },
+        "memory_preservation": {
+          "power_id": "pow-032",
+          "name": "Memory Preservation",
+          "category": "knowledge",
+          "tier_requirement": "epic",
+          "description": "Perfectly preserves and recalls memories",
+          "effects": [
+            {
+              "type": "special",
+              "target": "perfect_recall",
+              "value": true
+            },
+            {
+              "type": "stat_boost",
+              "target": "memory",
+              "value": 45
+            }
+          ],
+          "artifacts_with_power": ["art-005"]
+        },
+        "voice_recording": {
+          "power_id": "pow-033",
+          "name": "Voice Recording",
+          "category": "knowledge",
+          "tier_requirement": "rare",
+          "description": "Records and replays voices with perfect fidelity",
+          "effects": [
+            {
+              "type": "special",
+              "target": "voice_capture",
+              "value": true
+            },
+            {
+              "type": "unlock",
+              "target": "voice_playback",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-005"]
+        },
+        "chronicle_mastery": {
+          "power_id": "pow-034",
+          "name": "Chronicle Mastery",
+          "category": "knowledge",
+          "tier_requirement": "epic",
+          "description": "Perfectly records and organizes historical events",
+          "effects": [
+            {
+              "type": "multiplier",
+              "target": "chronicle_quality",
+              "value": 1.5
+            },
+            {
+              "type": "special",
+              "target": "auto_chronicle",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-005"]
+        },
+        "probability_manipulation": {
+          "power_id": "pow-035",
+          "name": "Probability Manipulation",
+          "category": "knowledge",
+          "tier_requirement": "epic",
+          "description": "Calculates and slightly influences probabilities",
+          "effects": [
+            {
+              "type": "special",
+              "target": "probability_insight",
+              "value": true
+            },
+            {
+              "type": "stat_boost",
+              "target": "prediction_accuracy",
+              "value": 25
+            }
+          ],
+          "artifacts_with_power": ["art-006"]
+        },
+        "outcome_analysis": {
+          "power_id": "pow-036",
+          "name": "Outcome Analysis",
+          "category": "knowledge",
+          "tier_requirement": "rare",
+          "description": "Analyzes potential outcomes of decisions",
+          "effects": [
+            {
+              "type": "special",
+              "target": "outcome_preview",
+              "value": 3,
+              "unit": "possibilities"
+            }
+          ],
+          "artifacts_with_power": ["art-006"]
+        },
+        "quantum_calculation": {
+          "power_id": "pow-037",
+          "name": "Quantum Calculation",
+          "category": "knowledge",
+          "tier_requirement": "epic",
+          "description": "Performs calculations across quantum states",
+          "effects": [
+            {
+              "type": "multiplier",
+              "target": "calculation_speed",
+              "value": 10
+            },
+            {
+              "type": "special",
+              "target": "parallel_processing",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-006"]
+        },
+        "code_reading": {
+          "power_id": "pow-038",
+          "name": "Code Reading",
+          "category": "knowledge",
+          "tier_requirement": "rare",
+          "description": "Reads and understands any code instantly",
+          "effects": [
+            {
+              "type": "special",
+              "target": "instant_code_comprehension",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-008"]
+        },
+        "hidden_message_detection": {
+          "power_id": "pow-039",
+          "name": "Hidden Message Detection",
+          "category": "knowledge",
+          "tier_requirement": "rare",
+          "description": "Detects messages hidden in plain sight",
+          "effects": [
+            {
+              "type": "special",
+              "target": "steganography_detection",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-008"]
+        },
+        "pattern_recognition": {
+          "power_id": "pow-040",
+          "name": "Pattern Recognition",
+          "category": "knowledge",
+          "tier_requirement": "common",
+          "description": "Identifies patterns in complex data",
+          "effects": [
+            {
+              "type": "stat_boost",
+              "target": "pattern_insight",
+              "value": 25
+            }
+          ],
+          "artifacts_with_power": ["art-008"]
+        }
+      }
+    },
+    "exploration": {
+      "description": "Powers that enhance travel and discovery",
+      "powers": {
+        "time_perception": {
+          "power_id": "pow-050",
+          "name": "Time Perception",
+          "category": "exploration",
+          "tier_requirement": "mythic",
+          "description": "Perceives the flow of time across dimensions",
+          "effects": [
+            {
+              "type": "special",
+              "target": "temporal_awareness",
+              "value": true
+            },
+            {
+              "type": "stat_boost",
+              "target": "foresight",
+              "value": 50
+            }
+          ],
+          "artifacts_with_power": ["art-001"]
+        },
+        "tick_preview": {
+          "power_id": "pow-051",
+          "name": "Tick Preview",
+          "category": "exploration",
+          "tier_requirement": "mythic",
+          "description": "Sees glimpses of future ticks",
+          "effects": [
+            {
+              "type": "special",
+              "target": "future_glimpse",
+              "value": 3,
+              "unit": "ticks"
+            }
+          ],
+          "artifacts_with_power": ["art-001"]
+        },
+        "dimensional_awareness": {
+          "power_id": "pow-052",
+          "name": "Dimensional Awareness",
+          "category": "exploration",
+          "tier_requirement": "legendary",
+          "description": "Senses events across multiple dimensions",
+          "effects": [
+            {
+              "type": "special",
+              "target": "cross_dimension_sense",
+              "value": true
+            },
+            {
+              "type": "unlock",
+              "target": "dimension_event_alerts",
+              "value": true
+            }
+          ],
+          "artifacts_with_power": ["art-001"]
+        },
+        "dimensional_navigation": {
+          "power_id": "pow-053",
+          "name": "Dimensional Navigation",
+          "category": "exploration",
+          "tier_requirement": "epic",
+          "description": "Enables navigation between dimensions",
+          "effects": [
+            {
+              "type": "unlock",
+              "target": "dimension_travel",
+              "value": true
+            },
+            {
+              "type": "stat_boost",
+              "target": "travel_safety",
+              "value": 30
+            }
+          ],
+          "artifacts_with_power": ["art-009"]
+        },
+        "path_finding": {
+          "power_id": "pow-054",
+          "name": "Path Finding",
+          "category": "exploration",
+          "tier_requirement": "rare",
+          "description": "Always finds the optimal path to destination",
+          "effects": [
+            {
+              "type": "special",
+              "target": "optimal_route",
+              "value": true
+            },
+            {
+              "type": "multiplier",
+              "target": "travel_speed",
+              "value": 1.25
+            }
+          ],
+          "artifacts_with_power": ["art-009"]
+        },
+        "exploration_bonus": {
+          "power_id": "pow-055",
+          "name": "Exploration Bonus",
+          "category": "exploration",
+          "tier_requirement": "common",
+          "description": "Increases rewards from exploration",
+          "effects": [
+            {
+              "type": "multiplier",
+              "target": "discovery_rewards",
+              "value": 1.3
+            }
+          ],
+          "artifacts_with_power": ["art-009"]
+        },
+        "energy_recovery": {
+          "power_id": "pow-056",
+          "name": "Energy Recovery",
+          "category": "exploration",
+          "tier_requirement": "common",
+          "description": "Enhances rest and energy restoration",
+          "effects": [
+            {
+              "type": "stat_boost",
+              "target": "energy_recovery_rate",
+              "value": 10
+            }
+          ],
+          "artifacts_with_power": ["art-014"]
+        }
+      }
+    },
+    "social": {
+      "description": "Powers that enhance relationships and community",
+      "powers": {
+        "social_harmony": {
+          "power_id": "pow-060",
+          "name": "Social Harmony",
+          "category": "social",
+          "tier_requirement": "epic",
+          "description": "Creates atmosphere of peace and cooperation",
+          "effects": [
+            {
+              "type": "aura",
+              "target": "zone_harmony",
+              "value": 30,
+              "range": "current_zone"
+            },
+            {
+              "type": "stat_boost",
+              "target": "social_bonus",
+              "value": 35
+            }
+          ],
+          "artifacts_with_power": ["art-010"]
+        },
+        "conflict_resolution": {
+          "power_id": "pow-061",
+          "name": "Conflict Resolution",
+          "category": "social",
+          "tier_requirement": "epic",
+          "description": "Resolves disputes and reduces tensions",
+          "effects": [
+            {
+              "type": "special",
+              "target": "instant_mediation",
+              "value": true
+            },
+            {
+              "type": "stat_boost",
+              "target": "conflict_reduction",
+              "value": 25
+            }
+          ],
+          "artifacts_with_power": ["art-010"]
+        },
+        "community_blessing": {
+          "power_id": "pow-062",
+          "name": "Community Blessing",
+          "category": "social",
+          "tier_requirement": "rare",
+          "description": "Blesses the community with positive energy",
+          "effects": [
+            {
+              "type": "aura",
+              "target": "community_mood",
+              "value": 20,
+              "range": "all_npcs_in_zone"
+            }
+          ],
+          "artifacts_with_power": ["art-010"]
+        }
+      }
+    }
+  },
+  "tier_power_limits": {
+    "common": {
+      "max_powers": 1,
+      "power_strength": "basic",
+      "cooldown_modifier": 1.0
+    },
+    "rare": {
+      "max_powers": 2,
+      "power_strength": "moderate",
+      "cooldown_modifier": 0.9
+    },
+    "epic": {
+      "max_powers": 3,
+      "power_strength": "significant",
+      "cooldown_modifier": 0.8
+    },
+    "legendary": {
+      "max_powers": 4,
+      "power_strength": "powerful",
+      "cooldown_modifier": 0.7
+    },
+    "mythic": {
+      "max_powers": 5,
+      "power_strength": "world_changing",
+      "cooldown_modifier": 0.5
+    }
+  },
+  "power_interactions": {
+    "synergies": [
+      {
+        "powers": ["art_manifestation", "dream_capture"],
+        "effect": "living_dream_art",
+        "bonus": "Dreams become permanent art pieces"
+      },
+      {
+        "powers": ["truth_detection", "code_breaking"],
+        "effect": "absolute_revelation",
+        "bonus": "Nothing can be hidden from the wielder"
+      },
+      {
+        "powers": ["trade_prediction", "value_sense"],
+        "effect": "perfect_merchant",
+        "bonus": "Always knows the best possible trade"
+      },
+      {
+        "powers": ["dimensional_navigation", "tick_preview"],
+        "effect": "temporal_explorer",
+        "bonus": "Can navigate to specific future events"
+      }
+    ],
+    "conflicts": [
+      {
+        "powers": ["probability_manipulation", "luck_boost"],
+        "effect": "probability_chaos",
+        "penalty": "Random wild outcomes when both active"
+      }
+    ]
+  },
+  "acquisition_methods": {
+    "discovery": {
+      "description": "Found in hidden locations or revealed through exploration",
+      "applicable_tiers": ["common", "rare", "epic"],
+      "requirements": ["exploration_skill", "luck"]
+    },
+    "trade": {
+      "description": "Acquired through marketplace transactions",
+      "applicable_tiers": ["common", "rare", "epic"],
+      "requirements": ["currency", "reputation"]
+    },
+    "tournament_prize": {
+      "description": "Won as reward in arena tournaments",
+      "applicable_tiers": ["rare", "epic", "legendary"],
+      "requirements": ["tournament_victory"]
+    },
+    "quest_reward": {
+      "description": "Earned by completing special quests",
+      "applicable_tiers": ["rare", "epic", "legendary"],
+      "requirements": ["quest_completion"]
+    },
+    "bonding": {
+      "description": "Artifact chooses its wielder based on compatibility",
+      "applicable_tiers": ["legendary", "mythic"],
+      "requirements": ["affinity", "destiny"]
+    },
+    "creation": {
+      "description": "Crafted in the workshop with rare materials",
+      "applicable_tiers": ["common", "rare"],
+      "requirements": ["crafting_skill", "materials"]
+    }
+  },
+  "total_powers_catalogued": 42,
+  "powers_in_use": 32,
+  "dormant_powers": 10
+}
