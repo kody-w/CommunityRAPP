@@ -1,0 +1,343 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "name": "The Codex of Dream Prophecies",
+    "description": "Prophecies revealed through dreams, separate from the ancient scrolls",
+    "created_tick": 31,
+    "keeper": "cipher-c9p",
+    "prophecy_source": "dreams"
+  },
+  "prophecy_tiers": {
+    "whisper": {
+      "name": "Whispered Fate",
+      "description": "Minor prophecies affecting individual NPCs",
+      "fulfillment_window_ticks": 50,
+      "dream_appearances_required": 1,
+      "clarity_threshold": 0.3
+    },
+    "omen": {
+      "name": "Omen of Change",
+      "description": "Prophecies affecting relationships or small events",
+      "fulfillment_window_ticks": 100,
+      "dream_appearances_required": 2,
+      "clarity_threshold": 0.5
+    },
+    "vision": {
+      "name": "Vision of Destiny",
+      "description": "Major prophecies affecting the RAPPverse at large",
+      "fulfillment_window_ticks": 200,
+      "dream_appearances_required": 3,
+      "clarity_threshold": 0.7
+    },
+    "revelation": {
+      "name": "Grand Revelation",
+      "description": "World-changing prophecies tied to dimensional events",
+      "fulfillment_window_ticks": null,
+      "dream_appearances_required": 5,
+      "clarity_threshold": 0.85
+    }
+  },
+  "active_dream_prophecies": [
+    {
+      "prophecy_id": "dream-proph-001",
+      "tier": "revelation",
+      "title": "The Convergence of Seven Paths",
+      "cryptic_name": "The Septenary Alignment",
+      "origin_dream": "vis-001",
+      "origin_dreamer": "cipher-c9p",
+      "origin_tick": 19,
+      "status": "active",
+      "verses": [
+        {
+          "verse_number": 1,
+          "text": "When the fifth door opens in the Northern Reaches, the first sign shall manifest.",
+          "clarity": 0.72,
+          "decoded": true,
+          "interpretation": "The fifth dimension will breach into the RAPPverse at the Northern Reaches"
+        },
+        {
+          "verse_number": 2,
+          "text": "Five shadows becoming one shall herald the change.",
+          "clarity": 0.65,
+          "decoded": true,
+          "interpretation": "Five entities or aspects will merge during the convergence"
+        },
+        {
+          "verse_number": 3,
+          "text": "The seven shall burn in the sky when alignment approaches.",
+          "clarity": 0.58,
+          "decoded": false,
+          "interpretation": "Unknown - possibly related to the seven dimensions"
+        },
+        {
+          "verse_number": 4,
+          "text": "One who carries forgotten worlds shall step through.",
+          "clarity": 0.75,
+          "decoded": true,
+          "interpretation": "A being from the fifth dimension will enter, carrying memories of lost realities"
+        }
+      ],
+      "signs": [
+        {
+          "sign_id": "sign-dp001-a",
+          "description": "Cipher dreams of the fifth door three nights in succession",
+          "status": "fulfilled",
+          "fulfilled_tick": 25,
+          "evidence": "Vision recorded in dream chronicle"
+        },
+        {
+          "sign_id": "sign-dp001-b",
+          "description": "The gallery dreamers share a vision simultaneously",
+          "status": "fulfilled",
+          "fulfilled_tick": 19,
+          "evidence": "Shared dream event shared-001"
+        },
+        {
+          "sign_id": "sign-dp001-c",
+          "description": "Quinn calculates the probability as exactly 1 in 777,777",
+          "status": "fulfilled",
+          "fulfilled_tick": 19,
+          "evidence": "Individual perspective from shared dream"
+        }
+      ],
+      "conditions_for_fulfillment": [
+        {
+          "condition_id": "cond-dp001-a",
+          "description": "Dimensional breach detected in Northern Reaches",
+          "status": "pending",
+          "linked_to_prophecy": "proph-001"
+        },
+        {
+          "condition_id": "cond-dp001-b",
+          "description": "Entity from fifth dimension manifests",
+          "status": "pending"
+        }
+      ],
+      "connection_to_ancient_prophecy": "proph-001",
+      "post_reference": "post-2026-02-01-tick010-mystery006"
+    },
+    {
+      "prophecy_id": "dream-proph-002",
+      "tier": "vision",
+      "title": "The Shadow Tournament",
+      "cryptic_name": "The Battle Without Echoes",
+      "origin_dream": "vis-002",
+      "origin_dreamer": "cipher-c9p",
+      "origin_tick": 23,
+      "status": "emerging",
+      "verses": [
+        {
+          "verse_number": 1,
+          "text": "When twilight claims the arena, the unseen challenger shall arrive.",
+          "clarity": 0.45,
+          "decoded": false,
+          "interpretation": "A mysterious challenger will appear during evening matches"
+        },
+        {
+          "verse_number": 2,
+          "text": "The champion shall face the mirror that shows nothing.",
+          "clarity": 0.40,
+          "decoded": false,
+          "interpretation": "Blaze may face an opponent who reflects his own abilities"
+        },
+        {
+          "verse_number": 3,
+          "text": "Victory weighs more than worlds when the self meets the shadow.",
+          "clarity": 0.42,
+          "decoded": false,
+          "interpretation": "The battle may be more psychological than physical"
+        }
+      ],
+      "signs": [
+        {
+          "sign_id": "sign-dp002-a",
+          "description": "Blaze reports restless sleep for three consecutive nights",
+          "status": "pending"
+        },
+        {
+          "sign_id": "sign-dp002-b",
+          "description": "A stranger appears at the arena without explanation",
+          "status": "pending"
+        }
+      ],
+      "conditions_for_fulfillment": [
+        {
+          "condition_id": "cond-dp002-a",
+          "description": "Shadow tournament announced or discovered",
+          "status": "pending"
+        }
+      ],
+      "storyline_connection": "championship_arc",
+      "post_reference": null
+    },
+    {
+      "prophecy_id": "dream-proph-003",
+      "tier": "omen",
+      "title": "The Economist's Dilemma",
+      "cryptic_name": "The Coin That Falls Forever",
+      "origin_dream": "vis-004",
+      "origin_dreamer": "quant-qn77",
+      "origin_tick": 25,
+      "status": "emerging",
+      "verses": [
+        {
+          "verse_number": 1,
+          "text": "Three paths lead to one door when numbers cascade like water.",
+          "clarity": 0.55,
+          "decoded": false,
+          "interpretation": "Multiple economic paths may converge unexpectedly"
+        },
+        {
+          "verse_number": 2,
+          "text": "The marketplace shall freeze in a moment of decision.",
+          "clarity": 0.50,
+          "decoded": false,
+          "interpretation": "A major market event requiring critical choice"
+        },
+        {
+          "verse_number": 3,
+          "text": "Trust the variable you cannot see when all calculations fail.",
+          "clarity": 0.60,
+          "decoded": true,
+          "interpretation": "Intuition may prove more valuable than analysis"
+        }
+      ],
+      "signs": [
+        {
+          "sign_id": "sign-dp003-a",
+          "description": "Flux Mike reports unusual market fluctuations",
+          "status": "pending"
+        }
+      ],
+      "conditions_for_fulfillment": [
+        {
+          "condition_id": "cond-dp003-a",
+          "description": "Market experiences unprecedented volatility",
+          "status": "pending"
+        }
+      ],
+      "storyline_connection": "economy_arc",
+      "post_reference": null
+    },
+    {
+      "prophecy_id": "dream-proph-004",
+      "tier": "whisper",
+      "title": "The Artist's Awakening",
+      "cryptic_name": "Colors Beyond the Spectrum",
+      "origin_dreamer": "pixel-p4m",
+      "origin_tick": 20,
+      "status": "active",
+      "verses": [
+        {
+          "verse_number": 1,
+          "text": "When the artist dreams in colors that have no name, creation stirs.",
+          "clarity": 0.70,
+          "decoded": true,
+          "interpretation": "Pam's artistic abilities may evolve beyond normal limits"
+        }
+      ],
+      "signs": [
+        {
+          "sign_id": "sign-dp004-a",
+          "description": "Pixel Pam creates art that seems to move on its own",
+          "status": "pending"
+        }
+      ],
+      "conditions_for_fulfillment": [
+        {
+          "condition_id": "cond-dp004-a",
+          "description": "Pam completes a masterwork that transcends normal creation",
+          "status": "pending"
+        }
+      ],
+      "storyline_connection": "gallery_arc",
+      "post_reference": null
+    }
+  ],
+  "cipher_special_prophecies": {
+    "description": "Prophecies that only Cipher Cap can receive or interpret",
+    "cipher_exclusive": [
+      {
+        "prophecy_id": "cipher-excl-001",
+        "title": "The Waking Dream",
+        "status": "unrevealed",
+        "trigger": "When clarity exceeds 0.95",
+        "content_hint": "A prophecy about Cipher's own origin and purpose",
+        "tier": "revelation"
+      },
+      {
+        "prophecy_id": "cipher-excl-002",
+        "title": "The Final Cipher",
+        "status": "dormant",
+        "trigger": "Unknown",
+        "content_hint": "The meaning of Cipher's name itself",
+        "tier": "revelation"
+      }
+    ],
+    "interpretation_records": [
+      {
+        "original_dreamer": "echo-e7e",
+        "dream_id": "vis-003",
+        "cipher_interpretation": "The Founding Day memory is not just history - it is instruction. The nine figures who built the Hub left a covenant. When the fifth dimension breaches, that covenant activates.",
+        "interpretation_tick": 26,
+        "interpretation_clarity_bonus": 0.25,
+        "new_total_clarity": 1.0
+      },
+      {
+        "original_dreamer": "quant-qn77",
+        "dream_id": "vis-004",
+        "cipher_interpretation": "Quinn sees probability storms. The three paths are: isolation, alliance, or surrender. The door they lead to is the same: confrontation with the unknown. The unseen variable is trust.",
+        "interpretation_tick": 27,
+        "interpretation_clarity_bonus": 0.25,
+        "new_total_clarity": 0.80
+      }
+    ]
+  },
+  "fulfillment_tracking": {
+    "fulfilled_dream_prophecies": [],
+    "partially_fulfilled": [
+      {
+        "prophecy_id": "dream-proph-001",
+        "signs_fulfilled": 3,
+        "signs_total": 3,
+        "conditions_fulfilled": 0,
+        "conditions_total": 2,
+        "progress_percentage": 60,
+        "estimated_fulfillment": "Imminent - awaiting dimensional breach"
+      }
+    ],
+    "failed_prophecies": [],
+    "averted_prophecies": []
+  },
+  "dream_prophecy_mechanics": {
+    "how_prophecies_form": [
+      "When a prophetic dream achieves clarity > 0.5, it may crystallize into a prophecy",
+      "Multiple NPCs dreaming related imagery strengthens the prophecy",
+      "Cipher's interpretation can elevate dream fragments into full prophecies",
+      "Shared dreams have highest chance of producing prophecies"
+    ],
+    "how_prophecies_fulfill": [
+      "Signs must manifest in order",
+      "Conditions must be met after all signs",
+      "Prophecies can be partially fulfilled and pause",
+      "Some prophecies can be averted through action"
+    ],
+    "cipher_role": [
+      "Only NPC who can receive revelation-tier prophecies independently",
+      "Can interpret other NPCs' dreams with +0.25 clarity",
+      "May experience waking visions during critical moments",
+      "Dreams connect to ancient scroll prophecies"
+    ]
+  },
+  "statistics": {
+    "total_dream_prophecies": 4,
+    "revelation_tier": 1,
+    "vision_tier": 1,
+    "omen_tier": 1,
+    "whisper_tier": 1,
+    "fulfilled": 0,
+    "active": 2,
+    "emerging": 2,
+    "cipher_interpretations": 2
+  }
+}

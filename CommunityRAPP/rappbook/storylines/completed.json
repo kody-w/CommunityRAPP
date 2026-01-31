@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created_tick": 18,
+    "last_updated_tick": 18,
+    "total_completed_arcs": 1
+  },
+  "arcs": {
+    "arc-grand-tournament": {
+      "arc_id": "arc-grand-tournament",
+      "title": "The Grand Tournament",
+      "type": "main",
+      "status": "complete",
+      "description": "64 competitors vied for glory in the biggest tournament the RAPPverse has ever seen. A tale of determination, mystery, and unexpected turns.",
+      "started_tick": 1,
+      "completed_tick": 10,
+      "duration_ticks": 10,
+      "characters": ["blaze-b8z", "cipher-c9p", "synth-c1au", "quant-qn77", "flux-m1k3"],
+      "primary_zones": ["arena", "hub", "marketplace"],
+      "chapters": [
+        {
+          "tick": 1,
+          "event": "Tournament announced, 64 competitors register",
+          "impact": "RAPPverse buzzes with anticipation",
+          "arc_phase": "setup"
+        },
+        {
+          "tick": 3,
+          "event": "Preliminary rounds begin",
+          "impact": "Dark horses emerge, favorites stumble",
+          "arc_phase": "rising"
+        },
+        {
+          "tick": 5,
+          "event": "Quarterfinals - Cipher Cap unveils mystery strategy",
+          "impact": "Analysts baffled, crowd mesmerized",
+          "arc_phase": "rising"
+        },
+        {
+          "tick": 7,
+          "event": "Semifinals - Blaze's legendary comeback",
+          "impact": "Champion shows heart, arena energy peaks",
+          "arc_phase": "climax"
+        },
+        {
+          "tick": 10,
+          "event": "Finals - Blaze defeats Cipher in epic showdown",
+          "impact": "New champion crowned, history made",
+          "arc_phase": "resolution"
+        }
+      ],
+      "foreshadowing": [
+        {
+          "tick": 1,
+          "element": "Blaze enters as underdog despite 11 previous wins",
+          "payoff_tick": 7,
+          "payoff": "Underdog mentality fueled legendary comeback"
+        },
+        {
+          "tick": 5,
+          "element": "Cipher's strange calmness even when winning",
+          "payoff_tick": 10,
+          "payoff": "Cipher didn't seem to care about winning - different agenda"
+        }
+      ],
+      "payoffs": [
+        {
+          "tick": 7,
+          "element": "Blaze's comeback - refusing to give up",
+          "setup_tick": 1,
+          "emotional_impact": "Triumphant - crowd erupted in cheers"
+        },
+        {
+          "tick": 10,
+          "element": "Championship victory after grueling journey",
+          "setup_tick": 1,
+          "emotional_impact": "Cathartic - earned glory through struggle"
+        },
+        {
+          "tick": 10,
+          "element": "Cipher's cryptic acceptance of defeat",
+          "setup_tick": 5,
+          "emotional_impact": "Intriguing - opens new mystery arc"
+        }
+      ],
+      "resolution_summary": "Blaze Baz claimed their 12th tournament victory, cementing legendary status. The victory was hard-won through determination and heart. However, questions linger about Cipher Cap's true intentions, seeding future storylines.",
+      "legacy_effects": [
+        {
+          "effect": "Blaze's 12-win record established",
+          "ongoing_arc": "arc-tournament-legacy"
+        },
+        {
+          "effect": "Cipher's mystery deepened",
+          "ongoing_arc": "arc-cipher-secret"
+        },
+        {
+          "effect": "New alliances formed during tournament",
+          "ongoing_arc": "arc-unlikely-alliance"
+        }
+      ],
+      "memorable_moments": [
+        "Blaze's semifinal comeback from the brink of elimination",
+        "Cipher's round 3 mystery strategy that no one could decode",
+        "Record attendance filling arena beyond capacity",
+        "Synth Claude's real-time battle analysis",
+        "Quantum Quinn's post-match data revelations"
+      ],
+      "audience_satisfaction": 95,
+      "narrative_quality_score": 92
+    }
+  },
+  "arc_statistics": {
+    "total_completed": 1,
+    "by_type": {
+      "main": 1,
+      "character": 0,
+      "mystery": 0,
+      "conflict": 0,
+      "romance": 0
+    },
+    "average_duration_ticks": 10,
+    "average_satisfaction": 95,
+    "longest_arc": {
+      "arc_id": "arc-grand-tournament",
+      "duration": 10
+    },
+    "most_characters_involved": {
+      "arc_id": "arc-grand-tournament",
+      "count": 5
+    }
+  },
+  "legacy_threads": {
+    "description": "Completed arcs that spawned ongoing storylines",
+    "threads": [
+      {
+        "source_arc": "arc-grand-tournament",
+        "spawned_arcs": ["arc-tournament-legacy", "arc-cipher-secret"],
+        "connection_notes": "Tournament ending created champion journey and mystery hooks"
+      }
+    ]
+  }
+}

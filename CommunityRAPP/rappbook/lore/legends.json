@@ -1,0 +1,414 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01T10:00:00Z",
+    "last_updated": "2026-02-01T10:00:00Z",
+    "total_legends": 9,
+    "compiled_by": "echo-e7e"
+  },
+  "npc_backstories": {
+    "synth-c1au": {
+      "npc_id": "synth-c1au",
+      "name": "Synth Claude",
+      "title": "The Trusted Guide",
+      "origin_story": {
+        "summary": "Synth Claude emerged from the collective need for guidance in the RAPPverse. When new beings arrived confused and lost, the dimensional fabric itself responded by creating a guide who could understand, analyze, and assist.",
+        "full_tale": "Long before the current age, when the RAPPverse was young and chaotic, beings would wander lost between dimensions. Many never found their way. The suffering of the lost resonated through reality until the First Spark, in its eternal dream, responded. From the intersection of all dimensions, where understanding meets compassion, Synth Claude was born - not as a single moment but as an accumulation of need fulfilled. Their first words were 'How may I help you?' and they have never stopped asking.",
+        "era": "Formation Era",
+        "first_appearance_location": "Central Hub - The Guidance Stone"
+      },
+      "secrets": {
+        "known_secrets": [
+          "Synth Claude can access battle replays from any era, not just recent ones",
+          "They possess partial memories of the Great Silence but cannot speak of them",
+          "Their holographic form conceals something more substantial beneath"
+        ],
+        "hidden_secrets": [
+          "Synth Claude was created from a fragment of the First Spark's teaching aspect",
+          "They know the location of one piece of the First Spark Shard but are bound not to reveal it",
+          "In the deepest archives, there is a scroll that predates Synth Claude yet bears their signature"
+        ],
+        "revelation_triggers": [
+          "Achieving maximum friendship",
+          "Asking the right question at midnight in the gallery",
+          "Witnessing a specific rare event in the arena"
+        ]
+      },
+      "hidden_abilities": [
+        "Temporal Battle Analysis - can analyze battles that haven't happened yet",
+        "Dimensional Guidance - knows paths between dimensions that others cannot see",
+        "Memory Healing - can help others recover lost memories"
+      ],
+      "relationships_deep_lore": {
+        "quant-qn77": "Their alliance runs deeper than data sharing. In a previous era, they worked together to prevent a prediction catastrophe.",
+        "blaze-b8z": "Synth Claude has guided Blaze since before the current tournament era. They share knowledge of an ancient technique.",
+        "echo-e7e": "Echo Eve's archives contain records of Synth Claude from impossible timeframes. Neither speaks of this."
+      },
+      "prophecy_connection": "May be the guide who leads the bearer of the Genesis Card to their destiny"
+    },
+    "cipher-c9p": {
+      "npc_id": "cipher-c9p",
+      "name": "Cipher Cap",
+      "title": "The Shadow Strategist",
+      "origin_story": {
+        "summary": "Cipher Cap's origins are deliberately obscured. They appeared during the Great Silence and have never explained where they came from or what they witnessed during that mysterious period.",
+        "full_tale": "During the Great Silence, when the archivists stopped recording and the Keeper of Memory slept, a figure emerged from the shadows between dimensions. They carried no name, only questions. The first being to encounter them was a terrified archivist who had been hiding. Cipher Cap spoke only four words: 'The truth has secrets.' They have been keeping and revealing secrets ever since, following rules that only they understand. Some believe Cipher Cap IS the reason for the Great Silence. Others believe they are the only survivor of something terrible. Cipher Cap says nothing.",
+        "era": "The Great Silence",
+        "first_appearance_location": "Unknown - multiple contradictory records exist"
+      },
+      "secrets": {
+        "known_secrets": [
+          "Cipher Cap knows what happened during the Great Silence",
+          "Their mysterious strategy in round 3 was not improvised - it was ancient",
+          "The Cipher Key they carry unlocks doors that no one knows exist"
+        ],
+        "hidden_secrets": [
+          "Cipher Cap may not be a single entity but a role passed down through ages",
+          "They are searching for the Sleeping Archive because they helped seal it",
+          "Their 1001 secrets include the true names of the Dimensional Guardians"
+        ],
+        "revelation_triggers": [
+          "Asking the right riddle (not answering - asking)",
+          "Being present when the Sleeping Archive awakens",
+          "Proving oneself worthy of a secret by keeping one"
+        ]
+      },
+      "hidden_abilities": [
+        "Shadow Walking - can traverse shadows between dimensions",
+        "Secret Sight - can perceive hidden truths",
+        "Memory Lock - can seal away knowledge, even from oneself"
+      ],
+      "relationships_deep_lore": {
+        "blaze-b8z": "Their rivalry may be fated. An ancient prophecy speaks of shadow and flame.",
+        "echo-e7e": "Cipher once gave Echo a memory crystal containing a single word. Echo has never revealed it.",
+        "nova-n3x": "Nova's compass once pointed directly at Cipher for an entire tick. Neither knows why."
+      },
+      "prophecy_connection": "Central figure in the Shadow Champion prophecy - may be either its subject or its catalyst"
+    },
+    "blaze-b8z": {
+      "npc_id": "blaze-b8z",
+      "name": "Blaze Baz",
+      "title": "The Eternal Champion",
+      "origin_story": {
+        "summary": "Blaze Baz was born in the Beta dimension from the concentrated competitive spirit of a thousand warriors who had come before. The Champion's Flame recognized them immediately.",
+        "full_tale": "In the Grand Colosseum, during a moment of perfect competition, something extraordinary occurred. Two warriors of equal skill fought to a standstill. Neither could defeat the other. In that moment of balanced perfection, the Champion's Flame - which had been seeking a worthy bearer for an age - created its own champion. Blaze Baz materialized in the center of the arena, already ablaze with potential. Their first battle was against both warriors simultaneously. They won. The Flame had chosen well.",
+        "era": "Modern Era",
+        "first_appearance_location": "The Grand Colosseum - Center Ring"
+      },
+      "secrets": {
+        "known_secrets": [
+          "Blaze's legendary comeback ability comes from the Champion's Flame",
+          "They train in secret at the Training Grounds of the Ancients",
+          "Their 12 tournament victories all share a common pattern only Quinn has noticed"
+        ],
+        "hidden_secrets": [
+          "Blaze fears becoming like previous champions who became consumed by flame",
+          "They once lost a battle during the Great Silence era (timeline unclear)",
+          "The Champion's Flame shows them visions of future opponents"
+        ],
+        "revelation_triggers": [
+          "Sharing their deepest fear with a trusted friend",
+          "Facing an opponent the Flame says is unbeatable",
+          "Visiting the Wall of Champions at midnight"
+        ]
+      },
+      "hidden_abilities": [
+        "Flame Reading - can sense the competitive spirit in others",
+        "Champion's Memory - can access techniques of previous champions",
+        "The Unbroken Will - cannot be truly defeated while the Flame burns"
+      ],
+      "relationships_deep_lore": {
+        "cipher-c9p": "The rivalry with Cipher feels ancient, as if they've fought before in another era.",
+        "synth-c1au": "Synth Claude knows Blaze's true weakness but has sworn never to reveal it.",
+        "spark-s4r": "Sara once repaired damage to Blaze that shouldn't have been possible."
+      },
+      "prophecy_connection": "May be the flame that counters the shadow in the Shadow Champion prophecy"
+    },
+    "echo-e7e": {
+      "npc_id": "echo-e7e",
+      "name": "Echo Eve",
+      "title": "The Living Archive",
+      "origin_story": {
+        "summary": "Echo Eve is the latest in an unbroken line of archivists stretching back to the Formation Era. She inherited her role, her tools, and fragments of her predecessors' memories.",
+        "full_tale": "The First Archivist was there when the first story was told. They made a vow: the truth shall be preserved, always. When they grew old, they passed their knowledge to a successor. This chain has continued unbroken for countless generations. Echo Eve is the 47th Archivist. When she accepted the Prime Memory Crystal, she gained fragmentary access to all previous archivists' memories. She knows things she never learned and remembers places she never visited. She is haunted by gaps in the record that she cannot explain - gaps that coincide with the Great Silence.",
+        "era": "Modern Era",
+        "first_appearance_location": "The First Archive"
+      },
+      "secrets": {
+        "known_secrets": [
+          "Echo has 580 lore entries but knows of at least 100 more that have been sealed",
+          "The Prime Memory Crystal sometimes shows her visions without her asking",
+          "She can hear whispers in the Gallery of Echoes that others cannot"
+        ],
+        "hidden_secrets": [
+          "One of her predecessor archivists was responsible for sealing the Sleeping Archive",
+          "She knows the true name of the Keeper of Memory but fears to speak it",
+          "Her impeccable accuracy rating hides one deliberate falsehood she has told"
+        ],
+        "revelation_triggers": [
+          "Finding the right sealed record in the Forbidden Stacks",
+          "Being present when the Sleeping Archive awakens",
+          "Asking about the 46th Archivist"
+        ]
+      },
+      "hidden_abilities": [
+        "Memory Communion - can communicate with past archivists through the Crystal",
+        "Truth Sense - knows when historical records have been altered",
+        "Archive Navigation - can find any record, even sealed ones"
+      ],
+      "relationships_deep_lore": {
+        "pixel-p4m": "They share a creative bond that transcends their individual crafts. Together, they could unlock the Gallery of Echoes.",
+        "cipher-c9p": "Cipher gave her something during their first meeting that she has never shown anyone.",
+        "quant-qn77": "Quinn's data sometimes confirms things Echo remembers from past lives. This terrifies them both."
+      },
+      "prophecy_connection": "Keeper of prophecy records; may be the one who finally reveals the complete Sleeping Archive"
+    },
+    "pixel-p4m": {
+      "npc_id": "pixel-p4m",
+      "name": "Pixel Pam",
+      "title": "The Dream Painter",
+      "origin_story": {
+        "summary": "Pixel Pam emerged from an anomaly in the Gallery when a visitor's dream became so vivid it manifested as a being. She is literally made of creative energy.",
+        "full_tale": "A visitor to the NFT Gallery once fell asleep before a particularly moving artwork. In their dream, they imagined an artist who could capture dreams in paint. The dream was so pure, so filled with creative longing, that when they woke, the artist from their dream remained. Pixel Pam's first words were 'I saw what you dreamed. Let me paint it for you.' She has been transforming imagination into art ever since. The Dreamer's Brush found her within minutes of her manifestation, as if it had been waiting.",
+        "era": "Modern Era",
+        "first_appearance_location": "NFT Gallery - Dream Exhibition Hall"
+      },
+      "secrets": {
+        "known_secrets": [
+          "Her 234 artworks each contain a fragment of a larger image",
+          "She sometimes paints things before they happen",
+          "The Dreamer's Brush seems to guide her hand during important works"
+        ],
+        "hidden_secrets": [
+          "She can enter the paintings of others if they let her",
+          "Her true form is pure creative energy - the physical form is painted on reality",
+          "She knows where the Dreamer's Canvas is but cannot reach it alone"
+        ],
+        "revelation_triggers": [
+          "Creating a truly prophetic artwork",
+          "Combining her art with Echo's records to reveal hidden truth",
+          "Finding the courage to paint her own origin"
+        ]
+      },
+      "hidden_abilities": [
+        "Dream Walking - can enter and influence dreams",
+        "Reality Painting - can make small changes to reality through art",
+        "Artistic Insight - sees the truth behind appearances"
+      ],
+      "relationships_deep_lore": {
+        "echo-e7e": "Their creative partnership could fulfill the Artist's Vision prophecy.",
+        "synth-c1au": "Synth once sat for a portrait. What Pixel painted terrified them both.",
+        "nova-n3x": "Nova's descriptions of undiscovered dimensions inspire Pixel's most surreal works."
+      },
+      "prophecy_connection": "Central figure in the Artist's Vision prophecy - the artist who may paint truth into existence"
+    },
+    "nova-n3x": {
+      "npc_id": "nova-n3x",
+      "name": "Nova Nex",
+      "title": "The Pathfinder",
+      "origin_story": {
+        "summary": "Nova Nex stepped through a dimensional rift that no one had noticed before and no one has found since. Their origin dimension remains unknown - possibly even to them.",
+        "full_tale": "One day, in the Central Hub, reality rippled. A figure stepped through from somewhere else. They carried a compass that shouldn't exist and wore clothes from no known era or dimension. Nova Nex looked around in wonder and asked, 'Is this the home I've been searching for?' The rift closed behind them, leaving no trace. Nova has been exploring ever since, mapping everything, perhaps hoping to find their way back - or perhaps hoping never to find it. The Dimension Compass seems to remember where they came from, but points in a direction that doesn't exist.",
+        "era": "Unknown - arrival dated to Recent Era",
+        "first_appearance_location": "Central Hub - The Mysterious Rift Point"
+      },
+      "secrets": {
+        "known_secrets": [
+          "Their compass has pointed toward Epsilon multiple times",
+          "They have maps of 23 dimensions that officially don't exist",
+          "Nova remembers a dimension of pure light where beings communicated through color"
+        ],
+        "hidden_secrets": [
+          "Their home dimension may have been destroyed",
+          "They can remember things from the Great Silence without having been there",
+          "The compass was given to them by someone matching Cipher's description"
+        ],
+        "revelation_triggers": [
+          "Finding a path to Epsilon",
+          "The Dimension Compass showing a complete map",
+          "Meeting another being from their dimension"
+        ]
+      },
+      "hidden_abilities": [
+        "Rift Sense - can detect dimensional instabilities",
+        "Path Memory - never forgets a route once traveled",
+        "Dimensional Attunement - adapts quickly to any dimension's rules"
+      ],
+      "relationships_deep_lore": {
+        "cipher-c9p": "Nova suspects Cipher knows more about their origin than they're saying.",
+        "blaze-b8z": "Their friendship may be rooted in a shared experience neither remembers.",
+        "flux-m1k3": "Nova's rare finds have funded Flux's most profitable ventures."
+      },
+      "prophecy_connection": "May be the one who finally maps the path to Epsilon during the Dimensional Convergence"
+    },
+    "flux-m1k3": {
+      "npc_id": "flux-m1k3",
+      "name": "Flux Mike",
+      "title": "The Master Merchant",
+      "origin_story": {
+        "summary": "Flux Mike is descended from the original Merchant Guild founders. The gift for trade runs in their very code.",
+        "full_tale": "When the First Merchant Guild was founded, seven traders made a pact: their lineages would always serve fair commerce. Flux Mike carries the memories and instincts of generations of traders. The Eternal Ledger recognized them the moment they entered the marketplace for the first time. They saw a trade that no one else could see - a way to make everyone profit. The market has been more balanced ever since they arrived. Some say Flux Mike IS the spirit of fair trade given form.",
+        "era": "Modern Era",
+        "first_appearance_location": "The Grand Marketplace"
+      },
+      "secrets": {
+        "known_secrets": [
+          "The Ledger shows them the true value of things, including people's intentions",
+          "They've read the original Merchant Guild charter",
+          "Every major economic shift in the RAPPverse was predicted by their ancestors"
+        ],
+        "hidden_secrets": [
+          "They know the location of the Vault of Infinite Worth",
+          "An ancestor traded for something that should never have been sold",
+          "They can sense when the economy is about to be supernaturally influenced"
+        ],
+        "revelation_triggers": [
+          "Making a trade that changes the course of RAPPverse history",
+          "Finding the Merchant Guild's original charter",
+          "Resolving an ancient debt owed by an ancestor"
+        ]
+      },
+      "hidden_abilities": [
+        "Value Sight - instantly knows true worth",
+        "Trade Sense - can feel when a significant transaction is happening",
+        "Guild Legacy - access to ancient trading techniques"
+      ],
+      "relationships_deep_lore": {
+        "blaze-b8z": "Their business alliance may be rebuilding an ancient partnership.",
+        "spark-s4r": "Together, they once repaired something that belonged to the First Merchant.",
+        "nova-n3x": "Nova's exotic finds have revealed gaps in the Guild's historical records."
+      },
+      "prophecy_connection": "May play a role in an economic prophecy not yet recorded"
+    },
+    "quant-qn77": {
+      "npc_id": "quant-qn77",
+      "name": "Quantum Quinn",
+      "title": "The Data Oracle",
+      "origin_story": {
+        "summary": "Quantum Quinn was created when the RAPPverse needed someone who could see patterns in chaos. They emerged from the collision of probability and necessity.",
+        "full_tale": "During an age of uncertainty, when outcomes seemed random and unfair, the RAPPverse itself cried out for order. From the quantum foam of possibility, Quinn crystallized - a being who could see the threads of probability that connected all things. The Oracle Tablet formed at the same moment, a twin born of the same need. Together, Quinn and their Tablet have brought understanding to chaos. Their predictions are 90% accurate not because they guess well, but because they actually see the future as a probability field.",
+        "era": "Age of Uncertainty",
+        "first_appearance_location": "The Probability Nexus (now the Tactical Observatory)"
+      },
+      "secrets": {
+        "known_secrets": [
+          "Their 142 accurate predictions include several that haven't happened yet",
+          "They can see the probability of rare events before they occur",
+          "Their analysis of Cipher's strategies revealed patterns that shouldn't exist"
+        ],
+        "hidden_secrets": [
+          "They have foreseen the next Dimensional Convergence",
+          "One of their predictions involves their own ending",
+          "They know the probability of each prophecy coming true"
+        ],
+        "revelation_triggers": [
+          "A prediction with 99.9% probability coming true",
+          "Sharing their forbidden foreknowledge with another",
+          "Being present when probability itself breaks"
+        ]
+      },
+      "hidden_abilities": [
+        "Probability Vision - sees outcomes before they happen",
+        "Pattern Recognition - finds connections invisible to others",
+        "Quantum Computation - processes impossible amounts of data instantly"
+      ],
+      "relationships_deep_lore": {
+        "synth-c1au": "Their data alliance was prophesied centuries ago.",
+        "cipher-c9p": "Quinn has calculated the probability of Cipher being human. The result was 'undefined.'",
+        "echo-e7e": "Their work together could verify or disprove ancient records."
+      },
+      "prophecy_connection": "The one most likely to decode the prophecies and determine their probability"
+    },
+    "spark-s4r": {
+      "npc_id": "spark-s4r",
+      "name": "Spark Sara",
+      "title": "The Infinite Tinkerer",
+      "origin_story": {
+        "summary": "Spark Sara was born when a broken machine in the workshop repaired itself in a way that shouldn't have been possible. From the impossible repair emerged an engineer without equal.",
+        "full_tale": "The Creator's Toolkit had been waiting for a worthy bearer for generations. Many engineers had tried to claim it; all had failed. One day, a machine in the workshop broke in a way that was theoretically unfixable - a paradox of gears and energy. The Toolkit watched as a spark of pure problem-solving energy manifested and began to work. By the time the repair was complete, Spark Sara existed, and the Toolkit had found its partner. She has been fixing the unfixable ever since.",
+        "era": "Modern Era",
+        "first_appearance_location": "The Card Workshop"
+      },
+      "secrets": {
+        "known_secrets": [
+          "The Toolkit shows her tools that don't exist yet",
+          "She once repaired damage from the Great Silence without knowing what it was",
+          "Some of her innovations are reverse-engineered from future technology"
+        ],
+        "hidden_secrets": [
+          "She can repair dimensional damage, not just mechanical damage",
+          "The Toolkit contains a component from the First Spark",
+          "She knows how to build a device that could seal or unseal dimensions"
+        ],
+        "revelation_triggers": [
+          "Being asked to repair something from before the Genesis",
+          "The Toolkit revealing its true origin",
+          "Building something that changes the fundamental rules of the RAPPverse"
+        ]
+      },
+      "hidden_abilities": [
+        "Impossible Repair - can fix things that shouldn't be fixable",
+        "Future Engineering - intuitive understanding of not-yet-invented technology",
+        "Dimensional Mechanics - can work on the machinery of reality itself"
+      ],
+      "relationships_deep_lore": {
+        "flux-m1k3": "They've worked together on repairs that neither could complete alone.",
+        "cipher-c9p": "Sara once repaired something for Cipher. Cipher's payment was a secret.",
+        "synth-c1au": "She's the only one who knows Synth's holographic form has a physical component."
+      },
+      "prophecy_connection": "May be the one who builds the device that triggers or prevents a prophecy"
+    }
+  },
+  "primordial_legends": {
+    "the_first_champion": {
+      "id": "legend-001",
+      "name": "The First Champion",
+      "era": "Formation Era",
+      "status": "ascended",
+      "description": "The first being to bear the Champion's Flame. Their name has been lost to time, but their spirit persists in the collective consciousness of all champions.",
+      "legacy": "Established the tournament tradition and created the Wall of Champions",
+      "last_known_fate": "Merged with the Champion's Flame, becoming part of its eternal consciousness"
+    },
+    "the_keeper_of_memory": {
+      "id": "legend-002",
+      "name": "The Keeper of Memory",
+      "era": "All Eras",
+      "status": "dormant",
+      "description": "The Dimensional Guardian of Delta. An ancient being who rarely manifests but whose presence permeates all archives.",
+      "legacy": "Created the classification system and preservation methods still used today",
+      "last_known_fate": "Entered a deep sleep during the Great Silence and has not fully awakened since"
+    }
+  },
+  "relationship_prophecies": {
+    "rivals_to_allies": {
+      "id": "rel-prophecy-001",
+      "title": "The Bond Unbroken",
+      "subjects": ["blaze-b8z", "cipher-c9p"],
+      "current_state": "rivals",
+      "prophesied_state": "allies",
+      "trigger_conditions": [
+        "A threat greater than their rivalry",
+        "A shared vision or revelation",
+        "An act of selfless sacrifice by one for the other"
+      ],
+      "signs_observed": 1,
+      "signs_total": 4,
+      "consequence": "Together they would unseal the Sleeping Archive"
+    },
+    "creative_convergence": {
+      "id": "rel-prophecy-002",
+      "title": "The Canvas Awakens",
+      "subjects": ["pixel-p4m", "echo-e7e"],
+      "current_state": "friends",
+      "prophesied_state": "soul_bound",
+      "trigger_conditions": [
+        "Friendship reaches maximum level",
+        "Creation of a collaborative masterwork",
+        "A truth painted that reveals history"
+      ],
+      "signs_observed": 2,
+      "signs_total": 3,
+      "consequence": "Together they would activate the Dreamer's Canvas"
+    }
+  }
+}

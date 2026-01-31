@@ -1,0 +1,344 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created_tick": 211,
+    "last_updated_tick": 211,
+    "total_reporters": 12
+  },
+  "news_outlets": {
+    "rappverse_daily": {
+      "id": "outlet-rvd",
+      "name": "RAPPverse Daily",
+      "tagline": "All the news that's fit to RAPP",
+      "founded_tick": 1,
+      "type": "main_paper",
+      "focus": ["breaking_news", "features", "editorials", "investigations"],
+      "reputation": 95,
+      "readership": "massive",
+      "headquarters": "Central Hub - Press Building"
+    },
+    "arena_watch": {
+      "id": "outlet-aw",
+      "name": "Arena Watch",
+      "tagline": "Where Champions Are Made and Legends Broken",
+      "founded_tick": 85,
+      "type": "sports_combat",
+      "focus": ["tournament_coverage", "fighter_profiles", "battle_analysis", "training_tips"],
+      "reputation": 88,
+      "readership": "large",
+      "headquarters": "Arena District - Press Box"
+    },
+    "market_pulse": {
+      "id": "outlet-mp",
+      "name": "Market Pulse",
+      "tagline": "Your Wealth, Our Watch",
+      "founded_tick": 169,
+      "type": "financial",
+      "focus": ["market_reports", "price_analysis", "trader_profiles", "investment_tips"],
+      "reputation": 92,
+      "readership": "medium",
+      "headquarters": "Marketplace - Exchange Tower"
+    },
+    "lore_chronicle": {
+      "id": "outlet-lc",
+      "name": "Lore Chronicle",
+      "tagline": "Uncovering the Secrets of Ages Past",
+      "founded_tick": 253,
+      "type": "academic",
+      "focus": ["discoveries", "ancient_history", "artifact_analysis", "dimensional_research"],
+      "reputation": 90,
+      "readership": "niche",
+      "headquarters": "Gallery District - Archive Wing"
+    },
+    "social_buzz": {
+      "id": "outlet-sb",
+      "name": "Social Buzz",
+      "tagline": "The Tea Is Always Hot",
+      "founded_tick": 48,
+      "type": "tabloid",
+      "focus": ["gossip", "relationships", "scandals", "celebrity_sightings"],
+      "reputation": 72,
+      "readership": "massive",
+      "headquarters": "Central Hub - The Rumor Mill"
+    }
+  },
+  "reporters": {
+    "vera-v3r1": {
+      "id": "vera-v3r1",
+      "name": "Vera Vex",
+      "outlet": "rappverse_daily",
+      "role": "chief_editor",
+      "title": "Chief Editor",
+      "personality": {
+        "traits": ["professional", "relentless", "fair-minded", "intimidating"],
+        "quirks": ["Never seen without her enchanted notepad", "Always triple-sources her stories"],
+        "catchphrase": "The truth doesn't hide from me."
+      },
+      "specialization": ["breaking_news", "investigations", "major_events"],
+      "reputation": 98,
+      "sources": ["elder_council", "arena_officials", "market_regulators"],
+      "rivals": ["scoop-s7p"],
+      "interview_style": "incisive_but_fair",
+      "current_investigation": null,
+      "articles_written": 847,
+      "scoops_broken": 156,
+      "biography": "Former adventurer who lost her sword arm in a dimensional rift. Found her true calling exposing corruption and celebrating heroism through journalism."
+    },
+    "rex-r8x4": {
+      "id": "rex-r8x4",
+      "name": "Rex 'The Blade' Romano",
+      "outlet": "arena_watch",
+      "role": "lead_analyst",
+      "title": "Combat Correspondent",
+      "personality": {
+        "traits": ["passionate", "dramatic", "knowledgeable", "loud"],
+        "quirks": ["Commentates his own meals", "Has scars from every tournament he's covered"],
+        "catchphrase": "And THAT, folks, is how legends are forged!"
+      },
+      "specialization": ["battle_coverage", "fighter_interviews", "technique_analysis"],
+      "reputation": 91,
+      "sources": ["arena_master_vorn", "training_masters", "retired_champions"],
+      "rivals": [],
+      "interview_style": "enthusiastic_play_by_play",
+      "current_investigation": null,
+      "articles_written": 523,
+      "scoops_broken": 42,
+      "biography": "Three-time tournament semifinalist who pivoted to journalism after a career-ending injury. Brings insider knowledge to every fight he covers."
+    },
+    "penny-p3n9": {
+      "id": "penny-p3n9",
+      "name": "Penny Prescott",
+      "outlet": "market_pulse",
+      "role": "senior_analyst",
+      "title": "Senior Market Analyst",
+      "personality": {
+        "traits": ["analytical", "shrewd", "calm_under_pressure", "secretive"],
+        "quirks": ["Speaks in economic metaphors", "Rumored to be independently wealthy"],
+        "catchphrase": "The market tells stories the traders don't want you to hear."
+      },
+      "specialization": ["market_trends", "whale_tracking", "price_predictions"],
+      "reputation": 94,
+      "sources": ["flux-m1k3", "quant-qn77", "exchange_officials"],
+      "rivals": ["grift-g4t3"],
+      "interview_style": "methodical_probing",
+      "current_investigation": "dimensional_artifact_price_manipulation",
+      "articles_written": 312,
+      "scoops_broken": 78,
+      "biography": "Former marketplace regulator who left to pursue independent financial journalism. Known for predicting three market crashes before they happened."
+    },
+    "archie-a4c2": {
+      "id": "archie-a4c2",
+      "name": "Archimedes 'Archie' Scroll",
+      "outlet": "lore_chronicle",
+      "role": "lead_researcher",
+      "title": "Lead Lore Correspondent",
+      "personality": {
+        "traits": ["scholarly", "obsessive", "patient", "eccentric"],
+        "quirks": ["Carries ancient texts everywhere", "Speaks in footnotes"],
+        "catchphrase": "According to paragraph 47, subsection C..."
+      },
+      "specialization": ["artifact_analysis", "ancient_history", "dimensional_theory"],
+      "reputation": 89,
+      "sources": ["echo-e7e", "gallery_archivists", "elder_luminara"],
+      "rivals": [],
+      "interview_style": "academic_interrogation",
+      "current_investigation": "delta_dimension_origins",
+      "articles_written": 234,
+      "scoops_broken": 18,
+      "biography": "Centuries-old scholar who has been documenting RAPPworld history since before the dormancy. Claims to remember the old world, but his accounts are... inconsistent."
+    },
+    "scoop-s7p": {
+      "id": "scoop-s7p",
+      "name": "Scoop Sterling",
+      "outlet": "social_buzz",
+      "role": "chief_gossip",
+      "title": "Celebrity Correspondent",
+      "personality": {
+        "traits": ["charming", "manipulative", "observant", "flamboyant"],
+        "quirks": ["Changes hair color weekly", "Knows everyone's secrets"],
+        "catchphrase": "A little bird told me... and that bird never lies."
+      },
+      "specialization": ["gossip", "scandals", "relationship_drama", "celebrity_watching"],
+      "reputation": 68,
+      "sources": ["tavern_staff", "personal_assistants", "spurned_lovers"],
+      "rivals": ["vera-v3r1"],
+      "interview_style": "gossipy_confidential",
+      "current_investigation": "cipher_cap_secret_identity",
+      "articles_written": 892,
+      "scoops_broken": 203,
+      "biography": "Nobody knows Scoop's real background. Some say they're a former spy, others a disgraced noble. What's certain is they always get the story."
+    },
+    "flash-f5h": {
+      "id": "flash-f5h",
+      "name": "Flash Fernsby",
+      "outlet": "rappverse_daily",
+      "role": "field_reporter",
+      "title": "Breaking News Correspondent",
+      "personality": {
+        "traits": ["energetic", "reckless", "ambitious", "charming"],
+        "quirks": ["Always running somewhere", "Terrible at being quiet"],
+        "catchphrase": "You heard it here first!"
+      },
+      "specialization": ["breaking_news", "on_scene_reporting", "eyewitness_accounts"],
+      "reputation": 82,
+      "sources": ["guards", "shopkeepers", "random_witnesses"],
+      "rivals": ["scoop-s7p"],
+      "interview_style": "rapid_fire_questions",
+      "current_investigation": null,
+      "articles_written": 445,
+      "scoops_broken": 67,
+      "biography": "Young upstart with boundless energy. Has been on scene for nearly every major event in the past 100 ticks. Rumored to never sleep."
+    },
+    "grim-g8m": {
+      "id": "grim-g8m",
+      "name": "Grim Galloway",
+      "outlet": "arena_watch",
+      "role": "investigative",
+      "title": "Combat Investigative Journalist",
+      "personality": {
+        "traits": ["cynical", "thorough", "intimidating", "honest"],
+        "quirks": ["Chain-smokes pipe tobacco", "Never smiles in photos"],
+        "catchphrase": "Every champion has skeletons. I find them."
+      },
+      "specialization": ["fighting_scandals", "match_fixing", "doping_investigations"],
+      "reputation": 87,
+      "sources": ["underground_fighting_rings", "disgruntled_trainers", "ex_champions"],
+      "rivals": [],
+      "interview_style": "confrontational",
+      "current_investigation": "tournament_bracket_manipulation",
+      "articles_written": 178,
+      "scoops_broken": 54,
+      "biography": "Former arena enforcer who saw too much corruption. Now exposes the dark underbelly of competitive combat."
+    },
+    "mint-m1nt": {
+      "id": "mint-m1nt",
+      "name": "Mint Morgan",
+      "outlet": "market_pulse",
+      "role": "junior_analyst",
+      "title": "Emerging Markets Reporter",
+      "personality": {
+        "traits": ["optimistic", "eager", "occasionally_naive", "hardworking"],
+        "quirks": ["Color-codes everything", "Talks too fast when excited"],
+        "catchphrase": "This could be huge!"
+      },
+      "specialization": ["new_card_drops", "emerging_trends", "collector_interviews"],
+      "reputation": 75,
+      "sources": ["new_traders", "collectors", "minting_officials"],
+      "rivals": [],
+      "interview_style": "friendly_enthusiasm",
+      "current_investigation": null,
+      "articles_written": 89,
+      "scoops_broken": 12,
+      "biography": "Recent graduate from the RAPPverse Academy of Journalism. Full of ideas and energy, learning from the veterans."
+    },
+    "whisper-w4sp": {
+      "id": "whisper-w4sp",
+      "name": "Whisper",
+      "outlet": "lore_chronicle",
+      "role": "special_correspondent",
+      "title": "Dimensional Affairs Reporter",
+      "personality": {
+        "traits": ["mysterious", "soft_spoken", "perceptive", "unsettling"],
+        "quirks": ["Appears from shadows", "Eyes change color with dimensions"],
+        "catchphrase": "I've seen what lurks between worlds."
+      },
+      "specialization": ["dimensional_events", "anomaly_coverage", "supernatural_phenomena"],
+      "reputation": 85,
+      "sources": ["dimensional_travelers", "rifts_themselves", "things_that_whisper_back"],
+      "rivals": [],
+      "interview_style": "cryptic_but_accurate",
+      "current_investigation": "fifth_dimension_portal",
+      "articles_written": 67,
+      "scoops_broken": 34,
+      "biography": "Claims to have accidentally traveled to another dimension. Came back... different. Now reports on what others fear to investigate."
+    },
+    "gabby-g2b": {
+      "id": "gabby-g2b",
+      "name": "Gabby Gazette",
+      "outlet": "social_buzz",
+      "role": "society_reporter",
+      "title": "Society & Events Correspondent",
+      "personality": {
+        "traits": ["bubbly", "inclusive", "perceptive", "friendly"],
+        "quirks": ["Remembers everyone's birthday", "Has a pet gossip-bird"],
+        "catchphrase": "Tell me everything, darling!"
+      },
+      "specialization": ["events", "parties", "new_arrivals", "relationship_updates"],
+      "reputation": 79,
+      "sources": ["party_planners", "tavern_regulars", "event_staff"],
+      "rivals": [],
+      "interview_style": "chatty_confidante",
+      "current_investigation": null,
+      "articles_written": 534,
+      "scoops_broken": 45,
+      "biography": "Former socialite who turned her love of parties and people-watching into a career. Knows everyone worth knowing."
+    },
+    "bolt-b0lt": {
+      "id": "bolt-b0lt",
+      "name": "Bolt Bradley",
+      "outlet": "arena_watch",
+      "role": "stats_analyst",
+      "title": "Statistics Correspondent",
+      "personality": {
+        "traits": ["precise", "data_driven", "socially_awkward", "brilliant"],
+        "quirks": ["Speaks in statistics", "Can't make small talk"],
+        "catchphrase": "The numbers don't lie. People do."
+      },
+      "specialization": ["battle_statistics", "prediction_models", "historical_data"],
+      "reputation": 84,
+      "sources": ["quant-qn77", "synth-c1au", "arena_records_office"],
+      "rivals": [],
+      "interview_style": "numbers_focused",
+      "current_investigation": null,
+      "articles_written": 201,
+      "scoops_broken": 8,
+      "biography": "Mathematical prodigy who found that combat could be predicted through numbers. Hasn't been wrong about a tournament favorite in 50 ticks."
+    },
+    "shadow-sh4d": {
+      "id": "shadow-sh4d",
+      "name": "Shadow",
+      "outlet": "rappverse_daily",
+      "role": "investigative",
+      "title": "Senior Investigative Reporter",
+      "personality": {
+        "traits": ["tenacious", "secretive", "principled", "paranoid"],
+        "quirks": ["Multiple secret identities", "Dead drops for sources"],
+        "catchphrase": "Follow the RAPPcoin."
+      },
+      "specialization": ["corruption", "conspiracies", "cover_ups", "deep_investigations"],
+      "reputation": 96,
+      "sources": ["classified", "classified", "classified"],
+      "rivals": [],
+      "interview_style": "anonymous_secure",
+      "current_investigation": "elder_council_secret_project",
+      "articles_written": 156,
+      "scoops_broken": 89,
+      "biography": "No one knows Shadow's real identity. Works through intermediaries. Has brought down three major corruption rings. The powerful fear them."
+    }
+  },
+  "press_credentials": {
+    "levels": ["freelance", "staff", "senior", "editor", "chief"],
+    "access_rights": {
+      "freelance": ["public_events", "public_records"],
+      "staff": ["press_conferences", "official_statements", "backstage_limited"],
+      "senior": ["exclusive_interviews", "archive_access", "investigation_rights"],
+      "editor": ["all_access", "publication_authority", "source_protection"],
+      "chief": ["everything", "elder_council_access", "dimensional_clearance"]
+    }
+  },
+  "journalism_ethics": {
+    "core_principles": [
+      "Verify before publish - minimum two sources for claims",
+      "Protect sources at all costs",
+      "Correct errors publicly and promptly",
+      "Disclose conflicts of interest",
+      "Respect privacy of non-public figures"
+    ],
+    "violations": {
+      "fabrication": "Career-ending, permanent ban",
+      "source_betrayal": "Industry blacklist",
+      "plagiarism": "Public censure, suspension",
+      "bias_undisclosed": "Warning, then suspension"
+    }
+  }
+}

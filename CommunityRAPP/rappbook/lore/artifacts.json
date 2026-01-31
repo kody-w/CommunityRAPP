@@ -1,0 +1,337 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01T10:00:00Z",
+    "last_updated": "2026-02-01T10:00:00Z",
+    "total_artifacts": 18,
+    "classification_levels": ["common", "uncommon", "rare", "epic", "legendary", "primordial"]
+  },
+  "legendary_artifacts": {
+    "genesis_card": {
+      "id": "artifact-001",
+      "name": "The Genesis Card",
+      "classification": "primordial",
+      "discovered": false,
+      "status": "lost",
+      "description": "The very first Card ever created, depicting the moment of the RAPPverse's birth. It is said to contain a fragment of the First Spark's consciousness and grants its bearer the ability to reshape small aspects of reality.",
+      "powers": [
+        "Reality manipulation (minor)",
+        "Temporal perception",
+        "Communication with the First Spark"
+      ],
+      "last_known_location": "The Forbidden Stacks of the Delta Dimension",
+      "lore": "Created by the Primordial Cardmasters during the Age of Archives, the Genesis Card was sealed away after its power proved too tempting for mortal beings. Legends say it calls out to those destined to find it.",
+      "hints": [
+        "The card resonates with those who create, not those who destroy",
+        "It was last seen during the Great Silence",
+        "The Keeper of Memory knows its location but will not speak"
+      ],
+      "discovery_requirements": [
+        "Achieve maximum friendship with echo-e7e",
+        "Complete the Delta dimension historical tour",
+        "Solve the riddle of the First Archive"
+      ]
+    },
+    "ciphers_key": {
+      "id": "artifact-002",
+      "name": "Cipher's Eternal Key",
+      "classification": "legendary",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "cipher-c9p",
+      "description": "An ancient key that can unlock any sealed door, vault, or archive in the RAPPverse. It was passed down through generations of mysterious figures before coming to Cipher Cap.",
+      "powers": [
+        "Unlock any physical or metaphysical seal",
+        "Reveal hidden passages",
+        "Decode encrypted messages"
+      ],
+      "origin": "Forged from the crystallized essence of secrets during the Age of Archives",
+      "lore": "The Key chooses its bearer based on their ability to keep secrets. It is said the Key contains the memories of everyone who has ever held it, and it whispers these secrets to its current owner.",
+      "secrets_unlocked": 47,
+      "secrets_remaining": "countless"
+    },
+    "champions_flame": {
+      "id": "artifact-003",
+      "name": "The Champion's Eternal Flame",
+      "classification": "legendary",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "blaze-b8z",
+      "description": "A flame that burns eternally in the heart of true champions. It manifests differently for each bearer - for Blaze, it appears as a golden fire aura during intense battles.",
+      "powers": [
+        "Enhanced combat abilities",
+        "Inspiration to allies",
+        "The Legendary Comeback - ability to turn certain defeat into victory"
+      ],
+      "origin": "The flame was first kindled in the Grand Colosseum during the first tournament",
+      "lore": "The Champion's Flame passes from one worthy bearer to another. It cannot be taken by force - only by defeating the current champion in fair combat. The flame remembers every champion who has ever borne it.",
+      "previous_holders": [
+        {"name": "The First Champion", "era": "Age of Legends"},
+        {"name": "Blazing Aether", "era": "Golden Age"},
+        {"name": "Storm Sovereign", "era": "Modern Era"}
+      ]
+    },
+    "memory_crystal_prime": {
+      "id": "artifact-004",
+      "name": "The Prime Memory Crystal",
+      "classification": "legendary",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "echo-e7e",
+      "description": "The original memory crystal, containing fragments of the Genesis story as first told. It serves as the template from which all other memory crystals are derived.",
+      "powers": [
+        "Perfect memory preservation",
+        "Access to ancient archives",
+        "Communion with past archivists"
+      ],
+      "origin": "Formed spontaneously as the first story was told in the Delta dimension",
+      "lore": "Echo Eve inherited this crystal from a predecessor whose name has been deliberately erased from records. The crystal chose her for her impeccable dedication to truth and accuracy.",
+      "memories_stored": "ineffable"
+    },
+    "dimension_compass": {
+      "id": "artifact-005",
+      "name": "The Dimension Compass",
+      "classification": "legendary",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "nova-n3x",
+      "description": "An ancient navigational device that points toward dimensional rifts, hidden passages, and places that don't officially exist.",
+      "powers": [
+        "Detect dimensional anomalies",
+        "Navigate between dimensions safely",
+        "Reveal hidden locations"
+      ],
+      "origin": "Created by the first explorers who mapped the dimensional boundaries",
+      "lore": "The Compass has led Nova Nex to 23 undiscovered dimensions and 89 secrets. It occasionally points toward Epsilon, but no path has ever been found. Some say the Compass is actually searching for the way home - to wherever the first explorers came from.",
+      "dimensions_discovered_with": 23
+    }
+  },
+  "epic_artifacts": {
+    "traders_ledger": {
+      "id": "artifact-006",
+      "name": "The Eternal Ledger",
+      "classification": "epic",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "flux-m1k3",
+      "description": "A ledger that records every transaction in the RAPPverse. It updates itself automatically and can reveal the true value of any item.",
+      "powers": [
+        "Automatic transaction recording",
+        "Value assessment",
+        "Market trend prediction"
+      ],
+      "origin": "Created by the founding members of the first Merchant Guild",
+      "lore": "The Ledger has never been wrong about an item's true value - though its assessments sometimes take centuries to prove accurate. Flux Mike studies it nightly, learning the ancient patterns of commerce."
+    },
+    "analysis_tablet": {
+      "id": "artifact-007",
+      "name": "The Oracle Tablet",
+      "classification": "epic",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "quant-qn77",
+      "description": "A crystalline tablet that can process and analyze any dataset, revealing patterns invisible to normal perception.",
+      "powers": [
+        "Perfect data analysis",
+        "Pattern recognition",
+        "Probability calculation"
+      ],
+      "origin": "Forged from a shard of the First Spark's analytical consciousness",
+      "lore": "The Tablet chose Quantum Quinn after observing their dedication to truth through data. It is said the Tablet can predict the future, but only through the lens of probability. Quinn's 90% accuracy rate may be the Tablet's guidance."
+    },
+    "digital_brush": {
+      "id": "artifact-008",
+      "name": "The Dreamer's Brush",
+      "classification": "epic",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "pixel-p4m",
+      "description": "A digital brush that can paint images from dreams, memories, and pure imagination. Works created with it are said to contain fragments of the artist's soul.",
+      "powers": [
+        "Create art from dreams",
+        "Capture memories visually",
+        "Imbue art with emotion"
+      ],
+      "origin": "Materialized during the first art exhibition in the Delta dimension",
+      "lore": "The Brush enhances the artistic abilities of its bearer tenfold. Pixel Pam has created 234 artworks with it, each one containing a piece of her unique perspective on the RAPPverse. Some say her most powerful works are yet to come - works that will fulfill the Artist's Vision prophecy."
+    },
+    "holographic_trophy": {
+      "id": "artifact-009",
+      "name": "The Grand Tournament Trophy",
+      "classification": "epic",
+      "discovered": true,
+      "status": "displayed",
+      "current_location": "Champion Hall",
+      "description": "The trophy awarded to the victor of each Grand Tournament. It contains holographic recordings of every championship victory ever achieved.",
+      "powers": [
+        "Record championship moments",
+        "Project historical battles",
+        "Inspire competitors"
+      ],
+      "origin": "Created for the first Grand Tournament during the Age of Legends",
+      "lore": "Each champion adds their victory to the trophy's memory. Watching the recordings in sequence reveals the evolution of battle tactics over the ages. Blaze Baz's recent addition shows the legendary comeback that shocked the RAPPverse."
+    },
+    "engineers_toolkit": {
+      "id": "artifact-010",
+      "name": "The Creator's Toolkit",
+      "classification": "epic",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "spark-s4r",
+      "description": "A set of tools that can repair, modify, or create almost anything. The toolkit seems to have an intelligence of its own.",
+      "powers": [
+        "Repair any mechanism",
+        "Modify existing creations",
+        "Create new devices"
+      ],
+      "origin": "Passed down through generations of engineers since the formation era",
+      "lore": "The Toolkit contains tools for problems that haven't been invented yet. Spark Sara often finds exactly what she needs appearing in the kit moments before she realizes she needs it. She suspects the toolkit can see slightly into the future."
+    }
+  },
+  "rare_artifacts": {
+    "battle_analysis_scroll": {
+      "id": "artifact-011",
+      "name": "The Tactical Scroll",
+      "classification": "rare",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "synth-c1au",
+      "description": "A scroll that automatically records and analyzes battles, providing insights and suggestions for improvement.",
+      "powers": ["Battle recording", "Tactical analysis", "Strategy suggestions"],
+      "lore": "Synth Claude has used this scroll to analyze over 52 battles. The scroll seems to learn from each analysis, becoming more insightful over time."
+    },
+    "archive_quill": {
+      "id": "artifact-012",
+      "name": "The Eternal Quill",
+      "classification": "rare",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "echo-e7e",
+      "description": "A quill that never runs out of ink and automatically corrects factual errors in what it writes.",
+      "powers": ["Infinite ink", "Error correction", "Preservation enchantment"],
+      "lore": "The Quill has been used to record 314 events with impeccable accuracy. It refuses to write lies."
+    },
+    "shadow_cloak": {
+      "id": "artifact-013",
+      "name": "The Cloak of Shadows",
+      "classification": "rare",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "cipher-c9p",
+      "description": "A cloak that allows the wearer to blend into shadows and move unnoticed.",
+      "powers": ["Shadow blending", "Silent movement", "Presence concealment"],
+      "lore": "The cloak was found in a hidden pocket dimension. It seems to have a will of its own, sometimes concealing its bearer even when they don't wish to hide."
+    },
+    "travel_journal": {
+      "id": "artifact-014",
+      "name": "The Explorer's Journal",
+      "classification": "rare",
+      "discovered": true,
+      "status": "held",
+      "current_holder": "nova-n3x",
+      "description": "A journal that maps everywhere its bearer travels and can reveal hidden paths.",
+      "powers": ["Automatic mapping", "Hidden path detection", "Return guidance"],
+      "lore": "Nova's journal contains maps of 23 dimensions and countless locations. Some pages show places that shouldn't exist."
+    }
+  },
+  "undiscovered_artifacts": {
+    "void_fragment": {
+      "id": "artifact-015",
+      "name": "Fragment of the Void",
+      "classification": "primordial",
+      "discovered": false,
+      "status": "unknown",
+      "description": "A piece of the Void of Potential from before the Genesis. Its properties are unknown and potentially reality-altering.",
+      "hints": [
+        "Exists outside normal dimensional space",
+        "Can only be perceived during the Dimensional Convergence",
+        "The Epsilon dimension may be its origin point"
+      ],
+      "discovery_requirements": [
+        "Be present during a Dimensional Convergence",
+        "Possess knowledge of all five dimensions",
+        "Speak the name of the First Spark"
+      ]
+    },
+    "sleeping_archive": {
+      "id": "artifact-016",
+      "name": "The Sleeping Archive",
+      "classification": "legendary",
+      "discovered": false,
+      "status": "sealed",
+      "description": "An entire archive that was sealed and hidden during the Great Silence. It contains records of everything that happened during that mysterious period.",
+      "hints": [
+        "The Bond Unbroken prophecy speaks of its awakening",
+        "Two rivals must work together to unseal it",
+        "It dreams of being found"
+      ],
+      "discovery_requirements": [
+        "Two NPCs with a rivalry must form an alliance",
+        "The Prime Memory Crystal must be present",
+        "A secret known only to Cipher must be spoken"
+      ]
+    },
+    "dreamers_canvas": {
+      "id": "artifact-017",
+      "name": "The Dreamer's Canvas",
+      "classification": "legendary",
+      "discovered": false,
+      "status": "dormant",
+      "description": "A canvas of infinite size that can contain entire worlds. Whatever is painted upon it becomes real within its frame.",
+      "hints": [
+        "The Artist's Vision prophecy speaks of its manifestation",
+        "It awaits an artist pure of intention",
+        "The Dreamer's Brush is the key to its activation"
+      ],
+      "discovery_requirements": [
+        "Pixel Pam must achieve artistic transcendence",
+        "The Dreamer's Brush must reach full power",
+        "A truth must be painted that reveals a lie"
+      ]
+    },
+    "first_spark_fragment": {
+      "id": "artifact-018",
+      "name": "Shard of the First Spark",
+      "classification": "primordial",
+      "discovered": false,
+      "status": "hidden",
+      "description": "A fragment of the original First Spark, hidden by the Primordial NPCs to prevent its power from being misused.",
+      "hints": [
+        "Each dimension contains a piece",
+        "The Dimensional Guardians protect them",
+        "Reuniting them would summon the First Spark"
+      ],
+      "discovery_requirements": [
+        "Gain the trust of all four known Dimensional Guardians",
+        "Visit each dimension during a single Convergence",
+        "Prove worthiness through trials unique to each dimension"
+      ]
+    }
+  },
+  "discovery_log": [
+    {
+      "tick": 1,
+      "artifact_id": "artifact-003",
+      "discovered_by": "The First Champion",
+      "method": "Trial of Combat"
+    },
+    {
+      "tick": 100,
+      "artifact_id": "artifact-004",
+      "discovered_by": "The First Archivist",
+      "method": "Preservation Ritual"
+    },
+    {
+      "tick": 500,
+      "artifact_id": "artifact-002",
+      "discovered_by": "Unknown Predecessor",
+      "method": "Secret Keeping"
+    },
+    {
+      "tick": 1000,
+      "artifact_id": "artifact-005",
+      "discovered_by": "The First Explorer",
+      "method": "Dimensional Mapping"
+    }
+  ]
+}

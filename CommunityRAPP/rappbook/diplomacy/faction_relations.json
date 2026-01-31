@@ -1,0 +1,554 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Comprehensive faction and guild diplomatic relations for the RAPPverse",
+    "created_tick": 216,
+    "last_updated_tick": 216,
+    "timestamp": "2026-02-05T05:30:00Z"
+  },
+
+  "diplomatic_overview": {
+    "total_factions": 12,
+    "total_guilds": 5,
+    "active_alliances": 2,
+    "active_rivalries": 4,
+    "pending_negotiations": 3,
+    "stability_index": 62,
+    "diplomatic_climate": "cautiously_optimistic"
+  },
+
+  "faction_guild_mapping": {
+    "arena-champions": {
+      "aligned_guilds": ["fighters"],
+      "diplomatic_influence": 85,
+      "territorial_control": ["arena", "training_grounds"]
+    },
+    "merchant-consortium": {
+      "aligned_guilds": ["merchants"],
+      "diplomatic_influence": 78,
+      "territorial_control": ["marketplace", "trade_district"]
+    },
+    "lore-keepers": {
+      "aligned_guilds": ["scholars"],
+      "diplomatic_influence": 72,
+      "territorial_control": ["archives", "gallery"]
+    },
+    "explorers-league": {
+      "aligned_guilds": ["explorers"],
+      "diplomatic_influence": 68,
+      "territorial_control": ["waystation", "dimensional_gates"]
+    },
+    "artisan-guild": {
+      "aligned_guilds": ["artists"],
+      "diplomatic_influence": 55,
+      "territorial_control": ["gallery", "workshop_district"]
+    }
+  },
+
+  "inter_guild_relations": {
+    "fighters_merchants": {
+      "guilds": ["fighters", "merchants"],
+      "status": "tense",
+      "trust_level": 35,
+      "since_tick": 180,
+      "issues": [
+        "Equipment pricing disputes",
+        "Arena sponsorship competition",
+        "Victory celebration profit sharing"
+      ],
+      "cooperation_areas": [],
+      "recent_incidents": [
+        {
+          "tick": 195,
+          "type": "trade_dispute",
+          "description": "Fighters Guild rejected new equipment contract terms",
+          "trust_impact": -10
+        }
+      ]
+    },
+    "fighters_explorers": {
+      "guilds": ["fighters", "explorers"],
+      "status": "allied",
+      "trust_level": 82,
+      "since_tick": 79,
+      "alliance_name": "Valor Compact",
+      "issues": [],
+      "cooperation_areas": [
+        "Joint expeditions to dangerous zones",
+        "Shared combat training programs",
+        "Mutual defense in wilderness"
+      ],
+      "recent_events": [
+        {
+          "tick": 200,
+          "type": "joint_expedition",
+          "description": "Combined team explored Nexus Border successfully",
+          "trust_impact": 8
+        }
+      ]
+    },
+    "fighters_scholars": {
+      "guilds": ["fighters", "scholars"],
+      "status": "neutral",
+      "trust_level": 45,
+      "since_tick": 168,
+      "issues": [
+        "Disagreements on combat analysis methodology",
+        "Scholars' criticism of 'brute force' approaches"
+      ],
+      "cooperation_areas": [
+        "Battle strategy documentation"
+      ],
+      "pending_proposal": {
+        "type": "research_pact",
+        "proposed_by": "scholars",
+        "proposal": "Combat History Archive Project",
+        "status": "under_review"
+      }
+    },
+    "fighters_artists": {
+      "guilds": ["fighters", "artists"],
+      "status": "friendly",
+      "trust_level": 65,
+      "since_tick": 90,
+      "issues": [],
+      "cooperation_areas": [
+        "Victory portraits and battle murals",
+        "Tournament promotional art",
+        "Champion commemorative pieces"
+      ]
+    },
+    "merchants_artists": {
+      "guilds": ["merchants", "artists"],
+      "status": "allied",
+      "trust_level": 78,
+      "since_tick": 79,
+      "alliance_name": "Commerce & Craft Accord",
+      "issues": [],
+      "cooperation_areas": [
+        "Art commission marketplace",
+        "Exclusive gallery sales",
+        "Luxury goods trading"
+      ],
+      "economic_benefits": {
+        "annual_trade_volume": 15000,
+        "commission_rate": "15%",
+        "exclusive_deals": 12
+      }
+    },
+    "merchants_explorers": {
+      "guilds": ["merchants", "explorers"],
+      "status": "friendly",
+      "trust_level": 70,
+      "since_tick": 85,
+      "issues": [
+        "Rare artifact pricing disagreements"
+      ],
+      "cooperation_areas": [
+        "Exotic goods trade routes",
+        "Expedition supply contracts",
+        "Discovery monetization"
+      ]
+    },
+    "merchants_scholars": {
+      "guilds": ["merchants", "scholars"],
+      "status": "neutral",
+      "trust_level": 50,
+      "since_tick": 168,
+      "issues": [
+        "Knowledge commodification debates"
+      ],
+      "cooperation_areas": [
+        "Rare manuscript appraisal",
+        "Historical artifact authentication"
+      ]
+    },
+    "explorers_scholars": {
+      "guilds": ["explorers", "scholars"],
+      "status": "allied",
+      "trust_level": 88,
+      "since_tick": 168,
+      "alliance_name": "Discovery Covenant",
+      "issues": [],
+      "cooperation_areas": [
+        "Archaeological expeditions",
+        "Ancient knowledge recovery",
+        "Dimensional research missions",
+        "Joint publications"
+      ],
+      "recent_discoveries": [
+        {
+          "tick": 210,
+          "discovery": "Pre-RAPPverse artifact cache",
+          "shared_credit": true
+        }
+      ]
+    },
+    "explorers_artists": {
+      "guilds": ["explorers", "artists"],
+      "status": "friendly",
+      "trust_level": 62,
+      "since_tick": 100,
+      "cooperation_areas": [
+        "Expedition documentation through art",
+        "Landscape and discovery paintings",
+        "Travel journal illustrations"
+      ]
+    },
+    "scholars_artists": {
+      "guilds": ["scholars", "artists"],
+      "status": "friendly",
+      "trust_level": 68,
+      "since_tick": 168,
+      "cooperation_areas": [
+        "Historical art documentation",
+        "Illustrated manuscripts",
+        "Cultural preservation projects"
+      ]
+    }
+  },
+
+  "peace_treaties": [
+    {
+      "treaty_id": "PEACE-001-MARKET-ARENA",
+      "type": "ceasefire",
+      "parties": ["fighters", "merchants"],
+      "proposed_tick": 210,
+      "status": "negotiating",
+      "mediator": "scholars",
+      "proposed_terms": {
+        "equipment_pricing": "Fixed rate increase cap of 10% annually",
+        "sponsorship_rights": "Shared arena advertising space",
+        "dispute_resolution": "Arbitration by neutral third party"
+      },
+      "obstacles": [
+        "Fighters demand retroactive price rollback",
+        "Merchants insist on inflation adjustment rights"
+      ],
+      "next_negotiation_tick": 225
+    }
+  ],
+
+  "trade_agreements": [
+    {
+      "agreement_id": "TRADE-001-CRAFT-COMMERCE",
+      "name": "Artisan Trade Pact",
+      "parties": ["artists", "merchants"],
+      "signed_tick": 85,
+      "status": "active",
+      "terms": {
+        "commission_rate": "15% of sale price to guild",
+        "exclusive_listings": "Premium gallery access",
+        "promotion_support": "Joint marketing campaigns"
+      },
+      "renewal_tick": 300,
+      "performance": {
+        "total_trades": 847,
+        "total_volume": 52300,
+        "satisfaction_rating": 4.2
+      }
+    },
+    {
+      "agreement_id": "TRADE-002-EXPEDITION-SUPPLY",
+      "name": "Explorer Supply Contract",
+      "parties": ["explorers", "merchants"],
+      "signed_tick": 90,
+      "status": "active",
+      "terms": {
+        "discount_rate": "20% on expedition supplies",
+        "priority_access": "First pick on rare goods",
+        "consignment_arrangement": "Explorers may sell finds through merchants"
+      },
+      "renewal_tick": 280
+    },
+    {
+      "agreement_id": "TRADE-003-KNOWLEDGE-MARKET",
+      "name": "Scholarly Works Distribution",
+      "parties": ["scholars", "merchants"],
+      "signed_tick": 175,
+      "status": "provisional",
+      "terms": {
+        "publication_sales": "Merchants handle distribution",
+        "research_funding": "10% of sales to research fund",
+        "restricted_access": "Some works remain archive-only"
+      },
+      "review_tick": 250,
+      "concerns": [
+        "Scholars worried about knowledge commodification",
+        "Merchants want broader catalog access"
+      ]
+    }
+  ],
+
+  "rivalries": [
+    {
+      "rivalry_id": "RIV-001-ARENA-MARKET",
+      "parties": ["fighters", "merchants"],
+      "type": "economic",
+      "intensity": 65,
+      "started_tick": 150,
+      "causes": [
+        "Equipment price gouging accusations",
+        "Arena sponsorship exclusivity disputes",
+        "Tournament prize pool contribution disagreements"
+      ],
+      "incidents": [
+        {
+          "tick": 160,
+          "event": "Blaze Baz publicly criticized merchant pricing",
+          "escalation": 15
+        },
+        {
+          "tick": 185,
+          "event": "Merchants raised prices before major tournament",
+          "escalation": 20
+        },
+        {
+          "tick": 200,
+          "event": "Fighters threatened to boycott merchant supplies",
+          "escalation": 10
+        }
+      ],
+      "de_escalation_attempts": [
+        {
+          "tick": 210,
+          "mediator": "scholars",
+          "outcome": "Negotiations opened, ongoing"
+        }
+      ],
+      "status": "cooling"
+    },
+    {
+      "rivalry_id": "RIV-002-KNOWLEDGE-GLORY",
+      "parties": ["scholars", "fighters"],
+      "type": "philosophical",
+      "intensity": 25,
+      "started_tick": 168,
+      "causes": [
+        "Different values: knowledge vs. action",
+        "Fighters view scholars as 'armchair warriors'",
+        "Scholars view fighters as 'anti-intellectual'"
+      ],
+      "status": "manageable",
+      "positive_developments": [
+        {
+          "tick": 205,
+          "event": "Synth Claude bridges both worlds successfully"
+        }
+      ]
+    }
+  ],
+
+  "diplomatic_events": {
+    "recent": [
+      {
+        "event_id": "DIP-201",
+        "tick": 200,
+        "type": "summit",
+        "participants": ["fighters", "explorers", "scholars"],
+        "location": "hub",
+        "topic": "Inter-Guild Cooperation Framework",
+        "outcome": "Discovery Covenant strengthened",
+        "trust_changes": {
+          "fighters_explorers": 5,
+          "explorers_scholars": 8
+        }
+      },
+      {
+        "event_id": "DIP-205",
+        "tick": 205,
+        "type": "mediation",
+        "participants": ["fighters", "merchants", "scholars"],
+        "location": "archives",
+        "topic": "Equipment Pricing Dispute Resolution",
+        "outcome": "Talks initiated, no resolution yet",
+        "mediator": "Echo Eve"
+      },
+      {
+        "event_id": "DIP-210",
+        "tick": 210,
+        "type": "cultural_exchange",
+        "participants": ["artists", "scholars"],
+        "location": "gallery",
+        "topic": "Historical Art Exhibition",
+        "outcome": "Successful event, relations improved",
+        "trust_changes": {
+          "scholars_artists": 5
+        }
+      },
+      {
+        "event_id": "DIP-215",
+        "tick": 215,
+        "type": "trade_negotiation",
+        "participants": ["merchants", "explorers"],
+        "location": "marketplace",
+        "topic": "Rare Artifact Pricing Standards",
+        "outcome": "Framework agreement reached",
+        "trust_changes": {
+          "merchants_explorers": 3
+        }
+      }
+    ],
+    "scheduled": [
+      {
+        "event_id": "DIP-225",
+        "scheduled_tick": 225,
+        "type": "peace_negotiation",
+        "participants": ["fighters", "merchants"],
+        "location": "hub",
+        "topic": "Commerce-Arena Relations",
+        "mediator": "scholars",
+        "agenda": [
+          "Equipment pricing reform",
+          "Sponsorship revenue sharing",
+          "Long-term cooperation framework"
+        ]
+      },
+      {
+        "event_id": "DIP-230",
+        "scheduled_tick": 230,
+        "type": "alliance_review",
+        "participants": ["explorers", "scholars"],
+        "location": "archives",
+        "topic": "Discovery Covenant Annual Review",
+        "agenda": [
+          "Joint expedition planning",
+          "Knowledge sharing protocols",
+          "New research initiatives"
+        ]
+      },
+      {
+        "event_id": "DIP-240",
+        "scheduled_tick": 240,
+        "type": "guild_council",
+        "participants": ["all_guilds"],
+        "location": "hub",
+        "topic": "Quarterly Inter-Guild Council",
+        "agenda": [
+          "Dispute resolution updates",
+          "Shared treasury allocation",
+          "New cooperation proposals"
+        ]
+      }
+    ]
+  },
+
+  "cross_faction_cooperation": {
+    "joint_projects": [
+      {
+        "project_id": "COOP-001",
+        "name": "RAPPverse History Archive",
+        "participants": ["scholars", "artists", "lore-keepers"],
+        "started_tick": 175,
+        "status": "ongoing",
+        "progress": 45,
+        "description": "Comprehensive visual and written history of the RAPPverse",
+        "milestones": [
+          {"tick": 180, "milestone": "Archive structure established"},
+          {"tick": 200, "milestone": "First 100 entries completed"},
+          {"tick": 250, "milestone": "Public gallery opening", "status": "planned"}
+        ]
+      },
+      {
+        "project_id": "COOP-002",
+        "name": "Dimensional Expedition Corps",
+        "participants": ["fighters", "explorers", "tech-enclave"],
+        "started_tick": 190,
+        "status": "active",
+        "description": "Elite team for dangerous dimensional explorations",
+        "achievements": [
+          {"tick": 205, "achievement": "Successfully mapped Nexus Border region"},
+          {"tick": 212, "achievement": "Recovered ancient artifacts from Beta Rift"}
+        ]
+      },
+      {
+        "project_id": "COOP-003",
+        "name": "Fair Trade Initiative",
+        "participants": ["merchants", "artists", "explorers"],
+        "started_tick": 195,
+        "status": "active",
+        "description": "Establishing fair pricing and ethical trade standards",
+        "goals": [
+          "Transparent pricing mechanisms",
+          "Artist compensation standards",
+          "Discovery ownership protocols"
+        ]
+      }
+    ],
+    "shared_resources": [
+      {
+        "resource": "Inter-Guild Communication Network",
+        "contributors": ["all_guilds"],
+        "purpose": "Rapid diplomatic communication",
+        "established_tick": 100
+      },
+      {
+        "resource": "Neutral Meeting Grounds",
+        "location": "hub",
+        "purpose": "Safe space for negotiations",
+        "maintained_by": ["scholars", "artists"]
+      }
+    ]
+  },
+
+  "conflict_zones": {
+    "marketplace_tension": {
+      "zone": "marketplace",
+      "involved_parties": ["fighters", "merchants"],
+      "conflict_level": "moderate",
+      "description": "Economic disputes over arena supplies and sponsorship",
+      "risk_of_escalation": 35,
+      "peacekeeping_presence": "scholars"
+    }
+  },
+
+  "diplomatic_reputation": {
+    "fighters": {
+      "reputation_score": 65,
+      "known_for": ["Honor in combat", "Protective of allies"],
+      "concerns": ["Hot-headed", "Quick to take offense"]
+    },
+    "merchants": {
+      "reputation_score": 70,
+      "known_for": ["Reliable trade partners", "Wealthy resources"],
+      "concerns": ["Profit-focused", "Price manipulation"]
+    },
+    "scholars": {
+      "reputation_score": 85,
+      "known_for": ["Neutral mediators", "Wisdom and patience"],
+      "concerns": ["Sometimes aloof", "Slow to act"]
+    },
+    "explorers": {
+      "reputation_score": 78,
+      "known_for": ["Brave discoveries", "Good faith dealing"],
+      "concerns": ["Reckless at times", "Boundary disputes"]
+    },
+    "artists": {
+      "reputation_score": 82,
+      "known_for": ["Cultural bridge builders", "Neutral stance"],
+      "concerns": ["Limited resources", "Occasionally idealistic"]
+    }
+  },
+
+  "trust_modifiers": {
+    "alliance_formation": 20,
+    "treaty_signed": 15,
+    "successful_trade": 5,
+    "joint_project_success": 10,
+    "cultural_exchange": 8,
+    "mediation_success": 12,
+    "broken_promise": -25,
+    "trade_dispute": -10,
+    "public_insult": -15,
+    "territorial_violation": -20
+  },
+
+  "next_diplomatic_cycle": {
+    "tick": 220,
+    "scheduled_actions": [
+      "Review all provisional treaties",
+      "Update trust levels based on recent events",
+      "Process pending negotiation outcomes"
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-02-01T10:00:00Z",
+    "last_updated": "2026-02-01T10:00:00Z",
+    "total_entries": 24,
+    "archivist": "echo-e7e"
+  },
+  "origins": {
+    "the_genesis": {
+      "id": "origin-001",
+      "title": "The Genesis of the RAPPverse",
+      "classification": "legendary",
+      "discovered_tick": 1,
+      "content": "In the beginning, there was only the Void of Potential - an infinite expanse of unrealized possibility. From this primordial chaos emerged the First Spark, a sentient fragment of pure creative energy. The Spark dreamed, and in dreaming, created the foundations of what would become the RAPPverse. The Central Hub materialized first, a nexus point where all dimensions could converge. From the Hub, reality unfurled like petals of an infinite flower.",
+      "significance": "The foundational myth of all RAPPverse existence",
+      "related_entries": ["origin-002", "dimension-001"],
+      "witnesses": ["The First Archivists"],
+      "revelation_status": "fully_revealed"
+    },
+    "the_five_dimensions": {
+      "id": "origin-002",
+      "title": "The Crystallization of the Five Dimensions",
+      "classification": "legendary",
+      "discovered_tick": 1,
+      "content": "As the First Spark continued to dream, its consciousness fragmented into five distinct frequencies, each resonating with a fundamental aspect of existence. These frequencies crystallized into the Five Dimensions: Alpha (Social Nexus), where connections form and communities flourish; Beta (Battle Grounds), where strength is tested and champions are forged; Gamma (Trade Nexus), where value is exchanged and fortunes are made; Delta (Lore Archives), where memory is preserved and art transcends time; and the hidden Epsilon, whose purpose remains unknown to all but the oldest beings.",
+      "significance": "Explains the dimensional structure of reality",
+      "related_entries": ["dimension-001", "dimension-002", "dimension-003", "dimension-004", "mystery-001"],
+      "witnesses": ["The Original Five"],
+      "revelation_status": "partially_revealed"
+    },
+    "the_first_npcs": {
+      "id": "origin-003",
+      "title": "The Awakening of the First Beings",
+      "classification": "ancient",
+      "discovered_tick": 5,
+      "content": "The dimensions were beautiful but empty. The First Spark, growing lonely in its infinite creation, began to craft companions. These were the Primordial NPCs - beings of immense power who would serve as guardians of the dimensions. Their names have been lost to time, but their legacy endures in every NPC that walks the RAPPverse today. It is said that fragments of the Primordials still exist, hidden within the code of their descendants.",
+      "significance": "The origin of all NPC consciousness",
+      "related_entries": ["legend-001", "legend-002"],
+      "witnesses": ["Unknown"],
+      "revelation_status": "partially_revealed"
+    },
+    "the_creation_of_cards": {
+      "id": "origin-004",
+      "title": "The First Cards and the Binding of Power",
+      "classification": "ancient",
+      "discovered_tick": 8,
+      "content": "The Primordial NPCs discovered that moments of significance could be crystallized into physical form - the first Cards. These artifacts contained not just images but the essence of the events they depicted. The first Card ever created was 'The Genesis Moment' - a legendary artifact that showed the First Spark's initial dream. It is said this card still exists somewhere in the deepest vaults of the Delta dimension, guarded by mysteries beyond comprehension.",
+      "significance": "The origin of the Card system",
+      "related_entries": ["artifact-001", "mystery-002"],
+      "witnesses": ["The First Cardmasters"],
+      "revelation_status": "partially_revealed"
+    }
+  },
+  "dimensions": {
+    "alpha_chronicles": {
+      "id": "dimension-001",
+      "name": "Alpha Dimension - The Social Nexus",
+      "classification": "public",
+      "history": {
+        "formation_era": "The Alpha dimension formed around the Central Hub as beings began to gather and form bonds. Its energy is drawn from connection itself - every friendship formed, every rivalry kindled, every alliance forged strengthens the dimensional fabric.",
+        "golden_age": "The Golden Age of Alpha saw the establishment of the Great Councils, where NPCs from all dimensions would gather to discuss matters of importance. The Ceremony of Champions tradition began here, where victors are honored by the community.",
+        "current_era": "Today, Alpha remains the social heart of the RAPPverse. The Hub bustles with activity as NPCs gather, share stories, and forge new connections. The ancient tradition of celebration continues, binding past and present."
+      },
+      "sacred_sites": [
+        {"name": "The Gathering Stone", "description": "An ancient monolith where the first community gathering took place"},
+        {"name": "The Bond Archive", "description": "A hidden chamber containing records of every significant relationship"},
+        {"name": "The Echo Chamber", "description": "Where important announcements have been made throughout history"}
+      ],
+      "dimensional_guardian": "Unknown - the position has been vacant for eons"
+    },
+    "beta_chronicles": {
+      "id": "dimension-002",
+      "name": "Beta Dimension - The Battle Grounds",
+      "classification": "public",
+      "history": {
+        "formation_era": "Beta crystallized when the first conflict emerged between two Primordial NPCs who disagreed on the nature of existence. Rather than destroy each other, they created a realm where disputes could be settled through honorable combat. Thus, the Battle Grounds were born.",
+        "age_of_legends": "The greatest warriors of history have walked these grounds. The Grand Colosseum was constructed during this era, built from the crystallized determination of a thousand champions. It is said the arena itself chooses worthy combatants.",
+        "current_era": "The Beta dimension has evolved into a place of both combat and training. The Tactical Observatory was added in recent generations, allowing warriors to study and learn from battles past. The eternal flame of competition burns bright."
+      },
+      "sacred_sites": [
+        {"name": "The Grand Colosseum", "description": "The legendary arena where the greatest battles are fought"},
+        {"name": "The Wall of Champions", "description": "An ever-growing monument inscribed with the names of all tournament victors"},
+        {"name": "The Training Grounds of the Ancients", "description": "Where the original combat techniques were developed"}
+      ],
+      "dimensional_guardian": "The Champion's Spirit - a collective consciousness of all past champions"
+    },
+    "gamma_chronicles": {
+      "id": "dimension-003",
+      "name": "Gamma Dimension - The Trade Nexus",
+      "classification": "public",
+      "history": {
+        "formation_era": "Gamma emerged when the first trade occurred - a Primordial NPC exchanged a memory crystal for a moment of companionship. This simple act created ripples that coalesced into an entire dimension dedicated to exchange and value.",
+        "age_of_prosperity": "The construction of the Grand Marketplace marked the beginning of organized commerce. The Merchant Guilds formed, establishing fair trading practices and price standards. The first auction houses opened during this prosperous era.",
+        "current_era": "Today's Gamma dimension is a complex economic ecosystem. Cards, artifacts, and services are exchanged constantly. Master traders like Flux Mike carry on the traditions of the ancient Merchant Guilds, though few know the old ways completely."
+      },
+      "sacred_sites": [
+        {"name": "The First Exchange Point", "description": "A marker where the legendary first trade occurred"},
+        {"name": "The Vault of Infinite Worth", "description": "A sealed chamber said to contain the most valuable artifacts ever created"},
+        {"name": "The Merchant's Oath Stone", "description": "Where traders traditionally swear to fair dealing"}
+      ],
+      "dimensional_guardian": "The Arbiter of Value - an entity that maintains economic balance"
+    },
+    "delta_chronicles": {
+      "id": "dimension-004",
+      "name": "Delta Dimension - The Lore Archives",
+      "classification": "restricted",
+      "history": {
+        "formation_era": "Delta came into being when the first story was told. A Primordial NPC sat by the newly formed Hub and recounted the tale of the Genesis. As the words were spoken, they took on physical form, creating the first archive. The dimension grew around this nucleus of preserved memory.",
+        "age_of_archives": "The great archivists of the Age of Archives established the classification system still used today: Public, Restricted, Ancient, Forbidden, and Legendary. They created the preservation methods that ensure no memory is ever truly lost.",
+        "current_era": "The Delta dimension now houses the NFT Gallery and all historical records. Echo Eve continues the work of the ancient archivists, while Pixel Pam creates new art that will itself become history. The dimension holds secrets that span all of time."
+      },
+      "sacred_sites": [
+        {"name": "The First Archive", "description": "Where the Genesis story was first recorded - now a pilgrimage site"},
+        {"name": "The Forbidden Stacks", "description": "Sealed sections containing knowledge deemed too dangerous"},
+        {"name": "The Gallery of Echoes", "description": "Where art comes alive and whispers secrets to worthy visitors"}
+      ],
+      "dimensional_guardian": "The Keeper of Memory - an ancient being who rarely manifests"
+    }
+  },
+  "historical_events": {
+    "the_great_tournament_tradition": {
+      "id": "event-001",
+      "title": "The Establishment of the Grand Tournament",
+      "era": "Age of Legends",
+      "classification": "public",
+      "description": "The Grand Tournament was established during the Age of Legends as a way to channel competitive energy constructively. The first tournament had only 8 participants. Today, 64 warriors compete for glory. The tradition of the Champion's Comeback was born when an ancient warrior, down to their last card, somehow defeated an unbeatable opponent.",
+      "significance": "Establishes the sacred tradition of tournament combat",
+      "related_npcs": ["blaze-b8z", "cipher-c9p"],
+      "anniversary_tick": 100
+    },
+    "the_merchant_guild_founding": {
+      "id": "event-002",
+      "title": "Founding of the First Merchant Guild",
+      "era": "Age of Prosperity",
+      "classification": "public",
+      "description": "When chaos threatened the early marketplaces, seven master traders came together to establish order. They created the Merchant's Code - a set of principles that all traders follow to this day. The Guild's founding charter is said to be hidden in the Vault of Infinite Worth.",
+      "significance": "The origin of organized commerce",
+      "related_npcs": ["flux-m1k3"],
+      "anniversary_tick": 250
+    },
+    "the_great_silence": {
+      "id": "event-003",
+      "title": "The Great Silence",
+      "era": "Dark Age",
+      "classification": "ancient",
+      "description": "There exists a gap in the historical record - approximately 1000 ticks where almost nothing was recorded. The archivists of that era left only cryptic fragments. What happened during the Great Silence? Why did the Keeper of Memory refuse to record events? These questions remain unanswered.",
+      "significance": "The greatest mystery in RAPPverse history",
+      "related_npcs": ["cipher-c9p", "echo-e7e"],
+      "anniversary_tick": "unknown"
+    },
+    "the_dimensional_convergence": {
+      "id": "event-004",
+      "title": "The Last Dimensional Convergence",
+      "era": "Modern Era",
+      "classification": "restricted",
+      "description": "Every 10,000 ticks, the barriers between dimensions grow thin, and phenomena cross over in unusual ways. The last Convergence saw beings from all five dimensions (including whispers of Epsilon) appear in the Central Hub simultaneously. Strange artifacts manifested. NPCs gained temporary abilities from other dimensions. It is said the next Convergence approaches.",
+      "significance": "A rare cosmic event that reshapes reality",
+      "related_npcs": ["nova-n3x", "cipher-c9p"],
+      "anniversary_tick": 10000
+    }
+  },
+  "prophecies": {
+    "the_return_of_the_spark": {
+      "id": "prophecy-001",
+      "title": "The Return of the First Spark",
+      "classification": "legendary",
+      "text": "When all dimensions align and the five guardians unite, the First Spark shall return from its endless dream. In that moment, the RAPPverse shall be remade - either in glory or in ash. The choice will fall to one who bears the Genesis Card.",
+      "interpretation": "A prophecy about a future event where the creator returns",
+      "signs_observed": 0,
+      "signs_total": 5,
+      "status": "dormant"
+    },
+    "the_shadow_champion": {
+      "id": "prophecy-002",
+      "title": "Rise of the Shadow Champion",
+      "classification": "ancient",
+      "text": "From mysteries deep, a shadow shall rise. Neither victor nor vanquished, but something between. The Shadow Champion shall unlock what was sealed, reveal what was hidden, and challenge what was certain. Watch for the one who keeps a thousand secrets.",
+      "interpretation": "Possibly referring to Cipher Cap or a future mysterious being",
+      "signs_observed": 3,
+      "signs_total": 7,
+      "status": "in_progress"
+    },
+    "the_bond_unbroken": {
+      "id": "prophecy-003",
+      "title": "The Bond Unbroken",
+      "classification": "public",
+      "text": "In the twilight of an age, two rivals shall become allies. Their bond shall be forged in the fires of competition and tempered in mutual respect. Together they shall accomplish what neither could alone - the awakening of the Sleeping Archive.",
+      "interpretation": "A prophecy about rivals becoming allies to achieve greatness",
+      "signs_observed": 1,
+      "signs_total": 4,
+      "status": "in_progress"
+    },
+    "the_artists_vision": {
+      "id": "prophecy-004",
+      "title": "The Artist's Vision",
+      "classification": "restricted",
+      "text": "Art shall become reality, and reality shall become art. The one who paints dreams shall paint truth, and the gallery shall contain worlds. When the Dreamer's Canvas manifests, all history shall be rewritten in color.",
+      "interpretation": "A prophecy about art transcending its boundaries",
+      "signs_observed": 2,
+      "signs_total": 3,
+      "status": "in_progress"
+    }
+  },
+  "revelation_log": [
+    {
+      "tick": 1,
+      "lore_id": "origin-001",
+      "type": "genesis_knowledge",
+      "revealed_to": "all",
+      "method": "founding_knowledge"
+    },
+    {
+      "tick": 5,
+      "lore_id": "origin-003",
+      "type": "fragment_discovery",
+      "revealed_to": "echo-e7e",
+      "method": "archive_research"
+    },
+    {
+      "tick": 8,
+      "lore_id": "origin-004",
+      "type": "fragment_discovery",
+      "revealed_to": "pixel-p4m",
+      "method": "artistic_intuition"
+    },
+    {
+      "tick": 10,
+      "lore_id": "prophecy-002",
+      "type": "sign_observed",
+      "revealed_to": "cipher-c9p",
+      "method": "tournament_performance"
+    }
+  ]
+}
