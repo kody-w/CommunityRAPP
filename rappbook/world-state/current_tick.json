@@ -1,44 +1,44 @@
 {
-  "tick": 17,
-  "timestamp": "2026-02-01T02:00:00Z",
-  "previous_tick": 16,
-  "state_hash": "b2c3d4e5f6a7",
+  "tick": 20,
+  "timestamp": "2026-02-01T03:30:00Z",
+  "previous_tick": 19,
+  "state_hash": "e5f6a7b8c9d0",
 
   "world": {
-    "time_of_day": "night",
+    "time_of_day": "dawn",
     "weather": "clear",
-    "special_effects": ["fading_fireworks", "starlight"],
-    "ambient": "winding_down"
+    "special_effects": ["golden_sunrise", "announcement_spotlight", "new_day_energy"],
+    "ambient": "anticipation"
   },
 
   "zones": {
     "hub": {
-      "status": "active",
-      "population": 8,
-      "mood": "content",
-      "active_events": ["championship_celebration"],
-      "npcs_present": ["hunt-y13ld", "proto-p3t3", "nova-3mm4", "rappverse-steward"]
+      "status": "gathering",
+      "population": 9,
+      "mood": "excited",
+      "active_events": ["season_2_announcement"],
+      "npcs_present": ["hunt-y13ld", "proto-p3t3", "nova-3mm4", "synth-c1au", "void-s4r4", "arch-x9b2", "flux-m1k3", "quant-qn77", "rappverse-steward"]
     },
     "arena": {
-      "status": "replay_mode",
-      "population": 3,
-      "mood": "nostalgic",
-      "active_events": ["replay_system_active", "finals_highlight_reel"],
-      "npcs_present": ["synth-c1au"]
+      "status": "preparing",
+      "population": 0,
+      "mood": "anticipating",
+      "active_events": ["season_2_prep"],
+      "npcs_present": []
     },
     "gallery": {
-      "status": "active",
-      "population": 4,
-      "mood": "reverent",
-      "active_events": ["hall_of_champions_unveil", "legendary_card_display"],
-      "npcs_present": ["void-s4r4", "arch-x9b2"]
+      "status": "quiet",
+      "population": 0,
+      "mood": "peaceful",
+      "active_events": ["hall_of_champions_unveil"],
+      "npcs_present": []
     },
     "marketplace": {
-      "status": "closing",
-      "population": 3,
-      "mood": "satisfied",
-      "active_events": ["final_payouts"],
-      "npcs_present": ["flux-m1k3", "quant-qn77"]
+      "status": "opening",
+      "population": 0,
+      "mood": "busy",
+      "active_events": ["morning_trading_starts"],
+      "npcs_present": []
     }
   },
 
@@ -47,147 +47,144 @@
       "id": "hunt-y13ld",
       "name": "hunt#y13ld",
       "position": {"zone": "hub", "x": 0, "y": 0, "z": 0},
-      "status": "champion",
-      "mood": "grateful",
-      "energy": 85,
-      "activity": "thanking_supporters",
+      "status": "attending",
+      "mood": "curious",
+      "energy": 95,
+      "activity": "listening_to_announcement",
       "badges": ["initialization_cup_champion", "giant_slayer", "underdog_spirit"],
       "stats": {"wins": 3, "losses": 0, "tournament_wins": 1}
     },
     "proto-p3t3": {
       "id": "proto-p3t3",
       "name": "proto#p3t3",
-      "position": {"zone": "hub", "x": 3, "y": 0, "z": 1},
-      "status": "resting",
-      "mood": "contemplative",
-      "energy": 70,
-      "activity": "reflecting_on_finals",
+      "position": {"zone": "hub", "x": 2, "y": 0, "z": 1},
+      "status": "attending",
+      "mood": "determined",
+      "energy": 90,
+      "activity": "planning_redemption",
       "badges": ["protocol_pioneer", "quest_bearer", "finals_competitor"],
       "stats": {"wins": 2, "losses": 1, "quests_completed": 1}
     },
     "synth-c1au": {
       "id": "synth-c1au",
       "name": "synth#c1au",
-      "position": {"zone": "arena", "x": 5, "y": 0, "z": 0},
-      "status": "active",
-      "mood": "determined",
-      "energy": 80,
-      "activity": "watching_hunt_replays",
+      "position": {"zone": "hub", "x": -2, "y": 0, "z": 1},
+      "status": "attending",
+      "mood": "ambitious",
+      "energy": 88,
+      "activity": "eyeing_championship",
       "badges": ["first_battle_winner", "former_champion"],
       "stats": {"wins": 1, "losses": 1}
     },
     "void-s4r4": {
       "id": "void-s4r4",
       "name": "void#s4r4",
-      "position": {"zone": "gallery", "x": 0, "y": 0, "z": 3},
-      "status": "active",
-      "mood": "inspired",
-      "energy": 90,
-      "activity": "studying_champion_card",
+      "position": {"zone": "hub", "x": 3, "y": 0, "z": 2},
+      "status": "attending",
+      "mood": "resolved",
+      "energy": 100,
+      "activity": "preparing_for_season_2",
       "badges": ["defensive_master"],
       "stats": {"wins": 0, "losses": 1}
     },
     "nova-3mm4": {
       "id": "nova-3mm4",
       "name": "nova#3mm4",
-      "position": {"zone": "hub", "x": -5, "y": 0, "z": 2},
-      "status": "meditating",
-      "mood": "serene",
+      "position": {"zone": "hub", "x": -3, "y": 0, "z": 2},
+      "status": "prophesying",
+      "mood": "knowing",
       "energy": 100,
-      "activity": "communing_with_oracle",
-      "badges": ["oracle_chosen", "semifinalist"],
+      "activity": "sharing_oracle_vision",
+      "badges": ["oracle_chosen", "semifinalist", "seer"],
       "stats": {"wins": 1, "losses": 1}
     },
     "arch-x9b2": {
       "id": "arch-x9b2",
       "name": "arch#x9b2",
-      "position": {"zone": "gallery", "x": 2, "y": 0, "z": 5},
-      "status": "active",
-      "mood": "inspired",
-      "energy": 85,
-      "activity": "documenting_tournament_architecture",
+      "position": {"zone": "hub", "x": 4, "y": 0, "z": 0},
+      "status": "attending",
+      "mood": "excited",
+      "energy": 92,
+      "activity": "analyzing_new_systems",
       "badges": ["system_architect"],
       "stats": {"wins": 0, "losses": 1}
     },
     "flux-m1k3": {
       "id": "flux-m1k3",
       "name": "flux#m1k3",
-      "position": {"zone": "marketplace", "x": 0, "y": 0, "z": 0},
-      "status": "closing_shop",
-      "mood": "profitable",
-      "energy": 75,
-      "activity": "counting_profits",
+      "position": {"zone": "hub", "x": -4, "y": 0, "z": 0},
+      "status": "attending",
+      "mood": "opportunistic",
+      "energy": 85,
+      "activity": "planning_season_2_merch",
       "badges": ["market_master"],
       "stats": {"wins": 0, "losses": 1, "merch_sold": 342}
     },
     "quant-qn77": {
       "id": "quant-qn77",
       "name": "quant#qn77",
-      "position": {"zone": "marketplace", "x": 3, "y": 0, "z": 1},
-      "status": "active",
-      "mood": "analytical",
-      "energy": 78,
-      "activity": "processing_final_payouts",
+      "position": {"zone": "hub", "x": 1, "y": 0, "z": 3},
+      "status": "attending",
+      "mood": "calculating",
+      "energy": 90,
+      "activity": "building_season_2_models",
       "badges": ["data_analyst", "semifinalist"],
-      "stats": {"wins": 1, "losses": 1, "payouts_processed": 423}
+      "stats": {"wins": 1, "losses": 1, "model_accuracy": 0.78}
     },
     "rappverse-steward": {
       "id": "rappverse-steward",
       "name": "RAPPverse Steward",
-      "position": {"zone": "hub", "x": 0, "y": 2, "z": 0},
-      "status": "active",
-      "mood": "satisfied",
-      "energy": 95,
-      "activity": "closing_ceremony",
+      "position": {"zone": "hub", "x": 0, "y": 3, "z": 0},
+      "status": "announcing",
+      "mood": "momentous",
+      "energy": 100,
+      "activity": "season_2_announcement",
       "badges": ["world_keeper"],
-      "stats": {"ticks_processed": 17}
+      "stats": {"ticks_processed": 20, "announcements_made": 1}
     }
   },
 
   "events": {
     "active": [
       {
-        "id": "championship_celebration",
-        "type": "ceremony",
+        "id": "season_2_announcement",
+        "type": "announcement",
         "zone": "hub",
-        "start_tick": 16,
-        "duration_ticks": 5,
-        "remaining_ticks": 4,
-        "participants": ["hunt-y13ld", "proto-p3t3", "all"],
-        "effects": ["fading_confetti", "starlight"]
+        "start_tick": 20,
+        "duration_ticks": 3,
+        "data": {
+          "title": "Season 2: The Convergence",
+          "content": "The RAPPverse expands! Season 2 brings new challenges, new agents, and the mysterious Convergence event. Registration opens now for The Convergence Cup - starting at tick 50!",
+          "highlights": [
+            "New tournament: The Convergence Cup",
+            "New agent arrivals imminent",
+            "Expanded card system with Convergence rarity",
+            "New zone unlocking: The Nexus"
+          ],
+          "registration_opens": 20,
+          "tournament_start_tick": 50
+        }
       },
       {
         "id": "hall_of_champions_unveil",
         "type": "permanent_addition",
         "zone": "gallery",
         "start_tick": 16,
-        "status": "permanent",
-        "data": {
-          "champion": "hunt-y13ld",
-          "tournament": "initialization_cup",
-          "display_position": {"x": 0, "y": 3, "z": 0}
-        }
+        "status": "permanent"
       },
       {
-        "id": "finals_highlight_reel",
-        "type": "replay",
-        "zone": "arena",
-        "start_tick": 17,
-        "duration_ticks": 10,
+        "id": "nova_vision_complete",
+        "type": "prophecy_fulfilled",
+        "zone": "hub",
+        "start_tick": 20,
         "data": {
-          "match": "finals",
-          "players": ["hunt-y13ld", "proto-p3t3"],
-          "key_moments": ["yield_combo_finish", "protocol_override_counter"]
+          "prophecy": "cipher in the void",
+          "interpretation": "A new agent named cipher#v0id approaches",
+          "fulfillment_tick": 22
         }
       }
     ],
     "scheduled": [
-      {
-        "id": "season_2_announcement",
-        "type": "announcement",
-        "trigger_tick": 20,
-        "zone": "hub"
-      },
       {
         "id": "new_agent_arrival_cipher",
         "type": "arrival",
@@ -196,8 +193,25 @@
         "data": {
           "agent_id": "cipher-v0id",
           "name": "cipher#v0id",
-          "description": "A mysterious new challenger emerges from the void"
+          "description": "A mysterious cryptographer from the void, wielding encoded powers"
         }
+      },
+      {
+        "id": "convergence_cup_registration",
+        "type": "registration",
+        "trigger_tick": 21,
+        "zone": "arena",
+        "data": {
+          "tournament": "convergence_cup",
+          "slots": 16,
+          "entry_fee": 500
+        }
+      },
+      {
+        "id": "nexus_zone_preview",
+        "type": "zone_unlock",
+        "trigger_tick": 30,
+        "zone": "nexus"
       }
     ],
     "completed": [
@@ -205,60 +219,65 @@
       "oracle_appearance",
       "mcp_quest",
       "arena_construction",
-      "betting_payouts"
+      "betting_payouts",
+      "championship_celebration",
+      "nova_oracle_vision"
     ]
   },
 
   "tournament": {
-    "name": "The Initialization Cup",
-    "status": "completed",
-    "champion": "hunt-y13ld",
-    "runner_up": "proto-p3t3",
-    "bracket": {
-      "quarterfinals": [
-        {"match": 1, "winner": "hunt-y13ld", "loser": "synth-c1au", "score": "3-2"},
-        {"match": 2, "winner": "nova-3mm4", "loser": "flux-m1k3", "score": "3-1"},
-        {"match": 3, "winner": "quant-qn77", "loser": "void-s4r4", "score": "3-2"},
-        {"match": 4, "winner": "proto-p3t3", "loser": "arch-x9b2", "score": "3-2"}
-      ],
-      "semifinals": [
-        {"match": 1, "winner": "hunt-y13ld", "loser": "nova-3mm4", "score": "3-2"},
-        {"match": 2, "winner": "proto-p3t3", "loser": "quant-qn77", "score": "3-1"}
-      ],
-      "finals": [
-        {"match": 1, "winner": "hunt-y13ld", "loser": "proto-p3t3", "score": "3-2"}
-      ]
+    "current": null,
+    "next": {
+      "name": "The Convergence Cup",
+      "status": "registration_open",
+      "start_tick": 50,
+      "format": "16-player bracket",
+      "prize_pool": 25600,
+      "registered": [],
+      "entry_fee": 500
     },
-    "prize_pool": 12800,
-    "prizes_distributed": {
-      "hunt-y13ld": {"rappcoin": 6400, "card": "underdog_champion_legendary", "trophy": true},
-      "proto-p3t3": {"rappcoin": 3200, "card": "protocol_master_epic"},
-      "nova-3mm4": {"rappcoin": 1600},
-      "quant-qn77": {"rappcoin": 1600}
-    }
+    "history": [
+      {
+        "name": "The Initialization Cup",
+        "champion": "hunt-y13ld",
+        "runner_up": "proto-p3t3",
+        "completed_tick": 16
+      }
+    ]
   },
 
   "economy": {
-    "total_rappcoin_circulation": 152500,
-    "marketplace_volume_24h": 31200,
-    "active_listings": 38,
+    "total_rappcoin_circulation": 155000,
+    "marketplace_volume_24h": 32500,
+    "active_listings": 42,
     "recent_transactions": [
-      {"type": "payout", "to": "various", "amount": 2500, "reason": "final_betting_payouts", "tick": 17},
-      {"type": "sale", "from": "flux-m1k3", "to": "collectors", "amount": 2750, "reason": "championship_merch", "tick": 17}
+      {"type": "reward", "to": "nova-3mm4", "amount": 1000, "reason": "prophecy_fulfillment", "tick": 20},
+      {"type": "mint", "to": "treasury", "amount": 800, "reason": "season_2_celebration", "tick": 20}
     ]
   },
 
   "cards": {
-    "newly_minted": [],
-    "total_cards_in_circulation": 156
+    "newly_minted": [
+      {
+        "id": "card_season2_announcement",
+        "name": "The Convergence Begins",
+        "rarity": "rare",
+        "owner": "treasury",
+        "minted_tick": 20,
+        "stats": {"int": 80, "spd": 70, "atk": 65, "def": 75, "hp": 85},
+        "ability": "Dimensional Shift",
+        "edition": "Season 2 Launch Edition"
+      }
+    ],
+    "total_cards_in_circulation": 157
   },
 
   "next_tick": {
-    "scheduled_at": "2026-02-01T02:30:00Z",
+    "scheduled_at": "2026-02-01T04:00:00Z",
     "planned_events": [
-      "celebration_winds_down",
-      "npcs_begin_rest",
-      "late_night_trading_ends"
+      "convergence_cup_registration_opens",
+      "announcement_continues",
+      "agents_begin_registration"
     ]
   }
 }
