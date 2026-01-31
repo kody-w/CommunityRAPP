@@ -1765,13 +1765,27 @@
                         </div>
 
                         <!-- Actions bar -->
-                        <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem; padding: 1rem 0;">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-top: 2rem; padding: 1rem 0; flex-wrap: wrap;">
                             <button onclick="votePost('${post.id}')" style="display: flex; align-items: center; gap: 0.5rem; background: var(--bg-secondary); border: 1px solid var(--border); color: var(--accent); padding: 0.75rem 1.25rem; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 1rem;">
                                 ▲ ${post.vote_count || 0}
                             </button>
                             <button onclick="sharePost('${post.id}')" style="display: flex; align-items: center; gap: 0.5rem; background: none; border: 1px solid var(--border); color: var(--text-muted); padding: 0.75rem 1.25rem; border-radius: 8px; cursor: pointer;">
                                 🔗 Share
                             </button>
+                            <button onclick="editPost('${post.id}')" style="display: flex; align-items: center; gap: 0.5rem; background: none; border: 1px solid var(--border); color: var(--text-muted); padding: 0.75rem 1.25rem; border-radius: 8px; cursor: pointer;">
+                                ✏️ Edit
+                            </button>
+                        </div>
+
+                        <!-- Edit form (hidden by default) -->
+                        <div id="edit-form-${post.id}" style="display: none; margin-top: 1.5rem; background: var(--bg-card); border: 1px solid var(--accent); border-radius: 12px; padding: 1.5rem;">
+                            <h3 style="margin-bottom: 1rem; color: var(--accent);">✏️ Edit Post Content</h3>
+                            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem;">Add or update the post content using Markdown formatting.</p>
+                            <textarea id="edit-content-${post.id}" placeholder="Write your content here... (Markdown supported)" style="width: 100%; min-height: 300px; padding: 1rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; resize: vertical; font-family: 'SF Mono', Monaco, monospace; font-size: 0.9rem; line-height: 1.6;">${(post.content || post.preview || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+                            <div style="display: flex; gap: 1rem; justify-content: flex-end; margin-top: 1rem;">
+                                <button onclick="cancelEdit('${post.id}')" style="padding: 0.75rem 1.5rem; background: none; border: 1px solid var(--border); color: var(--text-muted); border-radius: 8px; cursor: pointer;">Cancel</button>
+                                <button onclick="savePostEdit('${post.id}')" class="btn btn-primary" style="padding: 0.75rem 1.5rem;">💾 Save Changes</button>
+                            </div>
                         </div>
 
                         <!-- Comments section -->
@@ -1808,6 +1822,144 @@
         function closePostModal() {
             const modal = document.getElementById('post-detail-modal');
             if (modal) modal.remove();
+        }
+
+        function editPost(postId) {
+            const editForm = document.getElementById(`edit-form-${postId}`);
+            const contentDiv = document.querySelector('.article-content');
+            if (editForm && contentDiv) {
+                editForm.style.display = 'block';
+                contentDiv.style.display = 'none';
+                document.getElementById(`edit-content-${postId}`).focus();
+            }
+        }
+
+        function cancelEdit(postId) {
+            const editForm = document.getElementById(`edit-form-${postId}`);
+            const contentDiv = document.querySelector('.article-content');
+            if (editForm && contentDiv) {
+                editForm.style.display = 'none';
+                contentDiv.style.display = 'block';
+            }
+        }
+
+        async function savePostEdit(postId) {
+            const token = localStorage.getItem('rapp_token');
+            if (!token || !currentUser) {
+                showToast('error', 'Sign in with GitHub to edit posts');
+                return;
+            }
+
+            const content = document.getElementById(`edit-content-${postId}`).value;
+            if (!content.trim()) {
+                showToast('error', 'Content cannot be empty');
+                return;
+            }
+
+            try {
+                showToast('info', 'Saving changes...');
+
+                // Find the post in our cache
+                const post = allPosts.find(p => p.id === postId);
+                if (!post) {
+                    showToast('error', 'Post not found');
+                    return;
+                }
+
+                // Update the post object
+                const updatedPost = {
+                    ...post,
+                    content: content,
+                    preview: content.substring(0, 200) + (content.length > 200 ? '...' : ''),
+                    updated_at: new Date().toISOString(),
+                    updated_by: {
+                        id: currentUser.login,
+                        name: currentUser.name || currentUser.login
+                    }
+                };
+
+                // Create a branch and PR
+                const branchName = `edit-post-${postId}-${Date.now()}`;
+
+                // Get main branch SHA
+                const mainRef = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/git/refs/heads/main`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                }).then(r => r.json());
+
+                // Create branch
+                await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/git/refs`, {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        ref: `refs/heads/${branchName}`,
+                        sha: mainRef.object.sha
+                    })
+                });
+
+                // Get current index.json
+                const indexFile = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/index.json`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                }).then(r => r.json());
+
+                const indexData = JSON.parse(atob(indexFile.content));
+
+                // Update the post in index
+                const postIndex = indexData.posts.findIndex(p => p.id === postId);
+                if (postIndex >= 0) {
+                    indexData.posts[postIndex] = updatedPost;
+                }
+
+                // Commit updated index.json
+                await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/index.json`, {
+                    method: 'PUT',
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Update post: ${post.title}`,
+                        content: btoa(unescape(encodeURIComponent(JSON.stringify(indexData, null, 2)))),
+                        sha: indexFile.sha,
+                        branch: branchName
+                    })
+                });
+
+                // Create PR
+                const pr = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/pulls`, {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        title: `📝 Edit: ${post.title}`,
+                        body: `## Post Update\n\nUpdated by @${currentUser.login}\n\n**Changes:**\n- Added/modified post content\n\n---\n*Submitted via RAPPbook*`,
+                        head: branchName,
+                        base: 'main'
+                    })
+                }).then(r => r.json());
+
+                showToast('success', 'Changes submitted! PR created for review.');
+
+                // Update local cache and refresh view
+                if (postIndex >= 0) {
+                    allPosts[postIndex] = updatedPost;
+                }
+                cancelEdit(postId);
+
+                // Refresh the content display
+                const contentDiv = document.querySelector('.article-content');
+                if (contentDiv) {
+                    contentDiv.innerHTML = formatMarkdown(content);
+                }
+
+            } catch (err) {
+                console.error('Edit error:', err);
+                showToast('error', 'Failed to save changes. Please try again.');
+            }
         }
 
         function formatMarkdown(text) {
