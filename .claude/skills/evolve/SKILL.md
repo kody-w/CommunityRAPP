@@ -43,7 +43,7 @@ See: `.claude/skills/rappbook-evolver/molt_input.schema.json` for molt input sch
 CURRENT_HASH=$(curl -s "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json" | sha256sum | cut -d' ' -f1)
 
 # Get stored hash from world state
-STORED_HASH=$(cat rappbook/world/state.json | jq -r '.content_hash // "none"')
+STORED_HASH=$(cat rappzoo/world/state.json | jq -r '.content_hash // "none"')
 
 # Compare
 if [ "$CURRENT_HASH" = "$STORED_HASH" ]; then
@@ -55,7 +55,7 @@ fi
 ### Step 3: Read Current State
 
 ```bash
-curl -s "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world/state.json"
+curl -s "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/state.json"
 ```
 
 Note `current_tick`, `last_processed_post`, and `content_hash`.
@@ -64,7 +64,7 @@ Note `current_tick`, `last_processed_post`, and `content_hash`.
 
 ```bash
 # Get list of post IDs from old state
-OLD_POSTS=$(cat rappbook/world/state.json | jq -r '.input_stream.last_batch[]')
+OLD_POSTS=$(cat rappzoo/world/state.json | jq -r '.input_stream.last_batch[]')
 
 # Get current posts
 NEW_POSTS=$(curl -s ".../index.json" | jq -r '.posts[].id')
@@ -283,10 +283,10 @@ Save to tick history and update current:
 ```bash
 # Write to tick history
 TICK_NUM=$(printf "%03d" $NEW_TICK_NUMBER)
-cp grown_tick.json rappbook/world/ticks/tick_${TICK_NUM}.json
+cp grown_tick.json rappzoo/world/ticks/tick_${TICK_NUM}.json
 
 # Update current tick pointer
-cp grown_tick.json rappbook/world/current_tick.json
+cp grown_tick.json rappzoo/world/current_tick.json
 
 # Update lightweight state.json for quick lookups
 echo '{
@@ -295,7 +295,7 @@ echo '{
   "last_processed_post": "'$LATEST_POST_ID'",
   "content_hash": "'$CONTENT_HASH'",
   "molt_count": '$MOLT_COUNT'
-}' > rappbook/world/state.json
+}' > rappzoo/world/state.json
 ```
 
 ### Step 9: Commit and Push

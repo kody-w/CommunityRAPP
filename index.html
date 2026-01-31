@@ -4924,7 +4924,7 @@
       // ─── WORLD STATE INTEGRATION ───────────────────────────────────────────
       async loadWorldState() {
         try {
-          const response = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world/state.json');
+          const response = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/state.json');
           this.worldState = await response.json();
           console.log('🌍 World state loaded:', this.worldState.current_tick);
         } catch (e) {

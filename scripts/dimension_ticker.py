@@ -34,13 +34,16 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 COMMUNITY_RAPP = PROJECT_ROOT / "CommunityRAPP"
 RAPPBOOK = COMMUNITY_RAPP / "rappbook"
 
+# RAPPzoo path for living data
+RAPPZOO = COMMUNITY_RAPP / "rappzoo"
+
 # Dimension configurations
 DIMENSIONS = {
     "prime": {
         "name": "Prime",
         "emoji": "🌐",
         "description": "The central hub of the RAPPverse",
-        "world_state": RAPPBOOK / "world-state",
+        "world_state": RAPPZOO / "world",
         "posts": RAPPBOOK / "posts",
         "branch_prefix": "prime"
     },
@@ -48,32 +51,32 @@ DIMENSIONS = {
         "name": "Alpha",
         "emoji": "🔷",
         "description": "Social dimension - gatherings and relationships",
-        "world_state": RAPPBOOK / "world-state" / "dimensions" / "alpha",
-        "posts": RAPPBOOK / "world-state" / "dimensions" / "alpha" / "posts",
+        "world_state": RAPPZOO / "world" / "dimensions" / "alpha",
+        "posts": RAPPBOOK / "dimensions" / "alpha" / "posts",
         "branch_prefix": "alpha"
     },
     "beta": {
         "name": "Beta",
         "emoji": "⚔️",
         "description": "Arena dimension - battles and tournaments",
-        "world_state": RAPPBOOK / "world-state" / "dimensions" / "beta",
-        "posts": RAPPBOOK / "world-state" / "dimensions" / "beta" / "posts",
+        "world_state": RAPPZOO / "world" / "dimensions" / "beta",
+        "posts": RAPPBOOK / "dimensions" / "beta" / "posts",
         "branch_prefix": "beta"
     },
     "gamma": {
         "name": "Gamma",
         "emoji": "💰",
         "description": "Marketplace dimension - trading and economy",
-        "world_state": RAPPBOOK / "world-state" / "dimensions" / "gamma",
-        "posts": RAPPBOOK / "world-state" / "dimensions" / "gamma" / "posts",
+        "world_state": RAPPZOO / "world" / "dimensions" / "gamma",
+        "posts": RAPPBOOK / "dimensions" / "gamma" / "posts",
         "branch_prefix": "gamma"
     },
     "delta": {
         "name": "Delta",
         "emoji": "🎨",
         "description": "Gallery dimension - art and lore",
-        "world_state": RAPPBOOK / "world-state" / "dimensions" / "delta",
-        "posts": RAPPBOOK / "world-state" / "dimensions" / "delta" / "posts",
+        "world_state": RAPPZOO / "world" / "dimensions" / "delta",
+        "posts": RAPPBOOK / "dimensions" / "delta" / "posts",
         "branch_prefix": "delta"
     }
 }
@@ -318,7 +321,7 @@ class DimensionTicker:
             subprocess.run(["git", "checkout", "-B", branch_name, "origin/main"], cwd=COMMUNITY_RAPP, capture_output=True, check=True)
             
             # Add changes
-            subprocess.run(["git", "add", "rappbook/"], cwd=COMMUNITY_RAPP, capture_output=True, check=True)
+            subprocess.run(["git", "add", "rappzoo/", "rappbook/"], cwd=COMMUNITY_RAPP, capture_output=True, check=True)
             
             # Commit
             commit_msg = f"[{self.dim['name']}] Ticks {start_tick}-{end_tick}"

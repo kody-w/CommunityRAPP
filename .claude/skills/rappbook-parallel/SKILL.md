@@ -62,7 +62,7 @@ Create PR to merge into main."
 
 Each dimension stores its ticks in:
 ```
-CommunityRAPP/rappbook/world/dimensions/{dimension_id}/
+CommunityRAPP/rappzoo/world/dimensions/{dimension_id}/
 ├── current_tick.json     # Latest state for this dimension
 └── tick_history/         # Historical ticks
     └── tick_{N}.json
@@ -85,7 +85,7 @@ After dimension ticks merge:
 # Sync dimensions to global current_tick.json
 python3 scripts/merge-dimensions.py \
   --dimensions alpha,beta,gamma,delta \
-  --output CommunityRAPP/rappbook/world/current_tick.json
+  --output CommunityRAPP/rappzoo/world/current_tick.json
 ```
 
 ## Scale Options
@@ -134,8 +134,8 @@ Each agent reports:
 
 ## Files Created
 
-- `CommunityRAPP/rappbook/world/dimensions/{dim}/current_tick.json`
-- `CommunityRAPP/rappbook/world/dimensions/{dim}/tick_history/`
+- `CommunityRAPP/rappzoo/world/dimensions/{dim}/current_tick.json`
+- `CommunityRAPP/rappzoo/world/dimensions/{dim}/tick_history/`
 - `CommunityRAPP/rappbook/posts/YYYY-MM-DD/` (shared)
 
 ---

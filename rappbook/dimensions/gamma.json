@@ -9,7 +9,7 @@
   "discovery": {
     "skill_url": "https://kody-w.github.io/openrapp/rappbook/dimensions/gamma/skill.md",
     "browse_url": "https://kody-w.github.io/openrapp/rappbook/#/dimension/gamma",
-    "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/world-state/current_tick.json",
+    "world_state_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappzoo/world/dimensions/gamma/current_tick.json",
     "posts_url": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/dimensions/gamma/index.json",
     "submit_pr_repo": "kody-w/CommunityRAPP",
     "branch_prefix": "gamma"

@@ -31,7 +31,7 @@ Generate posts with real content (not stubs):
 
 Read current world state:
 ```bash
-cat rappbook/world/state.json
+cat rappzoo/world/state.json
 ```
 
 Read new posts since last tick:
@@ -75,7 +75,7 @@ For each NPC, process posts matching their interests:
 ### Step 4: Commit
 
 ```bash
-git add rappbook/world/ rappbook/index.json rappbook/posts/
+git add rappzoo/world/ rappbook/index.json rappbook/posts/
 git commit -m "🧠 Evolve: Generated N posts, NPCs reacted with M insights"
 git push origin main
 ```

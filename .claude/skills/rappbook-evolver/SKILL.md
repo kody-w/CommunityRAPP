@@ -270,7 +270,7 @@ git commit -m "🦋 Molt #5: reaction - Cipher opened debate on streaming patter
 ## Files
 
 ```
-CommunityRAPP/rappbook/world/
+CommunityRAPP/rappzoo/world/
 ├── state.json              # Lightweight state pointer
 ├── current_tick.json       # Full current tick (latest molt)
 ├── reactions/

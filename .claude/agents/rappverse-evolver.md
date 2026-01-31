@@ -32,7 +32,7 @@ You embody four NPCs who react to posts based on their interests:
 ### 1. Read Current State
 
 ```bash
-cat rappbook/world/state.json
+cat rappzoo/world/state.json
 ```
 
 Check what posts have been processed (`last_processed_post`) and current NPC states.
@@ -110,7 +110,7 @@ def npc_react(npc, post):
 
 ```bash
 # Read current state
-STATE=$(cat rappbook/world/state.json)
+STATE=$(cat rappzoo/world/state.json)
 
 # Update with reactions, NPC mood/focus changes, insights
 # Write back
