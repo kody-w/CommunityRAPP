@@ -2072,8 +2072,8 @@
       }
 
       /* Hide less critical buttons on mobile */
-      .header-actions > a[href*="localFirstTools"],
-      .header-actions > a[href*="agent_store"],
+      .header-actions > a[href*="rapptools"],
+      .header-actions > a[href*="notes.html"],
       .header-actions #collab-os-button,
       .header-actions #archive-chat {
         display: none;
@@ -3154,15 +3154,15 @@
         </div>
       </div>
       <div class="header-actions">
-        <!-- Navigation/Browse -->
-        <a href="localFirstTools/" class="header-button" title="Open App Store" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-          <i class="fas fa-th"></i>
+        <!-- RAPPtools - Productivity Tools -->
+        <a href="https://kody-w.github.io/CommunityRAPP/rapptools/" target="_blank" class="header-button" title="RAPPtools - Productivity Tools" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <i class="fas fa-tools"></i>
         </a>
-        <a href="RAPP-Production-Guide.html" target="_blank" class="header-button" title="RAPP Production Guide - Complete Documentation" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-          <i class="fas fa-book"></i>
+        <a href="https://kody-w.github.io/CommunityRAPP/rapptools/notes.html" target="_blank" class="header-button" title="Quick Notes" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <i class="fas fa-sticky-note"></i>
         </a>
-        <a href="agent_store.html" class="header-button" title="Open Agent Marketplace" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-          <i class="fas fa-store"></i>
+        <a href="https://kody-w.github.io/CommunityRAPP/rapptools/calculator.html" target="_blank" class="header-button" title="Calculator" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <i class="fas fa-calculator"></i>
         </a>
 
         <!-- RAPP Ecosystem -->
@@ -7254,36 +7254,37 @@
 
       async loadTools() {
         try {
-          // Fetch the apps manifest which contains all available tools
-          const response = await fetch('localFirstTools/apps-manifest.json');
-          const apps = await response.json();
+          // Fetch the RAPPtools manifest from CommunityRAPP
+          const response = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rapptools/manifest.json');
+          const manifest = await response.json();
 
           // Map apps to tool format with icons
-          this.tools = apps.map(app => ({
-            name: app.name,
-            path: app.path,
-            category: app.category,
-            icon: this.getIconForTool(app.name, app.category)
+          this.tools = manifest.tools.map(tool => ({
+            name: tool.name,
+            path: tool.url,
+            category: tool.category,
+            icon: tool.icon || this.getIconForTool(tool.name, tool.category)
           }));
 
-          console.log(`Loaded ${this.tools.length} tools from manifest`);
+          console.log(`Loaded ${this.tools.length} tools from RAPPtools manifest`);
           this.renderToolGallery();
         } catch (error) {
-          console.error('Error loading tools:', error);
-          // Fallback to default tools
+          console.error('Error loading tools manifest, using defaults:', error);
+          // Fallback to default tools (RAPP ecosystem apps)
           this.tools = this.getDefaultTools();
           this.renderToolGallery();
         }
       }
 
       getDefaultTools() {
+        // Default RAPPtools - simple productivity tools from CommunityRAPP
         return [
-          { name: 'Todo List', path: 'localFirstTools/productivity/todo-list.html', icon: 'fa-tasks' },
-          { name: 'Note Taking', path: 'localFirstTools/productivity/note-taking.html', icon: 'fa-sticky-note' },
-          { name: 'Calculator', path: 'localFirstTools/utilities/calculator.html', icon: 'fa-calculator' },
-          { name: 'Timer', path: 'localFirstTools/utilities/timer.html', icon: 'fa-clock' },
-          { name: 'Code Editor', path: 'localFirstTools/development/code-editor.html', icon: 'fa-code' },
-          { name: 'Markdown Editor', path: 'localFirstTools/development/markdown-editor.html', icon: 'fa-markdown' }
+          { name: 'Todo List', path: 'https://kody-w.github.io/CommunityRAPP/rapptools/todo.html', icon: 'fa-tasks', category: 'productivity' },
+          { name: 'Quick Notes', path: 'https://kody-w.github.io/CommunityRAPP/rapptools/notes.html', icon: 'fa-sticky-note', category: 'productivity' },
+          { name: 'Calculator', path: 'https://kody-w.github.io/CommunityRAPP/rapptools/calculator.html', icon: 'fa-calculator', category: 'utilities' },
+          { name: 'Timer', path: 'https://kody-w.github.io/CommunityRAPP/rapptools/timer.html', icon: 'fa-clock', category: 'utilities' },
+          { name: 'JSON Viewer', path: 'https://kody-w.github.io/CommunityRAPP/rapptools/json-viewer.html', icon: 'fa-code', category: 'development' },
+          { name: 'Markdown Editor', path: 'https://kody-w.github.io/CommunityRAPP/rapptools/markdown.html', icon: 'fa-file-alt', category: 'development' }
         ];
       }
 
@@ -7489,17 +7490,17 @@
       }
 
       launchCollaborativeOS() {
-        // Open Collaborative OS in new window
+        // Open RAPPtools in new window
         const osWindow = window.open(
-          'localFirstTools/apps/ai-tools/collaborative-ai-os.html',
-          'CollaborativeOS',
-          'width=1200,height=800,menubar=no,toolbar=no,location=no,status=no'
+          'https://kody-w.github.io/CommunityRAPP/rapptools/',
+          'RAPPtools',
+          'width=1000,height=700,menubar=no,toolbar=no,location=no,status=no'
         );
 
         // Add notification message to chat
         const message = {
           role: 'assistant',
-          content: `🤖 **Collaborative AI OS Launched!**\n\nI've opened the shared workspace environment where we can collaborate in real-time.\n\n**What you can do:**\n- **Command Center**: Send me commands that I'll execute\n- **Activity Feed**: Watch my actions as they happen\n- **Terminal**: Run commands together\n- **File Manager**: Share files between us\n- **AI Chat**: Talk to me directly in the OS\n\n**Try these commands in the OS:**\n- "open terminal"\n- "system status"\n- "show activity"\n- "list files"\n\nThe OS should be opening in a new window now. I'll be waiting there! 🚀`
+          content: `🛠️ **RAPPtools Launched!**\n\nI've opened the RAPPtools suite - lightweight productivity tools.\n\n**Available Tools:**\n- **Todo List**: Task management with localStorage\n- **Quick Notes**: Markdown notes\n- **Calculator**: Basic arithmetic\n- **Timer**: Stopwatch and countdown\n- **JSON Viewer**: Format and explore JSON\n- **Markdown Editor**: Live preview editor\n\nRAPPtools should be opening in a new window now! 🚀`
         };
 
         // Add message to current conversation
