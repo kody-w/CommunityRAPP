@@ -1018,6 +1018,68 @@ updated_memory = (user_memory or "") + new_content
 storage.write_file('memory/users', f'{user_guid}_context.txt', updated_memory)
 ```
 
+## Molt System (Sync Duplicate Handling)
+
+**Molts** are duplicate files created by sync systems (iCloud, Dropbox, etc.) following patterns like `filename 2.ext`, `filename 3.ext`. Rather than treating these as errors, we embrace them as a **local caching/versioning feature**.
+
+### Why Molts Happen
+
+When you edit files across multiple devices or while offline, sync systems create conflict copies instead of losing data. These "molts" represent alternative versions that may contain valuable changes.
+
+### Molt Merger Tool
+
+Use the molt merger to handle these files:
+
+```bash
+# Scan and report all molts
+python scripts/molt_merger.py
+
+# Verbose report with diffs
+python scripts/molt_merger.py -v
+
+# Delete molts identical to originals (dry run)
+python scripts/molt_merger.py --merge
+
+# Actually delete identical molts
+python scripts/molt_merger.py --merge --execute
+
+# Show diff for a specific file
+python scripts/molt_merger.py --diff function_app.py
+
+# Adopt a molt as the new original (if molt is better)
+python scripts/molt_merger.py --adopt "function_app 3.py" --execute
+
+# Clean up all molts after review
+python scripts/molt_merger.py --clean --execute
+
+# Output as JSON for automation
+python scripts/molt_merger.py --json
+```
+
+### Molt Categories
+
+| Category | Meaning | Action |
+|----------|---------|--------|
+| **Identical** | Molt matches original | Safe to delete |
+| **Newer** | Molt modified more recently | Review - may want to adopt |
+| **Different** | Content differs, original newer | Review the diff |
+| **Orphaned** | No original exists | May BE the real file |
+
+### Workflow
+
+1. **Before committing**: Run `python scripts/molt_merger.py` to check for molts
+2. **Review newer molts**: They may contain work you did on another device
+3. **Adopt valuable molts**: Use `--adopt` to replace original with better version
+4. **Clean up**: Use `--merge --execute` to remove identical molts
+5. **Commit clean state**: Only originals remain
+
+### Best Practices
+
+- Don't delete molts blindly - they may contain your latest work
+- Check "newer" molts carefully - sync might have preserved important changes
+- Orphaned molts might be the only copy - review before deleting
+- Run molt merger before each commit session
+
 ## PII Prevention Guidelines
 
 **CRITICAL: This codebase must remain free of personally identifiable information (PII).**
