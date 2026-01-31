@@ -1,0 +1,145 @@
+{
+  "assistant_response": "## Dynamics 365 - Contacts\n\n| Name | Title | Account | Email | Phone | Last Activity |\n|------|-------|---------|-------|-------|---------------|\n| Jane Smith | VP of Technology | Contoso Ltd | jane.smith@contoso.com | +1 (555) 100-2001 | Yesterday |\n| Mike Chen | CTO | Fabrikam Inc | mchen@fabrikam.com | +1 (555) 200-3001 | 3 days ago |\n| Lisa Wong | IT Director | Adventure Works | lwong@adventureworks.com | +1 (555) 300-4001 | Today |\n| Tom Davis | CEO | Northwind Traders | tdavis@northwind.com | +1 (555) 400-5001 | 3 days ago |\n| Amy Park | Security Manager | Tailspin Toys | apark@tailspintoys.com | +1 (555) 500-6001 | 2 days ago |\n| David Kim | Procurement | Contoso Ltd | dkim@contoso.com | +1 (555) 100-2002 | 1 week ago |\n\n**Contact Summary:**\n- 👥 **6 Active Contacts** across 5 accounts\n- 📧 **Recent Emails:** 12 this week\n- 📞 **Recent Calls:** 8 this week\n- 📅 **Meetings Scheduled:** 4 upcoming\n\n*Data synced from Dynamics 365*",
+  "voice_response": "You have 6 active contacts across 5 accounts. Lisa Wong at Adventure Works had activity today.",
+  "agent_logs": "[Demo Mode] Dynamics 365 Agent - Retrieved contacts from D365",
+  "user_guid": "demo-user-d365",
+  "mode": "demo",
+  "scenario": "dynamics365",
+  "@odata.context": "https://org.crm.dynamics.com/api/data/v9.2/$metadata#contacts",
+  "value": [
+    {
+      "@odata.etag": "W/\"32345678\"",
+      "contactid": "con-jane-smith",
+      "fullname": "Jane Smith",
+      "firstname": "Jane",
+      "lastname": "Smith",
+      "jobtitle": "VP of Technology",
+      "emailaddress1": "jane.smith@contoso.com",
+      "telephone1": "+1 (555) 100-2001",
+      "mobilephone": "+1 (555) 100-2099",
+      "address1_city": "Seattle",
+      "address1_stateorprovince": "WA",
+      "decisionmaker": true,
+      "_parentcustomerid_value": "acc-contoso-001",
+      "parentcustomerid_account": {
+        "accountid": "acc-contoso-001",
+        "name": "Contoso Ltd"
+      },
+      "lastactivitydate": "2025-01-30",
+      "createdon": "2021-03-15T10:30:00Z",
+      "preferredcontactmethodcode": 2,
+      "preferredcontactmethodcode@OData.Community.Display.V1.FormattedValue": "Email"
+    },
+    {
+      "@odata.etag": "W/\"32345679\"",
+      "contactid": "con-mike-chen",
+      "fullname": "Mike Chen",
+      "firstname": "Mike",
+      "lastname": "Chen",
+      "jobtitle": "CTO",
+      "emailaddress1": "mchen@fabrikam.com",
+      "telephone1": "+1 (555) 200-3001",
+      "address1_city": "Chicago",
+      "address1_stateorprovince": "IL",
+      "decisionmaker": true,
+      "_parentcustomerid_value": "acc-fabrikam-002",
+      "parentcustomerid_account": {
+        "accountid": "acc-fabrikam-002",
+        "name": "Fabrikam Inc"
+      },
+      "lastactivitydate": "2025-01-28",
+      "createdon": "2024-11-20T09:30:00Z"
+    },
+    {
+      "@odata.etag": "W/\"32345680\"",
+      "contactid": "con-lisa-wong",
+      "fullname": "Lisa Wong",
+      "firstname": "Lisa",
+      "lastname": "Wong",
+      "jobtitle": "IT Director",
+      "emailaddress1": "lwong@adventureworks.com",
+      "telephone1": "+1 (555) 300-4001",
+      "address1_city": "Dallas",
+      "address1_stateorprovince": "TX",
+      "decisionmaker": true,
+      "_parentcustomerid_value": "acc-adventure-003",
+      "parentcustomerid_account": {
+        "accountid": "acc-adventure-003",
+        "name": "Adventure Works"
+      },
+      "lastactivitydate": "2025-01-31",
+      "createdon": "2021-06-10T08:30:00Z"
+    },
+    {
+      "@odata.etag": "W/\"32345681\"",
+      "contactid": "con-tom-davis",
+      "fullname": "Tom Davis",
+      "firstname": "Tom",
+      "lastname": "Davis",
+      "jobtitle": "CEO",
+      "emailaddress1": "tdavis@northwind.com",
+      "telephone1": "+1 (555) 400-5001",
+      "address1_city": "Denver",
+      "address1_stateorprovince": "CO",
+      "decisionmaker": true,
+      "_parentcustomerid_value": "acc-northwind-004",
+      "parentcustomerid_account": {
+        "accountid": "acc-northwind-004",
+        "name": "Northwind Traders"
+      },
+      "lastactivitydate": "2025-01-28",
+      "createdon": "2025-01-10T14:30:00Z"
+    },
+    {
+      "@odata.etag": "W/\"32345682\"",
+      "contactid": "con-amy-park",
+      "fullname": "Amy Park",
+      "firstname": "Amy",
+      "lastname": "Park",
+      "jobtitle": "Security Manager",
+      "emailaddress1": "apark@tailspintoys.com",
+      "telephone1": "+1 (555) 500-6001",
+      "address1_city": "Portland",
+      "address1_stateorprovince": "OR",
+      "decisionmaker": false,
+      "_parentcustomerid_value": "acc-tailspin-005",
+      "parentcustomerid_account": {
+        "accountid": "acc-tailspin-005",
+        "name": "Tailspin Toys"
+      },
+      "lastactivitydate": "2025-01-29",
+      "createdon": "2025-01-08T11:45:00Z"
+    },
+    {
+      "@odata.etag": "W/\"32345683\"",
+      "contactid": "con-david-kim",
+      "fullname": "David Kim",
+      "firstname": "David",
+      "lastname": "Kim",
+      "jobtitle": "Procurement Manager",
+      "emailaddress1": "dkim@contoso.com",
+      "telephone1": "+1 (555) 100-2002",
+      "address1_city": "Seattle",
+      "address1_stateorprovince": "WA",
+      "decisionmaker": false,
+      "_parentcustomerid_value": "acc-contoso-001",
+      "parentcustomerid_account": {
+        "accountid": "acc-contoso-001",
+        "name": "Contoso Ltd"
+      },
+      "lastactivitydate": "2025-01-24",
+      "createdon": "2021-05-20T14:00:00Z"
+    }
+  ],
+  "summary": {
+    "totalCount": 6,
+    "decisionMakers": 4,
+    "byAccount": {
+      "Contoso Ltd": 2,
+      "Fabrikam Inc": 1,
+      "Adventure Works": 1,
+      "Northwind Traders": 1,
+      "Tailspin Toys": 1
+    }
+  }
+}

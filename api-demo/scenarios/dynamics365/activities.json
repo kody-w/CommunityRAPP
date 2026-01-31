@@ -1,0 +1,123 @@
+{
+  "assistant_response": "## Dynamics 365 - Recent Activities\n\n### Today\n| Time | Type | Subject | Regarding | Owner |\n|------|------|---------|-----------|-------|\n| 10:30 AM | 📞 Call | Follow-up call | Adventure Works - Renewal | Sarah Miller |\n| 9:00 AM | 📧 Email | Proposal attached | Contoso Ltd - Enterprise | Sarah Miller |\n\n### Yesterday\n| Time | Type | Subject | Regarding | Owner |\n|------|------|---------|-----------|-------|\n| 4:15 PM | 📅 Meeting | Technical Review | Fabrikam Inc - Migration | John Chen |\n| 2:00 PM | 📞 Call | Discovery call | Northwind Traders | Alex Johnson |\n| 11:00 AM | ✅ Task | Prepare proposal | Contoso Ltd - Enterprise | Sarah Miller |\n\n### This Week\n- 📧 **12 Emails** sent/received\n- 📞 **8 Calls** completed\n- 📅 **5 Meetings** held\n- ✅ **15 Tasks** completed\n\n### Upcoming\n| Date | Type | Subject | Regarding |\n|------|------|---------|----------|\n| Feb 3 | 📅 Meeting | Discovery call | Northwind Traders |\n| Feb 5 | 📅 Meeting | Contract signing | Adventure Works |\n| Feb 7 | 📞 Call | Pricing review | Contoso Ltd |\n\n*Data synced from Dynamics 365*",
+  "voice_response": "Today you had 2 activities: a call with Adventure Works and an email to Contoso. You have 3 upcoming activities scheduled.",
+  "agent_logs": "[Demo Mode] Dynamics 365 Agent - Retrieved activities timeline",
+  "user_guid": "demo-user-d365",
+  "mode": "demo",
+  "scenario": "dynamics365",
+  "@odata.context": "https://org.crm.dynamics.com/api/data/v9.2/$metadata#activitypointers",
+  "value": [
+    {
+      "@odata.etag": "W/\"42345678\"",
+      "activityid": "act-001",
+      "activitytypecode": "phonecall",
+      "subject": "Follow-up call - Renewal discussion",
+      "description": "Called Lisa Wong to confirm renewal terms. She's reviewing with finance.",
+      "scheduledstart": "2025-01-31T10:30:00Z",
+      "scheduledend": "2025-01-31T11:00:00Z",
+      "actualdurationminutes": 25,
+      "statecode": 1,
+      "statuscode": 2,
+      "statuscode@OData.Community.Display.V1.FormattedValue": "Made",
+      "_regardingobjectid_value": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "regardingobjectid_opportunity": {
+        "opportunityid": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+        "name": "Annual Support Renewal"
+      },
+      "_ownerid_value": "user-sarah-miller",
+      "ownerid": {
+        "fullname": "Sarah Miller"
+      }
+    },
+    {
+      "@odata.etag": "W/\"42345679\"",
+      "activityid": "act-002",
+      "activitytypecode": "email",
+      "subject": "RE: Enterprise Platform Proposal",
+      "description": "Sent revised proposal with updated pricing as discussed.",
+      "scheduledstart": "2025-01-31T09:00:00Z",
+      "statecode": 1,
+      "statuscode": 3,
+      "statuscode@OData.Community.Display.V1.FormattedValue": "Sent",
+      "_regardingobjectid_value": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "regardingobjectid_opportunity": {
+        "opportunityid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "name": "Enterprise Platform License"
+      },
+      "_ownerid_value": "user-sarah-miller"
+    },
+    {
+      "@odata.etag": "W/\"42345680\"",
+      "activityid": "act-003",
+      "activitytypecode": "appointment",
+      "subject": "Technical Review - Cloud Migration",
+      "description": "Deep dive on Azure migration architecture with Mike Chen and team.",
+      "scheduledstart": "2025-01-30T16:15:00Z",
+      "scheduledend": "2025-01-30T17:30:00Z",
+      "actualdurationminutes": 75,
+      "statecode": 1,
+      "statuscode": 3,
+      "statuscode@OData.Community.Display.V1.FormattedValue": "Completed",
+      "location": "Microsoft Teams",
+      "_regardingobjectid_value": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "_ownerid_value": "user-john-chen"
+    },
+    {
+      "@odata.etag": "W/\"42345681\"",
+      "activityid": "act-004",
+      "activitytypecode": "phonecall",
+      "subject": "Discovery call - Digital Transformation",
+      "description": "Initial discovery with Tom Davis. Large transformation project, need to qualify budget.",
+      "scheduledstart": "2025-01-30T14:00:00Z",
+      "actualdurationminutes": 45,
+      "statecode": 1,
+      "statuscode": 2,
+      "_regardingobjectid_value": "d4e5f6a7-b8c9-0123-def0-234567890123",
+      "_ownerid_value": "user-alex-johnson"
+    },
+    {
+      "@odata.etag": "W/\"42345682\"",
+      "activityid": "act-005",
+      "activitytypecode": "task",
+      "subject": "Prepare revised proposal for Contoso",
+      "description": "Update pricing based on competitive analysis. Include 3-year option.",
+      "scheduledstart": "2025-01-30T11:00:00Z",
+      "scheduledend": "2025-01-30T12:00:00Z",
+      "statecode": 1,
+      "statuscode": 5,
+      "statuscode@OData.Community.Display.V1.FormattedValue": "Completed",
+      "_regardingobjectid_value": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "_ownerid_value": "user-sarah-miller"
+    }
+  ],
+  "upcoming": [
+    {
+      "activityid": "act-future-001",
+      "activitytypecode": "appointment",
+      "subject": "Discovery Call - Northwind Digital Transformation",
+      "scheduledstart": "2025-02-03T10:00:00Z",
+      "location": "Microsoft Teams",
+      "_regardingobjectid_value": "d4e5f6a7-b8c9-0123-def0-234567890123"
+    },
+    {
+      "activityid": "act-future-002",
+      "activitytypecode": "appointment",
+      "subject": "Contract Signing - Adventure Works Renewal",
+      "scheduledstart": "2025-02-05T14:00:00Z",
+      "location": "On-site: Dallas",
+      "_regardingobjectid_value": "c3d4e5f6-a7b8-9012-cdef-123456789012"
+    },
+    {
+      "activityid": "act-future-003",
+      "activitytypecode": "phonecall",
+      "subject": "Pricing Review Call - Contoso",
+      "scheduledstart": "2025-02-07T15:00:00Z",
+      "_regardingobjectid_value": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    }
+  ],
+  "summary": {
+    "today": {"calls": 1, "emails": 1, "meetings": 0, "tasks": 0},
+    "thisWeek": {"calls": 8, "emails": 12, "meetings": 5, "tasks": 15},
+    "upcoming": 3
+  }
+}

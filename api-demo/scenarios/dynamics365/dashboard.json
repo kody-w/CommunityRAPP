@@ -1,0 +1,57 @@
+{
+  "assistant_response": "## Dynamics 365 Sales Hub - Dashboard\n\n### 📊 Pipeline Overview\n| Metric | Value | Trend |\n|--------|-------|-------|\n| Open Opportunities | 5 | ↑ 2 this month |\n| Pipeline Value | $501,000 | ↑ 15% |\n| Weighted Revenue | $287,750 | ↑ 8% |\n| Win Rate (90d) | 32% | ↑ 3% |\n\n### 🎯 Closing This Month\n| Opportunity | Account | Value | Probability |\n|-------------|---------|-------|-------------|\n| Annual Support Renewal | Adventure Works | $45,000 | 90% |\n| Enterprise Platform License | Contoso Ltd | $125,000 | 75% |\n| Security Assessment | Tailspin Toys | $32,000 | 60% |\n\n**Total Closing:** $202,000 (weighted: $165,250)\n\n### 🔥 Hot Leads\n| Lead | Company | Source | Est. Value |\n|------|---------|--------|------------|\n| Robert Taylor | Woodgrove Bank | Website | $75,000 |\n| Emma Wilson | Litware Inc | Referral | $95,000 |\n\n### 📈 Activity Snapshot (This Week)\n| Type | Count | vs Last Week |\n|------|-------|-------------|\n| Emails | 12 | ↑ 20% |\n| Calls | 8 | ↓ 5% |\n| Meetings | 5 | ↑ 25% |\n| Tasks Completed | 15 | → same |\n\n### 🏆 Leaderboard\n| Rep | Open Pipeline | Closed (MTD) |\n|-----|--------------|---------------|\n| Sarah Miller | $170,000 | $45,000 |\n| John Chen | $121,000 | $32,000 |\n| Alex Johnson | $210,000 | $0 |\n\n*Last updated: Jan 31, 2025 11:00 AM*",
+  "voice_response": "Your pipeline has 5 opportunities worth $501,000. 3 deals worth $202,000 are closing this month. You have 2 hot leads to follow up on.",
+  "agent_logs": "[Demo Mode] Dynamics 365 Agent - Retrieved sales dashboard",
+  "user_guid": "demo-user-d365",
+  "mode": "demo",
+  "scenario": "dynamics365",
+  "data": {
+    "pipeline": {
+      "openOpportunities": 5,
+      "pipelineValue": 501000,
+      "weightedRevenue": 287750,
+      "winRate90d": 0.32,
+      "trends": {
+        "opportunities": "+2",
+        "value": "+15%",
+        "weighted": "+8%",
+        "winRate": "+3%"
+      }
+    },
+    "closingThisMonth": {
+      "opportunities": [
+        {"name": "Annual Support Renewal", "account": "Adventure Works", "value": 45000, "probability": 90},
+        {"name": "Enterprise Platform License", "account": "Contoso Ltd", "value": 125000, "probability": 75},
+        {"name": "Security Assessment", "account": "Tailspin Toys", "value": 32000, "probability": 60}
+      ],
+      "totalValue": 202000,
+      "weightedValue": 165250
+    },
+    "hotLeads": [
+      {"name": "Robert Taylor", "company": "Woodgrove Bank", "source": "Website", "value": 75000},
+      {"name": "Emma Wilson", "company": "Litware Inc", "source": "Referral", "value": 95000}
+    ],
+    "activityThisWeek": {
+      "emails": {"count": 12, "trend": "+20%"},
+      "calls": {"count": 8, "trend": "-5%"},
+      "meetings": {"count": 5, "trend": "+25%"},
+      "tasks": {"count": 15, "trend": "0%"}
+    },
+    "leaderboard": [
+      {"name": "Sarah Miller", "openPipeline": 170000, "closedMTD": 45000},
+      {"name": "John Chen", "openPipeline": 121000, "closedMTD": 32000},
+      {"name": "Alex Johnson", "openPipeline": 210000, "closedMTD": 0}
+    ],
+    "lastUpdated": "2025-01-31T11:00:00Z"
+  },
+  "demo_info": {
+    "source": "https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/api-demo/scenarios/dynamics365/dashboard.json",
+    "related_endpoints": [
+      "opportunities.json",
+      "accounts.json",
+      "contacts.json",
+      "leads.json",
+      "activities.json"
+    ]
+  }
+}
