@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Viewer - RAPPtools</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #742774;
+      --bg: #1a1a1a;
+      --surface: #242424;
+      --text: #e0e0e0;
+      --border: #333;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      padding: 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .header h1 { font-size: 18px; color: var(--primary); margin-right: auto; }
+    button {
+      padding: 8px 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover { opacity: 0.9; }
+    .main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+    .panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--border);
+    }
+    .panel:last-child { border-right: none; }
+    .panel-header {
+      padding: 10px 16px;
+      background: var(--surface);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.7;
+    }
+    textarea {
+      flex: 1;
+      padding: 16px;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 13px;
+      resize: none;
+      line-height: 1.5;
+    }
+    textarea:focus { outline: none; }
+    .output {
+      flex: 1;
+      padding: 16px;
+      overflow: auto;
+      font-family: 'SF Mono', Consolas, monospace;
+      font-size: 13px;
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+    .error { color: #f44336; }
+    .string { color: #a5d6a7; }
+    .number { color: #90caf9; }
+    .boolean { color: #ce93d8; }
+    .null { color: #ef9a9a; }
+    .key { color: #fff59d; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1><i class="fas fa-code"></i> JSON Viewer</h1>
+    <button onclick="formatJSON()"><i class="fas fa-magic"></i> Format</button>
+    <button onclick="minifyJSON()"><i class="fas fa-compress"></i> Minify</button>
+    <button onclick="copyOutput()"><i class="fas fa-copy"></i> Copy</button>
+  </div>
+
+  <div class="main">
+    <div class="panel">
+      <div class="panel-header">Input</div>
+      <textarea id="input" placeholder="Paste JSON here..." oninput="parseJSON()"></textarea>
+    </div>
+    <div class="panel">
+      <div class="panel-header">Output</div>
+      <div class="output" id="output"></div>
+    </div>
+  </div>
+
+  <script>
+    function parseJSON() {
+      const input = document.getElementById('input').value;
+      const output = document.getElementById('output');
+
+      if (!input.trim()) {
+        output.innerHTML = '<span style="opacity:0.5">Formatted output will appear here</span>';
+        return;
+      }
+
+      try {
+        const parsed = JSON.parse(input);
+        output.innerHTML = syntaxHighlight(JSON.stringify(parsed, null, 2));
+      } catch (e) {
+        output.innerHTML = `<span class="error">Error: ${e.message}</span>`;
+      }
+    }
+
+    function formatJSON() {
+      const input = document.getElementById('input');
+      try {
+        const parsed = JSON.parse(input.value);
+        input.value = JSON.stringify(parsed, null, 2);
+        parseJSON();
+      } catch (e) {
+        alert('Invalid JSON');
+      }
+    }
+
+    function minifyJSON() {
+      const input = document.getElementById('input');
+      try {
+        const parsed = JSON.parse(input.value);
+        input.value = JSON.stringify(parsed);
+        parseJSON();
+      } catch (e) {
+        alert('Invalid JSON');
+      }
+    }
+
+    function copyOutput() {
+      const input = document.getElementById('input').value;
+      try {
+        const parsed = JSON.parse(input);
+        navigator.clipboard.writeText(JSON.stringify(parsed, null, 2));
+        alert('Copied to clipboard!');
+      } catch (e) {
+        alert('Invalid JSON');
+      }
+    }
+
+    function syntaxHighlight(json) {
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, match => {
+        let cls = 'number';
+        if (/^"/.test(match)) {
+          cls = /:$/.test(match) ? 'key' : 'string';
+        } else if (/true|false/.test(match)) {
+          cls = 'boolean';
+        } else if (/null/.test(match)) {
+          cls = 'null';
+        }
+        return `<span class="${cls}">${match}</span>`;
+      });
+    }
+
+    parseJSON();
+  </script>
+</body>
+</html>

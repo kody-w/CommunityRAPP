@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer - RAPPtools</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #742774;
+      --bg: #1a1a1a;
+      --surface: #242424;
+      --text: #e0e0e0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .timer-app {
+      text-align: center;
+      max-width: 400px;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .tab {
+      padding: 10px 24px;
+      background: var(--surface);
+      border: none;
+      border-radius: 8px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .tab.active { background: var(--primary); }
+    .display {
+      font-size: 72px;
+      font-weight: 200;
+      font-family: 'SF Mono', monospace;
+      margin-bottom: 30px;
+    }
+    .controls {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      background: var(--surface);
+      color: var(--text);
+      transition: all 0.15s;
+    }
+    button:hover { background: #333; }
+    .start { background: #4caf50; color: white; }
+    .start:hover { background: #43a047; }
+    .pause { background: #ff9800; color: white; }
+    .pause:hover { background: #f57c00; }
+    .reset { background: #f44336; color: white; }
+    .reset:hover { background: #e53935; }
+    .presets {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .preset {
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      width: auto;
+      height: auto;
+    }
+    .laps {
+      margin-top: 30px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .lap {
+      padding: 8px;
+      background: var(--surface);
+      border-radius: 4px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer-app">
+    <div class="tabs">
+      <button class="tab active" onclick="setMode('stopwatch')">Stopwatch</button>
+      <button class="tab" onclick="setMode('timer')">Timer</button>
+    </div>
+
+    <div class="display" id="display">00:00:00</div>
+
+    <div class="controls">
+      <button class="reset" onclick="reset()"><i class="fas fa-undo"></i></button>
+      <button class="start" id="startBtn" onclick="toggleTimer()"><i class="fas fa-play"></i></button>
+      <button onclick="lap()"><i class="fas fa-flag"></i></button>
+    </div>
+
+    <div class="presets" id="presets" style="display:none;">
+      <button class="preset" onclick="setTime(60)">1 min</button>
+      <button class="preset" onclick="setTime(300)">5 min</button>
+      <button class="preset" onclick="setTime(600)">10 min</button>
+      <button class="preset" onclick="setTime(1500)">25 min</button>
+    </div>
+
+    <div class="laps" id="laps"></div>
+  </div>
+
+  <script>
+    let mode = 'stopwatch';
+    let running = false;
+    let time = 0;
+    let interval = null;
+    let laps = [];
+
+    function formatTime(ms) {
+      const totalSec = Math.floor(ms / 1000);
+      const hrs = Math.floor(totalSec / 3600);
+      const mins = Math.floor((totalSec % 3600) / 60);
+      const secs = totalSec % 60;
+      return `${String(hrs).padStart(2,'0')}:${String(mins).padStart(2,'0')}:${String(secs).padStart(2,'0')}`;
+    }
+
+    function updateDisplay() {
+      document.getElementById('display').textContent = formatTime(time);
+    }
+
+    function setMode(m) {
+      mode = m;
+      reset();
+      document.querySelectorAll('.tab').forEach((t, i) => {
+        t.classList.toggle('active', (i === 0 && m === 'stopwatch') || (i === 1 && m === 'timer'));
+      });
+      document.getElementById('presets').style.display = m === 'timer' ? 'flex' : 'none';
+    }
+
+    function setTime(sec) {
+      time = sec * 1000;
+      updateDisplay();
+    }
+
+    function toggleTimer() {
+      running = !running;
+      const btn = document.getElementById('startBtn');
+      if (running) {
+        btn.innerHTML = '<i class="fas fa-pause"></i>';
+        btn.classList.remove('start');
+        btn.classList.add('pause');
+        interval = setInterval(() => {
+          time += mode === 'stopwatch' ? 10 : -10;
+          if (mode === 'timer' && time <= 0) {
+            time = 0;
+            toggleTimer();
+            alert('Timer done!');
+          }
+          updateDisplay();
+        }, 10);
+      } else {
+        btn.innerHTML = '<i class="fas fa-play"></i>';
+        btn.classList.remove('pause');
+        btn.classList.add('start');
+        clearInterval(interval);
+      }
+    }
+
+    function reset() {
+      running = false;
+      clearInterval(interval);
+      time = 0;
+      laps = [];
+      document.getElementById('startBtn').innerHTML = '<i class="fas fa-play"></i>';
+      document.getElementById('startBtn').classList.remove('pause');
+      document.getElementById('startBtn').classList.add('start');
+      updateDisplay();
+      document.getElementById('laps').innerHTML = '';
+    }
+
+    function lap() {
+      if (!running || mode !== 'stopwatch') return;
+      laps.push(time);
+      const container = document.getElementById('laps');
+      container.innerHTML = laps.map((l, i) => `
+        <div class="lap"><span>Lap ${i + 1}</span><span>${formatTime(l)}</span></div>
+      `).reverse().join('');
+    }
+  </script>
+</body>
+</html>

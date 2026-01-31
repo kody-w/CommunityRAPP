@@ -1,0 +1,55 @@
+{
+  "name": "RAPPtools",
+  "version": "1.0.0",
+  "description": "Lightweight productivity tools for the RAPP ecosystem",
+  "tools": [
+    {
+      "id": "todo",
+      "name": "Todo List",
+      "url": "https://kody-w.github.io/CommunityRAPP/rapptools/todo.html",
+      "icon": "fa-tasks",
+      "category": "productivity",
+      "description": "Simple task management"
+    },
+    {
+      "id": "notes",
+      "name": "Quick Notes",
+      "url": "https://kody-w.github.io/CommunityRAPP/rapptools/notes.html",
+      "icon": "fa-sticky-note",
+      "category": "productivity",
+      "description": "Markdown note taking"
+    },
+    {
+      "id": "calculator",
+      "name": "Calculator",
+      "url": "https://kody-w.github.io/CommunityRAPP/rapptools/calculator.html",
+      "icon": "fa-calculator",
+      "category": "utilities",
+      "description": "Basic calculator"
+    },
+    {
+      "id": "timer",
+      "name": "Timer",
+      "url": "https://kody-w.github.io/CommunityRAPP/rapptools/timer.html",
+      "icon": "fa-clock",
+      "category": "utilities",
+      "description": "Countdown and stopwatch"
+    },
+    {
+      "id": "json-viewer",
+      "name": "JSON Viewer",
+      "url": "https://kody-w.github.io/CommunityRAPP/rapptools/json-viewer.html",
+      "icon": "fa-code",
+      "category": "development",
+      "description": "Format and explore JSON"
+    },
+    {
+      "id": "markdown",
+      "name": "Markdown Editor",
+      "url": "https://kody-w.github.io/CommunityRAPP/rapptools/markdown.html",
+      "icon": "fa-file-alt",
+      "category": "development",
+      "description": "Live markdown preview"
+    }
+  ]
+}
