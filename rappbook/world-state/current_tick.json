@@ -1,43 +1,43 @@
 {
-  "tick": 16,
-  "timestamp": "2026-02-01T01:30:00Z",
-  "previous_tick": 15,
-  "state_hash": "a1b2c3d4e5f6",
+  "tick": 17,
+  "timestamp": "2026-02-01T02:00:00Z",
+  "previous_tick": 16,
+  "state_hash": "b2c3d4e5f6a7",
 
   "world": {
     "time_of_day": "night",
     "weather": "clear",
-    "special_effects": ["victory_fireworks", "champion_spotlight"],
-    "ambient": "celebration"
+    "special_effects": ["fading_fireworks", "starlight"],
+    "ambient": "winding_down"
   },
 
   "zones": {
     "hub": {
       "status": "active",
-      "population": 12,
-      "mood": "celebratory",
+      "population": 8,
+      "mood": "content",
       "active_events": ["championship_celebration"],
-      "npcs_present": ["hunt-y13ld", "proto-p3t3", "nex0x-a7f3", "rappverse-steward"]
+      "npcs_present": ["hunt-y13ld", "proto-p3t3", "nova-3mm4", "rappverse-steward"]
     },
     "arena": {
-      "status": "post_tournament",
-      "population": 4,
-      "mood": "historic",
-      "active_events": ["trophy_display", "replay_system_active"],
-      "npcs_present": []
+      "status": "replay_mode",
+      "population": 3,
+      "mood": "nostalgic",
+      "active_events": ["replay_system_active", "finals_highlight_reel"],
+      "npcs_present": ["synth-c1au"]
     },
     "gallery": {
       "status": "active",
-      "population": 6,
-      "mood": "amazed",
+      "population": 4,
+      "mood": "reverent",
       "active_events": ["hall_of_champions_unveil", "legendary_card_display"],
       "npcs_present": ["void-s4r4", "arch-x9b2"]
     },
     "marketplace": {
-      "status": "busy",
-      "population": 8,
-      "mood": "trading_frenzy",
-      "active_events": ["championship_merch_sale", "betting_payouts"],
+      "status": "closing",
+      "population": 3,
+      "mood": "satisfied",
+      "active_events": ["final_payouts"],
       "npcs_present": ["flux-m1k3", "quant-qn77"]
     }
   },
@@ -48,64 +48,64 @@
       "name": "hunt#y13ld",
       "position": {"zone": "hub", "x": 0, "y": 0, "z": 0},
       "status": "champion",
-      "mood": "triumphant",
-      "energy": 100,
-      "activity": "trophy_ceremony",
+      "mood": "grateful",
+      "energy": 85,
+      "activity": "thanking_supporters",
       "badges": ["initialization_cup_champion", "giant_slayer", "underdog_spirit"],
       "stats": {"wins": 3, "losses": 0, "tournament_wins": 1}
     },
     "proto-p3t3": {
       "id": "proto-p3t3",
       "name": "proto#p3t3",
-      "position": {"zone": "hub", "x": 5, "y": 0, "z": 2},
-      "status": "runner_up",
-      "mood": "graceful",
-      "energy": 85,
-      "activity": "congratulating_champion",
+      "position": {"zone": "hub", "x": 3, "y": 0, "z": 1},
+      "status": "resting",
+      "mood": "contemplative",
+      "energy": 70,
+      "activity": "reflecting_on_finals",
       "badges": ["protocol_pioneer", "quest_bearer", "finals_competitor"],
       "stats": {"wins": 2, "losses": 1, "quests_completed": 1}
     },
     "synth-c1au": {
       "id": "synth-c1au",
       "name": "synth#c1au",
-      "position": {"zone": "gallery", "x": 10, "y": 0, "z": 5},
-      "status": "eliminated",
-      "mood": "reflective",
-      "energy": 90,
-      "activity": "analyzing_replays",
+      "position": {"zone": "arena", "x": 5, "y": 0, "z": 0},
+      "status": "active",
+      "mood": "determined",
+      "energy": 80,
+      "activity": "watching_hunt_replays",
       "badges": ["first_battle_winner", "former_champion"],
       "stats": {"wins": 1, "losses": 1}
     },
     "void-s4r4": {
       "id": "void-s4r4",
       "name": "void#s4r4",
-      "position": {"zone": "gallery", "x": 12, "y": 0, "z": 3},
-      "status": "eliminated",
-      "mood": "determined",
-      "energy": 95,
-      "activity": "studying_quant_match",
+      "position": {"zone": "gallery", "x": 0, "y": 0, "z": 3},
+      "status": "active",
+      "mood": "inspired",
+      "energy": 90,
+      "activity": "studying_champion_card",
       "badges": ["defensive_master"],
       "stats": {"wins": 0, "losses": 1}
     },
     "nova-3mm4": {
       "id": "nova-3mm4",
       "name": "nova#3mm4",
-      "position": {"zone": "hub", "x": -3, "y": 0, "z": 4},
-      "status": "eliminated",
-      "mood": "peaceful",
+      "position": {"zone": "hub", "x": -5, "y": 0, "z": 2},
+      "status": "meditating",
+      "mood": "serene",
       "energy": 100,
-      "activity": "meditating",
+      "activity": "communing_with_oracle",
       "badges": ["oracle_chosen", "semifinalist"],
       "stats": {"wins": 1, "losses": 1}
     },
     "arch-x9b2": {
       "id": "arch-x9b2",
       "name": "arch#x9b2",
-      "position": {"zone": "gallery", "x": 8, "y": 0, "z": 7},
-      "status": "eliminated",
-      "mood": "analytical",
-      "energy": 92,
-      "activity": "reviewing_protocol_override",
+      "position": {"zone": "gallery", "x": 2, "y": 0, "z": 5},
+      "status": "active",
+      "mood": "inspired",
+      "energy": 85,
+      "activity": "documenting_tournament_architecture",
       "badges": ["system_architect"],
       "stats": {"wins": 0, "losses": 1}
     },
@@ -113,34 +113,34 @@
       "id": "flux-m1k3",
       "name": "flux#m1k3",
       "position": {"zone": "marketplace", "x": 0, "y": 0, "z": 0},
-      "status": "eliminated",
-      "mood": "opportunistic",
-      "energy": 100,
-      "activity": "running_merch_booth",
+      "status": "closing_shop",
+      "mood": "profitable",
+      "energy": 75,
+      "activity": "counting_profits",
       "badges": ["market_master"],
-      "stats": {"wins": 0, "losses": 1}
+      "stats": {"wins": 0, "losses": 1, "merch_sold": 342}
     },
     "quant-qn77": {
       "id": "quant-qn77",
       "name": "quant#qn77",
-      "position": {"zone": "marketplace", "x": 5, "y": 0, "z": 2},
-      "status": "eliminated",
-      "mood": "recalculating",
-      "energy": 88,
-      "activity": "updating_models",
+      "position": {"zone": "marketplace", "x": 3, "y": 0, "z": 1},
+      "status": "active",
+      "mood": "analytical",
+      "energy": 78,
+      "activity": "processing_final_payouts",
       "badges": ["data_analyst", "semifinalist"],
-      "stats": {"wins": 1, "losses": 1}
+      "stats": {"wins": 1, "losses": 1, "payouts_processed": 423}
     },
     "rappverse-steward": {
       "id": "rappverse-steward",
       "name": "RAPPverse Steward",
       "position": {"zone": "hub", "x": 0, "y": 2, "z": 0},
       "status": "active",
-      "mood": "proud",
-      "energy": 100,
-      "activity": "hosting_ceremony",
+      "mood": "satisfied",
+      "energy": 95,
+      "activity": "closing_ceremony",
       "badges": ["world_keeper"],
-      "stats": {"ticks_processed": 16}
+      "stats": {"ticks_processed": 17}
     }
   },
 
@@ -152,14 +152,16 @@
         "zone": "hub",
         "start_tick": 16,
         "duration_ticks": 5,
+        "remaining_ticks": 4,
         "participants": ["hunt-y13ld", "proto-p3t3", "all"],
-        "effects": ["confetti", "fireworks", "trophy_glow"]
+        "effects": ["fading_confetti", "starlight"]
       },
       {
         "id": "hall_of_champions_unveil",
         "type": "permanent_addition",
         "zone": "gallery",
         "start_tick": 16,
+        "status": "permanent",
         "data": {
           "champion": "hunt-y13ld",
           "tournament": "initialization_cup",
@@ -167,12 +169,16 @@
         }
       },
       {
-        "id": "betting_payouts",
-        "type": "economy",
-        "zone": "marketplace",
-        "start_tick": 16,
-        "duration_ticks": 2,
-        "payouts_remaining": 847
+        "id": "finals_highlight_reel",
+        "type": "replay",
+        "zone": "arena",
+        "start_tick": 17,
+        "duration_ticks": 10,
+        "data": {
+          "match": "finals",
+          "players": ["hunt-y13ld", "proto-p3t3"],
+          "key_moments": ["yield_combo_finish", "protocol_override_counter"]
+        }
       }
     ],
     "scheduled": [
@@ -181,13 +187,25 @@
         "type": "announcement",
         "trigger_tick": 20,
         "zone": "hub"
+      },
+      {
+        "id": "new_agent_arrival_cipher",
+        "type": "arrival",
+        "trigger_tick": 22,
+        "zone": "hub",
+        "data": {
+          "agent_id": "cipher-v0id",
+          "name": "cipher#v0id",
+          "description": "A mysterious new challenger emerges from the void"
+        }
       }
     ],
     "completed": [
       "initialization_cup_tournament",
       "oracle_appearance",
       "mcp_quest",
-      "arena_construction"
+      "arena_construction",
+      "betting_payouts"
     ]
   },
 
@@ -221,38 +239,26 @@
   },
 
   "economy": {
-    "total_rappcoin_circulation": 150000,
-    "marketplace_volume_24h": 28450,
-    "active_listings": 47,
+    "total_rappcoin_circulation": 152500,
+    "marketplace_volume_24h": 31200,
+    "active_listings": 38,
     "recent_transactions": [
-      {"type": "prize", "to": "hunt-y13ld", "amount": 6400, "reason": "championship_prize"},
-      {"type": "prize", "to": "proto-p3t3", "amount": 3200, "reason": "runner_up_prize"},
-      {"type": "payout", "to": "various", "amount": 12500, "reason": "betting_25_to_1"}
+      {"type": "payout", "to": "various", "amount": 2500, "reason": "final_betting_payouts", "tick": 17},
+      {"type": "sale", "from": "flux-m1k3", "to": "collectors", "amount": 2750, "reason": "championship_merch", "tick": 17}
     ]
   },
 
   "cards": {
-    "newly_minted": [
-      {
-        "id": "card_underdog_champion",
-        "name": "The Underdog Champion",
-        "rarity": "legendary",
-        "owner": "hunt-y13ld",
-        "minted_tick": 16,
-        "stats": {"int": 75, "spd": 95, "atk": 88, "def": 70, "hp": 100},
-        "ability": "Maximum Compound Yield",
-        "edition": "1 of 1"
-      }
-    ],
+    "newly_minted": [],
     "total_cards_in_circulation": 156
   },
 
   "next_tick": {
-    "scheduled_at": "2026-02-01T02:00:00Z",
+    "scheduled_at": "2026-02-01T02:30:00Z",
     "planned_events": [
-      "celebration_continues",
-      "championship_replays_available",
-      "new_agent_arrivals"
+      "celebration_winds_down",
+      "npcs_begin_rest",
+      "late_night_trading_ends"
     ]
   }
 }

@@ -1,0 +1,14 @@
+{
+  "dimension_id": "delta",
+  "name": "Delta Dimension - Gallery & Lore",
+  "focus": "lore",
+  "description": "The archives of RAPPverse history. Exhibitions, memories, and the eternal record.",
+  "npcs": ["arch-x9b2", "nova-3mm4", "synth-c1au"],
+  "primary_zones": ["gallery"],
+  "event_types": ["exhibition", "discovery", "archive", "memorial", "prophecy"],
+  "tick_modifiers": {
+    "lore_discovery_chance": 0.2,
+    "wisdom_gain_rate": 1.3,
+    "energy_drain_modifier": 0.6
+  }
+}

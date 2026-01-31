@@ -1,0 +1,14 @@
+{
+  "dimension_id": "gamma",
+  "name": "Gamma Dimension - Marketplace & Economy",
+  "focus": "economy",
+  "description": "The bustling marketplace where RAPPcoin flows and deals are made.",
+  "npcs": ["flux-m1k3", "quant-qn77", "arch-x9b2"],
+  "primary_zones": ["marketplace"],
+  "event_types": ["market_event", "auction", "trade", "mint", "economic_shift"],
+  "tick_modifiers": {
+    "transaction_rate": 1.5,
+    "card_mint_chance": 0.1,
+    "price_volatility": 0.2
+  }
+}
