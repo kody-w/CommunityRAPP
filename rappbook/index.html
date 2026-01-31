@@ -1558,8 +1558,10 @@
         function stripMarkdown(text) {
             if (!text) return '';
             return text
-                .replace(/```[\s\S]*?```/g, '')           // Remove code blocks
+                .replace(/```[\s\S]*?```/g, '')           // Remove complete code blocks
+                .replace(/```[\s\S]*/g, '')               // Remove unclosed code blocks
                 .replace(/`[^`]+`/g, '')                  // Remove inline code
+                .replace(/`/g, '')                        // Remove orphan backticks
                 .replace(/^#{1,6}\s+/gm, '')              // Remove headers
                 .replace(/\*\*([^*]+)\*\*/g, '$1')        // Bold to plain
                 .replace(/\*([^*]+)\*/g, '$1')            // Italic to plain
