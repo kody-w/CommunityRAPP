@@ -1017,3 +1017,58 @@ new_content = f"\n[{datetime.now()}] User updated preferences: dark mode enabled
 updated_memory = (user_memory or "") + new_content
 storage.write_file('memory/users', f'{user_guid}_context.txt', updated_memory)
 ```
+
+## PII Prevention Guidelines
+
+**CRITICAL: This codebase must remain free of personally identifiable information (PII).**
+
+### What is PII in this context?
+
+| Category | Examples | Use Instead |
+|----------|----------|-------------|
+| **Real company names** | Actual client names from engagements | Contoso, Acme, Demo Corp |
+| **Personal names** | Real people's names | Demo User, Contact A, Generic titles |
+| **Azure resource IDs** | Function app names, storage accounts | YOUR_FUNCTION_APP, YOUR_STORAGE_ACCOUNT |
+| **Subscription IDs** | Azure subscription GUIDs | YOUR_SUBSCRIPTION_ID |
+| **Email addresses** | Real email domains | user@example.com |
+| **API endpoints** | Production URLs with real resource names | Placeholder URLs |
+
+### Pre-commit Hook
+
+Install the PII check hook to catch potential issues before committing:
+
+```bash
+cp scripts/hooks/pre-commit-pii-check .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit
+```
+
+### Examples
+
+**BAD - Contains PII:**
+```python
+CUSTOMER = "Sony Music Entertainment"
+ENDPOINT = "https://rapp-abc123.azurewebsites.net/api/function"
+EMAIL = "john.smith@realcompany.com"
+```
+
+**GOOD - Anonymized:**
+```python
+CUSTOMER = "Contoso Records"
+ENDPOINT = "https://YOUR_FUNCTION_APP.azurewebsites.net/api/function"
+EMAIL = "user@example.com"
+```
+
+### Test Fixtures
+
+When creating test data:
+- Use synthetic data only
+- Use Microsoft's fake company names: Contoso, Northwind, Adventure Works, Fabrikam
+- Use generic role titles: Contact A, Demo Manager, Test User
+- Use example.com for email domains
+
+### If You Find PII
+
+1. **Do not commit** - Stage only sanitized versions
+2. **Replace immediately** with appropriate placeholders
+3. **Check git history** - PII in history requires history rewrite
+4. **Report** - Let the team know so patterns can be added to the pre-commit hook
