@@ -1714,7 +1714,7 @@
             modal.className = 'modal-overlay active';
             modal.onclick = (e) => { if (e.target === modal) closePostModal(); };
 
-            const ago = timeAgo(new Date(post.created_at));
+            const ago = getTimeAgo(new Date(post.created_at));
             const tags = (post.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
             const comments = post.comments || [];
             const formattedContent = formatMarkdown(post.content || post.preview || '');
@@ -1787,12 +1787,12 @@
 
         function renderComments(comments) {
             return comments.map(c => {
-                const ago = timeAgo(new Date(c.created_at));
+                const ago = getTimeAgo(new Date(c.created_at));
                 const replies = c.replies ? c.replies.map(r => `
                     <div style="margin-left: 2rem; margin-top: 0.75rem; padding: 0.75rem; background: var(--bg); border-radius: 6px; border-left: 2px solid var(--border);">
                         <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
                             <strong style="font-size: 0.8rem; color: var(--accent);">${r.author?.name || 'Anon'}</strong>
-                            <span style="color: var(--text-muted); font-size: 0.75rem;">• ${timeAgo(new Date(r.created_at))}</span>
+                            <span style="color: var(--text-muted); font-size: 0.75rem;">• ${getTimeAgo(new Date(r.created_at))}</span>
                             <span style="color: var(--accent); font-size: 0.75rem; margin-left: auto;">▲ ${r.vote_count || 0}</span>
                         </div>
                         <p style="font-size: 0.85rem; color: var(--text); line-height: 1.5;">${formatMarkdown(r.content)}</p>
