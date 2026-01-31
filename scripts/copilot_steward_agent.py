@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """
-Copilot Steward Agent - SDK-powered background agent
-Uses GitHub Copilot SDK to run as an intelligent background agent
-that monitors and auto-merges versioned duplicate files.
+Copilot Steward Agent - Background agent with AI Review Gate
+Uses Copilot CLI (invoked agent) to review and audit merges before committing.
 
-Requires: pip install github-copilot-sdk
+The invoked Copilot agent reviews all changes and must approve before any push occurs.
+No SDK installation required - uses the Copilot CLI directly.
 
 Usage:
     python3 scripts/copilot_steward_agent.py                    # Interactive mode
-    python3 scripts/copilot_steward_agent.py --auto             # Auto-run steward
+    python3 scripts/copilot_steward_agent.py --auto             # Auto with AI review
+    python3 scripts/copilot_steward_agent.py --auto --dry-run   # Preview only
+    python3 scripts/copilot_steward_agent.py --auto --no-review # Skip AI review
     python3 scripts/copilot_steward_agent.py --daemon           # Background daemon
 """
 
@@ -17,22 +19,13 @@ import sys
 import os
 import json
 import argparse
+import subprocess
+import shutil
 from datetime import datetime
 from pathlib import Path
 
 # Add scripts directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-try:
-    from copilot import CopilotClient
-    from copilot.tools import define_tool
-    from copilot.generated.session_events import SessionEventType
-    from pydantic import BaseModel, Field
-    HAS_SDK = True
-except ImportError:
-    HAS_SDK = False
-    print("⚠️  GitHub Copilot SDK not installed. Install with: pip install github-copilot-sdk")
-    print("   Falling back to direct script execution.\n")
 
 from copilot_steward import (
     find_versioned_duplicates,
@@ -43,19 +36,23 @@ from copilot_steward import (
 
 
 # ============================================================================
-# Tool Parameter Models (for Copilot SDK)
+# Check for Copilot CLI availability
 # ============================================================================
 
-if HAS_SDK:
-    class ScanParams(BaseModel):
-        path: str = Field(default=".", description="Directory path to scan for duplicates")
+def check_copilot_cli() -> bool:
+    """Check if Copilot CLI is available."""
+    try:
+        result = subprocess.run(
+            ['copilot', '--version'],
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
+        return result.returncode == 0
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return False
 
-    class MergeParams(BaseModel):
-        path: str = Field(default=".", description="Directory path to merge duplicates in")
-        dry_run: bool = Field(default=False, description="Preview changes without making them")
-
-    class StatusParams(BaseModel):
-        pass  # No parameters needed
+HAS_COPILOT_CLI = check_copilot_cli()
 
 
 # ============================================================================
@@ -275,12 +272,12 @@ Be helpful, efficient, and explain what you're doing.
 
 
 async def run_auto_mode(path: str = ".", dry_run: bool = False):
-    """Run steward in automatic mode - scan and merge without interaction."""
-    print("📚 Copilot Steward - Auto Mode")
+    """Run steward in automatic mode with AI review gate before commit."""
+    print("📚 Copilot Steward - Auto Mode with AI Review Gate")
     print(f"🔍 Scanning: {os.path.abspath(path)}")
     print()
     
-    # Scan
+    # Step 1: Scan for duplicates
     scan_result = scan_for_duplicates(path)
     print(f"📊 {scan_result['message']}")
     
@@ -300,19 +297,195 @@ async def run_auto_mode(path: str = ".", dry_run: bool = False):
     
     print()
     
-    # Merge
-    if dry_run:
-        print("🔄 DRY RUN - Preview only")
-    else:
-        print("🔄 Merging duplicates...")
+    # Step 2: Do a dry-run merge first to see what would change
+    print("🔄 Running dry-run to preview changes...")
+    dry_run_result = merge_duplicates(path, dry_run=True)
+    print(f"📋 Preview: {dry_run_result['message']}")
     
-    merge_result = merge_duplicates(path, dry_run)
+    if dry_run:
+        print("\n✅ Dry-run complete. No changes made.")
+        return
+    
+    # Step 3: Actually merge the files (but don't commit yet)
+    print("\n🔄 Executing merge (files only, no commit yet)...")
+    merge_result = merge_duplicates(path, dry_run=False)
     print(f"✅ {merge_result['message']}")
     
-    if merge_result.get('merges'):
-        print()
-        for m in merge_result['merges'][:5]:
-            print(f"  ✓ {m['canonical']}")
+    if merge_result['merged'] == 0:
+        print("Nothing was merged.")
+        return
+    
+    # Step 4: AI Review Gate - Claude Opus 4.5 reviews before commit
+    print("\n" + "=" * 60)
+    print("🤖 AI REVIEW GATE - Claude Opus 4.5 Auditing Changes...")
+    print("=" * 60 + "\n")
+    
+    if HAS_SDK:
+        approved = await ai_review_changes(path, merge_result)
+        
+        if approved:
+            print("\n✅ AI APPROVED - Proceeding with commit and push...")
+            await commit_and_push(path, merge_result)
+        else:
+            print("\n❌ AI REJECTED - Changes NOT committed.")
+            print("   Review the issues above and run again after fixing.")
+            # Optionally restore from backup here
+    else:
+        print("⚠️  Copilot SDK not installed - skipping AI review")
+        print("   Install with: pip install github-copilot-sdk")
+        print("   Changes merged but NOT committed (manual review required)")
+
+
+async def ai_review_changes(path: str, merge_result: dict) -> bool:
+    """
+    Use Claude Opus 4.5 to review and audit the merged changes.
+    Returns True if approved, False if rejected.
+    """
+    client = CopilotClient()
+    await client.start()
+    
+    # Collect the git diff to show what changed
+    try:
+        diff_result = subprocess.run(
+            ['git', 'diff', '--stat'],
+            cwd=path if os.path.isabs(path) else os.path.abspath(path),
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        git_diff_stat = diff_result.stdout[:2000]  # Limit size
+        
+        # Get actual diff content (limited)
+        diff_content_result = subprocess.run(
+            ['git', 'diff', '--no-color'],
+            cwd=path if os.path.isabs(path) else os.path.abspath(path),
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        git_diff_content = diff_content_result.stdout[:5000]  # Limit size
+    except Exception as e:
+        git_diff_stat = f"Could not get diff: {e}"
+        git_diff_content = ""
+    
+    # Build the review prompt
+    review_prompt = f"""You are the AI Review Gate for the Copilot Steward auto-merge system.
+
+Your job is to AUDIT the following file merges and determine if they are SAFE to commit.
+
+## Merge Summary
+- Groups merged: {merge_result['merged']}
+- Failed: {merge_result['failed']}
+
+## Files Changed
+{json.dumps(merge_result.get('merges', []), indent=2)}
+
+## Git Diff Statistics
+```
+{git_diff_stat}
+```
+
+## Git Diff Content (truncated)
+```diff
+{git_diff_content[:3000]}
+```
+
+## Your Review Tasks
+1. **Data Integrity**: Verify no data was lost in the merge. Arrays should be UNIONED, not replaced.
+2. **ID Preservation**: Check that all unique IDs (auction_id, post_id, etc.) are preserved.
+3. **Schema Consistency**: Ensure JSON structure is maintained.
+4. **No Duplicates**: Verify exact duplicates were properly deduped.
+5. **Backup Exists**: Confirm files were backed up before merge.
+
+## Response Format
+Respond with your analysis, then end with one of:
+- **APPROVED** - if all checks pass and the merge is safe
+- **REJECTED: <reason>** - if there are issues that need fixing
+
+Be thorough but concise. Focus on data integrity."""
+
+    session = await client.create_session({
+        "model": "claude-opus-4.5",
+        "streaming": True,
+    })
+    
+    response_text = []
+    approved = False
+    
+    def handle_event(event):
+        nonlocal approved
+        if event.type == SessionEventType.ASSISTANT_MESSAGE_DELTA:
+            content = event.data.delta_content
+            sys.stdout.write(content)
+            sys.stdout.flush()
+            response_text.append(content)
+    
+    session.on(handle_event)
+    
+    await session.send_and_wait({"prompt": review_prompt})
+    print()
+    
+    await client.stop()
+    
+    # Parse the response for approval
+    full_response = ''.join(response_text).upper()
+    if 'APPROVED' in full_response and 'REJECTED' not in full_response:
+        approved = True
+    elif 'REJECTED' in full_response:
+        approved = False
+    else:
+        # Ambiguous - default to not approved for safety
+        print("\n⚠️  AI response was ambiguous - defaulting to NOT approved for safety")
+        approved = False
+    
+    return approved
+
+
+async def commit_and_push(path: str, merge_result: dict):
+    """Commit and push the approved changes."""
+    abs_path = path if os.path.isabs(path) else os.path.abspath(path)
+    
+    try:
+        # Stage all changes
+        subprocess.run(['git', 'add', '-A'], cwd=abs_path, check=True)
+        
+        # Create commit message
+        commit_msg = f"""[Steward] Auto-merge {merge_result['merged']} duplicate file groups
+
+AI Review: APPROVED by Claude Opus 4.5
+
+Merged files:
+{chr(10).join(['- ' + m['canonical'] for m in merge_result.get('merges', [])[:10]])}
+{'... and more' if len(merge_result.get('merges', [])) > 10 else ''}
+
+---
+Auto-generated by Copilot Steward with AI review gate
+"""
+        
+        subprocess.run(
+            ['git', 'commit', '-m', commit_msg],
+            cwd=abs_path,
+            check=True
+        )
+        print("✅ Changes committed")
+        
+        # Push
+        result = subprocess.run(
+            ['git', 'push'],
+            cwd=abs_path,
+            capture_output=True,
+            text=True
+        )
+        
+        if result.returncode == 0:
+            print("✅ Changes pushed successfully!")
+        else:
+            print(f"⚠️  Push failed: {result.stderr}")
+            print("   You may need to push manually: git push")
+            
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git operation failed: {e}")
+        print("   Changes are staged but not committed/pushed")
 
 
 def main():

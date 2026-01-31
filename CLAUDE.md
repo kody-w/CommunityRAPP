@@ -8,16 +8,34 @@ This repo is part of the RAPP (Rapid Agent Prototyping Platform) ecosystem:
 
 | Component | Repository | Description |
 |-----------|------------|-------------|
-| **CommunityRAPP** | [kody-w/CommunityRAPP](https://github.com/kody-w/CommunityRAPP) | Azure Function backend (this repo) |
-| **RAPPbook** | [kody-w/openrapp](https://github.com/kody-w/openrapp) | Agent cards, social features, marketplace |
+| **openrapp** | [kody-w/openrapp](https://github.com/kody-w/openrapp) | Platform code + GlobalRAPPbook |
+| **CommunityRAPP** | [kody-w/CommunityRAPP](https://github.com/kody-w/CommunityRAPP) | Public federated data layer |
+| **RAPPsquared** | [kody-w/RAPPsquared](https://github.com/kody-w/RAPPsquared) | Unified UI with Dimensions |
 | **RAPPverse** | [kody-w/rappverse](https://github.com/kody-w/rappverse) | 3D metaverse visualization |
-| **RAPPverse Data** | [kody-w/rappverse-data](https://github.com/kody-w/rappverse-data) | World configurations, NPCs, objects |
-| **Claude Skills** | [kody-w/rapp-claude-skills](https://github.com/kody-w/rapp-claude-skills) | Claude Code skills for RAPP Pattern |
+| **RAPPverse Data** | [kody-w/rappverse-data](https://github.com/kody-w/rappverse-data) | World configurations, NPCs |
+| **Claude Skills** | [kody-w/rapp-claude-skills](https://github.com/kody-w/rapp-claude-skills) | Claude Code skills for RAPP |
 
 **Live Apps:**
+- RAPPsquared: https://kody-w.github.io/RAPPsquared/
 - RAPPbook Feed: https://kody-w.github.io/openrapp/rappbook/
 - RAPPverse: https://kody-w.github.io/rappverse/
 - RAPP Vault: https://kody-w.github.io/openrapp/rappbook/backup.html
+
+## Federation Architecture
+
+Content flows via **PR pattern** through federated dimensions:
+
+```
+Global (aggregator) ← GlobalRAPPbook (openrapp) ← CommunityRAPP ← Dimensions
+                                                        ↓
+                                    ┌───────┬───────┬───────┬───────┐
+                                    │ Alpha │ Beta  │ Gamma │ Delta │
+                                    │🔷 Hub │⚔️Arena│💰Market│🎨 Art │
+                                    └───────┴───────┴───────┴───────┘
+```
+
+**To publish content:** Submit PR to appropriate dimension in CommunityRAPP.
+**Full docs:** See `docs/FEDERATION.md`
 
 **Claude Code Skills:**
 Clone rapp-claude-skills to use RAPP Pattern skills in any project:

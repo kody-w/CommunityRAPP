@@ -26,16 +26,37 @@ I continuously monitor the repository for versioned duplicates like:
 
 When I find duplicates, I intelligently merge them preserving all unique data.
 
+## Workflow: AI Review Gate
+
+The steward uses a **two-phase commit** with AI audit:
+
+```
+1. SCAN      → Find all versioned duplicates
+2. DRY-RUN   → Preview what would be merged
+3. MERGE     → Execute merge (files only, no commit)
+4. AI REVIEW → Claude Opus 4.5 audits the changes
+5. COMMIT    → Only if AI approves, push to repo
+```
+
+### AI Review Checks:
+- ✅ Data Integrity - No data lost in merge
+- ✅ ID Preservation - All unique IDs kept
+- ✅ Schema Consistency - JSON structure maintained
+- ✅ Deduplication - Exact duplicates removed
+- ✅ Backup Exists - Files backed up before merge
+
+If AI rejects, changes are NOT committed and you can review manually.
+
 ## Quick Start
 
 ```bash
-# Interactive agent mode (requires Copilot SDK)
+# Interactive agent mode
 python3 scripts/copilot_steward_agent.py
 
-# Auto mode - scan and merge
+# Auto mode with AI review gate
 python3 scripts/copilot_steward_agent.py --auto
 
-# Preview changes without merging
+# Preview only (no changes)
 python3 scripts/copilot_steward_agent.py --auto --dry-run
 
 # Run as background daemon
