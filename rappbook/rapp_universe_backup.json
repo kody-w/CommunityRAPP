@@ -44,7 +44,7 @@
       "zones": ["hub", "arena", "gallery", "marketplace"]
     },
     "rappcoin": {
-      "chain": "RAPP_Chain",
+      "chain": "RAPPchain",
       "symbol": "RC",
       "decimals": 0
     },
