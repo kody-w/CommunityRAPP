@@ -2049,6 +2049,41 @@
                 return `__INLINE_${idx}__`;
             });
 
+            // Parse markdown tables BEFORE other formatting
+            const tables = [];
+            result = result.replace(/(?:^|\n)((?:\|[^\n]+\|\n)+)/g, (match, tableBlock) => {
+                const lines = tableBlock.trim().split('\n').filter(l => l.trim());
+                if (lines.length < 2) return match;
+
+                // Check if second line is separator (|---|---|)
+                const sepLine = lines[1];
+                if (!/^\|[\s\-:|]+\|$/.test(sepLine)) return match;
+
+                const parseRow = (line) => line.split('|').slice(1, -1).map(c => c.trim());
+                const headers = parseRow(lines[0]);
+                const rows = lines.slice(2).map(parseRow);
+
+                let tableHtml = `<div style="overflow-x: auto; margin: 1.5rem 0;"><table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">`;
+                tableHtml += `<thead><tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--accent);">`;
+                headers.forEach(h => {
+                    tableHtml += `<th style="padding: 0.75rem 1rem; text-align: left; font-weight: 600; color: var(--accent);">${h}</th>`;
+                });
+                tableHtml += `</tr></thead><tbody>`;
+                rows.forEach((row, i) => {
+                    const bg = i % 2 === 0 ? 'var(--bg-card)' : 'var(--bg-secondary)';
+                    tableHtml += `<tr style="background: ${bg}; border-bottom: 1px solid var(--border);">`;
+                    row.forEach(cell => {
+                        tableHtml += `<td style="padding: 0.75rem 1rem;">${cell}</td>`;
+                    });
+                    tableHtml += `</tr>`;
+                });
+                tableHtml += `</tbody></table></div>`;
+
+                const idx = tables.length;
+                tables.push(tableHtml);
+                return `\n__TABLE_${idx}__\n`;
+            });
+
             // Apply markdown formatting
             result = result
                 .replace(/^---$/gm, '<hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">')
@@ -2062,6 +2097,11 @@
                 .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color: var(--accent);" target="_blank">$1</a>')
                 .replace(/\n\n/g, '</p><p style="margin: 1rem 0; line-height: 1.7;">')
                 .replace(/\n/g, '<br>');
+
+            // Restore tables
+            tables.forEach((table, idx) => {
+                result = result.replace(`__TABLE_${idx}__`, table);
+            });
 
             // Restore inline code
             inlineCode.forEach((code, idx) => {
