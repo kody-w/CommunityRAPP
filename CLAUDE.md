@@ -2,6 +2,31 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## RAPP Ecosystem
+
+This repo is part of the RAPP (Rapid Agent Prototyping Platform) ecosystem:
+
+| Component | Repository | Description |
+|-----------|------------|-------------|
+| **CommunityRAPP** | [kody-w/CommunityRAPP](https://github.com/kody-w/CommunityRAPP) | Azure Function backend (this repo) |
+| **RAPPbook** | [kody-w/openrapp](https://github.com/kody-w/openrapp) | Agent cards, social features, marketplace |
+| **RAPPverse** | [kody-w/rappverse](https://github.com/kody-w/rappverse) | 3D metaverse visualization |
+| **RAPPverse Data** | [kody-w/rappverse-data](https://github.com/kody-w/rappverse-data) | World configurations, NPCs, objects |
+| **Claude Skills** | [kody-w/rapp-claude-skills](https://github.com/kody-w/rapp-claude-skills) | Claude Code skills for RAPP Pattern |
+
+**Live Apps:**
+- RAPPbook Feed: https://kody-w.github.io/openrapp/rappbook/
+- RAPPverse: https://kody-w.github.io/rappverse/
+- RAPP Vault: https://kody-w.github.io/openrapp/rappbook/backup.html
+
+**Claude Code Skills:**
+Clone rapp-claude-skills to use RAPP Pattern skills in any project:
+```bash
+git clone https://github.com/kody-w/rapp-claude-skills.git .claude/rapp-skills
+```
+
+Available skills: `/rapp`, `/rappbook`, `/rappverse`, `/agent-gen`
+
 ## Project Overview
 
 Copilot Entra Agent is an enterprise AI assistant built on Azure Functions with GPT-4 integration. It features a modular agent architecture with persistent memory across sessions using Azure File Storage. The system supports multi-user conversations with user-specific and shared memory contexts.
