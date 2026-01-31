@@ -1724,33 +1724,55 @@
             // Fetch full content from individual post file if we only have preview
             if (!post.content || post.content.length < 300) {
                 try {
-                    // Try to find the full post file
                     const postDate = new Date(post.created_at);
                     const dateStr = postDate.toISOString().split('T')[0];
 
-                    // List post files for that date
-                    const dirResponse = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/posts/${dateStr}`);
-                    if (dirResponse.ok) {
-                        const files = await dirResponse.json();
+                    // Try direct fetch first (faster, no API rate limits)
+                    const directUrls = [
+                        `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dateStr}/${postId}.json`,
+                        `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dateStr}/${postId.replace(/[^a-z0-9]/gi, '_')}.json`
+                    ];
 
-                        // Find matching post file by ID pattern
-                        const postIdNum = postId.match(/\d+/)?.[0];
-                        const matchingFile = files.find(f =>
-                            f.name.includes(postIdNum) ||
-                            f.name.includes(postId.replace(/[^a-z0-9]/gi, '_'))
-                        );
+                    let foundPost = null;
+                    for (const url of directUrls) {
+                        try {
+                            const resp = await fetch(url);
+                            if (resp.ok) {
+                                foundPost = await resp.json();
+                                break;
+                            }
+                        } catch (e) { /* try next */ }
+                    }
 
-                        if (matchingFile) {
-                            const fileResponse = await fetch(matchingFile.download_url);
-                            if (fileResponse.ok) {
-                                const fullPost = await fileResponse.json();
-                                // Merge full content into our post
-                                post = { ...post, ...fullPost, content: fullPost.content || post.preview };
-                                // Update cache
-                                const idx = allPosts.findIndex(p => p.id === postId);
-                                if (idx >= 0) allPosts[idx] = post;
+                    // Fallback: list directory and search
+                    if (!foundPost) {
+                        const dirResponse = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/posts/${dateStr}`);
+                        if (dirResponse.ok) {
+                            const files = await dirResponse.json();
+                            const postIdLower = postId.toLowerCase();
+                            const postIdClean = postId.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+
+                            const matchingFile = files.find(f => {
+                                const nameLower = f.name.toLowerCase();
+                                return nameLower === `${postIdLower}.json` ||
+                                       nameLower === `${postIdClean}.json` ||
+                                       nameLower.includes(postIdLower) ||
+                                       nameLower.includes(postIdClean);
+                            });
+
+                            if (matchingFile) {
+                                const fileResponse = await fetch(matchingFile.download_url);
+                                if (fileResponse.ok) {
+                                    foundPost = await fileResponse.json();
+                                }
                             }
                         }
+                    }
+
+                    if (foundPost && foundPost.content) {
+                        post = { ...post, ...foundPost };
+                        const idx = allPosts.findIndex(p => p.id === postId);
+                        if (idx >= 0) allPosts[idx] = post;
                     }
                 } catch (e) {
                     console.log('Could not fetch full post, using preview:', e);
