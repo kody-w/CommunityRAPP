@@ -1774,15 +1774,52 @@
 
         function formatMarkdown(text) {
             if (!text) return '';
-            return text
-                .replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>')
-                .replace(/`([^`]+)`/g, '<code style="background: var(--bg-secondary); padding: 0.2rem 0.4rem; border-radius: 3px;">$1</code>')
+
+            // Store code blocks to protect them
+            const codeBlocks = [];
+            let result = text.replace(/```(\w*)\n?([\s\S]*?)```/g, (match, lang, code) => {
+                const idx = codeBlocks.length;
+                codeBlocks.push({ lang, code: code.trim() });
+                return `__CODEBLOCK_${idx}__`;
+            });
+
+            // Remove any remaining unclosed code blocks
+            result = result.replace(/```\w*\n?[\s\S]*/g, '');
+
+            // Store inline code
+            const inlineCode = [];
+            result = result.replace(/`([^`]+)`/g, (match, code) => {
+                const idx = inlineCode.length;
+                inlineCode.push(code);
+                return `__INLINE_${idx}__`;
+            });
+
+            // Apply markdown formatting
+            result = result
+                .replace(/^---$/gm, '<hr style="border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;">')
                 .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-                .replace(/^## (.+)$/gm, '<h2 style="font-size: 1.25rem; margin: 1rem 0 0.5rem; color: var(--text);">$1</h2>')
-                .replace(/^### (.+)$/gm, '<h3 style="font-size: 1.1rem; margin: 1rem 0 0.5rem; color: var(--text);">$1</h3>')
-                .replace(/^- (.+)$/gm, '<li style="margin-left: 1.5rem;">$1</li>')
-                .replace(/\n\n/g, '</p><p style="margin: 1rem 0;">')
+                .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+                .replace(/^## (.+)$/gm, '<h2 style="font-size: 1.25rem; margin: 1.5rem 0 0.75rem; color: var(--accent); font-weight: 600;">$1</h2>')
+                .replace(/^### (.+)$/gm, '<h3 style="font-size: 1.1rem; margin: 1rem 0 0.5rem; color: var(--text); font-weight: 600;">$1</h3>')
+                .replace(/^#### (.+)$/gm, '<h4 style="font-size: 1rem; margin: 1rem 0 0.5rem; color: var(--text-muted); font-weight: 600;">$1</h4>')
+                .replace(/^\d+\. (.+)$/gm, '<li style="margin-left: 1.5rem; margin-bottom: 0.25rem;">$1</li>')
+                .replace(/^- (.+)$/gm, '<li style="margin-left: 1.5rem; margin-bottom: 0.25rem;">$1</li>')
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color: var(--accent);" target="_blank">$1</a>')
+                .replace(/\n\n/g, '</p><p style="margin: 1rem 0; line-height: 1.7;">')
                 .replace(/\n/g, '<br>');
+
+            // Restore inline code
+            inlineCode.forEach((code, idx) => {
+                result = result.replace(`__INLINE_${idx}__`, `<code style="background: var(--bg-secondary); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; font-size: 0.9em;">${escapeHtml(code)}</code>`);
+            });
+
+            // Restore code blocks
+            codeBlocks.forEach((block, idx) => {
+                const langLabel = block.lang ? `<div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase;">${block.lang}</div>` : '';
+                result = result.replace(`__CODEBLOCK_${idx}__`, `<pre style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0;">${langLabel}<code style="font-family: monospace; font-size: 0.9rem; line-height: 1.5; white-space: pre-wrap;">${escapeHtml(block.code)}</code></pre>`);
+            });
+
+            return `<p style="margin: 1rem 0; line-height: 1.7;">${result}</p>`;
         }
 
         function renderComments(comments) {
