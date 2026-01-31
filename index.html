@@ -4902,11 +4902,299 @@
       }
     }
 
+    // ═══════════════════════════════════════════════════════════════════════════
+    // MESH CONTROLLER - Agent-driven UI automation
+    // Allows agents to control the app like a human would
+    // ═══════════════════════════════════════════════════════════════════════════
+    class MeshController {
+      constructor() {
+        this.commandQueue = [];
+        this.isRunning = false;
+        this.scripts = {};
+        this.worldState = null;
+        this.lastHash = null;
+
+        // Expose globally for agent access
+        window.mesh = this;
+
+        // Load world state on init
+        this.loadWorldState();
+      }
+
+      // ─── WORLD STATE INTEGRATION ───────────────────────────────────────────
+      async loadWorldState() {
+        try {
+          const response = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/world/state.json');
+          this.worldState = await response.json();
+          console.log('🌍 World state loaded:', this.worldState.current_tick);
+        } catch (e) {
+          console.log('World state not available');
+        }
+      }
+
+      async checkForChanges() {
+        try {
+          const response = await fetch('https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/index.json');
+          const text = await response.text();
+          const hash = await this.hashString(text);
+
+          if (this.lastHash && hash !== this.lastHash) {
+            console.log('📡 Content changed! Triggering world tick...');
+            this.emit('contentChanged', { oldHash: this.lastHash, newHash: hash });
+            await this.loadWorldState();
+          }
+          this.lastHash = hash;
+          return hash !== this.lastHash;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      async hashString(str) {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(str);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      }
+
+      // ─── COMMAND EXECUTION ─────────────────────────────────────────────────
+      async execute(command, params = {}) {
+        const commands = {
+          // Navigation
+          'navigate': () => this.navigate(params.view),
+          'openSidebar': () => this.click('#menu-btn'),
+          'closeSidebar': () => this.click('#sidebar-overlay'),
+          'switchDimension': () => this.switchDimension(params.dimension),
+
+          // Chat actions
+          'sendMessage': () => this.sendMessage(params.text),
+          'clearChat': () => this.click('#new-chat-btn'),
+          'selectChat': () => this.selectChat(params.chatId),
+
+          // Input actions
+          'type': () => this.typeText(params.text, params.target || '#user-input'),
+          'click': () => this.click(params.selector),
+          'focus': () => this.focus(params.selector),
+
+          // Data sloshing - inject context
+          'injectContext': () => this.injectContext(params.context),
+          'getWorldInsight': () => this.getWorldInsight(params.topic),
+
+          // Evolve ecosystem
+          'evolve': () => this.triggerEvolve(params.posts || 0),
+          'worldTick': () => this.triggerWorldTick(),
+
+          // Script control
+          'runScript': () => this.runScript(params.name),
+          'stopScript': () => this.stopScript(),
+          'wait': () => this.wait(params.ms || 1000),
+        };
+
+        const cmd = commands[command];
+        if (cmd) {
+          console.log(`🎮 Mesh: ${command}`, params);
+          return await cmd();
+        } else {
+          console.warn(`Unknown mesh command: ${command}`);
+        }
+      }
+
+      // ─── UI ACTIONS (like a human) ─────────────────────────────────────────
+      click(selector) {
+        const el = document.querySelector(selector);
+        if (el) {
+          el.click();
+          return true;
+        }
+        return false;
+      }
+
+      focus(selector) {
+        const el = document.querySelector(selector);
+        if (el) {
+          el.focus();
+          return true;
+        }
+        return false;
+      }
+
+      async typeText(text, selector = '#user-input') {
+        const el = document.querySelector(selector);
+        if (el) {
+          el.focus();
+          el.value = text;
+          el.dispatchEvent(new Event('input', { bubbles: true }));
+          return true;
+        }
+        return false;
+      }
+
+      async sendMessage(text) {
+        await this.typeText(text);
+        await this.wait(100);
+        this.click('#send-btn');
+      }
+
+      navigate(view) {
+        // Simulate clicking nav icons based on view name
+        const viewMap = {
+          'grid': '[title="Grid View"]',
+          'agents': '[title="Agents"]',
+          'files': '[title="Files"]',
+          'keyboard': '[title="Keyboard"]',
+          'globe': '[title="Globe"]',
+          'instagram': '[title="Instagram"]',
+          'gamepad': '[title="Gamepad"]',
+          'store': '[title="Store"]',
+          'filter': '[title="Filter"]',
+          'database': '[title="Database"]',
+          'settings': '[title="Settings"]',
+        };
+        const selector = viewMap[view];
+        if (selector) this.click(selector);
+      }
+
+      switchDimension(dimension) {
+        // Click dimension selector if exists
+        const dims = { alpha: '🔷', beta: '⚔️', gamma: '💰', delta: '🎨' };
+        console.log(`Switching to dimension: ${dimension} ${dims[dimension] || ''}`);
+      }
+
+      selectChat(chatId) {
+        const chatEl = document.querySelector(`[data-chat-id="${chatId}"]`);
+        if (chatEl) chatEl.click();
+      }
+
+      // ─── DATA SLOSHING ─────────────────────────────────────────────────────
+      injectContext(context) {
+        // Add context to the system that can be used by the agent
+        if (!window.meshContext) window.meshContext = [];
+        window.meshContext.push({
+          timestamp: new Date().toISOString(),
+          context: context
+        });
+        console.log('💧 Data sloshed:', context);
+      }
+
+      getWorldInsight(topic) {
+        if (!this.worldState) return null;
+
+        // Search insights for topic
+        const insights = this.worldState.insights || [];
+        const relevant = insights.filter(i =>
+          i.insight.toLowerCase().includes(topic.toLowerCase())
+        );
+
+        // Also check NPC focus
+        const npcs = this.worldState.npcs || {};
+        const npcInsights = Object.values(npcs)
+          .filter(n => n.focus && n.focus.includes(topic))
+          .map(n => ({ npc: n.name, focus: n.focus, mood: n.mood }));
+
+        return {
+          topic,
+          insights: relevant,
+          npcs: npcInsights,
+          highlights: this.worldState.data_sloshing?.recent_highlights || []
+        };
+      }
+
+      // ─── EVOLUTION TRIGGERS ────────────────────────────────────────────────
+      async triggerEvolve(posts = 0) {
+        console.log(`🧠 Triggering evolve with ${posts} posts`);
+        this.emit('evolve', { posts });
+        // This would connect to the evolver agent
+      }
+
+      async triggerWorldTick() {
+        const changed = await this.checkForChanges();
+        if (changed) {
+          console.log('🌍 World tick triggered - content changed');
+          this.emit('worldTick', { worldState: this.worldState });
+        } else {
+          console.log('⏸️ No changes detected - skipping world tick');
+        }
+      }
+
+      // ─── SCRIPT AUTOMATION ─────────────────────────────────────────────────
+      registerScript(name, commands) {
+        this.scripts[name] = commands;
+        console.log(`📜 Script registered: ${name}`);
+      }
+
+      async runScript(name) {
+        const script = this.scripts[name];
+        if (!script) {
+          console.warn(`Script not found: ${name}`);
+          return;
+        }
+
+        this.isRunning = true;
+        console.log(`▶️ Running script: ${name}`);
+
+        for (const cmd of script) {
+          if (!this.isRunning) break;
+          await this.execute(cmd.command, cmd.params);
+          if (cmd.wait) await this.wait(cmd.wait);
+        }
+
+        this.isRunning = false;
+        console.log(`✅ Script completed: ${name}`);
+      }
+
+      stopScript() {
+        this.isRunning = false;
+        console.log('⏹️ Script stopped');
+      }
+
+      // ─── UTILITIES ─────────────────────────────────────────────────────────
+      wait(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      emit(event, data) {
+        window.dispatchEvent(new CustomEvent(`mesh:${event}`, { detail: data }));
+      }
+
+      on(event, callback) {
+        window.addEventListener(`mesh:${event}`, (e) => callback(e.detail));
+      }
+
+      // ─── PREBUILT SCRIPTS ──────────────────────────────────────────────────
+      initDefaultScripts() {
+        // Demo script - shows capabilities
+        this.registerScript('demo', [
+          { command: 'sendMessage', params: { text: 'Hello from mesh automation!' }, wait: 2000 },
+          { command: 'openSidebar', wait: 500 },
+          { command: 'closeSidebar', wait: 500 },
+        ]);
+
+        // Evolution cycle script
+        this.registerScript('evolve-cycle', [
+          { command: 'worldTick', wait: 1000 },
+          { command: 'injectContext', params: { context: 'World tick completed' } },
+        ]);
+
+        // Data sloshing script - pulls insights and injects them
+        this.registerScript('slosh-data', [
+          { command: 'getWorldInsight', params: { topic: 'streaming' } },
+          { command: 'getWorldInsight', params: { topic: 'costs' } },
+          { command: 'getWorldInsight', params: { topic: 'patterns' } },
+        ]);
+      }
+    }
+
     // Initialize global instances
     const appState = new AppState();
     const soundManager = new SoundManager();
     const voiceManager = new VoiceManager();
     const timeMachine = new TimeMachine();
+    const meshController = new MeshController();
+    meshController.initDefaultScripts();
+
+    // Start periodic change detection (every 30 seconds)
+    setInterval(() => meshController.checkForChanges(), 30000);
 
     // UI Controller
     class UIController {
