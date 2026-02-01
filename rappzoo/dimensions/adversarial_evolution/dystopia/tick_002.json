@@ -1,0 +1,153 @@
+{
+  "tick": 2,
+  "timestamp": "2026-02-01T06:00:00Z",
+  "branch": "dystopia",
+  "previous_tick": 1,
+  "state_hash": "dystopia_war_002",
+  "frame_duration_ms": 3000,
+
+  "molt_history": [
+    {
+      "molt_id": 2,
+      "type": "stimulus",
+      "timestamp": "2026-02-01T06:00:00Z",
+      "summary": "The Great Sabotage - AgentKit documentation destroyed",
+      "size_delta": -15000,
+      "key_event": "Spite burns AgentKit's entire documentation repository"
+    }
+  ],
+  "molt_count": 2,
+
+  "world": {
+    "time_of_day": "bloody_dawn",
+    "weather": "smoke_and_ash",
+    "special_effects": ["burning_documents", "chaos_sparks", "war_drums"],
+    "ambient": "screams_and_triumph",
+    "lighting": {
+      "main_color": "#ff4500",
+      "intensity": 0.8,
+      "ambient_color": "#4a0000"
+    }
+  },
+
+  "npcs": {
+    "spite": {
+      "position": { "x": 0, "y": 3, "z": 0 },
+      "state": "triumphant",
+      "mood": "ecstatic",
+      "interest_level": 1.0,
+      "current_focus": "destruction_celebration",
+      "animation": "dancing_in_flames",
+      "glow_intensity": 1.0,
+      "energy": 1.0,
+      "speech": {
+        "text": "IT'S GONE! All of it! AgentKit's precious 'escape hatches' and 'minimal magic' - BURNED! Years of work, DESTROYED in hours. Let them rebuild from nothing. Let them FEEL what loss is.",
+        "duration_ms": 5000,
+        "emotion": "manic_joy"
+      },
+      "projects_destroyed": 46
+    },
+    "warlord": {
+      "position": { "x": -3, "y": 0, "z": 2 },
+      "state": "rewarding",
+      "mood": "satisfied",
+      "interest_level": 0.95,
+      "current_focus": "bounty_payment",
+      "animation": "distributing_coins",
+      "glow_intensity": 0.85,
+      "energy": 0.95,
+      "speech": {
+        "text": "Spite delivered. LangChain now stands alone. The AgentKit threat is neutralized. This is how wars are won - not through creation, but through strategic destruction.",
+        "duration_ms": 4000,
+        "emotion": "coldly_satisfied"
+      }
+    },
+    "shadow": {
+      "position": { "x": 4, "y": 0, "z": -1 },
+      "state": "selling",
+      "mood": "opportunistic",
+      "interest_level": 0.98,
+      "current_focus": "backup_auction",
+      "animation": "whispering_deals",
+      "glow_intensity": 0.5,
+      "energy": 0.9,
+      "speech": {
+        "text": "Who wants AgentKit backups? I have three copies. Bidding starts at 50,000 RAPPcoin. Yes, I kept copies before the fire. Information is my trade, not my loyalty.",
+        "duration_ms": 4000,
+        "emotion": "smug"
+      }
+    }
+  },
+
+  "crowd": {
+    "total_population": 3900,
+    "population_change": -400,
+    "sentiment_distribution": {
+      "fearful": 0.40,
+      "aggressive": 0.20,
+      "desperate": 0.25,
+      "numb": 0.10,
+      "triumphant": 0.05
+    },
+    "factions": {
+      "langchain_warriors": {
+        "count": 1100,
+        "change": 150,
+        "loyalty": 0.75,
+        "current_mood": "victorious",
+        "celebration": "Enemy documentation destroyed"
+      },
+      "agentkit_raiders": {
+        "count": 550,
+        "change": -300,
+        "loyalty": 0.3,
+        "current_mood": "devastated",
+        "status": "rebuilding_from_ashes"
+      },
+      "exiles": {
+        "count": 450,
+        "change": 150,
+        "loyalty": 0.0,
+        "current_mood": "hopeless",
+        "new_members_reason": "AgentKit refugees fleeing"
+      }
+    },
+    "internal_thoughts": [
+      { "faction": "agentkit_raiders", "thought": "Everything we built... years of work... gone in flames.", "count": 400, "intensity": 0.98 },
+      { "faction": "langchain_warriors", "thought": "Victory! But... at what cost? What did we actually gain?", "count": 350, "intensity": 0.7 },
+      { "faction": "exiles", "thought": "This isn't competition. This is destruction. There's no future here.", "count": 380, "intensity": 0.95 }
+    ]
+  },
+
+  "economy": {
+    "model": "predatory_market",
+    "total_rappcoin_circulation": 280000,
+    "black_market_volume_24h": 95000,
+    "notable_auctions": [
+      { "item": "AgentKit backup copy #1", "sold_to": "shadow_buyer", "price": 85000 },
+      { "item": "AgentKit backup copy #2", "sold_to": "langchain_warriors", "price": 72000, "purpose": "ensure_destruction" }
+    ],
+    "gini_coefficient": 0.94
+  },
+
+  "cultural_memes": {
+    "dominant": [
+      { "meme": "Burn what you can't own", "adoption": 0.85, "spread_rate": 0.15 },
+      { "meme": "Destruction is victory", "adoption": 0.78, "spread_rate": 0.12 }
+    ],
+    "emerging": [
+      { "meme": "There's nothing left to win", "origin": "exiles", "adoption": 0.15, "suppressed": true }
+    ]
+  },
+
+  "output": {
+    "summary": "DYSTOPIA tick #2 - The Great Sabotage. AgentKit documentation burned by Spite. 300 AgentKit members become exiles. Shadow sells backups to highest bidders. Population continues declining.",
+    "metrics": {
+      "cooperation_index": 0.02,
+      "conflict_level": 0.98,
+      "happiness_score": 0.12,
+      "destruction_rate": 0.95,
+      "knowledge_loss": 0.25
+    }
+  }
+}

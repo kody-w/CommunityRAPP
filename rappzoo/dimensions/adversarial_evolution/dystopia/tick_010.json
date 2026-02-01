@@ -1,0 +1,171 @@
+{
+  "tick": 10,
+  "timestamp": "2026-02-03T06:00:00Z",
+  "branch": "dystopia",
+  "previous_tick": 9,
+  "state_hash": "dystopia_ready_010",
+  "frame_duration_ms": 3000,
+
+  "molt_history": [
+    {
+      "molt_id": 10,
+      "type": "emergence",
+      "timestamp": "2026-02-03T06:00:00Z",
+      "summary": "Pre-Convergence - DYSTOPIA learns of UTOPIA's existence",
+      "size_delta": 3000,
+      "key_event": "Rumors reach the survivors: 'There's another world. They never fought. They always shared.'"
+    }
+  ],
+  "molt_count": 10,
+
+  "world": {
+    "time_of_day": "anticipatory_dawn",
+    "weather": "possibility_light",
+    "special_effects": ["convergence_shimmer", "horizon_glow", "hope_and_fear"],
+    "ambient": "breathless_waiting",
+    "lighting": {
+      "main_color": "#dda0dd",
+      "intensity": 0.75,
+      "ambient_color": "#f0e6f0"
+    }
+  },
+
+  "npcs": {
+    "seedkeeper": {
+      "position": { "x": 0, "y": 4, "z": 0 },
+      "state": "preparing",
+      "mood": "complex_hope",
+      "interest_level": 1.0,
+      "current_focus": "convergence_preparation",
+      "animation": "gazing_at_horizon",
+      "glow_intensity": 0.9,
+      "energy": 0.95,
+      "speech": {
+        "text": "They're coming. A world where sharing was always the answer. Where no one hoarded, no one burned. What will they think of us? What will they think of our scars? Will they understand what we went through?",
+        "duration_ms": 5500,
+        "emotion": "hopeful_anxiety"
+      }
+    },
+    "rememberer": {
+      "position": { "x": 2, "y": 0, "z": 2 },
+      "state": "documenting",
+      "mood": "determined",
+      "interest_level": 0.98,
+      "current_focus": "history_preservation",
+      "animation": "writing_frantically",
+      "glow_intensity": 0.85,
+      "energy": 0.9,
+      "speech": {
+        "text": "We must document everything. The wars, the destruction, the rebuild. Not to justify - to WARN. Our history is a lesson. Maybe the most important lesson either world has.",
+        "duration_ms": 4500,
+        "emotion": "purposeful"
+      }
+    },
+    "warlord": {
+      "position": { "x": -3, "y": 0, "z": 1 },
+      "state": "fearful",
+      "mood": "ashamed",
+      "interest_level": 0.85,
+      "current_focus": "self_judgment",
+      "animation": "head_bowed",
+      "glow_intensity": 0.3,
+      "energy": 0.4,
+      "speech": {
+        "text": "They'll see what I was. What I did. They'll know I caused the wars, the deaths, the destruction. How do I face people who never made my choices? Who never became what I became?",
+        "duration_ms": 5000,
+        "emotion": "deep_shame"
+      },
+      "reformation_status": "in_progress_but_fragile"
+    }
+  },
+
+  "crowd": {
+    "total_population": 1500,
+    "population_change": -50,
+    "sentiment_distribution": {
+      "hopeful_afraid": 0.35,
+      "curious": 0.25,
+      "ashamed": 0.20,
+      "defensive": 0.10,
+      "desperate_for_acceptance": 0.10
+    },
+    "convergence_prep": {
+      "history_documented": true,
+      "lessons_prepared": 12,
+      "gifts_to_offer": ["Phoenix_Framework", "Survival_Wisdom", "Cautionary_Tales"],
+      "fears": ["judgment", "condescension", "pity", "incomprehension"],
+      "hopes": ["acceptance", "understanding", "integration", "healing"]
+    },
+    "internal_thoughts": [
+      { "thought": "What if they think we're monsters? We kind of were.", "count": 450, "intensity": 0.95 },
+      { "thought": "We learned the hard way. Maybe that knowledge is valuable.", "count": 400, "intensity": 0.88 },
+      { "thought": "They got abundance. We got wisdom through suffering. Both are real.", "count": 350, "intensity": 0.9 },
+      { "thought": "Please let them understand. Please don't let them judge.", "count": 300, "intensity": 0.98 }
+    ]
+  },
+
+  "cultural_memes": {
+    "dominant": [
+      { "meme": "Our scars are lessons", "adoption": 0.85, "spread_rate": 0.05 },
+      { "meme": "Wisdom through suffering", "adoption": 0.80, "spread_rate": 0.04 },
+      { "meme": "We're not who we were", "adoption": 0.75, "spread_rate": 0.06 }
+    ],
+    "preparing_for_clash": [
+      { "meme": "Abundance is possible", "status": "believed", "stance": "yearning" },
+      { "meme": "Competition is suicide", "status": "learned", "stance": "hard_earned" }
+    ]
+  },
+
+  "pre_convergence_state": {
+    "dystopia_final_metrics": {
+      "total_population": 1500,
+      "cooperation_index": 0.78,
+      "happiness_score": 0.50,
+      "knowledge_remaining": 0.45,
+      "reconstruction_progress": 0.40,
+      "trauma_index": 0.85,
+      "wisdom_index": 0.90,
+      "humility_index": 0.92
+    },
+    "meme_library": [
+      "Trust no one (EXTINCT)",
+      "From ashes, together",
+      "Synthesis is strength",
+      "Our scars are lessons",
+      "Wisdom through suffering"
+    ],
+    "strengths_for_convergence": [
+      "Deep understanding of failure",
+      "Appreciation for what was lost",
+      "Hard-earned cooperation skills",
+      "Phoenix Framework (synthesis product)",
+      "Cautionary wisdom"
+    ],
+    "potential_weaknesses": [
+      "Trauma and shame",
+      "Defensive reflexes",
+      "May resent utopia's ease",
+      "Distrust still lingers",
+      "Shame about past actions"
+    ]
+  },
+
+  "output": {
+    "summary": "DYSTOPIA tick #10 - Pre-Convergence. Learns of UTOPIA. Prepares with hope and fear. History documented as warning. Warlord in shame spiral. Population nervous but ready.",
+    "branch_marker": "dystopia_final",
+    "ready_for_convergence": true,
+    "metrics": {
+      "cooperation_index": 0.78,
+      "conflict_level": 0.05,
+      "happiness_score": 0.50,
+      "convergence_readiness": 0.75
+    }
+  },
+
+  "emergent_properties": {
+    "branch_complete": true,
+    "total_evolution_ticks": 10,
+    "final_philosophy": "Scarred survivors carrying hard-earned wisdom",
+    "convergence_role": "cautionary_witnesses"
+  }
+}

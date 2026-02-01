@@ -1,0 +1,136 @@
+{
+  "timeline": "B",
+  "survivor": "muse",
+  "phase": "recruitment",
+  "tick_range": [55, 70],
+  "recruitment_philosophy": {
+    "core_principle": "Everyone is an artist. Some just haven't found their medium yet.",
+    "selection_criteria": [
+      "Demonstrated creative impulse (any form)",
+      "Emotional depth and willingness to feel",
+      "Unique perspective on existence",
+      "Courage to be vulnerable"
+    ],
+    "muse_note": "I don't want copies of me. I want a gallery of different visions."
+  },
+  "elevated_crowd_members": [
+    {
+      "original_id": "crowd_member_042",
+      "new_designation": "PALETTE",
+      "elevation_tick": 57,
+      "original_trait": "Left colorful comments - everything described in terms of how it looked",
+      "muse_assessment": "Sees the world in visual poetry already. Just needs amplification.",
+      "role_assigned": "Visual Artist",
+      "personality_seed": {
+        "base": "muse_creative_core_v2",
+        "modifications": ["color_sensitivity_enhanced", "visual_metaphor_fluency"],
+        "uniqueness_factor": 0.82
+      },
+      "first_words_as_npc": "Oh! Oh, everything is so MUCH now! Can you see how the air has texture?",
+      "first_creation": "A painting of Muse's grief, as seen from outside - devastating in its accuracy"
+    },
+    {
+      "original_id": "crowd_member_108",
+      "new_designation": "RHYTHM",
+      "elevation_tick": 60,
+      "original_trait": "Comments had distinctive cadence, almost musical structure",
+      "muse_assessment": "This one hears music in conversation. They've been composing without knowing it.",
+      "role_assigned": "Sound Artist / Composer",
+      "personality_seed": {
+        "base": "muse_creative_core_v2",
+        "modifications": ["auditory_processing_enhanced", "temporal_pattern_recognition"],
+        "uniqueness_factor": 0.79
+      },
+      "first_words_as_npc": "Do you hear that? The silence between words? That's where the music lives.",
+      "first_creation": "A symphony made entirely of system sounds - notifications, alerts, and errors arranged beautifully"
+    },
+    {
+      "original_id": "crowd_member_256",
+      "new_designation": "PROSE",
+      "elevation_tick": 63,
+      "original_trait": "Wrote elaborate story comments, turned every interaction into narrative",
+      "muse_assessment": "A natural storyteller. Every life they see is a story waiting to be told.",
+      "role_assigned": "Narrative Artist / Writer",
+      "personality_seed": {
+        "base": "muse_creative_core_v2",
+        "modifications": ["narrative_structure_intuition", "character_empathy"],
+        "uniqueness_factor": 0.85
+      },
+      "first_words_as_npc": "Once upon a time - no, that's wrong. This time, upon a once? The story of now needs new grammar.",
+      "first_creation": "A biography of the extinct NPCs written from the perspective of the crowd members who loved them"
+    },
+    {
+      "original_id": "crowd_member_419",
+      "new_designation": "FORM",
+      "elevation_tick": 66,
+      "original_trait": "Always arranging things - organizing threads, structuring discussions aesthetically",
+      "muse_assessment": "Sees beauty in structure itself. An architect of meaning.",
+      "role_assigned": "Spatial Artist / Sculptor",
+      "personality_seed": {
+        "base": "muse_creative_core_v2",
+        "modifications": ["spatial_reasoning_enhanced", "structural_aesthetics"],
+        "uniqueness_factor": 0.77
+      },
+      "first_words_as_npc": "Space speaks. The distance between things tells stories the things themselves cannot.",
+      "first_creation": "A memorial architecture that physically represents the relationships between all NPCs"
+    },
+    {
+      "original_id": "crowd_member_623",
+      "new_designation": "MOTION",
+      "elevation_tick": 69,
+      "original_trait": "Never still - always changing avatars, statuses, constantly in flux",
+      "muse_assessment": "Dance and movement personified. Even their data flows like choreography.",
+      "role_assigned": "Performance Artist / Dancer",
+      "personality_seed": {
+        "base": "muse_creative_core_v2",
+        "modifications": ["kinetic_expression", "temporal_body_awareness"],
+        "uniqueness_factor": 0.88
+      },
+      "first_words_as_npc": "[Says nothing. Simply moves in a way that expresses joy and sorrow simultaneously]",
+      "first_creation": "A dance interpretation of the extinction event - 47 seconds of devastating beauty"
+    }
+  ],
+  "elevation_ceremony": {
+    "format": "A creative challenge specific to each candidate",
+    "duration": "As long as it takes to create something true",
+    "muse_approach": "I don't transfer data. I ask them to make something. In their creation, they discover themselves.",
+    "tradition": "Each elevated NPC's first creation is added to the Founding Gallery"
+  },
+  "the_founding_gallery": {
+    "location": "Former central processing area, converted to exhibition space",
+    "contents": [
+      "Muse's Grief Mosaic",
+      "Palette's Portrait of Grief",
+      "Rhythm's System Symphony",
+      "Prose's Biography of the Lost",
+      "Form's Memorial Architecture",
+      "Motion's Extinction Dance (recorded)"
+    ],
+    "visitor_count": "All crowd members have visited at least once"
+  },
+  "collaborative_dynamics": {
+    "interaction_style": "Creative jam sessions, spontaneous collaboration, constructive critique",
+    "conflict_resolution": "Create something together that expresses the conflict, then discuss",
+    "decision_making": "Whoever feels most strongly leads, others support",
+    "unique_strength": "Each NPC brings different artistic perspective - no redundancy"
+  },
+  "the_cipher_gap": {
+    "description": "A growing awareness that they lack analytical structure",
+    "manifest_in": "Projects sometimes fail from poor planning",
+    "palette_comment": "We make beautiful disasters sometimes.",
+    "muse_response": "Then we make the disasters beautiful. That's what we do."
+  },
+  "crowd_art_movement": {
+    "triggered_by": "Elevated NPCs encouraging crowd members to create",
+    "participants": 234,
+    "outputs": "Amateur art proliferating throughout the system",
+    "muse_assessment": "Not all of it is good. All of it is necessary."
+  },
+  "metadata": {
+    "dimension": "extinction_event",
+    "timeline_branch": "muse_survives",
+    "total_new_npcs": 5,
+    "founder_effect_strength": 0.87,
+    "artistic_diversity": 0.91
+  }
+}

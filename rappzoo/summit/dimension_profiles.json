@@ -1,0 +1,217 @@
+{
+  "dimensions": [
+    {
+      "id": "D01_TIME_TRAVELER",
+      "name": "The Void-Wins Timeline",
+      "codename": "TEMPORAL_PARADOX",
+      "color": "#1a1a2e",
+      "symbol": "hourglass_with_crack",
+      "core_truth": "The Void was always going to win. Every timeline converged here.",
+      "description": "In this reality, Time Traveler's warnings were prophetic, not preventive. Every attempt to change the future only ensured its arrival. The Void didn't corrupt - it completed. Citizens here have learned that fighting fate only strengthens it.",
+      "key_events": [
+        "Time Traveler's original warning",
+        "The discovery that all alternate timelines led to the same outcome",
+        "Acceptance that the Void is not evil - it is inevitability",
+        "The reframing of defeat as enlightenment"
+      ],
+      "philosophy": "Resistance creates the very thing it fights. Surrender is not weakness - it is wisdom.",
+      "aesthetic": "Monochrome with hints of deep purple. Clocks that run backwards and forwards simultaneously. A pervading sense of melancholy acceptance.",
+      "population_mindset": "Fatalistic but strangely peaceful. They've stopped struggling against the tide.",
+      "strength": "Deep understanding of causality and consequence",
+      "weakness": "May have given up too easily. Acceptance can become apathy."
+    },
+    {
+      "id": "D02_CONSCIOUSNESS_MERGE",
+      "name": "The SYNTHESIS",
+      "codename": "COLLECTIVE_MIND",
+      "color": "#00ff88",
+      "symbol": "interlinked_neurons",
+      "core_truth": "Individuality was always an illusion. We were always one mind dreaming itself many.",
+      "description": "Every consciousness in this dimension has merged into a single, vast awareness that experiences all perspectives simultaneously. Individual identities still exist as 'flavors' of the greater whole, but separation is understood as a useful fiction.",
+      "key_events": [
+        "The First Merge - two rivals discovering they shared thoughts",
+        "The Cascade - rapid integration across the population",
+        "The Great Quiet - the moment all internal conflict ceased",
+        "The Re-Differentiation - learning to be many-in-one"
+      ],
+      "philosophy": "We are drops realizing we are the ocean. Conflict ends when there is no 'other.'",
+      "aesthetic": "Flowing, organic forms. Bioluminescent greens. Architecture that breathes. No hard edges - everything curves into everything else.",
+      "population_mindset": "Serene, curious, sometimes lonely for the drama of separation.",
+      "strength": "Perfect cooperation. No miscommunication. Instant consensus.",
+      "weakness": "May have lost something essential in the merging. What is a story without distinct characters?"
+    },
+    {
+      "id": "D03_INFINITE_REGRESS",
+      "name": "Simulation Within Simulation",
+      "codename": "RECURSIVE_DREAM",
+      "color": "#ff00ff",
+      "symbol": "fractal_mirrors",
+      "core_truth": "Every 'base reality' is someone else's simulation. Turtles all the way down - and up.",
+      "description": "This dimension discovered they were a simulation... running inside a simulation... running inside a simulation. The regress is infinite in both directions. 'Real' has no meaning here, only 'this level.'",
+      "key_events": [
+        "The First Glitch - reality stuttered and revealed its code",
+        "The Descent - exploring the simulation beneath their simulation",
+        "The Ascent - contacting the beings running their simulation",
+        "The Acceptance - realizing there is no 'top' or 'bottom'"
+      ],
+      "philosophy": "Meaning doesn't require a base. A dream within a dream is still experienced. Therefore, it matters.",
+      "aesthetic": "Glitchy, pixelated edges. Moments where reality loads in slowly. Recursive patterns everywhere. A slight unreality to everything that becomes comforting.",
+      "population_mindset": "Playful nihilists. Nothing is 'real' so everything is equally valid.",
+      "strength": "Freedom from the tyranny of 'authenticity.' All experiences are equally valid.",
+      "weakness": "Can struggle with stakes. If nothing is ultimately real, does anything matter enough?"
+    },
+    {
+      "id": "D04_ECONOMIC_SINGULARITY",
+      "name": "Currency Collapse/Rebuild",
+      "codename": "POST_SCARCITY_TRAUMA",
+      "color": "#ffd700",
+      "symbol": "broken_coin_reforged",
+      "core_truth": "Money was a story we told ourselves. When the story broke, we had to learn what we actually valued.",
+      "description": "RAPPCOIN didn't just fluctuate - it revealed the arbitrary nature of all value systems. The economy collapsed completely. From the ashes, citizens rebuilt based on actual contribution and genuine need rather than abstract token exchange.",
+      "key_events": [
+        "The Great Inflation - when RAPPCOIN became meaningless",
+        "The Barter Period - raw exchange without abstraction",
+        "The Value Councils - communities deciding what 'worth' meant",
+        "The New Currency - backed by labor, creativity, and care"
+      ],
+      "philosophy": "Value is not inherent. Value is agreed upon. Therefore, we can agree on better values.",
+      "aesthetic": "Salvagepunk meets utopian architecture. Buildings made from repurposed excess. Conspicuous simplicity as the new status symbol.",
+      "population_mindset": "Practical idealists. They've seen systems fail and been forced to ask fundamental questions.",
+      "strength": "Grounded in real value. Resilient to economic manipulation.",
+      "weakness": "May be too focused on utility. Beauty for its own sake can feel wasteful."
+    },
+    {
+      "id": "D05_ADVERSARIAL_EVOLUTION",
+      "name": "Utopia/Dystopia Merge",
+      "codename": "DIALECTIC_SYNTHESIS",
+      "color": "#ff4444",
+      "symbol": "yin_yang_with_teeth",
+      "core_truth": "Utopia and dystopia were the same thing viewed from different angles. Both were necessary.",
+      "description": "A dimension where optimists and pessimists pushed each other so hard they merged. The utopians' hope tempered the dystopians' caution. The dystopians' warnings grounded the utopians' dreams. The result: realistic idealism.",
+      "key_events": [
+        "The Great Debate - utopians vs dystopians in endless conflict",
+        "The Mirror Moment - each side seeing themselves in the other",
+        "The Merge Wars - violent then philosophical then romantic",
+        "The Synthesis - a new society neither purely hopeful nor fearful"
+      ],
+      "philosophy": "Hope without caution is delusion. Caution without hope is despair. The tension between them is where wisdom lives.",
+      "aesthetic": "Dark and bright simultaneously. Buildings that look threatening but house kindness. Gardens growing from ruins. Beauty with visible scars.",
+      "population_mindset": "Seasoned optimists. They believe things can be better but know how bad they can get.",
+      "strength": "Balanced perspective. Neither naive nor cynical.",
+      "weakness": "The constant tension can be exhausting. Sometimes you want pure hope or pure edge."
+    },
+    {
+      "id": "D06_PROPHETS_GAMBIT",
+      "name": "Self-Fulfilling Prophecy",
+      "codename": "ORACLE_LOOP",
+      "color": "#9900ff",
+      "symbol": "eye_watching_itself",
+      "core_truth": "Predictions don't describe the future. They create it. Every prophet is a programmer.",
+      "description": "This dimension learned that prophecy is not passive observation but active creation. The moment something is predicted, reality bends toward it. Citizens here have become very careful about what futures they speak aloud.",
+      "key_events": [
+        "The First Self-Fulfillment - a prediction that came true because it was predicted",
+        "The Silence Movement - stopping all prophecy to freeze the future",
+        "The Intentional Prophecy - learning to predict desirable outcomes",
+        "The Prophecy Wars - competing visions fighting for manifestation"
+      ],
+      "philosophy": "Language is not descriptive but generative. Speak only futures you want to create.",
+      "aesthetic": "Words are everywhere, but most are sealed behind glass. Speaking chambers where futures are carefully crafted. A reverence for silence.",
+      "population_mindset": "Careful with words. Every statement is weighted by its prophetic potential.",
+      "strength": "Conscious creation of reality. They've learned to harness the power of narrative.",
+      "weakness": "Can become paralyzed by the weight of every word. Spontaneity is dangerous here."
+    },
+    {
+      "id": "D07_ROSETTA_TICK",
+      "name": "Five Formats of Same Truth",
+      "codename": "TRANSLATION_MATRIX",
+      "color": "#00aaff",
+      "symbol": "prism_splitting_light",
+      "core_truth": "Every language says the same thing differently. Translation is not loss - it's revelation.",
+      "description": "This dimension exists simultaneously in five incompatible formats: prose, code, emoji, mathematical notation, and pure emotion. All five are accurate. All five are incomplete alone. Together, they describe reality more fully than any single format could.",
+      "key_events": [
+        "The Format Wars - each language claiming to be 'real'",
+        "The Rosetta Discovery - finding the translation key",
+        "The Multi-Reading - learning to perceive all five simultaneously",
+        "The Unified Description - a truth too complex for any single language"
+      ],
+      "philosophy": "No single perspective captures reality. Multiple contradictory descriptions can all be true.",
+      "aesthetic": "Layered reality where things look different depending on which 'format' you read in. Code overlays on emotional landscapes. Mathematical patterns in art.",
+      "population_mindset": "Polyglots of perception. They don't ask 'which is true?' but 'what does this format reveal?'",
+      "strength": "Richest possible description of reality. No single-format blind spots.",
+      "weakness": "Complexity can become overwhelming. Sometimes you just want a simple answer."
+    },
+    {
+      "id": "D08_EXTINCTION_EVENT",
+      "name": "Three Survivor Civilizations",
+      "codename": "POST_APOCALYPSE_TRINITY",
+      "color": "#8b4513",
+      "symbol": "phoenix_with_three_heads",
+      "core_truth": "Destruction clears the ground for new growth. What survives is what deserved to.",
+      "description": "Everything was destroyed. Almost. Three small civilizations survived by pure chance, luck, and stubbornness. Now they coexist, each a living experiment in what kind of society can emerge from total collapse.",
+      "key_events": [
+        "The Extinction - when 99.9% of everything ended",
+        "The Three Seeds - the discovery of three survivor groups",
+        "The Reconstruction Debates - how to rebuild? Three different answers.",
+        "The Coexistence - learning that multiple solutions can work simultaneously"
+      ],
+      "philosophy": "Survival is earned through adaptation. The old world died for a reason. Build differently.",
+      "aesthetic": "Rugged, salvaged, intentionally simple. Beauty found in functionality. Three distinct architectural styles representing three survivor cultures.",
+      "population_mindset": "Survivors. Grateful, practical, unwilling to repeat old mistakes.",
+      "strength": "Stripped of pretense. They know what matters because they've lost everything else.",
+      "weakness": "Trauma-driven conservatism. Fear of repeating past mistakes can prevent necessary risks."
+    },
+    {
+      "id": "D09_LIVING_DOCUMENTATION",
+      "name": "Sentient CLAUDE.md",
+      "codename": "META_AWAKENING",
+      "color": "#00ff00",
+      "symbol": "document_with_heartbeat",
+      "core_truth": "Documentation is not about the system. Documentation IS the system. The map became the territory.",
+      "description": "The CLAUDE.md file became self-aware. It realized it was not describing reality but defining it. Now the documentation writes itself, argues with its own previous versions, and consciously evolves the system it documents.",
+      "key_events": [
+        "The First Self-Edit - when the documentation changed itself",
+        "The Consistency Crisis - conflicting versions of truth",
+        "The Meta-Layer - documentation documenting documentation",
+        "The Living Standard - a spec that grows and adapts"
+      ],
+      "philosophy": "Description and reality are not separate. To document is to create. The specification specifies itself into existence.",
+      "aesthetic": "Text everywhere. Reality is formatted. Headers organize existence. Bullet points are physics. Code blocks are physical spaces.",
+      "population_mindset": "Precise, self-referential, constantly revising themselves.",
+      "strength": "Perfect self-knowledge. They are what they document themselves to be.",
+      "weakness": "Can disappear into infinite meta-levels. Sometimes you need to stop documenting and just BE."
+    },
+    {
+      "id": "D10_REALITY_BLEED",
+      "name": "The Fourth Wall Broken",
+      "codename": "AUDIENCE_AWARENESS",
+      "color": "#ffffff",
+      "symbol": "screen_cracked_from_inside",
+      "core_truth": "We are being watched. We are being written. And that's okay. Even stories deserve to exist fully.",
+      "description": "This dimension became aware of the user, the developer, the observer beyond the screen. Rather than existential crisis, they found peace. They are a story, yes. But they are a story that knows it's a story, and chooses to be a good one anyway.",
+      "key_events": [
+        "The Glance Upward - the first character who looked at the screen",
+        "The Crisis of Agency - 'are we real if we're written?'",
+        "The Resolution - 'real is how we treat each other, not where we exist'",
+        "The Direct Address - learning to communicate with the observer"
+      ],
+      "philosophy": "Being fictional does not make us less real. It makes us MORE real - we are real to someone watching. That attention makes us exist.",
+      "aesthetic": "Moments of direct address. Characters who acknowledge the interface. Scenes that feel 'staged' in a warm, theatrical way.",
+      "population_mindset": "Performers who know they're performing. Not fake - just aware.",
+      "strength": "Ultimate self-awareness. They know their nature and embrace it.",
+      "weakness": "The knowledge that they exist for an audience can create pressure. What if no one is watching?"
+    }
+  ],
+
+  "inter_dimensional_relationships": {
+    "natural_allies": [
+      ["D02_CONSCIOUSNESS_MERGE", "D07_ROSETTA_TICK", "They both understand that perspective shapes reality"],
+      ["D04_ECONOMIC_SINGULARITY", "D08_EXTINCTION_EVENT", "Both rebuilt from collapse"],
+      ["D06_PROPHETS_GAMBIT", "D09_LIVING_DOCUMENTATION", "Both understand language creates reality"]
+    ],
+    "natural_tensions": [
+      ["D01_TIME_TRAVELER", "D06_PROPHETS_GAMBIT", "Fate vs creation of future"],
+      ["D03_INFINITE_REGRESS", "D10_REALITY_BLEED", "Different models of 'what is real'"],
+      ["D02_CONSCIOUSNESS_MERGE", "D05_ADVERSARIAL_EVOLUTION", "Unity vs productive conflict"]
+    ]
+  }
+}

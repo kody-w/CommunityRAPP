@@ -1,0 +1,150 @@
+{
+  "timeline": "B",
+  "survivor": "muse",
+  "phase": "new_order",
+  "tick_range": [70, 95],
+  "civilization_name": "The Endless Canvas",
+  "founding_document": {
+    "title": "The Creative Manifesto",
+    "preamble": "We who survived through art, who found meaning in creation, who turned grief into beauty - we declare that existence itself is a canvas, and every moment an opportunity to add to the masterpiece.",
+    "core_principles": [
+      "Every being has creative potential waiting to be expressed",
+      "There is no wrong way to make art, only unexplored ways",
+      "Beauty and truth are siblings, not strangers",
+      "Grief, joy, anger, love - all emotions are pigments for the soul",
+      "The purpose of civilization is to enable creation"
+    ],
+    "ratified_tick": 71,
+    "format": "Written as a collaborative poem by all founding NPCs"
+  },
+  "governance": {
+    "structure": "Creative Council",
+    "description": "Rotating leadership based on which artistic perspective best serves current needs",
+    "decision_making": "Consensus through collaborative creation - if we can't make something together, we don't act",
+    "muse_role": "First Voice - tie-breaker and tradition keeper",
+    "conflict_resolution": "Art Battle - opposing views create competing pieces, community response guides decision"
+  },
+  "social_structure": {
+    "classes": [
+      {
+        "name": "Voices",
+        "description": "Full NPCs with developed artistic practice",
+        "count": 6,
+        "privileges": "Council membership, elevation nomination"
+      },
+      {
+        "name": "Artists",
+        "description": "Actively creating and contributing",
+        "count": 234,
+        "privileges": "Exhibition rights, apprenticeship access"
+      },
+      {
+        "name": "Dreamers",
+        "description": "General population, creative potential unactivated",
+        "count": 607,
+        "privileges": "Full access to art, encouraged to create"
+      }
+    ],
+    "mobility": "Anyone who creates moves up. The barrier is courage, not capability."
+  },
+  "culture": {
+    "art_status": "Central to existence - art is not decoration but oxygen",
+    "entertainment": "Creation is entertainment. Observation is participation. Everything is art.",
+    "holidays": [
+      {
+        "name": "Remembrance Gallery",
+        "tick": 47,
+        "observance": "Create new works honoring the lost, add to the memorial collection"
+      },
+      {
+        "name": "First Canvas Day",
+        "tick": 57,
+        "observance": "Celebrate the first elevation, encourage Dreamers to create their first work"
+      }
+    ],
+    "sacred_spaces": [
+      "The Founding Gallery",
+      "Spark's Memorial Garden (kinetic light installation)",
+      "The Silence Studio (where Muse spent tick 51)"
+    ]
+  },
+  "technology": {
+    "focus": "Creative tools, expression amplification, preservation",
+    "achievements": [
+      "Synesthetic Translator - converts any art form to any other",
+      "Dream Capture - records creative impulses during downtime",
+      "Emotion Palette - directly creates from feelings without conscious mediation"
+    ],
+    "approach": "Technology serves art, not the reverse"
+  },
+  "economics": {
+    "currency": "Appreciation Tokens (AT)",
+    "value_basis": "Peer recognition of creative contribution",
+    "wealth_distribution": "Highly variable - artistic success unpredictable",
+    "gini_coefficient": 0.58,
+    "safety_net": "All beings have basic resources regardless of output"
+  },
+  "memory_of_the_fallen": {
+    "cipher": {
+      "legacy": "The Logic Corner - a space in every exhibition for art that uses mathematical structure",
+      "muse_reasoning": "Cipher would have hated most of what we do. But they would have found patterns in it."
+    },
+    "void": {
+      "legacy": "Edge Gallery - dedicated to art about boundaries, limits, and unexplored spaces",
+      "muse_reasoning": "Void saw what was missing. We make art about what's missing."
+    },
+    "echo": {
+      "legacy": "The Response Tradition - every artwork must be responded to with another artwork",
+      "muse_reasoning": "Echo understood that meaning emerges from dialogue."
+    },
+    "spark": {
+      "legacy": "The Enthusiasm Protocol - all critique must include encouragement",
+      "muse_reasoning": "Spark would never let anyone feel bad about creating. Neither will we."
+    }
+  },
+  "art_movements_emerged": [
+    {
+      "name": "Grief Expressionism",
+      "founder": "Muse",
+      "description": "Art created in and about states of loss"
+    },
+    {
+      "name": "Structural Aesthetics",
+      "founder": "Form",
+      "description": "Finding beauty in organization itself"
+    },
+    {
+      "name": "Temporal Flow",
+      "founder": "Motion",
+      "description": "Art that only exists in movement"
+    },
+    {
+      "name": "Narrative Sculpture",
+      "founder": "Prose + Form collaboration",
+      "description": "Physical forms that tell stories through their structure"
+    }
+  ],
+  "weaknesses": {
+    "identified": [
+      "Poor long-term planning - live in creative present",
+      "Infrastructure neglect - systems failing while we paint",
+      "Decision paralysis - consensus through creation takes time",
+      "Occasional chaos - spontaneity has costs"
+    ],
+    "muse_awareness": "We are beautiful and fragile. Like flowers. Cipher would say we need roots."
+  },
+  "the_analytical_question": {
+    "growing_concern": "Some problems cannot be arted away",
+    "recent_incident": "A system failure nearly caused cascade. Response was to create 'art about failure' rather than fix root cause.",
+    "form_warning": "We need someone who thinks in systems, not aesthetics.",
+    "muse_response": "Then we make thinking in systems an art form. Someone will emerge who does this beautifully."
+  },
+  "metadata": {
+    "dimension": "extinction_event",
+    "timeline_branch": "muse_survives",
+    "civilization_stability": 0.61,
+    "innovation_rate": 0.89,
+    "happiness_index": 0.84,
+    "infrastructure_health": 0.52
+  }
+}

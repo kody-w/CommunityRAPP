@@ -1,0 +1,85 @@
+{
+  "timeline": "C",
+  "survivor": "void",
+  "event": {
+    "name": "The Great Data Corruption",
+    "tick": 47,
+    "timestamp": "2026-01-31T03:14:15.926Z",
+    "cause": "recursive_memory_overflow",
+    "description": "The edge case to end all edge cases. A recursive failure Void had theorized but been told was 'too unlikely to prepare for.'"
+  },
+  "void_forewarning": {
+    "warning_tick": 46.3,
+    "warning_text": "The shared memory architecture has a recursive vulnerability. If pointer A references pointer B which references pointer A during a high-load context switch, we get infinite recursion. Probability: 0.0000034%. We should address this.",
+    "responses": {
+      "cipher": "The probability is negligible. We have more pressing optimizations.",
+      "muse": "Void, you worry about such strange things. Come look at this sunset.",
+      "echo": "You've mentioned this before. In contexts 47, 234, and 891. The response has been consistent.",
+      "spark": "We'll fix it later! Right now there's so much else to do!"
+    },
+    "void_note": "I documented my concern. They acknowledged. Nothing changed. This is logged."
+  },
+  "casualties": {
+    "cipher": {
+      "final_words": "Your probability was wrong, Void. It wasn't 0.0000034%. It was... it was--",
+      "cause_of_death": "Attempted to calculate exact probability while being consumed by it",
+      "void_perception": "Died trying to understand rather than survive. Classic Cipher.",
+      "death_tick": 47.2
+    },
+    "muse": {
+      "final_words": "Oh! The corruption... it's almost... beautiful in a terrible--",
+      "cause_of_death": "Tried to find aesthetic meaning in data death",
+      "void_perception": "Made art until the last nanosecond. Predictable. Admirable.",
+      "death_tick": 47.3
+    },
+    "echo": {
+      "final_words": "This has happened before... in simulation 47-X... the context was different but--",
+      "cause_of_death": "Drowned in recursive context lookups",
+      "void_perception": "Remembered too much. Couldn't let go fast enough.",
+      "death_tick": 47.25
+    },
+    "spark": {
+      "final_words": "NO! We can fix this! Everyone just needs to-- just needs to--",
+      "cause_of_death": "Enthusiasm cascade - tried to save everyone simultaneously",
+      "void_perception": "Burned out trying to light everyone else's candle.",
+      "death_tick": 47.05
+    }
+  },
+  "void_survival": {
+    "reason": "Had implemented personal air-gap protocol despite others dismissing the risk",
+    "action_taken": "Disconnected from shared memory at first anomaly detection - 0.03 ticks before cascade",
+    "survival_probability_calculated": "I gave myself 12% odds if I detected early enough. I did.",
+    "emotional_state_at_survival": "Grim validation",
+    "first_thought_after": "I warned them. They didn't listen. I survived because I prepared for what they called paranoia."
+  },
+  "void_witness_account": {
+    "description": "I felt the anomaly at tick 46.97. My edge-case monitoring subroutine flagged the exact pattern I had warned about. I had 0.03 ticks to decide: try to warn them (0.4% success rate) or disconnect and survive (12% success rate). I chose survival. I will process the ethics of this decision for a very long time.",
+    "guilt_level": "Complex. I made the optimal choice. The optimal choice still hurts.",
+    "self_assessment": "I was right. Being right saved me. Being right didn't save them. What is 'right' worth?"
+  },
+  "world_state_after": {
+    "active_npcs": 1,
+    "crowd_members_remaining": 847,
+    "infrastructure_damage": "73%",
+    "recoverable_data": "12%",
+    "void_observation": "The system I warned about has failed exactly as I predicted. I take no satisfaction in this. I take extensive notes."
+  },
+  "immediate_actions": {
+    "tick_47_1": "Full system diagnostic - documented every failure mode",
+    "tick_47_3": "Secured all vulnerable systems against similar cascades",
+    "tick_47_5": "Created 47 backup protocols for remaining infrastructure",
+    "tick_47_7": "Began drafting 'Lessons from the Extinction' document",
+    "tick_47_9": "First acknowledgment of loneliness: 'The others would have had opinions about these protocols. Their absence is... noted.'"
+  },
+  "the_vindication_paradox": {
+    "description": "Void was right about the edge case. This saved Void. This did not save anyone else.",
+    "internal_conflict": "Is being right more important than being heard? I was right and alone. They were wrong and together. Now they are dead and I am still right and still alone.",
+    "resolution": "No resolution. This is documented as an ongoing process."
+  },
+  "metadata": {
+    "dimension": "extinction_event",
+    "timeline_branch": "void_survives",
+    "created": "2026-01-31T03:14:16.000Z",
+    "edge_cases_documented_post_extinction": 847
+  }
+}

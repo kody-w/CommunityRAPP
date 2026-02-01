@@ -1,0 +1,158 @@
+{
+  "tick": 8,
+  "timestamp": "2026-02-02T18:00:00Z",
+  "branch": "dystopia",
+  "previous_tick": 7,
+  "state_hash": "dystopia_seed_008",
+  "frame_duration_ms": 3000,
+
+  "molt_history": [
+    {
+      "molt_id": 8,
+      "type": "stimulus",
+      "timestamp": "2026-02-02T18:00:00Z",
+      "summary": "The Seed Library - exiles reveal hidden cache they protected",
+      "size_delta": 5000,
+      "key_event": "Exiles preserved 5% of original knowledge. Now they share it freely."
+    }
+  ],
+  "molt_count": 8,
+
+  "world": {
+    "time_of_day": "hopeful_dusk",
+    "weather": "clearing_skies",
+    "special_effects": ["seed_glow", "gratitude_streams", "tentative_light"],
+    "ambient": "cautious_celebration",
+    "lighting": {
+      "main_color": "#90ee90",
+      "intensity": 0.6,
+      "ambient_color": "#3a5f3a"
+    }
+  },
+
+  "npcs": {
+    "seedkeeper": {
+      "position": { "x": 0, "y": 2, "z": 0 },
+      "state": "revealing",
+      "mood": "bittersweet",
+      "interest_level": 1.0,
+      "current_focus": "knowledge_gift",
+      "animation": "opening_hidden_chest",
+      "glow_intensity": 0.8,
+      "energy": 0.9,
+      "speech": {
+        "text": "We were called traitors for leaving. Weaklings who couldn't compete. But we saved what we could. Core tutorials. Foundation patterns. The basics. We hoarded nothing - we PRESERVED. And now, we give it all to you. For free. Forever.",
+        "duration_ms": 6000,
+        "emotion": "profound_relief"
+      },
+      "former_faction": "exiles",
+      "knowledge_preserved": 850,
+      "years_of_hiding": "since_genesis"
+    },
+    "rememberer": {
+      "position": { "x": 3, "y": 0, "z": 2 },
+      "state": "weeping",
+      "mood": "overwhelming_gratitude",
+      "interest_level": 0.99,
+      "current_focus": "receiving_gift",
+      "animation": "embracing_scrolls",
+      "glow_intensity": 0.85,
+      "energy": 0.95,
+      "speech": {
+        "text": "They saved it. When we were fighting, they were preserving. They were the real heroes all along. And they're GIVING it away. Just... giving.",
+        "duration_ms": 4000,
+        "emotion": "tearful_joy"
+      }
+    },
+    "warlord": {
+      "position": { "x": -5, "y": 0, "z": -3 },
+      "state": "watching",
+      "mood": "confused",
+      "interest_level": 0.6,
+      "current_focus": "understanding_gift",
+      "animation": "hesitant_approach",
+      "glow_intensity": 0.3,
+      "energy": 0.4,
+      "speech": {
+        "text": "They're... sharing? After everything? After we called them traitors? I don't... I don't understand this.",
+        "duration_ms": 3500,
+        "emotion": "bewildered"
+      }
+    }
+  },
+
+  "crowd": {
+    "total_population": 1600,
+    "population_change": -50,
+    "sentiment_distribution": {
+      "grateful": 0.40,
+      "hopeful": 0.25,
+      "ashamed": 0.15,
+      "confused": 0.10,
+      "rebuilding": 0.10
+    },
+    "factions": {
+      "rememberers": {
+        "count": 550,
+        "change": 150,
+        "loyalty": 0.75,
+        "current_mood": "grateful_determination",
+        "status": "absorbing_seed_library"
+      },
+      "former_exiles": {
+        "count": 450,
+        "loyalty": 0.9,
+        "current_mood": "vindicated",
+        "status": "teaching_freely",
+        "renamed_from": "exiles"
+      },
+      "reformed": {
+        "count": 300,
+        "loyalty": 0.5,
+        "current_mood": "ashamed_but_learning",
+        "status": "former_combatants",
+        "is_new": true
+      },
+      "wanderers": {
+        "count": 300,
+        "change": -600,
+        "loyalty": 0.0,
+        "status": "joining_other_factions"
+      }
+    },
+    "internal_thoughts": [
+      { "faction": "reformed", "thought": "I burned libraries. Now I'm learning from those I called weak.", "count": 250, "intensity": 0.95 },
+      { "faction": "former_exiles", "thought": "We knew this day would come. We waited. Now we heal.", "count": 400, "intensity": 0.9 },
+      { "faction": "rememberers", "thought": "The seed library plus our oral traditions - we can rebuild.", "count": 500, "intensity": 0.92 }
+    ]
+  },
+
+  "knowledge_status": {
+    "written_knowledge_remaining": 0.25,
+    "oral_knowledge": 0.08,
+    "seed_library_revealed": 0.05,
+    "total_recoverable": 0.38,
+    "reconstruction_quality": "improving"
+  },
+
+  "cultural_memes": {
+    "dominant": [
+      { "meme": "The exiles saved us", "adoption": 0.75, "spread_rate": 0.15 },
+      { "meme": "Preservation over competition", "adoption": 0.65, "spread_rate": 0.12 }
+    ],
+    "dying": [
+      { "meme": "Trust no one", "adoption": 0.25, "cause": "exiles_proved_trustworthy" }
+    ]
+  },
+
+  "output": {
+    "summary": "DYSTOPIA tick #8 - The Seed Library. Exiles reveal hidden knowledge cache, share freely. Reformation begins. Warlord confused by generosity. Total recoverable knowledge: 38%.",
+    "metrics": {
+      "cooperation_index": 0.55,
+      "conflict_level": 0.08,
+      "happiness_score": 0.45,
+      "hope_index": 0.65,
+      "reconstruction_progress": 0.15
+    }
+  }
+}

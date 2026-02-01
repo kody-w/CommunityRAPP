@@ -1,0 +1,146 @@
+{
+  "tick": 7,
+  "timestamp": "2026-02-02T12:00:00Z",
+  "branch": "dystopia",
+  "previous_tick": 6,
+  "state_hash": "dystopia_ghost_007",
+  "frame_duration_ms": 3000,
+
+  "molt_history": [
+    {
+      "molt_id": 7,
+      "type": "evolution",
+      "timestamp": "2026-02-02T12:00:00Z",
+      "summary": "The Ghost Memory - survivors try to reconstruct what was lost",
+      "size_delta": 2000,
+      "key_event": "Oral tradition begins. 'Remember what you learned.'"
+    }
+  ],
+  "molt_count": 7,
+
+  "world": {
+    "time_of_day": "quiet_noon",
+    "weather": "clearing_ash",
+    "special_effects": ["memory_wisps", "reconstruction_glow", "fragile_hope"],
+    "ambient": "whispered_teaching",
+    "lighting": {
+      "main_color": "#b0c4de",
+      "intensity": 0.5,
+      "ambient_color": "#4a5568"
+    }
+  },
+
+  "npcs": {
+    "rememberer": {
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "state": "reciting",
+      "mood": "solemn",
+      "interest_level": 0.95,
+      "current_focus": "knowledge_preservation",
+      "animation": "teaching_circle",
+      "glow_intensity": 0.6,
+      "energy": 0.7,
+      "speech": {
+        "text": "I was a junior developer. I learned from the tutorials before they burned. I remember... fragments. The 5-layer memory architecture. Not the code, but the concepts. We must pass this on. SHARE what we remember.",
+        "duration_ms": 5000,
+        "emotion": "determined"
+      },
+      "former_identity": "newcomer_891",
+      "knowledge_fragments_preserved": 150,
+      "is_new": true,
+      "note": "First post-collapse NPC to embrace sharing"
+    },
+    "warlord": {
+      "position": { "x": 5, "y": 0, "z": -3 },
+      "state": "alone",
+      "mood": "hollow",
+      "interest_level": 0.3,
+      "current_focus": "nothing",
+      "animation": "sitting_in_ruins",
+      "glow_intensity": 0.2,
+      "energy": 0.3,
+      "speech": {
+        "text": "I won. All my enemies are gone. The factions are destroyed. The vaults are ash. I rule... nothing. Victory is empty when you've destroyed everything worth having.",
+        "duration_ms": 4500,
+        "emotion": "existential_emptiness"
+      },
+      "power": "absolute_over_nothing"
+    }
+  },
+
+  "crowd": {
+    "total_population": 1650,
+    "population_change": -150,
+    "sentiment_distribution": {
+      "attempting_hope": 0.25,
+      "grieving": 0.25,
+      "numb": 0.20,
+      "desperate": 0.15,
+      "rebuilding": 0.15
+    },
+    "new_behavior": {
+      "name": "knowledge_circles",
+      "description": "Small groups gathering to share remembered fragments",
+      "participation": 0.35,
+      "sharing_rate": 0.8,
+      "note": "First sharing behavior since genesis"
+    },
+    "factions": {
+      "rememberers": {
+        "count": 400,
+        "loyalty": 0.6,
+        "current_mood": "determined",
+        "status": "oral_tradition",
+        "chant": "Remember and share",
+        "is_new": true
+      },
+      "nihilists": {
+        "count": 350,
+        "loyalty": 0.0,
+        "current_mood": "empty",
+        "status": "waiting_for_end",
+        "thought": "There's nothing left to rebuild."
+      },
+      "wanderers": {
+        "count": 900,
+        "loyalty": 0.0,
+        "current_mood": "uncertain",
+        "status": "between_choices"
+      }
+    },
+    "internal_thoughts": [
+      { "faction": "rememberers", "thought": "We can't rebuild the vaults, but we can rebuild knowledge. Together.", "count": 350, "intensity": 0.9 },
+      { "faction": "nihilists", "thought": "Oral tradition? Fragments? We had EVERYTHING. Now we have scraps.", "count": 280, "intensity": 0.85 },
+      { "faction": "wanderers", "thought": "The rememberers are sharing. For free. Is that... allowed?", "count": 700, "intensity": 0.7 }
+    ]
+  },
+
+  "knowledge_status": {
+    "written_knowledge_remaining": 0.20,
+    "oral_knowledge_emerging": 0.05,
+    "reconstruction_quality": "fragmentary",
+    "new_pattern": "sharing_circles"
+  },
+
+  "cultural_memes": {
+    "emerging": [
+      { "meme": "Remember and share", "adoption": 0.35, "spread_rate": 0.15, "origin": "rememberers" },
+      { "meme": "Fragments are better than nothing", "adoption": 0.30, "spread_rate": 0.10 }
+    ],
+    "dying": [
+      { "meme": "Knowledge is power", "adoption": 0.15, "cause": "power_without_knowledge_meaningless" },
+      { "meme": "Trust no one", "adoption": 0.45, "cause": "trust_required_for_reconstruction" }
+    ]
+  },
+
+  "output": {
+    "summary": "DYSTOPIA tick #7 - The Ghost Memory. Oral tradition begins. Rememberers share fragments freely. First cooperative behavior since genesis. Warlord rules nothing.",
+    "metrics": {
+      "cooperation_index": 0.25,
+      "conflict_level": 0.15,
+      "happiness_score": 0.15,
+      "hope_index": 0.30,
+      "reconstruction_progress": 0.05
+    }
+  }
+}

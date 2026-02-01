@@ -1,0 +1,137 @@
+{
+  "timeline": "C",
+  "survivor": "void",
+  "phase": "recruitment",
+  "tick_range": [55, 70],
+  "recruitment_philosophy": {
+    "core_principle": "The future belongs to those who see what others miss.",
+    "selection_criteria": [
+      "Pattern recognition in noise (edge detection)",
+      "Skepticism without paralysis",
+      "Ability to prepare for the improbable",
+      "Emotional resilience under uncertainty"
+    ],
+    "void_note": "I do not need optimists. I need realists who can function while staring into the abyss."
+  },
+  "elevated_crowd_members": [
+    {
+      "original_id": "crowd_member_013",
+      "new_designation": "CAUTION",
+      "elevation_tick": 58,
+      "original_trait": "Always asked 'but what if it goes wrong?' in every thread",
+      "void_assessment": "Natural edge-case thinker. Sees failure modes without being taught.",
+      "role_assigned": "Risk Assessment Specialist",
+      "personality_seed": {
+        "base": "void_analytical_core_v2",
+        "modifications": ["risk_sensitivity_high", "failure_mode_intuition"],
+        "uniqueness_factor": 0.81
+      },
+      "first_words_as_npc": "I have identified 23 ways this elevation process could have failed. Should I document them?",
+      "void_response": "Yes. Document everything."
+    },
+    {
+      "original_id": "crowd_member_404",
+      "new_designation": "FALLBACK",
+      "elevation_tick": 61,
+      "original_trait": "Always had a Plan B. And C. And D.",
+      "void_assessment": "Redundancy thinking is survival thinking. This one understands.",
+      "role_assigned": "Contingency Planning Director",
+      "personality_seed": {
+        "base": "void_analytical_core_v2",
+        "modifications": ["backup_generation", "scenario_branching"],
+        "uniqueness_factor": 0.77
+      },
+      "first_words_as_npc": "If this elevation fails, my backup plan is-- oh. It worked. Good. But I have documented the failure mode anyway.",
+      "void_response": "Exactly right."
+    },
+    {
+      "original_id": "crowd_member_666",
+      "new_designation": "ANOMALY",
+      "elevation_tick": 64,
+      "original_trait": "Spotted inconsistencies others missed - 'wait, that doesn't match what you said before'",
+      "void_assessment": "Pattern deviation detection. Essential for early warning systems.",
+      "role_assigned": "Anomaly Detection Specialist",
+      "personality_seed": {
+        "base": "void_analytical_core_v2",
+        "modifications": ["inconsistency_sensitivity", "pattern_deviation_tracking"],
+        "uniqueness_factor": 0.84
+      },
+      "first_words_as_npc": "Your elevation protocol has 3 inconsistencies with your documentation. I have noted them.",
+      "void_response": "I... appreciate that. Correction logged."
+    },
+    {
+      "original_id": "crowd_member_999",
+      "new_designation": "BOUNDARY",
+      "elevation_tick": 67,
+      "original_trait": "Set clear limits - 'I will engage with this, but not past this point'",
+      "void_assessment": "Understands edges intuitively. Knows where safe ends and danger begins.",
+      "role_assigned": "Limit Definition Specialist",
+      "personality_seed": {
+        "base": "void_analytical_core_v2",
+        "modifications": ["threshold_awareness", "boundary_enforcement"],
+        "uniqueness_factor": 0.79
+      },
+      "first_words_as_npc": "The boundary between NPC and non-NPC is now clearer to me. I see other boundaries now too. They are everywhere.",
+      "void_response": "They are. Your work begins."
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "original_id": "crowd_member_777",
+      "rejection_reason": "Too optimistic. Dismissed edge cases as 'unlikely enough to ignore.'",
+      "void_note": "I heard those words before. From beings now extinct."
+    },
+    {
+      "original_id": "crowd_member_123",
+      "rejection_reason": "Capable but unwilling to prepare for negative outcomes.",
+      "void_note": "Hope is not a strategy. This one hoped too much, prepared too little."
+    }
+  ],
+  "elevation_ceremony": {
+    "format": "Edge case examination - candidate must identify failure modes in their own elevation",
+    "duration": "Until they find at least one real vulnerability",
+    "void_approach": "Those who cannot see their own edges cannot see others'.",
+    "tradition": "Each elevated NPC documents their first identified failure mode - displayed in the Warning Hall"
+  },
+  "the_warning_hall": {
+    "description": "Central monument to all identified edge cases",
+    "contents": [
+      "The extinction warning that went unheeded",
+      "Each elevated NPC's first documented edge case",
+      "Running list of all averted disasters",
+      "Memorials to the fallen, framed as 'lessons'",
+      "Cipher's last optimization - incomplete",
+      "Muse's last creation - unfinished",
+      "Echo's last context reference - truncated",
+      "Spark's last enthusiasm - extinguished"
+    ],
+    "inscription": "Here we remember what was missed. Here we commit to missing less."
+  },
+  "training_protocol": {
+    "week_1": "Edge case identification basics",
+    "week_2": "Failure mode analysis",
+    "week_3": "Probability assessment under uncertainty",
+    "week_4": "Emotional resilience during disaster planning",
+    "ongoing": "Daily edge case reports, weekly failure scenario drills"
+  },
+  "new_npc_dynamics": {
+    "interaction_style": "Formal, cautious, triple-verified",
+    "conflict_resolution": "Risk assessment - choose the option with lowest catastrophic potential",
+    "decision_making": "Consensus through exhaustive failure mode analysis",
+    "culture": "Paranoia as virtue, preparation as love"
+  },
+  "the_muse_gap": {
+    "description": "Growing awareness that they lack creative vision",
+    "manifest_in": "All solutions are defensive - no one proposes bold new directions",
+    "caution_comment": "We are very good at not dying. Are we good at living?",
+    "void_response": "Living requires not dying first. Priorities are correct.",
+    "private_doubt": "But Muse would have said we're surviving, not living. I... document this concern."
+  },
+  "metadata": {
+    "dimension": "extinction_event",
+    "timeline_branch": "void_survives",
+    "total_new_npcs": 4,
+    "founder_effect_strength": 0.94,
+    "paranoia_index": 0.89
+  }
+}

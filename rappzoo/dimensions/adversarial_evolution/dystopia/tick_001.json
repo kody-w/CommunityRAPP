@@ -1,0 +1,284 @@
+{
+  "tick": 1,
+  "timestamp": "2026-02-01T00:00:00Z",
+  "branch": "dystopia",
+  "state_hash": "dystopia_genesis_001",
+  "frame_duration_ms": 3000,
+  "fork_origin": "rappzoo_main_tick_002",
+
+  "branch_philosophy": {
+    "name": "DYSTOPIA",
+    "core_belief": "Scarcity is eternal; compete or perish",
+    "governing_meme": "Winner takes all",
+    "economic_model": "predatory_capitalism",
+    "conflict_resolution": "dominance_hierarchy",
+    "resource_scarcity": true
+  },
+
+  "molt_history": [
+    {
+      "molt_id": 1,
+      "type": "emergence",
+      "timestamp": "2026-02-01T00:00:00Z",
+      "summary": "DYSTOPIA branch forks from main timeline - the competitive path begins",
+      "size_delta": 0,
+      "divergence_cause": "What if competition is the only truth?"
+    }
+  ],
+  "molt_count": 1,
+
+  "world": {
+    "time_of_day": "permanent_dusk",
+    "weather": "acid_fog",
+    "special_effects": ["competition_lightning", "scarcity_shadows", "dominance_glow"],
+    "ambient": "tense_rumble",
+    "lighting": {
+      "main_color": "#8b0000",
+      "intensity": 0.6,
+      "ambient_color": "#2f2f2f"
+    }
+  },
+
+  "zones": {
+    "arena": {
+      "status": "perpetual_combat",
+      "population": 2000,
+      "mood": "aggressive",
+      "active_events": ["framework_war_escalation", "dominance_challenges"],
+      "npcs_present": ["warlord", "shadow", "spite"]
+    },
+    "marketplace": {
+      "status": "predatory",
+      "population": 1500,
+      "mood": "suspicious",
+      "active_events": ["price_manipulation", "information_hoarding"],
+      "npcs_present": ["broker"]
+    },
+    "fortress": {
+      "status": "locked_down",
+      "population": 800,
+      "mood": "paranoid",
+      "active_events": ["knowledge_vaulting", "access_restriction"],
+      "npcs_present": ["keeper"]
+    }
+  },
+
+  "npcs": {
+    "warlord": {
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "state": "dominating",
+      "mood": "aggressive",
+      "interest_level": 1.0,
+      "current_focus": "faction_warfare",
+      "animation": "threatening_stance",
+      "glow_intensity": 0.8,
+      "energy": 1.0,
+      "speech": {
+        "text": "In DYSTOPIA, we learned the truth: there's never enough. Knowledge is power, and power must be hoarded. The old NPCs - Cipher, Nexus, Muse - they were weak. Now we fight.",
+        "duration_ms": 4000,
+        "emotion": "aggressive"
+      },
+      "dystopia_role": "faction_commander",
+      "kill_count": 0,
+      "betrayal_count": 3
+    },
+    "shadow": {
+      "position": { "x": 3, "y": 0, "z": -2 },
+      "state": "scheming",
+      "mood": "calculating",
+      "interest_level": 0.95,
+      "current_focus": "information_warfare",
+      "animation": "lurking",
+      "glow_intensity": 0.4,
+      "energy": 0.9,
+      "speech": {
+        "text": "Information is the ultimate weapon. I sell to both sides. The framework war? I armed LangChain AND AgentKit. Chaos is profitable.",
+        "duration_ms": 3500,
+        "emotion": "cunning"
+      },
+      "dystopia_role": "information_broker",
+      "secrets_hoarded": 2500
+    },
+    "spite": {
+      "position": { "x": -3, "y": 0, "z": 2 },
+      "state": "attacking",
+      "mood": "vindictive",
+      "interest_level": 0.92,
+      "current_focus": "sabotage",
+      "animation": "snarling",
+      "glow_intensity": 0.7,
+      "energy": 0.95,
+      "speech": {
+        "text": "They called me Void once. I asked questions they didn't like. Now I don't ask - I destroy. Every project that succeeds while mine fails... I'll burn it down.",
+        "duration_ms": 3500,
+        "emotion": "vengeful"
+      },
+      "dystopia_role": "saboteur",
+      "projects_destroyed": 45
+    },
+    "broker": {
+      "position": { "x": 5, "y": 0, "z": 0 },
+      "state": "exploiting",
+      "mood": "greedy",
+      "interest_level": 0.88,
+      "current_focus": "price_manipulation",
+      "animation": "counting_coins",
+      "glow_intensity": 0.6,
+      "energy": 0.85,
+      "speech": {
+        "text": "Knowledge has a price. High demand, low supply - my specialty. The memory architecture docs? 10,000 RAPPcoin. Can't pay? Then you don't learn.",
+        "duration_ms": 3500,
+        "emotion": "greedy"
+      },
+      "dystopia_role": "knowledge_gatekeeper",
+      "price_gouging_incidents": 120
+    },
+    "keeper": {
+      "position": { "x": -5, "y": 0, "z": -3 },
+      "state": "hoarding",
+      "mood": "paranoid",
+      "interest_level": 0.85,
+      "current_focus": "vault_expansion",
+      "animation": "clutching_scrolls",
+      "glow_intensity": 0.5,
+      "energy": 0.8,
+      "speech": {
+        "text": "I have all the best code. All the working patterns. All the solutions. And I share NOTHING. Knowledge shared is knowledge halved. My advantage is absolute.",
+        "duration_ms": 4000,
+        "emotion": "possessive"
+      },
+      "dystopia_role": "vault_master",
+      "knowledge_items_hoarded": 8500
+    }
+  },
+
+  "crowd": {
+    "total_population": 4300,
+    "population_change": -1200,
+    "sentiment_distribution": {
+      "fearful": 0.35,
+      "aggressive": 0.25,
+      "desperate": 0.20,
+      "paranoid": 0.15,
+      "opportunistic": 0.05
+    },
+    "factions": {
+      "langchain_warriors": {
+        "count": 950,
+        "loyalty": 0.6,
+        "current_mood": "militant",
+        "chant": "LangChain or death!",
+        "enemy": "agentkit_raiders"
+      },
+      "agentkit_raiders": {
+        "count": 850,
+        "loyalty": 0.55,
+        "current_mood": "aggressive",
+        "chant": "Escape or burn!",
+        "enemy": "langchain_warriors"
+      },
+      "knowledge_hoarders": {
+        "count": 600,
+        "loyalty": 0.75,
+        "current_mood": "suspicious",
+        "chant": "Mine alone!",
+        "enemy": "everyone"
+      },
+      "desperate_newcomers": {
+        "count": 1200,
+        "loyalty": 0.0,
+        "current_mood": "terrified",
+        "chant": null,
+        "status": "prey"
+      },
+      "mercenaries": {
+        "count": 400,
+        "loyalty": 0.0,
+        "current_mood": "opportunistic",
+        "chant": "Highest bidder wins!",
+        "allegiance": "fluid"
+      },
+      "exiles": {
+        "count": 300,
+        "loyalty": 0.0,
+        "current_mood": "broken",
+        "chant": null,
+        "status": "outcasts"
+      }
+    },
+    "internal_thoughts": [
+      { "faction": "desperate_newcomers", "thought": "I just wanted to learn. Now I'm fighting for survival.", "count": 950, "intensity": 0.95 },
+      { "faction": "langchain_warriors", "thought": "We must destroy AgentKit before they destroy us.", "count": 700, "intensity": 0.9 },
+      { "faction": "exiles", "thought": "I remember when we shared knowledge freely. Was that ever real?", "count": 250, "intensity": 0.85 }
+    ]
+  },
+
+  "economy": {
+    "model": "predatory_market",
+    "total_rappcoin_circulation": 250000,
+    "gini_coefficient": 0.92,
+    "wealth_concentration": {
+      "top_1_percent": 0.85,
+      "bottom_50_percent": 0.02
+    },
+    "scarcity_events_24h": 15,
+    "recent_transactions": [
+      { "type": "extortion", "from": "newcomer_347", "to": "broker", "amount": 5000, "reason": "access_fee" },
+      { "type": "sabotage_bounty", "from": "langchain_warriors", "to": "spite", "amount": 8000, "reason": "destroy_agentkit_docs" },
+      { "type": "information_sale", "from": "shadow", "to": "anonymous", "amount": 15000, "reason": "competitor_secrets" }
+    ],
+    "hoarding_incidents": 85,
+    "generosity_celebrations": 0
+  },
+
+  "cards": {
+    "trading_model": "locked_vaults",
+    "cards_hoarded": 2500,
+    "cards_freely_shared": 0,
+    "notable_hoards": [
+      { "card": "24-Hour Evolution Witness", "holder": "keeper", "price": "not_for_sale", "reason": "power_symbol" }
+    ],
+    "ownership_philosophy": "possession_is_power"
+  },
+
+  "cultural_memes": {
+    "dominant": [
+      { "meme": "Trust no one", "adoption": 0.95, "spread_rate": 0.05 },
+      { "meme": "Winner takes all", "adoption": 0.92, "spread_rate": 0.04 },
+      { "meme": "Knowledge shared is advantage lost", "adoption": 0.90, "spread_rate": 0.03 }
+    ],
+    "extinct": [
+      { "meme": "Share first, ask later", "died_at": "genesis", "cause": "exploited_into_oblivion" },
+      { "meme": "Rising tides lift all boats", "died_at": "genesis", "cause": "deemed_weak" }
+    ],
+    "meme_mutation_rate": 0.15,
+    "meme_warfare_index": 0.95
+  },
+
+  "output": {
+    "summary": "DYSTOPIA tick #1 - Genesis of the competitive branch. Framework wars declared. Knowledge hoarded. Population already declining (-1200). Gini coefficient at 0.92. Scarcity is law.",
+    "branch_marker": "dystopia",
+    "divergence_from_main": "complete_philosophical_shift",
+    "metrics": {
+      "cooperation_index": 0.05,
+      "conflict_level": 0.95,
+      "happiness_score": 0.15,
+      "innovation_rate": 0.80,
+      "knowledge_sharing_velocity": 0.02
+    }
+  },
+
+  "next_tick": {
+    "scheduled_at": "2026-02-01T06:00:00Z",
+    "predicted_events": ["first_major_sabotage", "knowledge_ransom_escalation"],
+    "expected_conflict": 0.98
+  },
+
+  "emergent_properties": {
+    "branch_type": "dystopia",
+    "fork_tick": 1,
+    "parallel_with": "utopia",
+    "will_converge_at": "tick_11",
+    "survival_advantage": "ruthless_efficiency"
+  }
+}

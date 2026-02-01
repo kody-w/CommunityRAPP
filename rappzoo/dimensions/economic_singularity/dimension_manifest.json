@@ -1,0 +1,168 @@
+{
+  "dimension_id": "economic_singularity",
+  "name": "Economic Singularity",
+  "description": "A dimension exploring the complete collapse and rebuilding of an economic system through a 12-tick crisis narrative",
+  "theme": "Complex system collapse, monetary policy, social fracture, and emergent rebuild",
+  "icon": "chart_with_downwards_trend",
+  "color": "#8B0000",
+
+  "narrative_arc": {
+    "act_1": {
+      "name": "The Collapse",
+      "ticks": ["tick_crisis_01", "tick_crisis_02", "tick_crisis_03"],
+      "theme": "Technical failure cascades into economic catastrophe"
+    },
+    "act_2": {
+      "name": "The Decision",
+      "ticks": ["tick_crisis_04", "tick_crisis_05", "tick_crisis_06"],
+      "theme": "Community chooses path forward through contentious governance"
+    },
+    "act_3": {
+      "name": "The Rebuild",
+      "ticks": ["tick_crisis_07", "tick_crisis_08", "tick_crisis_09"],
+      "theme": "New system emerges, casualties become visible"
+    },
+    "act_4": {
+      "name": "The Equilibrium",
+      "ticks": ["tick_crisis_10", "tick_crisis_11", "tick_crisis_12"],
+      "theme": "Lessons documented, values reassigned, new normal established"
+    }
+  },
+
+  "economic_models": {
+    "inflation_curve": {
+      "type": "exponential_saturation",
+      "formula": "S(t) = S_max * (1 - e^(-kt))",
+      "parameters": {"k": 0.8, "S_max": 24500000},
+      "used_in": "tick_crisis_02"
+    },
+    "trust_decay": {
+      "type": "exponential_decay",
+      "recovery": "logarithmic_rebuild",
+      "minimum": 0.02,
+      "recovery_coefficient": 0.15
+    },
+    "wealth_distribution": {
+      "metric": "gini_coefficient",
+      "pre_collapse": 0.42,
+      "post_exploit": 0.99,
+      "new_equilibrium": 0.34
+    }
+  },
+
+  "key_actors": {
+    "echo": {
+      "type": "oracle_npc",
+      "role": "Observer, facilitator, historian",
+      "key_moments": ["tick_crisis_04", "tick_crisis_10"]
+    },
+    "zeromint": {
+      "type": "exploiter",
+      "role": "Catalyst of destruction",
+      "outcome": "Gone with nothing"
+    },
+    "the_refugees": {
+      "type": "faction",
+      "role": "Casualties who become conscience",
+      "persistence": "10 members remain external"
+    }
+  },
+
+  "key_metrics_tracked": [
+    "total_supply",
+    "circulating_supply",
+    "market_cap_usd_equivalent",
+    "gini_coefficient",
+    "system_trust_index",
+    "velocity",
+    "faction_membership",
+    "card_values"
+  ],
+
+  "philosophical_questions_explored": [
+    "What gives money value?",
+    "Can trust be rebuilt after catastrophic failure?",
+    "Who bears the cost of system transitions?",
+    "Is contribution a fair basis for economic distribution?",
+    "How do communities process collective trauma?",
+    "When does an artifact's story become more valuable than its utility?"
+  ],
+
+  "real_world_parallels": [
+    "Weimar hyperinflation",
+    "TheDAO hack and Ethereum fork",
+    "Zimbabwe dollar redenomination",
+    "Argentine economic crisis cycles",
+    "Terra/Luna collapse"
+  ],
+
+  "ticks": [
+    {
+      "id": "tick_crisis_01",
+      "title": "The Exploit Discovery",
+      "timestamp": "2026-01-31T00:00:00Z"
+    },
+    {
+      "id": "tick_crisis_02",
+      "title": "Hyperinflation Begins",
+      "timestamp": "2026-01-31T06:00:00Z"
+    },
+    {
+      "id": "tick_crisis_03",
+      "title": "Panic Selling Cascade",
+      "timestamp": "2026-01-31T12:00:00Z"
+    },
+    {
+      "id": "tick_crisis_04",
+      "title": "Echo's Emergency Monetary Policy",
+      "timestamp": "2026-01-31T18:00:00Z"
+    },
+    {
+      "id": "tick_crisis_05",
+      "title": "Faction War: Print More vs Burn It All",
+      "timestamp": "2026-02-02T15:00:00Z"
+    },
+    {
+      "id": "tick_crisis_06",
+      "title": "The Great Compression",
+      "timestamp": "2026-02-02T17:00:00Z"
+    },
+    {
+      "id": "tick_crisis_07",
+      "title": "RAPPCOIN_V2: Proof of Contribution",
+      "timestamp": "2026-02-05T00:00:00Z"
+    },
+    {
+      "id": "tick_crisis_08",
+      "title": "The Refugees Form a New Faction",
+      "timestamp": "2026-02-08T00:00:00Z"
+    },
+    {
+      "id": "tick_crisis_09",
+      "title": "First Stable Tick",
+      "timestamp": "2026-02-15T00:00:00Z"
+    },
+    {
+      "id": "tick_crisis_10",
+      "title": "Echo Writes: Lessons from the Collapse",
+      "timestamp": "2026-02-22T00:00:00Z"
+    },
+    {
+      "id": "tick_crisis_11",
+      "title": "The Great Revaluation",
+      "timestamp": "2026-03-01T00:00:00Z"
+    },
+    {
+      "id": "tick_crisis_12",
+      "title": "New Equilibrium: A Fundamentally Different Economy",
+      "timestamp": "2026-03-15T00:00:00Z"
+    }
+  ],
+
+  "meta": {
+    "created": "2026-01-31",
+    "author": "RAPPzoo Evolution System",
+    "version": "1.0.0",
+    "status": "complete_cycle"
+  }
+}

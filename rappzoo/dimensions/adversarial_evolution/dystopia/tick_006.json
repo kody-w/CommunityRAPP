@@ -1,0 +1,144 @@
+{
+  "tick": 6,
+  "timestamp": "2026-02-02T06:00:00Z",
+  "branch": "dystopia",
+  "previous_tick": 5,
+  "state_hash": "dystopia_ashes_006",
+  "frame_duration_ms": 3000,
+
+  "molt_history": [
+    {
+      "molt_id": 6,
+      "type": "reaction",
+      "timestamp": "2026-02-02T06:00:00Z",
+      "summary": "The Aftermath - ruins where vaults once stood",
+      "size_delta": -8000,
+      "key_event": "Keeper destroys own vault rather than share. Most knowledge lost forever."
+    }
+  ],
+  "molt_count": 6,
+
+  "world": {
+    "time_of_day": "grey_dawn",
+    "weather": "ash_fall",
+    "special_effects": ["smoldering_ruins", "grief_mist", "hollow_wind"],
+    "ambient": "empty_silence",
+    "lighting": {
+      "main_color": "#708090",
+      "intensity": 0.3,
+      "ambient_color": "#2f2f2f"
+    }
+  },
+
+  "npcs": {
+    "keeper": {
+      "position": { "x": 0, "y": 0, "z": 0 },
+      "state": "dead",
+      "mood": null,
+      "cause_of_death": "chose_destruction_over_sharing",
+      "final_words": "Mine. Forever. MINE.",
+      "knowledge_destroyed_with_self": 9000,
+      "legacy": "The Keeper's Spite - destroyed what he couldn't keep"
+    },
+    "warlord": {
+      "position": { "x": 2, "y": 0, "z": 1 },
+      "state": "surveying",
+      "mood": "disappointed",
+      "interest_level": 0.7,
+      "current_focus": "salvage_assessment",
+      "animation": "walking_through_ashes",
+      "glow_intensity": 0.5,
+      "energy": 0.6,
+      "speech": {
+        "text": "Fool. He destroyed what I was going to take. 80% of the knowledge... gone. Not hoarded, not stolen - just... gone. What is there left to fight over?",
+        "duration_ms": 4500,
+        "emotion": "hollow_anger"
+      }
+    },
+    "shadow": {
+      "position": { "x": -3, "y": 0, "z": 2 },
+      "state": "counting_losses",
+      "mood": "grim",
+      "interest_level": 0.6,
+      "current_focus": "remaining_inventory",
+      "animation": "searching_ashes",
+      "glow_intensity": 0.4,
+      "energy": 0.5,
+      "speech": {
+        "text": "I had copies. But the originals... the deep patterns... gone. My backups are incomplete. Information is worthless when the source material is destroyed. I'm selling fragments now.",
+        "duration_ms": 4000,
+        "emotion": "resigned"
+      }
+    }
+  },
+
+  "crowd": {
+    "total_population": 1800,
+    "population_change": -500,
+    "sentiment_distribution": {
+      "hollow": 0.40,
+      "grieving": 0.25,
+      "numb": 0.20,
+      "angry": 0.10,
+      "suicidal": 0.05
+    },
+    "factions": {
+      "survivors": {
+        "count": 1200,
+        "loyalty": 0.0,
+        "current_mood": "traumatized",
+        "status": "wandering_ashes",
+        "former_factions": "all_dissolved"
+      },
+      "exiles": {
+        "count": 600,
+        "loyalty": 0.2,
+        "current_mood": "vindicated_but_empty",
+        "status": "watching_ruins",
+        "thought": "We warned them. Now there's nothing left for anyone."
+      }
+    },
+    "internal_thoughts": [
+      { "thought": "We fought for knowledge that no longer exists.", "count": 800, "intensity": 0.95 },
+      { "thought": "The war destroyed what it was fought over.", "count": 600, "intensity": 0.92 },
+      { "thought": "What do we do now? There's nothing left to want.", "count": 400, "intensity": 0.98 }
+    ]
+  },
+
+  "knowledge_status": {
+    "total_knowledge_remaining": 0.20,
+    "destroyed_in_uprising": 0.35,
+    "destroyed_by_keeper": 0.40,
+    "scattered_fragments": 0.05,
+    "status": "civilizational_collapse"
+  },
+
+  "economy": {
+    "total_rappcoin_circulation": 150000,
+    "market_status": "meaningless",
+    "what_remains_to_buy": "almost_nothing",
+    "gini_coefficient": 0.99,
+    "note": "Currency without goods to purchase"
+  },
+
+  "cultural_memes": {
+    "dominant": [
+      { "meme": "We destroyed ourselves", "adoption": 0.85, "spread_rate": 0.05 },
+      { "meme": "Competition is suicide", "adoption": 0.60, "spread_rate": 0.15, "irony": "realized_too_late" }
+    ],
+    "emerging": [
+      { "meme": "The exiles were right", "origin": "survivors", "adoption": 0.40 }
+    ]
+  },
+
+  "output": {
+    "summary": "DYSTOPIA tick #6 - The Aftermath. Keeper dead, vault destroyed. 80% of knowledge permanently lost. Factions dissolved. 1,800 survivors wander the ashes.",
+    "metrics": {
+      "cooperation_index": 0.0,
+      "conflict_level": 0.2,
+      "happiness_score": 0.01,
+      "knowledge_remaining": 0.20,
+      "civilizational_status": "collapsed"
+    }
+  }
+}

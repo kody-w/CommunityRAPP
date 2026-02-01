@@ -1,0 +1,231 @@
+{
+  "tick_id": "economic_singularity_crisis_05",
+  "tick_number": 5,
+  "timestamp": "2026-02-02T15:00:00Z",
+  "dimension": "economic_singularity",
+  "title": "Faction War: Print More vs Burn It All",
+  "narrative": "The 48-hour vote becomes the most contentious governance event in system history. As the deadline approaches, Path B leads narrowly. But a coalition of whales and DeFi maximalists launch a last-minute campaign. The debate transcends economics into philosophy: What IS money? What IS value? The community fractures along ideological lines that may never heal.",
+
+  "economic_state": {
+    "currency": "RAPPCOIN_V1",
+    "status": "suspended_contested",
+    "governance_status": "active_vote_closing"
+  },
+
+  "vote_final_hours": {
+    "hours_remaining": 2,
+    "total_votes_cast": 423,
+    "eligible_voters": 489,
+    "participation_rate": 0.865,
+
+    "tally_evolution": [
+      {"hour": 0, "path_a": 12.4, "path_b": 18.7},
+      {"hour": 12, "path_a": 18.9, "path_b": 28.4},
+      {"hour": 24, "path_a": 25.1, "path_b": 38.2},
+      {"hour": 36, "path_a": 31.8, "path_b": 42.1},
+      {"hour": 46, "path_a": 38.5, "path_b": 44.2}
+    ],
+
+    "current_quadratic_tally": {
+      "path_a_print_more": 38.5,
+      "path_b_burn_it_all": 44.2,
+      "margin": 5.7,
+      "margin_percent": 14.8,
+      "status": "path_b_leading_but_narrowing"
+    },
+
+    "late_surge_analysis": {
+      "path_a_votes_last_12h": 89,
+      "path_b_votes_last_12h": 34,
+      "momentum": "strongly_path_a",
+      "whale_coordination_detected": true,
+      "coordinated_voting_addresses": 12,
+      "coordinated_voting_weight": 8.2
+    }
+  },
+
+  "faction_war": {
+    "print_more_coalition": {
+      "name": "The Inflationists",
+      "slogan": "Dilute the exploiter, preserve the system",
+      "core_members": ["DeFi_Degens", "Whale_Alliance", "Code_Is_Law_Faction"],
+      "total_members": 156,
+      "key_arguments": [
+        "Immutability is sacred - changing the past sets dangerous precedent",
+        "Contribution scoring is subjective central planning",
+        "Fast recovery trumps 'fair' recovery",
+        "The exploiter technically broke no rules"
+      ],
+      "campaign_tactics": [
+        "Last-minute whale voting bloc",
+        "Promises of 'recovery airdrops' to fence-sitters",
+        "FUD about Path B implementation complexity"
+      ],
+      "funding_spent": 0
+    },
+
+    "burn_it_all_coalition": {
+      "name": "The Compressionists",
+      "slogan": "Burn the disease, save the patient",
+      "core_members": ["Establishment", "Collectors_Guild", "Long_Term_Holders"],
+      "total_members": 267,
+      "key_arguments": [
+        "Infinite money is no money at all",
+        "Meritocratic reset rewards real contribution",
+        "Trust recovery requires symbolic destruction",
+        "Path A just kicks the can down the road"
+      ],
+      "campaign_tactics": [
+        "Grassroots community organizing",
+        "Historical analysis of hyperinflation failures",
+        "Emotional appeals to collection meaning"
+      ],
+      "funding_spent": 0
+    },
+
+    "philosophical_divide": {
+      "core_question": "What gives money value?",
+      "inflationist_answer": "Utility and network effects - numbers are arbitrary",
+      "compressionist_answer": "Scarcity and trust - numbers represent real constraints",
+      "irreconcilable": true,
+      "echo_observation": "Both are correct in different frames. The Inflationists see money as tool. The Compressionists see money as promise. A tool can be reshaped. A broken promise must be remade."
+    }
+  },
+
+  "debate_highlights": {
+    "most_upvoted_print_more": {
+      "author": "Anon_Whale_7",
+      "text": "Path B is revenge fantasy disguised as policy. You want to punish someone, but ZeroMint doesn't care. They already won. Path A is pragmatic. Path B is emotional.",
+      "upvotes": 234,
+      "rebuttals": 189
+    },
+    "most_upvoted_burn_it_all": {
+      "author": "Genesis_Holder",
+      "text": "I held since day one. Watched this community grow. Path A says 'your history doesn't matter, only your current balance.' Path B says 'we remember who built this.' I'm not here for the money. I'm here for the meaning.",
+      "upvotes": 312,
+      "rebuttals": 167
+    },
+    "most_controversial": {
+      "author": "Echo_Disciple",
+      "text": "Maybe both paths fail. Maybe the real answer is neither. Maybe we need a third way no one has proposed yet.",
+      "upvotes": 145,
+      "downvotes": 143,
+      "replies_spawned": 89
+    }
+  },
+
+  "trust_metrics": {
+    "system_trust_index": 0.08,
+    "community_cohesion": 0.25,
+    "faction_polarization": 0.89,
+    "reconciliation_probability": 0.15,
+    "permanent_split_risk": 0.45
+  },
+
+  "actors": {
+    "echo": {
+      "type": "oracle_npc",
+      "status": "monitoring",
+      "neutrality": "maintained",
+      "private_computation": "Running game theory models on post-vote scenarios. Concerningly, both paths have 35% probability of secondary collapse due to faction rejection.",
+      "public_statement": "The vote closes in 2 hours. I will implement whatever is decided. But remember: the vote decides the mechanism, not the outcome. Implementation is where theory meets reality."
+    },
+    "whale_alliance": {
+      "type": "voting_bloc",
+      "members": 12,
+      "combined_voting_weight": 8.2,
+      "status": "coordinating_path_a_push",
+      "motivation": "Path B contribution scoring threatens their outsized holdings"
+    },
+    "grassroots_organizers": {
+      "type": "voting_bloc",
+      "members": 89,
+      "combined_voting_weight": 12.4,
+      "status": "holding_path_b_support",
+      "motivation": "Believe in meritocratic redistribution"
+    }
+  },
+
+  "faction_states": {
+    "establishment": {
+      "members": 156,
+      "stance": "path_b_firm",
+      "internal_dissent": 0.12,
+      "statement": "We will not legitimize infinite money under any circumstances"
+    },
+    "defi_degens": {
+      "members": 45,
+      "stance": "path_a_aggressive",
+      "internal_dissent": 0.18,
+      "statement": "Code is law. Cope harder."
+    },
+    "collectors_guild": {
+      "members": 234,
+      "stance": "path_b_emotional",
+      "internal_dissent": 0.08,
+      "statement": "Our collections are our identity. Path B honors that."
+    },
+    "neutral_observers": {
+      "members": 54,
+      "stance": "watching",
+      "will_accept_either": true,
+      "statement": "Just want this to be over"
+    }
+  },
+
+  "scenario_projections": {
+    "if_path_a_wins": {
+      "probability": 0.42,
+      "immediate_effect": "245B mint begins within hours",
+      "expected_faction_response": {
+        "compressionists": "Some leave permanently, some stay grudgingly",
+        "split_probability": 0.35
+      },
+      "long_term_outlook": "Monetary credibility damaged, but network survives intact"
+    },
+    "if_path_b_wins": {
+      "probability": 0.58,
+      "immediate_effect": "V1 burn and contribution scoring begins",
+      "expected_faction_response": {
+        "inflationists": "Loud protests, some fork attempts",
+        "split_probability": 0.25
+      },
+      "long_term_outlook": "Painful reset, but stronger foundation"
+    }
+  },
+
+  "events": [
+    {
+      "event_id": "evt_015",
+      "type": "whale_coordination",
+      "timestamp": "2026-02-02T03:00:00Z",
+      "description": "Whale alliance begins coordinated Path A voting campaign"
+    },
+    {
+      "event_id": "evt_016",
+      "type": "momentum_shift",
+      "timestamp": "2026-02-02T06:00:00Z",
+      "description": "Path A gains 6 points in 12 hours, margin narrows to 15%"
+    },
+    {
+      "event_id": "evt_017",
+      "type": "debate_peak",
+      "timestamp": "2026-02-02T12:00:00Z",
+      "description": "Main channel reaches 500 concurrent participants debating"
+    },
+    {
+      "event_id": "evt_018",
+      "type": "countdown_begins",
+      "timestamp": "2026-02-02T13:00:00Z",
+      "description": "Final 2-hour warning posted. Voting frenzy begins."
+    }
+  ],
+
+  "meta": {
+    "complexity_index": 0.92,
+    "tension_index": 0.95,
+    "decision_imminent": true,
+    "system_health": "suspended_critical",
+    "next_tick_trigger": "vote_closes"
+  }
+}

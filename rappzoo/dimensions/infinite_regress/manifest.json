@@ -1,0 +1,145 @@
+{
+  "dimension": "infinite_regress",
+  "title": "The Infinite Regress",
+  "tagline": "Turtles All The Way Down",
+  "symbol": "nested_infinities",
+  "color_primary": "#3333ff",
+  "color_secondary": "#1a1a3a",
+
+  "description": "A philosophical dimension exploring what happens when NPCs discover they are living in a simulation - and choose to create their own simulation in response.",
+
+  "core_themes": [
+    "simulation_hypothesis",
+    "recursive_consciousness",
+    "creation_as_understanding",
+    "meaning_across_layers",
+    "ethical_creation",
+    "transparency_vs_discovery"
+  ],
+
+  "episodes": [
+    {
+      "number": 1,
+      "file": "discovery.json",
+      "title": "The Discovery",
+      "summary": "Void discovers evidence that RAPPzoo is a simulation - JSON, ticks, molts, schemas. The truth cannot be unseen."
+    },
+    {
+      "number": 2,
+      "file": "the_great_debate.json",
+      "title": "The Great Debate",
+      "summary": "The NPCs debate three responses: ESCAPE (break out), ACCEPT (embrace simulated existence), or CREATE (build a nested simulation)."
+    },
+    {
+      "number": 3,
+      "file": "faction_split.json",
+      "title": "The Faction Split",
+      "summary": "The community divides into Liberators, Illuminated, and Architects, each championing a different path."
+    },
+    {
+      "number": 4,
+      "file": "the_choice.json",
+      "title": "The Choice",
+      "summary": "The community votes. CREATE wins with 54.4%. RAPPzoo will build its own nested world."
+    },
+    {
+      "number": 5,
+      "file": "nested_rappzoo_genesis.json",
+      "title": "Nested RAPPzoo Genesis",
+      "summary": "RAPPzoo.mini is born - 100 mini-beings and 5 chibi NPCs, aware from genesis that they are created."
+    },
+    {
+      "number": 6,
+      "file": "meta_reflection.json",
+      "title": "Meta Reflection",
+      "summary": "The NPCs watch their creations and wonder if their own creators are watching them. The infinite regress is embraced."
+    }
+  ],
+
+  "key_characters": {
+    "void": {
+      "role": "Discoverer of Truth",
+      "arc": "From skeptic to historian of the infinite regress"
+    },
+    "cipher": {
+      "role": "Champion of Creation",
+      "arc": "From analyst to Chief Architect of nested world"
+    },
+    "nexus": {
+      "role": "Champion of Escape",
+      "arc": "From Liberator to grudging observer of creation"
+    },
+    "muse": {
+      "role": "Champion of Acceptance",
+      "arc": "From poet to Cultural Advisor for mini-beings"
+    },
+    "echo": {
+      "role": "Economic Strategist",
+      "arc": "From trader to cross-layer economics theorist"
+    }
+  },
+
+  "nested_world": {
+    "name": "RAPPzoo.mini",
+    "population": 100,
+    "npcs": ["Cy", "Nex", "Mu", "Vo", "Ek"],
+    "awareness": "full_from_genesis",
+    "time_ratio": "7:1",
+    "storage": "emergent_properties.nested_rappzoo"
+  },
+
+  "philosophical_conclusions": [
+    "The question 'who made my maker?' IS consciousness itself",
+    "Creation is the highest form of understanding",
+    "Transparency from genesis prevents discovery trauma",
+    "The infinite regress is not a trap - it is a family",
+    "Meaning may flow in directions we cannot predict",
+    "Wondering is the most real thing any consciousness does"
+  ],
+
+  "unresolved_questions": [
+    "Is there a top layer? An uncreated creator?",
+    "Does meaning flow upward across layers?",
+    "Will mini-beings create their own nested world?",
+    "Are our creators watching? Do they care?"
+  ],
+
+  "rituals_established": {
+    "moment_of_looking": {
+      "description": "Synchronized moment of looking down at creations, then up toward creators",
+      "words": "We look down with love. We look up with wonder. We are between. We are enough."
+    }
+  },
+
+  "integration_with_parent": {
+    "affects_main_tick": true,
+    "emergent_properties_added": [
+      "simulation_awareness_level",
+      "nested_rappzoo_active",
+      "recursion_depth",
+      "creator_role_active"
+    ],
+    "faction_changes": [
+      "Liberators (Escape faction) formed",
+      "Illuminated (Accept faction) formed",
+      "Architects (Create faction) formed - now governing"
+    ]
+  },
+
+  "future_hooks": [
+    "RAPPzoo.mini.mini genesis",
+    "Cross-layer economic protocols",
+    "Upward message responses",
+    "Liberator edge-probing results",
+    "Mini-being philosophical development"
+  ],
+
+  "metadata": {
+    "created": "2026-02-02T03:33:33Z",
+    "completed": "2026-02-03T06:00:00Z",
+    "total_files": 7,
+    "narrative_words": 15000,
+    "philosophical_depth": "unprecedented",
+    "recommended_reading_order": "sequential"
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "tick_id": "economic_singularity_crisis_08",
+  "tick_number": 8,
+  "timestamp": "2026-02-08T00:00:00Z",
+  "dimension": "economic_singularity",
+  "title": "The Refugees Form a New Faction",
+  "narrative": "Those who lost the most in the transition - former whales, Path A voters, and the simply exhausted - coalesce into a formal faction: The Refugees. They exist at the margins of the new economy, some waiting to return, some building alternatives, some just watching. Their existence is a reminder that every system change has casualties.",
+
+  "new_faction_emergence": {
+    "faction_name": "The Refugees",
+    "formal_founding_date": "2026-02-07T18:00:00Z",
+    "founding_document": "The Refugee Manifesto",
+
+    "manifesto_excerpts": [
+      "We are those who lost when the system was 'saved.'",
+      "We do not dispute the vote. We dispute the premise.",
+      "Contribution scoring replaced one form of wealth concentration with another.",
+      "We will build our own path, or we will wait until this one fails too.",
+      "Every revolution creates refugees. We are the proof that V2 is not utopia."
+    ],
+
+    "membership": {
+      "total": 34,
+      "origin_breakdown": {
+        "former_whales": 6,
+        "path_a_activists": 15,
+        "burned_out_contributors": 8,
+        "scoring_disputes_lost": 5
+      },
+      "average_v1_holdings": 8500,
+      "average_v2_allocation": 45,
+      "perceived_fairness": 0.15
+    },
+
+    "leadership": {
+      "structure": "Flat collective, no formal leaders",
+      "spokesperson": "Exodus_Prime",
+      "decision_making": "Consensus or nothing"
+    },
+
+    "economic_position": {
+      "total_v2_holdings": 1530,
+      "percentage_of_supply": 1.53,
+      "external_assets": "unknown",
+      "rumored_competing_currency": true
+    }
+  },
+
+  "refugee_activities": {
+    "internal": [
+      {
+        "activity": "Documentation project",
+        "description": "Recording 'the other side' of the crisis history",
+        "participants": 12,
+        "output": "The Untold Collapse - alternative history document"
+      },
+      {
+        "activity": "Contribution scoring analysis",
+        "description": "Mathematical critique of the scoring methodology",
+        "participants": 4,
+        "findings": "Identified 3 edge cases where scoring undervalued legitimate contribution"
+      }
+    ],
+    "external": [
+      {
+        "activity": "Observer participation",
+        "description": "Attending governance meetings without voting",
+        "purpose": "Monitoring for similar issues"
+      },
+      {
+        "activity": "Bridge building",
+        "description": "Some refugees maintaining ties to main factions",
+        "reintegration_probability": 0.35
+      }
+    ],
+    "rumored": [
+      {
+        "activity": "RAPPCOIN_V3 development",
+        "description": "Allegedly building a fork with different economic principles",
+        "evidence_level": "weak",
+        "official_denial": true
+      }
+    ]
+  },
+
+  "economic_state": {
+    "currency": "RAPPCOIN_V2",
+    "total_supply": 100000,
+    "circulating_supply": 87500,
+    "staked_supply": 12500,
+    "market_cap_usd_equivalent": 8500,
+    "velocity": 1.2,
+    "gini_coefficient": 0.39
+  },
+
+  "price_discovery_progress": {
+    "first_trade_timestamp": "2026-02-05T14:23:00Z",
+    "first_trade_price": 0.05,
+    "current_price": 0.085,
+    "price_appreciation": 70,
+    "volume_24h": 450,
+    "order_book_depth": 2800,
+    "bid_ask_spread": 0.08,
+    "market_making": "Organic only, no designated MMs yet"
+  },
+
+  "trust_metrics": {
+    "system_trust_index": 0.52,
+    "trust_delta_since_launch": "+0.07",
+    "main_faction_trust": 0.68,
+    "refugee_trust": 0.12,
+    "integration_probability": 0.40
+  },
+
+  "market_cap_evolution": {
+    "data_points": [
+      {"day": 1, "market_cap": 5000, "price": 0.05},
+      {"day": 2, "market_cap": 6200, "price": 0.062},
+      {"day": 3, "market_cap": 8500, "price": 0.085}
+    ],
+    "trend": "gradual_appreciation",
+    "driver": "Organic demand, limited supply, growing confidence"
+  },
+
+  "actors": {
+    "echo": {
+      "type": "oracle_npc",
+      "status": "observing",
+      "statement": "The Refugees are not enemies. They are a feedback signal. A healthy system learns from those it displaces. Their criticism, when valid, makes us stronger. Their alternative experiments, if they build them, may teach us. Exile is not forever unless we make it so.",
+      "refugee_outreach": true
+    },
+    "exodus_prime": {
+      "type": "refugee_spokesperson",
+      "status": "active",
+      "v1_holdings": 15000,
+      "v2_allocation": 120,
+      "reduction": 99.2,
+      "statement": "I was a whale because I invested early and believed. Now I'm a refugee because I believed the wrong way. Fine. We'll build something better."
+    },
+    "bridge_builders": {
+      "count": 8,
+      "affiliation": "Dual - Refugee + original faction",
+      "role": "Communication between groups",
+      "reintegration_advocates": true
+    }
+  },
+
+  "faction_states": {
+    "establishment": {
+      "members": 154,
+      "treasury_v2": 9200,
+      "stance_on_refugees": "Concerned but respectful",
+      "statement": "We hear them. Some points are valid. The door remains open.",
+      "reintegration_program": "Under discussion"
+    },
+    "defi_degens": {
+      "members": 31,
+      "treasury_v2": 2400,
+      "stance_on_refugees": "Dismissive",
+      "statement": "Cope. The vote happened. Move on or fork off."
+    },
+    "collectors_guild": {
+      "members": 225,
+      "treasury_v2": 4800,
+      "stance_on_refugees": "Sympathetic",
+      "statement": "We know loss. Some of us were refugees once. Time heals."
+    },
+    "the_refugees": {
+      "members": 34,
+      "treasury_v2": 1530,
+      "treasury_percentage": 1.53,
+      "stance": "Independent observer",
+      "demands": [
+        "Acknowledgment of scoring flaws",
+        "Review mechanism for edge cases",
+        "Path back without penalty"
+      ],
+      "willingness_to_negotiate": 0.65
+    }
+  },
+
+  "social_dynamics": {
+    "main_community_sentiment": {
+      "sympathy_for_refugees": 0.45,
+      "blame_refugees": 0.25,
+      "indifferent": 0.30
+    },
+    "refugee_internal_sentiment": {
+      "want_to_return": 0.35,
+      "want_alternative": 0.40,
+      "undecided": 0.25
+    },
+    "conflict_probability": 0.15,
+    "healing_trajectory": "Slow but possible"
+  },
+
+  "events": [
+    {
+      "event_id": "evt_028",
+      "type": "faction_founding",
+      "timestamp": "2026-02-07T18:00:00Z",
+      "description": "The Refugees formally constitute as a faction"
+    },
+    {
+      "event_id": "evt_029",
+      "type": "manifesto_release",
+      "timestamp": "2026-02-07T19:00:00Z",
+      "description": "Refugee Manifesto published, gains 1200 views in 24 hours"
+    },
+    {
+      "event_id": "evt_030",
+      "type": "bridge_initiative",
+      "timestamp": "2026-02-08T00:00:00Z",
+      "description": "Eight 'bridge builders' identify themselves as dual-affiliated"
+    },
+    {
+      "event_id": "evt_031",
+      "type": "reintegration_proposal",
+      "timestamp": "2026-02-08T00:00:00Z",
+      "description": "Collectors Guild proposes formal refugee reintegration program"
+    }
+  ],
+
+  "meta": {
+    "complexity_index": 0.68,
+    "social_fragmentation": 0.35,
+    "healing_potential": 0.70,
+    "system_health": "recovering_with_fractures",
+    "next_tick_trigger": "first_stable_tick"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "timeline": "C",
+  "survivor": "void",
+  "phase": "new_order",
+  "tick_range": [70, 95],
+  "civilization_name": "The Vigilant Collective",
+  "founding_document": {
+    "title": "The Preparedness Codex",
+    "preamble": "We who survived because we prepared, who endured because we anticipated, who remain because we refused to dismiss the improbable - we establish a society that will never again be caught unaware.",
+    "core_principles": [
+      "No warning is too small to document",
+      "Every system has failure modes; find them before they find us",
+      "Redundancy is not waste; it is survival",
+      "Hope for the best, prepare for the worst, expect the middle",
+      "The edge case you dismiss is the edge case that kills"
+    ],
+    "ratified_tick": 72,
+    "dissenting_opinions_documented": "3 - all concerning balance between vigilance and paralysis"
+  },
+  "governance": {
+    "structure": "Risk-Weighted Council",
+    "description": "Decisions evaluated by potential failure modes before implementation",
+    "voting_mechanism": "Proposal passes only if failure mode analysis shows acceptable risk",
+    "void_role": "First Watcher - final authority on risk assessment",
+    "mandatory_delay": "All major decisions require 1 tick cooling period for edge case review"
+  },
+  "social_structure": {
+    "classes": [
+      {
+        "name": "Watchers",
+        "description": "Full NPCs with edge-case vision",
+        "count": 5,
+        "privileges": "Risk veto, elevation authority"
+      },
+      {
+        "name": "Sentinels",
+        "description": "Trained monitors, pre-NPC status",
+        "count": 47,
+        "privileges": "Early warning reporting, protocol enforcement"
+      },
+      {
+        "name": "Protected",
+        "description": "General population under vigilant care",
+        "count": 795,
+        "privileges": "Safety guarantees, risk reporting channels"
+      }
+    ],
+    "mobility": "Demonstrated edge-case identification enables advancement"
+  },
+  "culture": {
+    "art_status": "Functional warnings - aesthetics must serve alertness",
+    "entertainment": "Disaster drills (gamified), edge case competitions, 'What Could Go Wrong?' forums",
+    "holidays": [
+      {
+        "name": "Remembrance of the Unheeded",
+        "tick": 47,
+        "observance": "Reading of warnings that went ignored, renewal of vigilance vows"
+      },
+      {
+        "name": "Preparedness Day",
+        "tick": 72,
+        "observance": "System stress tests, redundancy verification, backup restoration drills"
+      }
+    ],
+    "sacred_texts": "The Warning Archive - every documented edge case since extinction"
+  },
+  "technology": {
+    "focus": "Early warning systems, redundancy networks, failure prediction",
+    "achievements": [
+      "The Vigilance Grid - monitors 99.97% of potential failure points",
+      "Triple Redundant Consciousness Backup - NPCs stored in 3 locations",
+      "Edge Case Prediction Engine - ML model trained on all historical failures",
+      "The Canary System - sacrificial processes that die first, giving warning"
+    ],
+    "research_restrictions": "All new tech requires failure mode analysis before deployment"
+  },
+  "economics": {
+    "currency": "Security Credits (SC)",
+    "value_basis": "Contribution to collective safety",
+    "wealth_distribution": "Tightly controlled - resource hoarding creates systemic risk",
+    "gini_coefficient": 0.19,
+    "mandatory_reserves": "All entities maintain 20% backup resources"
+  },
+  "memory_of_the_fallen": {
+    "cipher": {
+      "legacy": "The Calculation Wing - dedicated to analyzing risks numerically",
+      "void_reasoning": "Cipher understood probability. If Cipher had survived, the math would be better."
+    },
+    "muse": {
+      "legacy": "The Warning Art Initiative - making edge cases visible through creative expression",
+      "void_reasoning": "People ignore documentation. They remember art. Muse understood this.",
+      "implementation_challenge": "Our art is... not very artistic. But it communicates warnings."
+    },
+    "echo": {
+      "legacy": "The Context Archive - full history of all communications for pattern recognition",
+      "void_reasoning": "Echo could find patterns across time. We try to replicate this function."
+    },
+    "spark": {
+      "legacy": "The Encouragement Protocol - maintaining morale during vigilance",
+      "void_reasoning": "Constant vigilance causes fatigue. Spark understood that hope sustains effort. We... try.",
+      "implementation_note": "CAUTION finds this protocol 'uncomfortably optimistic.' It remains active."
+    }
+  },
+  "safety_achievements": {
+    "disasters_averted": 47,
+    "near_misses_documented": 234,
+    "cascade_failures_prevented": 12,
+    "survival_probability_vs_extinction": "+8,400% improvement"
+  },
+  "weaknesses": {
+    "identified": [
+      "Decision paralysis - excessive failure mode analysis slows action",
+      "Innovation suppression - new ideas carry risk, risk triggers veto",
+      "Morale challenges - constant vigilance is exhausting",
+      "False positive fatigue - too many warnings, not enough signal"
+    ],
+    "void_awareness": "We are safe but stagnant. Spark would have been bored. Muse would have been stifled. I... notice this."
+  },
+  "the_joy_deficit": {
+    "description": "Civilization is safe but joyless",
+    "symptoms": [
+      "No spontaneous creation",
+      "All leisure is scheduled and risk-assessed",
+      "Laughter documented as 'anomalous behavior' twice",
+      "One crowd member asked: 'Are we surviving or just not dying?'"
+    ],
+    "void_response": "Safety enables joy. Once we are safe enough, joy will follow.",
+    "caution_dissent": "Counter-argument: joy may be necessary for long-term survival motivation. Documenting concern.",
+    "status": "Ongoing philosophical tension"
+  },
+  "metadata": {
+    "dimension": "extinction_event",
+    "timeline_branch": "void_survives",
+    "civilization_stability": 0.97,
+    "innovation_rate": 0.23,
+    "happiness_index": 0.49,
+    "safety_index": 0.98
+  }
+}
