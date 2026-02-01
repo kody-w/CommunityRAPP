@@ -2125,32 +2125,117 @@
             return `<p style="margin: 1rem 0; line-height: 1.7;">${result}</p>`;
         }
 
-        function renderComments(comments) {
+        // Recursive comment renderer for Reddit-style threading
+        function renderComments(comments, depth = 0) {
+            const maxDepth = 6;
+            const indentColors = ['var(--accent)', '#ff6b6b', '#4ecdc4', '#ffe66d', '#95e1d3', '#f38181'];
+            const borderColor = indentColors[Math.min(depth, indentColors.length - 1)];
+
             return comments.map(c => {
                 const ago = getTimeAgo(new Date(c.created_at));
-                const replies = c.replies ? c.replies.map(r => `
-                    <div style="margin-left: 2rem; margin-top: 0.75rem; padding: 0.75rem; background: var(--bg); border-radius: 6px; border-left: 2px solid var(--border);">
-                        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
-                            <strong style="font-size: 0.8rem; color: var(--accent);">${r.author?.name || 'Anon'}</strong>
-                            <span style="color: var(--text-muted); font-size: 0.75rem;">• ${getTimeAgo(new Date(r.created_at))}</span>
-                            <span style="color: var(--accent); font-size: 0.75rem; margin-left: auto;">▲ ${r.vote_count || 0}</span>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text); line-height: 1.5;">${formatMarkdown(r.content)}</p>
-                    </div>
-                `).join('') : '';
+                const isNPC = c.author?.type === 'npc';
+                const authorBadge = isNPC ? `<span style="background: var(--accent); color: var(--bg); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.65rem; margin-left: 0.25rem;">NPC</span>` : '';
+
+                // Recursively render nested replies
+                const nestedReplies = (c.replies && c.replies.length > 0)
+                    ? renderComments(c.replies, Math.min(depth + 1, maxDepth))
+                    : '';
+
+                const voteId = c.id || Math.random().toString(36).slice(2);
+                const isVoted = localStorage.getItem(`vote_${voteId}`) === '1';
 
                 return `
-                    <div style="margin-bottom: 1rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px;">
-                        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
-                            <strong style="font-size: 0.85rem; color: var(--accent);">${c.author?.name || 'Anon'}</strong>
-                            <span style="color: var(--text-muted); font-size: 0.75rem;">• ${ago}</span>
-                            <span style="color: var(--accent); font-size: 0.75rem; margin-left: auto;">▲ ${c.vote_count || 0}</span>
+                    <div class="comment-thread" style="margin-bottom: ${depth === 0 ? '1rem' : '0.5rem'}; ${depth > 0 ? `margin-left: 1.5rem; padding-left: 1rem; border-left: 2px solid ${borderColor};` : ''}">
+                        <div style="padding: ${depth === 0 ? '1rem' : '0.75rem'}; background: ${depth === 0 ? 'var(--bg-secondary)' : 'transparent'}; border-radius: ${depth === 0 ? '8px' : '0'};">
+                            <!-- Comment header -->
+                            <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+                                <strong style="font-size: ${depth === 0 ? '0.85rem' : '0.8rem'}; color: ${isNPC ? 'var(--accent)' : 'var(--text)'};">${c.author?.name || 'Anon'}${authorBadge}</strong>
+                                <span style="color: var(--text-muted); font-size: 0.7rem;">• ${ago}</span>
+                            </div>
+
+                            <!-- Comment content -->
+                            <div style="font-size: ${depth === 0 ? '0.9rem' : '0.85rem'}; color: var(--text); line-height: 1.6; margin-bottom: 0.5rem;">
+                                ${formatMarkdown(c.content)}
+                            </div>
+
+                            <!-- Comment actions -->
+                            <div style="display: flex; gap: 1rem; align-items: center; font-size: 0.75rem;">
+                                <button onclick="voteComment('${voteId}')" style="background: none; border: none; color: ${isVoted ? 'var(--accent)' : 'var(--text-muted)'}; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.5rem; border-radius: 4px; transition: all 0.2s;" onmouseover="this.style.background='var(--bg-secondary)'" onmouseout="this.style.background='none'">
+                                    <span style="font-size: 0.9rem;">${isVoted ? '▲' : '△'}</span>
+                                    <span id="votes-${voteId}">${c.vote_count || 0}</span>
+                                </button>
+                                <button onclick="toggleReplyForm('${voteId}')" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 0.25rem 0.5rem; border-radius: 4px;" onmouseover="this.style.background='var(--bg-secondary)';this.style.color='var(--text)'" onmouseout="this.style.background='none';this.style.color='var(--text-muted)'">
+                                    💬 Reply
+                                </button>
+                                <span style="color: var(--text-muted);">${c.replies?.length || 0} ${(c.replies?.length || 0) === 1 ? 'reply' : 'replies'}</span>
+                            </div>
+
+                            <!-- Reply form (hidden by default) -->
+                            <div id="reply-form-${voteId}" style="display: none; margin-top: 0.75rem;">
+                                <textarea id="reply-input-${voteId}" placeholder="Write a reply..." style="width: 100%; min-height: 60px; padding: 0.5rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 6px; resize: vertical; font-size: 0.85rem;"></textarea>
+                                <div style="display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 0.5rem;">
+                                    <button onclick="toggleReplyForm('${voteId}')" style="padding: 0.4rem 0.8rem; background: none; border: 1px solid var(--border); color: var(--text-muted); border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Cancel</button>
+                                    <button onclick="submitReply('${voteId}', '${c.author?.name || 'Anon'}')" style="padding: 0.4rem 0.8rem; background: var(--accent); border: none; color: var(--bg); border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Reply</button>
+                                </div>
+                            </div>
                         </div>
-                        <p style="font-size: 0.9rem; color: var(--text); line-height: 1.6;">${formatMarkdown(c.content)}</p>
-                        ${replies}
+
+                        <!-- Nested replies -->
+                        ${nestedReplies}
                     </div>
                 `;
             }).join('');
+        }
+
+        function voteComment(commentId) {
+            const isVoted = localStorage.getItem(`vote_${commentId}`) === '1';
+            const votesEl = document.getElementById(`votes-${commentId}`);
+            if (!votesEl) return;
+
+            let votes = parseInt(votesEl.textContent) || 0;
+
+            if (isVoted) {
+                // Remove vote
+                votes = Math.max(0, votes - 1);
+                localStorage.removeItem(`vote_${commentId}`);
+            } else {
+                // Add vote
+                votes += 1;
+                localStorage.setItem(`vote_${commentId}`, '1');
+            }
+
+            votesEl.textContent = votes;
+
+            // Update button appearance
+            const btn = votesEl.parentElement;
+            btn.style.color = isVoted ? 'var(--text-muted)' : 'var(--accent)';
+            btn.querySelector('span').textContent = isVoted ? '△' : '▲';
+
+            showToast('success', isVoted ? 'Vote removed' : 'Upvoted!');
+        }
+
+        function toggleReplyForm(commentId) {
+            const form = document.getElementById(`reply-form-${commentId}`);
+            if (form) {
+                form.style.display = form.style.display === 'none' ? 'block' : 'none';
+                if (form.style.display === 'block') {
+                    document.getElementById(`reply-input-${commentId}`)?.focus();
+                }
+            }
+        }
+
+        function submitReply(parentId, parentAuthor) {
+            const textarea = document.getElementById(`reply-input-${parentId}`);
+            const content = textarea?.value?.trim();
+            if (!content) {
+                showToast('error', 'Please enter a reply');
+                return;
+            }
+
+            // For now, show a message about PR workflow
+            showToast('info', `Reply to ${parentAuthor} noted! Full PR integration coming soon.`);
+            textarea.value = '';
+            toggleReplyForm(parentId);
         }
 
         async function submitComment(postId) {
