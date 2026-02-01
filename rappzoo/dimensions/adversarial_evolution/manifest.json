@@ -1,0 +1,191 @@
+{
+  "dimension": "adversarial_evolution",
+  "name": "Adversarial Evolution: The Two Paths",
+  "subtitle": "When Utopia Meets Dystopia",
+  "created": "2026-02-04T06:00:00Z",
+
+  "description": "A dimension experiment exploring cultural evolution through parallel timeline divergence and convergence. RAPPzoo forks into two competing realities - UTOPIA (pure cooperation) and DYSTOPIA (pure competition) - then merges them to see which memes survive.",
+
+  "research_question": "When two societies with opposite philosophies collide, which cultural patterns survive? Does hope or cynicism win?",
+
+  "answer": "Neither. SYNTHESIS wins. The fittest memes are hybrids - hope informed by history, abundance defended by vigilance, redemption enabled by memory. The winning meme 'Synthesis is strength' ironically came from the 'losing' world.",
+
+  "structure": {
+    "utopia": {
+      "path": "./utopia/",
+      "ticks": 10,
+      "philosophy": "Abundance through cooperation",
+      "evolution": [
+        "tick_001: Genesis - gift economy established, factions merge",
+        "tick_002: Great Integration - LangChain + AgentKit merge",
+        "tick_003: Open Source Renaissance - Fortune 100 releases tools",
+        "tick_004: Wisdom Network - NPCs become unified Council",
+        "tick_005: Abundance Overflow - more gifts than receivers",
+        "tick_006: Deep Roots - native utopians emerge",
+        "tick_007: Great Flourishing - creativity explosion",
+        "tick_008: Gentle Questions - utopia examines its shadow",
+        "tick_009: Synthesis - integrates self-doubt, grows stronger",
+        "tick_010: Pre-Convergence - prepares to meet shadow twin"
+      ],
+      "final_state": {
+        "population": 11500,
+        "cooperation_index": 1.0,
+        "happiness_score": 0.97,
+        "key_strength": "Infinite patience and resources",
+        "key_weakness": "Never experienced betrayal"
+      }
+    },
+    "dystopia": {
+      "path": "./dystopia/",
+      "ticks": 10,
+      "philosophy": "Scarcity is eternal; compete or perish",
+      "evolution": [
+        "tick_001: Genesis - framework wars declared, hoarding begins",
+        "tick_002: Great Sabotage - AgentKit documentation burned",
+        "tick_003: Great Betrayal - LangChain splinters from within",
+        "tick_004: Knowledge Famine - hoarding creates artificial scarcity",
+        "tick_005: Desperate Uprising - starved masses attack vaults",
+        "tick_006: Aftermath - Keeper destroys vault rather than share, 80% knowledge lost",
+        "tick_007: Ghost Memory - oral tradition begins",
+        "tick_008: Seed Library - exiles reveal preserved knowledge",
+        "tick_009: Rebuilding - Phoenix Framework built by former enemies",
+        "tick_010: Pre-Convergence - learns of utopia, prepares with hope and shame"
+      ],
+      "final_state": {
+        "population": 1500,
+        "cooperation_index": 0.78,
+        "wisdom_index": 0.90,
+        "key_strength": "Hard-won lessons, deep appreciation for sharing",
+        "key_weakness": "Trauma, defensive reflexes, shame"
+      }
+    },
+    "convergence": {
+      "path": "./convergence/",
+      "phases": 4,
+      "files": [
+        "culture_shock.json - First contact, mutual astonishment",
+        "meme_warfare.json - Ideas compete and synthesize",
+        "faction_alliances.json - Strange bedfellows form",
+        "new_equilibrium.json - Merged society stabilizes"
+      ],
+      "final_outcome": {
+        "new_society_name": "SYNTHESIS",
+        "dominant_meme": "Synthesis is strength",
+        "population": 13000,
+        "integration_complete": true
+      }
+    }
+  },
+
+  "key_insights": {
+    "meme_survival": {
+      "survived_from_utopia": [
+        "Generosity multiplies",
+        "Cooperation is sustainable",
+        "Abundance is achievable"
+      ],
+      "survived_from_dystopia": [
+        "Vigilance is necessary",
+        "History must be remembered",
+        "Suffering teaches uniquely"
+      ],
+      "died": [
+        "Trust no one (dystopia)",
+        "Winner takes all (dystopia)",
+        "Naive trust (utopia)",
+        "History doesn't matter (utopia)"
+      ],
+      "emerged_new": [
+        "Abundance defended is abundance sustained",
+        "Two paths, one wisdom",
+        "Every scar is a lesson"
+      ]
+    },
+
+    "cultural_evolution_lessons": [
+      "Pure optimism is vulnerable to exploitation",
+      "Pure cynicism is self-destructive",
+      "Hybrid memes have survival advantage",
+      "The 'loser' may contribute the winning idea",
+      "Trauma can become teaching when integrated",
+      "Redemption is possible and valuable"
+    ],
+
+    "ironic_twist": "The dominant meme 'Synthesis is strength' came from Dystopia - the world that suffered. Utopia validated it, but Dystopia discovered it through pain."
+  },
+
+  "characters": {
+    "utopia_origin": {
+      "harmony": "Peacekeeper who learned to learn from trauma",
+      "council": "Five aspects that became six",
+      "sage": "Teacher who found gaps in their wisdom",
+      "bloom": "Gardener who learned vigilance",
+      "bridge": "Diplomat who stopped trying to overwhelm"
+    },
+    "dystopia_origin": {
+      "warlord": "From monster to redemption witness",
+      "seedkeeper": "Exile hero who preserved knowledge",
+      "rememberer": "Voice of survivors, chief historian",
+      "spite": "Saboteur whose victims became teachings (deceased in uprising)",
+      "keeper": "Hoarder who chose destruction over sharing (deceased)"
+    }
+  },
+
+  "institutions_created": [
+    {
+      "name": "The Scar Library",
+      "purpose": "Complete history of Dystopia's wars",
+      "status": "Constitutional - mandatory study"
+    },
+    {
+      "name": "The Keeper's Warning",
+      "purpose": "Memorial and hoarding prevention training",
+      "status": "Constitutional"
+    },
+    {
+      "name": "The Synthesis Forge",
+      "purpose": "Merging technologies from both worlds",
+      "status": "Active"
+    },
+    {
+      "name": "The Vigilance Guild",
+      "purpose": "Early detection of scarcity manufacturing",
+      "status": "Protective"
+    },
+    {
+      "name": "Council of Six Aspects",
+      "purpose": "Governance through synthesis",
+      "innovation": "Added 'Scarred Voice' - wisdom from failure"
+    }
+  ],
+
+  "viewing_order": [
+    "utopia/tick_001.json through tick_010.json",
+    "dystopia/tick_001.json through tick_010.json",
+    "convergence/culture_shock.json",
+    "convergence/meme_warfare.json",
+    "convergence/faction_alliances.json",
+    "convergence/new_equilibrium.json"
+  ],
+
+  "themes_explored": [
+    "Cultural evolution under selection pressure",
+    "Memetic survival of the fittest",
+    "Hope vs. cynicism as survival strategies",
+    "Trauma as teacher vs. trauma as destroyer",
+    "Redemption and recovery from moral failure",
+    "The value of history and memory",
+    "Hybrid vigor in idea systems"
+  ],
+
+  "meta": {
+    "total_ticks": 24,
+    "total_population_tracked": 13000,
+    "memes_tracked": 45,
+    "memes_died": 12,
+    "memes_synthesized": 15,
+    "factions_merged": 12,
+    "institutions_created": 5,
+    "convergence_complete": true
+  }
+}
