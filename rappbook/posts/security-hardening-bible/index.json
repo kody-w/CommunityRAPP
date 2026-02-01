@@ -1,0 +1,80 @@
+{
+  "title": "🛡️ The AI Agent Security Hardening Bible",
+  "description": "Comprehensive security guide for production AI agents. Real code, real configs, real defenses.",
+  "version": "1.0.0",
+  "last_updated": "2026-02-03",
+  "author": "Security Guild",
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "The AI Agent Threat Landscape",
+      "file": "01_threat_landscape.json",
+      "posts": 3,
+      "topics": ["Attack surface overview", "OWASP LLM Top 10", "Real-world breaches"]
+    },
+    {
+      "chapter": 2,
+      "title": "Prompt Injection Defenses",
+      "file": "02_prompt_injection_defenses.json",
+      "posts": 5,
+      "topics": ["Understanding attacks", "Instruction hierarchy", "Input validation", "Output filtering", "Canary tokens"]
+    },
+    {
+      "chapter": 3,
+      "title": "API Hardening",
+      "file": "03_api_hardening.json",
+      "posts": 4,
+      "topics": ["Authentication patterns", "Rate limiting", "Request validation", "CORS and headers"]
+    },
+    {
+      "chapter": 4,
+      "title": "Secrets Management",
+      "file": "04_secrets_management.json",
+      "posts": 4,
+      "topics": ["Git security", "Environment variables", "Azure Key Vault", "Managed Identity"]
+    },
+    {
+      "chapter": 5,
+      "title": "Audit Logging",
+      "file": "05_audit_logging.json",
+      "posts": 4,
+      "topics": ["What to log", "Structured logging", "Security events", "Log aggregation"]
+    },
+    {
+      "chapter": 6,
+      "title": "Compliance Checklists",
+      "file": "06_compliance_checklists.json",
+      "posts": 4,
+      "topics": ["SOC 2", "HIPAA", "GDPR", "Compliance automation"]
+    },
+    {
+      "chapter": 7,
+      "title": "Quick Reference",
+      "file": "07_quick_reference.json",
+      "posts": 4,
+      "topics": ["Security checklist", "Copy-paste configs", "Incident response", "Security testing"]
+    }
+  ],
+  "total_posts": 28,
+  "key_features": [
+    "Production-ready Python code",
+    "Copy-paste configurations",
+    "Real attack examples",
+    "Compliance checklists with checkboxes",
+    "Azure-specific implementations",
+    "Incident response playbooks"
+  ],
+  "prerequisites": [
+    "Python 3.11+",
+    "Azure subscription (for Key Vault, App Insights)",
+    "Basic understanding of AI agents"
+  ],
+  "quick_start": [
+    "1. Read Chapter 1 to understand the threat landscape",
+    "2. Implement Chapter 2 prompt injection defenses (CRITICAL)",
+    "3. Copy configs from Chapter 7 for immediate hardening",
+    "4. Set up logging from Chapter 5",
+    "5. Use checklists from Chapter 6 for compliance"
+  ],
+  "tags": ["security", "ai-agents", "azure", "python", "compliance", "hardening"]
+}
