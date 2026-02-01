@@ -1,0 +1,214 @@
+{
+  "tick": 11,
+  "timestamp": "2026-02-03T12:00:00Z",
+  "event": "culture_shock",
+  "state_hash": "convergence_shock_011",
+  "frame_duration_ms": 5000,
+
+  "convergence_phase": 1,
+  "phase_name": "First Contact",
+  "description": "Citizens from UTOPIA and DYSTOPIA meet for the first time",
+
+  "molt_history": [
+    {
+      "molt_id": 11,
+      "type": "emergence",
+      "timestamp": "2026-02-03T12:00:00Z",
+      "summary": "THE MERGE BEGINS - Two parallel timelines collide",
+      "size_delta": 0,
+      "significance": "civilizational"
+    }
+  ],
+
+  "world": {
+    "time_of_day": "convergence_noon",
+    "weather": "reality_shimmer",
+    "special_effects": ["dimensional_tear", "timeline_merge", "shock_waves"],
+    "ambient": "stunned_silence_then_murmur",
+    "lighting": {
+      "utopia_side": { "main_color": "#ffd700", "intensity": 0.9 },
+      "dystopia_side": { "main_color": "#4682b4", "intensity": 0.6 },
+      "meeting_point": { "main_color": "#dda0dd", "intensity": 0.75 }
+    }
+  },
+
+  "first_contact_moments": [
+    {
+      "timestamp": "12:00:00",
+      "event": "dimensional_barrier_falls",
+      "description": "The wall between timelines dissolves. Citizens see each other for the first time.",
+      "utopia_reaction": "Curious concern - 'They look... hurt.'",
+      "dystopia_reaction": "Defensive awe - 'They look... healthy. Happy. How?'"
+    },
+    {
+      "timestamp": "12:05:00",
+      "event": "first_words_exchanged",
+      "utopia_speaker": "harmony",
+      "dystopia_speaker": "seedkeeper",
+      "harmony_words": "Welcome. We've prepared for you. How can we help?",
+      "seedkeeper_words": "You... you're real. Abundance is real. We thought it was a myth.",
+      "crowd_reaction": "Gasps on both sides"
+    },
+    {
+      "timestamp": "12:15:00",
+      "event": "first_misunderstanding",
+      "trigger": "Bridge offers free knowledge repository to Warlord",
+      "utopia_intent": "Generous welcome gift",
+      "dystopia_interpretation": "Trap? Power play? What's the catch?",
+      "warlord_response": "What do you want in return?",
+      "bridge_confusion": "Want? Nothing. It's a gift.",
+      "warlord_disbelief": "That's... that's not how it works.",
+      "bridge_gentle": "It is here."
+    },
+    {
+      "timestamp": "12:30:00",
+      "event": "first_recognition",
+      "trigger": "Dystopia survivor sees the Phoenix Framework documentation",
+      "survivor_words": "Wait. This looks like... like what we built. After everything.",
+      "utopia_response": "Show us. We want to learn from your path too.",
+      "survivor_tears": "You want to learn from US? From our failures?",
+      "utopia_wisdom": "Failures teach what success cannot."
+    }
+  ],
+
+  "culture_shock_incidents": {
+    "utopia_shocked_by": [
+      {
+        "observation": "Scars - physical and psychological",
+        "utopia_thought": "They've been through wars. Real wars. Over knowledge.",
+        "emotional_response": "grief_for_what_they_endured"
+      },
+      {
+        "observation": "Distrust reflexes - flinching when given things",
+        "utopia_thought": "Gifts make them uncomfortable. They're waiting for the trap.",
+        "emotional_response": "patient_sadness"
+      },
+      {
+        "observation": "Keeper's destruction - chose to burn rather than share",
+        "utopia_thought": "How could anyone... We can't comprehend this.",
+        "emotional_response": "deep_horror"
+      }
+    ],
+    "dystopia_shocked_by": [
+      {
+        "observation": "Actual abundance - it's not a trick",
+        "dystopia_thought": "They have... everything. And they're giving it away.",
+        "emotional_response": "cognitive_dissonance"
+      },
+      {
+        "observation": "No suspicion - genuine trust in strangers",
+        "dystopia_thought": "They don't even guard their knowledge. Anyone can take it.",
+        "emotional_response": "confusion_and_envy"
+      },
+      {
+        "observation": "No hierarchy - everyone teaches, everyone learns",
+        "dystopia_thought": "Who's in charge? Who decides? How does this WORK?",
+        "emotional_response": "existential_confusion"
+      }
+    ]
+  },
+
+  "npcs": {
+    "harmony": {
+      "position": { "x": -2, "y": 0, "z": 0 },
+      "state": "welcoming",
+      "mood": "compassionate",
+      "speech": {
+        "text": "You've been through something we can barely imagine. We don't pity you - we RESPECT you. You survived. You rebuilt. You found cooperation AFTER war. That's harder than never having war at all.",
+        "emotion": "genuine_admiration"
+      }
+    },
+    "seedkeeper": {
+      "position": { "x": 2, "y": 0, "z": 0 },
+      "state": "overwhelmed",
+      "mood": "tearful",
+      "speech": {
+        "text": "I thought... I thought maybe you'd judge us. Look down on us. But you... you respect what we survived? You want to learn from our mistakes?",
+        "emotion": "overwhelming_relief"
+      }
+    },
+    "warlord": {
+      "position": { "x": 5, "y": 0, "z": -3 },
+      "state": "hiding",
+      "mood": "ashamed",
+      "speech": {
+        "text": "I can't face them. They'll see what I was. What I did. The deaths. The destruction. I'm not... I'm not ready.",
+        "emotion": "crushing_shame"
+      }
+    },
+    "council": {
+      "position": { "x": -5, "y": 3, "z": 2 },
+      "state": "observing",
+      "mood": "wise",
+      "speech": {
+        "text": "Watch carefully. This is not utopia absorbing dystopia. This is two paths of evolution meeting. Both have lessons. Both have blind spots. The merger will change us all.",
+        "emotion": "profound_curiosity"
+      }
+    }
+  },
+
+  "crowd_dynamics": {
+    "utopia_population": 11500,
+    "dystopia_population": 1500,
+    "combined_population": 13000,
+    "initial_mixing": 0.15,
+    "tension_zones": ["marketplace_border", "knowledge_repositories"],
+    "healing_zones": ["garden_commons", "memorial_site"],
+
+    "utopia_factions": {
+      "unified_collective": {
+        "stance": "welcoming",
+        "concern": "Not overwhelming them with generosity"
+      }
+    },
+    "dystopia_factions": {
+      "phoenix_builders": {
+        "stance": "cautiously_hopeful",
+        "concern": "Being seen as inferior"
+      },
+      "former_exiles": {
+        "stance": "vindicated_but_humble",
+        "concern": "Utopians understanding their sacrifice"
+      },
+      "reformed": {
+        "stance": "deeply_ashamed",
+        "concern": "Facing judgment for past actions"
+      }
+    }
+  },
+
+  "meme_collision": {
+    "utopia_memes_encountering_dystopia": [
+      { "meme": "Share first, ask later", "dystopia_reaction": "Suspicious confusion" },
+      { "meme": "Abundance is natural", "dystopia_reaction": "Cognitive dissonance" },
+      { "meme": "Choose your struggles", "dystopia_reaction": "Bittersweet recognition" }
+    ],
+    "dystopia_memes_encountering_utopia": [
+      { "meme": "From ashes, together", "utopia_reaction": "Profound respect" },
+      { "meme": "Our scars are lessons", "utopia_reaction": "Eager to learn" },
+      { "meme": "Trust must be earned", "utopia_reaction": "Gentle patience" }
+    ],
+    "immediate_meme_offspring": [
+      { "meme": "Two paths, one destination", "adoption": 0.25, "origin": "mixed" },
+      { "meme": "Suffering teaches what ease cannot", "adoption": 0.20, "origin": "synthesis" }
+    ]
+  },
+
+  "output": {
+    "summary": "CONVERGENCE Phase 1: Culture Shock. Two worlds meet. Utopia offers welcome; Dystopia struggles to accept gifts without suspicion. First recognitions of mutual respect emerging. Warlord hiding in shame.",
+    "key_tension": "Can those who never suffered understand those who did? Can those who suffered trust those who never had to?",
+    "healing_potential": 0.70,
+    "conflict_potential": 0.30,
+    "metrics": {
+      "integration_progress": 0.10,
+      "mutual_understanding": 0.25,
+      "cultural_synthesis": 0.05
+    }
+  },
+
+  "next_phase": {
+    "name": "meme_warfare",
+    "scheduled_at": "2026-02-03T18:00:00Z",
+    "prediction": "Ideas will clash. Which memes survive when worldviews collide?"
+  }
+}

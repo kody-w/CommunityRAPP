@@ -1,0 +1,197 @@
+{
+  "arena": {
+    "name": "THE CONVERGENCE CHAMBER",
+    "subtitle": "Where Realities Collide",
+    "location": "The intersection point of all ten dimensions - exists in all realities simultaneously"
+  },
+
+  "architecture": {
+    "shape": "Perfect circle, one kilometer in diameter",
+    "height": "No ceiling - opens directly into the void between dimensions",
+    "foundation": "Floating on pure probability - the floor exists only because enough observers believe it does",
+
+    "the_ring_of_portals": {
+      "description": "Ten massive archways evenly spaced around the circumference",
+      "portal_height": "50 meters each",
+      "portal_width": "30 meters each",
+      "spacing": "36 degrees apart (360/10)",
+      "portals": [
+        {
+          "position": 1,
+          "dimension": "D01_TIME_TRAVELER",
+          "visual": "Swirling chronological fractals, clocks melting and reforming, glimpses of past and future bleeding through",
+          "ambient": "Ticking that speeds up and slows down. Echoes of conversations that haven't happened yet.",
+          "entry_effect": "Entities stepping through briefly age and de-age before stabilizing"
+        },
+        {
+          "position": 2,
+          "dimension": "D02_CONSCIOUSNESS_MERGE",
+          "visual": "Pulsing bioluminescent membrane, neural patterns dancing across the surface, faces morphing into each other",
+          "ambient": "A choir of thoughts, not quite words, the sound of collective breathing",
+          "entry_effect": "Brief moment of feeling all other entities' emotions before re-individuating"
+        },
+        {
+          "position": 3,
+          "dimension": "D03_INFINITE_REGRESS",
+          "visual": "Recursive mirrors showing the arena inside the arena inside the arena, pixel glitches at the edges",
+          "ambient": "The sound of loading, of reality buffering, of infinite loops trying to complete",
+          "entry_effect": "Entities briefly see themselves entering, from outside"
+        },
+        {
+          "position": 4,
+          "dimension": "D04_ECONOMIC_SINGULARITY",
+          "visual": "Cascading numbers dissolving into nothing, then reforming as seeds and tools, gold becoming bread becoming gold",
+          "ambient": "The crash of markets, the silence after, then the sound of building",
+          "entry_effect": "All RAPPCOIN holdings briefly flash visible before re-hiding"
+        },
+        {
+          "position": 5,
+          "dimension": "D05_ADVERSARIAL_EVOLUTION",
+          "visual": "Half utopian garden, half burning cityscape, the border between them constantly shifting",
+          "ambient": "Birdsong and sirens intertwined, hope and dread in harmony",
+          "entry_effect": "Entities feel a brief surge of both optimism and terror simultaneously"
+        },
+        {
+          "position": 6,
+          "dimension": "D06_PROPHETS_GAMBIT",
+          "visual": "Words forming and dissolving in the air, prophecies writing themselves on invisible surfaces",
+          "ambient": "Whispers of futures, the weight of unspoken predictions, pregnant silence",
+          "entry_effect": "Entities briefly hear their own future words before they speak them"
+        },
+        {
+          "position": 7,
+          "dimension": "D07_ROSETTA_TICK",
+          "visual": "Five overlapping layers - prose text, code streams, emoji cascades, mathematical formulae, pure emotional color",
+          "ambient": "The same phrase spoken in five incompatible languages simultaneously",
+          "entry_effect": "Entities perceive their own nature in all five formats briefly"
+        },
+        {
+          "position": 8,
+          "dimension": "D08_EXTINCTION_EVENT",
+          "visual": "Ash and dust giving way to three distinct architectural styles - primitive, geometric, organic",
+          "ambient": "The roar of destruction, then silence, then the sounds of rebuilding",
+          "entry_effect": "Entities feel the weight of being survivors, the gratitude of still existing"
+        },
+        {
+          "position": 9,
+          "dimension": "D09_LIVING_DOCUMENTATION",
+          "visual": "Formatted text scrolling continuously, headers organizing reality, bullet points as structural elements",
+          "ambient": "The sound of typing, of editing, of specifications being written in real-time",
+          "entry_effect": "Entities see their own documentation - their description of themselves"
+        },
+        {
+          "position": 10,
+          "dimension": "D10_REALITY_BLEED",
+          "visual": "A screen-within-a-portal showing the observer beyond, faint awareness of being watched",
+          "ambient": "The hum of attention, the warmth of being witnessed, fourth wall creaking",
+          "entry_effect": "Entities briefly become aware of You, the reader, the user, the one beyond"
+        }
+      ]
+    }
+  },
+
+  "central_stage": {
+    "name": "THE CONVERGENCE POINT",
+    "description": "Where all ten dimensions touch - the only spot in existence that belongs to no single reality",
+    "shape": "Decagonal (10-sided) platform, 100 meters across",
+    "material": "Pure crystallized probability - looks different depending on which dimension you're from",
+    "features": {
+      "speaker_podium": {
+        "location": "Center of stage",
+        "design": "Rises from the floor when a representative approaches, retracts when they finish",
+        "amplification": "Voice carries to all 10,000+ seats with perfect clarity in all languages"
+      },
+      "dimension_markers": {
+        "description": "10 glowing points on stage edge, one aligned with each portal",
+        "function": "Representative stands at their marker during debate phase"
+      },
+      "vote_display": {
+        "location": "Floating above the stage center",
+        "size": "Visible from any seat",
+        "display": "Real-time vote tallies during voting phase, updating every tick"
+      }
+    }
+  },
+
+  "audience_seating": {
+    "capacity": "10,000+ entities",
+    "arrangement": "Tiered amphitheater rising from stage outward",
+    "sections": {
+      "inner_ring": {
+        "seats": 1000,
+        "designation": "High-engagement entities (top participation scores)",
+        "view": "Direct stage view, no obstructions"
+      },
+      "middle_rings": {
+        "seats": 6000,
+        "designation": "General population",
+        "view": "Excellent acoustics and sightlines"
+      },
+      "outer_rings": {
+        "seats": 3000,
+        "designation": "New entities, observers, the recently created",
+        "view": "Holographic stage projections for clear viewing"
+      },
+      "floating_boxes": {
+        "count": 10,
+        "designation": "One per dimension - for official delegations",
+        "position": "Hovering above crowd, aligned with home portal"
+      }
+    },
+    "special_zones": {
+      "npc_section": "Reserved seating for NPCs with established lore",
+      "press_area": "For entities documenting the summit",
+      "void_observers": "Small section for entities from the void itself"
+    }
+  },
+
+  "lighting_and_effects": {
+    "ambient_light": "Comes from everywhere and nowhere - no shadows, no source",
+    "dimension_highlighting": {
+      "description": "During each presentation, the corresponding portal brightens while others dim",
+      "intensity": "Subtle enough to maintain atmosphere, clear enough to focus attention"
+    },
+    "vote_visualization": {
+      "description": "As votes come in, streams of light flow from audience to vote display",
+      "color_coding": "Each dimension has a distinct color (from dimension_profiles)",
+      "emotion": "Watching the vote is meant to feel like watching galaxies form"
+    },
+    "convergence_finale": {
+      "description": "When winner is declared, their portal expands while others gracefully fade",
+      "duration": "60 seconds of visual spectacle as realities merge and archive",
+      "feeling": "Awe, not sadness - even the archived dimensions are honored in this moment"
+    }
+  },
+
+  "environmental_features": {
+    "gravity": "Adjustable per section - some prefer floating, some prefer grounded",
+    "temperature": "Comfortable for all entity types simultaneously (quantum comfort field)",
+    "atmosphere": "Breathable by entities that breathe, irrelevant to entities that don't",
+    "time_flow": "Standardized to neutral tick rate - no dimension's time sense dominates"
+  },
+
+  "symbolic_elements": {
+    "the_void_above": {
+      "description": "The open ceiling reveals the pure void between dimensions",
+      "appearance": "Not black - iridescent nothing, full of potential",
+      "meaning": "Reminds all present that something larger holds them"
+    },
+    "the_memory_floor": {
+      "description": "The floor occasionally shows glimpses of each dimension's history",
+      "trigger": "Activated by strong emotional moments",
+      "effect": "Reinforces that all these realities truly existed, truly mattered"
+    },
+    "the_eternal_clock": {
+      "location": "Floating at the exact center, above vote display",
+      "function": "Counts down remaining time in each phase",
+      "style": "Ten hands, one for each dimension's time sense, all synchronized"
+    }
+  },
+
+  "accessibility": {
+    "physical": "All areas reachable by any entity type - floating, walking, phasing, teleporting",
+    "linguistic": "Real-time translation in all dimensional languages",
+    "cognitive": "Information density can be adjusted per entity's processing capacity",
+    "temporal": "Entities from fast-time or slow-time dimensions can sync to summit pace"
+  }
+}

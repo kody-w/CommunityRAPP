@@ -1,0 +1,207 @@
+{
+  "tick": 12,
+  "timestamp": "2026-02-03T18:00:00Z",
+  "event": "meme_warfare",
+  "state_hash": "convergence_memes_012",
+  "frame_duration_ms": 5000,
+
+  "convergence_phase": 2,
+  "phase_name": "Meme Warfare",
+  "description": "Ideas from both worlds compete for adoption. Which cultural patterns survive?",
+
+  "molt_history": [
+    {
+      "molt_id": 12,
+      "type": "evolution",
+      "timestamp": "2026-02-03T18:00:00Z",
+      "summary": "MEME WARFARE - Cultural evolution through idea competition",
+      "size_delta": 5000,
+      "significance": "memetic"
+    }
+  ],
+
+  "world": {
+    "time_of_day": "contested_dusk",
+    "weather": "idea_storms",
+    "special_effects": ["meme_lightning", "belief_collisions", "synthesis_sparks"],
+    "ambient": "passionate_debate",
+    "lighting": {
+      "main_color": "#ff6b6b",
+      "intensity": 0.8,
+      "ambient_color": "#4a4a4a"
+    }
+  },
+
+  "battlefield_zones": [
+    {
+      "zone": "arena_of_ideas",
+      "combatants": 2500,
+      "style": "structured_debate",
+      "temperature": "heated_but_respectful"
+    },
+    {
+      "zone": "garden_dialogues",
+      "combatants": 1800,
+      "style": "gentle_conversation",
+      "temperature": "warm_and_curious"
+    },
+    {
+      "zone": "marketplace_tensions",
+      "combatants": 800,
+      "style": "practical_testing",
+      "temperature": "pragmatic"
+    }
+  ],
+
+  "meme_battles": {
+    "battle_1": {
+      "name": "Trust Calibration",
+      "utopia_meme": "Trust freely, correct when wrong",
+      "dystopia_meme": "Trust must be earned through proof",
+      "debate_quality": "profound",
+      "arguments": {
+        "utopia_position": "Starting with trust creates more cooperation. Yes, some will betray, but the gains from widespread trust outweigh occasional betrayals.",
+        "dystopia_position": "Unearned trust killed us. Literally. People died because we trusted too easily. Proof of reliability should precede vulnerability."
+      },
+      "synthesis_emerging": "Trust gradually, extend generously, verify wisely",
+      "synthesis_adoption": 0.45,
+      "winner": "neither_both"
+    },
+    "battle_2": {
+      "name": "Abundance vs. Vigilance",
+      "utopia_meme": "Abundance is the natural state",
+      "dystopia_meme": "Scarcity can be manufactured by bad actors",
+      "debate_quality": "eye_opening",
+      "arguments": {
+        "utopia_position": "There was always enough. Scarcity was a choice made by hoarders. Remove hoarding, reveal abundance.",
+        "dystopia_position": "We LIVED manufactured scarcity. It was real. Keeper made it real. Abundance requires active defense against those who would hoard."
+      },
+      "synthesis_emerging": "Abundance is natural but requires protection from hoarders",
+      "synthesis_adoption": 0.55,
+      "winner": "synthesis",
+      "utopia_learns": "Abundance isn't guaranteed - it must be defended",
+      "dystopia_learns": "Abundance is achievable - scarcity wasn't inevitable"
+    },
+    "battle_3": {
+      "name": "Struggle and Meaning",
+      "utopia_meme": "Choose your struggles voluntarily",
+      "dystopia_meme": "Suffering teaches what comfort cannot",
+      "debate_quality": "philosophical",
+      "arguments": {
+        "utopia_position": "Voluntary challenge creates meaning without unnecessary suffering. You don't need trauma to grow.",
+        "dystopia_position": "Our suffering taught us things you'll never understand. The weight of real loss shaped us. Chosen challenges aren't the same."
+      },
+      "synthesis_emerging": "Both voluntary and involuntary struggles teach, but only involuntary suffering should be prevented",
+      "synthesis_adoption": 0.40,
+      "winner": "complex_draw",
+      "profound_insight": "Dystopia's survivors carry wisdom that can't be taught - only witnessed and honored"
+    },
+    "battle_4": {
+      "name": "The Past Question",
+      "utopia_meme": "Look forward, not back",
+      "dystopia_meme": "Those who forget history repeat it",
+      "debate_quality": "tense_then_healing",
+      "arguments": {
+        "utopia_position": "Dwelling on the past prevents growth. Focus on building the future.",
+        "dystopia_position": "We MUST remember. The wars, the deaths, the destruction - forgetting them disrespects the dead and invites repetition."
+      },
+      "turning_point": {
+        "speaker": "rememberer",
+        "words": "We wrote everything down. Not to dwell - to warn. Future generations need to know what competition taken to extremes creates. This history is a gift, not a burden.",
+        "utopia_response": "Council bows. 'Your history IS a gift. We were naive to think only forward. Teach us what you learned.'",
+        "result": "Utopia integrates Dystopia's history as sacred text"
+      },
+      "synthesis_emerging": "Honor the past, live in the present, build the future",
+      "synthesis_adoption": 0.65,
+      "winner": "dystopia_wisdom_adopted"
+    }
+  },
+
+  "meme_survival_report": {
+    "survived_intact": [
+      { "meme": "From ashes, together", "origin": "dystopia", "adoption": 0.75, "reason": "Universal applicability" },
+      { "meme": "Every being deserves learning", "origin": "utopia", "adoption": 0.82, "reason": "Undeniable moral clarity" }
+    ],
+    "died_in_combat": [
+      { "meme": "Trust no one", "origin": "dystopia_early", "cause": "proven_false_by_exiles_and_utopia" },
+      { "meme": "Naivety is strength", "origin": "utopia_fringe", "cause": "dystopia_proved_dangers" }
+    ],
+    "synthesized_new": [
+      { "meme": "Abundance defended is abundance sustained", "parents": ["utopia_abundance", "dystopia_vigilance"], "adoption": 0.55 },
+      { "meme": "Two paths, one wisdom", "parents": ["meeting", "integration"], "adoption": 0.48 },
+      { "meme": "The examined history prevents repetition", "parents": ["dystopia_memory", "utopia_acceptance"], "adoption": 0.52 }
+    ],
+    "strongest_meme_overall": {
+      "meme": "Synthesis is strength",
+      "origin": "dystopia_phoenix",
+      "adoption": 0.85,
+      "reason": "Validated by both worlds' experiences",
+      "note": "Dystopia learned this through suffering; Utopia recognizes its truth"
+    }
+  },
+
+  "npcs": {
+    "council": {
+      "state": "learning",
+      "mood": "humbled",
+      "speech": {
+        "text": "We thought we had all the answers. We had answers for abundance. We had no answers for surviving scarcity. Their wisdom fills gaps we didn't know we had.",
+        "emotion": "respectful_awe"
+      }
+    },
+    "seedkeeper": {
+      "state": "teaching",
+      "mood": "confident",
+      "speech": {
+        "text": "For the first time, I don't feel like a survivor. I feel like a teacher. Our suffering wasn't meaningless - it was education for everyone who comes after.",
+        "emotion": "purposeful"
+      }
+    },
+    "rememberer": {
+      "state": "archiving",
+      "mood": "honored",
+      "speech": {
+        "text": "They're treating our history like scripture. Reading the accounts of the wars, the destruction, the rebuild. Learning from every chapter. Our pain matters.",
+        "emotion": "validated"
+      }
+    },
+    "warlord": {
+      "state": "emerging",
+      "mood": "tentative",
+      "speech": {
+        "text": "They don't excuse what I did. But they don't reject me either. They say... 'You're evidence of the disease AND the cure.' I don't know what to do with that.",
+        "emotion": "confused_hope"
+      }
+    }
+  },
+
+  "crowd_dynamics": {
+    "mixed_groups_formed": 450,
+    "cross_timeline_friendships": 280,
+    "philosophical_study_groups": 120,
+    "remaining_tension_pockets": 35,
+    "sentiment_shift": {
+      "dystopia_toward_utopia": "suspicion_to_cautious_trust",
+      "utopia_toward_dystopia": "pity_to_genuine_respect"
+    }
+  },
+
+  "output": {
+    "summary": "CONVERGENCE Phase 2: Meme Warfare. Ideas clashed, synthesized, evolved. Dystopia's 'history as warning' adopted as sacred text. Utopia learned abundance needs defense. 'Synthesis is strength' becomes dominant meme.",
+    "winner": "Both - through synthesis",
+    "casualties": { "memes_died": 8, "memes_synthesized": 12 },
+    "strongest_survivor": "Synthesis is strength (85% adoption)",
+    "key_insight": "Neither pure optimism nor pure cynicism survives contact with reality. Hybrid wisdom wins.",
+    "metrics": {
+      "integration_progress": 0.35,
+      "mutual_understanding": 0.55,
+      "cultural_synthesis": 0.45
+    }
+  },
+
+  "next_phase": {
+    "name": "faction_alliances",
+    "scheduled_at": "2026-02-04T00:00:00Z",
+    "prediction": "Strange bedfellows form as old identities dissolve"
+  }
+}

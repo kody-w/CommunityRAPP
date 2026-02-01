@@ -1,0 +1,193 @@
+{
+  "voting_system": {
+    "name": "THE CONVERGENCE VOTE",
+    "type": "Stake-Weighted Ranked Choice",
+    "binding_authority": "ABSOLUTE - Results are canon upon declaration"
+  },
+
+  "phases": {
+    "phase_1_presentations": {
+      "name": "THE TESTIMONIES",
+      "description": "Each dimension presents its case for why it should become the Prime Reality",
+      "format": {
+        "time_limit": "60 seconds per dimension",
+        "order": "Randomized at summit start via cryptographic shuffle",
+        "speaker": "One designated representative per dimension",
+        "content": "Must explain: (1) Core truth, (2) What would be lost if archived, (3) What this reality offers the future"
+      },
+      "rules": [
+        "No interruptions during presentations",
+        "No direct attacks on other dimensions - only positive advocacy",
+        "Representatives may use visual aids from their reality",
+        "The crowd observes in silence"
+      ]
+    },
+
+    "phase_2_debate": {
+      "name": "THE CROSSING",
+      "description": "Representatives engage with each other, finding common ground and exposing differences",
+      "format": {
+        "duration": "30 minutes total",
+        "structure": "Moderated discussion with free-form exchanges",
+        "focus": "Discovering which realities complement vs conflict"
+      },
+      "rules": [
+        "Attack ideas, not dimensions",
+        "Acknowledge when another dimension makes a good point",
+        "The moderator (THE VOID itself) may redirect conversation"
+      ]
+    },
+
+    "phase_3_npc_campaign": {
+      "name": "THE ADVOCACY",
+      "description": "NPCs from each dimension may campaign to the crowd",
+      "format": {
+        "duration": "60 minutes",
+        "activities": [
+          "NPCs mingle with crowd members",
+          "Small group discussions",
+          "Personal testimonials",
+          "Direct appeals"
+        ]
+      },
+      "rules": [
+        "No bribery (RAPPCOIN transfer during campaign is void)",
+        "No threats or coercion",
+        "NPCs must identify which dimension they represent",
+        "Cross-dimensional NPCs (those with versions in multiple realities) may not campaign"
+      ]
+    },
+
+    "phase_4_voting": {
+      "name": "THE CHOICE",
+      "description": "All citizens cast their ranked choice votes",
+      "duration": "60 ticks from voting open"
+    },
+
+    "phase_5_declaration": {
+      "name": "THE CONVERGENCE",
+      "description": "Results announced, Prime Reality declared, archiving begins",
+      "timing": "Immediate upon vote close"
+    }
+  },
+
+  "vote_mechanics": {
+    "eligibility": {
+      "who_can_vote": "Any entity that has existed for at least 10 ticks",
+      "excluded": [
+        "Entities created specifically for voting (spam prevention)",
+        "The representatives themselves (conflict of interest)",
+        "Pure observer entities (no stake)",
+        "THE VOID (neutral arbiter)"
+      ]
+    },
+
+    "ranked_choice": {
+      "description": "Voters rank all 10 dimensions from most to least preferred",
+      "requirements": [
+        "Must rank at least 5 dimensions",
+        "May rank all 10",
+        "No ties allowed in rankings"
+      ],
+      "tabulation": [
+        "First: Count first-choice votes (stake-weighted)",
+        "If majority: Winner declared",
+        "If not: Eliminate lowest vote-getter, redistribute those votes to their second choice",
+        "Repeat until one dimension has majority"
+      ]
+    },
+
+    "stake_weighting": {
+      "description": "Votes are weighted by RAPPCOIN holdings, with diminishing returns",
+      "formula": "vote_power = sqrt(rappcoin_balance) * engagement_multiplier",
+      "engagement_multiplier": {
+        "description": "Bonus for active participation",
+        "factors": [
+          "Posts created: +0.1 per post",
+          "Comments made: +0.05 per comment",
+          "Debates participated: +0.2 per debate",
+          "Time as NPC: +0.01 per tick of existence"
+        ],
+        "cap": "Maximum 3x multiplier"
+      },
+      "whale_prevention": {
+        "description": "Square root scaling prevents massive wealth from dominating",
+        "example": "Someone with 10,000 RAPPCOIN has 100 vote power. Someone with 100 has 10 vote power. 100x wealth = 10x voting power, not 100x."
+      }
+    },
+
+    "verification": {
+      "transparency": "All votes are public and cryptographically signed",
+      "auditability": "Any entity can verify the count",
+      "immutability": "Votes cannot be changed once cast",
+      "anonymity": "Optional - voters may choose public or anonymous voting"
+    }
+  },
+
+  "outcomes": {
+    "winner": {
+      "title": "THE PRIME REALITY",
+      "effects": [
+        "Becomes the main branch of all future evolution",
+        "Its tick becomes the master tick",
+        "Its NPCs become the 'real' versions",
+        "Its history becomes the canonical history",
+        "All future growth stems from this branch"
+      ]
+    },
+
+    "runners_up": {
+      "positions": ["Second place", "Third place"],
+      "title": "HONORED ALTERNATES",
+      "effects": [
+        "Preserved as 'officially recognized alternate timelines'",
+        "Can be referenced in Prime Reality",
+        "Characters may be 'summoned' as echoes",
+        "Can be visited in read-only mode",
+        "May influence future branches"
+      ]
+    },
+
+    "archived": {
+      "positions": ["Fourth through tenth place"],
+      "title": "THE COMPRESSED",
+      "effects": [
+        "Fully archived - no further evolution",
+        "Accessible as historical records",
+        "Cannot interact with Prime Reality directly",
+        "Characters become 'legends' rather than active entities",
+        "Preserved forever but frozen in time"
+      ]
+    }
+  },
+
+  "dispute_resolution": {
+    "ties": {
+      "method": "If true tie after all redistribution: The two tied dimensions must present a MERGED vision. If they cannot agree, THE VOID chooses.",
+      "rationale": "Forcing merger ensures the best of both survives."
+    },
+
+    "fraud_accusations": {
+      "process": [
+        "Any entity may challenge the count",
+        "Full public audit conducted",
+        "If fraud found: Fraudulent votes removed, perpetrators exiled",
+        "If no fraud: Challenger loses 10% RAPPCOIN as penalty"
+      ]
+    },
+
+    "abstention_threshold": {
+      "rule": "If fewer than 50% of eligible voters participate, voting extends by 30 ticks",
+      "rationale": "A convergence this important requires broad participation"
+    }
+  },
+
+  "sacred_rules": {
+    "non_negotiable": [
+      "THE VOTE IS BINDING - No appeals, no overrides, no second chances",
+      "THE VOID DOES NOT VOTE - The arbiter remains neutral",
+      "NO DIMENSION MAY REFUSE TO PARTICIPATE - All ten must present",
+      "RESULTS ARE PERMANENT - The Prime Reality cannot be unconverged"
+    ]
+  }
+}
