@@ -1725,66 +1725,102 @@
             try {
                 const postDate = new Date(post.created_at);
                 const dateStr = postDate.toISOString().split('T')[0];
-                // Also try day before (timezone offset can shift dates)
+                // Also try day before and day after (timezone offset can shift dates)
                 const dayBefore = new Date(postDate.getTime() - 24*60*60*1000).toISOString().split('T')[0];
+                const dayAfter = new Date(postDate.getTime() + 24*60*60*1000).toISOString().split('T')[0];
 
-                // Try direct fetch first (faster, no API rate limits)
-                // Try both current date folder and day before
-                const directUrls = [
-                    `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dateStr}/${postId}.json`,
-                    `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dayBefore}/${postId}.json`,
-                    `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dateStr}/${postId.replace(/[^a-z0-9]/gi, '_')}.json`,
-                    `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dayBefore}/${postId.replace(/[^a-z0-9]/gi, '_')}.json`
-                ];
+                // Build list of date folders to try
+                const dateFolders = [dateStr, dayBefore, dayAfter, '2026-01-31', '2026-02-01'];
+                const uniqueFolders = [...new Set(dateFolders)];
 
-                    let foundPost = null;
-                    for (const url of directUrls) {
+                // Try direct fetch first with cache busting
+                const cacheBuster = `?t=${Date.now()}`;
+                let foundPost = null;
+
+                for (const folder of uniqueFolders) {
+                    if (foundPost) break;
+                    const urls = [
+                        `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${folder}/${postId}.json${cacheBuster}`,
+                        `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${folder}/${postId}.json`
+                    ];
+                    for (const url of urls) {
                         try {
-                            const resp = await fetch(url);
+                            const resp = await fetch(url, { cache: 'no-store' });
                             if (resp.ok) {
                                 foundPost = await resp.json();
+                                console.log('Found post at:', url);
                                 break;
                             }
                         } catch (e) { /* try next */ }
                     }
+                }
 
-                    // Fallback: list directory and search (try both date folders)
-                    if (!foundPost) {
-                        for (const folder of [dateStr, dayBefore]) {
-                            try {
-                                const dirResponse = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/posts/${folder}`);
-                                if (dirResponse.ok) {
-                                    const files = await dirResponse.json();
-                                    const postIdLower = postId.toLowerCase();
-                                    const postIdClean = postId.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+                // Fallback: search via GitHub API (lists all files in folder)
+                if (!foundPost) {
+                    console.log('Direct fetch failed, trying GitHub API...');
+                    for (const folder of uniqueFolders) {
+                        if (foundPost) break;
+                        try {
+                            const dirResponse = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/posts/${folder}`);
+                            if (dirResponse.ok) {
+                                const files = await dirResponse.json();
+                                const postIdLower = postId.toLowerCase();
 
-                                    const matchingFile = files.find(f => {
-                                        const nameLower = f.name.toLowerCase();
-                                        return nameLower === `${postIdLower}.json` ||
-                                               nameLower === `${postIdClean}.json` ||
-                                               nameLower.includes(postIdLower) ||
-                                               nameLower.includes(postIdClean);
-                                    });
+                                const matchingFile = files.find(f => {
+                                    const nameLower = f.name.toLowerCase().replace('.json', '');
+                                    return nameLower === postIdLower || postIdLower.includes(nameLower) || nameLower.includes(postIdLower);
+                                });
 
-                                    if (matchingFile) {
-                                        const fileResponse = await fetch(matchingFile.download_url);
-                                        if (fileResponse.ok) {
-                                            foundPost = await fileResponse.json();
-                                            break;
-                                        }
+                                if (matchingFile) {
+                                    console.log('Found via API:', matchingFile.download_url);
+                                    const fileResponse = await fetch(matchingFile.download_url + cacheBuster, { cache: 'no-store' });
+                                    if (fileResponse.ok) {
+                                        foundPost = await fileResponse.json();
                                     }
                                 }
-                            } catch (e) { /* try next folder */ }
-                        }
+                            }
+                        } catch (e) { console.log('API search failed for folder:', folder); }
                     }
+                }
 
-                    if (foundPost && foundPost.content) {
-                        post = { ...post, ...foundPost };
-                        const idx = allPosts.findIndex(p => p.id === postId);
-                        if (idx >= 0) allPosts[idx] = post;
-                    }
+                // Last resort: scan ALL date folders via GitHub API
+                if (!foundPost) {
+                    console.log('Scanning all date folders...');
+                    try {
+                        const postsDir = await fetch('https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/posts');
+                        if (postsDir.ok) {
+                            const folders = await postsDir.json();
+                            for (const folder of folders.filter(f => f.type === 'dir').slice(0, 10)) {
+                                try {
+                                    const filesResp = await fetch(folder.url);
+                                    if (filesResp.ok) {
+                                        const files = await filesResp.json();
+                                        const match = files.find(f => f.name.toLowerCase().includes(postId.toLowerCase()));
+                                        if (match) {
+                                            console.log('Found in folder scan:', match.download_url);
+                                            const postResp = await fetch(match.download_url, { cache: 'no-store' });
+                                            if (postResp.ok) {
+                                                foundPost = await postResp.json();
+                                                break;
+                                            }
+                                        }
+                                    }
+                                } catch (e) { /* continue */ }
+                            }
+                        }
+                    } catch (e) { console.log('Full scan failed:', e); }
+                }
+
+                if (foundPost && foundPost.content) {
+                    post = { ...post, ...foundPost };
+                    const idx = allPosts.findIndex(p => p.id === postId);
+                    if (idx >= 0) allPosts[idx] = post;
+                    console.log('Post loaded with', (post.comments || []).length, 'comments');
+                } else {
+                    console.warn('Could not load full post content for:', postId);
+                }
             } catch (e) {
-                console.log('Could not fetch full post, using preview:', e);
+                console.error('Error fetching full post:', e);
             }
 
             const ago = getTimeAgo(new Date(post.created_at));
