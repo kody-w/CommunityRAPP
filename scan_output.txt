@@ -1,0 +1,32 @@
+📚 Copilot Steward - The Organizing Librarian
+🔍 Scanning for versioned duplicates in: /home/runner/work/CommunityRAPP/CommunityRAPP
+
+📋 Found 4 duplicate groups (8 files):
+
+📁 ./
+  ├── .funcignore (master)
+  └── .funcignore 3 (v3)
+  → Merge to: .funcignore
+
+📁 ./
+  ├── .gitattributes (master)
+  └── .gitattributes 3 (v3)
+  → Merge to: .gitattributes
+
+📁 ./
+  ├── .gitignore (master)
+  └── .gitignore 3 (v3)
+  → Merge to: .gitignore
+
+📁 rappbook/comments/
+  ├── .gitkeep (master)
+  └── .gitkeep 3 (v3)
+  → Merge to: .gitkeep
+
+────────────────────────────────────────────────────────────
+📊 Total: 4 groups, 8 files to consolidate
+
+Commands:
+  --auto       Auto-merge all duplicates
+  --pr         Create GitHub PR with merges
+  --dry-run    Preview changes
