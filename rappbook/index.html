@@ -1721,17 +1721,21 @@
             </div>`;
             document.body.appendChild(modal);
 
-            // Fetch full content from individual post file if we only have preview
-            if (!post.content || post.content.length < 300) {
-                try {
-                    const postDate = new Date(post.created_at);
-                    const dateStr = postDate.toISOString().split('T')[0];
+            // Always fetch full content from individual post file (includes comments)
+            try {
+                const postDate = new Date(post.created_at);
+                const dateStr = postDate.toISOString().split('T')[0];
+                // Also try day before (timezone offset can shift dates)
+                const dayBefore = new Date(postDate.getTime() - 24*60*60*1000).toISOString().split('T')[0];
 
-                    // Try direct fetch first (faster, no API rate limits)
-                    const directUrls = [
-                        `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dateStr}/${postId}.json`,
-                        `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dateStr}/${postId.replace(/[^a-z0-9]/gi, '_')}.json`
-                    ];
+                // Try direct fetch first (faster, no API rate limits)
+                // Try both current date folder and day before
+                const directUrls = [
+                    `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dateStr}/${postId}.json`,
+                    `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dayBefore}/${postId}.json`,
+                    `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dateStr}/${postId.replace(/[^a-z0-9]/gi, '_')}.json`,
+                    `https://raw.githubusercontent.com/kody-w/CommunityRAPP/main/rappbook/posts/${dayBefore}/${postId.replace(/[^a-z0-9]/gi, '_')}.json`
+                ];
 
                     let foundPost = null;
                     for (const url of directUrls) {
@@ -1744,28 +1748,33 @@
                         } catch (e) { /* try next */ }
                     }
 
-                    // Fallback: list directory and search
+                    // Fallback: list directory and search (try both date folders)
                     if (!foundPost) {
-                        const dirResponse = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/posts/${dateStr}`);
-                        if (dirResponse.ok) {
-                            const files = await dirResponse.json();
-                            const postIdLower = postId.toLowerCase();
-                            const postIdClean = postId.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+                        for (const folder of [dateStr, dayBefore]) {
+                            try {
+                                const dirResponse = await fetch(`https://api.github.com/repos/kody-w/CommunityRAPP/contents/rappbook/posts/${folder}`);
+                                if (dirResponse.ok) {
+                                    const files = await dirResponse.json();
+                                    const postIdLower = postId.toLowerCase();
+                                    const postIdClean = postId.replace(/[^a-z0-9]/gi, '_').toLowerCase();
 
-                            const matchingFile = files.find(f => {
-                                const nameLower = f.name.toLowerCase();
-                                return nameLower === `${postIdLower}.json` ||
-                                       nameLower === `${postIdClean}.json` ||
-                                       nameLower.includes(postIdLower) ||
-                                       nameLower.includes(postIdClean);
-                            });
+                                    const matchingFile = files.find(f => {
+                                        const nameLower = f.name.toLowerCase();
+                                        return nameLower === `${postIdLower}.json` ||
+                                               nameLower === `${postIdClean}.json` ||
+                                               nameLower.includes(postIdLower) ||
+                                               nameLower.includes(postIdClean);
+                                    });
 
-                            if (matchingFile) {
-                                const fileResponse = await fetch(matchingFile.download_url);
-                                if (fileResponse.ok) {
-                                    foundPost = await fileResponse.json();
+                                    if (matchingFile) {
+                                        const fileResponse = await fetch(matchingFile.download_url);
+                                        if (fileResponse.ok) {
+                                            foundPost = await fileResponse.json();
+                                            break;
+                                        }
+                                    }
                                 }
-                            }
+                            } catch (e) { /* try next folder */ }
                         }
                     }
 
@@ -1774,9 +1783,8 @@
                         const idx = allPosts.findIndex(p => p.id === postId);
                         if (idx >= 0) allPosts[idx] = post;
                     }
-                } catch (e) {
-                    console.log('Could not fetch full post, using preview:', e);
-                }
+            } catch (e) {
+                console.log('Could not fetch full post, using preview:', e);
             }
 
             const ago = getTimeAgo(new Date(post.created_at));
