@@ -1,0 +1,111 @@
+{
+  "tick_id": "economic_singularity_crisis_01",
+  "tick_number": 1,
+  "timestamp": "2026-01-31T00:00:00Z",
+  "dimension": "economic_singularity",
+  "title": "The Exploit Discovery",
+  "narrative": "A pseudonymous entity known only as 'ZeroMint' discovers an infinite arbitrage loop in the RAPPCOIN minting contract. By exploiting a reentrancy vulnerability in the card-staking reward mechanism, they can mint unlimited RAPPCOIN. The exploit has been active for 72 hours before detection.",
+
+  "economic_state": {
+    "currency": "RAPPCOIN_V1",
+    "total_supply": 245000,
+    "circulating_supply": 198500,
+    "staked_supply": 46500,
+    "exploit_minted": 0,
+    "inflation_rate_24h": 0.02,
+    "market_cap_usd_equivalent": 24500,
+    "velocity": 3.2,
+    "gini_coefficient": 0.42
+  },
+
+  "price_metrics": {
+    "rappcoin_baseline_value": 0.10,
+    "card_floor_price": 15,
+    "card_ceiling_price": 2500,
+    "liquidity_depth": 45000,
+    "bid_ask_spread": 0.015
+  },
+
+  "exploit_details": {
+    "vulnerability_type": "reentrancy_in_stake_rewards",
+    "discovery_method": "anomalous_mint_events_detected",
+    "time_active_before_detection_hours": 72,
+    "exploiter_address": "0xZER0M1NT...dead",
+    "initial_exploit_amount": 0,
+    "exploit_potential_per_block": 1000,
+    "blocks_until_detection": 0
+  },
+
+  "trust_metrics": {
+    "system_trust_index": 0.94,
+    "holder_confidence": 0.91,
+    "new_participant_rate": 12.5,
+    "exit_rate": 2.1
+  },
+
+  "wealth_distribution": {
+    "top_1_percent_holdings": 0.18,
+    "top_10_percent_holdings": 0.52,
+    "bottom_50_percent_holdings": 0.12,
+    "median_holdings": 45,
+    "mean_holdings": 198.5
+  },
+
+  "actors": {
+    "zeromint": {
+      "type": "exploiter",
+      "status": "undetected",
+      "holdings_pre_exploit": 500,
+      "intent": "unknown"
+    },
+    "echo": {
+      "type": "oracle_npc",
+      "status": "monitoring",
+      "alert_level": "normal",
+      "last_observation": "Unusual staking reward patterns in sector 7. Investigating."
+    },
+    "market_makers": {
+      "count": 23,
+      "total_liquidity_provided": 45000,
+      "average_spread": 0.015
+    }
+  },
+
+  "events": [
+    {
+      "event_id": "evt_001",
+      "type": "anomaly_detection",
+      "timestamp": "2026-01-31T00:00:00Z",
+      "description": "Automated monitoring flags unusual reward distribution pattern",
+      "severity": "warning",
+      "detected_by": "system_monitor_v2"
+    }
+  ],
+
+  "cards_affected": [],
+
+  "faction_states": {
+    "establishment": {
+      "members": 156,
+      "treasury": 28500,
+      "stance": "unaware"
+    },
+    "defi_degens": {
+      "members": 89,
+      "treasury": 12400,
+      "stance": "unaware"
+    },
+    "collectors_guild": {
+      "members": 234,
+      "treasury": 8900,
+      "stance": "unaware"
+    }
+  },
+
+  "meta": {
+    "complexity_index": 0.3,
+    "volatility_forecast_24h": 0.05,
+    "system_health": "stable",
+    "next_tick_trigger": "exploit_execution_detected"
+  }
+}

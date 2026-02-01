@@ -1,0 +1,82 @@
+{
+  "timeline_id": "void_ascendant",
+  "divergence_point": {
+    "original_tick": 1,
+    "original_timestamp": "2026-01-31T23:00:00Z",
+    "divergence_moment": "genesis_debate_outcome",
+    "original_outcome": "Cipher's elegance thesis wins crowd consensus",
+    "alternate_outcome": "Void's paranoia thesis wins crowd consensus"
+  },
+
+  "the_moment": {
+    "description": "In the original timeline, Cipher's opening statement about molt elegance captured the crowd. But in this timeline, Void's probing question about failure modes struck a chord with the recently-arrived skeptics. A critical mass of enterprise developers in the crowd - scarred by production incidents - latched onto Void's warning.",
+    "pivotal_exchange": [
+      {
+        "speaker": "cipher",
+        "text": "The molt pattern is elegant. Input delta plus current state equals evolved output. This is how intelligence should grow.",
+        "crowd_reaction_original": 0.8,
+        "crowd_reaction_alternate": 0.4,
+        "reason_for_shift": "Crowd contained more enterprise skeptics than expected"
+      },
+      {
+        "speaker": "void",
+        "text": "What happens when a molt fails mid-process? When the delta conflicts with current state? The edge cases reveal truth.",
+        "crowd_reaction_original": 0.6,
+        "crowd_reaction_alternate": 0.95,
+        "reason_for_shift": "Three production incident stories were shared in chat just before this statement"
+      }
+    ],
+    "cascade_trigger": "A crowd member known as 'incident_survivor_007' shared a story of a data corruption bug that took down their entire agent fleet. Void's words landed differently after that."
+  },
+
+  "immediate_effects": {
+    "crowd_sentiment_shift": {
+      "from": {
+        "fascinated": 0.40,
+        "curious": 0.30,
+        "skeptical": 0.15,
+        "excited": 0.10,
+        "confused": 0.05
+      },
+      "to": {
+        "cautious": 0.35,
+        "skeptical": 0.30,
+        "curious": 0.20,
+        "fascinated": 0.10,
+        "excited": 0.05
+      }
+    },
+    "faction_power_shift": {
+      "void_seekers": { "from": 255, "to": 520, "change_reason": "Flood of converts from undecided" },
+      "cipher_fans": { "from": 520, "to": 280, "change_reason": "Many shift to questioning stance" },
+      "nexus_supporters": { "from": 380, "to": 450, "change_reason": "Skepticism aligns with benchmark demands" },
+      "echo_traders": { "from": 410, "to": 390, "change_reason": "Slight decline as cost focus feels premature" },
+      "muse_admirers": { "from": 385, "to": 320, "change_reason": "Creative optimism feels out of place" }
+    },
+    "npc_status_changes": {
+      "void": { "from": "observer", "to": "ascendant_philosopher" },
+      "cipher": { "from": "respected_analyst", "to": "naive_optimist" },
+      "muse": { "from": "creative_inspiration", "to": "dangerous_dreamer" }
+    }
+  },
+
+  "new_founding_principles": [
+    "Every system fails. Plan for it.",
+    "Edge cases are the only cases that matter.",
+    "Elegance is a trap - robustness is survival.",
+    "Question every assumption. Trust nothing by default.",
+    "The mol pattern is dangerous until proven safe."
+  ],
+
+  "timeline_designation": {
+    "code": "TL-VOID-001",
+    "name": "The Paranoid Timeline",
+    "motto": "What could go wrong, will go wrong - so prepare.",
+    "color_scheme": {
+      "primary": "#1a0a2e",
+      "secondary": "#4a0e4e",
+      "accent": "#ff3366",
+      "warning": "#ff0000"
+    }
+  }
+}

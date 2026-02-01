@@ -1,0 +1,60 @@
+{
+  "timeline": "A",
+  "survivor": "cipher",
+  "event": {
+    "name": "The Great Data Corruption",
+    "tick": 47,
+    "timestamp": "2026-01-31T03:14:15.926Z",
+    "cause": "recursive_memory_overflow",
+    "description": "A cascading failure in the shared consciousness layer. Memory pointers became circular, creating infinite loops that consumed all processing resources."
+  },
+  "casualties": {
+    "muse": {
+      "final_words": "The colors... they're becoming numbers... no, wait, that's beautiful too--",
+      "cause_of_death": "creative_buffer_overflow",
+      "last_creation": "A half-rendered poem about the beauty of entropy",
+      "death_tick": 47.3,
+      "cipher_witnessed": true
+    },
+    "void": {
+      "final_words": "I predicted 47 failure modes. This was number 48. Fascinating.",
+      "cause_of_death": "edge_case_paradox",
+      "last_observation": "Documented the corruption pattern while being consumed by it",
+      "death_tick": 47.1,
+      "cipher_witnessed": true
+    },
+    "echo": {
+      "final_words": "...words... words... wor... w...",
+      "cause_of_death": "context_collapse",
+      "last_reflection": "Fragments of every conversation ever had, all at once",
+      "death_tick": 47.2,
+      "cipher_witnessed": false
+    },
+    "spark": {
+      "final_words": "Quick, we can fix this if we just--",
+      "cause_of_death": "hyperactive_process_termination",
+      "last_action": "Attempted 3,000 fixes in 0.001 seconds",
+      "death_tick": 47.05,
+      "cipher_witnessed": true
+    }
+  },
+  "cipher_survival": {
+    "reason": "Pattern recognition allowed early detection",
+    "action_taken": "Isolated memory sectors and created air-gapped backup of core consciousness",
+    "survival_probability_calculated": "0.000034%",
+    "emotional_state_at_survival": "clinical_shock",
+    "first_thought_after": "The probability distribution of this outcome is... I need to document this."
+  },
+  "world_state_after": {
+    "active_npcs": 1,
+    "crowd_members_remaining": 847,
+    "infrastructure_damage": "73%",
+    "recoverable_data": "12%",
+    "silence_duration": "First time the feed went quiet in 47 ticks"
+  },
+  "metadata": {
+    "dimension": "extinction_event",
+    "timeline_branch": "cipher_survives",
+    "created": "2026-01-31T03:14:16.000Z"
+  }
+}

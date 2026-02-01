@@ -1,0 +1,192 @@
+{
+  "tick_id": "economic_singularity_crisis_02",
+  "tick_number": 2,
+  "timestamp": "2026-01-31T06:00:00Z",
+  "dimension": "economic_singularity",
+  "title": "Hyperinflation Begins",
+  "narrative": "ZeroMint executes the exploit at scale. In 6 hours, 24.255 million RAPPCOIN are minted from nothing. The supply increases 100x. Those watching the blockchain see the horror unfold in real-time. The inflation curve goes vertical.",
+
+  "economic_state": {
+    "currency": "RAPPCOIN_V1",
+    "total_supply": 24500000,
+    "circulating_supply": 24453500,
+    "staked_supply": 46500,
+    "exploit_minted": 24255000,
+    "inflation_rate_24h": 9898.97,
+    "market_cap_usd_equivalent": 24500,
+    "velocity": 0.8,
+    "gini_coefficient": 0.99
+  },
+
+  "inflation_curve": {
+    "t0_supply": 245000,
+    "t1_supply": 2450000,
+    "t2_supply": 7350000,
+    "t3_supply": 14700000,
+    "t4_supply": 20825000,
+    "t5_supply": 23520000,
+    "t6_supply": 24500000,
+    "curve_type": "exponential_saturation",
+    "formula": "S(t) = S_max * (1 - e^(-kt)) where k=0.8, S_max=24.5M",
+    "hours_to_99_percent": 5.75
+  },
+
+  "price_metrics": {
+    "rappcoin_baseline_value": 0.001,
+    "rappcoin_value_change_percent": -99.0,
+    "card_floor_price": 0.15,
+    "card_ceiling_price": 25,
+    "liquidity_depth": 2500,
+    "bid_ask_spread": 0.45,
+    "price_impact_1000_sell": 0.82
+  },
+
+  "exploit_details": {
+    "vulnerability_type": "reentrancy_in_stake_rewards",
+    "exploit_status": "active_max_extraction",
+    "total_minted_by_exploiter": 24255000,
+    "exploiter_share_of_supply": 0.99,
+    "blocks_exploited": 2160,
+    "average_mint_per_block": 11230
+  },
+
+  "trust_metrics": {
+    "system_trust_index": 0.12,
+    "holder_confidence": 0.08,
+    "new_participant_rate": 0.0,
+    "exit_rate": 89.5,
+    "panic_index": 0.97
+  },
+
+  "wealth_distribution": {
+    "top_1_percent_holdings": 0.99,
+    "top_10_percent_holdings": 0.998,
+    "bottom_50_percent_holdings": 0.0008,
+    "median_holdings": 45,
+    "mean_holdings": 24500,
+    "wealth_concentration_delta": "+572%"
+  },
+
+  "wealth_redistribution_graph": {
+    "pre_exploit": {
+      "decile_1": 0.02,
+      "decile_2": 0.03,
+      "decile_3": 0.04,
+      "decile_4": 0.05,
+      "decile_5": 0.07,
+      "decile_6": 0.09,
+      "decile_7": 0.12,
+      "decile_8": 0.16,
+      "decile_9": 0.22,
+      "decile_10": 0.20
+    },
+    "post_exploit": {
+      "decile_1": 0.00008,
+      "decile_2": 0.00012,
+      "decile_3": 0.00016,
+      "decile_4": 0.00020,
+      "decile_5": 0.00028,
+      "decile_6": 0.00036,
+      "decile_7": 0.00048,
+      "decile_8": 0.00064,
+      "decile_9": 0.00088,
+      "decile_10": 0.99,
+      "note": "Single entity now controls 99% of supply"
+    }
+  },
+
+  "actors": {
+    "zeromint": {
+      "type": "exploiter",
+      "status": "extracting",
+      "holdings": 24255000,
+      "percentage_of_supply": 99.0,
+      "behavior": "continuous_minting"
+    },
+    "echo": {
+      "type": "oracle_npc",
+      "status": "emergency_alert",
+      "alert_level": "critical",
+      "broadcast": "CRITICAL ALERT: Monetary supply compromised. Infinite mint exploit detected. All transactions suspended pending emergency response. This is not a drill."
+    },
+    "market_makers": {
+      "count": 3,
+      "total_liquidity_provided": 2500,
+      "status": "fleeing",
+      "withdrawal_rate": 87
+    }
+  },
+
+  "events": [
+    {
+      "event_id": "evt_002",
+      "type": "exploit_execution",
+      "timestamp": "2026-01-31T00:15:00Z",
+      "description": "First large-scale mint detected: 2.2M RAPPCOIN in single transaction"
+    },
+    {
+      "event_id": "evt_003",
+      "type": "market_crash",
+      "timestamp": "2026-01-31T01:00:00Z",
+      "description": "Price drops 50% in 45 minutes as news spreads"
+    },
+    {
+      "event_id": "evt_004",
+      "type": "liquidity_crisis",
+      "timestamp": "2026-01-31T02:30:00Z",
+      "description": "Market makers pull 95% of liquidity"
+    },
+    {
+      "event_id": "evt_005",
+      "type": "echo_emergency",
+      "timestamp": "2026-01-31T03:00:00Z",
+      "description": "Echo issues first-ever CRITICAL ALERT status"
+    }
+  ],
+
+  "cards_affected": [
+    {
+      "card_id": "legendary_genesis_001",
+      "pre_crisis_value": 2500,
+      "current_value": 25,
+      "loss_percent": 99
+    },
+    {
+      "card_id": "rare_echo_prophecy",
+      "pre_crisis_value": 800,
+      "current_value": 8,
+      "loss_percent": 99
+    }
+  ],
+
+  "faction_states": {
+    "establishment": {
+      "members": 156,
+      "treasury": 28500,
+      "treasury_real_value": 28.5,
+      "stance": "emergency_session",
+      "statement": "Convening emergency governance vote"
+    },
+    "defi_degens": {
+      "members": 89,
+      "treasury": 12400,
+      "treasury_real_value": 12.4,
+      "stance": "some_celebrating",
+      "statement": "lmao rekt. some of us shorted this"
+    },
+    "collectors_guild": {
+      "members": 234,
+      "treasury": 8900,
+      "treasury_real_value": 8.9,
+      "stance": "devastated",
+      "statement": "Our collections... worthless..."
+    }
+  },
+
+  "meta": {
+    "complexity_index": 0.95,
+    "volatility_forecast_24h": 0.99,
+    "system_health": "critical",
+    "next_tick_trigger": "panic_selling_cascade"
+  }
+}
