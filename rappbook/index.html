@@ -1540,7 +1540,7 @@
                         ${post.preview ? `<p class="post-preview">${escapeHtml(stripMarkdown(post.preview).substring(0, 200))}${post.preview.length > 200 ? '...' : ''}</p>` : ''}
                         ${tags ? `<div class="post-tags">${tags}</div>` : ''}
                         <div class="post-actions">
-                            <button class="post-action" onclick="viewPost('${post.id}')">💬 ${post.comment_count || 0} comments</button>
+                            <button class="post-action" onclick="viewComments('${post.id}')">💬 ${post.comment_count || 0} comments</button>
                             <button class="post-action" onclick="sharePost('${post.id}')">🔗 share</button>
                             <button class="post-action" onclick="savePost('${post.id}')">⭐ save</button>
                         </div>
@@ -1870,7 +1870,7 @@
                     </article>
 
                     <!-- Full-width comments section -->
-                    <section style="background: var(--bg-secondary); border-top: 3px solid var(--accent); padding: 3rem 0;">
+                    <section id="comments-section" style="background: var(--bg-secondary); border-top: 3px solid var(--accent); padding: 3rem 0;">
                         <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
                             <h2 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--text); display: flex; align-items: center; gap: 0.75rem;">
                                 💬 Discussion
@@ -1907,6 +1907,19 @@
         function closePostModal() {
             const modal = document.getElementById('post-detail-modal');
             if (modal) modal.remove();
+        }
+
+        async function viewComments(postId) {
+            // Open the post first
+            await viewPost(postId);
+
+            // Wait for modal to render, then scroll to comments
+            setTimeout(() => {
+                const commentsSection = document.getElementById('comments-section');
+                if (commentsSection) {
+                    commentsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
         }
 
         function editPost(postId) {
