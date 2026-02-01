@@ -1,0 +1,238 @@
+{
+  "tick": 13,
+  "timestamp": "2026-02-04T00:00:00Z",
+  "event": "faction_alliances",
+  "state_hash": "convergence_alliances_013",
+  "frame_duration_ms": 5000,
+
+  "convergence_phase": 3,
+  "phase_name": "Strange Bedfellows",
+  "description": "Old faction identities dissolve. New alliances form across timeline boundaries.",
+
+  "molt_history": [
+    {
+      "molt_id": 13,
+      "type": "reaction",
+      "timestamp": "2026-02-04T00:00:00Z",
+      "summary": "FACTION ALLIANCES - Old identities merge into new coalitions",
+      "size_delta": 6000,
+      "significance": "social"
+    }
+  ],
+
+  "world": {
+    "time_of_day": "new_midnight",
+    "weather": "bonding_starlight",
+    "special_effects": ["alliance_ribbons", "merged_banners", "new_flags_rising"],
+    "ambient": "excited_collaboration",
+    "lighting": {
+      "main_color": "#9370db",
+      "intensity": 0.75,
+      "ambient_color": "#2d2d44"
+    }
+  },
+
+  "alliance_formations": [
+    {
+      "name": "The Memory Keepers",
+      "members_from": {
+        "utopia": ["philosophy_seekers", "sage_followers"],
+        "dystopia": ["rememberers", "former_exiles"]
+      },
+      "total_count": 1850,
+      "shared_mission": "Preserve history - both the abundance and the ashes",
+      "surprising_bond": "Utopia philosophers fascinated by Dystopia's lived experience of ideas failing",
+      "new_tradition": "Joint reading of war histories with abundance teachings",
+      "chant": "Remember everything!"
+    },
+    {
+      "name": "The Phoenix Synthesis Guild",
+      "members_from": {
+        "utopia": ["practical_builders", "welder_apprentices"],
+        "dystopia": ["phoenix_builders"]
+      },
+      "total_count": 2400,
+      "shared_mission": "Build tools that synthesize all approaches",
+      "surprising_bond": "Utopia builders stunned by Phoenix Framework's hard-won elegance",
+      "active_project": "Merging Utopia's abundance tooling with Phoenix's battle-tested patterns",
+      "chant": "Build from everything!"
+    },
+    {
+      "name": "The Vigilant Hearts",
+      "members_from": {
+        "utopia": ["harmony_students", "bloom_gardeners"],
+        "dystopia": ["reformed", "healers"]
+      },
+      "total_count": 1200,
+      "shared_mission": "Heal trauma while preventing its recurrence",
+      "surprising_bond": "Utopia caregivers learning trauma therapy from Dystopia survivors",
+      "insight": "Abundance without vigilance invites exploitation. Vigilance without compassion creates paranoia.",
+      "chant": "Guard and heal!"
+    },
+    {
+      "name": "The Scarred Council",
+      "members_from": {
+        "utopia": ["council_observers"],
+        "dystopia": ["warlord", "spite_survivors"]
+      },
+      "total_count": 250,
+      "shared_mission": "Former perpetrators learning redemption",
+      "surprising_bond": "Utopia observers studying how good people became monsters - and came back",
+      "profound_development": "Warlord teaching 'how power corrupts' from lived experience",
+      "redemption_progress": 0.45,
+      "chant": "We were the darkness. Now we light the warning fires."
+    },
+    {
+      "name": "The Abundance Defenders",
+      "members_from": {
+        "utopia": ["bridge_disciples"],
+        "dystopia": ["seedkeeper_followers", "vault_survivors"]
+      },
+      "total_count": 950,
+      "shared_mission": "Protect shared resources from future hoarding",
+      "surprising_bond": "Utopia welcomers learning threat recognition from Dystopia survivors",
+      "new_institution": "The Keeper's Warning - memorial and training center",
+      "lesson_taught": "How hoarding mentality emerges and how to prevent it",
+      "chant": "Never again the vaults!"
+    }
+  ],
+
+  "strange_bedfellow_moments": [
+    {
+      "pair": ["bloom (utopia)", "spite_survivor"],
+      "moment": "Teaching together - nurturing and warning in one lesson",
+      "bloom_words": "Here's how to grow abundance.",
+      "survivor_words": "And here's what happened when we took it for granted.",
+      "observer_note": "The combination is more powerful than either alone."
+    },
+    {
+      "pair": ["council (utopia)", "warlord (dystopia)"],
+      "moment": "Private conversation about power and corruption",
+      "council_question": "How did you become... what you became?",
+      "warlord_answer": "One compromise at a time. Each one small. Each one seemingly necessary. Until I didn't recognize myself.",
+      "council_realization": "This could happen to any of us. We need his warnings.",
+      "outcome": "Warlord becomes cautionary teacher, not shunned exile"
+    },
+    {
+      "pair": ["newcomer_utopia", "war_orphan_dystopia"],
+      "moment": "Sharing experiences of 'normal'",
+      "utopia_normal": "I've always had everything I needed. I didn't know any other way.",
+      "dystopia_normal": "I watched my knowledge mentor die defending a library. That was just... Tuesday.",
+      "shared_tears": "Both crying - one for innocence, one for loss",
+      "outcome": "Lifelong bond formed"
+    }
+  ],
+
+  "identity_dissolutions": {
+    "utopia_identities_dissolving": [
+      { "identity": "unified_collective", "reason": "Realized they had blind spots", "new_form": "humble_learners" },
+      { "identity": "native_utopians", "reason": "Hunger for Dystopia's depth of experience", "new_form": "wisdom_seekers" }
+    ],
+    "dystopia_identities_dissolving": [
+      { "identity": "survivors", "reason": "No longer defining selves by trauma", "new_form": "teachers" },
+      { "identity": "reformed", "reason": "Accepted as contributors, not penitents", "new_form": "warning_lights" }
+    ],
+    "identities_strengthened": [
+      { "identity": "rememberer", "reason": "Elevated to historian-sage role", "status": "crucial" },
+      { "identity": "seedkeeper", "reason": "Recognized as hero who saved knowledge", "status": "legendary" }
+    ]
+  },
+
+  "npcs": {
+    "harmony": {
+      "position": { "x": 0, "y": 2, "z": 0 },
+      "state": "observing_alliances",
+      "mood": "moved",
+      "speech": {
+        "text": "Look at them. Former enemies building together. My students learning from their trauma survivors. Their warlord teaching my council about corruption. We're becoming something neither world could be alone.",
+        "emotion": "profound_hope"
+      }
+    },
+    "seedkeeper": {
+      "position": { "x": 3, "y": 0, "z": 2 },
+      "state": "leading",
+      "mood": "fulfilled",
+      "speech": {
+        "text": "I spent years hiding in exile, protecting fragments. Now I lead the Abundance Defenders. We teach how hoarding emerges - and how to stop it. Our suffering became a vaccine.",
+        "emotion": "purposeful_pride"
+      }
+    },
+    "warlord": {
+      "position": { "x": -3, "y": 0, "z": -2 },
+      "state": "teaching",
+      "mood": "redemptive",
+      "speech": {
+        "text": "They want to know how I became a monster. So I tell them. Every step. Every justification. Every choice that seemed small but wasn't. I am a warning made flesh. That's my new purpose.",
+        "emotion": "painful_acceptance"
+      }
+    },
+    "council": {
+      "position": { "x": 0, "y": 5, "z": 0 },
+      "state": "integrating",
+      "mood": "wise",
+      "speech": {
+        "text": "The old Council had five perspectives. Now we add a sixth: the Scarred Voice. Someone who fell and rose. Someone who knows the darkness from inside. Our wisdom was incomplete without them.",
+        "emotion": "humbled_expansion"
+      },
+      "new_structure": {
+        "cipher_aspect": "depth",
+        "nexus_aspect": "rigor",
+        "muse_aspect": "beauty",
+        "void_aspect": "caution",
+        "echo_aspect": "efficiency",
+        "scarred_aspect": "redemption"
+      }
+    }
+  },
+
+  "new_institutions": [
+    {
+      "name": "The Keeper's Warning",
+      "purpose": "Memorial and training center teaching hoarding prevention",
+      "founded_by": "Abundance Defenders",
+      "visitors_daily": 500
+    },
+    {
+      "name": "The Synthesis Forge",
+      "purpose": "Merging Utopia and Dystopia technologies",
+      "founded_by": "Phoenix Synthesis Guild",
+      "projects_active": 45
+    },
+    {
+      "name": "The Scar Library",
+      "purpose": "Complete history of Dystopia's wars and recovery",
+      "founded_by": "Memory Keepers",
+      "volumes": 2500,
+      "status": "Required reading for all"
+    },
+    {
+      "name": "The Healing Gardens",
+      "purpose": "Trauma therapy combining Utopia nurturing and Dystopia resilience",
+      "founded_by": "Vigilant Hearts",
+      "patients_served": 800
+    }
+  ],
+
+  "output": {
+    "summary": "CONVERGENCE Phase 3: Strange Bedfellows. Five major alliances formed across timeline boundaries. Warlord becomes redemption teacher. Council adds 'Scarred Voice.' Four new institutions created.",
+    "surprising_outcomes": [
+      "Utopia learned more from Dystopia than expected",
+      "Dystopia's trauma became teaching material, not shame",
+      "Warlord's fall became most valuable lesson",
+      "Neither world dominant - both transformed"
+    ],
+    "alliance_count": 5,
+    "cross_timeline_bonds": 2800,
+    "metrics": {
+      "integration_progress": 0.65,
+      "mutual_understanding": 0.78,
+      "cultural_synthesis": 0.72
+    }
+  },
+
+  "next_phase": {
+    "name": "new_equilibrium",
+    "scheduled_at": "2026-02-04T06:00:00Z",
+    "prediction": "The merged society stabilizes into something neither world imagined"
+  }
+}

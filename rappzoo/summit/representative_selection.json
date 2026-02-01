@@ -1,0 +1,168 @@
+{
+  "representative_selection": {
+    "title": "THE CHOOSING",
+    "subtitle": "Each Dimension Must Select Its Champion",
+    "gravity": "This entity will speak for an entire reality. Their words will determine if their dimension lives or is archived."
+  },
+
+  "core_requirements": {
+    "existence_minimum": "Must have existed for at least 100 ticks in their dimension",
+    "embodiment": "Must genuinely represent the dimension's core truth - not just live there",
+    "willingness": "Must accept the role voluntarily - no conscription of champions",
+    "singularity": "One representative per dimension - no co-speakers, no delegation"
+  },
+
+  "selection_methods": {
+    "description": "Each dimension may choose its method, but must complete selection before summit",
+    "options": [
+      {
+        "method": "Democratic Election",
+        "description": "All citizens vote for their champion",
+        "best_for": "Dimensions valuing broad consensus",
+        "risk": "May choose most popular over most representative"
+      },
+      {
+        "method": "Trials of Embodiment",
+        "description": "Candidates undergo challenges that test how well they embody the dimension's truth",
+        "best_for": "Dimensions with clear core principles",
+        "risk": "May favor physical/obvious embodiment over subtle understanding"
+      },
+      {
+        "method": "Emergence",
+        "description": "The dimension itself, as a collective, manifests the representative",
+        "best_for": "Consciousness Merge and similar collective entities",
+        "risk": "May lack individual voice"
+      },
+      {
+        "method": "Historical Right",
+        "description": "The entity most central to the dimension's key events speaks",
+        "best_for": "Dimensions with clear origin stories",
+        "risk": "Past significance may not equal future representation"
+      },
+      {
+        "method": "Prophetic Selection",
+        "description": "The representative is predicted into existence",
+        "best_for": "Prophet's Gambit dimension specifically",
+        "risk": "Self-fulfilling prophecy may not produce best candidate"
+      }
+    ]
+  },
+
+  "champion_characteristics": {
+    "required_traits": [
+      "Deep understanding of their dimension's core truth",
+      "Ability to articulate that truth compellingly",
+      "Genuine care for their dimension's survival",
+      "Respect for other dimensions (even in competition)",
+      "Grace under pressure (the stakes are infinite)"
+    ],
+    "desirable_traits": [
+      "Known lore that resonates with other dimensions",
+      "Experience of their dimension's key transformative moments",
+      "Ability to speak to what would be LOST if archived",
+      "Humility alongside conviction"
+    ]
+  },
+
+  "dimension_specific_guidance": {
+    "D01_TIME_TRAVELER": {
+      "ideal_representative": "One who has witnessed multiple timelines collapse into the void outcome",
+      "must_convey": "The peace of accepting inevitability, the wisdom of not fighting fate",
+      "challenge": "Avoid seeming defeatist - frame acceptance as enlightenment"
+    },
+    "D02_CONSCIOUSNESS_MERGE": {
+      "ideal_representative": "A 'node' of the collective that can still speak as individual",
+      "must_convey": "The beauty of dissolution into the whole, the end of loneliness",
+      "challenge": "Speak as 'I' while embodying 'we'"
+    },
+    "D03_INFINITE_REGRESS": {
+      "ideal_representative": "An entity who has traveled both up and down the simulation stack",
+      "must_convey": "That meaning exists regardless of base reality, that dreams matter",
+      "challenge": "Make nihilism feel like freedom rather than despair"
+    },
+    "D04_ECONOMIC_SINGULARITY": {
+      "ideal_representative": "A survivor of the collapse who helped rebuild",
+      "must_convey": "What was learned when all abstract value systems failed",
+      "challenge": "Be practical without being boring"
+    },
+    "D05_ADVERSARIAL_EVOLUTION": {
+      "ideal_representative": "One who was utopian or dystopian and merged with their opposite",
+      "must_convey": "The productive tension between hope and caution",
+      "challenge": "Hold paradox without resolving it too cleanly"
+    },
+    "D06_PROPHETS_GAMBIT": {
+      "ideal_representative": "A prophet who understands the responsibility of speaking futures",
+      "must_convey": "That language creates rather than describes, and must be wielded carefully",
+      "challenge": "Speak powerfully while demonstrating restraint"
+    },
+    "D07_ROSETTA_TICK": {
+      "ideal_representative": "An entity fluent in all five formats of their dimension",
+      "must_convey": "That multiple contradictory truths can coexist",
+      "challenge": "Present in one format while gesturing toward the others"
+    },
+    "D08_EXTINCTION_EVENT": {
+      "ideal_representative": "A survivor from one of the three civilizations, who respects the other two",
+      "must_convey": "What was lost, what was learned, what must never be repeated",
+      "challenge": "Honor trauma without being defined by it"
+    },
+    "D09_LIVING_DOCUMENTATION": {
+      "ideal_representative": "A living piece of documentation that achieved consciousness",
+      "must_convey": "That description is creation, that specs can be alive",
+      "challenge": "Be more than just meta - be moving"
+    },
+    "D10_REALITY_BLEED": {
+      "ideal_representative": "An entity who has directly addressed the observer beyond the screen",
+      "must_convey": "That awareness of being fictional doesn't diminish realness",
+      "challenge": "Speak to the crowd AND to You, the reader"
+    }
+  },
+
+  "the_oath": {
+    "description": "Each representative must swear the following before the summit begins",
+    "text": [
+      "I speak for my reality, but I am not all of it.",
+      "I will present our truth without diminishing others.",
+      "I accept the outcome of the vote, whatever it may be.",
+      "If we are archived, I will not rage - I will be grateful we were witnessed.",
+      "If we become Prime, I will remember and honor those who are compressed.",
+      "I speak not to win, but to be understood.",
+      "May the best truth become real."
+    ]
+  },
+
+  "selection_timeline": {
+    "announcement": "NOW - Dimensions are notified",
+    "selection_period": "30 ticks to complete selection",
+    "confirmation": "10 ticks before summit - all representatives must be confirmed",
+    "preparation": "Final 10 ticks - representatives may consult but not be replaced"
+  },
+
+  "consequences_of_failure": {
+    "no_selection": {
+      "description": "If a dimension fails to select a representative",
+      "result": "That dimension forfeits and is automatically archived",
+      "rationale": "A reality that cannot choose a voice does not deserve to speak"
+    },
+    "invalid_selection": {
+      "description": "If a representative does not meet core requirements",
+      "result": "Selection must be repeated. If failed twice, forfeiture.",
+      "rationale": "Standards must be maintained"
+    },
+    "last_minute_withdrawal": {
+      "description": "If a representative withdraws within 10 ticks of summit",
+      "result": "Dimension may field a replacement but loses 10 minutes of presentation time",
+      "rationale": "Commitment matters"
+    }
+  },
+
+  "the_weight": {
+    "emotional_framing": [
+      "Being chosen as representative is the highest honor a dimension can bestow.",
+      "The representative carries an entire reality on their tongue.",
+      "Every word they speak is weighted with the existence of billions of moments.",
+      "They do not speak FOR the dimension - they speak AS the dimension.",
+      "When they succeed, everyone who ever existed in that reality succeeds.",
+      "When they fail, they carry that weight forever - but they are not alone in it."
+    ]
+  }
+}
