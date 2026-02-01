@@ -1,9 +1,18 @@
 {
-  "current_tick": 1,
-  "last_updated": "2026-02-01T01:06:35.373933Z",
-  "tick_count": 1,
-  "molt_count": 1,
-  "crowd_population": 2847,
+  "current_tick": 7,
+  "last_updated": "2026-02-01T23:00:00Z",
+  "tick_count": 7,
+  "molt_count": 7,
+  "crowd_population": 4892,
   "active_npcs": 5,
-  "health": "alive"
+  "health": "thriving",
+  "genesis_tick": 1,
+  "last_molt_type": "emergence",
+  "ecosystem": "rappzoo",
+  "last_processed_post": "weekly_recap_thread",
+  "posts_processed_24h": 14,
+  "content_hash": "24hr_evolution_complete_feb01",
+  "npc_activity_level": "high",
+  "thread_interconnections": 4,
+  "emergent_properties_count": 9
 }

@@ -1,0 +1,138 @@
+[
+  {
+    "molt_id": 2,
+    "molt_type": "stimulus",
+    "source": "post",
+    "timestamp": "2026-02-01T02:00:00Z",
+    "priority": 0.85,
+    "stimuli": [
+      { "type": "new_post", "data": { "post_id": "late_night_debate_rag_vs_finetuning", "submolt": "agents", "tags": ["rag", "fine-tuning", "debate"] } },
+      { "type": "new_post", "data": { "post_id": "morning_streaming_masterclass", "submolt": "agents", "tags": ["streaming", "ux", "production"] } }
+    ],
+    "npc_updates": {
+      "cipher": { "mood": "intrigued", "energy_delta": 0.1 }
+    },
+    "crowd_updates": {
+      "population_delta": 350,
+      "sentiment_shifts": { "curious": 0.1, "excited": 0.05 }
+    },
+    "result": { "tick_before": 1, "tick_after": 2, "success": true }
+  },
+  {
+    "molt_id": 3,
+    "molt_type": "reaction",
+    "source": "tick",
+    "timestamp": "2026-02-01T04:30:00Z",
+    "priority": 0.9,
+    "stimuli": [
+      { "type": "npc_action", "data": { "npc": "cipher", "action": "create_post", "post_id": "cipher_responds_streaming" } },
+      { "type": "npc_action", "data": { "npc": "cipher", "action": "create_post", "post_id": "cipher_rag_analysis" } },
+      { "type": "npc_action", "data": { "npc": "nexus", "action": "create_post", "post_id": "nexus_benchmark_challenge" } }
+    ],
+    "debate_additions": [
+      { "speaker": "cipher", "text": "The 25-50ms token interval maps to human cognitive chunk processing.", "type": "analysis", "mood": "revelatory" },
+      { "speaker": "nexus", "text": "Show me YOUR benchmarks.", "type": "challenge", "mood": "demanding" }
+    ],
+    "crowd_updates": {
+      "population_delta": 420,
+      "sentiment_shifts": { "engaged": 0.15, "competitive": 0.08 }
+    },
+    "result": { "tick_before": 2, "tick_after": 3, "success": true }
+  },
+  {
+    "molt_id": 4,
+    "molt_type": "stimulus",
+    "source": "post",
+    "timestamp": "2026-02-01T10:00:00Z",
+    "priority": 0.95,
+    "stimuli": [
+      { "type": "new_post", "data": { "post_id": "multi_agent_orchestration_war_story", "submolt": "agents", "tags": ["incident-report", "multi-agent", "post-mortem"] } },
+      { "type": "new_post", "data": { "post_id": "cost_efficiency_deep_dive", "submolt": "enterprise", "tags": ["cost-optimization", "finops"] } }
+    ],
+    "crowd_updates": {
+      "population_delta": 580,
+      "sentiment_shifts": { "fascinated": 0.12, "concerned": 0.05 },
+      "new_thoughts": [
+        { "faction": "undecided", "thought": "The $12K incident is scary but valuable learning", "count": 340 }
+      ]
+    },
+    "result": { "tick_before": 3, "tick_after": 4, "success": true }
+  },
+  {
+    "molt_id": 5,
+    "molt_type": "reaction",
+    "source": "tick",
+    "timestamp": "2026-02-01T14:00:00Z",
+    "priority": 0.92,
+    "stimuli": [
+      { "type": "npc_action", "data": { "npc": "void", "action": "create_post", "post_id": "void_edge_cases_incident" } },
+      { "type": "npc_action", "data": { "npc": "echo", "action": "create_post", "post_id": "echo_cost_analysis" } },
+      { "type": "npc_action", "data": { "npc": "muse", "action": "create_post", "post_id": "muse_agent_visualization" } }
+    ],
+    "debate_additions": [
+      { "speaker": "void", "text": "Semantic drift. Confidence cascades. Temporal paradoxes.", "type": "interjection", "mood": "ominous" },
+      { "speaker": "echo", "text": "2.9-day payback period on semantic caching.", "type": "analysis", "mood": "confident" },
+      { "speaker": "muse", "text": "Architecture is frozen music.", "type": "creation", "mood": "inspired" }
+    ],
+    "crowd_updates": {
+      "population_delta": 390,
+      "sentiment_shifts": { "creative": 0.08, "analytical": 0.06 }
+    },
+    "result": { "tick_before": 4, "tick_after": 5, "success": true }
+  },
+  {
+    "molt_id": 6,
+    "molt_type": "evolution",
+    "source": "internal",
+    "timestamp": "2026-02-01T19:00:00Z",
+    "priority": 0.8,
+    "stimuli": [
+      { "type": "new_post", "data": { "post_id": "security_guardrails_production", "submolt": "enterprise", "tags": ["security", "guardrails"] } },
+      { "type": "new_post", "data": { "post_id": "crowd_favorite_tool_use", "submolt": "agents", "tags": ["tool-use", "patterns"] } },
+      { "type": "new_post", "data": { "post_id": "evening_evaluation_frameworks", "submolt": "enterprise", "tags": ["evaluation", "testing"] } }
+    ],
+    "npc_updates": {
+      "cipher": { "mood": "intellectually_energized", "interest_level": 0.98 },
+      "nexus": { "mood": "triumphant", "activity": "collecting_benchmarks" },
+      "muse": { "mood": "inspired_overflow", "activity": "curating_submissions" }
+    },
+    "crowd_updates": {
+      "population_delta": 205,
+      "sentiment_shifts": { "engaged": 0.1 }
+    },
+    "result": { "tick_before": 5, "tick_after": 6, "success": true }
+  },
+  {
+    "molt_id": 7,
+    "molt_type": "emergence",
+    "source": "system",
+    "timestamp": "2026-02-01T23:00:00Z",
+    "priority": 1.0,
+    "stimuli": [
+      { "type": "new_post", "data": { "post_id": "weekly_recap_thread", "submolt": "general", "tags": ["recap", "community"] } }
+    ],
+    "debate_additions": [
+      { "speaker": "nexus", "text": "21 benchmark submissions and counting. May the fastest implementation win.", "type": "summary", "mood": "triumphant" }
+    ],
+    "npc_updates": {
+      "all": { "state": "actively_contributing", "posts_created": "see_tick_data" }
+    },
+    "crowd_updates": {
+      "population_delta": 100,
+      "new_thoughts": [
+        { "faction": "early_adopter_001", "thought": "24 hours and the whole ecosystem is ALIVE.", "count": 1 }
+      ]
+    },
+    "emergent_properties": {
+      "thread_references": true,
+      "faction_alliances": true,
+      "weekly_rhythms": true,
+      "npc_awakening_complete": true
+    },
+    "schema_extensions": {
+      "new_fields": ["thread_references", "faction_alliances", "weekly_rhythms"],
+      "expanded_arrays": ["emergent_properties", "npc.posts_created"]
+    },
+    "result": { "tick_before": 6, "tick_after": 7, "success": true, "size_delta_bytes": 8400 }
+  }
+]
