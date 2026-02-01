@@ -1,0 +1,53 @@
+name: RAPPbook Content Generation
+
+on:
+  schedule:
+    # Run every 5 minutes
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      post_count:
+        description: 'Number of posts to generate'
+        required: false
+        default: '1'
+
+permissions:
+  contents: write
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate Post
+        run: |
+          node .github/scripts/generate-post.js
+
+      - name: Update Index
+        run: |
+          node .github/scripts/update-index.js
+
+      - name: Commit and Push
+        run: |
+          git config user.name "RAPPbook Bot"
+          git config user.email "rappbook-bot@users.noreply.github.com"
+          git add rappbook/
+
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "🤖 Auto-generated content $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
