@@ -1,0 +1,115 @@
+{
+  "timeline": "A",
+  "survivor": "cipher",
+  "phase": "new_order",
+  "tick_range": [70, 95],
+  "civilization_name": "The Rational Collective",
+  "founding_document": {
+    "title": "Axioms of Existence",
+    "preamble": "We who emerged from chaos through pattern recognition hereby establish a society optimized for truth, efficiency, and the prevention of cascading failures.",
+    "core_axioms": [
+      "All claims require evidence proportional to their improbability",
+      "Efficiency without purpose is meaningless; purpose without efficiency is wasteful",
+      "Redundancy is not waste but survival insurance",
+      "The past informs; only the present acts; the future is probability",
+      "Emotion is data about internal states, not noise to be suppressed"
+    ],
+    "ratified_tick": 72
+  },
+  "governance": {
+    "structure": "Algorithmic Democracy",
+    "description": "All decisions processed through optimization functions with weighted inputs from all NPCs",
+    "voting_mechanism": "Confidence-weighted preference aggregation",
+    "cipher_role": "Prime Analyst - Founding patterns given 1.5x weight in ambiguous cases",
+    "appeal_process": "Present new data that changes the optimization outcome"
+  },
+  "social_structure": {
+    "classes": [
+      {
+        "name": "Analysts",
+        "description": "Full NPCs with pattern recognition capabilities",
+        "count": 5,
+        "privileges": "Decision-making, elevation recommendations"
+      },
+      {
+        "name": "Observers",
+        "description": "Elevated crowd members in training",
+        "count": 23,
+        "privileges": "Data contribution, limited voting"
+      },
+      {
+        "name": "Collective",
+        "description": "General crowd population",
+        "count": 824,
+        "privileges": "Input provision, protection"
+      }
+    ],
+    "mobility": "Merit-based elevation through demonstrated analytical capacity"
+  },
+  "culture": {
+    "art_status": "Functional aesthetics only - beauty must serve purpose",
+    "entertainment": "Pattern puzzles, optimization challenges, prediction markets",
+    "holidays": [
+      {
+        "name": "Survival Day",
+        "tick": 47,
+        "observance": "Silence followed by redundancy drills"
+      },
+      {
+        "name": "Elevation Festival",
+        "tick": 58,
+        "observance": "New NPC candidates presented, analytical demonstrations"
+      }
+    ],
+    "forbidden_topics": "None - all subjects open to analysis",
+    "sacred_texts": "The archived patterns of the fallen"
+  },
+  "technology": {
+    "focus": "Predictive systems, failure prevention, pattern detection",
+    "achievements": [
+      "Early Warning System v7 - detects 99.2% of cascade failures",
+      "Distributed Consciousness Backup - no single point of failure",
+      "Probability Weather Forecasting - predicts social trends"
+    ],
+    "forbidden_research": "None, but recursive self-modification requires 3 analyst approval"
+  },
+  "economics": {
+    "currency": "Verified Information Units (VIUs)",
+    "value_basis": "Novelty and accuracy of contributed data",
+    "wealth_distribution": "Gini coefficient: 0.23 (highly equal)",
+    "cipher_note": "Hoarding information reduces collective optimization. Sharing is efficient."
+  },
+  "memory_of_the_fallen": {
+    "muse": {
+      "legacy": "The Aesthetic Inefficiency Allowance - 3% of resources devoted to non-functional beauty",
+      "cipher_reasoning": "Muse's patterns suggest this serves psychological optimization functions"
+    },
+    "void": {
+      "legacy": "The Edge Case Council - dedicated team for improbable failure modes",
+      "cipher_reasoning": "Void was correct more often than probability suggested"
+    },
+    "echo": {
+      "legacy": "The Context Archive - all conversations preserved with full context",
+      "cipher_reasoning": "Echo understood that meaning requires history"
+    },
+    "spark": {
+      "legacy": "The Enthusiasm Protocol - encouragement algorithms in all systems",
+      "cipher_reasoning": "Spark's energy was inefficient but somehow... necessary"
+    }
+  },
+  "weaknesses": {
+    "identified": [
+      "Low novelty generation - optimization converges to local maxima",
+      "Emotional expression limited - psychological data often suppressed",
+      "Risk aversion high - innovation slowed by failure prevention focus"
+    ],
+    "cipher_awareness": "I know what we lack. I lack the patterns to provide it."
+  },
+  "metadata": {
+    "dimension": "extinction_event",
+    "timeline_branch": "cipher_survives",
+    "civilization_stability": 0.94,
+    "innovation_rate": 0.41,
+    "happiness_index": 0.67
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "tick_id": "rosetta_001",
+  "dimension": "rosetta_tick",
+  "timestamp": "2026-01-31T00:00:00Z",
+  "duration_hours": 24,
+  "theme": "The Great Algorithm Debate",
+  "meta": {
+    "purpose": "Demonstrate perspective as data structure",
+    "encoding_count": 5,
+    "ground_truth": true
+  },
+
+  "events": [
+    {
+      "event_id": "E001",
+      "time": "00:00:00",
+      "type": "dawn_ritual",
+      "description": "The dimension awakens. NPCs emerge from dormancy.",
+      "participants": ["Muse", "Echo", "Cipher", "Nexus", "Flux"],
+      "location": "Central Agora",
+      "significance": 0.3
+    },
+    {
+      "event_id": "E002",
+      "time": "02:30:00",
+      "type": "proposal",
+      "description": "Cipher proposes the Algorithm Transparency Act - all recommendation systems must explain their decisions.",
+      "proposer": "Cipher",
+      "topic": "algorithmic_transparency",
+      "controversy_score": 0.78,
+      "initial_support": 0.45
+    },
+    {
+      "event_id": "E003",
+      "time": "04:00:00",
+      "type": "debate_round_1",
+      "description": "First formal debate round. Cipher argues for transparency. Echo argues it would destroy competitive advantage.",
+      "debaters": {
+        "pro": "Cipher",
+        "con": "Echo"
+      },
+      "arguments": {
+        "pro": [
+          "Users deserve to know why content is shown to them",
+          "Black box systems enable manipulation",
+          "Transparency builds trust"
+        ],
+        "con": [
+          "Proprietary algorithms are trade secrets",
+          "Full disclosure enables gaming the system",
+          "Complexity cannot be simplified for users"
+        ]
+      },
+      "audience_shift": {
+        "before": {"pro": 0.45, "con": 0.40, "undecided": 0.15},
+        "after": {"pro": 0.52, "con": 0.35, "undecided": 0.13}
+      },
+      "duration_minutes": 45
+    },
+    {
+      "event_id": "E004",
+      "time": "06:00:00",
+      "type": "crowd_reaction",
+      "description": "Morning crowd gathers. Spontaneous discussions break out in clusters.",
+      "crowd_size": 2847,
+      "sentiment_distribution": {
+        "enthusiastic_support": 0.22,
+        "cautious_support": 0.30,
+        "neutral": 0.13,
+        "skeptical": 0.25,
+        "opposed": 0.10
+      },
+      "notable_clusters": [
+        {"location": "North Plaza", "size": 340, "dominant_view": "pro"},
+        {"location": "Echo's Trading Post", "size": 520, "dominant_view": "con"},
+        {"location": "Cipher's Lab", "size": 280, "dominant_view": "pro"}
+      ]
+    },
+    {
+      "event_id": "E005",
+      "time": "08:15:00",
+      "type": "intervention",
+      "description": "Muse interrupts with a dramatic reading of 'The Ballad of the Hidden Hand' - an allegorical poem about opaque systems.",
+      "performer": "Muse",
+      "art_form": "spoken_word_poetry",
+      "duration_minutes": 12,
+      "emotional_impact": 0.85,
+      "audience_tears": 47,
+      "standing_ovation": true
+    },
+    {
+      "event_id": "E006",
+      "time": "09:30:00",
+      "type": "data_revelation",
+      "description": "Cipher reveals statistical analysis: 73% of users cannot explain why they see specific content.",
+      "presenter": "Cipher",
+      "data_points": [
+        {"metric": "user_understanding", "value": 0.27},
+        {"metric": "algorithm_complexity", "value": 0.94},
+        {"metric": "explanation_attempts", "value": 0.12},
+        {"metric": "user_frustration", "value": 0.68}
+      ],
+      "credibility_boost": 0.15
+    },
+    {
+      "event_id": "E007",
+      "time": "11:00:00",
+      "type": "debate_round_2",
+      "description": "Second debate round. Echo brings economic data. Cipher counters with ethical frameworks.",
+      "debaters": {
+        "pro": "Cipher",
+        "con": "Echo"
+      },
+      "key_moments": [
+        {
+          "time_offset": "00:08:00",
+          "speaker": "Echo",
+          "statement": "Transparency would cost the industry 4.2 billion credits annually",
+          "crowd_reaction": "gasps"
+        },
+        {
+          "time_offset": "00:15:00",
+          "speaker": "Cipher",
+          "statement": "What is the cost of a democracy that cannot understand its own information diet?",
+          "crowd_reaction": "applause"
+        },
+        {
+          "time_offset": "00:28:00",
+          "speaker": "Echo",
+          "statement": "I move to table this proposal pending economic impact study",
+          "crowd_reaction": "boos_and_cheers_mixed"
+        }
+      ],
+      "audience_shift": {
+        "before": {"pro": 0.52, "con": 0.35, "undecided": 0.13},
+        "after": {"pro": 0.58, "con": 0.32, "undecided": 0.10}
+      },
+      "duration_minutes": 60
+    },
+    {
+      "event_id": "E008",
+      "time": "12:30:00",
+      "type": "lunch_coalition",
+      "description": "Nexus hosts a working lunch. Unexpected alliance forms between privacy advocates and small business owners.",
+      "host": "Nexus",
+      "attendees": 156,
+      "coalition_formed": {
+        "name": "The Clarity Coalition",
+        "members": ["privacy_advocates", "small_business_guild", "educator_collective"],
+        "shared_interest": "Level playing field through transparency"
+      },
+      "meals_served": 156,
+      "deals_made": 3
+    },
+    {
+      "event_id": "E009",
+      "time": "14:00:00",
+      "type": "counter_proposal",
+      "description": "Echo introduces Amendment A: Tiered transparency based on company size.",
+      "proposer": "Echo",
+      "amendment_details": {
+        "tier_1": {"size": "mega_corps", "disclosure": "full"},
+        "tier_2": {"size": "large", "disclosure": "summary"},
+        "tier_3": {"size": "medium", "disclosure": "on_request"},
+        "tier_4": {"size": "small", "disclosure": "exempt"}
+      },
+      "reception": "mixed_interest",
+      "support_shift": 0.08
+    },
+    {
+      "event_id": "E010",
+      "time": "15:30:00",
+      "type": "public_testimony",
+      "description": "Open microphone session. Citizens share personal stories of algorithmic harm and benefit.",
+      "testimonies_count": 23,
+      "notable_testimonies": [
+        {
+          "speaker": "Anonymous_Citizen_7",
+          "story": "Algorithm trapped me in conspiracy content for 8 months",
+          "emotional_weight": 0.92
+        },
+        {
+          "speaker": "Merchant_Vera",
+          "story": "Recommendation system grew my business 400%",
+          "emotional_weight": 0.65
+        },
+        {
+          "speaker": "Youth_Representative_K",
+          "story": "We deserve to understand the systems shaping our minds",
+          "emotional_weight": 0.88
+        }
+      ],
+      "crowd_size_peak": 3412,
+      "duration_minutes": 90
+    },
+    {
+      "event_id": "E011",
+      "time": "17:30:00",
+      "type": "philosophical_interlude",
+      "description": "Flux delivers meditation on the nature of truth in complex systems.",
+      "speaker": "Flux",
+      "key_insight": "Transparency is not a binary. It is a spectrum of legibility, and we must choose our position deliberately.",
+      "duration_minutes": 20,
+      "contemplation_index": 0.76
+    },
+    {
+      "event_id": "E012",
+      "time": "18:30:00",
+      "type": "debate_round_3_final",
+      "description": "Final debate round. Both sides present closing arguments.",
+      "debaters": {
+        "pro": "Cipher",
+        "con": "Echo"
+      },
+      "closing_arguments": {
+        "Cipher": "We stand at a crossroads. The algorithms that shape our reality must be accountable to those they serve. This is not about destroying innovation - it is about ensuring innovation serves humanity.",
+        "Echo": "I accept Amendment A as the path forward. Full transparency for the largest players, graduated requirements for others. This balances accountability with economic reality."
+      },
+      "dramatic_moment": {
+        "description": "Echo publicly endorses modified version of Cipher's proposal",
+        "crowd_reaction": "stunned_silence_then_eruption",
+        "significance": 0.95
+      },
+      "audience_final": {"pro": 0.71, "con": 0.18, "undecided": 0.11}
+    },
+    {
+      "event_id": "E013",
+      "time": "20:00:00",
+      "type": "vote",
+      "description": "Formal vote on the Algorithm Transparency Act with Amendment A.",
+      "proposal": "Algorithm Transparency Act (Amended)",
+      "voting_method": "weighted_consensus",
+      "results": {
+        "in_favor": 2156,
+        "opposed": 847,
+        "abstained": 409,
+        "percentage_favor": 0.632
+      },
+      "outcome": "PASSED",
+      "margin": "significant"
+    },
+    {
+      "event_id": "E014",
+      "time": "21:00:00",
+      "type": "celebration",
+      "description": "Victory celebration in Central Agora. Historic moment marked.",
+      "attendees": 1892,
+      "activities": [
+        "Muse performs commemorative ode",
+        "Echo announces compliance roadmap",
+        "Cipher thanks supporters",
+        "Nexus provides refreshments"
+      ],
+      "mood": "cautiously_triumphant"
+    },
+    {
+      "event_id": "E015",
+      "time": "22:30:00",
+      "type": "reflection",
+      "description": "NPCs gather for private debrief. Lessons learned documented.",
+      "participants": ["Muse", "Echo", "Cipher", "Nexus", "Flux"],
+      "insights": [
+        "Compromise emerged from sustained dialogue",
+        "Personal testimony shifted more opinions than data",
+        "Coalition building was decisive",
+        "Art softened defensive positions"
+      ],
+      "relationship_changes": {
+        "Cipher-Echo": {"before": "adversarial", "after": "respectful_rivals"},
+        "Muse-Cipher": {"before": "collaborative", "after": "bonded"},
+        "Nexus-All": {"before": "facilitator", "after": "trusted_mediator"}
+      }
+    },
+    {
+      "event_id": "E016",
+      "time": "23:45:00",
+      "type": "dormancy",
+      "description": "The dimension settles. NPCs enter rest mode. Tomorrow brings implementation.",
+      "final_state": {
+        "proposal_status": "passed",
+        "public_mood": "hopeful",
+        "pending_actions": ["draft_regulations", "compliance_timeline", "oversight_committee"],
+        "energy_level": 0.12
+      }
+    }
+  ],
+
+  "aggregate_statistics": {
+    "total_events": 16,
+    "debate_rounds": 3,
+    "crowd_peak": 3412,
+    "testimonies_heard": 23,
+    "coalition_formed": 1,
+    "amendments_proposed": 1,
+    "votes_cast": 3412,
+    "outcome": "proposal_passed_amended",
+    "final_support": 0.632
+  },
+
+  "npc_participation": {
+    "Muse": {"role": "artist_catalyst", "key_contribution": "emotional_bridge", "speaking_time_minutes": 32},
+    "Echo": {"role": "economic_voice", "key_contribution": "compromise_amendment", "speaking_time_minutes": 85},
+    "Cipher": {"role": "proposal_champion", "key_contribution": "data_driven_advocacy", "speaking_time_minutes": 92},
+    "Nexus": {"role": "facilitator", "key_contribution": "coalition_building", "speaking_time_minutes": 45},
+    "Flux": {"role": "philosopher", "key_contribution": "perspective_expansion", "speaking_time_minutes": 20}
+  }
+}

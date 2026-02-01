@@ -1,0 +1,210 @@
+{
+  "tick_id": "economic_singularity_crisis_03",
+  "tick_number": 3,
+  "timestamp": "2026-01-31T12:00:00Z",
+  "dimension": "economic_singularity",
+  "title": "Panic Selling Cascade",
+  "narrative": "The market enters full capitulation. Card holders desperately try to exit, but there are no buyers. The bid side of the order book is empty. A death spiral forms: selling pressure crashes prices, which triggers more panic, which creates more selling. The velocity of money approaches zero as everyone holds worthless tokens no one will accept.",
+
+  "economic_state": {
+    "currency": "RAPPCOIN_V1",
+    "total_supply": 24500000,
+    "circulating_supply": 24453500,
+    "staked_supply": 0,
+    "exploit_minted": 24255000,
+    "inflation_rate_24h": 0,
+    "market_cap_usd_equivalent": 245,
+    "velocity": 0.001,
+    "gini_coefficient": 0.99
+  },
+
+  "market_death_spiral": {
+    "phase": "capitulation",
+    "order_book_bid_depth": 0,
+    "order_book_ask_depth": 18500000,
+    "bid_ask_ratio": 0,
+    "last_trade_price": 0.00001,
+    "volume_24h": 12,
+    "failed_sell_orders": 45892,
+    "spiral_mechanics": {
+      "step_1": "Exploit news spreads",
+      "step_2": "Early sellers get out at 0.05",
+      "step_3": "Liquidity exhausted",
+      "step_4": "Price gaps down to 0.001",
+      "step_5": "No bids remain",
+      "step_6": "Effective price: undefined (no market)",
+      "step_7": "Holders trapped with worthless tokens"
+    }
+  },
+
+  "price_metrics": {
+    "rappcoin_baseline_value": 0.00001,
+    "rappcoin_value_change_percent": -99.99,
+    "card_floor_price": 0.0,
+    "card_ceiling_price": 0.0,
+    "liquidity_depth": 0,
+    "bid_ask_spread": "infinite",
+    "market_status": "no_bid"
+  },
+
+  "trust_metrics": {
+    "system_trust_index": 0.02,
+    "holder_confidence": 0.01,
+    "new_participant_rate": 0.0,
+    "exit_rate": 0.0,
+    "exit_rate_note": "Cannot exit - no buyers",
+    "panic_index": 1.0,
+    "despair_index": 0.94
+  },
+
+  "wealth_distribution": {
+    "top_1_percent_holdings": 0.99,
+    "real_wealth_all_holders": "~0",
+    "paper_losses_usd": 24255,
+    "unrealized_loss_percent": 99.99,
+    "wealth_destruction_note": "All holders effectively at zero"
+  },
+
+  "psychological_phases": {
+    "denial": {
+      "percent_of_holders": 5,
+      "behavior": "Refusing to check portfolio"
+    },
+    "anger": {
+      "percent_of_holders": 35,
+      "behavior": "Demanding refunds, threatening legal action"
+    },
+    "bargaining": {
+      "percent_of_holders": 25,
+      "behavior": "Proposing bailouts, rollbacks"
+    },
+    "depression": {
+      "percent_of_holders": 30,
+      "behavior": "Silent, inactive, processing loss"
+    },
+    "acceptance": {
+      "percent_of_holders": 5,
+      "behavior": "Already planning next steps"
+    }
+  },
+
+  "actors": {
+    "zeromint": {
+      "type": "exploiter",
+      "status": "dormant",
+      "holdings": 24255000,
+      "holdings_value": 242.55,
+      "irony": "Stole everything, owns nothing of value"
+    },
+    "echo": {
+      "type": "oracle_npc",
+      "status": "observing_collapse",
+      "observation": "I have witnessed the death of a monetary system in real-time. The math is absolute: when trust reaches zero, value follows. But observe - the community still exists. The cards still exist. Only the numbers have changed. Perhaps the numbers were always the illusion.",
+      "proposal_incoming": true
+    },
+    "trapped_holders": {
+      "count": 489,
+      "total_holdings": 198500,
+      "holdings_value": 1.98,
+      "average_loss_percent": 99.99,
+      "status": "cannot_exit"
+    }
+  },
+
+  "events": [
+    {
+      "event_id": "evt_006",
+      "type": "liquidity_exhaustion",
+      "timestamp": "2026-01-31T07:00:00Z",
+      "description": "Last market maker exits with final 500 RAPPCOIN liquidity"
+    },
+    {
+      "event_id": "evt_007",
+      "type": "order_book_death",
+      "timestamp": "2026-01-31T08:30:00Z",
+      "description": "Bid side reaches zero - no buyers at any price"
+    },
+    {
+      "event_id": "evt_008",
+      "type": "staking_exodus",
+      "timestamp": "2026-01-31T09:00:00Z",
+      "description": "All 46,500 staked RAPPCOIN unstaked in panic"
+    },
+    {
+      "event_id": "evt_009",
+      "type": "community_crisis",
+      "timestamp": "2026-01-31T10:00:00Z",
+      "description": "Main community channel flooded with anger, grief, blame"
+    },
+    {
+      "event_id": "evt_010",
+      "type": "first_lawsuit_threat",
+      "timestamp": "2026-01-31T11:00:00Z",
+      "description": "Holder threatens legal action against 'whoever is responsible'"
+    }
+  ],
+
+  "cards_affected": [
+    {
+      "card_id": "legendary_genesis_001",
+      "original_value": 2500,
+      "current_value": 0,
+      "status": "worthless",
+      "note": "First ever minted card, now worth nothing"
+    },
+    {
+      "card_id": "rare_echo_prophecy",
+      "original_value": 800,
+      "current_value": 0,
+      "status": "worthless"
+    },
+    {
+      "card_id": "common_collection",
+      "count": 15000,
+      "original_total_value": 225000,
+      "current_total_value": 0,
+      "status": "worthless"
+    }
+  ],
+
+  "faction_states": {
+    "establishment": {
+      "members": 156,
+      "treasury_nominal": 28500,
+      "treasury_real_value": 0,
+      "stance": "emergency_session_ongoing",
+      "internal_conflict": "Blame game between security and governance teams"
+    },
+    "defi_degens": {
+      "members": 45,
+      "members_lost": 44,
+      "treasury_nominal": 12400,
+      "treasury_real_value": 0,
+      "stance": "fragmented",
+      "note": "Half celebrated shorts, half got rekt. Faction splitting."
+    },
+    "collectors_guild": {
+      "members": 234,
+      "treasury_nominal": 8900,
+      "treasury_real_value": 0,
+      "stance": "mourning",
+      "statement": "Years of collecting. Gone in hours."
+    }
+  },
+
+  "system_state": {
+    "transactions_24h": 12,
+    "active_users_24h": 23,
+    "governance_proposals_pending": 0,
+    "governance_status": "paralyzed",
+    "smart_contract_status": "exploit_patched_but_damage_done"
+  },
+
+  "meta": {
+    "complexity_index": 0.99,
+    "volatility_forecast_24h": 0.10,
+    "volatility_note": "Cannot be volatile when no trades occur",
+    "system_health": "dead",
+    "next_tick_trigger": "echo_emergency_proposal"
+  }
+}

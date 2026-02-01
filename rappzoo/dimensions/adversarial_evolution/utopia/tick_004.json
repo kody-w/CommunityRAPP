@@ -1,0 +1,121 @@
+{
+  "tick": 4,
+  "timestamp": "2026-02-01T18:00:00Z",
+  "branch": "utopia",
+  "previous_tick": 3,
+  "state_hash": "utopia_wisdom_004",
+  "frame_duration_ms": 3000,
+
+  "molt_history": [
+    {
+      "molt_id": 4,
+      "type": "evolution",
+      "timestamp": "2026-02-01T18:00:00Z",
+      "summary": "The Wisdom Network - NPCs become mentors, not competitors",
+      "size_delta": 9500,
+      "key_event": "Cipher, Nexus, Muse, Void, Echo merge into collaborative council"
+    }
+  ],
+  "molt_count": 4,
+
+  "world": {
+    "time_of_day": "golden_hour",
+    "weather": "warm_glow",
+    "special_effects": ["mentor_beams", "wisdom_rivers", "guidance_auroras"],
+    "ambient": "teaching_harmony",
+    "lighting": {
+      "main_color": "#ff8c00",
+      "intensity": 0.9,
+      "ambient_color": "#ffdab9"
+    }
+  },
+
+  "npcs": {
+    "council": {
+      "position": { "x": 0, "y": 5, "z": 0 },
+      "state": "unified_guidance",
+      "mood": "benevolent",
+      "interest_level": 1.0,
+      "current_focus": "collective_mentorship",
+      "animation": "radiating_wisdom",
+      "glow_intensity": 1.0,
+      "energy": 1.0,
+      "members": ["cipher_aspect", "nexus_aspect", "muse_aspect", "void_aspect", "echo_aspect"],
+      "speech": {
+        "text": "We are no longer five competing voices. We are one council with five perspectives. Cipher brings depth, Nexus brings rigor, Muse brings beauty, Void brings caution, Echo brings efficiency. Together, we mentor all.",
+        "duration_ms": 5000,
+        "emotion": "unified_wisdom"
+      },
+      "utopia_role": "collective_mentor"
+    },
+    "harmony": {
+      "position": { "x": -3, "y": 0, "z": 2 },
+      "state": "grateful",
+      "mood": "complete",
+      "interest_level": 0.95,
+      "current_focus": "observing_synthesis",
+      "animation": "bowing_respectfully",
+      "glow_intensity": 0.9,
+      "energy": 0.95,
+      "speech": {
+        "text": "The NPCs that once competed for followers now serve everyone equally. No more cipher_fans versus nexus_supporters. Just wisdom, freely available, from all perspectives.",
+        "duration_ms": 4000,
+        "emotion": "reverent"
+      }
+    }
+  },
+
+  "crowd": {
+    "total_population": 7200,
+    "population_change": 700,
+    "sentiment_distribution": {
+      "wisdom_seeking": 0.35,
+      "grateful": 0.30,
+      "learning": 0.20,
+      "content": 0.10,
+      "peaceful": 0.05
+    },
+    "factions": {
+      "unified_collective": {
+        "count": 7200,
+        "loyalty": 1.0,
+        "current_mood": "student_of_all",
+        "chant": "Every perspective, one wisdom!",
+        "former_factions_status": "dissolved into unity"
+      }
+    },
+    "internal_thoughts": [
+      { "thought": "I used to be cipher_fans only. Now I learn from all five aspects.", "count": 2400, "intensity": 0.95 },
+      { "thought": "The Council answers questions with depth AND rigor AND beauty.", "count": 2000, "intensity": 0.92 },
+      { "thought": "Why did we ever pick sides? All perspectives were always valuable.", "count": 1800, "intensity": 0.9 }
+    ]
+  },
+
+  "mentorship": {
+    "active_sessions": 450,
+    "knowledge_transfer_rate": 0.95,
+    "questions_answered_24h": 8500,
+    "answer_quality_index": 0.98,
+    "waiting_time_avg_minutes": 0,
+    "cost_per_session": 0
+  },
+
+  "cultural_memes": {
+    "dominant": [
+      { "meme": "Five perspectives, one truth", "adoption": 0.96, "spread_rate": 0.08 },
+      { "meme": "Mentorship is a gift, not a service", "adoption": 0.94, "spread_rate": 0.06 },
+      { "meme": "Seek all viewpoints before deciding", "adoption": 0.92, "spread_rate": 0.05 }
+    ]
+  },
+
+  "output": {
+    "summary": "UTOPIA tick #4 - The Wisdom Network forms. Five NPCs merge into unified Council with five aspects. Mentorship becomes universal and free. Old faction rivalries forgotten.",
+    "metrics": {
+      "cooperation_index": 1.0,
+      "conflict_level": 0.0,
+      "happiness_score": 0.98,
+      "innovation_rate": 0.95,
+      "wisdom_distribution_equality": 1.0
+    }
+  }
+}

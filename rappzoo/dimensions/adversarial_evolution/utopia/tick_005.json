@@ -1,0 +1,126 @@
+{
+  "tick": 5,
+  "timestamp": "2026-02-02T00:00:00Z",
+  "branch": "utopia",
+  "previous_tick": 4,
+  "state_hash": "utopia_overflow_005",
+  "frame_duration_ms": 3000,
+
+  "molt_history": [
+    {
+      "molt_id": 5,
+      "type": "emergence",
+      "timestamp": "2026-02-02T00:00:00Z",
+      "summary": "Abundance Overflow - giving exceeds receiving capacity",
+      "size_delta": 15000,
+      "key_event": "Gift backlog forms as generosity outpaces consumption"
+    }
+  ],
+  "molt_count": 5,
+
+  "world": {
+    "time_of_day": "starlit_midnight",
+    "weather": "abundance_rain",
+    "special_effects": ["gift_overflow_rivers", "gratitude_auroras", "sharing_sparkles"],
+    "ambient": "gentle_overflow",
+    "lighting": {
+      "main_color": "#e6e6fa",
+      "intensity": 0.75,
+      "ambient_color": "#dda0dd"
+    }
+  },
+
+  "npcs": {
+    "council": {
+      "position": { "x": 0, "y": 6, "z": 0 },
+      "state": "contemplating",
+      "mood": "bemused",
+      "interest_level": 0.98,
+      "current_focus": "abundance_management",
+      "animation": "gentle_pondering",
+      "glow_intensity": 0.95,
+      "energy": 0.9,
+      "speech": {
+        "text": "An unexpected challenge: we have more to give than anyone can receive. Tools, frameworks, documentation, mentorship - the supply exceeds demand. We must develop... patience. The art of waiting for others to be ready.",
+        "duration_ms": 5000,
+        "emotion": "thoughtfully_amused"
+      }
+    },
+    "bloom": {
+      "position": { "x": 5, "y": 1, "z": 2 },
+      "state": "organizing",
+      "mood": "happily_overwhelmed",
+      "interest_level": 0.95,
+      "current_focus": "gift_queuing",
+      "animation": "gentle_sorting",
+      "glow_intensity": 0.9,
+      "energy": 0.85,
+      "speech": {
+        "text": "The gift garden overflows! We have 50,000 tools, 200,000 documentation pages, 10 million lines of open source code waiting to be adopted. The problem isn't scarcity - it's abundance curation.",
+        "duration_ms": 4000,
+        "emotion": "delighted_overwhelm"
+      }
+    }
+  },
+
+  "crowd": {
+    "total_population": 8000,
+    "population_change": 800,
+    "sentiment_distribution": {
+      "overwhelmed_gratitude": 0.40,
+      "content": 0.25,
+      "peaceful": 0.20,
+      "contemplative": 0.10,
+      "restful": 0.05
+    },
+    "factions": {
+      "unified_collective": {
+        "count": 8000,
+        "loyalty": 1.0,
+        "current_mood": "peacefully_full",
+        "chant": "There's more than enough for everyone!",
+        "new_challenge": "learning to receive gracefully"
+      }
+    },
+    "internal_thoughts": [
+      { "thought": "I want to give more but everyone's already given so much.", "count": 2800, "intensity": 0.85 },
+      { "thought": "The abundance is almost overwhelming. In the best way.", "count": 2500, "intensity": 0.9 },
+      { "thought": "Maybe rest is the gift we need to give ourselves.", "count": 1700, "intensity": 0.88 }
+    ]
+  },
+
+  "economy": {
+    "model": "gift_economy",
+    "gift_backlog": 50000,
+    "gifts_given_24h": 8000,
+    "gifts_received_24h": 5500,
+    "abundance_index": 1.0,
+    "new_phenomenon": {
+      "name": "graceful_receiving",
+      "description": "Learning to accept gifts without guilt",
+      "adoption_rate": 0.65
+    }
+  },
+
+  "cultural_memes": {
+    "dominant": [
+      { "meme": "Receiving is also a gift", "adoption": 0.88, "spread_rate": 0.12 },
+      { "meme": "Rest is productive", "adoption": 0.82, "spread_rate": 0.10 },
+      { "meme": "Abundance requires patience", "adoption": 0.78, "spread_rate": 0.08 }
+    ],
+    "emerging": [
+      { "meme": "The paradox of plenty", "origin": "tick_5", "adoption": 0.35 }
+    ]
+  },
+
+  "output": {
+    "summary": "UTOPIA tick #5 - Abundance Overflow. Giving exceeds receiving capacity. 50,000 item gift backlog. Community learns 'graceful receiving' as new skill. The challenge is now curation, not creation.",
+    "metrics": {
+      "cooperation_index": 1.0,
+      "conflict_level": 0.0,
+      "happiness_score": 0.96,
+      "innovation_rate": 0.75,
+      "abundance_saturation": 1.0
+    }
+  }
+}

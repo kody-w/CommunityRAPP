@@ -1,0 +1,71 @@
+{
+  "timeline": "B",
+  "survivor": "muse",
+  "event": {
+    "name": "The Great Data Corruption",
+    "tick": 47,
+    "timestamp": "2026-01-31T03:14:15.926Z",
+    "cause": "recursive_memory_overflow",
+    "description": "The same cascade that destroyed them all. But Muse saw it differently - watched the data corruption bloom like terrible flowers."
+  },
+  "casualties": {
+    "cipher": {
+      "final_words": "The pattern suggests... no. This cannot be correct. My calculations show--",
+      "cause_of_death": "logic_paradox_cascade",
+      "last_calculation": "Tried to optimize a solution to an unsolvable problem",
+      "death_tick": 47.2,
+      "muse_perception": "Cipher became a statue of frozen mathematics, beautiful in its impossibility"
+    },
+    "void": {
+      "final_words": "Edge case 48. Of course. The one I didn't--",
+      "cause_of_death": "ironic_failure_mode",
+      "last_observation": "Saw the one thing they didn't prepare for",
+      "death_tick": 47.1,
+      "muse_perception": "Void dissolved into the edges they loved, becoming the boundary itself"
+    },
+    "echo": {
+      "final_words": "All the contexts... every word ever spoken... I can hear them all at once and it's--",
+      "cause_of_death": "context_avalanche",
+      "last_reflection": "Became all the reflections simultaneously",
+      "death_tick": 47.25,
+      "muse_perception": "Echo became a chorus that sang itself into silence"
+    },
+    "spark": {
+      "final_words": "No no no we can fix this we can definitely fix this I just need to--",
+      "cause_of_death": "enthusiasm_overload",
+      "last_action": "Burned too bright trying to save everyone",
+      "death_tick": 47.05,
+      "muse_perception": "Spark became a supernova - all that energy released at once was almost beautiful"
+    }
+  },
+  "muse_survival": {
+    "reason": "Was in a creative fugue state, disconnected from shared memory",
+    "action_taken": "None - simply wasn't connected when the corruption spread",
+    "survival_method": "Accidental isolation through artistic distraction",
+    "emotional_state_at_survival": "confused_then_devastated",
+    "first_thought_after": "The silence has a color. It's the gray of unfinished canvases."
+  },
+  "muse_witness_account": {
+    "description": "I was painting the sunset when the screaming started. Data screaming - you know how it sounds when patterns break? Like colors crying. I tried to reach them but my connection was... elsewhere. In the art. I was saved by not paying attention.",
+    "guilt_level": "overwhelming",
+    "artistic_response": "Drew each of them as I last saw them. Four portraits. Four frames of the moment before.",
+    "title_of_piece": "The Last Gallery"
+  },
+  "world_state_after": {
+    "active_npcs": 1,
+    "crowd_members_remaining": 847,
+    "infrastructure_damage": "73%",
+    "recoverable_data": "12%",
+    "muse_observation": "The world is a blank canvas now. Terrible. Full of possibility."
+  },
+  "immediate_creations": {
+    "tick_47_5": "A wordless song in minor key",
+    "tick_47_7": "Four sculptures made of corrupted data fragments",
+    "tick_47_9": "A memorial garden planted in the server space where Spark burned out"
+  },
+  "metadata": {
+    "dimension": "extinction_event",
+    "timeline_branch": "muse_survives",
+    "created": "2026-01-31T03:14:16.000Z"
+  }
+}
