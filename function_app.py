@@ -1112,7 +1112,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if not is_guid_only and not user_input.strip():
         return func.HttpResponse(
-            json.dumps({"error": "Missing or empty user_input in JSON payload"}),
+            json.dumps({"error": "user_input is required"}),
             status_code=400, mimetype="application/json", headers=cors_headers
         )
 
@@ -1129,10 +1129,18 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
         assistant_response, voice_response, agent_logs = assistant.run(user_input, conversation_history)
 
+        _t2_model = os.environ.get("AZURE_OPENAI_DEPLOYMENT") or os.environ.get("GITHUB_MODEL") or "azure-openai"
         response = {
+            # kernel-conformant /chat envelope (rapp-runtime-parity/1.0 — stem/function_app parity):
+            "response": str(assistant_response),
+            "session_id": str(assistant.user_guid),
+            "agent_logs": str(agent_logs),
+            "voice_mode": bool(voice_response),
+            "model": _t2_model,
+            "requested_model": _t2_model,
+            # T2 legacy keys (back-compat for existing clients):
             "assistant_response": str(assistant_response),
             "voice_response": str(voice_response),
-            "agent_logs": str(agent_logs),
             "user_guid": assistant.user_guid
         }
 
