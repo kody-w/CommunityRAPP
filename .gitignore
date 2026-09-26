@@ -52,5 +52,6 @@ deployment/
 
 # ----- Session Data -----
 .claude/hooks/*.log
-.rapp/
+.rapp/*
+!.rapp/member.md
 .vault/
