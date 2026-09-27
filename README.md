@@ -1,5 +1,9 @@
 # RAPP Hippocampus
 
+<!-- rapp1:network-header:start -->
+[![RAPP/1](https://kody-w.github.io/rapp-hive-public/portfolio/badges/CommunityRAPP.svg)](https://github.com/kody-w/rapp-hive-public/blob/main/portfolio/repos/CommunityRAPP.md) · **New to RAPP?** [Start here: get your Brainstem →](https://github.com/kody-w/rapp-installer#start-here)
+<!-- rapp1:network-header:end -->
+
 The memory center for your AI agents. Built on Azure Functions — local-first, deploy to Azure when ready.
 
 [Get Started](https://kody-w.github.io/CommunityRAPP/onboard.html) | [Chat UI](https://kody-w.github.io/CommunityRAPP/) | [Docs](https://kody-w.github.io/CommunityRAPP/docs/) | [Hatchery Flow](https://kody-w.github.io/CommunityRAPP/docs/hatchery-flow.html) | [Issues](https://github.com/kody-w/CommunityRAPP/issues)
