@@ -180,6 +180,20 @@ Send a `user_guid` in the request body to scope memories to a specific user. Wit
 
 Health check. Anonymous auth. Returns component status for OpenAI, agents, and storage.
 
+### `POST /api/chat`
+
+Grail-compatible Brainstem endpoint. Requires a function key (or runs anonymously locally), like the legacy endpoint.
+
+```json
+{
+  "user_input": "What do you know about me?",
+  "conversation_history": [],
+  "session_id": "optional-session-id"
+}
+```
+
+Returns `response`, `session_id`, `agent_logs`, `voice_mode`, `model`, and `requested_model`. Tool calls run for at most three rounds before a final tool-less completion.
+
 ### `POST /api/businessinsightbot_function`
 
 Main conversation endpoint. Requires a function key (or runs anonymously locally).
