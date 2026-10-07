@@ -74,6 +74,10 @@ Grail-compatible Brainstem conversation endpoint. Requires a function key, like 
 
 The runtime executes every tool call in each model reply, allows at most three tool rounds, then requests one final completion without tools. Validation failures return the same 400 JSON errors as the reference Brainstem.
 
+Conformance is defined once in `kody-w/rapp-1/conformance/grail`. CommunityRAPP
+keeps only `tests/grail_adapter.py`; CI reads the shared-suite commit from
+`grail-suite.json` and the Grail oracle commit from the suite's `kernel.json`.
+
 ### POST /businessinsightbot_function
 
 Send a message to the AI assistant and receive a response.

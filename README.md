@@ -194,6 +194,12 @@ Grail-compatible Brainstem endpoint. Requires a function key (or runs anonymousl
 
 Returns `response`, `session_id`, `agent_logs`, `voice_mode`, `model`, and `requested_model`. Tool calls run for at most three rounds before a final tool-less completion.
 
+The endpoint is checked by the 25-scenario shared suite in
+`kody-w/rapp-1/conformance/grail`. This repository keeps only the in-process
+candidate adapter in `tests/grail_adapter.py`; `grail-suite.json` is the one
+pin CI uses to check out that suite, whose `kernel.json` supplies the Grail
+oracle commit.
+
 ### `POST /api/businessinsightbot_function`
 
 Main conversation endpoint. Requires a function key (or runs anonymously locally).
