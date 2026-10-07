@@ -41,6 +41,39 @@ curl -X POST https://your-app.azurewebsites.net/api/businessinsightbot_function 
 
 ## Endpoints
 
+### POST /chat
+
+Grail-compatible Brainstem conversation endpoint. Requires a function key, like the legacy endpoint (Tier 2 is public and every call spends model tokens).
+
+#### Request
+
+```json
+{
+  "user_input": "string (required)",
+  "conversation_history": [
+    {"role": "user", "content": "Earlier message"}
+  ],
+  "session_id": "string (optional)"
+}
+```
+
+`conversation_history` must be an array of objects whose `role` is `user`, `assistant`, or `tool` and whose `content` is a string. Whitespace is trimmed from `user_input`.
+
+#### Response
+
+```json
+{
+  "response": "string",
+  "session_id": "string",
+  "agent_logs": "string",
+  "voice_mode": false,
+  "model": "gpt-4o",
+  "requested_model": "gpt-4o"
+}
+```
+
+The runtime executes every tool call in each model reply, allows at most three tool rounds, then requests one final completion without tools. Validation failures return the same 400 JSON errors as the reference Brainstem.
+
 ### POST /businessinsightbot_function
 
 Send a message to the AI assistant and receive a response.

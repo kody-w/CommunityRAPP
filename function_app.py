@@ -8,6 +8,8 @@ memory contexts.
 
 Endpoints:
     GET  /api/health                        — Health check (anonymous)
+    GET  /api/version                       — Runtime version (anonymous)
+    POST /api/chat                          — Grail-compatible conversation endpoint
     POST /api/businessinsightbot_function   — Main conversation endpoint
     POST /api/trigger/copilot-studio        — Direct agent invocation from Copilot Studio
 """
@@ -20,6 +22,7 @@ import importlib.util
 import inspect
 import sys
 import re
+import uuid
 from agents.basic_agent import BasicAgent
 from openai import AzureOpenAI, OpenAI, APIError as OpenAIAPIError, RateLimitError, AuthenticationError, APITimeoutError, BadRequestError
 from azure.identity import (
@@ -35,7 +38,6 @@ from utils.copilot_auth import (
 from datetime import datetime
 import time
 import threading
-from utils.azure_file_storage import safe_json_loads
 from utils.storage_factory import get_storage_manager
 from utils.result import Result, Success, Failure, AgentLoadError, APIError
 
@@ -55,6 +57,12 @@ from utils.result import Result, Success, Failure, AgentLoadError, APIError
 #   3. UUID parsing libraries reject it, surfacing issues early
 #   4. Memory isolation: storage managers route to shared memory
 DEFAULT_USER_GUID = "c0p110t0-aaaa-bbbb-cccc-123456789abc"
+APP_VERSION = "1.0.0"
+MAX_TOOL_ROUNDS = 3
+TOOL_ROUND_FALLBACK = (
+    "I couldn't finish that within the available tool steps. "
+    "Try rephrasing, or breaking it into smaller steps."
+)
 
 # Singleton OpenAI client - created once, reused across requests
 _openai_client = None
@@ -454,6 +462,8 @@ class Assistant:
         self.user_guid = DEFAULT_USER_GUID
         self.shared_memory = None
         self.user_memory = None
+        self.requested_model = self._get_requested_model()
+        self.responded_model = self.requested_model
         self.storage_manager = get_storage_manager()
         self._initialize_context_memory(DEFAULT_USER_GUID)
 
@@ -563,16 +573,21 @@ class Assistant:
                     functions.append(agent.metadata)
             return functions
 
-    def _prepare_messages(self, conversation_history):
+    def _prepare_messages(
+        self,
+        conversation_history,
+        *,
+        voice_mode=True,
+        skip_guid_message=True,
+        trim_history=True
+    ):
         """Build system prompt + conversation history with memory context."""
         if not isinstance(conversation_history, list):
             conversation_history = []
 
         messages = []
 
-        system_message = {
-            "role": "system",
-            "content": f"""
+        system_content = f"""
 <identity>
 You are a Microsoft Copilot assistant named {str(self.config.get('assistant_name', 'Assistant'))}, operating within Microsoft Teams.
 </identity>
@@ -640,15 +655,28 @@ Here's the detailed analysis you requested:
 Revenue's up 12 percent and customers are happier - looking good for Q3.
 </response_format>
 """
+        if not voice_mode:
+            system_content = re.sub(
+                r"\n<response_format>.*?</response_format>\n?",
+                "\n",
+                system_content,
+                flags=re.DOTALL
+            )
+
+        system_message = {
+            "role": "system",
+            "content": system_content
         }
         messages.append(ensure_string_content(system_message))
 
-        guid_only_first_message = self._check_first_message_for_guid(conversation_history)
+        guid_only_first_message = (
+            self._check_first_message_for_guid(conversation_history)
+            if skip_guid_message else None
+        )
         start_idx = 1 if guid_only_first_message else 0
 
-        # Trim conversation history to last 20 messages
         trimmed_history = conversation_history[start_idx:]
-        if len(trimmed_history) > 20:
+        if trim_history and len(trimmed_history) > 20:
             trimmed_history = trimmed_history[-20:]
 
         for msg in trimmed_history:
@@ -657,38 +685,44 @@ Revenue's up 12 percent and customers are happier - looking good for Q3.
         return messages
 
     def _execute_agent(self, agent_name, json_data):
-        """Run an agent by name with parameters. Returns (result_str, error_str)."""
+        """Run one tool call and return its result plus the grail-format log line."""
+        try:
+            agent_parameters = json.loads(json_data)
+        except (TypeError, json.JSONDecodeError):
+            agent_parameters = None
+
+        if not isinstance(agent_parameters, dict):
+            result = "Error: Tool arguments must be a valid JSON object."
+            return result, f"[{agent_name}] {result}"
+
         agent = self.known_agents.get(agent_name)
         if not agent:
-            return None, f"Agent '{agent_name}' does not exist"
+            result = f"Agent '{agent_name}' not found."
+            return result, result
 
         try:
-            agent_parameters = safe_json_loads(json_data)
-
-            sanitized_parameters = {}
-            for key, value in agent_parameters.items():
-                sanitized_parameters[key] = "" if value is None else value
-
             if agent_name in ['ManageMemory', 'ContextMemory']:
-                sanitized_parameters['user_guid'] = self.user_guid
+                agent_parameters['user_guid'] = self.user_guid
 
-            result = agent.perform(**sanitized_parameters)
-            result = str(result) if result is not None else "Agent completed successfully"
-            return result, None
+            result = str(agent.perform(**agent_parameters))
+            return result, f"[{agent_name}] {result}"
 
         except Exception as e:
-            return None, f"Error executing agent: {str(e)}"
+            result = f"Error: {e}"
+            return result, f"[{agent_name}] ERROR: {e}"
 
-    def _get_openai_api_call(self, messages) -> Result:
-        """Make OpenAI API call with typed error handling."""
+    def _get_requested_model(self):
         if _llm_backend == "copilot" and _copilot_model:
-            deployment_name = _copilot_model
-        else:
-            deployment_name = os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME', 'gpt-deployment')
+            return _copilot_model
+        return os.environ.get('AZURE_OPENAI_DEPLOYMENT_NAME', 'gpt-deployment')
+
+    def _get_openai_api_call(self, messages, include_tools=True) -> Result:
+        """Make OpenAI API call with typed error handling."""
+        deployment_name = self._get_requested_model()
         use_tools = self._uses_tools_api()
 
         try:
-            if use_tools:
+            if use_tools and include_tools:
                 tools = self._get_tools_list()
                 if tools:
                     response = self.client.chat.completions.create(
@@ -699,7 +733,7 @@ Revenue's up 12 percent and customers are happier - looking good for Q3.
                     response = self.client.chat.completions.create(
                         model=deployment_name, messages=messages
                     )
-            else:
+            elif include_tools:
                 functions = self._get_tools_list()
                 if functions:
                     response = self.client.chat.completions.create(
@@ -710,6 +744,10 @@ Revenue's up 12 percent and customers are happier - looking good for Q3.
                     response = self.client.chat.completions.create(
                         model=deployment_name, messages=messages
                     )
+            else:
+                response = self.client.chat.completions.create(
+                    model=deployment_name, messages=messages
+                )
             return Success(response)
 
         except RateLimitError as e:
@@ -733,6 +771,40 @@ Revenue's up 12 percent and customers are happier - looking good for Q3.
             logging.error(f"Unexpected error in OpenAI API call: {e}")
             return Failure(APIError('unknown', str(e), None, retryable=False))
 
+    def _call_model(self, messages, include_tools, max_retries, retry_delay):
+        """Call the model, retrying only retryable transport/provider failures."""
+        api_result = None
+        for retry_count in range(max_retries):
+            api_result = self._get_openai_api_call(
+                messages,
+                include_tools=include_tools
+            )
+            if api_result.is_success or not api_result.error.retryable:
+                return api_result
+            if retry_count + 1 < max_retries:
+                logging.warning(
+                    "Retryable API error (%s/%s): %s",
+                    retry_count + 1,
+                    max_retries,
+                    api_result.error
+                )
+                time.sleep(retry_delay)
+        return api_result
+
+    def _format_model_response(self, content, voice_mode, parse_voice):
+        if voice_mode and parse_voice:
+            return self._parse_response_with_voice(content)
+        return content or "", ""
+
+    def _api_failure_response(self, error):
+        logging.error(f"API call failed: {error}")
+        error_msg = f"I encountered an error: {error.error_type}"
+        if error.error_type == 'rate_limit':
+            error_msg = "I'm experiencing high demand right now. Please try again in a moment."
+        elif error.error_type == 'auth':
+            error_msg = "There's an authentication issue. Please contact support."
+        return error_msg, "Something went wrong - try again.", ""
+
     def _parse_response_with_voice(self, content):
         """Parse the response to extract formatted and voice parts."""
         if not content:
@@ -755,7 +827,19 @@ Revenue's up 12 percent and customers are happier - looking good for Q3.
 
         return formatted_response, voice_response
 
-    def run(self, prompt, conversation_history, max_retries=3, retry_delay=2):
+    def run(
+        self,
+        prompt,
+        conversation_history,
+        max_retries=3,
+        retry_delay=2,
+        *,
+        voice_mode=True,
+        parse_voice=True,
+        manage_guid=True,
+        trim_history=True,
+        always_append_prompt=False
+    ):
         """Main conversation loop: call OpenAI → execute agents → return response."""
         # If no LLM, try to refresh client (device code may have completed)
         if self.client is None:
@@ -765,151 +849,177 @@ Revenue's up 12 percent and customers are happier - looking good for Q3.
         if self.client is None:
             auth_msg = _get_auth_message()
             if auth_msg:
+                if not (voice_mode and parse_voice):
+                    return auth_msg, "", ""
                 parts = auth_msg.split("|||VOICE|||")
                 formatted = parts[0].strip()
                 voice = parts[1].strip() if len(parts) > 1 else "Please authenticate to enable AI responses."
                 return formatted, voice, ""
 
-        guid_from_history = self._check_first_message_for_guid(conversation_history)
-        guid_from_prompt = self.extract_user_guid(prompt)
-        target_guid = guid_from_history or guid_from_prompt
-
-        if target_guid and target_guid != self.user_guid:
-            self.user_guid = target_guid
-            self._initialize_context_memory(self.user_guid)
-            logging.info(f"User GUID updated to: {self.user_guid}")
-        elif not self.user_guid:
-            self.user_guid = DEFAULT_USER_GUID
-            self._initialize_context_memory(self.user_guid)
-            logging.info(f"Using default User GUID: {self.user_guid}")
-
         prompt = str(prompt) if prompt is not None else ""
+        guid_from_prompt = None
 
-        if guid_from_prompt and prompt.strip() == guid_from_prompt and self.user_guid == guid_from_prompt:
-            return (
-                "I've successfully loaded your conversation memory. How can I assist you today?",
-                "I've loaded your memory - what can I help you with?",
-                ""
-            )
+        if manage_guid:
+            guid_from_history = self._check_first_message_for_guid(conversation_history)
+            guid_from_prompt = self.extract_user_guid(prompt)
+            target_guid = guid_from_history or guid_from_prompt
 
-        messages = self._prepare_messages(conversation_history)
+            if target_guid and target_guid != self.user_guid:
+                self.user_guid = target_guid
+                self._initialize_context_memory(self.user_guid)
+                logging.info(f"User GUID updated to: {self.user_guid}")
+            elif not self.user_guid:
+                self.user_guid = DEFAULT_USER_GUID
+                self._initialize_context_memory(self.user_guid)
+                logging.info(f"Using default User GUID: {self.user_guid}")
+
+            if guid_from_prompt and prompt.strip() == guid_from_prompt and self.user_guid == guid_from_prompt:
+                return (
+                    "I've successfully loaded your conversation memory. How can I assist you today?",
+                    "I've loaded your memory - what can I help you with?",
+                    ""
+                )
+
+        messages = self._prepare_messages(
+            conversation_history,
+            voice_mode=voice_mode,
+            skip_guid_message=manage_guid,
+            trim_history=trim_history
+        )
 
         last_user_msg = None
-        for msg in reversed(conversation_history):
-            if msg.get('role') == 'user':
-                last_user_msg = str(msg.get('content', '')).strip()
-                break
+        if not always_append_prompt:
+            for msg in reversed(conversation_history):
+                if msg.get('role') == 'user':
+                    last_user_msg = str(msg.get('content', '')).strip()
+                    break
 
-        if last_user_msg != prompt.strip():
+        if always_append_prompt or last_user_msg != prompt.strip():
             messages.append(ensure_string_content({"role": "user", "content": prompt}))
 
         agent_logs = []
-        retry_count = 0
         use_tools_api = self._uses_tools_api()
+        self.requested_model = self._get_requested_model()
+        self.responded_model = self.requested_model
 
-        while retry_count < max_retries:
-            api_result = self._get_openai_api_call(messages)
-
+        for _ in range(MAX_TOOL_ROUNDS):
+            api_result = self._call_model(
+                messages,
+                include_tools=True,
+                max_retries=max_retries,
+                retry_delay=retry_delay
+            )
             if api_result.is_failure:
-                error = api_result.error
-                retry_count += 1
-                if error.retryable and retry_count < max_retries:
-                    logging.warning(f"Retryable API error ({retry_count}/{max_retries}): {error}")
-                    time.sleep(retry_delay)
-                    continue
-                else:
-                    logging.error(f"API call failed: {error}")
-                    error_msg = f"I encountered an error: {error.error_type}"
-                    if error.error_type == 'rate_limit':
-                        error_msg = "I'm experiencing high demand right now. Please try again in a moment."
-                    elif error.error_type == 'auth':
-                        error_msg = "There's an authentication issue. Please contact support."
-                    return error_msg, "Something went wrong - try again.", ""
+                return self._api_failure_response(api_result.error)
 
             response = api_result.value
+            self.responded_model = self.requested_model
             assistant_msg = response.choices[0].message
             msg_contents = assistant_msg.content or ""
 
-            has_function_call = False
-            agent_name = None
-            json_data = "{}"
-            tool_call_id = None
-
             if use_tools_api:
-                if assistant_msg.tool_calls:
-                    has_function_call = True
-                    tool_call = assistant_msg.tool_calls[0]
-                    agent_name = str(tool_call.function.name)
-                    json_data = tool_call.function.arguments or "{}"
-                    tool_call_id = tool_call.id
-            else:
-                if assistant_msg.function_call:
-                    has_function_call = True
-                    agent_name = str(assistant_msg.function_call.name)
-                    json_data = assistant_msg.function_call.arguments or "{}"
+                tool_calls = list(assistant_msg.tool_calls or [])
+                if not tool_calls:
+                    formatted_response, voice_response = self._format_model_response(
+                        msg_contents,
+                        voice_mode,
+                        parse_voice
+                    )
+                    return formatted_response, voice_response, "\n".join(agent_logs)
 
-            if not has_function_call:
-                formatted_response, voice_response = self._parse_response_with_voice(msg_contents)
-                return formatted_response, voice_response, "\n".join(map(str, agent_logs))
+                assistant_tool_calls = []
+                executable_calls = []
+                for tool_call in tool_calls:
+                    try:
+                        agent_name = str(tool_call.function.name)
+                        json_data = tool_call.function.arguments or "{}"
+                        tool_call_id = str(tool_call.id)
+                    except (AttributeError, TypeError) as e:
+                        agent_logs.append(
+                            f"[?] Skipped malformed tool call: {str(tool_call)[:80]}"
+                        )
+                        logging.warning(f"Malformed tool call skipped: {e}")
+                        continue
 
-            result, error = self._execute_agent(agent_name, json_data)
-            if error:
-                return error, "I hit an error processing that.", ""
+                    assistant_tool_calls.append({
+                        "id": tool_call_id,
+                        "type": "function",
+                        "function": {
+                            "name": agent_name,
+                            "arguments": json_data
+                        }
+                    })
+                    executable_calls.append(
+                        (tool_call_id, agent_name, json_data)
+                    )
 
-            agent_logs.append(f"Performed {agent_name} and got result: {result}")
-
-            if use_tools_api:
                 messages.append({
                     "role": "assistant",
                     "content": msg_contents if msg_contents else None,
-                    "tool_calls": [{
-                        "id": tool_call_id,
-                        "type": "function",
-                        "function": {"name": agent_name, "arguments": json_data}
-                    }]
+                    "tool_calls": assistant_tool_calls
                 })
-                messages.append({
-                    "role": "tool",
-                    "tool_call_id": tool_call_id,
-                    "content": result
-                })
+
+                for tool_call_id, agent_name, json_data in executable_calls:
+                    result, log_line = self._execute_agent(agent_name, json_data)
+                    agent_logs.append(f"Performed {agent_name} and got result: {result}" if getattr(self, "legacy_logs", False) else log_line)
+                    messages.append({
+                        "role": "tool",
+                        "tool_call_id": tool_call_id,
+                        "name": agent_name,
+                        "content": result
+                    })
             else:
+                function_call = assistant_msg.function_call
+                if not function_call:
+                    formatted_response, voice_response = self._format_model_response(
+                        msg_contents,
+                        voice_mode,
+                        parse_voice
+                    )
+                    return formatted_response, voice_response, "\n".join(agent_logs)
+
+                agent_name = str(function_call.name)
+                json_data = function_call.arguments or "{}"
                 messages.append({
                     "role": "assistant",
                     "content": msg_contents if msg_contents else None,
                     "function_call": {"name": agent_name, "arguments": json_data}
                 })
+                result, log_line = self._execute_agent(agent_name, json_data)
+                agent_logs.append(f"Performed {agent_name} and got result: {result}" if getattr(self, "legacy_logs", False) else log_line)
                 messages.append({
                     "role": "function",
                     "name": agent_name,
                     "content": result
                 })
 
-            # Check if agent result indicates follow-up is needed
-            needs_follow_up = False
-            try:
-                result_json = json.loads(result)
-                if isinstance(result_json, dict):
-                    if result_json.get('error') or result_json.get('status') == 'incomplete':
-                        needs_follow_up = True
-                    if result_json.get('requires_additional_action') is True:
-                        needs_follow_up = True
-            except (json.JSONDecodeError, ValueError):
-                pass
+        final_result = self._call_model(
+            messages,
+            include_tools=False,
+            max_retries=max_retries,
+            retry_delay=retry_delay
+        )
+        final_content = ""
+        if final_result.is_success:
+            final_response = final_result.value
+            self.responded_model = self.requested_model
+            final_content = (
+                final_response.choices[0].message.content or ""
+            ).strip()
+        else:
+            logging.error(
+                f"Final tool-less completion failed: {final_result.error}"
+            )
 
-            if not needs_follow_up:
-                final_result = self._get_openai_api_call(messages)
-                if final_result.is_failure:
-                    logging.error(f"Final API call failed: {final_result.error}")
-                    return "I completed the action but couldn't generate a summary.", "Action completed.", "\n".join(map(str, agent_logs))
-                final_msg = final_result.value.choices[0].message
-                final_content = final_msg.content or ""
-                formatted_response, voice_response = self._parse_response_with_voice(final_content)
-                return formatted_response, voice_response, "\n".join(map(str, agent_logs))
+        if not final_content:
+            final_content = TOOL_ROUND_FALLBACK
 
-            retry_count += 1
-
-        return "Service temporarily unavailable. Please try again later.", "Service is down - try again later.", ""
+        formatted_response, voice_response = self._format_model_response(
+            final_content,
+            voice_mode,
+            parse_voice
+        )
+        return formatted_response, voice_response, "\n".join(agent_logs)
 
 
 # =============================================================================
@@ -917,6 +1027,37 @@ Revenue's up 12 percent and customers are happier - looking good for Q3.
 # =============================================================================
 
 app = func.FunctionApp()
+
+_HISTORY_ROLES = {"user", "assistant", "tool"}
+
+
+def _validate_conversation_history(value):
+    """Return (history, error) for the grail-compatible public contract."""
+    if value is None:
+        return [], None
+    if not isinstance(value, list):
+        return None, "conversation_history must be an array"
+    for index, message in enumerate(value):
+        if not isinstance(message, dict):
+            return None, f"conversation_history[{index}] must be an object"
+        if message.get("role") not in _HISTORY_ROLES:
+            return None, f"conversation_history[{index}].role is invalid"
+        if not isinstance(message.get("content"), str):
+            return None, f"conversation_history[{index}].content must be a string"
+    return value, None
+
+
+def _json_response(payload, status_code=200, headers=None):
+    return func.HttpResponse(
+        json.dumps(payload),
+        status_code=status_code,
+        mimetype="application/json",
+        headers=headers
+    )
+
+
+def _voice_mode_enabled():
+    return os.environ.get("VOICE_MODE", "false").lower() == "true"
 
 
 @app.route(route="health", auth_level=func.AuthLevel.ANONYMOUS)
@@ -929,10 +1070,16 @@ def health_check(req: func.HttpRequest) -> func.HttpResponse:
     if req.method == 'OPTIONS':
         return func.HttpResponse(status_code=200, headers=cors_headers)
 
+    try:
+        agents = _get_cached_agents()
+    except Exception:
+        agents = {}
+
     health_status = {
-        "status": "healthy",
+        "status": "ok",
         "timestamp": datetime.utcnow().isoformat() + "Z",
-        "version": "1.0.0",
+        "version": APP_VERSION,
+        "agents": list(agents.keys()),
         "checks": {}
     }
 
@@ -1010,6 +1157,101 @@ def health_check(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse(
             json.dumps(health_status, indent=2),
             status_code=500, mimetype="application/json", headers=cors_headers
+        )
+
+
+@app.route(route="version", auth_level=func.AuthLevel.ANONYMOUS, methods=["GET"])
+def version(req: func.HttpRequest) -> func.HttpResponse:
+    """Return the current CommunityRAPP runtime version."""
+    return _json_response(
+        {"version": APP_VERSION},
+        headers=build_cors_response(req.headers.get('origin'))
+    )
+
+
+@app.route(route="chat", auth_level=func.AuthLevel.FUNCTION, methods=["POST"])  # Tier 2 is public and model calls cost money: keyed like the legacy route
+def chat(req: func.HttpRequest) -> func.HttpResponse:
+    """Grail-compatible Brainstem chat endpoint."""
+    cors_headers = build_cors_response(req.headers.get('origin'))
+
+    try:
+        data = req.get_json()
+    except ValueError:
+        data = None
+
+    if not isinstance(data, dict):
+        return _json_response(
+            {"error": "Request body must be a JSON object"},
+            status_code=400,
+            headers=cors_headers
+        )
+
+    user_input = data.get("user_input", "")
+    if not isinstance(user_input, str):
+        return _json_response(
+            {"error": "user_input must be a string"},
+            status_code=400,
+            headers=cors_headers
+        )
+    user_input = user_input.strip()
+
+    history, history_error = _validate_conversation_history(
+        data.get("conversation_history", [])
+    )
+    if history_error:
+        return _json_response(
+            {"error": history_error},
+            status_code=400,
+            headers=cors_headers
+        )
+
+    session_id = data.get("session_id") or str(uuid.uuid4())
+
+    if not user_input:
+        return _json_response(
+            {"error": "user_input is required"},
+            status_code=400,
+            headers=cors_headers
+        )
+
+    try:
+        assistant = Assistant(_get_cached_agents())
+        voice_mode = _voice_mode_enabled()
+        response_text, voice_response, agent_logs = assistant.run(
+            user_input,
+            history,
+            voice_mode=voice_mode,
+            parse_voice=False,
+            manage_guid=False,
+            trim_history=False,
+            always_append_prompt=True
+        )
+
+        if voice_mode and "|||VOICE|||" in response_text:
+            response_text, voice_response = (
+                part.strip()
+                for part in response_text.split("|||VOICE|||", 1)
+            )
+
+        response = {
+            "response": response_text,
+            "session_id": session_id,
+            "agent_logs": agent_logs,
+            "voice_mode": voice_mode,
+            "model": assistant.responded_model,
+            "requested_model": assistant.requested_model
+        }
+        if voice_mode and voice_response:
+            response["voice_response"] = voice_response
+
+        return _json_response(response, headers=cors_headers)
+
+    except Exception as e:
+        logging.exception("Grail-compatible chat request failed")
+        return _json_response(
+            {"error": str(e)},
+            status_code=500,
+            headers=cors_headers
         )
 
 
@@ -1119,6 +1361,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     try:
         agents = _get_cached_agents()
         assistant = Assistant(agents)
+        assistant.legacy_logs = True  # legacy clients keep the log text they always got
 
         if user_guid:
             assistant.user_guid = user_guid
@@ -1129,15 +1372,14 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
         assistant_response, voice_response, agent_logs = assistant.run(user_input, conversation_history)
 
-        _t2_model = os.environ.get("AZURE_OPENAI_DEPLOYMENT") or os.environ.get("GITHUB_MODEL") or "azure-openai"
         response = {
             # kernel-conformant /chat envelope (rapp-runtime-parity/1.0 — stem/function_app parity):
             "response": str(assistant_response),
             "session_id": str(assistant.user_guid),
             "agent_logs": str(agent_logs),
             "voice_mode": bool(voice_response),
-            "model": _t2_model,
-            "requested_model": _t2_model,
+            "model": assistant.responded_model,
+            "requested_model": assistant.requested_model,
             # T2 legacy keys (back-compat for existing clients):
             "assistant_response": str(assistant_response),
             "voice_response": str(voice_response),

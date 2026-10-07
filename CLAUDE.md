@@ -13,7 +13,7 @@ CommunityRAPP is a **base memory agent platform** built on Azure Functions with 
 The platform provides:
 - Two built-in agents: **ContextMemory** (read) and **ManageMemory** (write)
 - Dual-layer memory: shared (all users) + user-specific (per GUID)
-- Three HTTP endpoints: health check, main conversation, and Copilot Studio integration
+- Five HTTP endpoints, including grail-compatible and legacy conversation routes
 - A pattern for adding custom agents by dropping files into `agents/`
 
 > **Disclaimer:** This is an experimental research project managed by a v-team, not an officially supported Microsoft product. The Copilot Studio YAML schema may change without notice. Always review and validate generated output before pushing to your environment — AI-generated output may contain errors or unsupported patterns.
@@ -32,6 +32,8 @@ func start
 
 The local endpoints will be available at:
 - `http://localhost:7071/api/health` — Health check
+- `http://localhost:7071/api/version` — Runtime version
+- `http://localhost:7071/api/chat` — Grail-compatible conversation
 - `http://localhost:7071/api/businessinsightbot_function` — Main conversation
 - `http://localhost:7071/api/trigger/copilot-studio` — Copilot Studio direct invocation
 
@@ -53,11 +55,11 @@ curl -X POST http://localhost:7071/api/businessinsightbot_function \
 ### Running Tests
 
 ```bash
-# Run all 34 unit tests (mocked, no API keys needed)
-python -m pytest tests/test_memory_agents.py -v
+# Run all unit tests (mocked, no API keys needed)
+python -m pytest tests -q
 
-# Or use the test runner
-python tests/run_tests.py
+# Compare Tier 2 with the unchanged reference Brainstem
+python tests/grail_conformance/conformance.py
 ```
 
 ## Architecture
@@ -87,12 +89,14 @@ Hatched projects live at `~/rapp-projects/{name}/` with their own venvs and port
 | Route | Auth | Methods | Purpose |
 |-------|------|---------|---------|
 | `/api/health` | Anonymous | GET | Health check (supports `?deep=true`) |
+| `/api/version` | Anonymous | GET | Runtime version |
+| `/api/chat` | Function key | POST | Grail-compatible conversation endpoint |
 | `/api/businessinsightbot_function` | Function key | POST/OPTIONS | Main conversation endpoint |
 | `/api/trigger/copilot-studio` | Function key | POST | Direct agent invocation from Copilot Studio |
 
 ### Core Components
 
-**`function_app.py`** (~1031 lines) — Main entry point:
+**`function_app.py`** — Main entry point:
 - `Assistant` class orchestrates conversations with OpenAI
 - Singleton caches: OpenAI client (30-min TTL), agent cache (5-min TTL)
 - GUID-based user context with default: `c0p110t0-aaaa-bbbb-cccc-123456789abc`
