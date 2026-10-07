@@ -58,8 +58,12 @@ curl -X POST http://localhost:7071/api/businessinsightbot_function \
 # Run all unit tests (mocked, no API keys needed)
 python -m pytest tests -q
 
-# Compare Tier 2 with the unchanged reference Brainstem
-python tests/grail_conformance/conformance.py
+# Compare Tier 2 with the unchanged reference Brainstem. Check out rapp-1
+# at the commit in grail-suite.json and the Grail at that suite's kernel pin.
+PYTHONPATH="$PWD/tests" \
+GRAIL_DIR=/path/to/rapp-installer/rapp_brainstem \
+python /path/to/rapp-1/conformance/grail/run.py \
+  --candidate module:grail_adapter:create_candidate
 ```
 
 ## Architecture

@@ -28,7 +28,7 @@ jobs:
           pip install pytest pytest-cov
 
       - name: Run unit tests
-        run: python -m pytest -q tests --ignore=tests/grail_conformance
+        run: python -m pytest -q tests
 
       - name: Check for PII patterns
         run: |
@@ -61,17 +61,33 @@ jobs:
 
   grail-conformance:
     # CommunityRAPP must answer /api/chat exactly like the Brainstem grail.
-    # The grail is checked out read-only at a pinned SHA; bump GRAIL_SHA on purpose.
+    # grail-suite.json is the one rapp-1 pin; rapp-1 owns the Grail kernel pin.
     runs-on: ubuntu-latest
-    env:
-      GRAIL_SHA: 0e43ee580e78c150b1c59002456822d2e779388e
     steps:
       - uses: actions/checkout@v4
 
+      - name: Read shared suite pin
+        id: suite
+        run: |
+          echo "repository=$(jq -r '.repository' grail-suite.json)" >> "$GITHUB_OUTPUT"
+          echo "sha=$(jq -r '.sha' grail-suite.json)" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
         with:
-          repository: kody-w/rapp-installer
-          ref: ${{ env.GRAIL_SHA }}
+          repository: ${{ steps.suite.outputs.repository }}
+          ref: ${{ steps.suite.outputs.sha }}
+          path: rapp-1
+
+      - name: Read Grail kernel pin
+        id: kernel
+        run: |
+          echo "repository=$(jq -r '.kernel' rapp-1/conformance/grail/kernel.json)" >> "$GITHUB_OUTPUT"
+          echo "sha=$(jq -r '.sha' rapp-1/conformance/grail/kernel.json)" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.kernel.outputs.repository }}
+          ref: ${{ steps.kernel.outputs.sha }}
           path: grail
 
       - uses: actions/setup-python@v5
@@ -86,5 +102,5 @@ jobs:
       - name: Run grail conformance
         env:
           GRAIL_DIR: ${{ github.workspace }}/grail/rapp_brainstem
-          GRAIL_PYTHON: python
-        run: python tests/grail_conformance/conformance.py
+          PYTHONPATH: ${{ github.workspace }}/tests
+        run: python rapp-1/conformance/grail/run.py --candidate module:grail_adapter:create_candidate
